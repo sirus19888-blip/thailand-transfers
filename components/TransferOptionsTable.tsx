@@ -124,7 +124,15 @@ function DesktopComparisonArea() {
                   </td>
 
                   <td className="px-3 py-4 text-sm text-[#30465a]">
-                    {option.duration}
+                    <p className="font-semibold text-[#10201d]">
+                      {option.duration}
+                    </p>
+                    <p className="mt-1 text-[11px] leading-4 text-slate-500">
+                      {option.departures}
+                    </p>
+                    <p className="mt-1 text-[11px] leading-4 text-slate-500">
+                      {option.baggage}
+                    </p>
                   </td>
 
                   <td className="px-3 py-4 text-sm text-[#30465a]">
