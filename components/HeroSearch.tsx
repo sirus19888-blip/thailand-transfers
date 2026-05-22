@@ -277,14 +277,14 @@ function MobileHero() {
               </div>
             </div>
 
-            <div className="mt-3 grid grid-cols-2 gap-3">
-              <label className="block min-h-[92px] rounded-[24px] border border-[#e7e2d8] px-5 py-4">
+            <div className="mt-2.5 grid grid-cols-2 gap-2.5">
+              <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                 <span className="text-[12px] font-semibold text-[#98a2b3]">
                   Date
                 </span>
 
-                <div className="mt-2 flex items-center gap-2">
-                  <span className="flex-1 text-[14px] font-semibold text-[#10201d]">
+                <div className="mt-1.5 flex items-center gap-2">
+                  <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
                     Tue, 27 May 2025
                   </span>
 
@@ -292,12 +292,12 @@ function MobileHero() {
                 </div>
               </label>
 
-              <label className="block min-h-[92px] rounded-[24px] border border-[#e7e2d8] px-5 py-4">
+              <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                 <span className="text-[12px] font-semibold text-[#98a2b3]">
                   Passengers
                 </span>
 
-                <div className="mt-2 flex items-center gap-2">
+                <div className="mt-1.5 flex items-center gap-2">
                   <Users className="h-4 w-4 text-[#667085]" />
 
                   <span className="flex-1 text-[14px] font-semibold text-[#10201d]">
@@ -309,36 +309,36 @@ function MobileHero() {
               </label>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-3">
               <p className="mb-2 text-[12px] font-semibold text-[#143f3a]">
                 Popular routes
               </p>
 
-              <div className="grid grid-cols-2 gap-2.5">
+              <div className="grid grid-cols-2 gap-2">
                 <Link
                   href="/routes/bangkok-airport-to-pattaya"
-                  className="rounded-full bg-[#0c5a4d] px-3 py-1.5 text-center text-[11px] font-medium text-white"
+                  className="rounded-full bg-[#0c5a4d] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-white"
                 >
                   Suvarnabhumi → Pattaya
                 </Link>
 
                 <Link
                   href="/routes/bangkok-airport-to-pattaya"
-                  className="rounded-full bg-[#f3f4f6] px-3 py-1.5 text-center text-[11px] font-medium text-[#10201d]"
+                  className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
                 >
                   Don Mueang → Pattaya
                 </Link>
 
                 <Link
                   href="/routes/bangkok-airport-to-pattaya"
-                  className="rounded-full bg-[#f3f4f6] px-3 py-1.5 text-center text-[11px] font-medium text-[#10201d]"
+                  className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
                 >
                   Bangkok → Hua Hin
                 </Link>
 
                 <Link
                   href="/routes/bangkok-airport-to-pattaya"
-                  className="rounded-full bg-[#f3f4f6] px-3 py-1.5 text-center text-[11px] font-medium text-[#10201d]"
+                  className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
                 >
                   Suvarnabhumi → Hua Hin
                 </Link>
