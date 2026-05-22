@@ -122,7 +122,7 @@ export function MobileRouteDetailsScreen() {
           <div className="mt-4 space-y-3">
             {steps.map((step) => (
               <div key={step.number} className="flex gap-3">
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#064e45] text-xs font-bold text-white">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0c5a4d] text-xs font-bold text-white">
                   {step.number}
                 </div>
 
