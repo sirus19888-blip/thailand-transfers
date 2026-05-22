@@ -2,7 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { transferOptions } from "@/data/routes";
 import { AffiliateButton } from "./AffiliateButton";
-import { ArrowLeft, ChevronDown, Heart, ShieldCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  ChevronDown,
+  Clock3,
+  Heart,
+  Luggage,
+  MapPin,
+  ShieldCheck,
+  Star,
+} from "lucide-react";
 
 function getBadgeColor(id: string) {
   if (id === "bus") return "bg-emerald-500";
@@ -130,29 +139,30 @@ export function MobileTransferOptionsScreen() {
                     </div>
 
                     <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-                      <div>
-                        <p className="text-[11px] font-bold text-[#10201d]">
+                      <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
+                        <Clock3 className="mx-auto h-3.5 w-3.5 text-[#0c5a4d]" />
+                        <p className="mt-1 text-[11px] font-bold text-[#10201d]">
                           {option.duration}
                         </p>
-                        <p className="mt-0.5 text-[10px] text-slate-500">
-                          Travel time
-                        </p>
+                        <p className="mt-0.5 text-[9.5px] text-slate-500">Time</p>
                       </div>
 
-                      <div>
-                        <p className="text-[11px] font-bold text-[#10201d]">
+                      <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
+                        <Users className="mx-auto h-3.5 w-3.5 text-[#0c5a4d]" />
+                        <p className="mt-1 text-[11px] font-bold text-[#10201d]">
                           {option.departures}
                         </p>
-                        <p className="mt-0.5 text-[10px] text-slate-500">
+                        <p className="mt-0.5 text-[9.5px] text-slate-500">
                           Departures
                         </p>
                       </div>
 
-                      <div>
-                        <p className="text-[11px] font-bold text-[#10201d]">
+                      <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
+                        <Luggage className="mx-auto h-3.5 w-3.5 text-[#0c5a4d]" />
+                        <p className="mt-1 text-[11px] font-bold text-[#10201d]">
                           {option.baggage}
                         </p>
-                        <p className="mt-0.5 text-[10px] text-slate-500">
+                        <p className="mt-0.5 text-[9.5px] text-slate-500">
                           Luggage
                         </p>
                       </div>
@@ -161,12 +171,18 @@ export function MobileTransferOptionsScreen() {
                 </div>
 
                 <div className="border-t border-[#e7e2d8] px-4 py-3">
-                  <p className="text-xs font-bold text-slate-500">
-                    Board at
-                  </p>
-                  <p className="mt-1 text-sm font-extrabold text-[#10201d]">
-                    {option.pickup}
-                  </p>
+                  <div className="flex items-start gap-2">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+
+                    <div>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-slate-400">
+                        Pickup
+                      </p>
+                      <p className="mt-1 text-sm font-extrabold text-[#10201d]">
+                        {option.pickup}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 border-t border-[#e7e2d8] px-4 py-3">
@@ -194,17 +210,18 @@ export function MobileTransferOptionsScreen() {
                 </div>
 
                 <div className="flex items-center justify-between gap-3 border-t border-[#e7e2d8] px-4 py-3">
-                  <div className="text-sm font-bold text-[#10201d]">
-                    ⭐ {option.rating}
-                    <span className="ml-1 text-xs font-medium text-slate-500">
+                  <div className="flex items-center gap-1 text-sm font-bold text-[#10201d]">
+                    <Star className="h-4 w-4 fill-[#d5ab47] text-[#d5ab47]" />
+                    <span>{option.rating}</span>
+                    <span className="text-xs font-medium text-slate-500">
                       ({option.reviews})
                     </span>
                   </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex shrink-0 gap-2">
                     <Link
                       href="/routes/bangkok-airport-to-pattaya/details"
-                      className="rounded-2xl border border-[#064e45] px-4 py-3 text-xs font-extrabold text-[#064e45]"
+                      className="rounded-2xl border border-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-[#0c5a4d]"
                     >
                       Details
                     </Link>
