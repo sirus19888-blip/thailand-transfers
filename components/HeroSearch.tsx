@@ -354,20 +354,20 @@ function MobileHero() {
             </Link>
           </div>
 
-          <div className="mt-3 flex items-center justify-between text-[10px] text-[#2f6b5d]">
+          <div className="mt-3 flex items-center justify-center gap-2 text-[9.5px] text-[#2f6b5d]">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
               <span>Human-checked info</span>
             </div>
 
-            <div className="h-4 w-px bg-[#d0d5dd]" />
+            <div className="h-3.5 w-px bg-[#d0d5dd]" />
 
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
               <span>No hidden steps</span>
             </div>
 
-            <div className="h-4 w-px bg-[#d0d5dd]" />
+            <div className="h-3.5 w-px bg-[#d0d5dd]" />
 
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
