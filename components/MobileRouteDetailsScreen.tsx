@@ -158,8 +158,8 @@ export function MobileRouteDetailsScreen() {
 
         <div className="mt-4 rounded-[1.5rem] border border-red-100 bg-red-50 p-4">
           <div className="flex gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-xl text-red-500">
-              !
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-red-500">
+              <AlertTriangle className="h-5 w-5" />
             </div>
 
             <div>
