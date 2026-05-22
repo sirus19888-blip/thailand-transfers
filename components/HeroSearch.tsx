@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { transferOptions } from "@/data/routes";
-import { AffiliateButton } from "./AffiliateButton";
 import {
-  ArrowLeft,
+  ArrowDownUp,
+  ArrowRight,
+  Bell,
+  CalendarDays,
   ChevronDown,
-  Clock3,
-  Heart,
-  Luggage,
+  Landmark,
   MapPin,
+  Plane,
   ShieldCheck,
-  Star,
   Users,
 } from "lucide-react";
 import { Container } from "./Container";
@@ -191,7 +190,7 @@ function MobileHero() {
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ab47] shadow-md">
-                  <Star className="h-5 w-5 text-white" />
+                  <Landmark className="h-5 w-5 text-white" />
                 </div>
 
                 <div className="leading-tight">
@@ -214,7 +213,7 @@ function MobileHero() {
                 aria-label="Notifications"
                 className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 shadow-md backdrop-blur-sm"
               >
-                <Heart className="h-5 w-5 text-[#10201d] stroke-[2.1]" />
+                <Bell className="h-5 w-5 text-[#10201d] stroke-[2.1]" />
               </button>
             </div>
 
@@ -240,7 +239,7 @@ function MobileHero() {
                   </span>
 
                   <div className="mt-1.5 flex items-center gap-3">
-                    <Luggage className="h-4 w-4 text-[#0c5a4d]" />
+                    <Plane className="h-4 w-4 text-[#0c5a4d]" />
 
                     <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
                       Suvarnabhumi Airport (BKK)
@@ -273,7 +272,7 @@ function MobileHero() {
                   aria-label="Swap route"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e7e2d8] bg-white shadow-md"
                 >
-                  <ArrowLeft className="h-5 w-5 rotate-90 text-[#0c5a4d] stroke-[2.2]" />
+                  <ArrowDownUp className="h-5 w-5 text-[#0c5a4d] stroke-[2.2]" />
                 </button>
               </div>
             </div>
@@ -289,7 +288,7 @@ function MobileHero() {
                     Tue, 27 May 2025
                   </span>
 
-                  <Clock3 className="h-4 w-4 text-[#667085]" />
+                  <CalendarDays className="h-4 w-4 text-[#667085]" />
                 </div>
               </label>
 
@@ -351,7 +350,7 @@ function MobileHero() {
               className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-semibold text-white"
             >
               <span>Compare transport options</span>
-              <ArrowLeft className="h-4 w-4 rotate-180" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
