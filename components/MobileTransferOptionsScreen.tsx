@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { transferOptions } from "@/data/routes";
 import { AffiliateButton } from "./AffiliateButton";
-import { ArrowLeft, Heart, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ChevronDown, Heart, ShieldCheck } from "lucide-react";
 
 function getBadgeColor(id: string) {
   if (id === "bus") return "bg-emerald-500";
@@ -77,8 +77,9 @@ export function MobileTransferOptionsScreen() {
             3 best options found
           </p>
 
-          <button className="rounded-xl border border-[#e7e2d8] bg-white px-3 py-2 text-xs font-bold text-[#10201d] shadow-sm">
-            Recommended ˅
+          <button className="flex items-center gap-1 rounded-xl border border-[#e7e2d8] bg-white px-3 py-2 text-xs font-bold text-[#10201d] shadow-sm">
+            <span>Recommended</span>
+            <ChevronDown className="h-3.5 w-3.5" />
           </button>
         </div>
 
