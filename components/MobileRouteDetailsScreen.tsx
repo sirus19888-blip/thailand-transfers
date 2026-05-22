@@ -94,7 +94,7 @@ export function MobileRouteDetailsScreen() {
         </div>
 
         <div className="mt-5 flex gap-6 overflow-x-auto border-b border-[#e7e2d8] text-sm font-bold text-slate-500">
-          <button className="border-b-2 border-[#064e45] pb-3 text-[#064e45]">
+          <button className="border-b-2 border-[#0c5a4d] pb-3 text-[#0c5a4d]">
             Overview
           </button>
           <button className="pb-3">Details</button>
