@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-  ShieldCheck,
-} from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Container } from "./Container";
 
 const helpfulLinks = [
@@ -98,12 +91,12 @@ export function Footer() {
               </div>
 
               <div className="mt-2 flex gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
-                  <Facebook className="h-4 w-4" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold">
+                  f
                 </div>
 
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
-                  <Instagram className="h-4 w-4" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold">
+                  IG
                 </div>
               </div>
             </div>
