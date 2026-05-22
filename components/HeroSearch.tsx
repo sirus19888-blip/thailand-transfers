@@ -175,7 +175,7 @@ function MobileHero() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-24 lg:hidden">
       <div className="relative mx-auto max-w-md overflow-hidden bg-[#f6f1e8]">
-        <div className="relative h-[455px] overflow-hidden">
+        <div className="relative h-[415px] overflow-hidden">
           <Image
             src="/assets/hero/hero-mobile.png"
             alt="Thailand transfer hero"
@@ -186,7 +186,7 @@ function MobileHero() {
 
           <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/10 to-[#f6f1e8]/65" />
 
-          <div className="relative z-10 px-5 pt-5">
+          <div className="relative z-10 px-5 pt-4">
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d5ab47] shadow-md">
@@ -217,31 +217,31 @@ function MobileHero() {
               </button>
             </div>
 
-            <div className="mt-6 max-w-[220px]">
-              <h1 className="text-[30px] font-bold leading-[1.02] tracking-[-0.03em] text-[#143f3a]">
+            <div className="mt-5 max-w-[215px]">
+              <h1 className="text-[28px] font-bold leading-[1.02] tracking-[-0.03em] text-[#143f3a]">
                 Plan your transfer in Thailand
               </h1>
 
-              <p className="mt-2 text-[13px] font-medium leading-5 text-[#364152]">
+              <p className="mt-2 text-[12px] font-medium leading-5 text-[#364152]">
                 Trusted routes. Verified info. Happy travels.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="relative z-20 -mt-28 px-5">
-          <div className="rounded-[24px] border border-[#e7e2d8] bg-white p-3 shadow-lg shadow-black/10">
-            <div className="grid grid-cols-[1fr_48px] gap-3">
+        <div className="relative z-20 -mt-32 px-5">
+          <div className="rounded-[24px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10">
+            <div className="grid grid-cols-[1fr_44px] gap-2.5">
               <div className="space-y-3">
-                <label className="block min-h-[92px] rounded-[24px] border border-[#e7e2d8] px-5 py-4">
+                <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                   <span className="text-[12px] font-semibold text-[#98a2b3]">
                     From
                   </span>
 
-                  <div className="mt-2 flex items-center gap-3">
+                  <div className="mt-1.5 flex items-center gap-3">
                     <Plane className="h-4 w-4 text-[#0c5a4d]" />
 
-                    <span className="flex-1 text-[15px] font-semibold text-[#10201d]">
+                    <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
                       Suvarnabhumi Airport (BKK)
                     </span>
 
@@ -249,15 +249,15 @@ function MobileHero() {
                   </div>
                 </label>
 
-                <label className="block min-h-[92px] rounded-[24px] border border-[#e7e2d8] px-5 py-4">
+                <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                   <span className="text-[12px] font-semibold text-[#98a2b3]">
                     To
                   </span>
 
-                  <div className="mt-2 flex items-center gap-3">
+                  <div className="mt-1.5 flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-[#0c5a4d]" />
 
-                    <span className="flex-1 text-[15px] font-semibold text-[#10201d]">
+                    <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
                       Pattaya City
                     </span>
 
@@ -266,7 +266,7 @@ function MobileHero() {
                 </label>
               </div>
 
-              <div className="flex items-start justify-center pt-[46px]">
+              <div className="flex items-start justify-center pt-[39px]">
                 <button
                   type="button"
                   aria-label="Swap route"
