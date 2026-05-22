@@ -55,27 +55,40 @@ export function MobileRouteDetailsScreen() {
         <div className="flex items-start justify-between gap-3">
           <Link
             href="/routes/bangkok-airport-to-pattaya"
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-xl font-bold text-[#10201d] shadow-sm"
+            aria-label="Back to transfer options"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
           >
-            ←
+            <ArrowLeft className="h-5 w-5" />
           </Link>
 
           <div className="min-w-0 flex-1 text-center">
-            <h1 className="truncate text-base font-extrabold text-[#10201d]">
-              Bus: BKK → Pattaya
-            </h1>
+            <div className="mx-auto flex items-center justify-center gap-2">
+              <Bus className="h-4 w-4 text-[#0c5a4d]" />
+              <h1 className="truncate text-[16px] font-extrabold tracking-[-0.02em] text-[#10201d]">
+                Bus: BKK → Pattaya
+              </h1>
+            </div>
+
             <p className="mt-1 text-xs font-medium text-slate-500">
               Airport Bus by Bell Travel
             </p>
           </div>
 
           <div className="flex gap-2">
-            <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-[#10201d] shadow-sm">
-              ⇧
+            <button
+              type="button"
+              aria-label="Share route"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+            >
+              <Share2 className="h-5 w-5" />
             </button>
 
-            <button className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg text-[#10201d] shadow-sm">
-              ♡
+            <button
+              type="button"
+              aria-label="Save route"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+            >
+              <Heart className="h-5 w-5" />
             </button>
           </div>
         </div>
