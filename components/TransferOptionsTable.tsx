@@ -366,7 +366,7 @@ export function TransferOptionsTable() {
               Compare options
             </p>
 
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#10201d]">
+            <h2 className="text-[28px] font-extrabold tracking-[-0.03em] text-[#10201d]">
               Choose the best transfer for your trip
             </h2>
           </div>
