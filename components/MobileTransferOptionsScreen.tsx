@@ -11,6 +11,7 @@ import {
   MapPin,
   ShieldCheck,
   Star,
+  Users,
 } from "lucide-react";
 
 function getBadgeColor(id: string) {
