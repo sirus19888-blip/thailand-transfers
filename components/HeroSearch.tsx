@@ -347,7 +347,7 @@ function MobileHero() {
 
             <Link
               href="/routes/bangkok-airport-to-pattaya"
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-3 text-[14px] font-semibold text-white"
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-semibold text-white"
             >
               <span>Compare transport options</span>
               <ArrowRight className="h-4 w-4" />
