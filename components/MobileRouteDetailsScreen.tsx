@@ -284,7 +284,7 @@ export function MobileRouteDetailsScreen() {
             href={mainRoute.affiliateUrl}
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
-            className="flex shrink-0 items-center justify-center rounded-2xl bg-[#064e45] px-5 py-4 text-sm font-extrabold text-white"
+            className="flex shrink-0 items-center justify-center rounded-2xl bg-[#0c5a4d] px-5 py-4 text-sm font-extrabold text-white shadow-lg shadow-black/10"
           >
             See live price & book
           </a>
