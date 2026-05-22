@@ -64,31 +64,31 @@ function DesktopComparisonArea() {
           <p className="text-xs font-semibold text-slate-500">Prices in THB</p>
         </div>
 
-        <table className="w-full border-collapse text-left">
+        <table className="w-full table-fixed border-collapse text-left">
           <thead className="bg-[#fbfaf7]">
             <tr>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Option
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Price (2 pax)
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Travel Time
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Departures
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Baggage
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Pickup Location
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Best For
               </th>
-              <th className="px-5 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Book Now
               </th>
             </tr>
@@ -103,7 +103,7 @@ function DesktopComparisonArea() {
                   key={option.id}
                   className="border-t border-[#e7e2d8] align-middle transition hover:bg-[#fbfaf7]"
                 >
-                  <td className="px-5 py-4">
+                  <td className="px-3 py-4">
                     <div className="flex items-center gap-3">
                       <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#eef6f2] text-[#0c5a4d]">
                         <Icon className="h-4.5 w-4.5" />
@@ -120,7 +120,7 @@ function DesktopComparisonArea() {
                     </div>
                   </td>
 
-                  <td className="px-5 py-4">
+                  <td className="px-3 py-4">
                     <p className="text-sm font-extrabold text-[#10201d]">
                       {option.price}
                     </p>
@@ -129,27 +129,27 @@ function DesktopComparisonArea() {
                     </p>
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-[#30465a]">
+                  <td className="px-3 py-4 text-sm text-[#30465a]">
                     {option.duration}
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-[#30465a]">
+                  <td className="px-3 py-4 text-sm text-[#30465a]">
                     {option.departures}
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-[#30465a]">
+                  <td className="px-3 py-4 text-sm text-[#30465a]">
                     {option.baggage}
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-[#30465a]">
+                  <td className="px-3 py-4 text-sm text-[#30465a]">
                     {option.pickup}
                   </td>
 
-                  <td className="px-5 py-4 text-sm text-[#30465a]">
+                  <td className="px-3 py-4 text-sm text-[#30465a]">
                     {option.bestFor}
                   </td>
 
-                  <td className="px-5 py-4">
+                  <td className="px-3 py-4">
                     <div className="flex items-center gap-2">
                       {option.id === "train-taxi" ? (
                         <Link
