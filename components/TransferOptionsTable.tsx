@@ -44,10 +44,10 @@ function getOptionIcon(id: string) {
 }
 
 function getBookLabel(id: string) {
-  if (id === "taxi") return "Book on Klook";
-  if (id === "van") return "Book on GetYourGuide";
-  if (id === "train-taxi") return "View Details";
-  return "Book on 12Go";
+  if (id === "taxi") return "Klook";
+  if (id === "van") return "GetYourGuide";
+  if (id === "train-taxi") return "Details";
+  return "12Go";
 }
 
 function DesktopComparisonArea() {
