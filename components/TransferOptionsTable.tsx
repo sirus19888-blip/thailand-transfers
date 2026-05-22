@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   Bus,
   Car,
-  ChevronDown,
   Clock3,
   Luggage,
   MapPin,
@@ -144,22 +143,23 @@ function DesktopComparisonArea() {
                   </td>
 
                   <td className="px-3 py-4">
-                    <div className="flex items-center gap-2">
-                      {option.id === "train-taxi" ? (
-                        <Link
-                          href="/routes/bangkok-airport-to-pattaya/details"
-                          className="flex min-w-[130px] items-center justify-center rounded-xl border border-[#0c5a4d] bg-white px-4 py-2 text-xs font-extrabold text-[#0c5a4d]"
-                        >
-                          View Details
-                        </Link>
-                      ) : (
-                        <AffiliateButton href={option.affiliateUrl}>
-                          {getBookLabel(option.id)}
-                        </AffiliateButton>
-                      )}
-
-                      <ChevronDown className="h-4 w-4 text-slate-400" />
-                    </div>
+                    {option.id === "train-taxi" ? (
+                      <Link
+                        href="/routes/bangkok-airport-to-pattaya/details"
+                        className="flex w-full items-center justify-center rounded-xl border border-[#0c5a4d] bg-white px-3 py-2 text-[12px] font-extrabold text-[#0c5a4d]"
+                      >
+                        Details
+                      </Link>
+                    ) : (
+                      <a
+                        href={option.affiliateUrl}
+                        target="_blank"
+                        rel="nofollow sponsored noopener noreferrer"
+                        className="flex w-full items-center justify-center rounded-xl bg-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold text-white shadow-sm"
+                      >
+                        {getBookLabel(option.id)}
+                      </a>
+                    )}
                   </td>
                 </tr>
               );
