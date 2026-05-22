@@ -67,29 +67,23 @@ function DesktopComparisonArea() {
         <table className="w-full table-fixed border-collapse text-left">
           <thead className="bg-[#fbfaf7]">
             <tr>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="w-[170px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Option
               </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Price (2 pax)
+              <th className="w-[105px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
+                Price
               </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Travel Time
+              <th className="w-[150px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
+                Time
               </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Departures
+              <th className="w-[170px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
+                Pickup
               </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Baggage
-              </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Pickup Location
-              </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
+              <th className="w-[145px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
                 Best For
               </th>
-              <th className="px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Book Now
+              <th className="w-[125px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
+                Book
               </th>
             </tr>
           </thead>
@@ -131,14 +125,6 @@ function DesktopComparisonArea() {
 
                   <td className="px-3 py-4 text-sm text-[#30465a]">
                     {option.duration}
-                  </td>
-
-                  <td className="px-3 py-4 text-sm text-[#30465a]">
-                    {option.departures}
-                  </td>
-
-                  <td className="px-3 py-4 text-sm text-[#30465a]">
-                    {option.baggage}
                   </td>
 
                   <td className="px-3 py-4 text-sm text-[#30465a]">
