@@ -52,8 +52,8 @@ function getBookLabel(id: string) {
 
 function DesktopComparisonArea() {
   return (
-    <div className="hidden lg:grid lg:grid-cols-[1fr_320px] lg:gap-6">
-      <div className="overflow-hidden rounded-[22px] border border-[#e7e2d8] bg-white shadow-xl shadow-black/5">
+    <div className="hidden items-start lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-5">
+      <div className="self-start overflow-hidden rounded-[22px] border border-[#e7e2d8] bg-white shadow-xl shadow-black/5">
         <div className="flex items-center justify-between border-b border-[#e7e2d8] bg-white px-5 py-4">
           <div>
             <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#0c5a4d]">
@@ -182,7 +182,7 @@ function DesktopComparisonArea() {
         </Link>
       </div>
 
-      <aside className="space-y-4">
+      <aside className="self-start space-y-4">
         <div className="overflow-hidden rounded-[22px] border border-[#e7e2d8] bg-[#fbfaf7] shadow-lg shadow-black/5">
           <div className="p-5">
             <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
