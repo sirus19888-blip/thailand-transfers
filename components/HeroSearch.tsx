@@ -270,7 +270,7 @@ function MobileHero() {
                 <button
                   type="button"
                   aria-label="Swap route"
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-[#e7e2d8] bg-white shadow-md"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e7e2d8] bg-white shadow-md"
                 >
                   <ArrowDownUp className="h-5 w-5 text-[#0c5a4d] stroke-[2.2]" />
                 </button>
