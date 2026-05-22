@@ -44,7 +44,7 @@ function getOptionIcon(id: string) {
 
 function getBookLabel(id: string) {
   if (id === "taxi") return "Klook";
-  if (id === "van") return "GetYourGuide";
+  if (id === "van") return "GYG";
   if (id === "train-taxi") return "Details";
   return "12Go";
 }
