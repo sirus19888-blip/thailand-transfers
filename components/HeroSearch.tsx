@@ -13,7 +13,6 @@ import {
   Users,
 } from "lucide-react";
 import { Container } from "./Container";
-import { TrustBadges } from "./TrustBadges";
 
 function SearchFields() {
   return (
@@ -82,91 +81,189 @@ function SearchFields() {
 
 function DesktopHero() {
   return (
-    <section className="hidden overflow-hidden bg-[#f8f4ec] lg:block">
-      <Container className="py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr]">
-          <div>
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.25em] text-[#c99a2e]">
-              Thailand airport transfers
-            </p>
+    <section className="hidden overflow-hidden bg-[#fbfaf7] lg:block">
+      <div className="relative min-h-[660px] border-b border-[#e7e2d8]">
+        <Image
+          src="/assets/hero/hero-desktop.png"
+          alt="Thailand airport transfer"
+          fill
+          priority
+          className="object-cover object-center"
+        />
 
-            <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-[#10201d] xl:text-6xl">
-              Compare Thailand airport transfers before you land
-            </h1>
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/30" />
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Find buses, taxis and vans from Bangkok Airport to Pattaya and
-              other popular Thailand routes. Compare options, read arrival tips
-              and book through trusted partners.
-            </p>
+        <Container className="relative z-10">
+          <div className="grid min-h-[660px] grid-cols-[0.9fr_1.1fr] items-center gap-10 py-14">
+            <div className="max-w-[520px]">
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+                Human-curated. Locally verified.
+              </p>
 
-            <div className="mt-8 rounded-[2rem] border border-[#e7e2d8] bg-white p-5 shadow-xl shadow-black/5">
-              <SearchFields />
+              <h1 className="mt-5 text-[58px] font-extrabold leading-[0.98] tracking-[-0.045em] text-[#10201d]">
+                Find the safest way from the airport to your destination
+              </h1>
 
-              <div className="mt-5 flex items-center gap-4">
-                <Link
-                  href="/routes/bangkok-airport-to-pattaya"
-                  className="inline-flex items-center justify-center rounded-full bg-[#064e45] px-7 py-4 text-sm font-bold text-white shadow-sm transition hover:bg-[#033b35]"
-                >
-                  Find best options
-                </Link>
+              <p className="mt-6 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
+                We compare reliable transfer options — bus, taxi, van and more —
+                so you can choose what is best for your trip, budget and arrival
+                time.
+                <span className="font-bold text-[#0c5a4d]">
+                  {" "}
+                  Information verified by locals. Updated daily. No AI
+                  hallucinations.
+                </span>
+              </p>
 
-                <p className="text-sm leading-6 text-slate-500">
-                  Start with Bangkok Airport -&gt; Pattaya
-                </p>
+              <div className="mt-8 grid max-w-[560px] grid-cols-4 gap-3">
+                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
+                  <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
+                  <p className="mt-2 text-xs font-bold text-[#10201d]">
+                    Verified route details
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
+                  <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
+                  <p className="mt-2 text-xs font-bold text-[#10201d]">
+                    Updated daily
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
+                  <Users className="h-5 w-5 text-[#0c5a4d]" />
+                  <p className="mt-2 text-xs font-bold text-[#10201d]">
+                    Built for tourists
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
+                  <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
+                  <p className="mt-2 text-xs font-bold text-[#10201d]">
+                    No AI hallucinations
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="mt-6">
-              <TrustBadges />
-            </div>
-          </div>
+            <div className="flex justify-center">
+              <div className="w-full max-w-[520px] rounded-[28px] border border-white/70 bg-white/92 p-4 shadow-2xl shadow-black/15 backdrop-blur-xl">
+                <div className="mb-4 grid grid-cols-2 rounded-2xl bg-[#f8f4ec] p-1">
+                  <button
+                    type="button"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-extrabold text-[#0c5a4d] shadow-sm"
+                  >
+                    <Plane className="h-4 w-4" />
+                    Airport Transfer
+                  </button>
 
-          <div className="relative">
-            <div className="absolute -left-8 -top-8 h-40 w-40 rounded-full bg-[#c99a2e]/20 blur-2xl" />
-            <div className="absolute -bottom-8 -right-8 h-48 w-48 rounded-full bg-[#064e45]/20 blur-2xl" />
+                  <button
+                    type="button"
+                    className="flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-slate-500"
+                  >
+                    <Landmark className="h-4 w-4" />
+                    City Transfer
+                  </button>
+                </div>
 
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-3 shadow-2xl shadow-black/10">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
-                <Image
-                  src="/assets/hero/hero-desktop.png"
-                  alt="Thailand airport transfer"
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              </div>
+                <div className="space-y-3">
+                  <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                      From
+                    </span>
 
-              <div className="absolute bottom-8 left-8 right-8 rounded-3xl bg-white/90 p-5 shadow-xl backdrop-blur">
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#c99a2e]">
-                  Recommended route
-                </p>
+                    <div className="mt-2 flex items-center gap-3">
+                      <Plane className="h-4 w-4 text-[#0c5a4d]" />
 
-                <p className="mt-1 text-xl font-bold text-[#10201d]">
-                  Bangkok Airport -&gt; Pattaya
-                </p>
+                      <select
+                        className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
+                        defaultValue="bkk"
+                      >
+                        <option value="bkk">Suvarnabhumi Airport (BKK)</option>
+                        <option value="dmk">Don Mueang Airport (DMK)</option>
+                        <option value="bangkok">Bangkok City</option>
+                      </select>
+                    </div>
+                  </label>
 
-                <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className="rounded-2xl bg-[#f8f4ec] p-3">
-                    <p className="font-bold text-[#10201d]">Bus</p>
-                    <p className="text-slate-500">Budget</p>
+                  <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                      To
+                    </span>
+
+                    <div className="mt-2 flex items-center gap-3">
+                      <MapPin className="h-4 w-4 text-[#0c5a4d]" />
+
+                      <select
+                        className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
+                        defaultValue="pattaya"
+                      >
+                        <option value="pattaya">Pattaya (All Areas)</option>
+                        <option value="hua-hin">Hua Hin</option>
+                        <option value="koh-chang">Koh Chang</option>
+                        <option value="patong">Patong</option>
+                      </select>
+                    </div>
+                  </label>
+
+                  <div className="grid grid-cols-3 gap-3">
+                    <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
+                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                        Date
+                      </span>
+
+                      <div className="mt-2 flex items-center gap-2">
+                        <CalendarDays className="h-4 w-4 text-[#0c5a4d]" />
+                        <span className="text-sm font-extrabold text-[#10201d]">
+                          May 28, 2025
+                        </span>
+                      </div>
+                    </label>
+
+                    <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
+                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                        Time
+                      </span>
+
+                      <div className="mt-2 flex items-center gap-2">
+                        <span className="text-sm font-extrabold text-[#10201d]">
+                          19:30
+                        </span>
+                      </div>
+                    </label>
+
+                    <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
+                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                        Pax
+                      </span>
+
+                      <div className="mt-2 flex items-center gap-2">
+                        <Users className="h-4 w-4 text-[#0c5a4d]" />
+                        <span className="text-sm font-extrabold text-[#10201d]">
+                          2
+                        </span>
+                      </div>
+                    </label>
                   </div>
 
-                  <div className="rounded-2xl bg-[#f8f4ec] p-3">
-                    <p className="font-bold text-[#10201d]">Taxi</p>
-                    <p className="text-slate-500">Comfort</p>
-                  </div>
+                  <Link
+                    href="/routes/bangkok-airport-to-pattaya"
+                    className="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0c5a4d] px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-black/10 transition hover:bg-[#064e45]"
+                  >
+                    <span>Find Best Options</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
 
-                  <div className="rounded-2xl bg-[#f8f4ec] p-3">
-                    <p className="font-bold text-[#10201d]">Van</p>
-                    <p className="text-slate-500">Groups</p>
-                  </div>
+                  <p className="text-center text-[11px] font-medium text-slate-500">
+                    Free cancellation on many options · Instant confirmation
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 }
