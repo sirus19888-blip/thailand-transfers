@@ -199,7 +199,7 @@ export function MobileRouteDetailsScreen() {
 
           <Link
             href="/routes/bangkok-airport-to-pattaya"
-            className="mt-4 flex w-full items-center justify-center rounded-2xl border border-[#064e45] bg-white px-5 py-3 text-sm font-extrabold text-[#064e45]"
+            className="mt-4 flex w-full items-center justify-center rounded-2xl border border-[#0c5a4d] bg-white px-5 py-3 text-sm font-extrabold text-[#0c5a4d]"
           >
             Back to transfer options
           </Link>
