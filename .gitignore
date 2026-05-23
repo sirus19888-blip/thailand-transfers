@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local screenshots / design checks
+home-*.png
+mobile-*.png
+route-mobile-*.png

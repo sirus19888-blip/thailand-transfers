@@ -227,7 +227,10 @@ export function MobileTransferOptionsScreen() {
                       Details
                     </Link>
 
-                    <AffiliateButton href={option.affiliateUrl}>
+                    <AffiliateButton
+                      href={option.affiliateUrl}
+                      trackingId={option.trackingId}
+                    >
                       See live price
                     </AffiliateButton>
                   </div>

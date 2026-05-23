@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { mainRoute } from "@/data/routes";
+import { mainRoute, transferOptions } from "@/data/routes";
+import { AffiliateButton } from "./AffiliateButton";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -47,6 +48,8 @@ const faqs = [
     answer: "It is safer to compare options before you arrive.",
   },
 ];
+
+const busOption = transferOptions.find((option) => option.id === "bus");
 
 export function MobileRouteDetailsScreen() {
   return (
@@ -280,14 +283,13 @@ export function MobileRouteDetailsScreen() {
             </p>
           </div>
 
-          <a
-            href={mainRoute.affiliateUrl}
-            target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
-            className="flex shrink-0 items-center justify-center rounded-2xl bg-[#0c5a4d] px-5 py-4 text-sm font-extrabold text-white shadow-lg shadow-black/10"
+          <AffiliateButton
+            href={busOption?.affiliateUrl ?? mainRoute.affiliateUrl}
+            trackingId={busOption?.trackingId}
+            variant="detailsSticky"
           >
             See live price & book
-          </a>
+          </AffiliateButton>
         </div>
       </div>
     </section>

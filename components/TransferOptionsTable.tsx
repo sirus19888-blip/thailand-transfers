@@ -16,6 +16,7 @@ const desktopRows = [
   ...transferOptions,
   {
     id: "train-taxi",
+    trackingId: "click_details_train_taxi_bkk_pattaya",
     name: "Train + Taxi",
     label: "Scenic",
     price: "฿60 – ฿150",
@@ -25,7 +26,7 @@ const desktopRows = [
     baggage: "1 large + 1 small",
     pickup: "Airport Rail Link → Makkasan Station",
     bestFor: "Scenic & local experience",
-    affiliateUrl: "https://12go.asia/?z=YOUR_AFFILIATE_ID",
+    affiliateUrl: "#",
     operator: "Rail + local taxi",
     image: "/assets/vehicles/van.png",
     pros: ["Local experience", "Low cost"],
@@ -43,8 +44,8 @@ function getOptionIcon(id: string) {
 }
 
 function getBookLabel(id: string) {
-  if (id === "taxi") return "Klook";
-  if (id === "van") return "GYG";
+  if (id === "taxi") return "12Go";
+  if (id === "van") return "12Go";
   if (id === "train-taxi") return "Details";
   return "12Go";
 }
@@ -151,14 +152,14 @@ function DesktopComparisonArea() {
                         Details
                       </Link>
                     ) : (
-                      <a
+                      <AffiliateButton
                         href={option.affiliateUrl}
-                        target="_blank"
-                        rel="nofollow sponsored noopener noreferrer"
-                        className="flex w-full items-center justify-center rounded-xl bg-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold text-white shadow-sm"
+                        trackingId={option.trackingId}
+                        variant="table"
+                        fullWidth
                       >
                         {getBookLabel(option.id)}
-                      </a>
+                      </AffiliateButton>
                     )}
                   </td>
                 </tr>
@@ -244,9 +245,9 @@ function DesktopComparisonArea() {
 
         <div className="rounded-[22px] border border-[#e7e2d8] bg-white p-5 shadow-lg shadow-black/5">
           <div className="flex flex-wrap gap-3 text-sm font-extrabold">
-            <span className="text-[#f05a28]">klook</span>
-            <span className="text-[#ef4335]">GetYourGuide</span>
-            <span className="text-[#285f67]">viator</span>
+            <span className="text-[#0c5a4d]">12Go</span>
+            <span className="text-[#c99a2e]">Verified routes</span>
+            <span className="text-[#285f67]">Affiliate partners</span>
           </div>
 
           <p className="mt-3 text-xs leading-5 text-slate-500">
@@ -339,7 +340,11 @@ function MobileTransferCards() {
           </div>
 
           <div className="mt-4 grid gap-3">
-            <AffiliateButton href={option.affiliateUrl} fullWidth>
+            <AffiliateButton
+              href={option.affiliateUrl}
+              trackingId={option.trackingId}
+              fullWidth
+            >
               Check live price
             </AffiliateButton>
 

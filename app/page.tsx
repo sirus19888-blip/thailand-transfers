@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { HeroSearch } from "@/components/HeroSearch";
 import { TransferOptionsTable } from "@/components/TransferOptionsTable";
@@ -8,6 +9,15 @@ import { ScamAlert } from "@/components/ScamAlert";
 import { PracticalTips } from "@/components/PracticalTips";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+
+export const metadata: Metadata = {
+  title: "Thailand Transfers | Compare Thailand Transfer Options",
+  description:
+    "Compare popular transfer routes in Thailand by bus, taxi, van and ferry. Find practical travel tips and check booking options with trusted partners.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   return (
@@ -29,6 +39,15 @@ export default function HomePage() {
       </div>
 
       <MobileBottomNav />
+
+      <section className="bg-white px-5 py-6 text-center text-xs leading-5 text-slate-500 lg:px-8">
+        <p className="mx-auto max-w-3xl">
+          Thailand Transfers is an independent travel comparison website. We do
+          not operate buses, taxis, vans or ferries. Some links may be affiliate
+          links, which means we may earn a commission if you book through our
+          partners, at no extra cost to you.
+        </p>
+      </section>
     </main>
   );
 }
