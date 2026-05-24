@@ -267,5 +267,53 @@ export const plannedRoutes = [
     slug: "surat-thani-to-koh-samui",
     status: "planned",
   },
+  {
+    id: "pattaya-bkk",
+    title: "Pattaya to Suvarnabhumi Airport (BKK)",
+    slug: "pattaya-to-bangkok-airport",
+    status: "planned",
+  },
+  {
+    id: "pattaya-dmk",
+    title: "Pattaya to Don Mueang Airport (DMK)",
+    slug: "pattaya-to-don-mueang-airport",
+    status: "planned",
+  },
+  {
+    id: "hua-hin-bangkok",
+    title: "Hua Hin to Bangkok",
+    slug: "hua-hin-to-bangkok",
+    status: "planned",
+  },
+  {
+    id: "koh-chang-bangkok",
+    title: "Koh Chang to Bangkok",
+    slug: "koh-chang-to-bangkok",
+    status: "planned",
+  },
+  {
+    id: "patong-phuket-airport",
+    title: "Patong to Phuket Airport",
+    slug: "patong-to-phuket-airport",
+    status: "planned",
+  },
+  {
+    id: "ao-nang-krabi-airport",
+    title: "Ao Nang to Krabi Airport",
+    slug: "ao-nang-to-krabi-airport",
+    status: "planned",
+  },
+  {
+    id: "koh-samui-surat-thani",
+    title: "Koh Samui to Surat Thani",
+    slug: "koh-samui-to-surat-thani",
+    status: "planned",
+  },
+  {
+    id: "koh-phi-phi-phuket",
+    title: "Koh Phi Phi to Phuket",
+    slug: "koh-phi-phi-to-phuket",
+    status: "planned",
+  },
 ];
 
