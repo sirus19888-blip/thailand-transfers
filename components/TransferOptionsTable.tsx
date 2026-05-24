@@ -260,10 +260,10 @@ function DesktopComparisonArea() {
             <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-[#d5ab47]" />
 
             <div>
-              <h3 className="font-extrabold">Safe & secure</h3>
+              <h3 className="font-extrabold">Partner booking pages</h3>
               <p className="mt-2 text-sm leading-6 text-white/80">
-                Your bookings are protected with trusted partners and encrypted
-                connections.
+                Check final prices, schedules and booking conditions on the
+                partner website before you book.
               </p>
             </div>
           </div>

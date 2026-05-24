@@ -141,7 +141,7 @@ function DesktopHero() {
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    No AI hallucinations
+                    Clear route info
                   </p>
                 </div>
               </div>
