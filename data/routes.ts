@@ -178,6 +178,15 @@ export const popularRoutes = [
     href: "https://12go.asia/en/travel/Surat-Thani/Koh-Samui/?z=15791301&sub_id=surat-thani-koh-samui-general",
   },
   {
+    id: "surat-thani-airport-koh-samui",
+    title: "Surat Thani Airport to Koh Samui",
+    description: "Airport to island transfer from Surat Thani Airport to Koh Samui.",
+    price: "Check live price",
+    duration: "3h 30m – 5h",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/surat-thani-airport-to-koh-samui",
+  },
+  {
     id: "phuket-koh-phi-phi",
     title: "Phuket to Koh Phi Phi",
     description: "Compare ferry and speedboat options to Phi Phi Islands.",

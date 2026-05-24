@@ -597,6 +597,70 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "surat-thani-airport-to-koh-samui",
+    title: "Surat Thani Airport to Koh Samui Transfers",
+    seoTitle:
+      "Surat Thani Airport to Koh Samui Transfers | Bus, Ferry & Van",
+    seoDescription:
+      "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and live partner prices.",
+    from: "Surat Thani Airport",
+    to: "Koh Samui",
+    intro:
+      "Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. This route is useful for travelers landing at Surat Thani Airport and continuing to Koh Samui without booking each leg separately. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-general",
+    options: [
+      {
+        id: "bus-ferry",
+        name: "Bus + Ferry",
+        price: "Check live price",
+        duration: "3h 30m – 5h",
+        pickup: "Surat Thani Airport or operator airport meeting point",
+        bestFor:
+          "Most travelers who want a simple airport-to-island transfer with ferry included",
+        trackingId: "surat-thani-airport-koh-samui-bus-ferry",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-bus-ferry",
+      },
+      {
+        id: "van-ferry",
+        name: "Van + Ferry",
+        price: "Check live price",
+        duration: "3h 30m – 5h 30m",
+        pickup: "Surat Thani Airport or selected operator pickup point",
+        bestFor:
+          "Travelers who want a smaller shared transfer and will check luggage rules before booking",
+        trackingId: "surat-thani-airport-koh-samui-van-ferry",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-van-ferry",
+      },
+      {
+        id: "bus-ferry-van",
+        name: "Bus + Ferry + Van",
+        price: "Check live price",
+        duration: "4h – 6h",
+        pickup: "Surat Thani Airport or operator connection point depending on ticket",
+        bestFor:
+          "Travelers who want a combined ticket and need to check whether Koh Samui hotel drop-off is included",
+        trackingId: "surat-thani-airport-koh-samui-bus-ferry-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-bus-ferry-van",
+      },
+      {
+        id: "ferry-van",
+        name: "Ferry + Van",
+        price: "Check live price",
+        duration: "3h 30m – 5h 30m",
+        pickup: "Surat Thani Airport, Surat Thani office or pier connection depending on ticket",
+        bestFor:
+          "Travelers comparing all airport-to-Koh Samui partner options and willing to check connection details carefully",
+        trackingId: "surat-thani-airport-koh-samui-ferry-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-ferry-van",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {
