@@ -166,6 +166,54 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "pattaya-to-don-mueang-airport",
+    title: "Pattaya to Don Mueang Airport transfers",
+    seoTitle: "Pattaya to Don Mueang Airport Transfers | Taxi, Van & Bus",
+    seoDescription:
+      "Compare return transfer options from Pattaya to Don Mueang Airport. Check taxi, van and bus choices, estimated travel times and partner booking options.",
+    from: "Pattaya",
+    to: "Don Mueang Airport",
+    intro:
+      "Compare return transfer options from Pattaya to Don Mueang Airport, including private taxi, shared van and bus connections.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/Pattaya/Don-Mueang-Airport/?z=15791301&sub_id=pattaya-don-mueang-airport-general",
+    options: [
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "2h – 3h",
+        pickup: "Hotel pickup in Pattaya",
+        bestFor: "Comfort and direct airport transfer",
+        trackingId: "click_12go_taxi_pattaya_don_mueang_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/Pattaya/Don-Mueang-Airport/?z=15791301&sub_id=pattaya-don-mueang-airport-taxi",
+      },
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "3h – 4h",
+        pickup: "Operator pickup point or hotel area",
+        bestFor: "Budget travelers",
+        trackingId: "click_12go_van_pattaya_don_mueang_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/Pattaya/Don-Mueang-Airport/?z=15791301&sub_id=pattaya-don-mueang-airport-van",
+      },
+      {
+        id: "bus",
+        name: "Bus / Coach",
+        price: "Check live price",
+        duration: "3h – 4h 30m",
+        pickup: "Pattaya bus station or operator point",
+        bestFor: "Low-cost airport connection",
+        trackingId: "click_12go_bus_pattaya_don_mueang_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/Pattaya/Don-Mueang-Airport/?z=15791301&sub_id=pattaya-don-mueang-airport-bus",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {

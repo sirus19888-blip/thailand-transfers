@@ -178,6 +178,15 @@ export const popularRoutes = [
     href: "/routes/pattaya-to-bangkok-airport",
   },
   {
+    id: "pattaya-don-mueang-airport",
+    title: "Pattaya to Don Mueang Airport",
+    description: "Return transfer from Pattaya to Don Mueang Airport.",
+    price: "Check live price",
+    duration: "2h – 4h 30m",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/pattaya-to-don-mueang-airport",
+  },
+  {
     id: "hua-hin-bangkok-return",
     title: "Hua Hin to Bangkok",
     description: "Return transfer from Hua Hin to Bangkok city.",
