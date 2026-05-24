@@ -115,6 +115,15 @@ export const popularRoutes = [
     href: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
   {
+    id: "don-mueang-airport-hua-hin",
+    title: "Don Mueang Airport to Hua Hin",
+    description: "Airport to beach transfer from Bangkok Don Mueang Airport to Hua Hin.",
+    price: "Check live price",
+    duration: "4h – 6h",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/don-mueang-airport-to-hua-hin",
+  },
+  {
     id: "bangkok-koh-chang",
     title: "Bangkok to Koh Chang",
     description: "Compare bus, van, taxi and ferry connections to Koh Chang.",

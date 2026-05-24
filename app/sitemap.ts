@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/routes/don-mueang-airport-to-hua-hin`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/routes/koh-phi-phi-to-phuket`,
       lastModified: new Date(),
       changeFrequency: "monthly",

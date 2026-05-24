@@ -533,6 +533,70 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "don-mueang-airport-to-hua-hin",
+    title: "Don Mueang Airport to Hua Hin Transfers",
+    seoTitle:
+      "Don Mueang Airport to Hua Hin Transfers | Train, Bus, Van & Taxi",
+    seoDescription:
+      "Compare transfer options from Don Mueang Airport to Hua Hin. Check train, bus, bus plus van and private taxi options, airport pickup details, travel times and live partner prices.",
+    from: "Don Mueang Airport",
+    to: "Hua Hin",
+    intro:
+      "Compare transfer options from Don Mueang Airport to Hua Hin, including train, bus, bus plus van and private taxi. This route is useful for travelers landing at Bangkok Don Mueang Airport and going directly to Hua Hin. Check airport pickup point, station or terminal details, luggage allowance, Hua Hin drop-off location, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-general",
+    options: [
+      {
+        id: "train",
+        name: "Train",
+        price: "Check live price",
+        duration: "4h – 6h",
+        pickup: "Don Mueang railway station or selected rail connection",
+        bestFor:
+          "Travelers who prefer rail travel and want to avoid some Bangkok road traffic",
+        trackingId: "don-mueang-airport-hua-hin-train",
+        affiliateUrl:
+          "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-train",
+      },
+      {
+        id: "bus",
+        name: "Bus",
+        price: "Check live price",
+        duration: "4h – 6h",
+        pickup: "Don Mueang Airport, Bangkok bus terminal or operator meeting point",
+        bestFor:
+          "Budget travelers who want a lower-cost transfer and will check the exact departure point",
+        trackingId: "don-mueang-airport-hua-hin-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-bus",
+      },
+      {
+        id: "bus-van",
+        name: "Bus + Van",
+        price: "Check live price",
+        duration: "4h 30m – 6h 30m",
+        pickup: "Don Mueang Airport or operator connection point depending on ticket",
+        bestFor:
+          "Travelers comparing budget connections and willing to check transfer details carefully",
+        trackingId: "don-mueang-airport-hua-hin-bus-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-bus-van",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "3h – 4h 30m",
+        pickup: "Don Mueang Airport arrival area or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants door-to-door comfort after landing",
+        trackingId: "don-mueang-airport-hua-hin-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-taxi",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {
