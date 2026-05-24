@@ -52,12 +52,21 @@ export default function BangkokAirportToPattayaPage() {
                 </p>
               </div>
 
-              <Link
-                href="/routes/bangkok-airport-to-pattaya/details"
-                className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#064e45] px-6 py-4 text-sm font-bold text-white shadow-sm transition hover:bg-[#033b35] lg:mt-0 lg:w-auto"
-              >
-                View route details
-              </Link>
+              <div className="mt-5 flex w-full flex-col gap-3 lg:mt-0 lg:w-auto">
+                <Link
+                  href="/routes/bangkok-airport-to-pattaya/details"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-[#064e45] px-6 py-4 text-sm font-bold text-white shadow-sm transition hover:bg-[#033b35] lg:w-auto"
+                >
+                  View route details
+                </Link>
+
+                <Link
+                  href="/routes/pattaya-to-bangkok-airport"
+                  className="inline-flex w-full items-center justify-center rounded-full border border-[#064e45] bg-white px-6 py-4 text-sm font-bold text-[#064e45] transition hover:bg-[#f8f4ec] lg:w-auto"
+                >
+                  Need the return route?
+                </Link>
+              </div>
             </div>
           </Container>
         </section>
