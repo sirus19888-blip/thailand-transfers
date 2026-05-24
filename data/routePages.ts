@@ -468,6 +468,71 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "suvarnabhumi-airport-to-hua-hin",
+    title: "Suvarnabhumi Airport to Hua Hin Transfers",
+    seoTitle:
+      "Suvarnabhumi Airport to Hua Hin Transfers | Bus, Taxi & Van",
+    seoDescription:
+      "Compare transfer options from Suvarnabhumi Airport to Hua Hin. Check bus, private taxi, bus plus van and flight transfer options, airport pickup details, travel times and live partner prices.",
+    from: "Suvarnabhumi Airport",
+    to: "Hua Hin",
+    intro:
+      "Compare transfer options from Suvarnabhumi Airport to Hua Hin, including airport bus, private taxi, bus plus van and flight transfer combinations. This is a popular airport-to-beach route for travelers landing in Bangkok and going directly to Hua Hin. Check airport pickup point, arrival timing, luggage allowance, Hua Hin drop-off location, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-general",
+    options: [
+      {
+        id: "bus",
+        name: "Airport Bus",
+        price: "Check live price",
+        duration: "3h 30m – 5h",
+        pickup: "Suvarnabhumi Airport bus pickup point or operator meeting point",
+        bestFor:
+          "Most travelers who want a simple and affordable airport-to-Hua Hin transfer",
+        trackingId: "suvarnabhumi-airport-hua-hin-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-bus",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "2h 45m – 4h",
+        pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants door-to-door comfort after landing",
+        trackingId: "suvarnabhumi-airport-hua-hin-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-taxi",
+      },
+      {
+        id: "bus-van",
+        name: "Bus + Van",
+        price: "Check live price",
+        duration: "4h – 6h",
+        pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
+        bestFor:
+          "Travelers who want a budget connection and will check the full route details before booking",
+        trackingId: "suvarnabhumi-airport-hua-hin-bus-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-bus-van",
+      },
+      {
+        id: "flight",
+        name: "Flight + Transfer",
+        price: "Check live price",
+        duration: "Check live schedule",
+        pickup:
+          "Suvarnabhumi Airport or connecting airport transfer depending on ticket",
+        bestFor:
+          "Travelers comparing all available partner options and willing to check connection details carefully",
+        trackingId: "suvarnabhumi-airport-hua-hin-flight",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-flight",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {
