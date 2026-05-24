@@ -187,6 +187,15 @@ export const popularRoutes = [
     href: "/routes/surat-thani-airport-to-koh-samui",
   },
   {
+    id: "koh-samui-surat-thani-airport",
+    title: "Koh Samui to Surat Thani Airport",
+    description: "Island to airport transfer from Koh Samui to Surat Thani Airport.",
+    price: "Check live price",
+    duration: "3h – 5h",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/koh-samui-to-surat-thani-airport",
+  },
+  {
     id: "phuket-koh-phi-phi",
     title: "Phuket to Koh Phi Phi",
     description: "Compare ferry and speedboat options to Phi Phi Islands.",
