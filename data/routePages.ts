@@ -340,6 +340,71 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "suvarnabhumi-airport-to-koh-chang",
+    title: "Suvarnabhumi Airport to Koh Chang Transfers",
+    seoTitle:
+      "Suvarnabhumi Airport to Koh Chang Transfers | Ferry, Van, Bus & Taxi",
+    seoDescription:
+      "Compare transfer options from Suvarnabhumi Airport to Koh Chang. Check ferry, van, bus, taxi and flight options, airport pickup details, travel times and live partner prices.",
+    from: "Suvarnabhumi Airport",
+    to: "Koh Chang",
+    intro:
+      "Compare transfer options from Suvarnabhumi Airport to Koh Chang, including ferry plus van, bus plus ferry, private taxi and flight combinations. This route starts at Bangkok Suvarnabhumi Airport and usually involves travel to the mainland pier plus a ferry crossing to Koh Chang, so always check airport pickup point, arrival timing, ferry crossing, pier transfer, luggage allowance and hotel drop-off before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays, and check live schedules before choosing a ticket. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-general",
+    options: [
+      {
+        id: "ferry-van",
+        name: "Ferry + Van",
+        price: "Check live price",
+        duration: "6h – 9h",
+        pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
+        bestFor:
+          "Most travelers arriving at Suvarnabhumi Airport and going directly to Koh Chang",
+        trackingId: "suvarnabhumi-airport-koh-chang-ferry-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-ferry-van",
+      },
+      {
+        id: "bus-ferry",
+        name: "Bus + Ferry",
+        price: "Check live price",
+        duration: "7h – 10h",
+        pickup: "Suvarnabhumi Airport or operator meeting point",
+        bestFor:
+          "Budget travelers who want an airport-to-island connection and will check the full route details",
+        trackingId: "suvarnabhumi-airport-koh-chang-bus-ferry",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-bus-ferry",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "5h 30m – 8h",
+        pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants more control after landing",
+        trackingId: "suvarnabhumi-airport-koh-chang-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-taxi",
+      },
+      {
+        id: "flight",
+        name: "Flight + Transfer",
+        price: "Check live price",
+        duration: "Check live schedule",
+        pickup:
+          "Suvarnabhumi Airport, Trat area or pier connection depending on ticket",
+        bestFor:
+          "Travelers who prefer flying part of the journey and will check all connection details",
+        trackingId: "suvarnabhumi-airport-koh-chang-flight",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-flight",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {

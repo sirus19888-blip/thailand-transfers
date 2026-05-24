@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: route?.seoTitle ?? "Koh Phi Phi to Phuket Transfers | Ferry & Speedboat",
   description:
     route?.seoDescription ??
-    "Compare return transfer options from Koh Phi Phi to Phuket. Check ferry and speedboat choices, estimated travel times and partner booking options.",
+    "Compare transfer options from Koh Phi Phi to Phuket. Check ferry and speedboat options, pickup details, estimated travel times and live partner prices.",
   alternates: {
     canonical: "/routes/koh-phi-phi-to-phuket",
   },
@@ -23,10 +23,11 @@ export default function KohPhiPhiToPhuketPage() {
   return (
     <RoutePageTemplate
       route={route}
-      desktopDescription="Compare ferry and speedboat options from Koh Phi Phi back to Phuket. This route is useful for travelers returning from the Phi Phi Islands to Phuket hotels, Phuket Town or Phuket Airport connections."
-      mobileDescription="Compare ferry and speedboat options from Koh Phi Phi to Phuket. Always check live availability, pier details and booking conditions before booking."
+      badge="Island transfer comparison"
+      desktopDescription="Compare transfer options from Koh Phi Phi to Phuket, including ferry and speedboat services. Check departure pier, arrival pier, luggage rules and live partner prices before booking."
+      mobileDescription="Compare ferry and speedboat options from Koh Phi Phi to Phuket. Check live schedules, pier details and luggage rules before booking."
       optionsHeading="Compare Koh Phi Phi to Phuket transfer options"
-      detailsNote="Prices, pier locations and availability can change. Always check live offers and booking conditions on the partner website before booking."
+      detailsNote="For island routes, check your departure pier, Phuket arrival pier, luggage allowance, weather conditions and live operator schedule before booking."
     />
   );
 }

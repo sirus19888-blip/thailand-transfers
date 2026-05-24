@@ -6,10 +6,12 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("pattaya-to-bangkok-airport");
 
 export const metadata: Metadata = {
-  title: route?.seoTitle ?? "Pattaya to Bangkok Airport Transfers | Taxi, Van & Bus",
+  title:
+    route?.seoTitle ??
+    "Pattaya to Bangkok Airport Transfers | Taxi, Van & Bus",
   description:
     route?.seoDescription ??
-    "Compare return transfer options from Pattaya to Bangkok Airport. Check taxi, van and bus choices, estimated travel times and partner booking options.",
+    "Compare transfer options from Pattaya to Bangkok Airport. Check taxi, van and bus options, pickup details, estimated travel times and live partner prices.",
   alternates: {
     canonical: "/routes/pattaya-to-bangkok-airport",
   },
@@ -23,9 +25,11 @@ export default function PattayaToBangkokAirportPage() {
   return (
     <RoutePageTemplate
       route={route}
-      desktopDescription="Compare return transfer options from Pattaya to Bangkok Suvarnabhumi Airport (BKK). This route is popular for travelers heading back to the airport after a beach stay in Pattaya."
-      mobileDescription="Compare taxi, van and bus options from Pattaya to Bangkok Suvarnabhumi Airport. Always check live availability and pickup details before booking."
+      badge="Airport transfer comparison"
+      desktopDescription="Compare transfer options from Pattaya to Bangkok Airport, including private taxi, shared van and bus connections. Check pickup points, airport drop-off, luggage allowance and live partner prices before booking."
+      mobileDescription="Compare taxi, van and bus options from Pattaya to Bangkok Airport. Check live schedules, pickup points and luggage rules before booking."
       optionsHeading="Compare Pattaya to Bangkok Airport transfer options"
+      detailsNote="For airport transfers, allow extra time before your flight. Check your Pattaya pickup point, airport drop-off terminal, luggage allowance and live operator schedule before booking."
     />
   );
 }
