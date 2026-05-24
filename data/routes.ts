@@ -168,6 +168,33 @@ export const popularRoutes = [
     image: "/assets/routes/bangkok-pattaya.png",
     href: "https://12go.asia/en/travel/Phuket/Koh-Phi-Phi/?z=15791301&sub_id=phuket-koh-phi-phi-general",
   },
+  {
+    id: "pattaya-bangkok-airport",
+    title: "Pattaya to Bangkok Airport",
+    description: "Return transfer from Pattaya to Bangkok Airport.",
+    price: "Check live price",
+    duration: "1h 45m – 3h 30m",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/pattaya-to-bangkok-airport",
+  },
+  {
+    id: "hua-hin-bangkok-return",
+    title: "Hua Hin to Bangkok",
+    description: "Return transfer from Hua Hin to Bangkok city.",
+    price: "Check live price",
+    duration: "3h – 5h 30m",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/hua-hin-to-bangkok",
+  },
+  {
+    id: "koh-phi-phi-phuket-return",
+    title: "Koh Phi Phi to Phuket",
+    description: "Return ferry and speedboat options to Phuket.",
+    price: "Check live price",
+    duration: "1h – 3h",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/koh-phi-phi-to-phuket",
+  },
 ];
 
 export const returnRouteSeoPlan = [
