@@ -213,6 +213,15 @@ export const popularRoutes = [
     image: "/assets/routes/bangkok-pattaya.png",
     href: "/routes/koh-chang-to-bangkok",
   },
+  {
+    id: "koh-chang-suvarnabhumi-airport",
+    title: "Koh Chang to Suvarnabhumi Airport",
+    description: "Airport transfer from Koh Chang to Bangkok Suvarnabhumi Airport.",
+    price: "Check live price",
+    duration: "6h 30m – 9h",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/koh-chang-to-suvarnabhumi-airport",
+  },
 ];
 
 export const returnRouteSeoPlan = [
