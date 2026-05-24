@@ -98,7 +98,7 @@ function DesktopHero() {
           <div className="grid min-h-[660px] grid-cols-[0.9fr_1.1fr] items-center gap-10 py-14">
             <div className="max-w-[520px]">
               <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
-                Human-curated. Locally verified.
+                Tourist-friendly transfer guide.
               </p>
 
               <h1 className="mt-5 text-[58px] font-extrabold leading-[0.98] tracking-[-0.045em] text-[#10201d]">
@@ -111,8 +111,8 @@ function DesktopHero() {
                 time.
                 <span className="font-bold text-[#0c5a4d]">
                   {" "}
-                  Information verified by locals. Updated daily. No AI
-                  hallucinations.
+                  Check final prices, schedules and availability with our
+                  booking partners.
                 </span>
               </p>
 
@@ -120,14 +120,14 @@ function DesktopHero() {
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Verified route details
+                    Practical route details
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Updated daily
+                    Check live offers
                   </p>
                 </div>
 
@@ -216,7 +216,7 @@ function DesktopHero() {
                       <div className="mt-2 flex items-center gap-2">
                         <CalendarDays className="h-4 w-4 text-[#0c5a4d]" />
                         <span className="text-sm font-extrabold text-[#10201d]">
-                          May 28, 2025
+                          Choose travel date
                         </span>
                       </div>
                     </label>
@@ -320,7 +320,7 @@ function MobileHero() {
               </h1>
 
               <p className="mt-2 text-[12px] font-medium leading-5 text-[#364152]">
-                Trusted routes. Verified info. Happy travels.
+                Clear route guides. Live partner offers. Happy travels.
               </p>
             </div>
           </div>
@@ -382,7 +382,7 @@ function MobileHero() {
 
                 <div className="mt-1.5 flex items-center gap-2">
                   <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
-                    Tue, 27 May 2025
+                    Choose date
                   </span>
 
                   <CalendarDays className="h-4 w-4 text-[#667085]" />
@@ -454,7 +454,7 @@ function MobileHero() {
           <div className="mt-3 flex items-center justify-center gap-2 text-[9.5px] text-[#2f6b5d]">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="h-3.5 w-3.5" />
-              <span>Human-checked info</span>
+              <span>Practical travel info</span>
             </div>
 
             <div className="h-3.5 w-px bg-[#d0d5dd]" />
@@ -483,10 +483,10 @@ function MobileHero() {
 
                 <div>
                   <p className="text-[12px] font-semibold text-[#10201d]">
-                    Verified route info
+                    Route information
                   </p>
                   <p className="mt-1 text-[11px] text-[#667085]">
-                    Last updated today
+                    Check live offers
                   </p>
                 </div>
               </div>
@@ -498,7 +498,7 @@ function MobileHero() {
 
                 <div>
                   <p className="text-[12px] font-semibold text-[#10201d]">
-                    Operator checked
+                    Partner booking links
                   </p>
                   <p className="mt-1 text-[11px] text-[#667085]">
                     by local experts

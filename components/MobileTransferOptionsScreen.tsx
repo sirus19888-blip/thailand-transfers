@@ -39,7 +39,7 @@ export function MobileTransferOptionsScreen() {
             </h1>
 
             <div className="mt-1 flex items-center justify-center gap-1.5 text-[11px] font-medium text-slate-500">
-              <span>Tue, 27 May 2025</span>
+              <span>Choose date</span>
               <span>·</span>
               <span>2 Adults</span>
             </div>
@@ -62,9 +62,11 @@ export function MobileTransferOptionsScreen() {
 
             <div>
               <p className="text-[12px] font-bold leading-snug text-[#10201d]">
-                Verified route info
+                Route information
               </p>
-              <p className="mt-1 text-[11px] text-slate-500">Updated today</p>
+              <p className="mt-1 text-[11px] text-slate-500">
+                Check live offers
+              </p>
             </div>
           </div>
 
@@ -75,7 +77,7 @@ export function MobileTransferOptionsScreen() {
 
             <div>
               <p className="text-[12px] font-bold leading-snug text-[#10201d]">
-                Operator checked
+                Partner booking links
               </p>
               <p className="mt-1 text-[11px] text-slate-500">Local experts</p>
             </div>

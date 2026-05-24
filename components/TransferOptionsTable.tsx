@@ -246,7 +246,7 @@ function DesktopComparisonArea() {
         <div className="rounded-[22px] border border-[#e7e2d8] bg-white p-5 shadow-lg shadow-black/5">
           <div className="flex flex-wrap gap-3 text-sm font-extrabold">
             <span className="text-[#0c5a4d]">12Go</span>
-            <span className="text-[#c99a2e]">Verified routes</span>
+            <span className="text-[#c99a2e]">Popular routes</span>
             <span className="text-[#285f67]">Affiliate partners</span>
           </div>
 

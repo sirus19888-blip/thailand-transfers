@@ -1,6 +1,6 @@
 const badges = [
   {
-    title: "Verified routes",
+    title: "Popular routes",
     description: "Clear transfer options",
   },
   {

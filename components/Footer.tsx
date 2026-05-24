@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { Container } from "./Container";
 
 const helpfulLinks = [
@@ -27,9 +27,9 @@ export function Footer() {
             </p>
 
             <p className="mt-4 text-sm leading-6 text-white/75">
-              We are building a simple Thailand transfer comparison guide for
-              travelers who want clear routes, pickup points and trusted booking
-              options before they land.
+              Thailand Transfers is an independent travel comparison guide for
+              travelers who want clear route information, pickup tips and
+              booking options before they travel.
             </p>
           </div>
 
@@ -71,34 +71,16 @@ export function Footer() {
 
           <div>
             <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d5ab47]">
-              Support
+              Important note
             </p>
 
-            <div className="mt-4 grid gap-3 text-sm text-white/75">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-[#d5ab47]" />
-                <span>support@thailandtransfers.co</span>
-              </div>
+            <div className="mt-4 grid gap-3 text-sm leading-6 text-white/75">
+              <p>We do not operate buses, taxis, vans or ferries.</p>
 
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-[#d5ab47]" />
-                <span>+66 80 123 4567</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-[#d5ab47]" />
-                <span>Thailand · 8AM–8PM ICT</span>
-              </div>
-
-              <div className="mt-2 flex gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold">
-                  f
-                </div>
-
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-xs font-extrabold">
-                  IG
-                </div>
-              </div>
+              <p>
+                Booking, availability, changes and customer support are handled
+                by the travel partner or transport operator you choose.
+              </p>
             </div>
           </div>
 
@@ -110,10 +92,13 @@ export function Footer() {
                 </div>
 
                 <div>
-                  <p className="font-extrabold text-white">Safe & secure</p>
+                  <p className="font-extrabold text-white">
+                    Compare before booking
+                  </p>
                   <p className="mt-2 text-sm leading-6 text-white/75">
-                    Your bookings are handled by trusted partners using secure
-                    external booking pages.
+                    Use our guides to compare route options, then check final
+                    prices, schedules and conditions on the partner booking
+                    page.
                   </p>
                 </div>
               </div>
@@ -122,7 +107,9 @@ export function Footer() {
         </div>
 
         <div className="flex items-center justify-between border-t border-white/10 py-5 text-xs text-white/60">
-          <p>© 2025 Thailand Transfers. All rights reserved.</p>
+          <p>
+            © 2026 Thailand Transfers. Independent travel comparison website.
+          </p>
 
           <p>
             Some links may be affiliate links. We may earn a commission at no
