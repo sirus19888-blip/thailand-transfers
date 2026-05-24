@@ -725,6 +725,198 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "phuket-airport-to-patong-beach",
+    title: "Phuket Airport to Patong Beach Transfers",
+    seoTitle:
+      "Phuket Airport to Patong Beach Transfers | Bus, Van & Taxi",
+    seoDescription:
+      "Compare transfer options from Phuket Airport to Patong Beach. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and live partner prices.",
+    from: "Phuket Airport",
+    to: "Patong Beach",
+    intro:
+      "Compare transfer options from Phuket Airport to Patong Beach, including airport bus, shared van, private taxi and taxi plus van combinations. This is one of the most popular Phuket arrival routes for travelers going from the airport to hotels near Patong Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-general",
+    options: [
+      {
+        id: "bus",
+        name: "Airport Bus",
+        price: "Check live price",
+        duration: "1h – 2h",
+        pickup: "Phuket Airport bus pickup point or operator meeting point",
+        bestFor:
+          "Budget travelers going from Phuket Airport to Patong Beach",
+        trackingId: "phuket-airport-patong-beach-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-bus",
+      },
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "1h – 2h",
+        pickup: "Phuket Airport or selected operator pickup point",
+        bestFor:
+          "Travelers who want a shared transfer and will check luggage rules before booking",
+        trackingId: "phuket-airport-patong-beach-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-van",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "45m – 1h 30m",
+        pickup: "Phuket Airport arrival area or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants door-to-door comfort",
+        trackingId: "phuket-airport-patong-beach-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-taxi",
+      },
+      {
+        id: "taxi-van",
+        name: "Taxi + Van",
+        price: "Check live price",
+        duration: "1h – 2h",
+        pickup: "Phuket Airport or partner meeting point depending on ticket",
+        bestFor:
+          "Travelers comparing all available airport-to-Patong partner options",
+        trackingId: "phuket-airport-patong-beach-taxi-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-taxi-van",
+      },
+    ],
+  },
+  {
+    slug: "patong-beach-to-phuket-airport",
+    title: "Patong Beach to Phuket Airport Transfers",
+    seoTitle:
+      "Patong Beach to Phuket Airport Transfers | Bus, Van & Taxi",
+    seoDescription:
+      "Compare transfer options from Patong Beach to Phuket Airport. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and live partner prices.",
+    from: "Patong Beach",
+    to: "Phuket Airport",
+    intro:
+      "Compare transfer options from Patong Beach to Phuket Airport, including airport bus, shared van, private taxi and taxi plus van combinations. This route is useful for travelers leaving Patong and connecting to a flight from Phuket Airport. Check hotel pickup area, airport drop-off point, luggage allowance, travel time and live partner prices before booking. Allow extra time before your flight, especially during busy traffic periods or bad weather. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-general",
+    options: [
+      {
+        id: "bus",
+        name: "Airport Bus",
+        price: "Check live price",
+        duration: "1h – 2h",
+        pickup: "Patong Beach bus stop or operator meeting point",
+        bestFor:
+          "Budget travelers going from Patong Beach to Phuket Airport",
+        trackingId: "patong-beach-phuket-airport-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-bus",
+      },
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "1h – 2h",
+        pickup: "Patong Beach hotel area or selected operator pickup point",
+        bestFor:
+          "Travelers who want a shared transfer and will check pickup time carefully",
+        trackingId: "patong-beach-phuket-airport-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-van",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "45m – 1h 30m",
+        pickup: "Patong Beach hotel or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants more control before a flight",
+        trackingId: "patong-beach-phuket-airport-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-taxi",
+      },
+      {
+        id: "taxi-van",
+        name: "Taxi + Van",
+        price: "Check live price",
+        duration: "1h – 2h",
+        pickup: "Patong Beach hotel area or partner meeting point depending on ticket",
+        bestFor:
+          "Travelers comparing all Patong-to-airport partner transfer options",
+        trackingId: "patong-beach-phuket-airport-taxi-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-taxi-van",
+      },
+    ],
+  },
+  {
+    slug: "phuket-airport-to-kata-karon",
+    title: "Phuket Airport to Kata and Karon Transfers",
+    seoTitle:
+      "Phuket Airport to Kata and Karon Transfers | Bus, Van & Taxi",
+    seoDescription:
+      "Compare transfer options from Phuket Airport to Kata and Karon. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and live partner prices.",
+    from: "Phuket Airport",
+    to: "Kata and Karon",
+    intro:
+      "Compare transfer options from Phuket Airport to Kata and Karon, including airport bus, shared van, private taxi and taxi plus van combinations. This route is useful for travelers landing in Phuket and going directly to hotels around Kata Beach or Karon Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-general",
+    options: [
+      {
+        id: "bus",
+        name: "Airport Bus",
+        price: "Check live price",
+        duration: "1h 15m – 2h 30m",
+        pickup: "Phuket Airport bus pickup point or operator meeting point",
+        bestFor:
+          "Budget travelers going from Phuket Airport to Kata or Karon",
+        trackingId: "phuket-airport-kata-karon-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-bus",
+      },
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "1h 15m – 2h 30m",
+        pickup: "Phuket Airport or selected operator pickup point",
+        bestFor:
+          "Travelers who want a shared transfer and will check hotel drop-off details",
+        trackingId: "phuket-airport-kata-karon-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-van",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "1h – 1h 45m",
+        pickup: "Phuket Airport arrival area or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone going directly to a hotel",
+        trackingId: "phuket-airport-kata-karon-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-taxi",
+      },
+      {
+        id: "taxi-van",
+        name: "Taxi + Van",
+        price: "Check live price",
+        duration: "1h 15m – 2h 30m",
+        pickup: "Phuket Airport or partner meeting point depending on ticket",
+        bestFor:
+          "Travelers comparing all available airport-to-Kata/Karon partner options",
+        trackingId: "phuket-airport-kata-karon-taxi-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-taxi-van",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {
