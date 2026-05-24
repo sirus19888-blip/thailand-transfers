@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -80,6 +83,16 @@ function SearchFields() {
 }
 
 function DesktopHero() {
+  const [transferType, setTransferType] = useState<"airport" | "city">(
+    "airport",
+  );
+
+  const isAirportTransfer = transferType === "airport";
+
+  const searchHref = isAirportTransfer
+    ? "/routes/bangkok-airport-to-pattaya"
+    : "#popular-routes";
+
   return (
     <section className="hidden overflow-hidden bg-[#fbfaf7] lg:block">
       <div className="relative min-h-[660px] border-b border-[#e7e2d8]">
@@ -152,7 +165,12 @@ function DesktopHero() {
                 <div className="mb-4 grid grid-cols-2 rounded-2xl bg-[#f8f4ec] p-1">
                   <button
                     type="button"
-                    className="flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-extrabold text-[#0c5a4d] shadow-sm"
+                    onClick={() => setTransferType("airport")}
+                    className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
+                      isAirportTransfer
+                        ? "bg-white font-extrabold text-[#0c5a4d] shadow-sm"
+                        : "font-bold text-slate-500 hover:text-[#0c5a4d]"
+                    }`}
                   >
                     <Plane className="h-4 w-4" />
                     Airport Transfer
@@ -160,7 +178,12 @@ function DesktopHero() {
 
                   <button
                     type="button"
-                    className="flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-slate-500"
+                    onClick={() => setTransferType("city")}
+                    className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
+                      !isAirportTransfer
+                        ? "bg-white font-extrabold text-[#0c5a4d] shadow-sm"
+                        : "font-bold text-slate-500 hover:text-[#0c5a4d]"
+                    }`}
                   >
                     <Landmark className="h-4 w-4" />
                     City Transfer
@@ -177,12 +200,28 @@ function DesktopHero() {
                       <Plane className="h-4 w-4 text-[#0c5a4d]" />
 
                       <select
+                        key={`from-${transferType}`}
                         className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
-                        defaultValue="bkk"
+                        defaultValue={isAirportTransfer ? "bkk" : "bangkok-city"}
                       >
-                        <option value="bkk">Suvarnabhumi Airport (BKK)</option>
-                        <option value="dmk">Don Mueang Airport (DMK)</option>
-                        <option value="bangkok">Bangkok City</option>
+                        {isAirportTransfer ? (
+                          <>
+                            <option value="bkk">
+                              Suvarnabhumi Airport (BKK)
+                            </option>
+                            <option value="dmk">Don Mueang Airport (DMK)</option>
+                            <option value="bangkok">Bangkok City</option>
+                          </>
+                        ) : (
+                          <>
+                            <option value="bangkok-city">Bangkok City</option>
+                            <option value="pattaya-city">Pattaya City</option>
+                            <option value="phuket-town">Phuket Town</option>
+                            <option value="chiang-mai-city">
+                              Chiang Mai City
+                            </option>
+                          </>
+                        )}
                       </select>
                     </div>
                   </label>
@@ -196,13 +235,25 @@ function DesktopHero() {
                       <MapPin className="h-4 w-4 text-[#0c5a4d]" />
 
                       <select
+                        key={`to-${transferType}`}
                         className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
-                        defaultValue="pattaya"
+                        defaultValue={isAirportTransfer ? "pattaya" : "hua-hin"}
                       >
-                        <option value="pattaya">Pattaya (All Areas)</option>
-                        <option value="hua-hin">Hua Hin</option>
-                        <option value="koh-chang">Koh Chang</option>
-                        <option value="patong">Patong</option>
+                        {isAirportTransfer ? (
+                          <>
+                            <option value="pattaya">Pattaya (All Areas)</option>
+                            <option value="hua-hin">Hua Hin</option>
+                            <option value="koh-chang">Koh Chang</option>
+                            <option value="patong">Patong</option>
+                          </>
+                        ) : (
+                          <>
+                            <option value="hua-hin">Hua Hin</option>
+                            <option value="pattaya">Pattaya</option>
+                            <option value="koh-chang">Koh Chang</option>
+                            <option value="chiang-mai">Chiang Mai</option>
+                          </>
+                        )}
                       </select>
                     </div>
                   </label>
@@ -248,7 +299,7 @@ function DesktopHero() {
                   </div>
 
                   <Link
-                    href="/routes/bangkok-airport-to-pattaya"
+                    href={searchHref}
                     className="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0c5a4d] px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-black/10 transition hover:bg-[#064e45]"
                   >
                     <span>Find Best Options</span>
@@ -256,7 +307,9 @@ function DesktopHero() {
                   </Link>
 
                   <p className="text-center text-[11px] font-medium text-slate-500">
-                    Free cancellation on many options · Instant confirmation
+                    {isAirportTransfer
+                      ? "Free cancellation on many options · Instant confirmation"
+                      : "City transfer pages are being expanded · Browse popular routes"}
                   </p>
                 </div>
               </div>
