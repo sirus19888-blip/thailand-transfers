@@ -214,6 +214,68 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "koh-chang-to-bangkok",
+    title: "Koh Chang to Bangkok Transfers",
+    seoTitle: "Koh Chang to Bangkok Transfers | Ferry, Van, Bus & Taxi",
+    seoDescription:
+      "Compare transfer options from Koh Chang to Bangkok. Check ferry, van, bus and private taxi options, pickup details, estimated travel times and live partner prices.",
+    from: "Koh Chang",
+    to: "Bangkok",
+    intro:
+      "Compare travel options from Koh Chang to Bangkok, including ferry plus van, ferry plus bus, shared van and private taxi. This island route usually involves a ferry crossing to the mainland, so always check whether ferry tickets, hotel pickup, pier transfer and Bangkok drop-off are included before booking. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-general",
+    options: [
+      {
+        id: "ferry-van",
+        name: "Ferry + Van",
+        price: "Check live price",
+        duration: "7h – 10h",
+        pickup: "Koh Chang hotel, pier or operator pickup point",
+        bestFor:
+          "Most travelers who want a simple island-to-city transfer with fewer steps",
+        trackingId: "koh-chang-bangkok-ferry-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-ferry-van",
+      },
+      {
+        id: "ferry-bus",
+        name: "Ferry + Bus",
+        price: "Check live price",
+        duration: "8h – 10h 30m",
+        pickup: "Koh Chang or mainland pier connection",
+        bestFor: "Budget travelers returning from Koh Chang to Bangkok city",
+        trackingId: "koh-chang-bangkok-ferry-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-ferry-bus",
+      },
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "7h – 9h 30m",
+        pickup: "Selected Koh Chang pickup points or operator meeting point",
+        bestFor:
+          "Travelers who want a shared transfer and will check luggage rules before booking",
+        trackingId: "koh-chang-bangkok-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-van",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "6h – 8h",
+        pickup: "Hotel or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants more comfort",
+        trackingId: "koh-chang-bangkok-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-taxi",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {

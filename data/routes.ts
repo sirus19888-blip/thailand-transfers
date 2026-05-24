@@ -204,6 +204,15 @@ export const popularRoutes = [
     image: "/assets/routes/bangkok-pattaya.png",
     href: "/routes/koh-phi-phi-to-phuket",
   },
+  {
+    id: "koh-chang-bangkok",
+    title: "Koh Chang to Bangkok",
+    description: "Island return transfer from Koh Chang to Bangkok.",
+    price: "Check live price",
+    duration: "7h – 10h",
+    image: "/assets/routes/bangkok-pattaya.png",
+    href: "/routes/koh-chang-to-bangkok",
+  },
 ];
 
 export const returnRouteSeoPlan = [
