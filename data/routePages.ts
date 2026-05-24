@@ -405,6 +405,69 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+  {
+    slug: "bangkok-to-hua-hin",
+    title: "Bangkok to Hua Hin Transfers",
+    seoTitle: "Bangkok to Hua Hin Transfers | Van, Bus, Train & Taxi",
+    seoDescription:
+      "Compare transfer options from Bangkok to Hua Hin. Check van, bus, train and private taxi options, pickup details, estimated travel times and live partner prices.",
+    from: "Bangkok",
+    to: "Hua Hin",
+    intro:
+      "Compare transfer options from Bangkok to Hua Hin, including shared van, bus, train and private taxi. This is one of the most popular city-to-beach routes from Bangkok, especially for travelers going to Hua Hin after spending time in the capital. Check pickup location, Hua Hin drop-off point, luggage allowance, travel time and live partner prices before booking. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-general",
+    options: [
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "3h – 5h",
+        pickup: "Bangkok van station or operator meeting point",
+        bestFor:
+          "Most travelers who want a simple and affordable transfer from Bangkok to Hua Hin",
+        trackingId: "bangkok-hua-hin-van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-van",
+      },
+      {
+        id: "bus",
+        name: "Bus",
+        price: "Check live price",
+        duration: "4h – 6h",
+        pickup: "Bangkok bus terminal or selected operator pickup point",
+        bestFor:
+          "Budget travelers who prefer a larger vehicle and will check the departure station before booking",
+        trackingId: "bangkok-hua-hin-bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-bus",
+      },
+      {
+        id: "train",
+        name: "Train",
+        price: "Check live price",
+        duration: "4h – 6h",
+        pickup: "Bangkok railway station",
+        bestFor:
+          "Travelers who prefer rail travel and want to arrive close to central Hua Hin",
+        trackingId: "bangkok-hua-hin-train",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-train",
+      },
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "2h 45m – 4h",
+        pickup: "Bangkok hotel, airport or selected private pickup point",
+        bestFor:
+          "Families, groups, travelers with luggage or anyone who wants door-to-door comfort",
+        trackingId: "bangkok-hua-hin-taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-taxi",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {

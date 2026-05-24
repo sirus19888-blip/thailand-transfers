@@ -99,11 +99,11 @@ export const popularRoutes = [
   {
     id: "bangkok-hua-hin",
     title: "Bangkok to Hua Hin",
-    description: "Popular beach transfer by taxi, van, train or bus.",
+    description: "City to beach transfer from Bangkok to Hua Hin.",
     price: "Check live price",
     duration: "3h – 5h",
     image: "/assets/routes/bangkok-pattaya.png",
-    href: "https://12go.asia/en/travel/Bangkok/Hua-Hin/?z=15791301&sub_id=bangkok-hua-hin-general",
+    href: "/routes/bangkok-to-hua-hin",
   },
   {
     id: "bangkok-koh-chang",
