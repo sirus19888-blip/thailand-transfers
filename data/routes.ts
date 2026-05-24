@@ -170,6 +170,45 @@ export const popularRoutes = [
   },
 ];
 
+export const returnRouteSeoPlan = [
+  {
+    id: "pattaya-bangkok-airport",
+    title: "Pattaya to Bangkok Airport",
+    slug: "pattaya-to-bangkok-airport",
+    from: "Pattaya",
+    to: "Bangkok Airport",
+    description:
+      "Compare return transfer options from Pattaya to Bangkok Airport, including taxi, van and bus connections.",
+    priority: "high",
+    affiliateUrl:
+      "https://12go.asia/en/travel/Pattaya/Suvarnabhumi-Airport/?z=15791301&sub_id=pattaya-bangkok-airport-general",
+  },
+  {
+    id: "hua-hin-bangkok",
+    title: "Hua Hin to Bangkok",
+    slug: "hua-hin-to-bangkok",
+    from: "Hua Hin",
+    to: "Bangkok",
+    description:
+      "Compare return transfer options from Hua Hin to Bangkok by taxi, van, bus or train.",
+    priority: "high",
+    affiliateUrl:
+      "https://12go.asia/en/travel/Hua-Hin/Bangkok/?z=15791301&sub_id=hua-hin-bangkok-general",
+  },
+  {
+    id: "koh-phi-phi-phuket",
+    title: "Koh Phi Phi to Phuket",
+    slug: "koh-phi-phi-to-phuket",
+    from: "Koh Phi Phi",
+    to: "Phuket",
+    description:
+      "Compare ferry and speedboat options from Koh Phi Phi back to Phuket.",
+    priority: "high",
+    affiliateUrl:
+      "https://12go.asia/en/travel/Koh-Phi-Phi/Phuket/?z=15791301&sub_id=koh-phi-phi-phuket-general",
+  },
+];
+
 export const promoCards = [
   {
     id: "sim-card",
