@@ -66,11 +66,11 @@ export function Header() {
 
           <div className="flex items-center gap-5 text-[14px] font-semibold text-[#263b4a]">
             <Link
-              href="/routes/bangkok-airport-to-pattaya"
+              href="/routes"
               className="flex items-center gap-2 transition hover:text-[#0c5a4d]"
             >
               <Heart className="h-4 w-4" />
-              <span>Saved</span>
+              <span>Routes</span>
             </Link>
 
             <button
