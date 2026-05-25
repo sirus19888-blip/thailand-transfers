@@ -10,19 +10,19 @@ const navItems = [
   },
   {
     label: "Routes",
-    href: "#popular-routes",
+    href: "/routes",
     active: false,
     icon: CalendarDays,
   },
   {
     label: "Guides",
-    href: "#travel-tips",
+    href: "/routes/bangkok-airport-to-pattaya/details",
     active: false,
     icon: BookOpen,
   },
   {
     label: "Extras",
-    href: "#travel-sim",
+    href: "/travel-extras/thailand-tourist-sim",
     active: false,
     icon: User,
   },
