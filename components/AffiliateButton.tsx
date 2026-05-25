@@ -1,8 +1,8 @@
-"use client";
+﻿"use client";
 
 declare global {
   interface Window {
-    dataLayer?: Record<string, unknown>[];
+    dataLayer?: Object[];
   }
 }
 
@@ -59,3 +59,4 @@ export function AffiliateButton({
     </a>
   );
 }
+

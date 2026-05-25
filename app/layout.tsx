@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
   description: "Compare airport transfers in Thailand",
 };
 
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,6 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
