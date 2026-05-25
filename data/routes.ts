@@ -386,7 +386,7 @@ export const promoCards = [
     title: "Thailand Tourist SIM",
     description: "Stay online after landing with a tourist SIM or eSIM.",
     image: "/assets/promo/sim-card.png",
-    href: "#travel-sim",
+    href: "/travel-extras/thailand-tourist-sim",
     label: "Travel extra",
   },
   {
