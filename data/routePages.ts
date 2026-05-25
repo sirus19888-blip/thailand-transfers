@@ -235,7 +235,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Chang hotel, pier or operator pickup point",
         bestFor:
           "Most travelers who want a simple island-to-city transfer with fewer steps",
-        trackingId: "koh-chang-bangkok-ferry-van",
+        trackingId: "click_12go_koh_chang_bangkok_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-ferry-van",
       },
@@ -246,7 +246,7 @@ export const routePages: RoutePageData[] = [
         duration: "8h â€“ 10h 30m",
         pickup: "Koh Chang or mainland pier connection",
         bestFor: "Budget travelers returning from Koh Chang to Bangkok city",
-        trackingId: "koh-chang-bangkok-ferry-bus",
+        trackingId: "click_12go_koh_chang_bangkok_ferry_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-ferry-bus",
       },
@@ -258,7 +258,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Selected Koh Chang pickup points or operator meeting point",
         bestFor:
           "Travelers who want a shared transfer and will check luggage rules before booking",
-        trackingId: "koh-chang-bangkok-van",
+        trackingId: "click_12go_koh_chang_bangkok_van",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-van",
       },
@@ -270,7 +270,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Hotel or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants more comfort",
-        trackingId: "koh-chang-bangkok-taxi",
+        trackingId: "click_12go_koh_chang_bangkok_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-taxi",
       },
@@ -298,7 +298,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Chang hotel, pier or operator pickup point",
         bestFor:
           "Most travelers going from Koh Chang directly to Suvarnabhumi Airport",
-        trackingId: "koh-chang-suvarnabhumi-airport-ferry-van",
+        trackingId: "click_12go_koh_chang_suvarnabhumi_airport_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/suvarnabhumi-airport/?z=15791301&sub_id=koh-chang-suvarnabhumi-airport-ferry-van",
       },
@@ -310,7 +310,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Chang or mainland pier connection",
         bestFor:
           "Budget travelers who want an airport connection and will check the full route details",
-        trackingId: "koh-chang-suvarnabhumi-airport-bus-ferry",
+        trackingId: "click_12go_koh_chang_suvarnabhumi_airport_bus_ferry",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/suvarnabhumi-airport/?z=15791301&sub_id=koh-chang-suvarnabhumi-airport-bus-ferry",
       },
@@ -322,7 +322,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Hotel or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who needs more control before a flight",
-        trackingId: "koh-chang-suvarnabhumi-airport-taxi",
+        trackingId: "click_12go_koh_chang_suvarnabhumi_airport_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/suvarnabhumi-airport/?z=15791301&sub_id=koh-chang-suvarnabhumi-airport-taxi",
       },
@@ -334,7 +334,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Chang, Trat area or airport connection depending on ticket",
         bestFor:
           "Travelers who prefer flying part of the journey and will check all connection details",
-        trackingId: "koh-chang-suvarnabhumi-airport-flight",
+        trackingId: "click_12go_koh_chang_suvarnabhumi_airport_flight",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-chang/suvarnabhumi-airport/?z=15791301&sub_id=koh-chang-suvarnabhumi-airport-flight",
       },
@@ -362,7 +362,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
         bestFor:
           "Most travelers arriving at Suvarnabhumi Airport and going directly to Koh Chang",
-        trackingId: "suvarnabhumi-airport-koh-chang-ferry-van",
+        trackingId: "click_12go_suvarnabhumi_airport_koh_chang_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-ferry-van",
       },
@@ -374,7 +374,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Suvarnabhumi Airport or operator meeting point",
         bestFor:
           "Budget travelers who want an airport-to-island connection and will check the full route details",
-        trackingId: "suvarnabhumi-airport-koh-chang-bus-ferry",
+        trackingId: "click_12go_suvarnabhumi_airport_koh_chang_bus_ferry",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-bus-ferry",
       },
@@ -386,7 +386,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants more control after landing",
-        trackingId: "suvarnabhumi-airport-koh-chang-taxi",
+        trackingId: "click_12go_suvarnabhumi_airport_koh_chang_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-taxi",
       },
@@ -399,7 +399,7 @@ export const routePages: RoutePageData[] = [
           "Suvarnabhumi Airport, Trat area or pier connection depending on ticket",
         bestFor:
           "Travelers who prefer flying part of the journey and will check all connection details",
-        trackingId: "suvarnabhumi-airport-koh-chang-flight",
+        trackingId: "click_12go_suvarnabhumi_airport_koh_chang_flight",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-flight",
       },
@@ -426,7 +426,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Bangkok van station or operator meeting point",
         bestFor:
           "Most travelers who want a simple and affordable transfer from Bangkok to Hua Hin",
-        trackingId: "bangkok-hua-hin-van",
+        trackingId: "click_12go_bangkok_hua_hin_van",
         affiliateUrl:
           "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-van",
       },
@@ -438,7 +438,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Bangkok bus terminal or selected operator pickup point",
         bestFor:
           "Budget travelers who prefer a larger vehicle and will check the departure station before booking",
-        trackingId: "bangkok-hua-hin-bus",
+        trackingId: "click_12go_bangkok_hua_hin_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-bus",
       },
@@ -450,7 +450,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Bangkok railway station",
         bestFor:
           "Travelers who prefer rail travel and want to arrive close to central Hua Hin",
-        trackingId: "bangkok-hua-hin-train",
+        trackingId: "click_12go_bangkok_hua_hin_train",
         affiliateUrl:
           "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-train",
       },
@@ -462,7 +462,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Bangkok hotel, airport or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort",
-        trackingId: "bangkok-hua-hin-taxi",
+        trackingId: "click_12go_bangkok_hua_hin_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-taxi",
       },
@@ -490,7 +490,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Suvarnabhumi Airport bus pickup point or operator meeting point",
         bestFor:
           "Most travelers who want a simple and affordable airport-to-Hua Hin transfer",
-        trackingId: "suvarnabhumi-airport-hua-hin-bus",
+        trackingId: "click_12go_suvarnabhumi_airport_hua_hin_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-bus",
       },
@@ -502,7 +502,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort after landing",
-        trackingId: "suvarnabhumi-airport-hua-hin-taxi",
+        trackingId: "click_12go_suvarnabhumi_airport_hua_hin_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-taxi",
       },
@@ -514,7 +514,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
         bestFor:
           "Travelers who want a budget connection and will check the full route details before booking",
-        trackingId: "suvarnabhumi-airport-hua-hin-bus-van",
+        trackingId: "click_12go_suvarnabhumi_airport_hua_hin_bus_van",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-bus-van",
       },
@@ -527,7 +527,7 @@ export const routePages: RoutePageData[] = [
           "Suvarnabhumi Airport or connecting airport transfer depending on ticket",
         bestFor:
           "Travelers comparing all available partner options and willing to check connection details carefully",
-        trackingId: "suvarnabhumi-airport-hua-hin-flight",
+        trackingId: "click_12go_suvarnabhumi_airport_hua_hin_flight",
         affiliateUrl:
           "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-flight",
       },
@@ -555,7 +555,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Don Mueang railway station or selected rail connection",
         bestFor:
           "Travelers who prefer rail travel and want to avoid some Bangkok road traffic",
-        trackingId: "don-mueang-airport-hua-hin-train",
+        trackingId: "click_12go_don_mueang_airport_hua_hin_train",
         affiliateUrl:
           "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-train",
       },
@@ -567,7 +567,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Don Mueang Airport, Bangkok bus terminal or operator meeting point",
         bestFor:
           "Budget travelers who want a lower-cost transfer and will check the exact departure point",
-        trackingId: "don-mueang-airport-hua-hin-bus",
+        trackingId: "click_12go_don_mueang_airport_hua_hin_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-bus",
       },
@@ -579,7 +579,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Don Mueang Airport or operator connection point depending on ticket",
         bestFor:
           "Travelers comparing budget connections and willing to check transfer details carefully",
-        trackingId: "don-mueang-airport-hua-hin-bus-van",
+        trackingId: "click_12go_don_mueang_airport_hua_hin_bus_van",
         affiliateUrl:
           "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-bus-van",
       },
@@ -591,7 +591,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Don Mueang Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort after landing",
-        trackingId: "don-mueang-airport-hua-hin-taxi",
+        trackingId: "click_12go_don_mueang_airport_hua_hin_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-taxi",
       },
@@ -619,7 +619,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Surat Thani Airport or operator airport meeting point",
         bestFor:
           "Most travelers who want a simple airport-to-island transfer with ferry included",
-        trackingId: "surat-thani-airport-koh-samui-bus-ferry",
+        trackingId: "click_12go_surat_thani_airport_koh_samui_bus_ferry",
         affiliateUrl:
           "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-bus-ferry",
       },
@@ -631,7 +631,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Surat Thani Airport or selected operator pickup point",
         bestFor:
           "Travelers who want a smaller shared transfer and will check luggage rules before booking",
-        trackingId: "surat-thani-airport-koh-samui-van-ferry",
+        trackingId: "click_12go_surat_thani_airport_koh_samui_van_ferry",
         affiliateUrl:
           "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-van-ferry",
       },
@@ -643,7 +643,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Surat Thani Airport or operator connection point depending on ticket",
         bestFor:
           "Travelers who want a combined ticket and need to check whether Koh Samui hotel drop-off is included",
-        trackingId: "surat-thani-airport-koh-samui-bus-ferry-van",
+        trackingId: "click_12go_surat_thani_airport_koh_samui_bus_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-bus-ferry-van",
       },
@@ -655,7 +655,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Surat Thani Airport, Surat Thani office or pier connection depending on ticket",
         bestFor:
           "Travelers comparing all airport-to-Koh Samui partner options and willing to check connection details carefully",
-        trackingId: "surat-thani-airport-koh-samui-ferry-van",
+        trackingId: "click_12go_surat_thani_airport_koh_samui_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-ferry-van",
       },
@@ -683,7 +683,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Samui pier, hotel pickup or operator meeting point",
         bestFor:
           "Most travelers who want a simple island-to-airport transfer with ferry and bus included",
-        trackingId: "koh-samui-surat-thani-airport-ferry-bus",
+        trackingId: "click_12go_koh_samui_surat_thani_airport_ferry_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-samui/surat-thani-airport/?z=15791301&sub_id=koh-samui-surat-thani-airport-ferry-bus",
       },
@@ -695,7 +695,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Samui pier, hotel pickup or selected operator pickup point",
         bestFor:
           "Travelers who want a smaller shared transfer and will check luggage rules before booking",
-        trackingId: "koh-samui-surat-thani-airport-ferry-van",
+        trackingId: "click_12go_koh_samui_surat_thani_airport_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-samui/surat-thani-airport/?z=15791301&sub_id=koh-samui-surat-thani-airport-ferry-van",
       },
@@ -707,7 +707,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Samui hotel transfer or operator connection point depending on ticket",
         bestFor:
           "Travelers who want a combined ticket from hotel area to Surat Thani Airport",
-        trackingId: "koh-samui-surat-thani-airport-van-ferry-bus",
+        trackingId: "click_12go_koh_samui_surat_thani_airport_van_ferry_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-samui/surat-thani-airport/?z=15791301&sub_id=koh-samui-surat-thani-airport-van-ferry-bus",
       },
@@ -719,7 +719,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Koh Samui hotel, town transfer point or departure pier depending on ticket",
         bestFor:
           "Travelers comparing all island-to-airport partner options and checking connection details carefully",
-        trackingId: "koh-samui-surat-thani-airport-bus-ferry-van",
+        trackingId: "click_12go_koh_samui_surat_thani_airport_bus_ferry_van",
         affiliateUrl:
           "https://12go.asia/en/travel/koh-samui/surat-thani-airport/?z=15791301&sub_id=koh-samui-surat-thani-airport-bus-ferry-van",
       },
@@ -747,7 +747,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport bus pickup point or operator meeting point",
         bestFor:
           "Budget travelers going from Phuket Airport to Patong Beach",
-        trackingId: "phuket-airport-patong-beach-bus",
+        trackingId: "click_12go_phuket_airport_patong_beach_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-bus",
       },
@@ -759,7 +759,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport or selected operator pickup point",
         bestFor:
           "Travelers who want a shared transfer and will check luggage rules before booking",
-        trackingId: "phuket-airport-patong-beach-van",
+        trackingId: "click_12go_phuket_airport_patong_beach_van",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-van",
       },
@@ -771,7 +771,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort",
-        trackingId: "phuket-airport-patong-beach-taxi",
+        trackingId: "click_12go_phuket_airport_patong_beach_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-taxi",
       },
@@ -783,7 +783,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport or partner meeting point depending on ticket",
         bestFor:
           "Travelers comparing all available airport-to-Patong partner options",
-        trackingId: "phuket-airport-patong-beach-taxi-van",
+        trackingId: "click_12go_phuket_airport_patong_beach_taxi_van",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-taxi-van",
       },
@@ -811,7 +811,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Patong Beach bus stop or operator meeting point",
         bestFor:
           "Budget travelers going from Patong Beach to Phuket Airport",
-        trackingId: "patong-beach-phuket-airport-bus",
+        trackingId: "click_12go_patong_beach_phuket_airport_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-bus",
       },
@@ -823,7 +823,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Patong Beach hotel area or selected operator pickup point",
         bestFor:
           "Travelers who want a shared transfer and will check pickup time carefully",
-        trackingId: "patong-beach-phuket-airport-van",
+        trackingId: "click_12go_patong_beach_phuket_airport_van",
         affiliateUrl:
           "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-van",
       },
@@ -835,7 +835,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Patong Beach hotel or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants more control before a flight",
-        trackingId: "patong-beach-phuket-airport-taxi",
+        trackingId: "click_12go_patong_beach_phuket_airport_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-taxi",
       },
@@ -847,7 +847,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Patong Beach hotel area or partner meeting point depending on ticket",
         bestFor:
           "Travelers comparing all Patong-to-airport partner transfer options",
-        trackingId: "patong-beach-phuket-airport-taxi-van",
+        trackingId: "click_12go_patong_beach_phuket_airport_taxi_van",
         affiliateUrl:
           "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-taxi-van",
       },
@@ -875,7 +875,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport bus pickup point or operator meeting point",
         bestFor:
           "Budget travelers going from Phuket Airport to Kata or Karon",
-        trackingId: "phuket-airport-kata-karon-bus",
+        trackingId: "click_12go_phuket_airport_kata_karon_bus",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-bus",
       },
@@ -887,7 +887,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport or selected operator pickup point",
         bestFor:
           "Travelers who want a shared transfer and will check hotel drop-off details",
-        trackingId: "phuket-airport-kata-karon-van",
+        trackingId: "click_12go_phuket_airport_kata_karon_van",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-van",
       },
@@ -899,7 +899,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone going directly to a hotel",
-        trackingId: "phuket-airport-kata-karon-taxi",
+        trackingId: "click_12go_phuket_airport_kata_karon_taxi",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-taxi",
       },
@@ -911,7 +911,7 @@ export const routePages: RoutePageData[] = [
         pickup: "Phuket Airport or partner meeting point depending on ticket",
         bestFor:
           "Travelers comparing all available airport-to-Kata/Karon partner options",
-        trackingId: "phuket-airport-kata-karon-taxi-van",
+        trackingId: "click_12go_phuket_airport_kata_karon_taxi_van",
         affiliateUrl:
           "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-taxi-van",
       },
@@ -1376,5 +1376,6 @@ export const routePages: RoutePageData[] = [
 export function getRoutePageBySlug(slug: string) {
   return routePages.find((route) => route.slug === slug);
 }
+
 
 
