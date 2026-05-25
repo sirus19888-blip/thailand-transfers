@@ -1,4 +1,4 @@
-export type RouteTransportOption = {
+﻿export type RouteTransportOption = {
   id: string;
   name: string;
   price: string;
@@ -39,7 +39,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "1h 45m – 2h 30m",
+        duration: "1h 45m â€“ 2h 30m",
         pickup: "Hotel pickup in Pattaya",
         bestFor: "Comfort and early flights",
         trackingId: "click_12go_taxi_pattaya_bangkok_airport",
@@ -50,7 +50,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "2h 30m – 3h 30m",
+        duration: "2h 30m â€“ 3h 30m",
         pickup: "Operator pickup point or hotel area",
         bestFor: "Budget travelers",
         trackingId: "click_12go_van_pattaya_bangkok_airport",
@@ -61,7 +61,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Bus / Coach",
         price: "Check live price",
-        duration: "2h 30m – 3h 30m",
+        duration: "2h 30m â€“ 3h 30m",
         pickup: "Pattaya bus station or operator point",
         bestFor: "Cheapest return option",
         trackingId: "click_12go_bus_pattaya_bangkok_airport",
@@ -87,7 +87,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "3h – 4h",
+        duration: "3h â€“ 4h",
         pickup: "Hotel pickup in Hua Hin",
         bestFor: "Comfort and door-to-door travel",
         trackingId: "click_12go_taxi_hua_hin_bangkok",
@@ -98,7 +98,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "3h 30m – 5h",
+        duration: "3h 30m â€“ 5h",
         pickup: "Operator pickup point or city area",
         bestFor: "Budget travelers",
         trackingId: "click_12go_van_hua_hin_bangkok",
@@ -109,7 +109,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Bus / Coach",
         price: "Check live price",
-        duration: "4h – 5h",
+        duration: "4h â€“ 5h",
         pickup: "Hua Hin bus station or operator point",
         bestFor: "Low-cost return travel",
         trackingId: "click_12go_bus_hua_hin_bangkok",
@@ -120,7 +120,7 @@ export const routePages: RoutePageData[] = [
         id: "train",
         name: "Train",
         price: "Check live price",
-        duration: "4h – 5h 30m",
+        duration: "4h â€“ 5h 30m",
         pickup: "Hua Hin Railway Station",
         bestFor: "Scenic and flexible travel",
         trackingId: "click_12go_train_hua_hin_bangkok",
@@ -146,7 +146,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry",
         name: "Ferry",
         price: "Check live price",
-        duration: "1h 30m – 3h",
+        duration: "1h 30m â€“ 3h",
         pickup: "Tonsai Pier or operator pier",
         bestFor: "Most travelers and luggage",
         trackingId: "click_12go_ferry_koh_phi_phi_phuket",
@@ -157,7 +157,7 @@ export const routePages: RoutePageData[] = [
         id: "speedboat",
         name: "Speedboat",
         price: "Check live price",
-        duration: "1h – 1h 30m",
+        duration: "1h â€“ 1h 30m",
         pickup: "Tonsai Pier or operator pier",
         bestFor: "Fastest sea transfer",
         trackingId: "click_12go_speedboat_koh_phi_phi_phuket",
@@ -183,7 +183,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "2h – 3h",
+        duration: "2h â€“ 3h",
         pickup: "Hotel pickup in Pattaya",
         bestFor: "Comfort and direct airport transfer",
         trackingId: "click_12go_taxi_pattaya_don_mueang_airport",
@@ -194,7 +194,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "3h – 4h",
+        duration: "3h â€“ 4h",
         pickup: "Operator pickup point or hotel area",
         bestFor: "Budget travelers",
         trackingId: "click_12go_van_pattaya_don_mueang_airport",
@@ -205,7 +205,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Bus / Coach",
         price: "Check live price",
-        duration: "3h – 4h 30m",
+        duration: "3h â€“ 4h 30m",
         pickup: "Pattaya bus station or operator point",
         bestFor: "Low-cost airport connection",
         trackingId: "click_12go_bus_pattaya_don_mueang_airport",
@@ -231,7 +231,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-van",
         name: "Ferry + Van",
         price: "Check live price",
-        duration: "7h – 10h",
+        duration: "7h â€“ 10h",
         pickup: "Koh Chang hotel, pier or operator pickup point",
         bestFor:
           "Most travelers who want a simple island-to-city transfer with fewer steps",
@@ -243,7 +243,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-bus",
         name: "Ferry + Bus",
         price: "Check live price",
-        duration: "8h – 10h 30m",
+        duration: "8h â€“ 10h 30m",
         pickup: "Koh Chang or mainland pier connection",
         bestFor: "Budget travelers returning from Koh Chang to Bangkok city",
         trackingId: "koh-chang-bangkok-ferry-bus",
@@ -254,7 +254,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "7h – 9h 30m",
+        duration: "7h â€“ 9h 30m",
         pickup: "Selected Koh Chang pickup points or operator meeting point",
         bestFor:
           "Travelers who want a shared transfer and will check luggage rules before booking",
@@ -266,7 +266,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "6h – 8h",
+        duration: "6h â€“ 8h",
         pickup: "Hotel or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants more comfort",
@@ -294,7 +294,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-van",
         name: "Ferry + Van",
         price: "Check live price",
-        duration: "6h 30m – 9h",
+        duration: "6h 30m â€“ 9h",
         pickup: "Koh Chang hotel, pier or operator pickup point",
         bestFor:
           "Most travelers going from Koh Chang directly to Suvarnabhumi Airport",
@@ -306,7 +306,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-ferry",
         name: "Bus + Ferry",
         price: "Check live price",
-        duration: "7h – 10h",
+        duration: "7h â€“ 10h",
         pickup: "Koh Chang or mainland pier connection",
         bestFor:
           "Budget travelers who want an airport connection and will check the full route details",
@@ -318,7 +318,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "5h 30m – 7h 30m",
+        duration: "5h 30m â€“ 7h 30m",
         pickup: "Hotel or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who needs more control before a flight",
@@ -358,7 +358,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-van",
         name: "Ferry + Van",
         price: "Check live price",
-        duration: "6h – 9h",
+        duration: "6h â€“ 9h",
         pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
         bestFor:
           "Most travelers arriving at Suvarnabhumi Airport and going directly to Koh Chang",
@@ -370,7 +370,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-ferry",
         name: "Bus + Ferry",
         price: "Check live price",
-        duration: "7h – 10h",
+        duration: "7h â€“ 10h",
         pickup: "Suvarnabhumi Airport or operator meeting point",
         bestFor:
           "Budget travelers who want an airport-to-island connection and will check the full route details",
@@ -382,7 +382,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "5h 30m – 8h",
+        duration: "5h 30m â€“ 8h",
         pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants more control after landing",
@@ -422,7 +422,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "3h – 5h",
+        duration: "3h â€“ 5h",
         pickup: "Bangkok van station or operator meeting point",
         bestFor:
           "Most travelers who want a simple and affordable transfer from Bangkok to Hua Hin",
@@ -434,7 +434,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Bus",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Bangkok bus terminal or selected operator pickup point",
         bestFor:
           "Budget travelers who prefer a larger vehicle and will check the departure station before booking",
@@ -446,7 +446,7 @@ export const routePages: RoutePageData[] = [
         id: "train",
         name: "Train",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Bangkok railway station",
         bestFor:
           "Travelers who prefer rail travel and want to arrive close to central Hua Hin",
@@ -458,7 +458,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "2h 45m – 4h",
+        duration: "2h 45m â€“ 4h",
         pickup: "Bangkok hotel, airport or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort",
@@ -486,7 +486,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Airport Bus",
         price: "Check live price",
-        duration: "3h 30m – 5h",
+        duration: "3h 30m â€“ 5h",
         pickup: "Suvarnabhumi Airport bus pickup point or operator meeting point",
         bestFor:
           "Most travelers who want a simple and affordable airport-to-Hua Hin transfer",
@@ -498,7 +498,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "2h 45m – 4h",
+        duration: "2h 45m â€“ 4h",
         pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort after landing",
@@ -510,7 +510,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-van",
         name: "Bus + Van",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
         bestFor:
           "Travelers who want a budget connection and will check the full route details before booking",
@@ -551,7 +551,7 @@ export const routePages: RoutePageData[] = [
         id: "train",
         name: "Train",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Don Mueang railway station or selected rail connection",
         bestFor:
           "Travelers who prefer rail travel and want to avoid some Bangkok road traffic",
@@ -563,7 +563,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Bus",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Don Mueang Airport, Bangkok bus terminal or operator meeting point",
         bestFor:
           "Budget travelers who want a lower-cost transfer and will check the exact departure point",
@@ -575,7 +575,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-van",
         name: "Bus + Van",
         price: "Check live price",
-        duration: "4h 30m – 6h 30m",
+        duration: "4h 30m â€“ 6h 30m",
         pickup: "Don Mueang Airport or operator connection point depending on ticket",
         bestFor:
           "Travelers comparing budget connections and willing to check transfer details carefully",
@@ -587,7 +587,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "3h – 4h 30m",
+        duration: "3h â€“ 4h 30m",
         pickup: "Don Mueang Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort after landing",
@@ -615,7 +615,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-ferry",
         name: "Bus + Ferry",
         price: "Check live price",
-        duration: "3h 30m – 5h",
+        duration: "3h 30m â€“ 5h",
         pickup: "Surat Thani Airport or operator airport meeting point",
         bestFor:
           "Most travelers who want a simple airport-to-island transfer with ferry included",
@@ -627,7 +627,7 @@ export const routePages: RoutePageData[] = [
         id: "van-ferry",
         name: "Van + Ferry",
         price: "Check live price",
-        duration: "3h 30m – 5h 30m",
+        duration: "3h 30m â€“ 5h 30m",
         pickup: "Surat Thani Airport or selected operator pickup point",
         bestFor:
           "Travelers who want a smaller shared transfer and will check luggage rules before booking",
@@ -639,7 +639,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-ferry-van",
         name: "Bus + Ferry + Van",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Surat Thani Airport or operator connection point depending on ticket",
         bestFor:
           "Travelers who want a combined ticket and need to check whether Koh Samui hotel drop-off is included",
@@ -651,7 +651,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-van",
         name: "Ferry + Van",
         price: "Check live price",
-        duration: "3h 30m – 5h 30m",
+        duration: "3h 30m â€“ 5h 30m",
         pickup: "Surat Thani Airport, Surat Thani office or pier connection depending on ticket",
         bestFor:
           "Travelers comparing all airport-to-Koh Samui partner options and willing to check connection details carefully",
@@ -679,7 +679,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-bus",
         name: "Ferry + Bus",
         price: "Check live price",
-        duration: "3h – 5h",
+        duration: "3h â€“ 5h",
         pickup: "Koh Samui pier, hotel pickup or operator meeting point",
         bestFor:
           "Most travelers who want a simple island-to-airport transfer with ferry and bus included",
@@ -691,7 +691,7 @@ export const routePages: RoutePageData[] = [
         id: "ferry-van",
         name: "Ferry + Van",
         price: "Check live price",
-        duration: "3h – 5h 30m",
+        duration: "3h â€“ 5h 30m",
         pickup: "Koh Samui pier, hotel pickup or selected operator pickup point",
         bestFor:
           "Travelers who want a smaller shared transfer and will check luggage rules before booking",
@@ -703,7 +703,7 @@ export const routePages: RoutePageData[] = [
         id: "van-ferry-bus",
         name: "Van + Ferry + Bus",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Koh Samui hotel transfer or operator connection point depending on ticket",
         bestFor:
           "Travelers who want a combined ticket from hotel area to Surat Thani Airport",
@@ -715,7 +715,7 @@ export const routePages: RoutePageData[] = [
         id: "bus-ferry-van",
         name: "Bus + Ferry + Van",
         price: "Check live price",
-        duration: "4h – 6h",
+        duration: "4h â€“ 6h",
         pickup: "Koh Samui hotel, town transfer point or departure pier depending on ticket",
         bestFor:
           "Travelers comparing all island-to-airport partner options and checking connection details carefully",
@@ -743,7 +743,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Airport Bus",
         price: "Check live price",
-        duration: "1h – 2h",
+        duration: "1h â€“ 2h",
         pickup: "Phuket Airport bus pickup point or operator meeting point",
         bestFor:
           "Budget travelers going from Phuket Airport to Patong Beach",
@@ -755,7 +755,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "1h – 2h",
+        duration: "1h â€“ 2h",
         pickup: "Phuket Airport or selected operator pickup point",
         bestFor:
           "Travelers who want a shared transfer and will check luggage rules before booking",
@@ -767,7 +767,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "45m – 1h 30m",
+        duration: "45m â€“ 1h 30m",
         pickup: "Phuket Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants door-to-door comfort",
@@ -779,7 +779,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi-van",
         name: "Taxi + Van",
         price: "Check live price",
-        duration: "1h – 2h",
+        duration: "1h â€“ 2h",
         pickup: "Phuket Airport or partner meeting point depending on ticket",
         bestFor:
           "Travelers comparing all available airport-to-Patong partner options",
@@ -807,7 +807,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Airport Bus",
         price: "Check live price",
-        duration: "1h – 2h",
+        duration: "1h â€“ 2h",
         pickup: "Patong Beach bus stop or operator meeting point",
         bestFor:
           "Budget travelers going from Patong Beach to Phuket Airport",
@@ -819,7 +819,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "1h – 2h",
+        duration: "1h â€“ 2h",
         pickup: "Patong Beach hotel area or selected operator pickup point",
         bestFor:
           "Travelers who want a shared transfer and will check pickup time carefully",
@@ -831,7 +831,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "45m – 1h 30m",
+        duration: "45m â€“ 1h 30m",
         pickup: "Patong Beach hotel or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone who wants more control before a flight",
@@ -843,7 +843,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi-van",
         name: "Taxi + Van",
         price: "Check live price",
-        duration: "1h – 2h",
+        duration: "1h â€“ 2h",
         pickup: "Patong Beach hotel area or partner meeting point depending on ticket",
         bestFor:
           "Travelers comparing all Patong-to-airport partner transfer options",
@@ -871,7 +871,7 @@ export const routePages: RoutePageData[] = [
         id: "bus",
         name: "Airport Bus",
         price: "Check live price",
-        duration: "1h 15m – 2h 30m",
+        duration: "1h 15m â€“ 2h 30m",
         pickup: "Phuket Airport bus pickup point or operator meeting point",
         bestFor:
           "Budget travelers going from Phuket Airport to Kata or Karon",
@@ -883,7 +883,7 @@ export const routePages: RoutePageData[] = [
         id: "van",
         name: "Shared Van",
         price: "Check live price",
-        duration: "1h 15m – 2h 30m",
+        duration: "1h 15m â€“ 2h 30m",
         pickup: "Phuket Airport or selected operator pickup point",
         bestFor:
           "Travelers who want a shared transfer and will check hotel drop-off details",
@@ -895,7 +895,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi",
         name: "Private Taxi",
         price: "Check live price",
-        duration: "1h – 1h 45m",
+        duration: "1h â€“ 1h 45m",
         pickup: "Phuket Airport arrival area or selected private pickup point",
         bestFor:
           "Families, groups, travelers with luggage or anyone going directly to a hotel",
@@ -907,7 +907,7 @@ export const routePages: RoutePageData[] = [
         id: "taxi-van",
         name: "Taxi + Van",
         price: "Check live price",
-        duration: "1h 15m – 2h 30m",
+        duration: "1h 15m â€“ 2h 30m",
         pickup: "Phuket Airport or partner meeting point depending on ticket",
         bestFor:
           "Travelers comparing all available airport-to-Kata/Karon partner options",
@@ -917,8 +917,271 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+{
+    slug: "krabi-airport-to-ao-nang",
+    title: "Krabi Airport to Ao Nang transfers",
+    seoTitle: "Krabi Airport to Ao Nang Transfers | Bus, Van & Taxi",
+    seoDescription:
+      "Compare transfer options from Krabi Airport to Ao Nang. Check airport bus, shared van, private taxi, pickup details, travel times and live partner prices.",
+    from: "Krabi Airport",
+    to: "Ao Nang",
+    intro:
+      "Compare airport transfer options from Krabi Airport to Ao Nang, including airport bus, shared van and private taxi.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/krabi-airport/ao-nang/?z=15791301&sub_id=krabi-airport-ao-nang-general",
+    options: [
+      {
+        id: "airport-bus",
+        name: "Airport Bus",
+        price: "Check live price",
+        duration: "45m – 1h 30m",
+        pickup: "Krabi Airport bus point",
+        bestFor: "Budget travelers",
+        trackingId: "click_12go_bus_krabi_airport_ao_nang",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi-airport/ao-nang/?z=15791301&sub_id=krabi-airport-ao-nang-bus",
+      },
+      {
+        id: "shared-van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "30m – 1h 15m",
+        pickup: "Krabi Airport operator point",
+        bestFor: "Solo travelers and couples",
+        trackingId: "click_12go_van_krabi_airport_ao_nang",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi-airport/ao-nang/?z=15791301&sub_id=krabi-airport-ao-nang-van",
+      },
+      {
+        id: "private-taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "30m – 1h",
+        pickup: "Krabi Airport arrivals area",
+        bestFor: "Comfort and hotel drop-off",
+        trackingId: "click_12go_taxi_krabi_airport_ao_nang",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi-airport/ao-nang/?z=15791301&sub_id=krabi-airport-ao-nang-taxi",
+      },
+      {
+        id: "taxi-van",
+        name: "Taxi + Van",
+        price: "Check live price",
+        duration: "30m – 1h 15m",
+        pickup: "Krabi Airport pickup point",
+        bestFor: "Small groups and luggage",
+        trackingId: "click_12go_taxi_van_krabi_airport_ao_nang",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi-airport/ao-nang/?z=15791301&sub_id=krabi-airport-ao-nang-taxi-van",
+      },
+    ],
+  },
+  {
+    slug: "ao-nang-to-krabi-airport",
+    title: "Ao Nang to Krabi Airport transfers",
+    seoTitle: "Ao Nang to Krabi Airport Transfers | Bus, Van & Taxi",
+    seoDescription:
+      "Compare transfer options from Ao Nang to Krabi Airport. Check airport bus, shared van, private taxi, pickup details, travel times and live partner prices.",
+    from: "Ao Nang",
+    to: "Krabi Airport",
+    intro:
+      "Compare return airport transfer options from Ao Nang to Krabi Airport, including shared van, airport bus and private taxi.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/ao-nang/krabi-airport/?z=15791301&sub_id=ao-nang-krabi-airport-general",
+    options: [
+      {
+        id: "airport-bus",
+        name: "Airport Bus",
+        price: "Check live price",
+        duration: "45m – 1h 30m",
+        pickup: "Ao Nang bus or operator point",
+        bestFor: "Budget airport transfer",
+        trackingId: "click_12go_bus_ao_nang_krabi_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/ao-nang/krabi-airport/?z=15791301&sub_id=ao-nang-krabi-airport-bus",
+      },
+      {
+        id: "shared-van",
+        name: "Shared Van",
+        price: "Check live price",
+        duration: "30m – 1h 15m",
+        pickup: "Ao Nang hotel area or operator point",
+        bestFor: "Solo travelers and couples",
+        trackingId: "click_12go_van_ao_nang_krabi_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/ao-nang/krabi-airport/?z=15791301&sub_id=ao-nang-krabi-airport-van",
+      },
+      {
+        id: "private-taxi",
+        name: "Private Taxi",
+        price: "Check live price",
+        duration: "30m – 1h",
+        pickup: "Ao Nang hotel pickup",
+        bestFor: "Comfort and early flights",
+        trackingId: "click_12go_taxi_ao_nang_krabi_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/ao-nang/krabi-airport/?z=15791301&sub_id=ao-nang-krabi-airport-taxi",
+      },
+      {
+        id: "taxi-van",
+        name: "Taxi + Van",
+        price: "Check live price",
+        duration: "30m – 1h 15m",
+        pickup: "Ao Nang hotel or pickup area",
+        bestFor: "Small groups and luggage",
+        trackingId: "click_12go_taxi_van_ao_nang_krabi_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/ao-nang/krabi-airport/?z=15791301&sub_id=ao-nang-krabi-airport-taxi-van",
+      },
+    ],
+  },
+  {
+    slug: "phuket-to-koh-phi-phi",
+    title: "Phuket to Koh Phi Phi transfers",
+    seoTitle: "Phuket to Koh Phi Phi Transfers | Ferry & Speedboat",
+    seoDescription:
+      "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+    from: "Phuket",
+    to: "Koh Phi Phi",
+    intro:
+      "Compare sea transfer options from Phuket to Koh Phi Phi, including ferry, speedboat and combined hotel transfer options.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/phuket/koh-phi-phi/?z=15791301&sub_id=phuket-koh-phi-phi-general",
+    options: [
+      {
+        id: "ferry",
+        name: "Ferry",
+        price: "Check live price",
+        duration: "1h 30m – 3h",
+        pickup: "Phuket pier or included hotel pickup",
+        bestFor: "Most travelers and luggage",
+        trackingId: "click_12go_ferry_phuket_koh_phi_phi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket/koh-phi-phi/?z=15791301&sub_id=phuket-koh-phi-phi-ferry",
+      },
+      {
+        id: "speedboat",
+        name: "Speedboat",
+        price: "Check live price",
+        duration: "1h – 1h 30m",
+        pickup: "Phuket pier or operator meeting point",
+        bestFor: "Fastest sea transfer",
+        trackingId: "click_12go_speedboat_phuket_koh_phi_phi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket/koh-phi-phi/?z=15791301&sub_id=phuket-koh-phi-phi-speedboat",
+      },
+      {
+        id: "ferry-van",
+        name: "Hotel Transfer + Ferry",
+        price: "Check live price",
+        duration: "2h – 4h",
+        pickup: "Phuket hotel area if included",
+        bestFor: "Door-to-pier convenience",
+        trackingId: "click_12go_ferry_van_phuket_koh_phi_phi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/phuket/koh-phi-phi/?z=15791301&sub_id=phuket-koh-phi-phi-ferry-van",
+      },
+    ],
+  },
+  {
+    slug: "krabi-to-koh-phi-phi",
+    title: "Krabi to Koh Phi Phi transfers",
+    seoTitle: "Krabi to Koh Phi Phi Transfers | Ferry & Speedboat",
+    seoDescription:
+      "Compare ferry and speedboat options from Krabi to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+    from: "Krabi",
+    to: "Koh Phi Phi",
+    intro:
+      "Compare ferry, speedboat and combined transfer options from Krabi to Koh Phi Phi.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/krabi/koh-phi-phi/?z=15791301&sub_id=krabi-koh-phi-phi-general",
+    options: [
+      {
+        id: "ferry",
+        name: "Ferry",
+        price: "Check live price",
+        duration: "1h 30m – 3h",
+        pickup: "Krabi pier or operator point",
+        bestFor: "Most travelers and luggage",
+        trackingId: "click_12go_ferry_krabi_koh_phi_phi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi/koh-phi-phi/?z=15791301&sub_id=krabi-koh-phi-phi-ferry",
+      },
+      {
+        id: "speedboat",
+        name: "Speedboat",
+        price: "Check live price",
+        duration: "45m – 1h 30m",
+        pickup: "Krabi pier or operator point",
+        bestFor: "Fastest island transfer",
+        trackingId: "click_12go_speedboat_krabi_koh_phi_phi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi/koh-phi-phi/?z=15791301&sub_id=krabi-koh-phi-phi-speedboat",
+      },
+      {
+        id: "van-ferry",
+        name: "Van + Ferry",
+        price: "Check live price",
+        duration: "2h – 4h",
+        pickup: "Krabi hotel area if included",
+        bestFor: "Hotel pickup and pier transfer",
+        trackingId: "click_12go_van_ferry_krabi_koh_phi_phi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/krabi/koh-phi-phi/?z=15791301&sub_id=krabi-koh-phi-phi-van-ferry",
+      },
+    ],
+  },
+  {
+    slug: "koh-phi-phi-to-krabi",
+    title: "Koh Phi Phi to Krabi transfers",
+    seoTitle: "Koh Phi Phi to Krabi Transfers | Ferry & Speedboat",
+    seoDescription:
+      "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+    from: "Koh Phi Phi",
+    to: "Krabi",
+    intro:
+      "Compare ferry, speedboat and onward transfer options from Koh Phi Phi to Krabi.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/koh-phi-phi/krabi/?z=15791301&sub_id=koh-phi-phi-krabi-general",
+    options: [
+      {
+        id: "ferry",
+        name: "Ferry",
+        price: "Check live price",
+        duration: "1h 30m – 3h",
+        pickup: "Tonsai Pier or operator pier",
+        bestFor: "Most travelers and luggage",
+        trackingId: "click_12go_ferry_koh_phi_phi_krabi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-phi-phi/krabi/?z=15791301&sub_id=koh-phi-phi-krabi-ferry",
+      },
+      {
+        id: "speedboat",
+        name: "Speedboat",
+        price: "Check live price",
+        duration: "45m – 1h 30m",
+        pickup: "Tonsai Pier or operator pier",
+        bestFor: "Fastest return transfer",
+        trackingId: "click_12go_speedboat_koh_phi_phi_krabi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-phi-phi/krabi/?z=15791301&sub_id=koh-phi-phi-krabi-speedboat",
+      },
+      {
+        id: "ferry-van",
+        name: "Ferry + Van",
+        price: "Check live price",
+        duration: "2h – 4h",
+        pickup: "Tonsai Pier with onward transfer if included",
+        bestFor: "Krabi hotel or airport connections",
+        trackingId: "click_12go_ferry_van_koh_phi_phi_krabi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-phi-phi/krabi/?z=15791301&sub_id=koh-phi-phi-krabi-ferry-van",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {
   return routePages.find((route) => route.slug === slug);
 }
+

@@ -1,0 +1,35 @@
+﻿import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import RoutePageTemplate from "@/components/RoutePageTemplate";
+import { getRoutePageBySlug } from "@/data/routePages";
+
+const route = getRoutePageBySlug("ao-nang-to-krabi-airport");
+
+export const metadata: Metadata = {
+  title:
+    route?.seoTitle ??
+    "Ao Nang to Krabi Airport Transfers | Bus, Van & Taxi",
+  description:
+    route?.seoDescription ??
+    "Compare transfer options from Ao Nang to Krabi Airport. Check airport bus, shared van, private taxi, pickup details, travel times and live partner prices.",
+  alternates: {
+    canonical: "/routes/ao-nang-to-krabi-airport",
+  },
+};
+
+export default function AoNangToKrabiAirportPage() {
+  if (!route) {
+    notFound();
+  }
+
+  return (
+    <RoutePageTemplate
+      route={route}
+      badge="Beach to airport transfer comparison"
+      desktopDescription="Compare transfer options from Ao Nang to Krabi Airport, including airport bus, shared van, private taxi and taxi plus van combinations. Check hotel pickup area, airport drop-off point, luggage allowance and live partner prices before booking."
+      mobileDescription="Compare bus, van and taxi options from Ao Nang to Krabi Airport. Check live schedules, pickup points and luggage rules before booking."
+      optionsHeading="Compare Ao Nang to Krabi Airport transfer options"
+      detailsNote="For airport transfers, allow extra time before your flight. Check your Ao Nang pickup point, Krabi Airport drop-off area, luggage allowance and live operator schedule before booking."
+    />
+  );
+}

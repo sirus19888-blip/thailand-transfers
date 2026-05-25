@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 
 const baseUrl = "https://thailand-transfers.com";
 
@@ -118,5 +118,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
-  ];
+{
+    url: `${baseUrl}/routes/krabi-airport-to-ao-nang`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  {
+    url: `${baseUrl}/routes/ao-nang-to-krabi-airport`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  {
+    url: `${baseUrl}/routes/phuket-to-koh-phi-phi`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  },
+  {
+    url: `${baseUrl}/routes/krabi-to-koh-phi-phi`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  },
+  {
+    url: `${baseUrl}/routes/koh-phi-phi-to-krabi`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  },
+];
 }
+

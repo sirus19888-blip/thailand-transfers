@@ -187,14 +187,14 @@ export const popularRoutes = [
     href: "/routes/phuket-airport-to-kata-karon",
   },
   {
-    id: "krabi-airport-ao-nang",
-    title: "Krabi Airport to Ao Nang",
-    description: "Easy airport transfer to Ao Nang hotels and beach areas.",
-    price: "Check live price",
-    duration: "30m – 1h",
-    image: "/assets/routes/bangkok-pattaya.png",
-    href: "https://12go.asia/en/travel/Krabi-Airport/Ao-Nang/?z=15791301&sub_id=krabi-airport-ao-nang-general",
-  },
+  id: "krabi-airport-ao-nang",
+  title: "Krabi Airport to Ao Nang",
+  description: "Airport transfer to Ao Nang hotels and beach areas.",
+  price: "Check live price",
+  duration: "30m – 1h 30m",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/krabi-airport-to-ao-nang",
+},
   {
     id: "surat-thani-koh-samui",
     title: "Surat Thani to Koh Samui",
@@ -223,14 +223,14 @@ export const popularRoutes = [
     href: "/routes/koh-samui-to-surat-thani-airport",
   },
   {
-    id: "phuket-koh-phi-phi",
-    title: "Phuket to Koh Phi Phi",
-    description: "Compare ferry and speedboat options to Phi Phi Islands.",
-    price: "Check live price",
-    duration: "1h – 3h",
-    image: "/assets/routes/bangkok-pattaya.png",
-    href: "https://12go.asia/en/travel/Phuket/Koh-Phi-Phi/?z=15791301&sub_id=phuket-koh-phi-phi-general",
-  },
+  id: "phuket-koh-phi-phi",
+  title: "Phuket to Koh Phi Phi",
+  description: "Compare ferry and speedboat options to Phi Phi Islands.",
+  price: "Check live price",
+  duration: "1h – 3h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/phuket-to-koh-phi-phi",
+},
   {
     id: "pattaya-bangkok-airport",
     title: "Pattaya to Bangkok Airport",
@@ -294,6 +294,24 @@ export const popularRoutes = [
     image: "/assets/routes/bangkok-pattaya.png",
     href: "/routes/suvarnabhumi-airport-to-koh-chang",
   },
+{
+  id: "krabi-koh-phi-phi",
+  title: "Krabi to Koh Phi Phi",
+  description: "Compare ferry and speedboat options from Krabi to Phi Phi.",
+  price: "Check live price",
+  duration: "1h – 3h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/krabi-to-koh-phi-phi",
+},
+{
+  id: "koh-phi-phi-krabi",
+  title: "Koh Phi Phi to Krabi",
+  description: "Return ferry and speedboat options from Phi Phi to Krabi.",
+  price: "Check live price",
+  duration: "1h – 3h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/koh-phi-phi-to-krabi",
+},
 ];
 
 export const returnRouteSeoPlan = [
@@ -463,11 +481,14 @@ export const plannedRoutes = [
     status: "planned",
   },
   {
-    id: "ao-nang-krabi-airport",
-    title: "Ao Nang to Krabi Airport",
-    slug: "ao-nang-to-krabi-airport",
-    status: "planned",
-  },
+  id: "ao-nang-krabi-airport",
+  title: "Ao Nang to Krabi Airport",
+  description: "Return airport transfer from Ao Nang to Krabi Airport.",
+  price: "Check live price",
+  duration: "30m – 1h 30m",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/ao-nang-to-krabi-airport",
+},
   {
     id: "koh-samui-surat-thani",
     title: "Koh Samui to Surat Thani",
@@ -481,4 +502,5 @@ export const plannedRoutes = [
     status: "planned",
   },
 ];
+
 
