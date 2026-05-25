@@ -148,6 +148,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly",
     priority: 0.85,
   },
+{
+    url: `${baseUrl}/routes/surat-thani-airport-to-koh-phangan`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  {
+    url: `${baseUrl}/routes/koh-phangan-to-surat-thani-airport`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  {
+    url: `${baseUrl}/routes/bangkok-to-chiang-mai`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  },
+  {
+    url: `${baseUrl}/routes/chiang-mai-to-bangkok`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.85,
+  },
 ];
 }
+
 

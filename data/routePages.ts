@@ -1179,9 +1179,202 @@ export const routePages: RoutePageData[] = [
       },
     ],
   },
+{
+    slug: "surat-thani-airport-to-koh-phangan",
+    title: "Surat Thani Airport to Koh Phangan transfers",
+    seoTitle: "Surat Thani Airport to Koh Phangan Transfers | Bus, Van & Ferry",
+    seoDescription:
+      "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and live partner prices.",
+    from: "Surat Thani Airport",
+    to: "Koh Phangan",
+    intro:
+      "Compare combined airport transfer options from Surat Thani Airport to Koh Phangan, including bus, van and ferry combinations.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/surat-thani-airport/koh-phangan/?z=15791301&sub_id=surat-thani-airport-koh-phangan-general",
+    options: [
+      {
+        id: "bus-ferry",
+        name: "Bus + Ferry",
+        price: "Check live price",
+        duration: "4h – 7h",
+        pickup: "Surat Thani Airport operator point",
+        bestFor: "Budget island transfer",
+        trackingId: "click_12go_bus_ferry_surat_thani_airport_koh_phangan",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-phangan/?z=15791301&sub_id=surat-thani-airport-koh-phangan-bus-ferry",
+      },
+      {
+        id: "van-ferry",
+        name: "Van + Ferry",
+        price: "Check live price",
+        duration: "4h – 6h 30m",
+        pickup: "Surat Thani Airport meeting point",
+        bestFor: "Simple airport-to-island connection",
+        trackingId: "click_12go_van_ferry_surat_thani_airport_koh_phangan",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-phangan/?z=15791301&sub_id=surat-thani-airport-koh-phangan-van-ferry",
+      },
+      {
+        id: "taxi-ferry",
+        name: "Taxi + Ferry",
+        price: "Check live price",
+        duration: "3h 30m – 6h",
+        pickup: "Surat Thani Airport arrivals area",
+        bestFor: "Comfort and fewer transfers",
+        trackingId: "click_12go_taxi_ferry_surat_thani_airport_koh_phangan",
+        affiliateUrl:
+          "https://12go.asia/en/travel/surat-thani-airport/koh-phangan/?z=15791301&sub_id=surat-thani-airport-koh-phangan-taxi-ferry",
+      },
+    ],
+  },
+  {
+    slug: "koh-phangan-to-surat-thani-airport",
+    title: "Koh Phangan to Surat Thani Airport transfers",
+    seoTitle: "Koh Phangan to Surat Thani Airport Transfers | Ferry, Bus & Van",
+    seoDescription:
+      "Compare transfer options from Koh Phangan to Surat Thani Airport. Check ferry, bus, van and combined transfer options, pickup details, travel times and live partner prices.",
+    from: "Koh Phangan",
+    to: "Surat Thani Airport",
+    intro:
+      "Compare return transfer options from Koh Phangan to Surat Thani Airport, including ferry, bus and van combinations.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/koh-phangan/surat-thani-airport/?z=15791301&sub_id=koh-phangan-surat-thani-airport-general",
+    options: [
+      {
+        id: "ferry-bus",
+        name: "Ferry + Bus",
+        price: "Check live price",
+        duration: "4h – 7h",
+        pickup: "Koh Phangan pier",
+        bestFor: "Budget airport connection",
+        trackingId: "click_12go_ferry_bus_koh_phangan_surat_thani_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-phangan/surat-thani-airport/?z=15791301&sub_id=koh-phangan-surat-thani-airport-ferry-bus",
+      },
+      {
+        id: "ferry-van",
+        name: "Ferry + Van",
+        price: "Check live price",
+        duration: "4h – 6h 30m",
+        pickup: "Koh Phangan pier or operator point",
+        bestFor: "Airport transfer after island stay",
+        trackingId: "click_12go_ferry_van_koh_phangan_surat_thani_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-phangan/surat-thani-airport/?z=15791301&sub_id=koh-phangan-surat-thani-airport-ferry-van",
+      },
+      {
+        id: "ferry-taxi",
+        name: "Ferry + Taxi",
+        price: "Check live price",
+        duration: "3h 30m – 6h",
+        pickup: "Koh Phangan pier",
+        bestFor: "Comfort and early flights",
+        trackingId: "click_12go_ferry_taxi_koh_phangan_surat_thani_airport",
+        affiliateUrl:
+          "https://12go.asia/en/travel/koh-phangan/surat-thani-airport/?z=15791301&sub_id=koh-phangan-surat-thani-airport-ferry-taxi",
+      },
+    ],
+  },
+  {
+    slug: "bangkok-to-chiang-mai",
+    title: "Bangkok to Chiang Mai transfers",
+    seoTitle: "Bangkok to Chiang Mai Transfers | Train, Bus & Flight",
+    seoDescription:
+      "Compare transfer options from Bangkok to Chiang Mai. Check train, bus and flight options, departure points, travel times and live partner prices.",
+    from: "Bangkok",
+    to: "Chiang Mai",
+    intro:
+      "Compare long-distance travel options from Bangkok to Chiang Mai, including train, bus and flight connections.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/bangkok/chiang-mai/?z=15791301&sub_id=bangkok-chiang-mai-general",
+    options: [
+      {
+        id: "train",
+        name: "Train",
+        price: "Check live price",
+        duration: "10h – 14h",
+        pickup: "Bangkok railway station",
+        bestFor: "Overnight travel and scenery",
+        trackingId: "click_12go_train_bangkok_chiang_mai",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/chiang-mai/?z=15791301&sub_id=bangkok-chiang-mai-train",
+      },
+      {
+        id: "bus",
+        name: "Bus",
+        price: "Check live price",
+        duration: "9h – 12h",
+        pickup: "Bangkok bus terminal or operator point",
+        bestFor: "Budget long-distance travel",
+        trackingId: "click_12go_bus_bangkok_chiang_mai",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/chiang-mai/?z=15791301&sub_id=bangkok-chiang-mai-bus",
+      },
+      {
+        id: "flight",
+        name: "Flight",
+        price: "Check live price",
+        duration: "1h 15m – 1h 30m",
+        pickup: "Bangkok airport",
+        bestFor: "Fastest option",
+        trackingId: "click_12go_flight_bangkok_chiang_mai",
+        affiliateUrl:
+          "https://12go.asia/en/travel/bangkok/chiang-mai/?z=15791301&sub_id=bangkok-chiang-mai-flight",
+      },
+    ],
+  },
+  {
+    slug: "chiang-mai-to-bangkok",
+    title: "Chiang Mai to Bangkok transfers",
+    seoTitle: "Chiang Mai to Bangkok Transfers | Train, Bus & Flight",
+    seoDescription:
+      "Compare transfer options from Chiang Mai to Bangkok. Check train, bus and flight options, departure points, travel times and live partner prices.",
+    from: "Chiang Mai",
+    to: "Bangkok",
+    intro:
+      "Compare long-distance travel options from Chiang Mai to Bangkok, including train, bus and flight connections.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/chiang-mai/bangkok/?z=15791301&sub_id=chiang-mai-bangkok-general",
+    options: [
+      {
+        id: "train",
+        name: "Train",
+        price: "Check live price",
+        duration: "10h – 14h",
+        pickup: "Chiang Mai railway station",
+        bestFor: "Overnight travel and scenery",
+        trackingId: "click_12go_train_chiang_mai_bangkok",
+        affiliateUrl:
+          "https://12go.asia/en/travel/chiang-mai/bangkok/?z=15791301&sub_id=chiang-mai-bangkok-train",
+      },
+      {
+        id: "bus",
+        name: "Bus",
+        price: "Check live price",
+        duration: "9h – 12h",
+        pickup: "Chiang Mai bus terminal or operator point",
+        bestFor: "Budget long-distance travel",
+        trackingId: "click_12go_bus_chiang_mai_bangkok",
+        affiliateUrl:
+          "https://12go.asia/en/travel/chiang-mai/bangkok/?z=15791301&sub_id=chiang-mai-bangkok-bus",
+      },
+      {
+        id: "flight",
+        name: "Flight",
+        price: "Check live price",
+        duration: "1h 15m – 1h 30m",
+        pickup: "Chiang Mai Airport",
+        bestFor: "Fastest option",
+        trackingId: "click_12go_flight_chiang_mai_bangkok",
+        affiliateUrl:
+          "https://12go.asia/en/travel/chiang-mai/bangkok/?z=15791301&sub_id=chiang-mai-bangkok-flight",
+      },
+    ],
+  },
 ];
 
 export function getRoutePageBySlug(slug: string) {
   return routePages.find((route) => route.slug === slug);
 }
+
 

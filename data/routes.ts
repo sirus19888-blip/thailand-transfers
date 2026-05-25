@@ -133,14 +133,14 @@ export const popularRoutes = [
     href: "https://12go.asia/en/travel/Bangkok/Koh-Chang/?z=15791301&sub_id=bangkok-koh-chang-general",
   },
   {
-    id: "bangkok-chiang-mai",
-    title: "Bangkok to Chiang Mai",
-    description: "Compare train, bus and flight options to northern Thailand.",
-    price: "Check live price",
-    duration: "1h 15m – 13h",
-    image: "/assets/routes/bangkok-pattaya.png",
-    href: "https://12go.asia/en/travel/Bangkok/Chiang-Mai/?z=15791301&sub_id=bangkok-chiang-mai-general",
-  },
+  id: "bangkok-chiang-mai",
+  title: "Bangkok to Chiang Mai",
+  description: "Compare train, bus and flight options to northern Thailand.",
+  price: "Check live price",
+  duration: "1h 15m – 14h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/bangkok-to-chiang-mai",
+},
   {
     id: "bangkok-koh-samui",
     title: "Bangkok to Koh Samui",
@@ -311,6 +311,33 @@ export const popularRoutes = [
   duration: "1h – 3h",
   image: "/assets/routes/bangkok-pattaya.png",
   href: "/routes/koh-phi-phi-to-krabi",
+},
+{
+  id: "surat-thani-airport-koh-phangan",
+  title: "Surat Thani Airport to Koh Phangan",
+  description: "Airport to island transfer with bus, van and ferry options.",
+  price: "Check live price",
+  duration: "4h – 7h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/surat-thani-airport-to-koh-phangan",
+},
+{
+  id: "koh-phangan-surat-thani-airport",
+  title: "Koh Phangan to Surat Thani Airport",
+  description: "Island to airport transfer with ferry, bus and van options.",
+  price: "Check live price",
+  duration: "4h – 7h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/koh-phangan-to-surat-thani-airport",
+},
+{
+  id: "chiang-mai-bangkok",
+  title: "Chiang Mai to Bangkok",
+  description: "Compare train, bus and flight options back to Bangkok.",
+  price: "Check live price",
+  duration: "1h 15m – 14h",
+  image: "/assets/routes/bangkok-pattaya.png",
+  href: "/routes/chiang-mai-to-bangkok",
 },
 ];
 
@@ -502,5 +529,6 @@ export const plannedRoutes = [
     status: "planned",
   },
 ];
+
 
 
