@@ -4,7 +4,6 @@ import { transferOptions } from "@/data/routes";
 import { AffiliateButton } from "./AffiliateButton";
 import {
   ArrowLeft,
-  ChevronDown,
   Clock3,
   Heart,
   Luggage,
@@ -45,13 +44,12 @@ export function MobileTransferOptionsScreen() {
             </div>
           </div>
 
-          <button
-            type="button"
-            aria-label="Save route"
+          <div
+            aria-label="Route preview"
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
           >
             <Heart className="h-5 w-5" />
-          </button>
+          </div>
         </div>
 
         <div className="mt-5 grid grid-cols-2 gap-3 rounded-[22px] border border-[#e7e2d8] bg-white p-3 shadow-sm">
@@ -89,10 +87,9 @@ export function MobileTransferOptionsScreen() {
             3 best options found
           </p>
 
-          <button className="flex items-center gap-1 rounded-xl border border-[#e7e2d8] bg-white px-3 py-2 text-xs font-bold text-[#10201d] shadow-sm">
-            <span>Recommended</span>
-            <ChevronDown className="h-3.5 w-3.5" />
-          </button>
+          <div className="flex items-center gap-1 rounded-xl border border-[#e7e2d8] bg-white px-3 py-2 text-xs font-bold text-[#10201d] shadow-sm">
+            <span>Best options</span>
+          </div>
         </div>
 
         <div className="mt-4 space-y-4">
@@ -217,7 +214,7 @@ export function MobileTransferOptionsScreen() {
                     <Star className="h-4 w-4 fill-[#d5ab47] text-[#d5ab47]" />
                     <span>{option.rating}</span>
                     <span className="text-xs font-medium text-slate-500">
-                      ({option.reviews})
+                      {option.reviews}
                     </span>
                   </div>
 

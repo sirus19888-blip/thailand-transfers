@@ -78,34 +78,44 @@ export function MobileRouteDetailsScreen() {
           </div>
 
           <div className="flex gap-2">
-            <button
-              type="button"
-              aria-label="Share route"
+            <div
+              aria-label="Route guide"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
             >
               <Share2 className="h-5 w-5" />
-            </button>
+            </div>
 
-            <button
-              type="button"
-              aria-label="Save route"
+            <div
+              aria-label="Route preview"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
             >
               <Heart className="h-5 w-5" />
-            </button>
+            </div>
           </div>
         </div>
 
         <div className="mt-5 flex gap-6 overflow-x-auto border-b border-[#e7e2d8] text-sm font-bold text-slate-500">
-          <button className="border-b-2 border-[#0c5a4d] pb-3 text-[#0c5a4d]">
+          <a
+            href="#mobile-route-overview"
+            className="border-b-2 border-[#0c5a4d] pb-3 text-[#0c5a4d]"
+          >
             Overview
-          </button>
-          <button className="pb-3">Details</button>
-          <button className="pb-3">Reviews</button>
-          <button className="pb-3">FAQs</button>
+          </a>
+          <a href="#mobile-route-details" className="pb-3">
+            Details
+          </a>
+          <a href="#mobile-route-tips" className="pb-3">
+            Tips
+          </a>
+          <a href="#mobile-route-faqs" className="pb-3">
+            FAQs
+          </a>
         </div>
 
-        <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5">
+        <div
+          id="mobile-route-overview"
+          className="mt-4 overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
+        >
           <div className="relative aspect-[16/10]">
             <Image
               src="/assets/routes/bkk-pattaya-map.png"
@@ -117,7 +127,10 @@ export function MobileRouteDetailsScreen() {
           </div>
         </div>
 
-        <div className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+        <div
+          id="mobile-route-details"
+          className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5"
+        >
           <h2 className="text-lg font-extrabold text-[#10201d]">
             After you land — step by step
           </h2>
@@ -159,7 +172,10 @@ export function MobileRouteDetailsScreen() {
           </div>
         </div>
 
-        <div className="mt-4 rounded-[1.5rem] border border-red-100 bg-red-50 p-4">
+        <div
+          id="mobile-route-tips"
+          className="mt-4 rounded-[1.5rem] border border-red-100 bg-red-50 p-4"
+        >
           <div className="flex gap-3">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-red-500">
               <AlertTriangle className="h-5 w-5" />
@@ -250,7 +266,10 @@ export function MobileRouteDetailsScreen() {
           </div>
         </div>
 
-        <div className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+        <div
+          id="mobile-route-faqs"
+          className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5"
+        >
           <h2 className="text-lg font-extrabold text-[#10201d]">FAQs</h2>
 
           <div className="mt-3 space-y-3">

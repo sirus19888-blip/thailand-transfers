@@ -52,7 +52,7 @@ export default function RoutePageTemplate({
                 </AffiliateButton>
 
                 <Link
-                  href="/"
+                  href="/routes"
                   className="inline-flex items-center justify-center rounded-full border border-[#064e45] bg-white px-7 py-4 text-sm font-bold text-[#064e45] transition hover:bg-[#f8f4ec]"
                 >
                   Back to all routes
@@ -195,7 +195,7 @@ export default function RoutePageTemplate({
           </div>
 
           <Link
-            href="/"
+            href="/routes"
             className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-[#064e45] bg-white px-6 py-4 text-sm font-bold text-[#064e45]"
           >
             Back to all routes

@@ -32,7 +32,7 @@ const desktopRows = [
     pros: ["Local experience", "Low cost"],
     cons: ["Transfer needed", "Less convenient"],
     rating: "4.3",
-    reviews: "842",
+    reviews: "Partner details",
   },
 ];
 

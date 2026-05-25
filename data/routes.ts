@@ -29,7 +29,7 @@ export const transferOptions = [
     cons: ["May take longer in traffic", "Fixed schedule"],
     image: "/assets/vehicles/bus.png",
     rating: "4.5",
-    reviews: "1,248",
+    reviews: "Partner details",
     affiliateUrl:
       "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-bus",
   },
@@ -50,7 +50,7 @@ export const transferOptions = [
     cons: ["Higher price", "Traffic dependent"],
     image: "/assets/vehicles/taxi.png",
     rating: "4.8",
-    reviews: "3,612",
+    reviews: "Partner details",
     affiliateUrl:
       "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-taxi",
   },
@@ -71,7 +71,7 @@ export const transferOptions = [
     cons: ["May stop at other hotels", "Short wait possible"],
     image: "/assets/vehicles/van.png",
     rating: "4.6",
-    reviews: "2,017",
+    reviews: "Partner details",
     affiliateUrl:
       "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-van",
   },
@@ -513,7 +513,7 @@ export const plannedRoutes = [
   description: "Return airport transfer from Ao Nang to Krabi Airport.",
   price: "Check live price",
   duration: "30m – 1h 30m",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/ao-nang-to-krabi-airport.png",
   href: "/routes/ao-nang-to-krabi-airport",
 },
   {
@@ -529,6 +529,7 @@ export const plannedRoutes = [
     status: "planned",
   },
 ];
+
 
 
 

@@ -14,15 +14,15 @@ const navigation = [
   },
   {
     name: "Popular Routes",
-    href: "#popular-routes",
+    href: "/#popular-routes",
   },
   {
     name: "Guides",
-    href: "#travel-tips",
+    href: "/#travel-tips",
   },
   {
     name: "About Us",
-    href: "#about-us",
+    href: "/#about-us",
   },
 ];
 
@@ -73,21 +73,19 @@ export function Header() {
               <span>Routes</span>
             </Link>
 
-            <button
-              type="button"
-              className="flex items-center gap-1 transition hover:text-[#0c5a4d]"
+            <div
+              aria-label="Currency: THB"
+              className="flex items-center gap-1"
             >
               <span>THB</span>
-              <ChevronDown className="h-3.5 w-3.5" />
-            </button>
+            </div>
 
-            <button
-              type="button"
-              aria-label="Change language"
+            <div
+              aria-label="Language: English"
               className="text-xl leading-none"
             >
               🇬🇧
-            </button>
+            </div>
           </div>
         </div>
       </Container>

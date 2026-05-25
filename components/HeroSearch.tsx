@@ -89,9 +89,7 @@ function DesktopHero() {
 
   const isAirportTransfer = transferType === "airport";
 
-  const searchHref = isAirportTransfer
-    ? "/routes/bangkok-airport-to-pattaya"
-    : "#popular-routes";
+  const searchHref = "/routes";
 
   return (
     <section className="hidden overflow-hidden bg-[#fbfaf7] lg:block">
@@ -307,9 +305,7 @@ function DesktopHero() {
                   </Link>
 
                   <p className="text-center text-[11px] font-medium text-slate-500">
-                    {isAirportTransfer
-                      ? "Free cancellation on many options · Instant confirmation"
-                      : "City transfer pages are being expanded · Browse popular routes"}
+                    Browse available route pages and check live partner offers before booking.
                   </p>
                 </div>
               </div>
