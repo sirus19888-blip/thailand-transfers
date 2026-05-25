@@ -18,7 +18,7 @@ const destinations = [
 
 export function Footer() {
   return (
-    <footer className="hidden bg-[#064e45] text-white lg:block">
+    <footer id="about-us" className="hidden bg-[#064e45] text-white lg:block">
       <Container>
         <div className="grid gap-10 py-10 lg:grid-cols-[1.15fr_0.85fr_0.85fr_1fr_1.1fr]">
           <div>
