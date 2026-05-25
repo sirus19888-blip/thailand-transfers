@@ -124,13 +124,13 @@ export const popularRoutes = [
     href: "/routes/don-mueang-airport-to-hua-hin",
   },
   {
-    id: "bangkok-koh-chang",
-    title: "Bangkok to Koh Chang",
-    description: "Compare bus, van, taxi and ferry connections to Koh Chang.",
+    id: "suvarnabhumi-airport-koh-chang-featured",
+    title: "Suvarnabhumi Airport to Koh Chang",
+    description: "Airport arrival transfer with van, taxi and ferry connections to Koh Chang.",
     price: "Check live price",
-    duration: "5h – 8h",
+    duration: "6h – 9h",
     image: "/assets/routes/bangkok-pattaya.png",
-    href: "https://12go.asia/en/travel/Bangkok/Koh-Chang/?z=15791301&sub_id=bangkok-koh-chang-general",
+    href: "/routes/suvarnabhumi-airport-to-koh-chang",
   },
   {
   id: "bangkok-chiang-mai",
