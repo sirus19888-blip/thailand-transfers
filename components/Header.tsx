@@ -5,12 +5,12 @@ import { Container } from "./Container";
 const navigation = [
   {
     name: "Airport Transfers",
-    href: "/routes/bangkok-airport-to-pattaya",
+    href: "/routes",
     hasDropdown: true,
   },
   {
     name: "City Transfers",
-    href: "/routes/bangkok-airport-to-pattaya",
+    href: "/routes",
   },
   {
     name: "Popular Routes",
