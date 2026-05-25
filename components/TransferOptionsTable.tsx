@@ -196,7 +196,7 @@ function DesktopComparisonArea() {
             <p className="mt-3 text-sm font-bold text-[#10201d]">From ฿199</p>
 
             <Link
-              href="#travel-sim"
+              href="/travel-extras/thailand-tourist-sim"
               className="mt-4 inline-flex rounded-xl bg-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-white"
             >
               See SIM options
