@@ -25,7 +25,7 @@ export function PopularRoutes() {
           </div>
 
           <Link
-            href="/routes/bangkok-airport-to-pattaya"
+            href="/routes"
             className="inline-flex items-center justify-center rounded-full border border-[#0c5a4d] bg-white px-5 py-2.5 text-sm font-extrabold text-[#0c5a4d] transition hover:bg-[#f8f4ec]"
           >
             View all routes
