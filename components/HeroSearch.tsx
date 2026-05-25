@@ -473,21 +473,21 @@ function MobileHero() {
                 </Link>
 
                 <Link
-                  href="/routes/bangkok-airport-to-pattaya"
+                  href="/routes/don-mueang-airport-to-pattaya"
                   className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
                 >
                   Don Mueang → Pattaya
                 </Link>
 
                 <Link
-                  href="/routes/bangkok-airport-to-pattaya"
+                  href="/routes/bangkok-to-hua-hin"
                   className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
                 >
                   Bangkok → Hua Hin
                 </Link>
 
                 <Link
-                  href="/routes/bangkok-airport-to-pattaya"
+                  href="/routes/suvarnabhumi-airport-to-hua-hin"
                   className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
                 >
                   Suvarnabhumi → Hua Hin
