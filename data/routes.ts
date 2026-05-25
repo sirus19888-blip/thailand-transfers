@@ -84,7 +84,7 @@ export const popularRoutes = [
     description: "The most popular airport transfer for beach trips.",
     price: "from ฿122",
     duration: "1h 30m – 3h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/bangkok-airport-to-pattaya.png",
     href: "/routes/bangkok-airport-to-pattaya",
   },
   {
@@ -93,7 +93,7 @@ export const popularRoutes = [
     description: "Compare taxi, van and bus options from DMK to Pattaya.",
     price: "Check live price",
     duration: "2h – 3h 30m",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/don-mueang-airport-to-pattaya.png",
     href: "/routes/don-mueang-airport-to-pattaya",
   },
   {
@@ -102,7 +102,7 @@ export const popularRoutes = [
     description: "City to beach transfer from Bangkok to Hua Hin.",
     price: "Check live price",
     duration: "3h – 5h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/bangkok-to-hua-hin.png",
     href: "/routes/bangkok-to-hua-hin",
   },
   {
@@ -111,7 +111,7 @@ export const popularRoutes = [
     description: "Airport to beach transfer from Bangkok Suvarnabhumi Airport to Hua Hin.",
     price: "Check live price",
     duration: "3h 30m – 5h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/suvarnabhumi-airport-to-hua-hin.png",
     href: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
   {
@@ -120,7 +120,7 @@ export const popularRoutes = [
     description: "Airport to beach transfer from Bangkok Don Mueang Airport to Hua Hin.",
     price: "Check live price",
     duration: "4h – 6h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/don-mueang-airport-to-hua-hin.png",
     href: "/routes/don-mueang-airport-to-hua-hin",
   },
   {
@@ -129,7 +129,7 @@ export const popularRoutes = [
     description: "Airport arrival transfer with van, taxi and ferry connections to Koh Chang.",
     price: "Check live price",
     duration: "6h – 9h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/suvarnabhumi-airport-to-koh-chang.png",
     href: "/routes/suvarnabhumi-airport-to-koh-chang",
   },
   {
@@ -138,7 +138,7 @@ export const popularRoutes = [
   description: "Compare train, bus and flight options to northern Thailand.",
   price: "Check live price",
   duration: "1h 15m – 14h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/bangkok-to-chiang-mai.png",
   href: "/routes/bangkok-to-chiang-mai",
 },
   {
@@ -147,7 +147,7 @@ export const popularRoutes = [
     description: "Airport to island transfer from Surat Thani Airport to Koh Samui.",
     price: "Check live price",
     duration: "3h 30m – 5h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/surat-thani-airport-to-koh-samui.png",
     href: "/routes/surat-thani-airport-to-koh-samui",
   },
   {
@@ -156,7 +156,7 @@ export const popularRoutes = [
     description: "Popular airport transfer to Patong Beach hotels.",
     price: "Check live price",
     duration: "1h – 2h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/phuket-airport-to-patong-beach.png",
     href: "/routes/phuket-airport-to-patong-beach",
   },
   {
@@ -165,7 +165,7 @@ export const popularRoutes = [
     description: "Airport to beach transfer from Phuket Airport to Patong Beach.",
     price: "Check live price",
     duration: "1h – 2h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/phuket-airport-to-patong-beach.png",
     href: "/routes/phuket-airport-to-patong-beach",
   },
   {
@@ -174,7 +174,7 @@ export const popularRoutes = [
     description: "Beach to airport transfer from Patong Beach to Phuket Airport.",
     price: "Check live price",
     duration: "1h – 2h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/patong-beach-to-phuket-airport.png",
     href: "/routes/patong-beach-to-phuket-airport",
   },
   {
@@ -183,7 +183,7 @@ export const popularRoutes = [
     description: "Airport transfer from Phuket Airport to Kata and Karon beach areas.",
     price: "Check live price",
     duration: "1h 15m – 2h 30m",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/phuket-airport-to-kata-karon.png",
     href: "/routes/phuket-airport-to-kata-karon",
   },
   {
@@ -192,7 +192,7 @@ export const popularRoutes = [
   description: "Airport transfer to Ao Nang hotels and beach areas.",
   price: "Check live price",
   duration: "30m – 1h 30m",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/krabi-airport-to-ao-nang.png",
   href: "/routes/krabi-airport-to-ao-nang",
 },
   {
@@ -201,7 +201,7 @@ export const popularRoutes = [
     description: "Airport to island transfer from Surat Thani Airport to Koh Samui.",
     price: "Check live price",
     duration: "3h 30m – 5h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/surat-thani-airport-to-koh-samui.png",
     href: "/routes/surat-thani-airport-to-koh-samui",
   },
   {
@@ -210,7 +210,7 @@ export const popularRoutes = [
     description: "Airport to island transfer from Surat Thani Airport to Koh Samui.",
     price: "Check live price",
     duration: "3h 30m – 5h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/surat-thani-airport-to-koh-samui.png",
     href: "/routes/surat-thani-airport-to-koh-samui",
   },
   {
@@ -219,7 +219,7 @@ export const popularRoutes = [
     description: "Island to airport transfer from Koh Samui to Surat Thani Airport.",
     price: "Check live price",
     duration: "3h – 5h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/koh-samui-to-surat-thani-airport.png",
     href: "/routes/koh-samui-to-surat-thani-airport",
   },
   {
@@ -228,7 +228,7 @@ export const popularRoutes = [
   description: "Compare ferry and speedboat options to Phi Phi Islands.",
   price: "Check live price",
   duration: "1h – 3h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/phuket-to-koh-phi-phi.png",
   href: "/routes/phuket-to-koh-phi-phi",
 },
   {
@@ -237,7 +237,7 @@ export const popularRoutes = [
     description: "Return transfer from Pattaya to Bangkok Airport.",
     price: "Check live price",
     duration: "1h 45m – 3h 30m",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/pattaya-to-bangkok-airport.png",
     href: "/routes/pattaya-to-bangkok-airport",
   },
   {
@@ -246,7 +246,7 @@ export const popularRoutes = [
     description: "Return transfer from Pattaya to Don Mueang Airport.",
     price: "Check live price",
     duration: "2h – 4h 30m",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/pattaya-to-don-mueang-airport.png",
     href: "/routes/pattaya-to-don-mueang-airport",
   },
   {
@@ -255,7 +255,7 @@ export const popularRoutes = [
     description: "Return transfer from Hua Hin to Bangkok city.",
     price: "Check live price",
     duration: "3h – 5h 30m",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/hua-hin-to-bangkok.png",
     href: "/routes/hua-hin-to-bangkok",
   },
   {
@@ -264,7 +264,7 @@ export const popularRoutes = [
     description: "Return ferry and speedboat options to Phuket.",
     price: "Check live price",
     duration: "1h – 3h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/koh-phi-phi-to-phuket.png",
     href: "/routes/koh-phi-phi-to-phuket",
   },
   {
@@ -273,7 +273,7 @@ export const popularRoutes = [
     description: "Island return transfer from Koh Chang to Bangkok.",
     price: "Check live price",
     duration: "7h – 10h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/koh-chang-to-bangkok.png",
     href: "/routes/koh-chang-to-bangkok",
   },
   {
@@ -282,7 +282,7 @@ export const popularRoutes = [
     description: "Airport transfer from Koh Chang to Bangkok Suvarnabhumi Airport.",
     price: "Check live price",
     duration: "6h 30m – 9h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/koh-chang-to-suvarnabhumi-airport.png",
     href: "/routes/koh-chang-to-suvarnabhumi-airport",
   },
   {
@@ -291,7 +291,7 @@ export const popularRoutes = [
     description: "Airport arrival transfer from Bangkok Suvarnabhumi Airport to Koh Chang.",
     price: "Check live price",
     duration: "6h – 9h",
-    image: "/assets/routes/bangkok-pattaya.png",
+    image: "/assets/routes/suvarnabhumi-airport-to-koh-chang.png",
     href: "/routes/suvarnabhumi-airport-to-koh-chang",
   },
 {
@@ -300,7 +300,7 @@ export const popularRoutes = [
   description: "Compare ferry and speedboat options from Krabi to Phi Phi.",
   price: "Check live price",
   duration: "1h – 3h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/krabi-to-koh-phi-phi.png",
   href: "/routes/krabi-to-koh-phi-phi",
 },
 {
@@ -309,7 +309,7 @@ export const popularRoutes = [
   description: "Return ferry and speedboat options from Phi Phi to Krabi.",
   price: "Check live price",
   duration: "1h – 3h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/koh-phi-phi-to-krabi.png",
   href: "/routes/koh-phi-phi-to-krabi",
 },
 {
@@ -318,7 +318,7 @@ export const popularRoutes = [
   description: "Airport to island transfer with bus, van and ferry options.",
   price: "Check live price",
   duration: "4h – 7h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/surat-thani-airport-to-koh-phangan.png",
   href: "/routes/surat-thani-airport-to-koh-phangan",
 },
 {
@@ -327,7 +327,7 @@ export const popularRoutes = [
   description: "Island to airport transfer with ferry, bus and van options.",
   price: "Check live price",
   duration: "4h – 7h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/koh-phangan-to-surat-thani-airport.png",
   href: "/routes/koh-phangan-to-surat-thani-airport",
 },
 {
@@ -336,7 +336,7 @@ export const popularRoutes = [
   description: "Compare train, bus and flight options back to Bangkok.",
   price: "Check live price",
   duration: "1h 15m – 14h",
-  image: "/assets/routes/bangkok-pattaya.png",
+  image: "/assets/routes/chiang-mai-to-bangkok.png",
   href: "/routes/chiang-mai-to-bangkok",
 },
 ];
