@@ -11,9 +11,9 @@ const helpfulLinks = [
 
 const destinations = [
   { name: "Pattaya", href: "/routes/bangkok-airport-to-pattaya" },
-  { name: "Phuket", href: "/routes/bangkok-airport-to-pattaya" },
-  { name: "Chiang Mai", href: "/routes/bangkok-airport-to-pattaya" },
-  { name: "Koh Samui", href: "/routes/bangkok-airport-to-pattaya" },
+  { name: "Phuket", href: "/routes/phuket-airport-to-patong-beach" },
+  { name: "Chiang Mai", href: "/routes/bangkok-to-chiang-mai" },
+  { name: "Koh Samui", href: "/routes/surat-thani-airport-to-koh-samui" },
 ];
 
 export function Footer() {
