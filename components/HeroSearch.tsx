@@ -32,6 +32,20 @@ const mobileToOptions = [
 
 const mobileRouteOptions = [...mobileFromOptions, ...mobileToOptions];
 
+const mobileRouteHrefs: Record<string, string> = {
+  "bangkok-hua-hin": "/routes/bangkok-to-hua-hin",
+  "bkk-hua-hin": "/routes/suvarnabhumi-airport-to-hua-hin",
+  "bkk-koh-chang": "/routes/suvarnabhumi-airport-to-koh-chang",
+  "bkk-pattaya": "/routes/bangkok-airport-to-pattaya",
+  "dmk-hua-hin": "/routes/don-mueang-airport-to-hua-hin",
+  "dmk-pattaya": "/routes/don-mueang-airport-to-pattaya",
+  "hua-hin-bangkok": "/routes/hua-hin-to-bangkok",
+  "koh-chang-bangkok": "/routes/koh-chang-to-bangkok",
+  "koh-chang-bkk": "/routes/koh-chang-to-suvarnabhumi-airport",
+  "pattaya-bkk": "/routes/pattaya-to-bangkok-airport",
+  "pattaya-dmk": "/routes/pattaya-to-don-mueang-airport",
+};
+
 const mobilePassengerOptions = [
   { value: "1", label: "1 Adult" },
   { value: "2", label: "2 Adults" },
@@ -377,6 +391,8 @@ function MobileHero() {
   const selectedMobilePassengers =
     mobilePassengerOptions.find((option) => option.value === mobilePassengers) ??
     mobilePassengerOptions[1];
+  const mobileRouteHref =
+    mobileRouteHrefs[`${mobileFrom}-${mobileTo}`] ?? "/routes";
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-24 lg:hidden">
@@ -603,7 +619,7 @@ function MobileHero() {
             </div>
 
             <Link
-              href="/routes/bangkok-airport-to-pattaya"
+              href={mobileRouteHref}
               className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-semibold text-white"
             >
               <span>Compare transport options</span>
