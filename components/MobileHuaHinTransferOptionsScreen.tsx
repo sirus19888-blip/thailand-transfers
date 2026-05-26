@@ -322,10 +322,10 @@ export function MobileHuaHinTransferOptionsScreen({
 
                     <div className="flex shrink-0 gap-2">
                       <Link
-                        href="/routes"
+                        href="/routes/suvarnabhumi-airport-to-hua-hin/details"
                         className="rounded-2xl border border-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-[#0c5a4d]"
                       >
-                        Routes
+                        Details
                       </Link>
 
                       <AffiliateButton
