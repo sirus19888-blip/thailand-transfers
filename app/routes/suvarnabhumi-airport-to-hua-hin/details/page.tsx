@@ -161,7 +161,7 @@ function MobileDetails() {
         >
           <div className="relative aspect-[16/10]">
             <Image
-              src="/assets/routes/suvarnabhumi-airport-to-hua-hin.png"
+              src="/assets/routes/suvarnabhumi-airport-to-hua-hin-overview.png"
               alt="Suvarnabhumi Airport to Hua Hin route"
               fill
               priority
