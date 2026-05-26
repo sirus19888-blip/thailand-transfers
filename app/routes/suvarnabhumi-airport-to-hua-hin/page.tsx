@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { MobileHuaHinTransferOptionsScreen } from "@/components/MobileHuaHinTransferOptionsScreen";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { getRoutePageBySlug } from "@/data/routePages";
 
@@ -17,10 +18,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SuvarnabhumiAirportToHuaHinPage() {
+type SuvarnabhumiAirportToHuaHinPageProps = {
+  searchParams?: Promise<{
+    date?: string;
+    passengers?: string;
+  }>;
+};
+
+export default async function SuvarnabhumiAirportToHuaHinPage({
+  searchParams,
+}: SuvarnabhumiAirportToHuaHinPageProps) {
   if (!route) {
     notFound();
   }
+
+  const params = await searchParams;
+  const selectedDate = params?.date;
+  const passengers = params?.passengers;
 
   return (
     <RoutePageTemplate
@@ -30,6 +44,13 @@ export default function SuvarnabhumiAirportToHuaHinPage() {
       mobileDescription="Compare bus, taxi, bus plus van and flight transfer options from Suvarnabhumi Airport to Hua Hin. Check live schedules, airport pickup points and luggage rules before booking."
       optionsHeading="Compare Suvarnabhumi Airport to Hua Hin transfer options"
       detailsNote="For airport arrivals, allow extra time for immigration, baggage claim and possible flight delays. Check your airport pickup point, Hua Hin drop-off location, luggage allowance and live operator schedule before booking."
+      mobileContent={
+        <MobileHuaHinTransferOptionsScreen
+          route={route}
+          selectedDate={selectedDate}
+          passengers={passengers}
+        />
+      }
     />
   );
 }

@@ -393,6 +393,20 @@ function MobileHero() {
     mobilePassengerOptions[1];
   const mobileRouteHref =
     mobileRouteHrefs[`${mobileFrom}-${mobileTo}`] ?? "/routes";
+  const mobileRouteSearchParams = new URLSearchParams();
+
+  if (mobileDate) {
+    mobileRouteSearchParams.set("date", mobileDate);
+  }
+
+  if (mobilePassengers) {
+    mobileRouteSearchParams.set("passengers", mobilePassengers);
+  }
+
+  const mobileRouteSearch = mobileRouteSearchParams.toString();
+  const mobileRouteHrefWithParams = mobileRouteSearch
+    ? `${mobileRouteHref}?${mobileRouteSearch}`
+    : mobileRouteHref;
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-24 lg:hidden">
@@ -619,7 +633,7 @@ function MobileHero() {
             </div>
 
             <Link
-              href={mobileRouteHref}
+              href={mobileRouteHrefWithParams}
               className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-semibold text-white"
             >
               <span>Compare transport options</span>
