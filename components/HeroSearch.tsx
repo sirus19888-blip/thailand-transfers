@@ -17,6 +17,44 @@ import {
 } from "lucide-react";
 import { Container } from "./Container";
 
+const mobileFromOptions = [
+  { value: "bkk", label: "Suvarnabhumi Airport (BKK)" },
+  { value: "dmk", label: "Don Mueang Airport (DMK)" },
+  { value: "bangkok", label: "Bangkok City" },
+];
+
+const mobileToOptions = [
+  { value: "pattaya", label: "Pattaya City" },
+  { value: "hua-hin", label: "Hua Hin" },
+  { value: "koh-chang", label: "Koh Chang" },
+  { value: "patong", label: "Patong" },
+];
+
+const mobileRouteOptions = [...mobileFromOptions, ...mobileToOptions];
+
+const mobilePassengerOptions = [
+  { value: "1", label: "1 Adult" },
+  { value: "2", label: "2 Adults" },
+  { value: "3", label: "3 Adults" },
+  { value: "4", label: "4 Adults" },
+  { value: "5", label: "5+ Adults" },
+];
+
+function getMobileOptionsWithSelected(
+  options: typeof mobileRouteOptions,
+  selectedValue: string,
+) {
+  const selectedOption = mobileRouteOptions.find(
+    (option) => option.value === selectedValue,
+  );
+
+  if (!selectedOption || options.some((option) => option.value === selectedValue)) {
+    return options;
+  }
+
+  return [...options, selectedOption];
+}
+
 function SearchFields() {
   return (
     <div className="grid gap-3 md:grid-cols-2">
@@ -318,6 +356,28 @@ function DesktopHero() {
 }
 
 function MobileHero() {
+  const [mobileFrom, setMobileFrom] = useState("bkk");
+  const [mobileTo, setMobileTo] = useState("pattaya");
+  const [mobileDate, setMobileDate] = useState("");
+  const [mobilePassengers, setMobilePassengers] = useState("2");
+  const selectedMobileFrom =
+    mobileRouteOptions.find((option) => option.value === mobileFrom) ??
+    mobileFromOptions[0];
+  const selectedMobileTo =
+    mobileRouteOptions.find((option) => option.value === mobileTo) ??
+    mobileToOptions[0];
+  const mobileFromSelectOptions = getMobileOptionsWithSelected(
+    mobileFromOptions,
+    mobileFrom,
+  );
+  const mobileToSelectOptions = getMobileOptionsWithSelected(
+    mobileToOptions,
+    mobileTo,
+  );
+  const selectedMobilePassengers =
+    mobilePassengerOptions.find((option) => option.value === mobilePassengers) ??
+    mobilePassengerOptions[1];
+
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-24 lg:hidden">
       <div className="relative mx-auto max-w-md overflow-hidden bg-[#f6f1e8]">
@@ -379,7 +439,20 @@ function MobileHero() {
           <div className="rounded-[24px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10">
             <div className="grid grid-cols-[1fr_44px] gap-2.5">
               <div className="space-y-3">
-                <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                  <select
+                    aria-label="From"
+                    value={mobileFrom}
+                    onChange={(event) => setMobileFrom(event.target.value)}
+                    className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
+                  >
+                    {mobileFromSelectOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+
                   <span className="text-[12px] font-semibold text-[#98a2b3]">
                     From
                   </span>
@@ -388,14 +461,27 @@ function MobileHero() {
                     <Plane className="h-4 w-4 text-[#0c5a4d]" />
 
                     <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
-                      Suvarnabhumi Airport (BKK)
+                      {selectedMobileFrom.label}
                     </span>
 
                     <ChevronDown className="h-4 w-4 text-[#667085]" />
                   </div>
                 </label>
 
-                <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                  <select
+                    aria-label="To"
+                    value={mobileTo}
+                    onChange={(event) => setMobileTo(event.target.value)}
+                    className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
+                  >
+                    {mobileToSelectOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+
                   <span className="text-[12px] font-semibold text-[#98a2b3]">
                     To
                   </span>
@@ -404,7 +490,7 @@ function MobileHero() {
                     <MapPin className="h-4 w-4 text-[#0c5a4d]" />
 
                     <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
-                      Pattaya City
+                      {selectedMobileTo.label}
                     </span>
 
                     <ChevronDown className="h-4 w-4 text-[#667085]" />
@@ -416,6 +502,10 @@ function MobileHero() {
                 <button
                   type="button"
                   aria-label="Swap route"
+                  onClick={() => {
+                    setMobileFrom(mobileTo);
+                    setMobileTo(mobileFrom);
+                  }}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e7e2d8] bg-white shadow-md"
                 >
                   <ArrowDownUp className="h-5 w-5 text-[#0c5a4d] stroke-[2.2]" />
@@ -424,21 +514,42 @@ function MobileHero() {
             </div>
 
             <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-              <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+              <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <input
+                  aria-label="Date"
+                  type="date"
+                  value={mobileDate}
+                  onChange={(event) => setMobileDate(event.target.value)}
+                  className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
+                />
+
                 <span className="text-[12px] font-semibold text-[#98a2b3]">
                   Date
                 </span>
 
                 <div className="mt-1.5 flex items-center gap-2">
                   <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
-                    Choose date
+                    {mobileDate || "Choose date"}
                   </span>
 
                   <CalendarDays className="h-4 w-4 text-[#667085]" />
                 </div>
               </label>
 
-              <label className="block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+              <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <select
+                  aria-label="Passengers"
+                  value={mobilePassengers}
+                  onChange={(event) => setMobilePassengers(event.target.value)}
+                  className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
+                >
+                  {mobilePassengerOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+
                 <span className="text-[12px] font-semibold text-[#98a2b3]">
                   Passengers
                 </span>
@@ -447,7 +558,7 @@ function MobileHero() {
                   <Users className="h-4 w-4 text-[#667085]" />
 
                   <span className="flex-1 text-[14px] font-semibold text-[#10201d]">
-                    2 Adults
+                    {selectedMobilePassengers.label}
                   </span>
 
                   <ChevronDown className="h-4 w-4 text-[#667085]" />
