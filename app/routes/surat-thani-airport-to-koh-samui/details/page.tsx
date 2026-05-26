@@ -170,7 +170,7 @@ function MobileDetails() {
         >
           <div className="relative aspect-[16/10]">
             <Image
-              src="/assets/routes/surat-thani-airport-to-koh-samui.png"
+              src="/assets/routes/surat-thani-airport-to-koh-samui-overview.png"
               alt="Surat Thani Airport to Koh Samui route"
               fill
               priority

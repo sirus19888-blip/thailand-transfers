@@ -170,7 +170,7 @@ function MobileDetails() {
         >
           <div className="relative aspect-[16/10]">
             <Image
-              src="/assets/routes/suvarnabhumi-airport-to-koh-chang.png"
+              src="/assets/routes/suvarnabhumi-airport-to-koh-chang-overview.png"
               alt="Suvarnabhumi Airport to Koh Chang route"
               fill
               priority
