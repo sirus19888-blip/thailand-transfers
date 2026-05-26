@@ -20,30 +20,124 @@ import { Container } from "./Container";
 const mobileFromOptions = [
   { value: "bkk", label: "Suvarnabhumi Airport (BKK)" },
   { value: "dmk", label: "Don Mueang Airport (DMK)" },
+  { value: "surat-thani-airport", label: "Surat Thani Airport" },
+  { value: "phuket-airport", label: "Phuket Airport" },
+  { value: "krabi-airport", label: "Krabi Airport" },
   { value: "bangkok", label: "Bangkok City" },
+  { value: "chiang-mai", label: "Chiang Mai" },
+  { value: "pattaya", label: "Pattaya" },
+  { value: "hua-hin", label: "Hua Hin" },
+  { value: "patong", label: "Patong Beach" },
+  { value: "phuket", label: "Phuket" },
+  { value: "koh-samui", label: "Koh Samui" },
+  { value: "koh-phangan", label: "Koh Phangan" },
+  { value: "koh-phi-phi", label: "Koh Phi Phi" },
+  { value: "koh-chang", label: "Koh Chang" },
+  { value: "krabi", label: "Krabi" },
 ];
 
 const mobileToOptions = [
-  { value: "pattaya", label: "Pattaya City" },
+  { value: "pattaya", label: "Pattaya" },
   { value: "hua-hin", label: "Hua Hin" },
   { value: "koh-chang", label: "Koh Chang" },
-  { value: "patong", label: "Patong" },
+  { value: "patong", label: "Patong Beach" },
+  { value: "kata-karon", label: "Kata / Karon" },
+  { value: "ao-nang", label: "Ao Nang" },
+  { value: "koh-samui", label: "Koh Samui" },
+  { value: "koh-phangan", label: "Koh Phangan" },
+  { value: "koh-phi-phi", label: "Koh Phi Phi" },
+  { value: "phuket", label: "Phuket" },
+  { value: "krabi", label: "Krabi" },
+  { value: "bangkok", label: "Bangkok City" },
+  { value: "bkk", label: "Suvarnabhumi Airport (BKK)" },
+  { value: "dmk", label: "Don Mueang Airport (DMK)" },
+  { value: "surat-thani-airport", label: "Surat Thani Airport" },
+  { value: "chiang-mai", label: "Chiang Mai" },
 ];
 
 const mobileRouteOptions = [...mobileFromOptions, ...mobileToOptions];
 
+const mobileFromOptionGroups = [
+  {
+    label: "Airports",
+    options: mobileFromOptions.slice(0, 5),
+  },
+  {
+    label: "Cities",
+    options: mobileFromOptions.slice(5, 9),
+  },
+  {
+    label: "Beaches",
+    options: mobileFromOptions.slice(9, 11),
+  },
+  {
+    label: "Islands",
+    options: mobileFromOptions.slice(11, 15),
+  },
+  {
+    label: "Other",
+    options: mobileFromOptions.slice(15),
+  },
+];
+
+const mobileToOptionGroups = [
+  {
+    label: "Cities",
+    options: mobileToOptions.slice(0, 2),
+  },
+  {
+    label: "Islands",
+    options: [
+      mobileToOptions[2],
+      mobileToOptions[6],
+      mobileToOptions[7],
+      mobileToOptions[8],
+    ],
+  },
+  {
+    label: "Beaches",
+    options: mobileToOptions.slice(3, 6),
+  },
+  {
+    label: "Other",
+    options: mobileToOptions.slice(9, 11),
+  },
+  {
+    label: "Airports",
+    options: mobileToOptions.slice(11, 14),
+  },
+  {
+    label: "Northern Thailand",
+    options: mobileToOptions.slice(14),
+  },
+];
+
 const mobileRouteHrefs: Record<string, string> = {
   "bangkok-hua-hin": "/routes/bangkok-to-hua-hin",
+  "bangkok-chiang-mai": "/routes/bangkok-to-chiang-mai",
   "bkk-hua-hin": "/routes/suvarnabhumi-airport-to-hua-hin",
   "bkk-koh-chang": "/routes/suvarnabhumi-airport-to-koh-chang",
   "bkk-pattaya": "/routes/bangkok-airport-to-pattaya",
+  "chiang-mai-bangkok": "/routes/chiang-mai-to-bangkok",
   "dmk-hua-hin": "/routes/don-mueang-airport-to-hua-hin",
   "dmk-pattaya": "/routes/don-mueang-airport-to-pattaya",
   "hua-hin-bangkok": "/routes/hua-hin-to-bangkok",
   "koh-chang-bangkok": "/routes/koh-chang-to-bangkok",
   "koh-chang-bkk": "/routes/koh-chang-to-suvarnabhumi-airport",
+  "koh-phangan-surat-thani-airport": "/routes/koh-phangan-to-surat-thani-airport",
+  "koh-phi-phi-krabi": "/routes/koh-phi-phi-to-krabi",
+  "koh-phi-phi-phuket": "/routes/koh-phi-phi-to-phuket",
+  "koh-samui-surat-thani-airport": "/routes/koh-samui-to-surat-thani-airport",
+  "krabi-airport-ao-nang": "/routes/krabi-airport-to-ao-nang",
+  "krabi-koh-phi-phi": "/routes/krabi-to-koh-phi-phi",
   "pattaya-bkk": "/routes/pattaya-to-bangkok-airport",
   "pattaya-dmk": "/routes/pattaya-to-don-mueang-airport",
+  "patong-phuket-airport": "/routes/patong-beach-to-phuket-airport",
+  "phuket-airport-kata-karon": "/routes/phuket-airport-to-kata-karon",
+  "phuket-airport-patong": "/routes/phuket-airport-to-patong-beach",
+  "phuket-koh-phi-phi": "/routes/phuket-to-koh-phi-phi",
+  "surat-thani-airport-koh-phangan": "/routes/surat-thani-airport-to-koh-phangan",
+  "surat-thani-airport-koh-samui": "/routes/surat-thani-airport-to-koh-samui",
 };
 
 const mobilePassengerOptions = [
@@ -67,6 +161,46 @@ function getMobileOptionsWithSelected(
   }
 
   return [...options, selectedOption];
+}
+
+function renderMobileOptionGroups(
+  groups: typeof mobileFromOptionGroups,
+  selectOptions: typeof mobileRouteOptions,
+) {
+  const renderedValues = new Set<string>();
+
+  const groupedOptions = groups.map((group) => (
+    <optgroup key={group.label} label={group.label}>
+      {group.options.map((option) => {
+        renderedValues.add(option.value);
+
+        return (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        );
+      })}
+    </optgroup>
+  ));
+
+  const extraOptions = selectOptions.filter(
+    (option) => !renderedValues.has(option.value),
+  );
+
+  if (extraOptions.length === 0) {
+    return groupedOptions;
+  }
+
+  return [
+    ...groupedOptions,
+    <optgroup key="Selected" label="Selected">
+      {extraOptions.map((option) => (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      ))}
+    </optgroup>,
+  ];
 }
 
 function SearchFields() {
@@ -476,11 +610,10 @@ function MobileHero() {
                     onChange={(event) => setMobileFrom(event.target.value)}
                     className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                   >
-                    {mobileFromSelectOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
+                    {renderMobileOptionGroups(
+                      mobileFromOptionGroups,
+                      mobileFromSelectOptions,
+                    )}
                   </select>
 
                   <span className="text-[12px] font-semibold text-[#98a2b3]">
@@ -505,11 +638,10 @@ function MobileHero() {
                     onChange={(event) => setMobileTo(event.target.value)}
                     className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                   >
-                    {mobileToSelectOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
+                    {renderMobileOptionGroups(
+                      mobileToOptionGroups,
+                      mobileToSelectOptions,
+                    )}
                   </select>
 
                   <span className="text-[12px] font-semibold text-[#98a2b3]">
