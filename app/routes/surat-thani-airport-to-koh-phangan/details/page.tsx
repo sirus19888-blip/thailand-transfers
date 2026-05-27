@@ -107,7 +107,7 @@ export default function SuratThaniAirportToKohPhanganDetailsPage() {
       backHref="/routes/surat-thani-airport-to-koh-phangan"
       mobileTitle="Surat Thani to Phangan"
       mobileSubtitle="Airport pickup, pier transfer and ferry crossing"
-      overviewImage="/assets/routes/surat-thani-airport-to-koh-phangan.png"
+      overviewImage="/assets/routes/surat-thani-airport-to-koh-phangan-overview.png"
       overviewAlt="Surat Thani Airport to Koh Phangan route"
       heroTitle="Surat Thani Airport to Koh Phangan: ferry transfer guide"
       heroDescription="Before booking, check the airport pickup point, mainland pier transfer, ferry crossing, Koh Phangan arrival pier, luggage rules and whether island-side drop-off is included."

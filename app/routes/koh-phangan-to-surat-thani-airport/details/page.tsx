@@ -107,7 +107,7 @@ export default function KohPhanganToSuratThaniAirportDetailsPage() {
       backHref="/routes/koh-phangan-to-surat-thani-airport"
       mobileTitle="Phangan to Surat Airport"
       mobileSubtitle="Departure pier, ferry crossing and airport transfer"
-      overviewImage="/assets/routes/koh-phangan-to-surat-thani-airport.png"
+      overviewImage="/assets/routes/koh-phangan-to-surat-thani-airport-overview.png"
       overviewAlt="Koh Phangan to Surat Thani Airport route"
       heroTitle="Koh Phangan to Surat Thani Airport: ferry transfer guide"
       heroDescription="Before booking, check the Koh Phangan departure pier, ferry timing, mainland transfer, airport drop-off, luggage rules and how much flight buffer you need."
