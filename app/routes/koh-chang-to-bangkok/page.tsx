@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { getRoutePageBySlug } from "@/data/routePages";
 
@@ -17,10 +18,70 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KohChangToBangkokPage() {
+const optionDetailsById = {
+  "ferry-van": {
+    label: "Island link",
+    operator: "Ferry and van partner operators",
+    departures: "Live schedule",
+    baggage: "Check ticket",
+    image: "/assets/vehicles/van-ferry.png",
+    rating: "4.5",
+    reviews: "Partner details",
+    pros: ["Simple island-to-city route", "Good balance of value and ease"],
+    cons: ["Long travel day", "Pickup and drop-off rules vary"],
+  },
+  "ferry-bus": {
+    label: "Best value",
+    operator: "Ferry and bus partner operators",
+    departures: "Live schedule",
+    baggage: "Check rules",
+    image: "/assets/vehicles/bus-ferry.png",
+    rating: "4.4",
+    reviews: "Partner details",
+    pros: ["Budget-friendly route", "Good for Bangkok city drop-off"],
+    cons: ["Longest option", "Less flexible with luggage"],
+  },
+  van: {
+    label: "Shared",
+    operator: "Shared van partner operators",
+    departures: "Live schedule",
+    baggage: "Check rules",
+    image: "/assets/vehicles/van.png",
+    rating: "4.4",
+    reviews: "Partner details",
+    pros: ["Often direct after ferry", "Useful for solo travelers"],
+    cons: ["Limited luggage space", "Route details need checking"],
+  },
+  taxi: {
+    label: "Flexible",
+    operator: "Private island transfer",
+    departures: "On demand",
+    baggage: "Private car",
+    image: "/assets/vehicles/taxi.png",
+    rating: "4.8",
+    reviews: "Partner details",
+    pros: ["Most comfortable", "Better with luggage or family"],
+    cons: ["Higher total price", "Ferry timing still matters"],
+  },
+};
+
+type KohChangToBangkokPageProps = {
+  searchParams?: Promise<{
+    date?: string;
+    passengers?: string;
+  }>;
+};
+
+export default async function KohChangToBangkokPage({
+  searchParams,
+}: KohChangToBangkokPageProps) {
   if (!route) {
     notFound();
   }
+
+  const params = await searchParams;
+  const selectedDate = params?.date;
+  const passengers = params?.passengers;
 
   return (
     <RoutePageTemplate
@@ -30,6 +91,21 @@ export default function KohChangToBangkokPage() {
       mobileDescription="Compare ferry, van, bus and taxi options from Koh Chang to Bangkok. Check live schedules, ferry details, pickup points and luggage rules before booking."
       optionsHeading="Compare Koh Chang to Bangkok transfer options"
       detailsNote="For island routes, check whether your ticket includes the ferry crossing, hotel pickup, pier transfer, luggage allowance and Bangkok drop-off point. Allow extra time if you are connecting to a flight."
+      mobileContent={
+        <MobilePriorityRouteOptionsScreen
+          route={route}
+          title="Koh Chang - Bangkok"
+          summaryLeftTitle="Ferry route"
+          summaryLeftText="Pier timing matters"
+          summaryRightTitle="Bangkok drop-off"
+          summaryRightText="Check final area"
+          optionDetailsById={optionDetailsById}
+          detailsHref="/routes/koh-chang-to-bangkok/details"
+          footerNote="Live prices and schedules may change. Check hotel pickup, ferry crossing, mainland transfer and Bangkok drop-off before booking."
+          selectedDate={selectedDate}
+          passengers={passengers}
+        />
+      }
     />
   );
 }
