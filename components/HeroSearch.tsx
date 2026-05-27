@@ -34,6 +34,7 @@ const mobileFromOptions = [
   { value: "koh-phi-phi", label: "Koh Phi Phi" },
   { value: "koh-chang", label: "Koh Chang" },
   { value: "krabi", label: "Krabi" },
+  { value: "ao-nang", label: "Ao Nang" },
 ];
 
 const mobileToOptions = [
@@ -51,6 +52,7 @@ const mobileToOptions = [
   { value: "bangkok", label: "Bangkok City" },
   { value: "bkk", label: "Suvarnabhumi Airport (BKK)" },
   { value: "dmk", label: "Don Mueang Airport (DMK)" },
+  { value: "krabi-airport", label: "Krabi Airport" },
   { value: "surat-thani-airport", label: "Surat Thani Airport" },
   { value: "chiang-mai", label: "Chiang Mai" },
 ];
@@ -104,11 +106,11 @@ const mobileToOptionGroups = [
   },
   {
     label: "Airports",
-    options: mobileToOptions.slice(11, 14),
+    options: mobileToOptions.slice(11, 15),
   },
   {
     label: "Northern Thailand",
-    options: mobileToOptions.slice(14),
+    options: mobileToOptions.slice(15),
   },
 ];
 
@@ -128,6 +130,7 @@ const mobileRouteHrefs: Record<string, string> = {
   "koh-phi-phi-krabi": "/routes/koh-phi-phi-to-krabi",
   "koh-phi-phi-phuket": "/routes/koh-phi-phi-to-phuket",
   "koh-samui-surat-thani-airport": "/routes/koh-samui-to-surat-thani-airport",
+  "ao-nang-krabi-airport": "/routes/ao-nang-to-krabi-airport",
   "krabi-airport-ao-nang": "/routes/krabi-airport-to-ao-nang",
   "krabi-koh-phi-phi": "/routes/krabi-to-koh-phi-phi",
   "pattaya-bkk": "/routes/pattaya-to-bangkok-airport",
@@ -140,6 +143,25 @@ const mobileRouteHrefs: Record<string, string> = {
   "surat-thani-airport-koh-samui": "/routes/surat-thani-airport-to-koh-samui",
 };
 
+const mobileRouteDestinationsByFrom = Object.keys(mobileRouteHrefs).reduce<
+  Record<string, string[]>
+>((routesByFrom, routeKey) => {
+  const fromValue = mobileRouteOptions.find((option) =>
+    routeKey.startsWith(`${option.value}-`),
+  )?.value;
+
+  if (!fromValue) {
+    return routesByFrom;
+  }
+
+  const toValue = routeKey.slice(fromValue.length + 1);
+
+  return {
+    ...routesByFrom,
+    [fromValue]: [...(routesByFrom[fromValue] ?? []), toValue],
+  };
+}, {});
+
 const mobilePassengerOptions = [
   { value: "1", label: "1 Adult" },
   { value: "2", label: "2 Adults" },
@@ -147,6 +169,15 @@ const mobilePassengerOptions = [
   { value: "4", label: "4 Adults" },
   { value: "5", label: "5+ Adults" },
 ];
+
+function getMobileDestinationOptions(fromValue: string) {
+  const destinationValues = mobileRouteDestinationsByFrom[fromValue] ?? [];
+  const destinationValueSet = new Set(destinationValues);
+
+  return mobileToOptions.filter((option) =>
+    destinationValueSet.has(option.value),
+  );
+}
 
 function getMobileOptionsWithSelected(
   options: typeof mobileRouteOptions,
@@ -168,20 +199,33 @@ function renderMobileOptionGroups(
   selectOptions: typeof mobileRouteOptions,
 ) {
   const renderedValues = new Set<string>();
+  const selectOptionValues = new Set(
+    selectOptions.map((option) => option.value),
+  );
 
-  const groupedOptions = groups.map((group) => (
-    <optgroup key={group.label} label={group.label}>
-      {group.options.map((option) => {
-        renderedValues.add(option.value);
+  const groupedOptions = groups.flatMap((group) => {
+    const groupOptions = group.options.filter((option) =>
+      selectOptionValues.has(option.value),
+    );
 
-        return (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        );
-      })}
-    </optgroup>
-  ));
+    if (groupOptions.length === 0) {
+      return [];
+    }
+
+    return [
+      <optgroup key={group.label} label={group.label}>
+        {groupOptions.map((option) => {
+          renderedValues.add(option.value);
+
+          return (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          );
+        })}
+      </optgroup>,
+    ];
+  });
 
   const extraOptions = selectOptions.filter(
     (option) => !renderedValues.has(option.value),
@@ -508,6 +552,18 @@ function MobileHero() {
   const [mobileTo, setMobileTo] = useState("pattaya");
   const [mobileDate, setMobileDate] = useState("");
   const [mobilePassengers, setMobilePassengers] = useState("2");
+  const updateMobileFrom = (nextFrom: string) => {
+    const nextDestinationOptions = getMobileDestinationOptions(nextFrom);
+
+    setMobileFrom(nextFrom);
+
+    if (
+      nextDestinationOptions.length > 0 &&
+      !nextDestinationOptions.some((option) => option.value === mobileTo)
+    ) {
+      setMobileTo(nextDestinationOptions[0].value);
+    }
+  };
   const selectedMobileFrom =
     mobileRouteOptions.find((option) => option.value === mobileFrom) ??
     mobileFromOptions[0];
@@ -518,8 +574,11 @@ function MobileHero() {
     mobileFromOptions,
     mobileFrom,
   );
+  const matchingMobileToOptions = getMobileDestinationOptions(mobileFrom);
   const mobileToSelectOptions = getMobileOptionsWithSelected(
-    mobileToOptions,
+    matchingMobileToOptions.length > 0
+      ? matchingMobileToOptions
+      : mobileToOptions,
     mobileTo,
   );
   const selectedMobilePassengers =
@@ -607,7 +666,12 @@ function MobileHero() {
                   <select
                     aria-label="From"
                     value={mobileFrom}
-                    onChange={(event) => setMobileFrom(event.target.value)}
+                    onInput={(event) =>
+                      updateMobileFrom(event.currentTarget.value)
+                    }
+                    onChange={(event) =>
+                      updateMobileFrom(event.currentTarget.value)
+                    }
                     className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                   >
                     {renderMobileOptionGroups(
@@ -665,8 +729,18 @@ function MobileHero() {
                   type="button"
                   aria-label="Swap route"
                   onClick={() => {
+                    const reverseDestinationOptions =
+                      getMobileDestinationOptions(mobileTo);
+                    const hasReverseRoute = reverseDestinationOptions.some(
+                      (option) => option.value === mobileFrom,
+                    );
+
                     setMobileFrom(mobileTo);
-                    setMobileTo(mobileFrom);
+                    setMobileTo(
+                      hasReverseRoute
+                        ? mobileFrom
+                        : reverseDestinationOptions[0]?.value ?? mobileFrom,
+                    );
                   }}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e7e2d8] bg-white shadow-md"
                 >
