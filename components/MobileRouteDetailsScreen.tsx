@@ -151,7 +151,7 @@ export function MobileRouteDetailsScreen() {
         >
           <div className="relative aspect-[16/10]">
             <Image
-              src="/assets/routes/bkk-pattaya-map.png"
+              src="/assets/routes/bangkok-airport-to-pattaya-overview.png"
               alt="Suvarnabhumi Airport to Pattaya route map"
               fill
               priority
