@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { getRoutePageBySlug } from "@/data/routePages";
 
@@ -17,10 +18,70 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KohSamuiToSuratThaniAirportPage() {
+const optionDetailsById = {
+  "ferry-bus": {
+    label: "Best value",
+    operator: "Ferry and airport bus partners",
+    departures: "Live schedule",
+    baggage: "Check rules",
+    image: "/assets/vehicles/bus-ferry.png",
+    rating: "4.5",
+    reviews: "Partner details",
+    pros: ["Simple island-to-airport ticket", "Good value before a flight"],
+    cons: ["Fixed ferry timing", "Needs flight buffer"],
+  },
+  "ferry-van": {
+    label: "Airport link",
+    operator: "Ferry and van partner operators",
+    departures: "Live schedule",
+    baggage: "Check ticket",
+    image: "/assets/vehicles/van-ferry.png",
+    rating: "4.5",
+    reviews: "Partner details",
+    pros: ["Smaller shared transfer", "Can include more pickup coverage"],
+    cons: ["Pickup area can vary", "Luggage rules need checking"],
+  },
+  "van-ferry-bus": {
+    label: "Bundled",
+    operator: "Combined island transfer partners",
+    departures: "Live schedule",
+    baggage: "Check ticket",
+    image: "/assets/vehicles/van-ferry.png",
+    rating: "4.4",
+    reviews: "Partner details",
+    pros: ["More complete island-to-airport chain", "Useful with hotel pickup"],
+    cons: ["More moving parts", "Connection details vary"],
+  },
+  "bus-ferry-van": {
+    label: "Compare all",
+    operator: "Combined partner operators",
+    departures: "Check dates",
+    baggage: "Check rules",
+    image: "/assets/vehicles/bus-ferry.png",
+    rating: "4.3",
+    reviews: "Partner details",
+    pros: ["Shows wider partner options", "Useful for unusual departure times"],
+    cons: ["Route details vary", "Check airport arrival time carefully"],
+  },
+};
+
+type KohSamuiToSuratThaniAirportPageProps = {
+  searchParams?: Promise<{
+    date?: string;
+    passengers?: string;
+  }>;
+};
+
+export default async function KohSamuiToSuratThaniAirportPage({
+  searchParams,
+}: KohSamuiToSuratThaniAirportPageProps) {
   if (!route) {
     notFound();
   }
+
+  const params = await searchParams;
+  const selectedDate = params?.date;
+  const passengers = params?.passengers;
 
   return (
     <RoutePageTemplate
@@ -30,6 +91,21 @@ export default function KohSamuiToSuratThaniAirportPage() {
       mobileDescription="Compare ferry, bus and van transfer options from Koh Samui to Surat Thani Airport. Check live schedules, departure pier, ferry crossing, airport drop-off and luggage rules before booking."
       optionsHeading="Compare Koh Samui to Surat Thani Airport transfer options"
       detailsNote="For island-to-airport transfers, allow extra time before your flight. Check hotel pickup if included, Koh Samui departure pier, ferry crossing, mainland transfer, Surat Thani Airport drop-off, luggage allowance, weather conditions and live operator schedule before booking."
+      mobileContent={
+        <MobilePriorityRouteOptionsScreen
+          route={route}
+          title="Samui - Surat Airport"
+          summaryLeftTitle="Flight buffer"
+          summaryLeftText="Leave extra time"
+          summaryRightTitle="Ferry chain"
+          summaryRightText="Pier plus road transfer"
+          optionDetailsById={optionDetailsById}
+          detailsHref="/routes/koh-samui-to-surat-thani-airport/details"
+          footerNote="Live prices and schedules may change. Leave extra time before flights and check ferry, pier and airport drop-off rules."
+          selectedDate={selectedDate}
+          passengers={passengers}
+        />
+      }
     />
   );
 }
