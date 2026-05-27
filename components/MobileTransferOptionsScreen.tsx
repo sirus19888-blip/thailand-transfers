@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { transferOptions } from "@/data/routes";
 import { AffiliateButton } from "./AffiliateButton";
+import { getMobileVehicleImage } from "./mobileVehicleAssets";
 import {
   ArrowLeft,
   Clock3,
@@ -110,7 +111,7 @@ export function MobileTransferOptionsScreen() {
                 <div className="grid grid-cols-[108px_1fr] gap-4 p-3">
                   <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-2xl bg-[#f8f4ec]">
                     <Image
-                      src={option.image}
+                      src={getMobileVehicleImage(option.id)}
                       alt={option.name}
                       fill
                       className="object-cover"

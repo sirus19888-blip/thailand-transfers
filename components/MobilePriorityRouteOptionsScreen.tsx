@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   ArrowLeft,
@@ -55,7 +56,7 @@ function getOptionDetails(
       operator: "Partner operator",
       departures: "Live schedule",
       baggage: "Check rules",
-      image: "/assets/vehicles/van.png",
+      image: mobileVehicleAssets.van,
       rating: "4.4",
       reviews: "Partner details",
       pros: [option.bestFor, "Live partner availability"],

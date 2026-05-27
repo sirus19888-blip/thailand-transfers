@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   ArrowLeft,
@@ -36,7 +37,7 @@ const optionDetailsById: Record<string, OptionDetails> = {
     operator: "Airport bus and partner coaches",
     departures: "Live schedule",
     baggage: "Check ticket",
-    image: "/assets/vehicles/bus.png",
+    image: mobileVehicleAssets.bus,
     rating: "4.5",
     reviews: "Partner details",
     pros: ["Simple airport pickup", "Good value for solo travelers"],
@@ -47,7 +48,7 @@ const optionDetailsById: Record<string, OptionDetails> = {
     operator: "Private airport transfer",
     departures: "On demand",
     baggage: "Private car",
-    image: "/assets/vehicles/taxi.png",
+    image: mobileVehicleAssets.taxi,
     rating: "4.8",
     reviews: "Partner details",
     pros: ["Door-to-door comfort", "Best after long flights"],
@@ -58,7 +59,7 @@ const optionDetailsById: Record<string, OptionDetails> = {
     operator: "Bus plus van connection",
     departures: "Live schedule",
     baggage: "Check rules",
-    image: "/assets/vehicles/bus.png",
+    image: mobileVehicleAssets.bus,
     rating: "4.4",
     reviews: "Partner details",
     pros: ["More partner choices", "Useful when direct seats are limited"],
@@ -69,7 +70,7 @@ const optionDetailsById: Record<string, OptionDetails> = {
     operator: "Flight plus ground transfer",
     departures: "Check dates",
     baggage: "Airline rules",
-    image: "/assets/vehicles/flight-taxi.png",
+    image: mobileVehicleAssets.flightTaxi,
     rating: "4.3",
     reviews: "Partner details",
     pros: ["Shows more route combinations", "Useful for unusual schedules"],
@@ -91,7 +92,7 @@ function getOptionDetails(option: RouteTransportOption) {
       operator: "Partner operator",
       departures: "Live schedule",
       baggage: "Check rules",
-      image: "/assets/vehicles/van.png",
+      image: mobileVehicleAssets.van,
       rating: "4.4",
       reviews: "Partner details",
       pros: [option.bestFor, "Live partner availability"],

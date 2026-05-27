@@ -3,6 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
+import { getMobileVehicleImage } from "@/components/mobileVehicleAssets";
 import type { RoutePageData } from "@/data/routePages";
 
 type StandardMobileRouteOptionsProps = {
@@ -10,18 +11,6 @@ type StandardMobileRouteOptionsProps = {
   selectedDate?: string;
   passengers?: string;
 };
-
-function getVehicleImage(optionId: string) {
-  if (optionId.includes("speedboat")) return "/assets/vehicles/speedboat.png";
-  if (optionId.includes("ferry")) return "/assets/vehicles/ferry.png";
-  if (optionId.includes("train")) return "/assets/vehicles/train.png";
-  if (optionId.includes("flight")) return "/assets/vehicles/flight-taxi.png";
-  if (optionId.includes("taxi")) return "/assets/vehicles/taxi.png";
-  if (optionId.includes("bus")) return "/assets/vehicles/bus.png";
-  if (optionId.includes("van")) return "/assets/vehicles/van.png";
-
-  return "/assets/vehicles/van.png";
-}
 
 function getOptionLabel(optionId: string) {
   if (optionId.includes("taxi")) return "Most flexible";
@@ -42,7 +31,7 @@ function buildOptionDetails(route: RoutePageData) {
         operator: `${option.name} partner operators`,
         departures: option.id.includes("taxi") ? "On demand" : "Live schedule",
         baggage: option.id.includes("taxi") ? "Private car" : "Check rules",
-        image: getVehicleImage(option.id),
+        image: getMobileVehicleImage(option.id),
         rating: option.id.includes("taxi") ? "4.8" : "4.5",
         reviews: "Partner details",
         pros: [option.bestFor, "Live partner availability"],
