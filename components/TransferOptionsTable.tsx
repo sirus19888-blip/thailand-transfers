@@ -50,6 +50,12 @@ function getBookLabel(id: string) {
   return "12Go";
 }
 
+function getMobileDetailsHref(optionId: string) {
+  return `/routes/bangkok-airport-to-pattaya/details?option=${encodeURIComponent(
+    optionId,
+  )}`;
+}
+
 function DesktopComparisonArea() {
   return (
     <div className="hidden items-start lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-5">
@@ -349,7 +355,7 @@ function MobileTransferCards() {
             </AffiliateButton>
 
             <Link
-              href="/routes/bangkok-airport-to-pattaya/details"
+              href={getMobileDetailsHref(option.id)}
               className="flex w-full items-center justify-center rounded-full border border-[#0c5a4d] bg-white px-5 py-3 text-sm font-bold text-[#0c5a4d] transition hover:bg-[#f8f4ec]"
             >
               View route details

@@ -20,6 +20,12 @@ function getBadgeColor(id: string) {
   return "bg-blue-500";
 }
 
+function getDetailsHref(optionId: string) {
+  return `/routes/bangkok-airport-to-pattaya/details?option=${encodeURIComponent(
+    optionId,
+  )}`;
+}
+
 export function MobileTransferOptionsScreen() {
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-24 lg:hidden">
@@ -221,7 +227,7 @@ export function MobileTransferOptionsScreen() {
 
                   <div className="flex shrink-0 gap-2">
                     <Link
-                      href="/routes/bangkok-airport-to-pattaya/details"
+                      href={getDetailsHref(option.id)}
                       className="rounded-2xl border border-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-[#0c5a4d]"
                     >
                       Details

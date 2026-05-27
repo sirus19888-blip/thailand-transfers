@@ -101,6 +101,12 @@ function getOptionDetails(option: RouteTransportOption) {
   );
 }
 
+function getDetailsHref(optionId: string) {
+  return `/routes/suvarnabhumi-airport-to-hua-hin/details?option=${encodeURIComponent(
+    optionId,
+  )}`;
+}
+
 export function MobileHuaHinTransferOptionsScreen({
   route,
   selectedDate,
@@ -323,7 +329,7 @@ export function MobileHuaHinTransferOptionsScreen({
 
                     <div className="flex shrink-0 gap-2">
                       <Link
-                        href="/routes/suvarnabhumi-airport-to-hua-hin/details"
+                        href={getDetailsHref(option.id)}
                         className="rounded-2xl border border-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-[#0c5a4d]"
                       >
                         Details

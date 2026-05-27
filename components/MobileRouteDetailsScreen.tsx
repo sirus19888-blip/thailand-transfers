@@ -13,7 +13,10 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const steps = [
+const optionContentById = {
+  bus: {
+    subtitle: "Airport pickup, bus stops and hotel transfer tips",
+    steps: [
   {
     number: "1",
     title: "Clear immigration and collect your luggage.",
@@ -38,13 +41,12 @@ const steps = [
     description:
       "Scheduled bus options thin out at night. A taxi or pre-booked car is usually easier after an evening flight or with heavy luggage.",
   },
-];
-
-const quickFacts = [
+],
+    quickFacts: [
   {
     icon: Clock3,
     title: "Typical travel time",
-    text: "Bus usually takes about 2h - 2h 30m. Taxi is often 1h 30m - 2h 30m depending on traffic and hotel area.",
+        text: "Bus usually takes about 2h - 2h 30m. It is best when the schedule matches your flight.",
   },
   {
     icon: MapPin,
@@ -56,16 +58,130 @@ const quickFacts = [
     title: "Luggage rules",
     text: "Bus and van tickets can have baggage limits. Private taxi is easier with larger suitcases, golf bags or family luggage.",
   },
-];
-
-const tips = [
+],
+    warningTitle: "Check your drop-off point",
+    warningText:
+      "Pattaya bus tickets can end at Jomtien, North Pattaya or Sukhumvit-area stops. Pick the option that matches your hotel area, especially if you arrive with luggage.",
+    tips: [
   "Roong Reuang Coach services to Jomtien commonly run through the day, with live availability varying by date.",
   "Some North Pattaya bus departures are separate from Jomtien services, so check the destination before booking.",
   "The 999 Bus route has limited daily departures, so it is not ideal for late arrivals.",
   "Allow at least 2 hours after scheduled landing before choosing a fixed bus departure.",
   "If your hotel is in Central Pattaya, Jomtien or Naklua, confirm which drop-off point is closest.",
   "For late evening arrivals, a private taxi is usually the simplest option.",
-];
+],
+  },
+  taxi: {
+    subtitle: "Private airport pickup, direct transfer and hotel drop-off tips",
+    steps: [
+      {
+        number: "1",
+        title: "Confirm the exact arrivals meeting point.",
+        description:
+          "Private taxi tickets normally use a named meeting area in arrivals. Follow the live voucher instructions instead of going to the bus counter.",
+      },
+      {
+        number: "2",
+        title: "Keep your driver or operator contact ready.",
+        description:
+          "If immigration or baggage claim is slow, use the booking contact details and keep your phone online after landing.",
+      },
+      {
+        number: "3",
+        title: "Check luggage and vehicle size.",
+        description:
+          "A sedan is usually fine for two adults with normal luggage. Choose a larger car or van if you have big bags, children or sports equipment.",
+      },
+      {
+        number: "4",
+        title: "Confirm your Pattaya hotel or address.",
+        description:
+          "Private taxi is the easiest door-to-door option, but the driver still needs the exact hotel, condo or pickup area shown on your booking.",
+      },
+    ],
+    quickFacts: [
+      {
+        icon: Clock3,
+        title: "Typical travel time",
+        text: "Private taxi is often 1h 30m - 2h 30m depending on traffic and Pattaya hotel area.",
+      },
+      {
+        icon: MapPin,
+        title: "Airport pickup",
+        text: "Meet in the arrivals area or the exact airport meeting point shown on your live ticket.",
+      },
+      {
+        icon: Luggage,
+        title: "Luggage rules",
+        text: "Private taxi is usually better than bus with large suitcases, family luggage or late arrivals.",
+      },
+    ],
+    warningTitle: "Confirm the meeting point",
+    warningText:
+      "Do not go to the bus counter for a taxi booking. Use the arrivals meeting point and operator contact details from the live ticket.",
+    tips: [
+      "Private taxi is usually the simplest option after late evening flights.",
+      "Check whether tolls, airport pickup and hotel drop-off are included before paying.",
+      "Choose a larger vehicle if you travel with more than two large suitcases.",
+      "Traffic can be heavier on Friday evenings, holidays and long weekends.",
+    ],
+  },
+  van: {
+    subtitle: "Shared van pickup, waiting time and hotel-area transfer tips",
+    steps: [
+      {
+        number: "1",
+        title: "Check the van meeting point before leaving arrivals.",
+        description:
+          "Shared vans can use a specific airport door, counter or operator meeting point. Follow the live voucher instructions.",
+      },
+      {
+        number: "2",
+        title: "Allow time for shared pickup.",
+        description:
+          "A shared van may wait for other passengers or make several stops before leaving the airport area.",
+      },
+      {
+        number: "3",
+        title: "Confirm the final Pattaya area.",
+        description:
+          "Some shared vans include hotel-area drop-off, while others finish at an operator point. Check this before booking.",
+      },
+      {
+        number: "4",
+        title: "Check luggage limits.",
+        description:
+          "Shared vans have tighter luggage space than private cars. Larger bags may need a taxi or private van.",
+      },
+    ],
+    quickFacts: [
+      {
+        icon: Clock3,
+        title: "Typical travel time",
+        text: "Shared van is usually about 2h - 3h depending on waiting time, stops and traffic.",
+      },
+      {
+        icon: MapPin,
+        title: "Airport pickup",
+        text: "Use the airport door, counter or operator pickup point shown on your live ticket.",
+      },
+      {
+        icon: Luggage,
+        title: "Luggage rules",
+        text: "Check baggage allowance carefully. Shared vans can be tight with large suitcases.",
+      },
+    ],
+    warningTitle: "Check if hotel drop-off is included",
+    warningText:
+      "Shared van tickets can differ by operator. Confirm whether the ticket goes to your hotel area or only to a Pattaya meeting point.",
+    tips: [
+      "Shared van can be a good middle option between bus price and taxi convenience.",
+      "Allow extra time if the van waits for passengers or makes hotel stops.",
+      "Check luggage allowance before booking if you have more than one large bag.",
+      "For late arrivals, private taxi is usually more predictable than a shared van.",
+    ],
+  },
+};
 
 const faqs = [
   {
@@ -93,7 +209,21 @@ const faqs = [
 const busOption = transferOptions.find((option) => option.id === "bus");
 const taxiOption = transferOptions.find((option) => option.id === "taxi");
 
-export function MobileRouteDetailsScreen() {
+type MobileRouteDetailsScreenProps = {
+  selectedOptionId?: string;
+};
+
+export function MobileRouteDetailsScreen({
+  selectedOptionId,
+}: MobileRouteDetailsScreenProps) {
+  const selectedOption =
+    transferOptions.find((option) => option.id === selectedOptionId) ??
+    busOption ??
+    transferOptions[0];
+  const selectedContent =
+    optionContentById[selectedOption?.id as keyof typeof optionContentById] ??
+    optionContentById.bus;
+
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-32 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
@@ -115,7 +245,7 @@ export function MobileRouteDetailsScreen() {
             </div>
 
             <p className="mt-1 text-xs font-medium text-slate-500">
-              Airport pickup, bus stops and hotel transfer tips
+              {selectedContent.subtitle}
             </p>
           </div>
 
@@ -161,7 +291,7 @@ export function MobileRouteDetailsScreen() {
         </div>
 
         <div className="mt-4 grid gap-3">
-          {quickFacts.map((fact) => {
+          {selectedContent.quickFacts.map((fact) => {
             const Icon = fact.icon;
 
             return (
@@ -196,7 +326,7 @@ export function MobileRouteDetailsScreen() {
           </h2>
 
           <div className="mt-4 space-y-3">
-            {steps.map((step) => (
+            {selectedContent.steps.map((step) => (
               <div key={step.number} className="flex gap-3">
                 <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0c5a4d] text-xs font-bold text-white">
                   {step.number}
@@ -226,13 +356,11 @@ export function MobileRouteDetailsScreen() {
 
             <div>
               <h2 className="text-base font-extrabold text-red-700">
-                Check your drop-off point
+                {selectedContent.warningTitle}
               </h2>
 
               <p className="mt-1 text-sm leading-6 text-red-700/80">
-                Pattaya bus tickets can end at Jomtien, North Pattaya or
-                Sukhumvit-area stops. Pick the option that matches your hotel
-                area, especially if you arrive with luggage.
+                {selectedContent.warningText}
               </p>
             </div>
           </div>
@@ -244,7 +372,7 @@ export function MobileRouteDetailsScreen() {
           </h2>
 
           <div className="mt-3 space-y-2">
-            {tips.slice(0, 4).map((tip) => (
+            {selectedContent.tips.slice(0, 4).map((tip) => (
               <div key={tip} className="flex gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
                 <p className="text-xs leading-5 text-slate-600">{tip}</p>
@@ -288,6 +416,9 @@ export function MobileRouteDetailsScreen() {
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">Best value</p>
+            <p className="text-xs font-medium text-slate-500">
+              {selectedOption?.name ?? "Selected option"}
+            </p>
             <p className="text-lg font-extrabold text-[#10201d]">
               Live price
               <span className="ml-1 text-xs font-medium text-slate-500">
@@ -297,8 +428,12 @@ export function MobileRouteDetailsScreen() {
           </div>
 
           <AffiliateButton
-            href={busOption?.affiliateUrl ?? taxiOption?.affiliateUrl ?? mainRoute.affiliateUrl}
-            trackingId={busOption?.trackingId ?? taxiOption?.trackingId}
+            href={
+              selectedOption?.affiliateUrl ??
+              taxiOption?.affiliateUrl ??
+              mainRoute.affiliateUrl
+            }
+            trackingId={selectedOption?.trackingId ?? taxiOption?.trackingId}
             variant="detailsSticky"
           >
             See live price

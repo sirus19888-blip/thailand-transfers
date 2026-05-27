@@ -5,6 +5,7 @@ import type { RoutePageData } from "@/data/routePages";
 type StandardRouteDetailsScreenProps = {
   route: RoutePageData;
   overviewImage?: string;
+  selectedOptionId?: string;
 };
 
 function getRouteImage(route: RoutePageData) {
@@ -110,9 +111,13 @@ function buildFaqs(route: RoutePageData) {
 export function StandardRouteDetailsScreen({
   route,
   overviewImage,
+  selectedOptionId,
 }: StandardRouteDetailsScreenProps) {
   const primaryOption = getPrimaryOption(route);
   const finalOption = getFinalOption(route);
+  const selectedOption =
+    route.options.find((option) => option.id === selectedOptionId) ??
+    primaryOption;
   const overview = getOverviewImage(route, overviewImage);
   const heroImage = getRouteImage(route);
   const tips = buildTips(route);
@@ -147,6 +152,7 @@ export function StandardRouteDetailsScreen({
         .map((option) => option.name.toLowerCase())
         .join(", ")} options from ${route.from} to ${route.to}.`}
       stickyLabel={primaryOption.name}
+      mobileSelectedOptionId={selectedOption.id}
       primaryOptionId={primaryOption.id}
       finalOptionId={finalOption.id}
       steps={buildSteps(route)}
@@ -154,12 +160,12 @@ export function StandardRouteDetailsScreen({
         {
           icon: Clock3,
           title: "Typical travel time",
-          text: `${primaryOption.name}: ${primaryOption.duration}. Compare all live options for your date before booking.`,
+          text: `${selectedOption.name}: ${selectedOption.duration}. Compare live options for your date before booking.`,
         },
         {
           icon: MapPin,
           title: "Pickup point",
-          text: primaryOption.pickup,
+          text: selectedOption.pickup,
         },
         {
           icon: Luggage,

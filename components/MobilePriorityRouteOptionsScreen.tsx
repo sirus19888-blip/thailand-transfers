@@ -65,6 +65,12 @@ function getOptionDetails(
   );
 }
 
+function getDetailsHref(detailsHref: string, optionId: string) {
+  const separator = detailsHref.includes("?") ? "&" : "?";
+
+  return `${detailsHref}${separator}option=${encodeURIComponent(optionId)}`;
+}
+
 export function MobilePriorityRouteOptionsScreen({
   route,
   title,
@@ -295,7 +301,7 @@ export function MobilePriorityRouteOptionsScreen({
 
                     <div className="flex shrink-0 gap-2">
                       <Link
-                        href={detailsHref}
+                        href={getDetailsHref(detailsHref, option.id)}
                         className="rounded-2xl border border-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-[#0c5a4d]"
                       >
                         Details

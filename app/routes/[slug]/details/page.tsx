@@ -21,6 +21,9 @@ type RouteDetailsPageProps = {
   params: Promise<{
     slug: string;
   }>;
+  searchParams?: Promise<{
+    option?: string;
+  }>;
 };
 
 export function generateStaticParams() {
@@ -50,13 +53,20 @@ export async function generateMetadata({
 
 export default async function RouteDetailsPage({
   params,
+  searchParams,
 }: RouteDetailsPageProps) {
   const { slug } = await params;
+  const query = await searchParams;
   const route = getRoutePageBySlug(slug);
 
   if (!route || !standardDetailsSlugs.includes(route.slug)) {
     notFound();
   }
 
-  return <StandardRouteDetailsScreen route={route} />;
+  return (
+    <StandardRouteDetailsScreen
+      route={route}
+      selectedOptionId={query?.option}
+    />
+  );
 }

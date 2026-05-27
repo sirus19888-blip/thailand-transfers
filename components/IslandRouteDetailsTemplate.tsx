@@ -57,6 +57,7 @@ type IslandRouteDetailsTemplateProps = {
   readyTitle: string;
   readyText: string;
   stickyLabel: string;
+  mobileSelectedOptionId?: string;
   primaryOptionId: string;
   finalOptionId: string;
   steps: Step[];
@@ -90,6 +91,7 @@ export function IslandRouteDetailsTemplate({
   readyTitle,
   readyText,
   stickyLabel,
+  mobileSelectedOptionId,
   primaryOptionId,
   finalOptionId,
   steps,
@@ -103,6 +105,31 @@ export function IslandRouteDetailsTemplate({
   const finalOption =
     route.options.find((option) => option.id === finalOptionId) ??
     primaryOption;
+  const mobileSelectedOption =
+    route.options.find((option) => option.id === mobileSelectedOptionId) ??
+    primaryOption;
+  const mobileQuickFacts =
+    mobileSelectedOptionId && mobileSelectedOption
+      ? quickFacts.map((fact, index) => {
+          if (index === 0) {
+            return {
+              ...fact,
+              title: "Selected option",
+              text: `${mobileSelectedOption.name}: ${mobileSelectedOption.duration}. ${mobileSelectedOption.bestFor}.`,
+            };
+          }
+
+          if (index === 1) {
+            return {
+              ...fact,
+              title: "Pickup point",
+              text: mobileSelectedOption.pickup,
+            };
+          }
+
+          return fact;
+        })
+      : quickFacts;
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
@@ -174,7 +201,7 @@ export function IslandRouteDetailsTemplate({
           </div>
 
           <div className="mt-4 grid gap-3">
-            {quickFacts.map((fact) => {
+            {mobileQuickFacts.map((fact) => {
               const Icon = fact.icon;
 
               return (
@@ -300,6 +327,7 @@ export function IslandRouteDetailsTemplate({
             <div className="min-w-0 flex-1">
               <p className="text-xs font-medium text-slate-500">
                 {stickyLabel}
+                {mobileSelectedOptionId ? `: ${mobileSelectedOption.name}` : ""}
               </p>
               <p className="text-lg font-extrabold text-[#10201d]">
                 Live price
@@ -310,8 +338,8 @@ export function IslandRouteDetailsTemplate({
             </div>
 
             <AffiliateButton
-              href={primaryOption?.affiliateUrl ?? route.mainAffiliateUrl}
-              trackingId={primaryOption?.trackingId}
+              href={mobileSelectedOption?.affiliateUrl ?? route.mainAffiliateUrl}
+              trackingId={mobileSelectedOption?.trackingId}
               variant="detailsSticky"
             >
               See live price
