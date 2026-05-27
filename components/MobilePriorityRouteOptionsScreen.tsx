@@ -31,7 +31,7 @@ type MobilePriorityRouteOptionsScreenProps = {
   summaryLeftText: string;
   summaryRightTitle: string;
   summaryRightText: string;
-  optionDetailsById: Record<string, OptionDetails>;
+  optionDetailsById?: Record<string, OptionDetails>;
   detailsHref: string;
   footerNote: string;
   selectedDate?: string;
@@ -47,10 +47,10 @@ function getBadgeColor(id: string) {
 
 function getOptionDetails(
   option: RouteTransportOption,
-  optionDetailsById: Record<string, OptionDetails>,
+  optionDetailsById: Record<string, OptionDetails> | undefined,
 ) {
   return (
-    optionDetailsById[option.id] ?? {
+    optionDetailsById?.[option.id] ?? {
       label: "Live option",
       operator: "Partner operator",
       departures: "Live schedule",

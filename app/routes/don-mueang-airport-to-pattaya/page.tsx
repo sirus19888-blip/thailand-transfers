@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
+import { donMueangPattayaRoute } from "@/data/donMueangPattayaRoute";
 
 export const metadata: Metadata = {
   title: "Don Mueang Airport to Pattaya Transfers | Taxi, Bus & Van",
@@ -13,52 +15,8 @@ export const metadata: Metadata = {
   },
 };
 
-const dmkPattayaAffiliateUrl =
-  "https://12go.asia/en/travel/Don-Mueang-Airport/Pattaya/?z=15791301&sub_id=dmk-pattaya-general";
-
-const dmkAffiliateUrls = {
-  general:
-    "https://12go.asia/en/travel/Don-Mueang-Airport/Pattaya/?z=15791301&sub_id=dmk-pattaya-general",
-  taxi:
-    "https://12go.asia/en/travel/Don-Mueang-Airport/Pattaya/?z=15791301&sub_id=dmk-pattaya-taxi",
-  van:
-    "https://12go.asia/en/travel/Don-Mueang-Airport/Pattaya/?z=15791301&sub_id=dmk-pattaya-van",
-  bus:
-    "https://12go.asia/en/travel/Don-Mueang-Airport/Pattaya/?z=15791301&sub_id=dmk-pattaya-bus",
-};
-
-const dmkOptions = [
-  {
-    id: "taxi",
-    name: "Private Taxi",
-    price: "Check live price",
-    duration: "2h – 2h 30m",
-    pickup: "DMK arrivals area",
-    bestFor: "Comfort and late arrivals",
-    trackingId: "click_12go_taxi_dmk_pattaya",
-    affiliateUrl: dmkAffiliateUrls.taxi,
-  },
-  {
-    id: "van",
-    name: "Shared Van",
-    price: "Check live price",
-    duration: "2h 30m – 3h 30m",
-    pickup: "Operator meeting point",
-    bestFor: "Budget travelers",
-    trackingId: "click_12go_van_dmk_pattaya",
-    affiliateUrl: dmkAffiliateUrls.van,
-  },
-  {
-    id: "bus",
-    name: "Bus / Combined Transfer",
-    price: "Check live price",
-    duration: "3h+",
-    pickup: "Depends on operator",
-    bestFor: "Flexible travelers",
-    trackingId: "click_12go_bus_dmk_pattaya",
-    affiliateUrl: dmkAffiliateUrls.bus,
-  },
-];
+const dmkPattayaAffiliateUrl = donMueangPattayaRoute.mainAffiliateUrl;
+const dmkOptions = donMueangPattayaRoute.options;
 
 export default function DonMueangAirportToPattayaPage() {
   return (
@@ -185,64 +143,7 @@ export default function DonMueangAirportToPattayaPage() {
       </div>
 
       <div className="lg:hidden">
-        <section className="min-h-screen bg-[#f8f4ec] px-5 py-10 text-[#10201d]">
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-[#c99a2e]">
-            Transfer comparison
-          </p>
-
-          <h1 className="text-3xl font-bold leading-tight">
-            Don Mueang Airport to Pattaya transfers
-          </h1>
-
-          <p className="mt-4 text-sm leading-6 text-slate-600">
-            Compare basic taxi, van and bus options from Don Mueang Airport
-            (DMK) to Pattaya. Always check live availability before booking.
-          </p>
-
-          <div className="mt-6 space-y-3">
-            {dmkOptions.map((option) => (
-              <div
-                key={option.id}
-                className="rounded-[24px] border border-[#e7e2d8] bg-white p-4 shadow-sm"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h2 className="text-base font-bold text-[#10201d]">
-                      {option.name}
-                    </h2>
-                    <p className="mt-1 text-sm text-slate-600">
-                      {option.duration}
-                    </p>
-                    <p className="mt-1 text-xs text-slate-500">
-                      {option.bestFor}
-                    </p>
-                  </div>
-
-                  <p className="text-right text-xs font-bold text-[#064e45]">
-                    Live price
-                  </p>
-                </div>
-
-                <div className="mt-4">
-                  <AffiliateButton
-                    href={option.affiliateUrl}
-                    trackingId={option.trackingId}
-                    fullWidth
-                  >
-                    See options on 12Go
-                  </AffiliateButton>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href="/"
-            className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-[#064e45] bg-white px-6 py-4 text-sm font-bold text-[#064e45]"
-          >
-            Back to all routes
-          </Link>
-        </section>
+        <StandardMobileRouteOptions route={donMueangPattayaRoute} />
       </div>
     </main>
   );

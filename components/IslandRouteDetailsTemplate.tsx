@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   AlertTriangle,
@@ -38,6 +39,7 @@ type IslandRouteDetailsTemplateProps = {
   mobileSubtitle: string;
   overviewImage: string;
   overviewAlt: string;
+  overviewContent?: ReactNode;
   heroTitle: string;
   heroDescription: string;
   heroImage: string;
@@ -70,6 +72,7 @@ export function IslandRouteDetailsTemplate({
   mobileSubtitle,
   overviewImage,
   overviewAlt,
+  overviewContent,
   heroTitle,
   heroDescription,
   heroImage,
@@ -158,13 +161,15 @@ export function IslandRouteDetailsTemplate({
             className="mt-4 overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
           >
             <div className="relative aspect-[16/10]">
-              <Image
-                src={overviewImage}
-                alt={overviewAlt}
-                fill
-                priority
-                className="object-cover"
-              />
+              {overviewContent ?? (
+                <Image
+                  src={overviewImage}
+                  alt={overviewAlt}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              )}
             </div>
           </div>
 

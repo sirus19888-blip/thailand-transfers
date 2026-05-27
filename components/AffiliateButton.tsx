@@ -1,10 +1,8 @@
 ﻿"use client";
 
-declare global {
-  interface Window {
-    dataLayer?: Object[];
-  }
-}
+type DataLayerWindow = Window & {
+  dataLayer?: object[];
+};
 
 type AffiliateButtonProps = {
   href: string;
@@ -27,8 +25,10 @@ export function AffiliateButton({
     console.log("Affiliate click:", trackingId);
 
     if (typeof window !== "undefined") {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
+      const trackingWindow = window as DataLayerWindow;
+
+      trackingWindow.dataLayer = trackingWindow.dataLayer || [];
+      trackingWindow.dataLayer.push({
         event: "affiliate_click",
         click_id: trackingId,
         affiliate_partner: "12go",

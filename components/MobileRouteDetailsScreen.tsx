@@ -6,50 +6,92 @@ import {
   AlertTriangle,
   ArrowLeft,
   Bus,
-  Heart,
+  CheckCircle2,
+  Clock3,
+  Luggage,
   MapPin,
-  Share2,
+  ShieldCheck,
 } from "lucide-react";
 
 const steps = [
   {
     number: "1",
-    title: "Follow Arrivals signs and go through immigration.",
+    title: "Clear immigration and collect your luggage.",
+    description:
+      "Do not choose a tight bus after landing. Immigration, baggage claim and walking to Level 1 can take longer than expected.",
   },
   {
     number: "2",
-    title: "Collect your luggage and head to Exit B on Level 1.",
+    title: "Go to the official transport area.",
+    description:
+      "For many bus tickets, check-in is around Level 1 near Exit 8. Some services use the Suvarnabhumi Bus Terminal, so follow the live ticket instructions.",
   },
   {
     number: "3",
-    title: "Walk to the Bus Terminal or pickup meeting point.",
+    title: "Check your Pattaya drop-off point.",
+    description:
+      "Buses may finish at Jomtien Bus Station, North Pattaya Bus Station or Sukhumvit-area stops. Plan a local taxi if your hotel is not nearby.",
   },
   {
     number: "4",
-    title: "Show your e-ticket or booking confirmation.",
+    title: "Use taxi or private transfer for late arrivals.",
+    description:
+      "Scheduled bus options thin out at night. A taxi or pre-booked car is usually easier after an evening flight or with heavy luggage.",
+  },
+];
+
+const quickFacts = [
+  {
+    icon: Clock3,
+    title: "Typical travel time",
+    text: "Bus usually takes about 2h - 2h 30m. Taxi is often 1h 30m - 2h 30m depending on traffic and hotel area.",
   },
   {
-    number: "5",
-    title: "Board the air-conditioned transfer to Pattaya.",
+    icon: MapPin,
+    title: "Airport pickup",
+    text: "Bus check-in is commonly on Level 1 near Exit 8 or at the airport bus terminal. Private transfers meet in the arrivals area shown on the ticket.",
   },
+  {
+    icon: Luggage,
+    title: "Luggage rules",
+    text: "Bus and van tickets can have baggage limits. Private taxi is easier with larger suitcases, golf bags or family luggage.",
+  },
+];
+
+const tips = [
+  "Roong Reuang Coach services to Jomtien commonly run through the day, with live availability varying by date.",
+  "Some North Pattaya bus departures are separate from Jomtien services, so check the destination before booking.",
+  "The 999 Bus route has limited daily departures, so it is not ideal for late arrivals.",
+  "Allow at least 2 hours after scheduled landing before choosing a fixed bus departure.",
+  "If your hotel is in Central Pattaya, Jomtien or Naklua, confirm which drop-off point is closest.",
+  "For late evening arrivals, a private taxi is usually the simplest option.",
 ];
 
 const faqs = [
   {
-    question: "How long does the bus take?",
-    answer: "About 2h 30m depending on traffic.",
+    question: "What is the best option from BKK Airport to Pattaya?",
+    answer:
+      "Bus is usually best value if the schedule matches your flight. Private taxi is best for late arrivals, hotel drop-off, luggage or groups.",
   },
   {
-    question: "Is taxi faster?",
-    answer: "Usually yes, especially if you go directly to your hotel.",
+    question: "Where do buses leave from at Suvarnabhumi Airport?",
+    answer:
+      "Many Pattaya bus services use the Level 1 transport area near Exit 8, while some tickets may route via the airport bus terminal. Always follow the exact live ticket instructions.",
+  },
+  {
+    question: "How long does BKK Airport to Pattaya take?",
+    answer:
+      "Plan around 2h - 2h 30m by bus and 1h 30m - 2h 30m by taxi. Friday evening, holiday and Bangkok traffic can make the journey longer.",
   },
   {
     question: "Should I book before landing?",
-    answer: "It is safer to compare options before you arrive.",
+    answer:
+      "It is safer to compare live options before arrival, especially in high season or if your flight lands close to the final bus departures.",
   },
 ];
 
 const busOption = transferOptions.find((option) => option.id === "bus");
+const taxiOption = transferOptions.find((option) => option.id === "taxi");
 
 export function MobileRouteDetailsScreen() {
   return (
@@ -67,30 +109,21 @@ export function MobileRouteDetailsScreen() {
           <div className="min-w-0 flex-1 text-center">
             <div className="mx-auto flex items-center justify-center gap-2">
               <Bus className="h-4 w-4 text-[#0c5a4d]" />
-              <h1 className="truncate text-[16px] font-extrabold tracking-[-0.02em] text-[#10201d]">
-                Bus: BKK → Pattaya
+              <h1 className="truncate text-[16px] font-extrabold text-[#10201d]">
+                BKK to Pattaya
               </h1>
             </div>
 
             <p className="mt-1 text-xs font-medium text-slate-500">
-              Airport Bus by Bell Travel
+              Airport pickup, bus stops and hotel transfer tips
             </p>
           </div>
 
-          <div className="flex gap-2">
-            <div
-              aria-label="Route guide"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
-            >
-              <Share2 className="h-5 w-5" />
-            </div>
-
-            <div
-              aria-label="Route preview"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
-            >
-              <Heart className="h-5 w-5" />
-            </div>
+          <div
+            aria-label="Route guide"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+          >
+            <ShieldCheck className="h-5 w-5" />
           </div>
         </div>
 
@@ -119,7 +152,7 @@ export function MobileRouteDetailsScreen() {
           <div className="relative aspect-[16/10]">
             <Image
               src="/assets/routes/bkk-pattaya-map.png"
-              alt="BKK to Pattaya route map"
+              alt="Suvarnabhumi Airport to Pattaya route map"
               fill
               priority
               className="object-cover"
@@ -127,12 +160,39 @@ export function MobileRouteDetailsScreen() {
           </div>
         </div>
 
+        <div className="mt-4 grid gap-3">
+          {quickFacts.map((fact) => {
+            const Icon = fact.icon;
+
+            return (
+              <div
+                key={fact.title}
+                className="rounded-[1.25rem] border border-[#e7e2d8] bg-white p-4 shadow-sm"
+              >
+                <div className="flex gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-[#10201d]">
+                      {fact.title}
+                    </p>
+                    <p className="mt-1 text-xs leading-5 text-slate-600">
+                      {fact.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         <div
           id="mobile-route-details"
           className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5"
         >
           <h2 className="text-lg font-extrabold text-[#10201d]">
-            After you land — step by step
+            After you land - step by step
           </h2>
 
           <div className="mt-4 space-y-3">
@@ -142,33 +202,16 @@ export function MobileRouteDetailsScreen() {
                   {step.number}
                 </div>
 
-                <p className="pt-1 text-sm leading-5 text-slate-700">
-                  {step.title}
-                </p>
+                <div>
+                  <p className="text-sm font-bold leading-5 text-[#10201d]">
+                    {step.title}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-4 overflow-hidden rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7]">
-            <div className="grid grid-cols-[1fr_110px]">
-              <div className="p-3">
-                <p className="text-sm font-extrabold text-[#10201d]">
-                  Bus Terminal
-                </p>
-                <p className="mt-1 text-xs leading-5 text-slate-500">
-                  Level 1, Gate 8. Follow the official counter signs.
-                </p>
-              </div>
-
-              <div className="relative min-h-[100px]">
-                <Image
-                  src="/assets/steps/meet-driver.png"
-                  alt="Bus terminal pickup point"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
           </div>
         </div>
 
@@ -183,12 +226,13 @@ export function MobileRouteDetailsScreen() {
 
             <div>
               <h2 className="text-base font-extrabold text-red-700">
-                Avoid scams
+                Check your drop-off point
               </h2>
 
               <p className="mt-1 text-sm leading-6 text-red-700/80">
-                Only buy tickets at the official counter or use a trusted online
-                booking partner. Ignore people offering “cheap taxi-van”.
+                Pattaya bus tickets can end at Jomtien, North Pattaya or
+                Sukhumvit-area stops. Pick the option that matches your hotel
+                area, especially if you arrive with luggage.
               </p>
             </div>
           </div>
@@ -196,24 +240,16 @@ export function MobileRouteDetailsScreen() {
 
         <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
           <h2 className="text-lg font-extrabold text-[#10201d]">
-            How to find the counter
+            Practical notes
           </h2>
 
-          <p className="mt-2 text-sm leading-6 text-slate-600">
-            The bus counter is usually located near the ground transportation
-            area. Follow official signs and check your booking instructions
-            before leaving the arrivals hall.
-          </p>
-
-          <div className="mt-4 overflow-hidden rounded-2xl border border-[#e7e2d8]">
-            <div className="relative aspect-[16/9]">
-              <Image
-                src="/assets/steps/immigration.png"
-                alt="Airport guide"
-                fill
-                className="object-cover"
-              />
-            </div>
+          <div className="mt-3 space-y-2">
+            {tips.slice(0, 4).map((tip) => (
+              <div key={tip} className="flex gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <p className="text-xs leading-5 text-slate-600">{tip}</p>
+              </div>
+            ))}
           </div>
 
           <Link
@@ -222,48 +258,6 @@ export function MobileRouteDetailsScreen() {
           >
             Back to transfer options
           </Link>
-        </div>
-
-        <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5">
-            <div className="relative aspect-[4/3]">
-              <Image
-                src="/assets/promo/sim-card.png"
-                alt="Thailand tourist SIM"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="p-3">
-              <p className="text-sm font-extrabold text-[#10201d]">
-                Thailand Tourist SIM
-              </p>
-              <p className="mt-1 text-xs text-slate-500">
-                4G/5G · useful after landing
-              </p>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5">
-            <div className="relative aspect-[4/3]">
-              <Image
-                src="/assets/promo/hotel-transfer.png"
-                alt="Hotel transfer"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            <div className="p-3">
-              <p className="text-sm font-extrabold text-[#10201d]">
-                Hotel transfer
-              </p>
-              <p className="mt-1 text-xs text-slate-500">
-                Door-to-door pickup
-              </p>
-            </div>
-          </div>
         </div>
 
         <div
@@ -293,21 +287,21 @@ export function MobileRouteDetailsScreen() {
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-medium text-slate-500">From</p>
+            <p className="text-xs font-medium text-slate-500">Best value</p>
             <p className="text-lg font-extrabold text-[#10201d]">
-              ฿132
+              Live price
               <span className="ml-1 text-xs font-medium text-slate-500">
-                / person
+                on 12Go
               </span>
             </p>
           </div>
 
           <AffiliateButton
-            href={busOption?.affiliateUrl ?? mainRoute.affiliateUrl}
-            trackingId={busOption?.trackingId}
+            href={busOption?.affiliateUrl ?? taxiOption?.affiliateUrl ?? mainRoute.affiliateUrl}
+            trackingId={busOption?.trackingId ?? taxiOption?.trackingId}
             variant="detailsSticky"
           >
-            See live price & book
+            See live price
           </AffiliateButton>
         </div>
       </div>

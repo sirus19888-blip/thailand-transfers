@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
+import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("ao-nang-to-krabi-airport");
@@ -17,10 +18,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AoNangToKrabiAirportPage() {
+type AoNangToKrabiAirportPageProps = {
+  searchParams?: Promise<{
+    date?: string;
+    passengers?: string;
+  }>;
+};
+
+export default async function AoNangToKrabiAirportPage({
+  searchParams,
+}: AoNangToKrabiAirportPageProps) {
   if (!route) {
     notFound();
   }
+
+  const params = await searchParams;
+  const selectedDate = params?.date;
+  const passengers = params?.passengers;
 
   return (
     <RoutePageTemplate
@@ -30,6 +44,13 @@ export default function AoNangToKrabiAirportPage() {
       mobileDescription="Compare bus, van and taxi options from Ao Nang to Krabi Airport. Check live schedules, pickup points and luggage rules before booking."
       optionsHeading="Compare Ao Nang to Krabi Airport transfer options"
       detailsNote="For airport transfers, allow extra time before your flight. Check your Ao Nang pickup point, Krabi Airport drop-off area, luggage allowance and live operator schedule before booking."
+      mobileContent={
+        <StandardMobileRouteOptions
+          route={route}
+          selectedDate={selectedDate}
+          passengers={passengers}
+        />
+      }
     />
   );
 }

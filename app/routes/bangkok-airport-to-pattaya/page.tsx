@@ -4,8 +4,9 @@ import { Header } from "@/components/Header";
 import { RouteHero } from "@/components/RouteHero";
 import { RouteSummary } from "@/components/RouteSummary";
 import { TransferOptionsTable } from "@/components/TransferOptionsTable";
-import { MobileTransferOptionsScreen } from "@/components/MobileTransferOptionsScreen";
+import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import { Container } from "@/components/Container";
+import type { RoutePageData } from "@/data/routePages";
 
 export const metadata: Metadata = {
   title: "Bangkok Airport to Pattaya Transfers | Bus, Taxi & Van",
@@ -16,11 +17,123 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BangkokAirportToPattayaPage() {
+const mobileRoute: RoutePageData = {
+  slug: "bangkok-airport-to-pattaya",
+  title: "Bangkok Airport to Pattaya Transfers",
+  seoTitle: "Bangkok Airport to Pattaya Transfers | Bus, Taxi & Van",
+  seoDescription:
+    "Compare transfer options from Bangkok Suvarnabhumi Airport to Pattaya. Check bus, taxi and van travel times, prices and booking options with 12Go.",
+  from: "Suvarnabhumi Airport",
+  to: "Pattaya",
+  intro:
+    "Compare bus, private taxi and van transfer options from Bangkok Suvarnabhumi Airport to Pattaya before you land.",
+  mainAffiliateUrl:
+    "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-general",
+  options: [
+    {
+      id: "bus",
+      name: "Airport Bus",
+      price: "From THB 170-249",
+      duration: "2h - 2h 30m",
+      pickup: "Level 1 near Exit 8 or Suvarnabhumi Bus Terminal",
+      bestFor:
+        "Best value for travelers landing early enough for scheduled departures",
+      trackingId: "click_12go_bus_bkk_pattaya",
+      affiliateUrl:
+        "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-bus",
+    },
+    {
+      id: "taxi",
+      name: "Private Taxi",
+      price: "From THB 1,329",
+      duration: "1h 30m - 2h 30m",
+      pickup: "Arrivals hall or private driver meeting point",
+      bestFor: "Late arrivals, families, luggage and door-to-door travel",
+      trackingId: "click_12go_taxi_bkk_pattaya",
+      affiliateUrl:
+        "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-taxi",
+    },
+    {
+      id: "van",
+      name: "Shared Van",
+      price: "Check live price",
+      duration: "2h - 3h",
+      pickup: "Airport meeting point or partner pickup area",
+      bestFor:
+        "Travelers who want a smaller shared transfer and flexible drop-off",
+      trackingId: "click_12go_van_bkk_pattaya",
+      affiliateUrl:
+        "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-van",
+    },
+  ],
+};
+
+const optionDetailsById = {
+  bus: {
+    label: "Best value",
+    operator: "Roong Reuang Coach, 999 Bus and partner buses",
+    departures: "06:00-22:00",
+    baggage: "Check ticket",
+    image: "/assets/vehicles/bus.png",
+    rating: "4.5",
+    reviews: "Partner details",
+    pros: ["Lowest typical price", "Direct airport-to-Pattaya route"],
+    cons: ["Fixed schedule", "May need local taxi after drop-off"],
+  },
+  taxi: {
+    label: "Most flexible",
+    operator: "Private airport transfer",
+    departures: "On demand",
+    baggage: "Private car",
+    image: "/assets/vehicles/taxi.png",
+    rating: "4.8",
+    reviews: "Partner details",
+    pros: ["Door-to-door", "Best after evening arrivals"],
+    cons: ["Higher total price", "Traffic can change travel time"],
+  },
+  van: {
+    label: "Shared ride",
+    operator: "Van and minibus partner operators",
+    departures: "Live schedule",
+    baggage: "Check rules",
+    image: "/assets/vehicles/van.png",
+    rating: "4.6",
+    reviews: "Partner details",
+    pros: ["Smaller vehicle", "Useful for hotel-area transfers"],
+    cons: ["May wait for other passengers", "Luggage rules vary"],
+  },
+};
+
+type BangkokAirportToPattayaPageProps = {
+  searchParams?: Promise<{
+    date?: string;
+    passengers?: string;
+  }>;
+};
+
+export default async function BangkokAirportToPattayaPage({
+  searchParams,
+}: BangkokAirportToPattayaPageProps) {
+  const params = await searchParams;
+  const selectedDate = params?.date;
+  const passengers = params?.passengers;
+
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
       <div className="lg:hidden">
-        <MobileTransferOptionsScreen />
+        <MobilePriorityRouteOptionsScreen
+          route={mobileRoute}
+          title="BKK - Pattaya"
+          summaryLeftTitle="Airport route data"
+          summaryLeftText="Check live offers"
+          summaryRightTitle="Pattaya drop-off"
+          summaryRightText="Choose by hotel area"
+          optionDetailsById={optionDetailsById}
+          detailsHref="/routes/bangkok-airport-to-pattaya/details"
+          footerNote="Live prices and schedules may change. Allow extra time after landing and check the pickup point before booking."
+          selectedDate={selectedDate}
+          passengers={passengers}
+        />
       </div>
 
       <div className="hidden lg:block">
