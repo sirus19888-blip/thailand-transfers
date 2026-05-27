@@ -1,0 +1,218 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ArrowLeft,
+  BookOpen,
+  CheckCircle2,
+  MapPin,
+  ShipWheel,
+} from "lucide-react";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+
+export const metadata: Metadata = {
+  title: "Thailand Transfer Guides | Mobile Route Tips",
+  description:
+    "Mobile route guides for Thailand transfers, including airport pickup, ferry timing, luggage and route-specific booking checks.",
+  alternates: {
+    canonical: "/guides",
+  },
+};
+
+const guideRoutes = [
+  {
+    title: "BKK to Pattaya",
+    href: "/routes/bangkok-airport-to-pattaya/details",
+    type: "Airport to city",
+    bestFor: "Best when you need a simple airport exit to Pattaya, Jomtien or a direct hotel ride.",
+    facts: [
+      "Airport bus counters are checked against the Suvarnabhumi Level 1 transport area near Gate 8.",
+      "RRC lists about 2 hours to Pattaya, with separate Pattaya and Jomtien stop options.",
+      "Taxi is the better pick for late arrivals, heavy luggage, children or direct hotel drop-off.",
+    ],
+  },
+  {
+    title: "BKK to Koh Chang",
+    href: "/routes/suvarnabhumi-airport-to-koh-chang/details",
+    type: "Airport to island",
+    bestFor: "Best planned as a road transfer plus ferry, not as a pure car ride.",
+    facts: [
+      "The checked main ferry crossing uses Ao Thammachat on the mainland for Koh Chang.",
+      "Current ferry guidance shows daytime service with the last practical crossing before evening.",
+      "Confirm whether the ticket continues after the ferry to your west-coast hotel area.",
+    ],
+  },
+  {
+    title: "BKK to Hua Hin",
+    href: "/routes/suvarnabhumi-airport-to-hua-hin/details",
+    type: "Airport to beach city",
+    bestFor: "Best for fixed coach departures or private transfer after an international flight.",
+    facts: [
+      "Dedicated airport coach service is checked from Suvarnabhumi Level 1 / Gate 8 to Hua Hin Bus Station.",
+      "RRC lists about 5 hours for the airport coach, depending on traffic.",
+      "Private taxi is usually easier with children, large luggage, a delayed flight or a late arrival.",
+    ],
+  },
+  {
+    title: "Phuket Airport to Patong",
+    href: "/routes/phuket-airport-to-patong-beach/details",
+    type: "Airport to beach",
+    bestFor: "Best for choosing between low-cost Smart Bus and direct taxi/private transfer.",
+    facts: [
+      "Phuket Smart Bus confirms the airport route through Thalang, Laguna, Kamala, Patong, Karon, Kata and Rawai.",
+      "The checked Smart Bus fare is fixed per person per trip and payment is made on the bus.",
+      "Use live bus tracking or current timetable checks because Phuket traffic can shift travel time.",
+    ],
+  },
+  {
+    title: "Surat Thani Airport to Koh Samui",
+    href: "/routes/surat-thani-airport-to-koh-samui/details",
+    type: "Airport plus ferry",
+    bestFor: "Best handled as one connected bus or van plus ferry ticket.",
+    facts: [
+      "The checked route uses ground transfer from Surat Thani Airport toward Don Sak ferry piers.",
+      "Seatran confirms the Don Sak to Koh Samui ferry route; ticketed packages can use different operators.",
+      "Flight delays can break tight ferry connections, so avoid the last practical boat of the day.",
+    ],
+  },
+  {
+    title: "Phuket to Koh Phi Phi",
+    href: "/routes/phuket-to-koh-phi-phi/details",
+    type: "Island ferry",
+    bestFor: "Best for comparing larger ferry comfort with faster speedboat timing.",
+    facts: [
+      "Checked ferry and speedboat listings use Phuket Rassada Pier to Phi Phi Tonsai Pier.",
+      "Some services continue to Laemtong Bay, so confirm the exact Phi Phi arrival point before booking.",
+      "Ferry is more luggage-friendly; speedboat is faster but more sensitive to sea and weather conditions.",
+    ],
+  },
+];
+
+const guideTopics = [
+  "Airport pickup point",
+  "Final drop-off",
+  "Luggage rules",
+  "Last ferry or late arrival",
+];
+
+export default function GuidesPage() {
+  return (
+    <main className="min-h-screen bg-[#fbfaf7] pb-28 text-[#10201d]">
+      <section className="mx-auto min-h-screen max-w-md px-4 py-5 lg:hidden">
+        <div className="flex items-center justify-between">
+          <Link
+            href="/"
+            aria-label="Back to home"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2">
+              <BookOpen className="h-4 w-4 text-[#0c5a4d]" />
+              <h1 className="text-[16px] font-extrabold text-[#10201d]">
+                Transfer Guides
+              </h1>
+            </div>
+            <p className="mt-1 text-xs font-medium text-slate-500">
+              Checked route notes before booking
+            </p>
+          </div>
+
+          <div
+            aria-label="Guide checklist"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+          >
+            <CheckCircle2 className="h-5 w-5" />
+          </div>
+        </div>
+
+        <div className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+            What to check
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            {guideTopics.map((topic) => (
+              <div
+                key={topic}
+                className="flex items-center gap-2 rounded-2xl bg-[#f8f4ec] px-3 py-2"
+              >
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <span className="text-xs font-bold text-[#10201d]">
+                  {topic}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-5 space-y-4">
+          {guideRoutes.map((guide) => (
+            <article
+              key={guide.title}
+              className="overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
+            >
+              <div className="p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+                      {guide.type}
+                    </p>
+                    <h2 className="mt-1 text-xl font-extrabold text-[#10201d]">
+                      {guide.title}
+                    </h2>
+                  </div>
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                    {guide.type.includes("ferry") ||
+                    guide.type.includes("island") ? (
+                      <ShipWheel className="h-5 w-5" />
+                    ) : (
+                      <MapPin className="h-5 w-5" />
+                    )}
+                  </div>
+                </div>
+
+                <div className="mt-4 space-y-2">
+                  <div className="rounded-2xl bg-[#f8f4ec] px-3 py-2">
+                    <p className="text-xs font-bold leading-5 text-[#10201d]">
+                      {guide.bestFor}
+                    </p>
+                  </div>
+
+                  {guide.facts.map((fact) => (
+                    <div key={fact} className="flex gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                      <p className="text-xs leading-5 text-slate-600">
+                        {fact}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-[1fr_auto] items-center gap-3 border-t border-[#e7e2d8] px-4 py-3">
+                <p className="text-xs font-bold leading-5 text-slate-500">
+                  Verified route notes, live ticket still required.
+                </p>
+                <Link
+                  href={guide.href}
+                  className="rounded-2xl bg-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-white"
+                >
+                  Open guide
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-5 text-center text-xs leading-5 text-slate-500">
+          Route facts are planning notes. Final price, schedule, pickup point
+          and luggage rules must still be checked on the live ticket.
+        </p>
+      </section>
+
+      <MobileBottomNav activeLabel="Guides" />
+    </main>
+  );
+}
