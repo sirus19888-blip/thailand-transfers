@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { type FormEvent, type MouseEvent, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ArrowDownUp,
   ArrowRight,
@@ -548,6 +549,11 @@ function DesktopHero() {
 }
 
 function MobileHero() {
+  const router = useRouter();
+  const mobileFromSelectRef = useRef<HTMLSelectElement>(null);
+  const mobileToSelectRef = useRef<HTMLSelectElement>(null);
+  const mobileDateInputRef = useRef<HTMLInputElement>(null);
+  const mobilePassengersSelectRef = useRef<HTMLSelectElement>(null);
   const [mobileFrom, setMobileFrom] = useState("bkk");
   const [mobileTo, setMobileTo] = useState("pattaya");
   const [mobileDate, setMobileDate] = useState("");
@@ -586,20 +592,41 @@ function MobileHero() {
     mobilePassengerOptions[1];
   const mobileRouteHref =
     mobileRouteHrefs[`${mobileFrom}-${mobileTo}`] ?? "/routes";
-  const mobileRouteSearchParams = new URLSearchParams();
+  const getMobileRouteHrefWithParams = () => {
+    const submittedFrom = mobileFromSelectRef.current?.value ?? mobileFrom;
+    const submittedTo = mobileToSelectRef.current?.value ?? mobileTo;
+    const submittedDate = mobileDateInputRef.current?.value ?? mobileDate;
+    const submittedPassengers =
+      mobilePassengersSelectRef.current?.value ?? mobilePassengers;
+    const routeHref =
+      mobileRouteHrefs[`${submittedFrom}-${submittedTo}`] ??
+      mobileRouteHrefs[`${mobileFrom}-${mobileTo}`] ??
+      "/routes";
+    const searchParams = new URLSearchParams();
 
-  if (mobileDate) {
-    mobileRouteSearchParams.set("date", mobileDate);
-  }
+    if (submittedDate) {
+      searchParams.set("date", submittedDate);
+    }
 
-  if (mobilePassengers) {
-    mobileRouteSearchParams.set("passengers", mobilePassengers);
-  }
+    if (submittedPassengers) {
+      searchParams.set("passengers", submittedPassengers);
+    }
 
-  const mobileRouteSearch = mobileRouteSearchParams.toString();
-  const mobileRouteHrefWithParams = mobileRouteSearch
-    ? `${mobileRouteHref}?${mobileRouteSearch}`
-    : mobileRouteHref;
+    const routeSearch = searchParams.toString();
+
+    return routeSearch ? `${routeHref}?${routeSearch}` : routeHref;
+  };
+  const navigateMobileRoute = () => {
+    router.push(getMobileRouteHrefWithParams());
+  };
+  const handleMobileSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigateMobileRoute();
+  };
+  const handleMobileSubmitClick = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    navigateMobileRoute();
+  };
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-24 lg:hidden">
@@ -659,12 +686,18 @@ function MobileHero() {
         </div>
 
         <div className="relative z-20 -mt-32 px-5">
-          <div className="rounded-[24px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10">
+          <form
+            action={mobileRouteHref}
+            method="get"
+            onSubmit={handleMobileSubmit}
+            className="rounded-[24px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10"
+          >
             <div className="grid grid-cols-[1fr_44px] gap-2.5">
               <div className="space-y-3">
                 <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                   <select
                     aria-label="From"
+                    ref={mobileFromSelectRef}
                     value={mobileFrom}
                     onInput={(event) =>
                       updateMobileFrom(event.currentTarget.value)
@@ -698,8 +731,14 @@ function MobileHero() {
                 <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                   <select
                     aria-label="To"
+                    ref={mobileToSelectRef}
                     value={mobileTo}
-                    onChange={(event) => setMobileTo(event.target.value)}
+                    onInput={(event) =>
+                      setMobileTo(event.currentTarget.value)
+                    }
+                    onChange={(event) =>
+                      setMobileTo(event.currentTarget.value)
+                    }
                     className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                   >
                     {renderMobileOptionGroups(
@@ -753,9 +792,16 @@ function MobileHero() {
               <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                 <input
                   aria-label="Date"
+                  name="date"
+                  ref={mobileDateInputRef}
                   type="date"
                   value={mobileDate}
-                  onChange={(event) => setMobileDate(event.target.value)}
+                  onInput={(event) =>
+                    setMobileDate(event.currentTarget.value)
+                  }
+                  onChange={(event) =>
+                    setMobileDate(event.currentTarget.value)
+                  }
                   className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                 />
 
@@ -775,8 +821,15 @@ function MobileHero() {
               <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                 <select
                   aria-label="Passengers"
+                  name="passengers"
+                  ref={mobilePassengersSelectRef}
                   value={mobilePassengers}
-                  onChange={(event) => setMobilePassengers(event.target.value)}
+                  onInput={(event) =>
+                    setMobilePassengers(event.currentTarget.value)
+                  }
+                  onChange={(event) =>
+                    setMobilePassengers(event.currentTarget.value)
+                  }
                   className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                 >
                   {mobilePassengerOptions.map((option) => (
@@ -838,14 +891,15 @@ function MobileHero() {
               </div>
             </div>
 
-            <Link
-              href={mobileRouteHrefWithParams}
+            <button
+              type="submit"
+              onClick={handleMobileSubmitClick}
               className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-semibold text-white"
             >
               <span>Compare transport options</span>
               <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+            </button>
+          </form>
 
           <div className="mt-3 flex items-center justify-center gap-2 text-[9.5px] text-[#2f6b5d]">
             <div className="flex items-center gap-1.5">
