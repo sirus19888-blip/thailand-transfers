@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -26,6 +27,8 @@ const guideRoutes = [
   {
     title: "BKK to Pattaya",
     href: "/routes/bangkok-airport-to-pattaya/details",
+    imageSrc: "/assets/routes/bangkok-airport-to-pattaya.png",
+    imageAlt: "Bangkok airport to Pattaya transfer route preview",
     affiliateUrl: mainRoute.affiliateUrl,
     trackingId: "click_12go_guide_bkk_pattaya",
     type: "Airport to city",
@@ -39,6 +42,8 @@ const guideRoutes = [
   {
     title: "BKK to Koh Chang",
     href: "/routes/suvarnabhumi-airport-to-koh-chang/details",
+    imageSrc: "/assets/routes/suvarnabhumi-airport-to-koh-chang.png",
+    imageAlt: "Suvarnabhumi Airport to Koh Chang transfer route preview",
     affiliateUrl: getRoutePageBySlug("suvarnabhumi-airport-to-koh-chang")!
       .mainAffiliateUrl,
     trackingId: "click_12go_guide_bkk_koh_chang",
@@ -54,6 +59,8 @@ const guideRoutes = [
   {
     title: "BKK to Hua Hin",
     href: "/routes/suvarnabhumi-airport-to-hua-hin/details",
+    imageSrc: "/assets/routes/suvarnabhumi-airport-to-hua-hin.png",
+    imageAlt: "Suvarnabhumi Airport to Hua Hin transfer route preview",
     affiliateUrl: getRoutePageBySlug("suvarnabhumi-airport-to-hua-hin")!
       .mainAffiliateUrl,
     trackingId: "click_12go_guide_bkk_hua_hin",
@@ -68,6 +75,8 @@ const guideRoutes = [
   {
     title: "Phuket Airport to Patong",
     href: "/routes/phuket-airport-to-patong-beach/details",
+    imageSrc: "/assets/routes/phuket-airport-to-patong-beach.png",
+    imageAlt: "Phuket Airport to Patong transfer route preview",
     affiliateUrl: getRoutePageBySlug("phuket-airport-to-patong-beach")!
       .mainAffiliateUrl,
     trackingId: "click_12go_guide_phuket_airport_patong",
@@ -82,6 +91,8 @@ const guideRoutes = [
   {
     title: "Surat Thani Airport to Koh Samui",
     href: "/routes/surat-thani-airport-to-koh-samui/details",
+    imageSrc: "/assets/routes/surat-thani-airport-to-koh-samui.png",
+    imageAlt: "Surat Thani Airport to Koh Samui transfer route preview",
     affiliateUrl: getRoutePageBySlug("surat-thani-airport-to-koh-samui")!
       .mainAffiliateUrl,
     trackingId: "click_12go_guide_surat_thani_koh_samui",
@@ -96,6 +107,8 @@ const guideRoutes = [
   {
     title: "Phuket to Koh Phi Phi",
     href: "/routes/phuket-to-koh-phi-phi/details",
+    imageSrc: "/assets/routes/phuket-to-koh-phi-phi.png",
+    imageAlt: "Phuket to Koh Phi Phi ferry route preview",
     affiliateUrl: getRoutePageBySlug("phuket-to-koh-phi-phi")!
       .mainAffiliateUrl,
     trackingId: "click_12go_guide_phuket_phi_phi",
@@ -110,10 +123,26 @@ const guideRoutes = [
 ];
 
 const guideTopics = [
-  "Airport pickup point",
-  "Final drop-off",
-  "Luggage rules",
-  "Last ferry or late arrival",
+  {
+    title: "Airport pickup point",
+    imageSrc: "/assets/steps/immigration.png",
+    imageAlt: "Airport arrival checkpoint",
+  },
+  {
+    title: "Final drop-off",
+    imageSrc: "/assets/promo/hotel-transfer.png",
+    imageAlt: "Hotel transfer drop-off",
+  },
+  {
+    title: "Luggage rules",
+    imageSrc: "/assets/steps/baggage-claim.png",
+    imageAlt: "Airport baggage claim",
+  },
+  {
+    title: "Last ferry or late arrival",
+    imageSrc: "/assets/vehicles/mobile/ferry.png",
+    imageAlt: "Ferry connection timing",
+  },
 ];
 
 export default function GuidesPage() {
@@ -150,19 +179,54 @@ export default function GuidesPage() {
         </div>
 
         <div className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <div className="relative mb-4 h-44 overflow-hidden rounded-[1.15rem] bg-[#10201d]">
+            <Image
+              src="/assets/hero/hero-mobile.png"
+              alt="Thailand transfer planning on mobile"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 390px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/85 via-[#10201d]/25 to-transparent" />
+            <div className="absolute inset-x-4 bottom-4">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#f0c96a]">
+                Mobile transfer notes
+              </p>
+              <h2 className="mt-1 text-[25px] font-extrabold leading-tight text-white">
+                Check the route before you book
+              </h2>
+              <p className="mt-2 text-xs font-medium leading-5 text-white/80">
+                Pickup points, luggage, ferry timing and final drop-off in one
+                place.
+              </p>
+            </div>
+          </div>
+
           <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
             What to check
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2">
             {guideTopics.map((topic) => (
               <div
-                key={topic}
-                className="flex items-center gap-2 rounded-2xl bg-[#f8f4ec] px-3 py-2"
+                key={topic.title}
+                className="overflow-hidden rounded-2xl bg-[#f8f4ec]"
               >
-                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#0c5a4d]" />
-                <span className="text-xs font-bold text-[#10201d]">
-                  {topic}
-                </span>
+                <div className="relative h-20">
+                  <Image
+                    src={topic.imageSrc}
+                    alt={topic.imageAlt}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 190px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex min-h-12 items-center gap-2 px-3 py-2">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                  <span className="text-xs font-bold leading-snug text-[#10201d]">
+                    {topic.title}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -174,18 +238,26 @@ export default function GuidesPage() {
               key={guide.title}
               className="overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
             >
-              <div className="p-4">
-                <div className="flex items-start justify-between gap-3">
+              <div className="relative h-40 overflow-hidden bg-[#10201d]">
+                <Image
+                  src={guide.imageSrc}
+                  alt={guide.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 390px"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/80 via-[#10201d]/10 to-transparent" />
+                <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
                   <div>
-                    <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#f0c96a]">
                       {guide.type}
                     </p>
-                    <h2 className="mt-1 text-xl font-extrabold text-[#10201d]">
+                    <h2 className="mt-1 text-[24px] font-extrabold leading-tight text-white">
                       {guide.title}
                     </h2>
                   </div>
 
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/90 text-[#0c5a4d] shadow-sm backdrop-blur">
                     {guide.type.includes("ferry") ||
                     guide.type.includes("island") ? (
                       <ShipWheel className="h-5 w-5" />
@@ -194,8 +266,10 @@ export default function GuidesPage() {
                     )}
                   </div>
                 </div>
+              </div>
 
-                <div className="mt-4 space-y-2">
+              <div className="p-4">
+                <div className="space-y-2">
                   <div className="rounded-2xl bg-[#f8f4ec] px-3 py-2">
                     <p className="text-xs font-bold leading-5 text-[#10201d]">
                       {guide.bestFor}
