@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Smartphone } from "lucide-react";
+import { AffiliateButton } from "@/components/AffiliateButton";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { mainRoute } from "@/data/routes";
 
 export const metadata: Metadata = {
   title: "Thailand Tourist SIM & eSIM | Thailand Transfers",
@@ -23,7 +26,7 @@ const benefits = [
 
 export default function ThailandTouristSimPage() {
   return (
-    <main className="min-h-screen bg-[#fbfaf7] text-[#10201d]">
+    <main className="min-h-screen bg-[#fbfaf7] pb-28 text-[#10201d] lg:pb-0">
       <div className="hidden lg:block">
         <Header />
       </div>
@@ -98,6 +101,16 @@ export default function ThailandTouristSimPage() {
                   For now, it explains why staying connected matters during
                   transfers in Thailand.
                 </p>
+
+                <div className="mt-4 lg:hidden">
+                  <AffiliateButton
+                    href={mainRoute.affiliateUrl}
+                    trackingId="click_12go_sim_mobile_transfer"
+                    fullWidth
+                  >
+                    Check live transfer prices
+                  </AffiliateButton>
+                </div>
               </div>
             </div>
           </div>
@@ -105,6 +118,7 @@ export default function ThailandTouristSimPage() {
       </section>
 
       <Footer />
+      <MobileBottomNav activeLabel="Extras" />
     </main>
   );
 }

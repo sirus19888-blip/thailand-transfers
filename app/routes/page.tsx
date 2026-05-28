@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Landmark } from "lucide-react";
+import { AffiliateButton } from "@/components/AffiliateButton";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
-import { popularRoutes } from "@/data/routes";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { mainRoute, popularRoutes } from "@/data/routes";
 
 export const metadata: Metadata = {
   title: "All Thailand Transfer Routes | Thailand Transfers",
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RoutesPage() {
   return (
-    <main className="min-h-screen bg-[#fbfaf7] text-[#10201d]">
+    <main className="min-h-screen bg-[#fbfaf7] pb-28 text-[#10201d] lg:pb-0">
       <div className="hidden lg:block">
         <Header />
       </div>
@@ -42,6 +44,16 @@ export default function RoutesPage() {
               Compare airport transfers, city transfers, ferry connections and
               popular tourist routes across Thailand.
             </p>
+
+            <div className="mt-6 lg:hidden">
+              <AffiliateButton
+                href={mainRoute.affiliateUrl}
+                trackingId="click_12go_routes_mobile_bkk_pattaya"
+                fullWidth
+              >
+                Check live BKK to Pattaya prices
+              </AffiliateButton>
+            </div>
           </div>
         </Container>
       </section>
@@ -95,6 +107,7 @@ export default function RoutesPage() {
       </section>
 
       <Footer />
+      <MobileBottomNav activeLabel="Routes" />
     </main>
   );
 }

@@ -410,6 +410,12 @@ export function MobileRouteDetailsScreen({
             ))}
           </div>
         </div>
+
+        <p className="mt-5 text-center text-xs leading-5 text-slate-500">
+          Last checked May 2026. Route details are planning notes. Final price,
+          schedule, pickup point and luggage rules must still be checked on the
+          live ticket.
+        </p>
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur">

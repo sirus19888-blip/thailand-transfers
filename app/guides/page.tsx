@@ -7,7 +7,10 @@ import {
   MapPin,
   ShipWheel,
 } from "lucide-react";
+import { AffiliateButton } from "@/components/AffiliateButton";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { mainRoute } from "@/data/routes";
+import { getRoutePageBySlug } from "@/data/routePages";
 
 export const metadata: Metadata = {
   title: "Thailand Transfer Guides | Mobile Route Tips",
@@ -22,6 +25,8 @@ const guideRoutes = [
   {
     title: "BKK to Pattaya",
     href: "/routes/bangkok-airport-to-pattaya/details",
+    affiliateUrl: mainRoute.affiliateUrl,
+    trackingId: "click_12go_guide_bkk_pattaya",
     type: "Airport to city",
     bestFor: "Best when you need a simple airport exit to Pattaya, Jomtien or a direct hotel ride.",
     facts: [
@@ -33,6 +38,9 @@ const guideRoutes = [
   {
     title: "BKK to Koh Chang",
     href: "/routes/suvarnabhumi-airport-to-koh-chang/details",
+    affiliateUrl: getRoutePageBySlug("suvarnabhumi-airport-to-koh-chang")!
+      .mainAffiliateUrl,
+    trackingId: "click_12go_guide_bkk_koh_chang",
     type: "Airport to island",
     bestFor: "Best planned as a road transfer plus ferry, not as a pure car ride.",
     facts: [
@@ -44,6 +52,9 @@ const guideRoutes = [
   {
     title: "BKK to Hua Hin",
     href: "/routes/suvarnabhumi-airport-to-hua-hin/details",
+    affiliateUrl: getRoutePageBySlug("suvarnabhumi-airport-to-hua-hin")!
+      .mainAffiliateUrl,
+    trackingId: "click_12go_guide_bkk_hua_hin",
     type: "Airport to beach city",
     bestFor: "Best for fixed coach departures or private transfer after an international flight.",
     facts: [
@@ -55,6 +66,9 @@ const guideRoutes = [
   {
     title: "Phuket Airport to Patong",
     href: "/routes/phuket-airport-to-patong-beach/details",
+    affiliateUrl: getRoutePageBySlug("phuket-airport-to-patong-beach")!
+      .mainAffiliateUrl,
+    trackingId: "click_12go_guide_phuket_airport_patong",
     type: "Airport to beach",
     bestFor: "Best for choosing between low-cost Smart Bus and direct taxi/private transfer.",
     facts: [
@@ -66,6 +80,9 @@ const guideRoutes = [
   {
     title: "Surat Thani Airport to Koh Samui",
     href: "/routes/surat-thani-airport-to-koh-samui/details",
+    affiliateUrl: getRoutePageBySlug("surat-thani-airport-to-koh-samui")!
+      .mainAffiliateUrl,
+    trackingId: "click_12go_guide_surat_thani_koh_samui",
     type: "Airport plus ferry",
     bestFor: "Best handled as one connected bus or van plus ferry ticket.",
     facts: [
@@ -77,6 +94,9 @@ const guideRoutes = [
   {
     title: "Phuket to Koh Phi Phi",
     href: "/routes/phuket-to-koh-phi-phi/details",
+    affiliateUrl: getRoutePageBySlug("phuket-to-koh-phi-phi")!
+      .mainAffiliateUrl,
+    trackingId: "click_12go_guide_phuket_phi_phi",
     type: "Island ferry",
     bestFor: "Best for comparing larger ferry comfort with faster speedboat timing.",
     facts: [
@@ -191,24 +211,35 @@ export default function GuidesPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-[1fr_auto] items-center gap-3 border-t border-[#e7e2d8] px-4 py-3">
+              <div className="grid gap-3 border-t border-[#e7e2d8] px-4 py-3">
                 <p className="text-xs font-bold leading-5 text-slate-500">
                   Verified route notes, live ticket still required.
                 </p>
-                <Link
-                  href={guide.href}
-                  className="rounded-2xl bg-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-white"
-                >
-                  Open guide
-                </Link>
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    href={guide.href}
+                    className="flex items-center justify-center rounded-xl border border-[#0c5a4d] bg-white px-3 py-2 text-[12px] font-extrabold text-[#0c5a4d]"
+                  >
+                    Open guide
+                  </Link>
+                  <AffiliateButton
+                    href={guide.affiliateUrl}
+                    trackingId={guide.trackingId}
+                    variant="table"
+                    fullWidth
+                  >
+                    Live price
+                  </AffiliateButton>
+                </div>
               </div>
             </article>
           ))}
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Route facts are planning notes. Final price, schedule, pickup point
-          and luggage rules must still be checked on the live ticket.
+          Last checked May 2026. Route facts are planning notes. Final price,
+          schedule, pickup point and luggage rules must still be checked on the
+          live ticket.
         </p>
       </section>
 

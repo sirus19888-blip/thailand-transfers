@@ -247,7 +247,8 @@ export function MobileTransferOptionsScreen() {
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Prices in THB · Estimates only · May vary by time & traffic
+          Last checked May 2026. Live prices and schedules may change by date,
+          operator and traffic.
         </p>
       </div>
     </section>

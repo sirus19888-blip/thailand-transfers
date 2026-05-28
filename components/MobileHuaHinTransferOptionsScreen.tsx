@@ -350,7 +350,8 @@ export function MobileHuaHinTransferOptionsScreen({
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Live prices and schedules may change. Allow extra time after landing.
+          Last checked May 2026. Live prices and schedules may change. Allow
+          extra time after landing.
         </p>
       </div>
     </section>

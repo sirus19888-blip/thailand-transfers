@@ -84,6 +84,9 @@ export function MobilePriorityRouteOptionsScreen({
   selectedDate,
   passengers = "2",
 }: MobilePriorityRouteOptionsScreenProps) {
+  const footerWithFreshness = footerNote.startsWith("Last checked")
+    ? footerNote
+    : `Last checked May 2026. ${footerNote}`;
   const passengerLabel =
     passengers === "1"
       ? "1 Adult"
@@ -322,7 +325,7 @@ export function MobilePriorityRouteOptionsScreen({
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          {footerNote}
+          {footerWithFreshness}
         </p>
       </div>
     </section>

@@ -33,7 +33,7 @@ const mobileRoute: RoutePageData = {
     {
       id: "bus",
       name: "Airport Bus",
-      price: "From THB 170-249",
+      price: "Check live price",
       duration: "2h - 2h 30m",
       pickup: "Level 1 near Exit 8 or Suvarnabhumi Bus Terminal",
       bestFor:
@@ -45,7 +45,7 @@ const mobileRoute: RoutePageData = {
     {
       id: "taxi",
       name: "Private Taxi",
-      price: "From THB 1,329",
+      price: "Check live price",
       duration: "1h 30m - 2h 30m",
       pickup: "Arrivals hall or private driver meeting point",
       bestFor: "Late arrivals, families, luggage and door-to-door travel",
@@ -72,7 +72,7 @@ const optionDetailsById = {
   bus: {
     label: "Best value",
     operator: "Roong Reuang Coach, 999 Bus and partner buses",
-    departures: "06:00-22:00",
+    departures: "Live schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/bus.png",
     rating: "4.5",
