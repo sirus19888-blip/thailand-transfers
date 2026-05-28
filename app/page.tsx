@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { HeroSearch } from "@/components/HeroSearch";
 import { TransferOptionsTable } from "@/components/TransferOptionsTable";
 import { PopularRoutes } from "@/components/PopularRoutes";
+import { MobilePopularRouteLinks } from "@/components/MobilePopularRouteLinks";
 import { PromoCards } from "@/components/PromoCards";
 import { LandingSteps } from "@/components/LandingSteps";
 import { ScamAlert } from "@/components/ScamAlert";
@@ -27,6 +28,7 @@ export default function HomePage() {
       </div>
 
       <HeroSearch />
+      <MobilePopularRouteLinks />
 
       <div className="hidden lg:block">
         <TransferOptionsTable />
