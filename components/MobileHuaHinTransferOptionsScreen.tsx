@@ -332,7 +332,7 @@ export function MobileHuaHinTransferOptionsScreen({
                     <div className="flex shrink-0 gap-2">
                       <Link
                         href={getDetailsHref(option.id)}
-                        className="rounded-2xl border border-[#0c5a4d] px-4 py-2.5 text-xs font-extrabold text-[#0c5a4d]"
+                        className="rounded-full border border-[#0c5a4d] px-5 py-3 text-sm font-extrabold text-[#0c5a4d]"
                       >
                         Details
                       </Link>
