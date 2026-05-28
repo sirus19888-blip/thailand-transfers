@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { DesktopComingSoon } from "@/components/DesktopComingSoon";
 import { siteName, siteUrl } from "./site";
 import "./globals.css";
 
@@ -66,7 +67,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="contents lg:hidden">{children}</div>
+        <div className="hidden lg:flex">
+          <DesktopComingSoon />
+        </div>
+      </body>
     </html>
   );
 }
