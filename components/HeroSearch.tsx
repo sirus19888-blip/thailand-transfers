@@ -586,7 +586,7 @@ function MobileHero() {
 
                 <div className="leading-tight">
                   <p className="text-[15px] font-extrabold uppercase tracking-[0.08em] text-[#10201d]">
-                    THAI TRANSFERS
+                    THAILAND TRANSFERS
                   </p>
 
                   <div className="mt-1 flex items-center gap-2">
