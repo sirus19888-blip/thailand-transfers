@@ -3,6 +3,7 @@ import Link from "next/link";
 import { mainRoute, transferOptions } from "@/data/routes";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { AffiliateButton } from "./AffiliateButton";
+import { MobileBottomNav } from "./MobileBottomNav";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -298,7 +299,7 @@ export function MobileRouteDetailsScreen({
     optionContentById.bus;
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-2 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-40 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -552,7 +553,7 @@ export function MobileRouteDetailsScreen({
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
+      <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 pb-2 pt-2 shadow-2xl backdrop-blur">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">
@@ -579,10 +580,12 @@ export function MobileRouteDetailsScreen({
             trackingId={selectedOption?.trackingId ?? taxiOption?.trackingId}
             variant="detailsSticky"
           >
-            See live price
+            Check live price
           </AffiliateButton>
         </div>
       </div>
+
+      <MobileBottomNav activeLabel="Routes" />
     </section>
   );
 }

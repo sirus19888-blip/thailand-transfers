@@ -81,7 +81,7 @@ function DesktopComparisonArea() {
                 Best For
               </th>
               <th className="w-[125px] px-3 py-3 text-[12px] font-extrabold text-[#10201d]">
-                Book
+                Partner link
               </th>
             </tr>
           </thead>

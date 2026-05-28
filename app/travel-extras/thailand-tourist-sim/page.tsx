@@ -14,6 +14,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
@@ -173,6 +174,7 @@ export default function ThailandTouristSimPage() {
               >
                 Check live transfer prices
               </AffiliateButton>
+              <AffiliateDisclosure className="mt-3 text-center" />
             </div>
           </div>
         </div>
@@ -335,6 +337,7 @@ export default function ThailandTouristSimPage() {
                   >
                     Check live transfer prices
                   </AffiliateButton>
+                  <AffiliateDisclosure className="mt-3 text-center" />
                 </div>
               </div>
             </div>

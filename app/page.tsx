@@ -9,6 +9,7 @@ import { ScamAlert } from "@/components/ScamAlert";
 import { PracticalTips } from "@/components/PracticalTips";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 
 export const metadata: Metadata = {
   title: "Thailand Transfers | Compare Thailand Transfer Options",
@@ -41,12 +42,7 @@ export default function HomePage() {
       <MobileBottomNav />
 
       <section className="bg-white px-5 pt-4 pb-[calc(4rem+env(safe-area-inset-bottom))] text-center text-xs leading-5 text-slate-500 lg:px-8 lg:py-6">
-        <p className="mx-auto max-w-3xl">
-          Thailand Transfers is an independent travel comparison website. We do
-          not operate buses, taxis, vans or ferries. Some links may be affiliate
-          links, which means we may earn a commission if you book through our
-          partners, at no extra cost to you.
-        </p>
+        <AffiliateDisclosure className="mx-auto max-w-3xl" />
       </section>
     </main>
   );

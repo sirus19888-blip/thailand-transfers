@@ -42,9 +42,9 @@ export default function RoutePageTemplate({
                 {badge}
               </p>
 
-              <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                 {route.title}
-              </h1>
+              </h2>
 
               <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                 {desktopDescription ?? route.intro}
@@ -108,7 +108,7 @@ export default function RoutePageTemplate({
                       Best for
                     </th>
                     <th className="px-5 py-4 text-sm font-bold text-[#10201d]">
-                      Book
+                      Partner link
                     </th>
                   </tr>
                 </thead>
@@ -141,7 +141,7 @@ export default function RoutePageTemplate({
                           variant="table"
                           fullWidth
                         >
-                          See options
+                          Check options
                         </AffiliateButton>
                       </td>
                     </tr>

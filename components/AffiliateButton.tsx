@@ -14,7 +14,7 @@ type AffiliateButtonProps = {
 
 export function AffiliateButton({
   href,
-  children = "Book on 12Go",
+  children = "Check live prices on 12Go",
   fullWidth = false,
   trackingId,
   variant = "default",

@@ -21,9 +21,9 @@ export function RouteHero() {
               Route guide
             </p>
 
-            <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl sm:text-5xl lg:text-6xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl sm:text-5xl lg:text-6xl">
               {mainRoute.title}
-            </h1>
+            </h2>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
               Compare the easiest ways to travel from Suvarnabhumi Airport to

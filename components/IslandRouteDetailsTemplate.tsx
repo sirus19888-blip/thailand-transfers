@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import type { RoutePageData } from "@/data/routePages";
@@ -265,7 +266,7 @@ export function IslandRouteDetailsTemplate({
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
-      <section className="min-h-screen bg-[#fbfaf7] pb-2 lg:hidden">
+      <section className="min-h-screen bg-[#fbfaf7] pb-40 lg:hidden">
         <div className="mx-auto max-w-md px-4 py-5">
           <div className="flex items-start justify-between gap-3">
             <Link
@@ -513,7 +514,7 @@ export function IslandRouteDetailsTemplate({
           <AffiliateDisclosure className="mt-2 text-center" />
         </div>
 
-        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
+        <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 pb-2 pt-2 shadow-2xl backdrop-blur">
           <div className="mx-auto flex max-w-md items-center gap-3">
             <div className="min-w-0 flex-1">
               <p className="text-xs font-medium text-slate-500">
@@ -535,10 +536,12 @@ export function IslandRouteDetailsTemplate({
               trackingId={mobileSelectedOption?.trackingId}
               variant="detailsSticky"
             >
-              See live price
+              Check live price
             </AffiliateButton>
           </div>
         </div>
+
+        <MobileBottomNav activeLabel="Routes" />
       </section>
 
       <div className="hidden lg:block">
@@ -559,9 +562,9 @@ export function IslandRouteDetailsTemplate({
                   Route details
                 </p>
 
-                <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+                <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                   {heroTitle}
-                </h1>
+                </h2>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                   {heroDescription}

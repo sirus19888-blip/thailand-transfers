@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
@@ -99,7 +100,7 @@ export function MobilePriorityRouteOptionsScreen({
     : `${route.options.length} best options found`;
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-2">
+    <section className="min-h-screen bg-[#fbfaf7] pb-20">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">
           <Link
@@ -315,7 +316,7 @@ export function MobilePriorityRouteOptionsScreen({
                         href={option.affiliateUrl}
                         trackingId={option.trackingId}
                       >
-                        See live price
+                        Check live price
                       </AffiliateButton>
                     </div>
                   </div>
@@ -330,6 +331,7 @@ export function MobilePriorityRouteOptionsScreen({
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
+      <MobileBottomNav activeLabel="Routes" />
     </section>
   );
 }

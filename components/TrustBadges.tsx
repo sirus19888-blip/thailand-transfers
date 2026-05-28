@@ -5,7 +5,7 @@ const badges = [
   },
   {
     title: "Live booking",
-    description: "Book through trusted partners",
+    description: "Compare trusted partner links",
   },
   {
     title: "Arrival guide",

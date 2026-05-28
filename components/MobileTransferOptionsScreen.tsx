@@ -3,6 +3,7 @@ import Link from "next/link";
 import { transferOptions } from "@/data/routes";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { AffiliateButton } from "./AffiliateButton";
+import { MobileBottomNav } from "./MobileBottomNav";
 import { getMobileVehicleImage } from "./mobileVehicleAssets";
 import {
   ArrowLeft,
@@ -29,7 +30,7 @@ function getDetailsHref(optionId: string) {
 
 export function MobileTransferOptionsScreen() {
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-2 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-20 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">
           <Link
@@ -238,7 +239,7 @@ export function MobileTransferOptionsScreen() {
                       href={option.affiliateUrl}
                       trackingId={option.trackingId}
                     >
-                      See live price
+                      Check live price
                     </AffiliateButton>
                   </div>
                 </div>
@@ -253,6 +254,7 @@ export function MobileTransferOptionsScreen() {
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
+      <MobileBottomNav activeLabel="Routes" />
     </section>
   );
 }

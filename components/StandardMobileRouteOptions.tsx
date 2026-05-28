@@ -3,6 +3,8 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { getMobileVehicleImage } from "@/components/mobileVehicleAssets";
 import type { RoutePageData } from "@/data/routePages";
 
@@ -61,13 +63,7 @@ export function StandardMobileRouteOptions({
 }: StandardMobileRouteOptionsProps) {
   return (
     <Suspense
-      fallback={
-        <StandardMobileRouteOptionsView
-          route={route}
-          selectedDate={selectedDate}
-          passengers={passengers}
-        />
-      }
+      fallback={<StandardMobileRouteOptionsFallback route={route} />}
     >
       <StandardMobileRouteOptionsContent
         route={route}
@@ -75,6 +71,33 @@ export function StandardMobileRouteOptions({
         passengers={passengers}
       />
     </Suspense>
+  );
+}
+
+function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData }) {
+  return (
+    <section className="min-h-screen bg-[#fbfaf7] pb-20">
+      <div className="mx-auto max-w-md px-4 py-5">
+        <div className="flex items-center justify-between">
+          <div className="h-10 w-10 rounded-full bg-white shadow-sm" />
+
+          <div className="text-center">
+            <p className="text-[16px] font-extrabold text-[#10201d]">
+              {compactRouteTitle(route)}
+            </p>
+            <p className="mt-1 text-[11px] font-medium text-slate-500">
+              Loading route options
+            </p>
+          </div>
+
+          <div className="h-10 w-10 rounded-full bg-white shadow-sm" />
+        </div>
+
+        <AffiliateDisclosure className="mt-5 text-center" />
+      </div>
+
+      <MobileBottomNav activeLabel="Routes" />
+    </section>
   );
 }
 
