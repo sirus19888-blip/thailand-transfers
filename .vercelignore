@@ -1,0 +1,15 @@
+.git
+.next
+node_modules
+coverage
+out
+build
+
+.env*
+*.log
+*.tsbuildinfo
+
+home-*.png
+mobile-*.png
+route-mobile-*.png
+*-premium-mobile-*.png
