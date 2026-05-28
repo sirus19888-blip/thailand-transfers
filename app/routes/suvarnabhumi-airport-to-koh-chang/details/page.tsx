@@ -246,6 +246,77 @@ function MobileDetails() {
           </div>
         </div>
 
+        <div className="mt-4 grid gap-3">
+          <div className="rounded-[1.25rem] border border-[#e7e2d8] bg-white p-4 shadow-sm">
+            <div className="flex gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                <ShieldCheck className="h-4 w-4" />
+              </div>
+
+              <div className="min-w-0">
+                <p className="text-sm font-extrabold text-[#10201d]">
+                  Ferry and weather buffer
+                </p>
+                <p className="mt-1 text-xs leading-5 text-slate-600">
+                  This route still depends on mainland road time, pier reporting
+                  time, ferry queues and sea conditions. Avoid planning it close
+                  to another fixed connection.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[1.25rem] border border-[#e7e2d8] bg-white p-4 shadow-sm">
+            <div className="flex gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                <ShieldCheck className="h-4 w-4" />
+              </div>
+
+              <div className="min-w-0">
+                <p className="text-sm font-extrabold text-[#10201d]">
+                  If the schedule changes
+                </p>
+                <p className="mt-1 text-xs leading-5 text-slate-600">
+                  Check the operator ticket for the next available combined
+                  transfer. Private road transfer does not remove the ferry
+                  crossing where the ticket requires one.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
+            Last-mile check
+          </h2>
+
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            Check whether the ticket ends at the Koh Chang pier, includes the
+            ferry crossing only, or continues to your hotel area on the island.
+            Some services are not full door-to-door.
+          </p>
+        </div>
+
+        <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
+            What to check before booking
+          </h2>
+
+          <div className="mt-3 space-y-2">
+            {[
+              "Airport pickup point, pier transfer, ferry crossing and island-side drop-off.",
+              "Whether the fare includes ferry tickets, tolls, waiting time and large luggage.",
+              "Extra space needs for families, strollers, golf bags or multiple suitcases.",
+            ].map((item) => (
+              <div key={item} className="flex gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <p className="text-xs leading-5 text-slate-600">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
           <h2 className="text-lg font-extrabold text-[#10201d]">
             Practical notes
@@ -285,17 +356,19 @@ function MobileDetails() {
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Last checked May 2026. Route details are planning notes. Final price,
-          schedule, pickup point and luggage rules must still be checked on the
-          live ticket.
+          Last checked May 2026. Thailand Transfers is an independent travel
+          comparison guide, not the transport operator. Booking, payment,
+          ticket changes and support are handled by the booking partner or
+          operator. Final price, schedule, pickup point and luggage rules must
+          still be checked on the live ticket.
         </p>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">Island link</p>
-            <p className="text-lg font-extrabold text-[#10201d]">
+            <p className="text-base font-extrabold text-[#10201d]">
               Live price
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go

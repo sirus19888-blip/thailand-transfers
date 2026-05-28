@@ -32,6 +32,117 @@ type Faq = {
   answer: string;
 };
 
+function isAirportRoute(route: RoutePageData) {
+  return `${route.from} ${route.to}`.toLowerCase().includes("airport");
+}
+
+function isIslandOrPierRoute(route: RoutePageData) {
+  const routeText = `${route.from} ${route.to} ${route.intro}`.toLowerCase();
+
+  return (
+    routeText.includes("koh") ||
+    routeText.includes("phi phi") ||
+    routeText.includes("ferry") ||
+    routeText.includes("pier")
+  );
+}
+
+function buildMobilePlanningNotes(route: RoutePageData) {
+  const airportRoute = isAirportRoute(route);
+  const islandOrPierRoute = isIslandOrPierRoute(route);
+
+  if (islandOrPierRoute) {
+    return [
+      {
+        title: "Ferry and weather buffer",
+        text: airportRoute
+          ? "Island routes that connect with an airport still depend on pier reporting time, ferry crossing and sea conditions. Avoid tight flight connections before or after the transfer."
+          : "Island routes can depend on pier reporting time, ferry crossing and sea conditions. Avoid tight flight or train connections after the transfer.",
+      },
+      {
+        title: "If the schedule changes",
+        text: "Check the operator ticket for the next available ferry or combined transfer. Private road transfer does not replace the ferry crossing where one is required.",
+      },
+    ];
+  }
+
+  if (airportRoute) {
+    return [
+      {
+        title: "Arrival buffer",
+        text: "If this route starts after a flight, allow time for immigration, baggage claim, walking to the meeting point and possible flight delay before choosing a fixed schedule.",
+      },
+      {
+        title: "If you miss a fixed departure",
+        text: "For scheduled buses, vans, ferries or combined tickets, check the next live departure. If timing is tight, compare private taxi or private transfer options.",
+      },
+    ];
+  }
+
+  return [
+    {
+      title: "Schedule buffer",
+      text: "For fixed bus, van or train departures, arrive early and keep time for traffic, station checks and luggage handling.",
+    },
+    {
+      title: "If you miss it",
+      text: "Check the next live departure before changing station or operator. Private taxi is usually the fallback when schedule flexibility matters.",
+    },
+  ];
+}
+
+function buildMobileLastMile(route: RoutePageData, selectedOptionName: string) {
+  const routeText = `${route.from} ${route.to}`.toLowerCase();
+
+  if (routeText.includes("pattaya")) {
+    return "Check whether your ticket ends at North Pattaya, Jomtien, an operator point or your hotel. Shared services and buses are not always door-to-door.";
+  }
+
+  if (isIslandOrPierRoute(route)) {
+    return "Check the exact pier and whether onward hotel, airport or city transfer is included after the boat. Some tickets end at the pier only.";
+  }
+
+  if (selectedOptionName.toLowerCase().includes("taxi")) {
+    return "Private taxi is usually the most direct option, but the driver still needs the exact hotel, condo, airport terminal or full address.";
+  }
+
+  return "Check whether the final stop is a hotel, station, terminal, pier, airport, bus stop or operator point. Plan a local ride if drop-off is not door-to-door.";
+}
+
+function buildMobileBookingChecks(
+  route: RoutePageData,
+  selectedOptionName: string,
+) {
+  const checks = [
+    "Check the exact pickup point, reporting time and final drop-off on the live ticket.",
+    "Check baggage allowance, extra-bag rules and whether large items need a bigger vehicle.",
+  ];
+
+  if (isIslandOrPierRoute(route)) {
+    checks.push(
+      "Check whether ferry crossing, pier transfer and onward transfer are included.",
+    );
+  }
+
+  if (isAirportRoute(route)) {
+    checks.push(
+      "If this connects with a flight, leave extra time for traffic, weather, baggage and airport processing.",
+    );
+  }
+
+  if (selectedOptionName.toLowerCase().includes("taxi")) {
+    checks.push(
+      "Check whether tolls, waiting time, airport pickup and luggage capacity are included.",
+    );
+  } else {
+    checks.push(
+      "Check whether the service is fixed schedule, shared transfer or door-to-door.",
+    );
+  }
+
+  return checks;
+}
+
 type IslandRouteDetailsTemplateProps = {
   route: RoutePageData;
   backHref: string;
@@ -130,10 +241,16 @@ export function IslandRouteDetailsTemplate({
           return fact;
         })
       : quickFacts;
+  const mobilePlanningNotes = buildMobilePlanningNotes(route);
+  const mobileLastMile = buildMobileLastMile(route, mobileSelectedOption.name);
+  const mobileBookingChecks = buildMobileBookingChecks(
+    route,
+    mobileSelectedOption.name,
+  );
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
-      <section className="min-h-screen bg-[#fbfaf7] pb-32 lg:hidden">
+      <section className="min-h-screen bg-[#fbfaf7] pb-[calc(9rem+env(safe-area-inset-bottom))] lg:hidden">
         <div className="mx-auto max-w-md px-4 py-5">
           <div className="flex items-start justify-between gap-3">
             <Link
@@ -213,7 +330,7 @@ export function IslandRouteDetailsTemplate({
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
                       <Icon className="h-4 w-4" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-sm font-extrabold text-[#10201d]">
                         {fact.title}
                       </p>
@@ -225,6 +342,30 @@ export function IslandRouteDetailsTemplate({
                 </div>
               );
             })}
+          </div>
+
+          <div className="mt-4 grid gap-3">
+            {mobilePlanningNotes.map((note) => (
+              <div
+                key={note.title}
+                className="rounded-[1.25rem] border border-[#e7e2d8] bg-white p-4 shadow-sm"
+              >
+                <div className="flex gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                    <ShieldCheck className="h-4 w-4" />
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="text-sm font-extrabold text-[#10201d]">
+                      {note.title}
+                    </p>
+                    <p className="mt-1 text-xs leading-5 text-slate-600">
+                      {note.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div
@@ -278,6 +419,31 @@ export function IslandRouteDetailsTemplate({
 
           <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
             <h2 className="text-lg font-extrabold text-[#10201d]">
+              Last-mile check
+            </h2>
+
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              {mobileLastMile}
+            </p>
+          </div>
+
+          <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+            <h2 className="text-lg font-extrabold text-[#10201d]">
+              What to check before booking
+            </h2>
+
+            <div className="mt-3 space-y-2">
+              {mobileBookingChecks.map((item) => (
+                <div key={item} className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                  <p className="text-xs leading-5 text-slate-600">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+            <h2 className="text-lg font-extrabold text-[#10201d]">
               Practical notes
             </h2>
 
@@ -322,20 +488,21 @@ export function IslandRouteDetailsTemplate({
           </div>
 
           <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-            Last checked May 2026. Route details are planning notes. Final
-            price, schedule, pickup point and luggage rules must still be
-            checked on the live ticket.
+            Last checked May 2026. Thailand Transfers is an independent travel
+            comparison guide, not the transport operator. Booking, payment,
+            ticket changes and support are handled by the booking partner or
+            operator. Final price, schedule, pickup point and luggage rules must
+            still be checked on the live ticket.
           </p>
         </div>
 
-        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur">
+        <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
           <div className="mx-auto flex max-w-md items-center gap-3">
             <div className="min-w-0 flex-1">
               <p className="text-xs font-medium text-slate-500">
-                {stickyLabel}
-                {mobileSelectedOptionId ? `: ${mobileSelectedOption.name}` : ""}
+                {mobileSelectedOptionId ? mobileSelectedOption.name : stickyLabel}
               </p>
-              <p className="text-lg font-extrabold text-[#10201d]">
+              <p className="text-base font-extrabold text-[#10201d]">
                 Live price
                 <span className="ml-1 text-xs font-medium text-slate-500">
                   on 12Go

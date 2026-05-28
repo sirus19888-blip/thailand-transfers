@@ -629,9 +629,9 @@ function MobileHero() {
   };
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-24 lg:hidden">
+    <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-[calc(7rem+env(safe-area-inset-bottom))] lg:hidden">
       <div className="relative mx-auto max-w-md overflow-hidden bg-[#f6f1e8]">
-        <div className="relative h-[415px] overflow-hidden">
+        <div className="relative h-[370px] overflow-hidden">
           <Image
             src="/assets/hero/hero-mobile.png"
             alt="Thailand transfer hero"
@@ -694,7 +694,7 @@ function MobileHero() {
           >
             <div className="grid grid-cols-[1fr_44px] gap-2.5">
               <div className="space-y-3">
-                <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                   <select
                     aria-label="From"
                     ref={mobileFromSelectRef}
@@ -728,7 +728,7 @@ function MobileHero() {
                   </div>
                 </label>
 
-                <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                   <select
                     aria-label="To"
                     ref={mobileToSelectRef}
@@ -763,7 +763,7 @@ function MobileHero() {
                 </label>
               </div>
 
-              <div className="flex items-start justify-center pt-[39px]">
+              <div className="flex items-start justify-center pt-[37px]">
                 <button
                   type="button"
                   aria-label="Swap route"
@@ -789,7 +789,7 @@ function MobileHero() {
             </div>
 
             <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-              <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+              <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                 <input
                   aria-label="Date"
                   name="date"
@@ -818,7 +818,7 @@ function MobileHero() {
                 </div>
               </label>
 
-              <label className="relative block min-h-[82px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+              <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
                 <select
                   aria-label="Passengers"
                   name="passengers"

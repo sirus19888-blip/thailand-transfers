@@ -62,6 +62,23 @@ const optionContentById = {
     warningTitle: "Check your drop-off point",
     warningText:
       "Pattaya bus tickets can end at Jomtien, North Pattaya or Sukhumvit-area stops. Pick the option that matches your hotel area, especially if you arrive with luggage.",
+    planningNotes: [
+      {
+        title: "Late arrival rule",
+        text: "RRC route data shows airport-to-Pattaya departures from 06:00 to 22:00. If your flight lands close to the final bus, compare taxi or private transfer before leaving arrivals.",
+      },
+      {
+        title: "First and last bus",
+        text: "The first listed airport bus is 06:00 and the last listed bus is 22:00. Current route data notes the 22:00 bus goes to North Pattaya Bus Station, not Jomtien.",
+      },
+    ],
+    lastMile:
+      "If the bus ends at North Pattaya or Jomtien, plan a local ride to your hotel. This is not the same as door-to-door hotel drop-off.",
+    bookingChecks: [
+      "Included: 1 checked bag up to 20 kg plus 1 small personal bag on RRC.",
+      "Not included: local taxi or songthaew from the bus station to your hotel.",
+      "Extra bags, golf bags, bicycles, surfboards and strollers can be charged separately by RRC.",
+    ],
     tips: [
       "RRC currently publishes fixed airport-to-Pattaya departures rather than an on-demand service, so choose a time that leaves room after landing.",
       "The published airport pickup point for the Pattaya bus is Level 1, Gate 8.",
@@ -119,6 +136,23 @@ const optionContentById = {
     warningTitle: "Confirm the meeting point",
     warningText:
       "Do not go to the bus counter for a taxi booking. Use the arrivals meeting point and operator contact details from the live ticket.",
+    planningNotes: [
+      {
+        title: "Late arrival rule",
+        text: "AOT lists Suvarnabhumi public taxis as a 24-hour service at Floor 1, between Gates 4 and 7. Pre-booked taxis use the meeting point on your voucher.",
+      },
+      {
+        title: "No fixed last departure",
+        text: "Private taxi is on-demand or pre-booked, so there is no bus-style last departure. Confirm waiting time, tolls, luggage space and the exact Pattaya address before travel.",
+      },
+    ],
+    lastMile:
+      "Private taxi is the clearest door-to-door option. Confirm whether your drop-off is Pattaya City, Jomtien, Naklua, Pratumnak or a full hotel/condo address.",
+    bookingChecks: [
+      "AOT public taxi adds a 50 Baht airport surcharge.",
+      "Toll fees are paid by passengers unless your pre-booked ticket says otherwise.",
+      "Large or multiple bags can trigger baggage rules or require a larger vehicle.",
+    ],
     tips: [
       "Private taxi is usually the simplest option after late evening flights.",
       "Check whether tolls, airport pickup, waiting time and hotel drop-off are included before paying.",
@@ -175,6 +209,23 @@ const optionContentById = {
     warningTitle: "Check if hotel drop-off is included",
     warningText:
       "Shared van tickets can differ by operator. Confirm whether the ticket goes to your hotel area or only to a Pattaya meeting point.",
+    planningNotes: [
+      {
+        title: "Late arrival rule",
+        text: "Shared transfers run on fixed schedules. If your flight lands late, compare private taxi because shared departures may not match your arrival time.",
+      },
+      {
+        title: "Check the final meeting point",
+        text: "Bell/RRC lists Suvarnabhumi shared-transfer check-in at the passenger terminal on Level 1, Gate 8. Other vouchers can still name a different partner point.",
+      },
+    ],
+    lastMile:
+      "Shared tickets can be hotel drop-off, area drop-off or terminal drop-off depending on the operator. Match the ticket to your exact Pattaya hotel area.",
+    bookingChecks: [
+      "Check whether hotel drop-off is included before booking.",
+      "Check the luggage allowance because shared vehicles have limited space.",
+      "If you travel with family luggage, golf bags or a stroller, compare a private car or van.",
+    ],
     tips: [
       "Shared transfer can be a useful middle option when the schedule fits and your hotel is in the covered Pattaya area.",
       "Bell/RRC publishes fixed shared departures from Suvarnabhumi to Pattaya, so it is not as flexible as a private taxi.",
@@ -338,6 +389,30 @@ export function MobileRouteDetailsScreen({
           })}
         </div>
 
+        <div className="mt-4 grid gap-3">
+          {selectedContent.planningNotes.map((note) => (
+            <div
+              key={note.title}
+              className="rounded-[1.25rem] border border-[#e7e2d8] bg-white p-4 shadow-sm"
+            >
+              <div className="flex gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+                  <Clock3 className="h-4 w-4" />
+                </div>
+
+                <div className="min-w-0">
+                  <p className="text-sm font-extrabold text-[#10201d]">
+                    {note.title}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    {note.text}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div
           id="mobile-route-details"
           className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5"
@@ -388,6 +463,39 @@ export function MobileRouteDetailsScreen({
         </div>
 
         <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <div className="flex gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
+              <MapPin className="h-5 w-5" />
+            </div>
+
+            <div>
+              <h2 className="text-base font-extrabold text-[#10201d]">
+                Pattaya last mile
+              </h2>
+
+              <p className="mt-1 text-sm leading-6 text-slate-600">
+                {selectedContent.lastMile}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
+            What to check before booking
+          </h2>
+
+          <div className="mt-3 space-y-2">
+            {selectedContent.bookingChecks.map((item) => (
+              <div key={item} className="flex gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <p className="text-xs leading-5 text-slate-600">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
           <h2 className="text-lg font-extrabold text-[#10201d]">
             Practical notes
           </h2>
@@ -433,22 +541,22 @@ export function MobileRouteDetailsScreen({
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Last checked May 2026. Route details are planning notes. Final price,
-          schedule, pickup point and luggage rules must still be checked on the
-          live ticket.
+          Last checked May 2026. Thailand Transfers is an independent travel
+          comparison guide, not the transport operator. Booking, payment,
+          ticket changes and support are handled by the booking partner or
+          operator. Final price, schedule, pickup point and luggage rules must
+          still be checked on the live ticket.
         </p>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-2xl backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">
-              {selectedOption?.label ?? "Selected option"}
-            </p>
-            <p className="text-xs font-medium text-slate-500">
+              {selectedOption?.label ?? "Selected option"} /{" "}
               {selectedOption?.name ?? "Selected option"}
             </p>
-            <p className="text-lg font-extrabold text-[#10201d]">
+            <p className="text-base font-extrabold text-[#10201d]">
               Live price
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go

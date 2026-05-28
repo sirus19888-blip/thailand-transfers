@@ -44,7 +44,7 @@ export function AffiliateButton({
     variant === "table"
       ? "rounded-xl bg-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold"
       : variant === "detailsSticky"
-        ? "shrink-0 rounded-2xl bg-[#0c5a4d] px-5 py-4 text-sm font-extrabold shadow-lg shadow-black/10"
+        ? "shrink-0 rounded-2xl bg-[#0c5a4d] px-5 py-3 text-sm font-extrabold shadow-lg shadow-black/10"
         : "rounded-full bg-[#064e45] px-5 py-3 text-sm hover:bg-[#033b35]";
 
   return (
