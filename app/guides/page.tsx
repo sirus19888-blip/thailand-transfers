@@ -118,7 +118,7 @@ const guideTopics = [
 
 export default function GuidesPage() {
   return (
-    <main className="min-h-screen bg-[#fbfaf7] pb-28 text-[#10201d]">
+    <main className="min-h-screen bg-[#fbfaf7] pb-12 text-[#10201d]">
       <section className="mx-auto min-h-screen max-w-md px-4 py-5 lg:hidden">
         <div className="flex items-center justify-between">
           <Link

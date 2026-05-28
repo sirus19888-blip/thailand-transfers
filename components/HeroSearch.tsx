@@ -144,6 +144,49 @@ const mobileRouteHrefs: Record<string, string> = {
   "surat-thani-airport-koh-samui": "/routes/surat-thani-airport-to-koh-samui",
 };
 
+const mobilePopularRouteLinks = [
+  {
+    label: "Suvarnabhumi → Pattaya",
+    ariaLabel: "Bangkok Airport to Pattaya",
+    href: "/routes/bangkok-airport-to-pattaya",
+  },
+  {
+    label: "Don Mueang → Pattaya",
+    ariaLabel: "Don Mueang Airport to Pattaya",
+    href: "/routes/don-mueang-airport-to-pattaya",
+  },
+  {
+    label: "Bangkok → Hua Hin",
+    ariaLabel: "Bangkok to Hua Hin",
+    href: "/routes/bangkok-to-hua-hin",
+  },
+  {
+    label: "Suvarnabhumi → Hua Hin",
+    ariaLabel: "Suvarnabhumi Airport to Hua Hin",
+    href: "/routes/suvarnabhumi-airport-to-hua-hin",
+  },
+  {
+    label: "Suvarnabhumi → Koh Chang",
+    ariaLabel: "Suvarnabhumi Airport to Koh Chang",
+    href: "/routes/suvarnabhumi-airport-to-koh-chang",
+  },
+  {
+    label: "Phuket Airport → Patong",
+    ariaLabel: "Phuket Airport to Patong",
+    href: "/routes/phuket-airport-to-patong-beach",
+  },
+  {
+    label: "Krabi Airport → Ao Nang",
+    ariaLabel: "Krabi Airport to Ao Nang",
+    href: "/routes/krabi-airport-to-ao-nang",
+  },
+  {
+    label: "Surat Thani → Koh Samui",
+    ariaLabel: "Surat Thani Airport to Koh Samui",
+    href: "/routes/surat-thani-airport-to-koh-samui",
+  },
+];
+
 const mobileRouteDestinationsByFrom = Object.keys(mobileRouteHrefs).reduce<
   Record<string, string[]>
 >((routesByFrom, routeKey) => {
@@ -796,33 +839,20 @@ function MobileHero() {
               </p>
 
               <div className="grid grid-cols-2 gap-2">
-                <Link
-                  href="/routes/bangkok-airport-to-pattaya"
-                  className="rounded-full bg-[#0c5a4d] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-white"
-                >
-                  Suvarnabhumi → Pattaya
-                </Link>
-
-                <Link
-                  href="/routes/don-mueang-airport-to-pattaya"
-                  className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
-                >
-                  Don Mueang → Pattaya
-                </Link>
-
-                <Link
-                  href="/routes/bangkok-to-hua-hin"
-                  className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
-                >
-                  Bangkok → Hua Hin
-                </Link>
-
-                <Link
-                  href="/routes/suvarnabhumi-airport-to-hua-hin"
-                  className="rounded-full bg-[#f3f4f6] px-2.5 py-1.5 text-center text-[10.5px] font-medium text-[#10201d]"
-                >
-                  Suvarnabhumi → Hua Hin
-                </Link>
+                {mobilePopularRouteLinks.map((route, index) => (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    aria-label={route.ariaLabel}
+                    className={`rounded-full px-2.5 py-1.5 text-center text-[10.5px] font-medium leading-tight ${
+                      index === 0
+                        ? "bg-[#0c5a4d] text-white"
+                        : "bg-[#f3f4f6] text-[#10201d]"
+                    }`}
+                  >
+                    {route.label}
+                  </Link>
+                ))}
               </div>
             </div>
 

@@ -119,7 +119,7 @@ function MobileDetails() {
   }
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-32 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-2 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link

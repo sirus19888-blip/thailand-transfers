@@ -124,7 +124,7 @@ export function MobileHuaHinTransferOptionsScreen({
     : `${route.options.length} best options found`;
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-24">
+    <section className="min-h-screen bg-[#fbfaf7] pb-2">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">
           <Link

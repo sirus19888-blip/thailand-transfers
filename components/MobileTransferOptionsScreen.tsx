@@ -29,7 +29,7 @@ function getDetailsHref(optionId: string) {
 
 export function MobileTransferOptionsScreen() {
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-24 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-2 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">
           <Link

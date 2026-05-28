@@ -40,7 +40,7 @@ export default function HomePage() {
 
       <MobileBottomNav />
 
-      <section className="bg-white px-5 py-6 text-center text-xs leading-5 text-slate-500 lg:px-8">
+      <section className="bg-white px-5 pt-4 pb-[calc(4rem+env(safe-area-inset-bottom))] text-center text-xs leading-5 text-slate-500 lg:px-8 lg:py-6">
         <p className="mx-auto max-w-3xl">
           Thailand Transfers is an independent travel comparison website. We do
           not operate buses, taxis, vans or ferries. Some links may be affiliate

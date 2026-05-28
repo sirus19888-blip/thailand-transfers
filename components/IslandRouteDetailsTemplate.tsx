@@ -265,7 +265,7 @@ export function IslandRouteDetailsTemplate({
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
-      <section className="min-h-screen bg-[#fbfaf7] pb-[calc(9rem+env(safe-area-inset-bottom))] lg:hidden">
+      <section className="min-h-screen bg-[#fbfaf7] pb-2 lg:hidden">
         <div className="mx-auto max-w-md px-4 py-5">
           <div className="flex items-start justify-between gap-3">
             <Link

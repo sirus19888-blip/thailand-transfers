@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RoutesPage() {
   return (
-    <main className="min-h-screen bg-[#fbfaf7] pb-28 text-[#10201d] lg:pb-0">
+    <main className="min-h-screen bg-[#fbfaf7] pb-8 text-[#10201d] lg:pb-0">
       <div className="hidden lg:block">
         <Header />
       </div>

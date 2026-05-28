@@ -44,7 +44,7 @@ const verifiedNotes = [
 
 export default function ThailandTouristSimPage() {
   return (
-    <main className="min-h-screen bg-[#fbfaf7] pb-28 text-[#10201d] lg:pb-0">
+    <main className="min-h-screen bg-[#fbfaf7] pb-12 text-[#10201d] lg:pb-0">
       <div className="hidden lg:block">
         <Header />
       </div>
