@@ -609,9 +609,9 @@ function MobileHero() {
             </div>
 
             <div className="mt-5 max-w-[215px]">
-              <h2 className="text-[28px] font-bold leading-[1.02] tracking-[-0.03em] text-[#143f3a]">
+              <h1 className="text-[28px] font-bold leading-[1.02] tracking-[-0.03em] text-[#143f3a]">
                 Plan your transfer in Thailand
-              </h2>
+              </h1>
 
               <p className="mt-2 text-[12px] font-medium leading-5 text-[#364152]">
                 Clear route guides. Live partner offers. Happy travels.
