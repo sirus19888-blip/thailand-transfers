@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routePages } from "@/data/routePages";
-
-const baseUrl = "https://thailand-transfers.com";
+import { siteUrl } from "./site";
 
 const specialRouteSlugs = [
   "bangkok-airport-to-pattaya",
@@ -15,7 +14,7 @@ function sitemapEntry(
   priority: number,
 ): MetadataRoute.Sitemap[number] {
   return {
-    url: path === "/" ? baseUrl : `${baseUrl}${path}`,
+    url: path === "/" ? siteUrl : `${siteUrl}${path}`,
     lastModified,
     changeFrequency,
     priority,

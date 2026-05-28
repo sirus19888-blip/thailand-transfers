@@ -21,7 +21,7 @@ const optionContentById = {
         number: "1",
         title: "Clear immigration and collect your luggage.",
         description:
-          "Allow time after landing before choosing a fixed bus. RRC advises that immigration and baggage claim commonly take about 1 hour.",
+          "Allow time after landing before choosing a fixed bus. RRC advises booking a coach at least 1.5 hours after your estimated arrival time.",
       },
       {
         number: "2",
@@ -185,6 +185,24 @@ const optionContentById = {
   },
 };
 
+const optionIdAliases: Record<string, keyof typeof optionContentById> = {
+  "airport-bus": "bus",
+  "airport bus": "bus",
+  bus: "bus",
+  "private-taxi": "taxi",
+  "private taxi": "taxi",
+  taxi: "taxi",
+  "shared-van": "van",
+  "shared van": "van",
+  van: "van",
+};
+
+function normalizeOptionId(optionId: string | undefined) {
+  if (!optionId) return undefined;
+
+  return optionIdAliases[optionId.trim().toLowerCase()];
+}
+
 const faqs = [
   {
     question: "What is the best option from BKK Airport to Pattaya?",
@@ -218,8 +236,9 @@ type MobileRouteDetailsScreenProps = {
 export function MobileRouteDetailsScreen({
   selectedOptionId,
 }: MobileRouteDetailsScreenProps) {
+  const normalizedOptionId = normalizeOptionId(selectedOptionId);
   const selectedOption =
-    transferOptions.find((option) => option.id === selectedOptionId) ??
+    transferOptions.find((option) => option.id === normalizedOptionId) ??
     busOption ??
     transferOptions[0];
   const selectedContent =
@@ -227,7 +246,7 @@ export function MobileRouteDetailsScreen({
     optionContentById.bus;
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-32 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-[calc(9rem+env(safe-area-inset-bottom))] lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -305,7 +324,7 @@ export function MobileRouteDetailsScreen({
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
                     <Icon className="h-4 w-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm font-extrabold text-[#10201d]">
                       {fact.title}
                     </p>
@@ -420,7 +439,7 @@ export function MobileRouteDetailsScreen({
         </p>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 shadow-2xl backdrop-blur">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">

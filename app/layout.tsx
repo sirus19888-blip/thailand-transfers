@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { siteName, siteUrl } from "./site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +15,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Thailand Transfers",
-  description: "Compare airport transfers in Thailand",
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+  title: {
+    default: siteName,
+    template: `%s | ${siteName}`,
+  },
+  description:
+    "Compare airport transfers in Thailand, including buses, taxis, shared vans, and private airport pickup options.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName,
+    url: "/",
+    title: siteName,
+    description:
+      "Compare airport transfers in Thailand, including buses, taxis, shared vans, and private airport pickup options.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description:
+      "Compare airport transfers in Thailand, including buses, taxis, shared vans, and private airport pickup options.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
