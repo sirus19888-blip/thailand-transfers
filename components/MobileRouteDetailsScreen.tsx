@@ -17,59 +17,59 @@ const optionContentById = {
   bus: {
     subtitle: "Airport pickup, bus stops and hotel transfer tips",
     steps: [
-  {
-    number: "1",
-    title: "Clear immigration and collect your luggage.",
-    description:
-      "Do not choose a tight bus after landing. Immigration, baggage claim and walking to Level 1 can take longer than expected.",
-  },
-  {
-    number: "2",
-    title: "Go to the official transport area.",
-    description:
-      "For many bus tickets, check-in is around Level 1 near Exit 8. Some services use the Suvarnabhumi Bus Terminal, so follow the live ticket instructions.",
-  },
-  {
-    number: "3",
-    title: "Check your Pattaya drop-off point.",
-    description:
-      "Buses may finish at Jomtien Bus Station, North Pattaya Bus Station or Sukhumvit-area stops. Plan a local taxi if your hotel is not nearby.",
-  },
-  {
-    number: "4",
-    title: "Use taxi or private transfer for late arrivals.",
-    description:
-      "Scheduled bus options thin out at night. A taxi or pre-booked car is usually easier after an evening flight or with heavy luggage.",
-  },
-],
+      {
+        number: "1",
+        title: "Clear immigration and collect your luggage.",
+        description:
+          "Allow time after landing before choosing a fixed bus. RRC advises that immigration and baggage claim commonly take about 1 hour.",
+      },
+      {
+        number: "2",
+        title: "Go to Level 1, Gate 8.",
+        description:
+          "RRC lists the Suvarnabhumi Airport Pattaya counter at the passenger terminal on Level 1, Gate 8. Some partner tickets can still use a bus-terminal instruction, so follow the live voucher.",
+      },
+      {
+        number: "3",
+        title: "Check your Pattaya drop-off point.",
+        description:
+          "The airport-to-Pattaya RRC route ends at Pattaya Transport Station in North Pattaya. Jomtien services and intermediate Sukhumvit stops can be separate, so match the ticket to your hotel area.",
+      },
+      {
+        number: "4",
+        title: "Use taxi or private transfer for late arrivals.",
+        description:
+          "Scheduled bus options thin out at night. A taxi or pre-booked car is usually easier after an evening flight or with heavy luggage.",
+      },
+    ],
     quickFacts: [
-  {
-    icon: Clock3,
-    title: "Typical travel time",
-        text: "Bus usually takes about 2h - 2h 30m. It is best when the schedule matches your flight.",
-  },
-  {
-    icon: MapPin,
-    title: "Airport pickup",
-    text: "Bus check-in is commonly on Level 1 near Exit 8 or at the airport bus terminal. Private transfers meet in the arrivals area shown on the ticket.",
-  },
-  {
-    icon: Luggage,
-    title: "Luggage rules",
-    text: "Bus and van tickets can have baggage limits. Private taxi is easier with larger suitcases, golf bags or family luggage.",
-  },
-],
+      {
+        icon: Clock3,
+        title: "Typical travel time",
+        text: "RRC publishes about 2 hours to Pattaya, depending on traffic. Allow extra time for immigration, baggage claim and bus check-in.",
+      },
+      {
+        icon: MapPin,
+        title: "Airport pickup",
+        text: "Intercity buses to Pattaya are listed at Level 1, Gate 8 in the main terminal. Check the voucher in case your ticket uses the bus terminal or a partner counter.",
+      },
+      {
+        icon: Luggage,
+        title: "Luggage rules",
+        text: "RRC allows 1 checked bag up to 20 kg plus 1 small personal bag free. Larger, heavier or extra items can be charged separately.",
+      },
+    ],
     warningTitle: "Check your drop-off point",
     warningText:
       "Pattaya bus tickets can end at Jomtien, North Pattaya or Sukhumvit-area stops. Pick the option that matches your hotel area, especially if you arrive with luggage.",
     tips: [
-  "Roong Reuang Coach services to Jomtien commonly run through the day, with live availability varying by date.",
-  "Some North Pattaya bus departures are separate from Jomtien services, so check the destination before booking.",
-  "The 999 Bus route has limited daily departures, so it is not ideal for late arrivals.",
-  "Allow at least 2 hours after scheduled landing before choosing a fixed bus departure.",
-  "If your hotel is in Central Pattaya, Jomtien or Naklua, confirm which drop-off point is closest.",
-  "For late evening arrivals, a private taxi is usually the simplest option.",
-],
+      "RRC currently publishes fixed airport-to-Pattaya departures rather than an on-demand service, so choose a time that leaves room after landing.",
+      "The published airport pickup point for the Pattaya bus is Level 1, Gate 8.",
+      "RRC asks passengers to check in before departure; allow at least 30 minutes at the counter when possible.",
+      "Pattaya Transport Station is not a hotel drop-off. Plan a local taxi or songthaew if your hotel is not nearby.",
+      "If your hotel is in Jomtien, confirm whether you booked the Jomtien route or a Pattaya station route.",
+      "For late evening arrivals, a private taxi is usually the simplest option.",
+    ],
   },
   taxi: {
     subtitle: "Private airport pickup, direct transfer and hotel drop-off tips",
@@ -78,42 +78,42 @@ const optionContentById = {
         number: "1",
         title: "Confirm the exact arrivals meeting point.",
         description:
-          "Private taxi tickets normally use a named meeting area in arrivals. Follow the live voucher instructions instead of going to the bus counter.",
+          "Pre-booked private taxis use the meeting point shown on the live voucher. Airport public taxis are a separate service on Level 1.",
       },
       {
         number: "2",
-        title: "Keep your driver or operator contact ready.",
+        title: "Keep your driver or operator contact online.",
         description:
-          "If immigration or baggage claim is slow, use the booking contact details and keep your phone online after landing.",
+          "If immigration or baggage claim is slow, contact the operator from arrivals and keep your phone online after landing.",
       },
       {
         number: "3",
         title: "Check luggage and vehicle size.",
         description:
-          "A sedan is usually fine for two adults with normal luggage. Choose a larger car or van if you have big bags, children or sports equipment.",
+          "Book a larger car or private van if you have more than two large bags, sports equipment, a stroller or a family group.",
       },
       {
         number: "4",
-        title: "Confirm your Pattaya hotel or address.",
+        title: "Confirm your Pattaya hotel or full address.",
         description:
-          "Private taxi is the easiest door-to-door option, but the driver still needs the exact hotel, condo or pickup area shown on your booking.",
+          "Private taxi is the clearest door-to-door option, but the driver still needs the exact hotel, condo or pickup area shown on your booking.",
       },
     ],
     quickFacts: [
       {
         icon: Clock3,
         title: "Typical travel time",
-        text: "Private taxi is often 1h 30m - 2h 30m depending on traffic and Pattaya hotel area.",
+        text: "Plan about 1h 30m - 2h 30m to Pattaya by private car, with longer times possible during Bangkok or Pattaya traffic.",
       },
       {
         icon: MapPin,
         title: "Airport pickup",
-        text: "Meet in the arrivals area or the exact airport meeting point shown on your live ticket.",
+        text: "Use the meeting point on your pre-booked voucher. If using airport public taxi instead, AOT lists taxis on Level 1 between Gates 4 and 7.",
       },
       {
         icon: Luggage,
         title: "Luggage rules",
-        text: "Private taxi is usually better than bus with large suitcases, family luggage or late arrivals.",
+        text: "Match the vehicle to your bags. AOT notes official taxi baggage charges can apply to large or multiple bags; pre-booked operators set capacity by vehicle.",
       },
     ],
     warningTitle: "Confirm the meeting point",
@@ -121,64 +121,66 @@ const optionContentById = {
       "Do not go to the bus counter for a taxi booking. Use the arrivals meeting point and operator contact details from the live ticket.",
     tips: [
       "Private taxi is usually the simplest option after late evening flights.",
-      "Check whether tolls, airport pickup and hotel drop-off are included before paying.",
+      "Check whether tolls, airport pickup, waiting time and hotel drop-off are included before paying.",
       "Choose a larger vehicle if you travel with more than two large suitcases.",
+      "Do not use the bus counter for a taxi booking; follow the driver meeting instructions from the live voucher.",
       "Traffic can be heavier on Friday evenings, holidays and long weekends.",
     ],
   },
   van: {
-    subtitle: "Shared van pickup, waiting time and hotel-area transfer tips",
+    subtitle: "Shared transfer pickup, waiting time and hotel drop-off tips",
     steps: [
       {
         number: "1",
-        title: "Check the van meeting point before leaving arrivals.",
+        title: "Check the shared transfer meeting point.",
         description:
-          "Shared vans can use a specific airport door, counter or operator meeting point. Follow the live voucher instructions.",
+          "Bell/RRC shared airport transfers list check-in on Level 1, Gate 8. Other partner vouchers may name a different airport counter or meeting point.",
       },
       {
         number: "2",
-        title: "Allow time for shared pickup.",
+        title: "Allow time for the scheduled shared departure.",
         description:
-          "A shared van may wait for other passengers or make several stops before leaving the airport area.",
+          "Shared transfers leave by schedule and may wait for passengers. This is different from an on-demand private taxi.",
       },
       {
         number: "3",
-        title: "Confirm the final Pattaya area.",
+        title: "Confirm hotel drop-off coverage.",
         description:
-          "Some shared vans include hotel-area drop-off, while others finish at an operator point. Check this before booking.",
+          "Bell/RRC describes shared Suvarnabhumi-Pattaya transfer as direct to the listed hotel. Check that your hotel is covered before booking.",
       },
       {
         number: "4",
         title: "Check luggage limits.",
         description:
-          "Shared vans have tighter luggage space than private cars. Larger bags may need a taxi or private van.",
+          "Shared vehicles have limited luggage space. Larger bags, golf bags or family luggage may need a private taxi or private van.",
       },
     ],
     quickFacts: [
       {
         icon: Clock3,
         title: "Typical travel time",
-        text: "Shared van is usually about 2h - 3h depending on waiting time, stops and traffic.",
+        text: "Plan about 2h - 3h including scheduled departure, possible waiting time, hotel stops and traffic.",
       },
       {
         icon: MapPin,
         title: "Airport pickup",
-        text: "Use the airport door, counter or operator pickup point shown on your live ticket.",
+        text: "Bell/RRC shared transfer check-in is listed at Level 1, Gate 8. Always use the exact counter or pickup point shown on your ticket.",
       },
       {
         icon: Luggage,
         title: "Luggage rules",
-        text: "Check baggage allowance carefully. Shared vans can be tight with large suitcases.",
+        text: "Check the shared-transfer baggage allowance before booking. If your bags exceed the operator rule, choose a private car or van.",
       },
     ],
     warningTitle: "Check if hotel drop-off is included",
     warningText:
       "Shared van tickets can differ by operator. Confirm whether the ticket goes to your hotel area or only to a Pattaya meeting point.",
     tips: [
-      "Shared van can be a good middle option between bus price and taxi convenience.",
-      "Allow extra time if the van waits for passengers or makes hotel stops.",
+      "Shared transfer can be a useful middle option when the schedule fits and your hotel is in the covered Pattaya area.",
+      "Bell/RRC publishes fixed shared departures from Suvarnabhumi to Pattaya, so it is not as flexible as a private taxi.",
+      "Confirm whether the ticket goes directly to your hotel or only to an operator point in Pattaya.",
       "Check luggage allowance before booking if you have more than one large bag.",
-      "For late arrivals, private taxi is usually more predictable than a shared van.",
+      "For late arrivals, private taxi is usually more predictable than a shared transfer.",
     ],
   },
 };
@@ -421,7 +423,9 @@ export function MobileRouteDetailsScreen({
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur">
         <div className="mx-auto flex max-w-md items-center gap-3">
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-medium text-slate-500">Best value</p>
+            <p className="text-xs font-medium text-slate-500">
+              {selectedOption?.label ?? "Selected option"}
+            </p>
             <p className="text-xs font-medium text-slate-500">
               {selectedOption?.name ?? "Selected option"}
             </p>

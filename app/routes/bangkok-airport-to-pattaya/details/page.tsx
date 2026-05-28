@@ -20,13 +20,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BangkokAirportToPattayaDetailsPage() {
+type BangkokAirportToPattayaDetailsPageProps = {
+  searchParams?: Promise<{
+    option?: string | string[];
+  }>;
+};
+
+export default async function BangkokAirportToPattayaDetailsPage({
+  searchParams,
+}: BangkokAirportToPattayaDetailsPageProps) {
+  const query = await searchParams;
+  const selectedOptionId = Array.isArray(query?.option)
+    ? query.option[0]
+    : query?.option;
   const busOption = transferOptions.find((option) => option.id === "bus");
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
       <div className="lg:hidden">
-        <MobileRouteDetailsScreen />
+        <MobileRouteDetailsScreen selectedOptionId={selectedOptionId} />
       </div>
 
       <div className="hidden lg:block">
