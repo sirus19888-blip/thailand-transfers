@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import {
   ArrowDownUp,
   ArrowRight,
-  Bell,
   CalendarDays,
   ChevronDown,
   Landmark,
@@ -212,6 +211,11 @@ const mobilePassengerOptions = [
   { value: "3", label: "3 Adults" },
   { value: "4", label: "4 Adults" },
   { value: "5", label: "5+ Adults" },
+];
+
+const mobileLanguageOptions = [
+  { code: "DE", label: "German", status: "Coming soon" },
+  { code: "RU", label: "Russian", status: "Coming soon" },
 ];
 
 function getMobileDestinationOptions(fromValue: string) {
@@ -536,6 +540,7 @@ function MobileHero() {
   const [mobileTo, setMobileTo] = useState("pattaya");
   const [mobileDate, setMobileDate] = useState("");
   const [mobilePassengers, setMobilePassengers] = useState("2");
+  const [isMobileLanguageOpen, setIsMobileLanguageOpen] = useState(false);
   const updateMobileFrom = (nextFrom: string) => {
     const nextDestinationOptions = getMobileDestinationOptions(nextFrom);
 
@@ -642,13 +647,51 @@ function MobileHero() {
                 </div>
               </div>
 
-              <button
-                type="button"
-                aria-label="Notifications"
-                className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 shadow-md backdrop-blur-sm"
-              >
-                <Bell className="h-5 w-5 text-[#10201d] stroke-[2.1]" />
-              </button>
+              <div className="relative mt-1">
+                <button
+                  type="button"
+                  aria-controls="mobile-language-menu"
+                  aria-expanded={isMobileLanguageOpen}
+                  aria-label="Choose language"
+                  onClick={() =>
+                    setIsMobileLanguageOpen((isOpen) => !isOpen)
+                  }
+                  className="flex h-10 items-center rounded-full bg-white/85 px-4 text-[12px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm"
+                >
+                  EN
+                </button>
+
+                {isMobileLanguageOpen ? (
+                  <div
+                    id="mobile-language-menu"
+                    className="absolute right-0 top-12 z-30 w-52 rounded-[20px] border border-[#e7e2d8] bg-white/95 p-2 shadow-xl shadow-black/10 backdrop-blur"
+                  >
+                    {mobileLanguageOptions.map((language) => (
+                      <div
+                        key={language.code}
+                        className="flex items-center justify-between gap-3 rounded-2xl px-3 py-2"
+                      >
+                        <div>
+                          <p className="text-[12px] font-extrabold text-[#10201d]">
+                            {language.code}
+                          </p>
+                          <p className="mt-0.5 text-[10px] font-semibold text-slate-500">
+                            {language.label}
+                          </p>
+                        </div>
+
+                        <span className="rounded-full bg-[#f8f4ec] px-2 py-1 text-[9px] font-extrabold text-[#c99a2e]">
+                          {language.status}
+                        </span>
+                      </div>
+                    ))}
+
+                    <p className="border-t border-[#e7e2d8] px-3 pt-2 text-[10px] leading-4 text-slate-500">
+                      German and Russian versions are coming soon.
+                    </p>
+                  </div>
+                ) : null}
+              </div>
             </div>
 
             <div className="mt-5 max-w-[215px]">
