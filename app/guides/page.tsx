@@ -140,8 +140,8 @@ const guideTopics = [
   },
   {
     title: "Last ferry or late arrival",
-    imageSrc: "/assets/vehicles/mobile/ferry.png",
-    imageAlt: "Ferry connection timing",
+    imageSrc: "/assets/guides/last-ferry-late-arrival.png",
+    imageAlt: "Late arrival at a Thailand ferry pier",
   },
 ];
 
