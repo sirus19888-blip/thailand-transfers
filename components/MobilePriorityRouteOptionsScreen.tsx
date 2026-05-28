@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
@@ -327,6 +328,7 @@ export function MobilePriorityRouteOptionsScreen({
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
           {footerWithFreshness}
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </div>
     </section>
   );

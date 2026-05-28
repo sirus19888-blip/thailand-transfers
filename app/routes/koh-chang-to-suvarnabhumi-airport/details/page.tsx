@@ -66,11 +66,12 @@ const quickFacts = [
 
 const tips = [
   "Do not book a tight same-day flight after a long island transfer.",
+  "Current Ferry Koh Chang guidance shows daily service from 06:30 to 18:30.",
+  "Standalone ferry tickets are cash-only at the pier; combined transfer tickets can have different inclusions.",
+  "Trat / Centrepoint Ferry has been suspended since July 2024 and has not resumed.",
   "Confirm whether hotel pickup, ferry crossing and airport drop-off are included.",
   "Private taxi is usually easier for families, luggage and early flights.",
   "Ferry queues and Bangkok traffic can change total travel time.",
-  "Large suitcases and extra bags may need stricter van or bus luggage rules.",
-  "Check whether the drop-off is Suvarnabhumi Airport terminal or another airport-area point.",
 ];
 
 const faqs = [
@@ -116,10 +117,11 @@ export default function KohChangToSuvarnabhumiAirportDetailsPage() {
       stepsHeading="Before your flight - step by step"
       stepsIntro="Use these steps to keep island pickup, ferry crossing and airport arrival timing realistic."
       warningMobileTitle="Leave a flight buffer"
-      warningMobileText="Koh Chang airport transfers depend on ferry timing and mainland road transfer. Do not book too close to check-in."
+      warningMobileText="Koh Chang airport transfers depend on the ferry window and mainland road transfer. Current ferry guidance shows service from 06:30 to 18:30."
       warningTitle="Do not plan a tight airport connection"
       warningParagraphs={[
         "The Koh Chang-to-BKK trip includes island pickup, ferry crossing, mainland transfer and airport drop-off.",
+        "Current Ferry Koh Chang guidance shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024.",
         "Use confirmed booking details and check ferry inclusion, luggage rules and scheduled airport arrival time before booking.",
       ]}
       simpleRule="Choose a transfer that reaches Suvarnabhumi Airport comfortably before check-in, especially during busy ferry or traffic periods."

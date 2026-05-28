@@ -223,7 +223,7 @@ export const routePages: RoutePageData[] = [
     from: "Koh Chang",
     to: "Bangkok",
     intro:
-      "Compare travel options from Koh Chang to Bangkok, including ferry plus van, ferry plus bus, shared van and private taxi. This island route usually involves a ferry crossing to the mainland, so always check whether ferry tickets, hotel pickup, pier transfer and Bangkok drop-off are included before booking. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare travel options from Koh Chang to Bangkok, including ferry plus van, ferry plus bus, shared van and private taxi. This island route usually involves a ferry crossing to the mainland, so always check whether ferry tickets, hotel pickup, pier transfer and Bangkok drop-off are included before booking. Ferry Koh Chang guidance currently shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/koh-chang/bangkok/?z=15791301&sub_id=koh-chang-bangkok-general",
     options: [
@@ -286,7 +286,7 @@ export const routePages: RoutePageData[] = [
     from: "Koh Chang",
     to: "Suvarnabhumi Airport",
     intro:
-      "Compare transfer options from Koh Chang to Suvarnabhumi Airport, including ferry plus van, bus plus ferry, private taxi and flight combinations. This airport route usually involves a ferry crossing from Koh Chang to the mainland, so always check whether hotel pickup, ferry crossing, pier transfer, luggage allowance and airport drop-off are included before booking. Allow extra time before your flight. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Koh Chang to Suvarnabhumi Airport, including ferry plus van, bus plus ferry, private taxi and flight combinations. This airport route usually involves a ferry crossing from Koh Chang to the mainland, so always check whether hotel pickup, ferry crossing, pier transfer, luggage allowance and airport drop-off are included before booking. Ferry Koh Chang guidance currently shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024. Allow extra time before your flight. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/koh-chang/suvarnabhumi-airport/?z=15791301&sub_id=koh-chang-suvarnabhumi-airport-general",
     options: [
@@ -350,7 +350,7 @@ export const routePages: RoutePageData[] = [
     from: "Suvarnabhumi Airport",
     to: "Koh Chang",
     intro:
-      "Compare transfer options from Suvarnabhumi Airport to Koh Chang, including ferry plus van, bus plus ferry, private taxi and flight combinations. This route starts at Bangkok Suvarnabhumi Airport and usually involves travel to the mainland pier plus a ferry crossing to Koh Chang, so always check airport pickup point, arrival timing, ferry crossing, pier transfer, luggage allowance and hotel drop-off before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays, and check live schedules before choosing a ticket. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Suvarnabhumi Airport to Koh Chang, including ferry plus van, bus plus ferry, private taxi and flight combinations. This route starts at Bangkok Suvarnabhumi Airport and usually involves travel to the mainland pier plus a ferry crossing to Koh Chang, so always check airport pickup point, arrival timing, ferry crossing, pier transfer, luggage allowance and hotel drop-off before booking. Ferry Koh Chang guidance currently shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays, and check live schedules before choosing a ticket. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-general",
     options: [

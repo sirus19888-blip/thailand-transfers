@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { mainRoute, transferOptions } from "@/data/routes";
+import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { AffiliateButton } from "./AffiliateButton";
 import {
   AlertTriangle,
@@ -21,7 +22,7 @@ const optionContentById = {
         number: "1",
         title: "Clear immigration and collect your luggage.",
         description:
-          "Allow time after landing before choosing a fixed bus. RRC advises booking a coach at least 1.5 hours after your estimated arrival time.",
+          "Allow time after landing before choosing a fixed bus. RRC asks passengers to be at the boarding point before departure, and flight delays can make tight bus times risky.",
       },
       {
         number: "2",
@@ -33,7 +34,7 @@ const optionContentById = {
         number: "3",
         title: "Check your Pattaya drop-off point.",
         description:
-          "The airport-to-Pattaya RRC route ends at Pattaya Transport Station in North Pattaya. Jomtien services and intermediate Sukhumvit stops can be separate, so match the ticket to your hotel area.",
+          "The airport-to-Pattaya RRC route goes to Pattaya Transport Station in North Pattaya. The 22:00 note says North Pattaya Bus Station, not Jomtien, so match the ticket to your hotel area.",
       },
       {
         number: "4",
@@ -65,11 +66,11 @@ const optionContentById = {
     planningNotes: [
       {
         title: "Late arrival rule",
-        text: "RRC route data shows airport-to-Pattaya departures from 06:00 to 22:00. If your flight lands close to the final bus, compare taxi or private transfer before leaving arrivals.",
+        text: "RRC currently lists airport-to-Pattaya buses at 7:30, 9:30, 11:30, 13:30, 15:30, 17:30 and 18:30, with a 22:00 note for North Pattaya Bus Station. If your flight lands late, compare taxi or private transfer.",
       },
       {
         title: "First and last bus",
-        text: "The first listed airport bus is 06:00 and the last listed bus is 22:00. Current route data notes the 22:00 bus goes to North Pattaya Bus Station, not Jomtien.",
+        text: "The first listed airport-to-Pattaya bus is 7:30. RRC notes the 22:00 service goes to North Pattaya Bus Station and does not stop at Jomtien Bus Station.",
       },
     ],
     lastMile:
@@ -82,7 +83,7 @@ const optionContentById = {
     tips: [
       "RRC currently publishes fixed airport-to-Pattaya departures rather than an on-demand service, so choose a time that leaves room after landing.",
       "The published airport pickup point for the Pattaya bus is Level 1, Gate 8.",
-      "RRC asks passengers to check in before departure; allow at least 30 minutes at the counter when possible.",
+      "The published fare on the RRC page is 139 THB per seat, but always check the live ticket before paying.",
       "Pattaya Transport Station is not a hotel drop-off. Plan a local taxi or songthaew if your hotel is not nearby.",
       "If your hotel is in Jomtien, confirm whether you booked the Jomtien route or a Pattaya station route.",
       "For late evening arrivals, a private taxi is usually the simplest option.",
@@ -263,7 +264,7 @@ const faqs = [
   {
     question: "Where do buses leave from at Suvarnabhumi Airport?",
     answer:
-      "Many Pattaya bus services use the Level 1 transport area near Exit 8, while some tickets may route via the airport bus terminal. Always follow the exact live ticket instructions.",
+      "RRC lists the Suvarnabhumi Airport pickup at Level 1, Gate 8. Some partner tickets can use a different counter or bus-terminal instruction, so always follow the exact live ticket.",
   },
   {
     question: "How long does BKK Airport to Pattaya take?",
@@ -321,12 +322,13 @@ export function MobileRouteDetailsScreen({
             </p>
           </div>
 
-          <div
-            aria-label="Route guide"
+          <Link
+            href="/routes"
+            aria-label="Browse all routes"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
           >
             <ShieldCheck className="h-5 w-5" />
-          </div>
+          </Link>
         </div>
 
         <div className="mt-5 flex gap-6 overflow-x-auto border-b border-[#e7e2d8] text-sm font-bold text-slate-500">
@@ -547,6 +549,7 @@ export function MobileRouteDetailsScreen({
           operator. Final price, schedule, pickup point and luggage rules must
           still be checked on the live ticket.
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
@@ -561,6 +564,9 @@ export function MobileRouteDetailsScreen({
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go
               </span>
+            </p>
+            <p className="text-[10px] font-medium leading-4 text-slate-500">
+              Affiliate link - we may earn a commission.
             </p>
           </div>
 

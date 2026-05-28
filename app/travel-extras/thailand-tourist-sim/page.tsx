@@ -20,8 +20,26 @@ export const metadata: Metadata = {
 
 const benefits = [
   "Use maps, Grab, hotel messages and booking confirmations after landing.",
-  "Good option for tourists arriving at Bangkok, Phuket, Krabi or Surat Thani.",
-  "Compare SIM or eSIM options before choosing what fits your trip.",
+  "Choose eSIM before travel if your phone supports it, or buy a physical SIM after arrival.",
+  "Bring your passport for tourist SIM registration when buying or registering a local SIM.",
+];
+
+const verifiedNotes = [
+  {
+    title: "AIS tourist eSIM and SIM plans",
+    text: "AIS currently lists Lucky Tourist SIM options with eSIM purchase links, including 1, 5, 8, 15, 30 and 60 day packages. Terms say VAT is extra and plan terms can change.",
+    href: "https://www.ais.th/consumers/package/international/tourist-plan",
+  },
+  {
+    title: "dtac tourist eSIM plans",
+    text: "dtac currently lists Happy Tourist 299 eSIM for 8 days with 15 GB at max speed and Happy Tourist 599 eSIM for 15 days with 30 GB at max speed.",
+    href: "https://dtac.co.th/en/prepaid/touristsim.html",
+  },
+  {
+    title: "SIM registration",
+    text: "dtac's registration page says prepaid tourist SIM users need registration and should bring passport, SIM card and SIM package. It lists airport service points including BKK, DMK, Phuket, Samui, Chiang Mai and Krabi.",
+    href: "https://www.dtac.co.th/en/prepaid/touristsim-register.html",
+  },
 ];
 
 export default function ThailandTouristSimPage() {
@@ -89,17 +107,18 @@ export default function ThailandTouristSimPage() {
 
               <div className="p-5">
                 <p className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
-                  Coming soon
+                  Checked travel note
                 </p>
 
                 <h2 className="mt-2 text-xl font-extrabold text-[#10201d]">
-                  SIM partner offers will be added here
+                  Pick data before your transfer
                 </h2>
 
                 <p className="mt-2 text-sm leading-6 text-[#30465a]">
-                  This page is ready for a future SIM or eSIM affiliate partner.
-                  For now, it explains why staying connected matters during
-                  transfers in Thailand.
+                  A local SIM or eSIM is useful for live pickup instructions,
+                  driver messages, maps and ride apps. Thailand mobile plans
+                  change often, so use official provider pages for current
+                  price, data allowance and activation rules.
                 </p>
 
                 <div className="mt-4 lg:hidden">
@@ -114,6 +133,38 @@ export default function ThailandTouristSimPage() {
               </div>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-[#fbfaf7] py-8 lg:py-12">
+        <Container>
+          <div className="grid gap-4 lg:grid-cols-3">
+            {verifiedNotes.map((note) => (
+              <a
+                key={note.title}
+                href={note.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-[24px] border border-[#e7e2d8] bg-white p-5 shadow-lg shadow-black/5 transition hover:-translate-y-0.5 hover:shadow-xl"
+              >
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+                  Official source
+                </p>
+                <h2 className="mt-2 text-lg font-extrabold text-[#10201d]">
+                  {note.title}
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-[#30465a]">
+                  {note.text}
+                </p>
+              </a>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-xs leading-5 text-slate-500">
+            Last checked May 2026. Mobile plan prices, fair-use rules,
+            registration steps and airport shop availability can change. Check
+            the provider page before buying.
+          </p>
         </Container>
       </section>
 

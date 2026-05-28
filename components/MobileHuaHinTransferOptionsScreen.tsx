@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
@@ -353,6 +354,7 @@ export function MobileHuaHinTransferOptionsScreen({
           Last checked May 2026. Live prices and schedules may change. Allow
           extra time after landing.
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </div>
     </section>
   );

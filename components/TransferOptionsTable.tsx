@@ -1,14 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import {
-  Bus,
-  Car,
-  Clock3,
-  Luggage,
-  MapPin,
-  ShieldCheck,
-  Train,
-  Users,
-} from "lucide-react";
+import { Bus, Car, ShieldCheck, Train, Users } from "lucide-react";
 import { transferOptions } from "@/data/routes";
 import { AffiliateButton } from "./AffiliateButton";
 
@@ -210,20 +202,24 @@ function DesktopComparisonArea() {
           </div>
 
           <div className="relative mx-5 mb-5 aspect-[4/3] overflow-hidden rounded-2xl bg-white">
-            <img
+            <Image
               src="/assets/promo/sim-card.png"
               alt="Thailand Travel SIM"
-              className="h-full w-full object-cover"
+              fill
+              sizes="300px"
+              className="object-cover"
             />
           </div>
         </div>
 
         <div className="overflow-hidden rounded-[22px] border border-[#e7e2d8] bg-[#fbfaf7] shadow-lg shadow-black/5">
           <div className="relative aspect-[16/9]">
-            <img
+            <Image
               src="/assets/promo/hotel-transfer.png"
               alt="Hotel transfer"
-              className="h-full w-full object-cover"
+              fill
+              sizes="300px"
+              className="object-cover"
             />
           </div>
 

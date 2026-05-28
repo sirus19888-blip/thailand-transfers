@@ -8,6 +8,7 @@ import {
   ShipWheel,
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mainRoute } from "@/data/routes";
 import { getRoutePageBySlug } from "@/data/routePages";
@@ -31,7 +32,7 @@ const guideRoutes = [
     bestFor: "Best when you need a simple airport exit to Pattaya, Jomtien or a direct hotel ride.",
     facts: [
       "Airport bus counters are checked against the Suvarnabhumi Level 1 transport area near Gate 8.",
-      "RRC lists about 2 hours to Pattaya, with separate Pattaya and Jomtien stop options.",
+      "RRC lists about 2 hours to Pattaya and airport departures at 7:30, 9:30, 11:30, 13:30, 15:30, 17:30 and 18:30, with a 22:00 North Pattaya note.",
       "Taxi is the better pick for late arrivals, heavy luggage, children or direct hotel drop-off.",
     ],
   },
@@ -45,7 +46,8 @@ const guideRoutes = [
     bestFor: "Best planned as a road transfer plus ferry, not as a pure car ride.",
     facts: [
       "The checked main ferry crossing uses Ao Thammachat on the mainland for Koh Chang.",
-      "Current ferry guidance shows daytime service with the last practical crossing before evening.",
+      "Current ferry guidance shows daily Ferry Koh Chang service from 06:30 to 18:30, with cash-only tickets at the pier.",
+      "Trat / Centrepoint Ferry has been suspended since July 2024 and has not resumed.",
       "Confirm whether the ticket continues after the ferry to your west-coast hotel area.",
     ],
   },
@@ -241,6 +243,7 @@ export default function GuidesPage() {
           schedule, pickup point and luggage rules must still be checked on the
           live ticket.
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </section>
 
       <MobileBottomNav activeLabel="Guides" />

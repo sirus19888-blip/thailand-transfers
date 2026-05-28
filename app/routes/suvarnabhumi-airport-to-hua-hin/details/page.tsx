@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AlertTriangle, ArrowLeft, Bus, CheckCircle2, Clock3, Luggage, MapPin, ShieldCheck } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { getRoutePageBySlug } from "@/data/routePages";
@@ -132,12 +133,13 @@ function MobileDetails() {
             </p>
           </div>
 
-          <div
-            aria-label="Route guide"
+          <Link
+            href="/routes"
+            aria-label="Browse all routes"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
           >
             <ShieldCheck className="h-5 w-5" />
-          </div>
+          </Link>
         </div>
 
         <div className="mt-5 flex gap-6 overflow-x-auto border-b border-[#e7e2d8] text-sm font-bold text-slate-500">
@@ -352,6 +354,7 @@ function MobileDetails() {
           operator. Final price, schedule, pickup point and luggage rules must
           still be checked on the live ticket.
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
@@ -363,6 +366,9 @@ function MobileDetails() {
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go
               </span>
+            </p>
+            <p className="text-[10px] font-medium leading-4 text-slate-500">
+              Affiliate link - we may earn a commission.
             </p>
           </div>
 
@@ -433,6 +439,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                     Compare options
                   </Link>
                 </div>
+                <AffiliateDisclosure className="mt-3" />
               </div>
 
               <div className="overflow-hidden rounded-[2rem] border border-[#e7e2d8] bg-white shadow-xl shadow-black/5">
@@ -635,6 +642,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                 Check live prices on 12Go
               </AffiliateButton>
             </div>
+            <AffiliateDisclosure className="mt-4 text-white/70" />
           </Container>
         </section>
       </div>

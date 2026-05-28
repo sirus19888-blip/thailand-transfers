@@ -35,7 +35,7 @@ const mobileRoute: RoutePageData = {
       name: "Airport Bus",
       price: "Check live price",
       duration: "2h - 2h 30m",
-      pickup: "Level 1 near Exit 8 or Suvarnabhumi Bus Terminal",
+      pickup: "Level 1, Gate 8 or voucher point",
       bestFor:
         "Best value for travelers landing early enough for scheduled departures",
       trackingId: "click_12go_bus_bkk_pattaya",
@@ -71,7 +71,7 @@ const mobileRoute: RoutePageData = {
 const optionDetailsById = {
   bus: {
     label: "Best value",
-    operator: "Roong Reuang Coach, 999 Bus and partner buses",
+    operator: "Roong Reuang Coach and partner buses",
     departures: "Live schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/bus.png",

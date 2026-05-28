@@ -13,6 +13,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { getRoutePageBySlug } from "@/data/routePages";
@@ -75,16 +76,17 @@ const quickFacts = [
   {
     icon: Luggage,
     title: "Ferry and luggage",
-    text: "Check baggage limits and whether the ticket includes pier transfer, ferry crossing and Koh Chang hotel drop-off.",
+    text: "Ferry Koh Chang guidance shows 06:30 to 18:30 daily service and cash-only standalone ferry tickets at the pier. Check baggage limits and whether your transfer includes ferry crossing and hotel drop-off.",
   },
 ];
 
 const tips = [
   "Allow extra time after landing before choosing an island transfer.",
-  "Check the last ferry timing, especially for afternoon or evening flight arrivals.",
+  "Current Ferry Koh Chang guidance shows daily service from 06:30 to 18:30.",
+  "Standalone Ferry Koh Chang tickets are bought with cash at the pier on the day of travel.",
+  "Trat / Centrepoint Ferry has been suspended since July 2024 and has not resumed.",
   "Confirm whether the ticket includes mainland transfer, ferry crossing and Koh Chang drop-off.",
   "Large suitcases, surf gear and extra bags may need a different vehicle or ticket rule.",
-  "Private taxi is usually easier for families, late arrivals and travelers with heavy luggage.",
   "Weather, traffic and ferry queues can change the total travel time.",
 ];
 
@@ -141,12 +143,13 @@ function MobileDetails() {
             </p>
           </div>
 
-          <div
-            aria-label="Route guide"
+          <Link
+            href="/routes"
+            aria-label="Browse all routes"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
           >
             <ShieldCheck className="h-5 w-5" />
-          </div>
+          </Link>
         </div>
 
         <div className="mt-5 flex gap-6 overflow-x-auto border-b border-[#e7e2d8] text-sm font-bold text-slate-500">
@@ -238,9 +241,9 @@ function MobileDetails() {
               </h2>
 
               <p className="mt-1 text-sm leading-6 text-red-700/80">
-                Koh Chang transfers depend on ferry timing. Late arrivals,
-                weather and ferry queues can change the route, so do not book a
-                tight connection.
+                Ferry Koh Chang currently runs from 06:30 to 18:30. Late
+                arrivals, weather and ferry queues can change the route, so do
+                not book a tight connection.
               </p>
             </div>
           </div>
@@ -259,8 +262,8 @@ function MobileDetails() {
                 </p>
                 <p className="mt-1 text-xs leading-5 text-slate-600">
                   This route still depends on mainland road time, pier reporting
-                  time, ferry queues and sea conditions. Avoid planning it close
-                  to another fixed connection.
+                  time, ferry queues and sea conditions. Ferry Koh Chang
+                  guidance shows daily service from 06:30 to 18:30.
                 </p>
               </div>
             </div>
@@ -277,9 +280,9 @@ function MobileDetails() {
                   If the schedule changes
                 </p>
                 <p className="mt-1 text-xs leading-5 text-slate-600">
-                  Check the operator ticket for the next available combined
-                  transfer. Private road transfer does not remove the ferry
-                  crossing where the ticket requires one.
+                  Trat / Centrepoint Ferry has been suspended since July 2024.
+                  Check the operator ticket for the actual ferry, pier and next
+                  available combined transfer.
                 </p>
               </div>
             </div>
@@ -362,6 +365,7 @@ function MobileDetails() {
           operator. Final price, schedule, pickup point and luggage rules must
           still be checked on the live ticket.
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 px-3 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 shadow-2xl backdrop-blur">
@@ -373,6 +377,9 @@ function MobileDetails() {
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go
               </span>
+            </p>
+            <p className="text-[10px] font-medium leading-4 text-slate-500">
+              Affiliate link - we may earn a commission.
             </p>
           </div>
 
@@ -443,6 +450,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                     Compare options
                   </Link>
                 </div>
+                <AffiliateDisclosure className="mt-3" />
               </div>
 
               <div className="overflow-hidden rounded-[2rem] border border-[#e7e2d8] bg-white shadow-xl shadow-black/5">
@@ -548,7 +556,8 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
 
                     <p className="mt-1 text-sm leading-6 text-[#30465a]">
                       If your plane lands late in the day, check the last ferry
-                      first and compare private transfer options before booking.
+                      first. Current Ferry Koh Chang guidance shows 18:30 as
+                      the daily service end time.
                     </p>
                   </div>
                 </div>
@@ -643,6 +652,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                 Check live prices on 12Go
               </AffiliateButton>
             </div>
+            <AffiliateDisclosure className="mt-4 text-white/70" />
           </Container>
         </section>
       </div>

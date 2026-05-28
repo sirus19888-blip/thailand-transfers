@@ -1,4 +1,5 @@
 import { mainRoute } from "@/data/routes";
+import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { Container } from "./Container";
 
 export function RouteFinalCta() {
@@ -30,6 +31,7 @@ export function RouteFinalCta() {
             Check live prices on 12Go
           </a>
         </div>
+        <AffiliateDisclosure className="mt-4 text-white/70" />
       </Container>
     </section>
   );

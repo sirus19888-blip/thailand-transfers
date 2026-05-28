@@ -66,11 +66,12 @@ const quickFacts = [
 
 const tips = [
   "Confirm whether your ticket includes Koh Chang hotel pickup or starts at a pier.",
+  "Current Ferry Koh Chang guidance shows daily service from 06:30 to 18:30.",
+  "Standalone ferry tickets are cash-only at the pier; combined transfer tickets can have different inclusions.",
+  "Trat / Centrepoint Ferry has been suspended since July 2024 and has not resumed.",
   "Check that the ferry crossing and mainland road transfer are included.",
   "Private taxi is usually easier for families, luggage and late departures.",
   "Ferry queues and Bangkok traffic can change total travel time.",
-  "Large suitcases and extra bags may need stricter van or bus luggage rules.",
-  "Check the Bangkok drop-off area before booking onward hotel transport.",
 ];
 
 const faqs = [
@@ -116,10 +117,11 @@ export default function KohChangToBangkokDetailsPage() {
       stepsHeading="Leaving Koh Chang - step by step"
       stepsIntro="Use these steps to keep pickup, ferry crossing and Bangkok drop-off details clear before booking."
       warningMobileTitle="Check the drop-off"
-      warningMobileText="Shared transfers may finish at a station or operator point. Check the Bangkok drop-off before arranging your hotel transfer."
+      warningMobileText="Shared transfers may finish at a station or operator point. Also check ferry timing: current Ferry Koh Chang guidance shows service from 06:30 to 18:30."
       warningTitle="Bangkok drop-off points can vary"
       warningParagraphs={[
         "The island-to-city trip includes pickup, ferry crossing, mainland transfer and a Bangkok drop-off that may not be your hotel.",
+        "Current Ferry Koh Chang guidance shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024.",
         "Use confirmed booking details and check ferry inclusion, luggage rules and the exact Bangkok arrival point before booking.",
       ]}
       simpleRule="If you need door-to-door travel in Bangkok, compare private taxi options or choose a shared ticket with a clear drop-off area."

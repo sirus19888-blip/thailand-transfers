@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { mainRoute } from "@/data/routes";
+import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { Container } from "./Container";
 
 export function RouteHero() {
@@ -76,6 +77,7 @@ export function RouteHero() {
                 Compare options
               </a>
             </div>
+            <AffiliateDisclosure className="mt-3" />
           </div>
 
           <div className="relative overflow-hidden rounded-[2.5rem] border border-white bg-white p-3 shadow-2xl shadow-black/10">

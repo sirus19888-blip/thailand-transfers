@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { transferOptions } from "@/data/routes";
+import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { AffiliateButton } from "./AffiliateButton";
 import { getMobileVehicleImage } from "./mobileVehicleAssets";
 import {
@@ -250,6 +251,7 @@ export function MobileTransferOptionsScreen() {
           Last checked May 2026. Live prices and schedules may change by date,
           operator and traffic.
         </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
       </div>
     </section>
   );

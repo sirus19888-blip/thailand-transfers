@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
 import type { RoutePageData } from "@/data/routePages";
 
@@ -64,6 +65,7 @@ export default function RoutePageTemplate({
                   Back to all routes
                 </Link>
               </div>
+              <AffiliateDisclosure className="mt-3" />
             </div>
           </Container>
         </section>
@@ -147,6 +149,7 @@ export default function RoutePageTemplate({
                 </tbody>
               </table>
             </div>
+            <AffiliateDisclosure className="mt-4 text-center" />
           </Container>
         </section>
       </div>

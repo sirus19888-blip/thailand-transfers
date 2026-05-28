@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
 import { donMueangPattayaRoute } from "@/data/donMueangPattayaRoute";
 
@@ -56,6 +57,7 @@ export default function DonMueangAirportToPattayaPage() {
                   Back to all routes
                 </Link>
               </div>
+              <AffiliateDisclosure className="mt-3" />
             </div>
           </Container>
         </section>
@@ -138,6 +140,7 @@ export default function DonMueangAirportToPattayaPage() {
                 </tbody>
               </table>
             </div>
+            <AffiliateDisclosure className="mt-4 text-center" />
           </Container>
         </section>
       </div>

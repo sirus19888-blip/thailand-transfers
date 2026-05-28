@@ -9,6 +9,7 @@ import { RouteFinalCta } from "@/components/RouteFinalCta";
 import { MobileRouteDetailsScreen } from "@/components/MobileRouteDetailsScreen";
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { transferOptions } from "@/data/routes";
 
 export const metadata: Metadata = {
@@ -83,6 +84,7 @@ export default async function BangkokAirportToPattayaDetailsPage({
                   Compare options
                 </Link>
               </div>
+              <AffiliateDisclosure className="mt-3" />
             </div>
           </Container>
         </section>

@@ -3,11 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Landmark } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { mainRoute, popularRoutes } from "@/data/routes";
+import {
+  highDemandRouteSearches,
+  mainRoute,
+  popularRoutes,
+} from "@/data/routes";
 
 export const metadata: Metadata = {
   title: "All Thailand Transfer Routes | Thailand Transfers",
@@ -53,6 +58,7 @@ export default function RoutesPage() {
               >
                 Check live BKK to Pattaya prices
               </AffiliateButton>
+              <AffiliateDisclosure className="mt-3 text-center" />
             </div>
           </div>
         </Container>
@@ -102,6 +108,55 @@ export default function RoutesPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-8 lg:pb-14">
+        <Container>
+          <div className="rounded-[28px] border border-[#e7e2d8] bg-white p-5 shadow-xl shadow-black/5 lg:p-7">
+            <div className="max-w-3xl">
+              <p className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
+                Live searches
+              </p>
+              <h2 className="mt-2 text-[26px] font-extrabold tracking-[-0.03em] text-[#10201d] lg:text-[34px]">
+                Routes travelers often check next
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-[#30465a] lg:text-base lg:leading-7">
+                These are live partner searches, not full Thailand Transfers
+                guides yet. Check exact pickup points, luggage rules,
+                operating days and current availability on the partner page.
+              </p>
+            </div>
+
+            <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+              {highDemandRouteSearches.map((route) => (
+                <article
+                  key={route.id}
+                  className="rounded-[20px] border border-[#eee7dc] bg-[#fbfaf7] p-4"
+                >
+                  <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+                    {route.type}
+                  </p>
+                  <h3 className="mt-2 text-[17px] font-extrabold leading-snug text-[#10201d]">
+                    {route.title}
+                  </h3>
+                  <p className="mt-2 min-h-[72px] text-sm leading-6 text-[#30465a]">
+                    {route.description}
+                  </p>
+                  <AffiliateButton
+                    href={route.affiliateUrl}
+                    trackingId={route.trackingId}
+                    variant="table"
+                    fullWidth
+                  >
+                    Check live options
+                  </AffiliateButton>
+                </article>
+              ))}
+            </div>
+
+            <AffiliateDisclosure className="mt-4 text-center" />
           </div>
         </Container>
       </section>

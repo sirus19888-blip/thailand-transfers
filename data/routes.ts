@@ -16,17 +16,17 @@ export const transferOptions = [
     id: "bus",
     trackingId: "click_12go_bus_bkk_pattaya",
     name: "Bus",
-    operator: "Airport Bus by Bell Travel",
+    operator: "Roong Reuang Coach / Airport Pattaya Bus",
     label: "Best value",
     price: "Live price",
     priceNote: "on 12Go",
-    duration: "2h 30m",
+    duration: "2h - 2h 30m",
     departures: "Live schedule",
-    pickup: "Level 1 or operator point",
+    pickup: "Level 1, Gate 8 or voucher point",
     baggage: "1 large + 1 small",
     bestFor: "Budget travelers",
-    pros: ["Cheapest option", "Direct to Central Pattaya"],
-    cons: ["May take longer in traffic", "Fixed schedule"],
+    pros: ["Lowest typical price", "Direct airport-to-Pattaya route"],
+    cons: ["Fixed schedule", "May need local taxi after drop-off"],
     image: "/assets/vehicles/bus.png",
     rating: "4.5",
     reviews: "Partner details",
@@ -350,6 +350,99 @@ export const returnRouteSeoPlan = [
     priority: "high",
     affiliateUrl:
       "https://12go.asia/en/travel/Koh-Phi-Phi/Phuket/?z=15791301&sub_id=koh-phi-phi-phuket-general",
+  },
+];
+
+export const highDemandRouteSearches = [
+  {
+    id: "suvarnabhumi-bangkok-city",
+    title: "Suvarnabhumi Airport to Bangkok",
+    type: "Airport city transfer",
+    description:
+      "Live search for taxis, vans, buses and city transfer options after landing at BKK.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-live-search",
+    trackingId: "click_12go_live_suvarnabhumi_bangkok",
+  },
+  {
+    id: "suvarnabhumi-don-mueang",
+    title: "Suvarnabhumi Airport to Don Mueang Airport",
+    type: "Airport-to-airport",
+    description:
+      "Live search for BKK to DMK transfers when you need a same-day airport connection.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/suvarnabhumi-airport/don-mueang-airport/?z=15791301&sub_id=suvarnabhumi-dmk-live-search",
+    trackingId: "click_12go_live_suvarnabhumi_dmk",
+  },
+  {
+    id: "bangkok-koh-tao",
+    title: "Bangkok to Koh Tao",
+    type: "Island connection",
+    description:
+      "Live search for combined bus, ferry, train, flight and transfer options to Koh Tao.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/bangkok/koh-tao/?z=15791301&sub_id=bangkok-koh-tao-live-search",
+    trackingId: "click_12go_live_bangkok_koh_tao",
+  },
+  {
+    id: "bangkok-koh-samui",
+    title: "Bangkok to Koh Samui",
+    type: "Island connection",
+    description:
+      "Live search for ferry, bus, train, flight and private transfer combinations to Koh Samui.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/bangkok-transfer/koh-samui/?z=15791301&sub_id=bangkok-koh-samui-live-search",
+    trackingId: "click_12go_live_bangkok_koh_samui",
+  },
+  {
+    id: "bangkok-koh-phangan",
+    title: "Bangkok to Koh Phangan",
+    type: "Island connection",
+    description:
+      "Live search for ferry, bus, train, flight and transfer options to Koh Phangan.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/bangkok/koh-phangan/?z=15791301&sub_id=bangkok-koh-phangan-live-search",
+    trackingId: "click_12go_live_bangkok_koh_phangan",
+  },
+  {
+    id: "phuket-krabi",
+    title: "Phuket to Krabi",
+    type: "South Thailand route",
+    description:
+      "Live search for vans, buses, ferries, flights and taxis between Phuket and Krabi.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/phuket/krabi/?z=15791301&sub_id=phuket-krabi-live-search",
+    trackingId: "click_12go_live_phuket_krabi",
+  },
+  {
+    id: "chiang-mai-pai",
+    title: "Chiang Mai to Pai",
+    type: "Northern route",
+    description:
+      "Live search for van, bus and taxi options between Chiang Mai and Pai.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/chiang-mai/pai/?z=15791301&sub_id=chiang-mai-pai-live-search",
+    trackingId: "click_12go_live_chiang_mai_pai",
+  },
+  {
+    id: "bangkok-ayutthaya",
+    title: "Bangkok to Ayutthaya",
+    type: "Day-trip route",
+    description:
+      "Live search for trains, vans, buses and taxis between Bangkok and Ayutthaya.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/bangkok/ayutthaya/?z=15791301&sub_id=bangkok-ayutthaya-live-search",
+    trackingId: "click_12go_live_bangkok_ayutthaya",
+  },
+  {
+    id: "krabi-airport-koh-lanta",
+    title: "Krabi Airport to Koh Lanta",
+    type: "Airport to island",
+    description:
+      "Live search for van, bus, ferry and taxi options from Krabi Airport to Koh Lanta.",
+    affiliateUrl:
+      "https://12go.asia/en/travel/krabi-airport/koh-lanta/?z=15791301&sub_id=krabi-airport-koh-lanta-live-search",
+    trackingId: "click_12go_live_krabi_airport_koh_lanta",
   },
 ];
 
