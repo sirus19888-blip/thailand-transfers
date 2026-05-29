@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
-  title: "Corrections Policy | Thailand Transfers",
+  title: "Corrections Policy",
   description: "Report outdated pickup points, schedules, ferry information or price ranges.",
   alternates: {
     canonical: "/corrections-policy",

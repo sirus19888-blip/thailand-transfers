@@ -22,7 +22,7 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mainRoute } from "@/data/routes";
 
 export const metadata: Metadata = {
-  title: "Thailand Tourist SIM & eSIM | Thailand Transfers",
+  title: "Thailand Tourist SIM & eSIM",
   description:
     "Compare practical options for staying connected in Thailand with a tourist SIM or eSIM.",
   alternates: {

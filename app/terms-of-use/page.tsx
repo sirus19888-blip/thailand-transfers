@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Thailand Transfers",
+  title: "Terms of Use",
   description:
     "Read the terms for using Thailand Transfer Guide, including route guidance limits, partner booking responsibility, travel risk and content accuracy.",
   alternates: {
@@ -15,12 +15,12 @@ export default function TermsOfUsePage() {
     <PolicyPage
       eyebrow="Terms"
       title="Terms of Use"
-      intro="Use Thailand Transfers as planning guidance. Always confirm final prices, schedules, pickup points and ticket rules with the booking partner before paying."
+      intro="Use Thailand Transfer Guide as planning guidance. Always confirm final prices, schedules, pickup points and ticket rules with the booking partner before paying."
       sections={[
         {
           title: "Independent guide",
           body: [
-            "Thailand Transfers is an independent route guide and comparison website.",
+            "Thailand Transfer Guide is an independent route guide and comparison website.",
             "We do not operate buses, taxis, vans, trains, flights or ferries, and we do not sell tickets directly.",
           ],
         },

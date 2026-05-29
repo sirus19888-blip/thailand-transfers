@@ -362,7 +362,7 @@ function MobileDetails() {
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Last checked May 2026. Thailand Transfers is an independent travel
+          Last checked May 2026. Thailand Transfer Guide is an independent travel
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must

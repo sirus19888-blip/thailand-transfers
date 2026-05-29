@@ -12,7 +12,7 @@ import { RoutesMobileHub } from "@/components/RoutesMobileHub";
 import { highDemandRouteSearches, popularRoutes } from "@/data/routes";
 
 export const metadata: Metadata = {
-  title: "All Thailand Transfer Routes | Thailand Transfers",
+  title: "All Thailand Transfer Routes",
   description:
     "Browse popular Thailand transfer routes by airport, city, island and beach destination.",
   alternates: {
@@ -40,9 +40,9 @@ export default function RoutesPage() {
               All routes
             </p>
 
-            <h1 className="text-[36px] font-extrabold tracking-normal text-[#10201d] lg:text-[52px]">
+            <h2 className="text-[36px] font-extrabold tracking-normal text-[#10201d] lg:text-[52px]">
               Browse Thailand transfer routes
-            </h1>
+            </h2>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#30465a]">
               Compare airport transfers, city transfers, ferry connections and
@@ -111,7 +111,7 @@ export default function RoutesPage() {
                 Routes travelers often check next
               </h2>
               <p className="mt-3 text-sm leading-6 text-[#30465a] lg:text-base lg:leading-7">
-                These are partner searches, not full Thailand Transfers guides
+                These are partner searches, not full Thailand Transfer Guide pages
                 yet. Check exact pickup points, luggage rules, operating days
                 and current availability on the partner page.
               </p>

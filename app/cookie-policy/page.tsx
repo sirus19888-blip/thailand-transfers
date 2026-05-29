@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Thailand Transfers",
+  title: "Cookie Policy",
   description:
     "Read how Thailand Transfer Guide uses privacy-friendly analytics, cookies and partner link tracking, plus how travelers can manage consent.",
   alternates: {

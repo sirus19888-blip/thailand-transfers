@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
-  title: "Trust Center | Thailand Transfers",
+  title: "Trust Center",
   description:
-    "How Thailand Transfers checks route information, ranks transfer options, handles affiliate links and accepts corrections.",
+    "How Thailand Transfer Guide checks route information, ranks transfer options, handles affiliate links and accepts corrections.",
   alternates: {
     canonical: "/trust-center",
   },
@@ -15,7 +15,7 @@ export default function TrustCenterPage() {
     <PolicyPage
       eyebrow="Trust Center"
       title="How we keep transfer guides useful and honest"
-      intro="Thailand Transfers is an independent travel comparison guide. We help travelers understand routes, pickup points, risks and partner booking rules before they pay."
+      intro="Thailand Transfer Guide is an independent travel comparison guide. We help travelers understand routes, pickup points, risks and partner booking rules before they pay."
       showCorrectionForm
       sections={[
         {

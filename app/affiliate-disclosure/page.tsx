@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
-  title: "Affiliate Disclosure | Thailand Transfers",
+  title: "Affiliate Disclosure",
   description:
     "Learn how Thailand Transfer Guide uses paid partner links, how commissions may work and how recommendations stay focused on traveler suitability.",
   alternates: {
@@ -15,7 +15,7 @@ export default function AffiliateDisclosurePage() {
     <PolicyPage
       eyebrow="Disclosure"
       title="Affiliate Disclosure"
-      intro="Some links on Thailand Transfers are paid partner links. We may earn a commission at no extra cost to you."
+      intro="Some links on Thailand Transfer Guide are paid partner links. We may earn a commission at no extra cost to you."
       sections={[
         {
           title: "How affiliate links work",

@@ -159,7 +159,7 @@ export function PolicyPage({
           <div className="relative mb-4 h-44 overflow-hidden rounded-[1.15rem] bg-[#10201d]">
             <Image
               src="/assets/hero/hero-mobile.png"
-              alt="Thailand Transfers trust and policy guide"
+              alt="Thailand Transfer Guide trust and policy guide"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 390px"
@@ -195,9 +195,9 @@ export function PolicyPage({
             <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
               {eyebrow}
             </p>
-            <h1 className="mt-3 max-w-3xl text-5xl font-black leading-tight tracking-normal">
+            <h2 className="mt-3 max-w-3xl text-5xl font-black leading-tight tracking-normal">
               {title}
-            </h1>
+            </h2>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-[#4b5d58]">
               {intro}
             </p>

@@ -304,9 +304,9 @@ function DesktopHero() {
                 Tourist-friendly transfer guide
               </p>
 
-              <h1 className="mt-2 text-[58px] font-extrabold leading-[0.98] tracking-normal text-[#10201d]">
+              <h2 className="mt-2 text-[58px] font-extrabold leading-[0.98] tracking-normal text-[#10201d]">
                 Land calmly in Thailand
-              </h1>
+              </h2>
 
               <p className="mt-4 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
                 Tell us where you land. We show the safest option, a smart

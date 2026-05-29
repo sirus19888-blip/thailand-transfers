@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Thailand Transfers",
-  description: "Privacy information for Thailand Transfers users, analytics and affiliate tracking.",
+  title: "Privacy Policy",
+  description:
+    "Privacy information for Thailand Transfer Guide users, analytics and affiliate tracking.",
   alternates: {
     canonical: "/privacy-policy",
   },
