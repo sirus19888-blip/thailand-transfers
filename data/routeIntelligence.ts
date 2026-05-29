@@ -36,7 +36,7 @@ export function getStatusDescription(status: GuideStatus) {
     return "Basic route guidance plus partner booking checks.";
   }
 
-  return "We do not have a full guide yet. This opens a live partner search.";
+  return "We do not have a full guide yet. This opens a partner search.";
 }
 
 export function getOptionLabel(option: RouteTransportOption) {
@@ -174,16 +174,17 @@ export function getPriceGuidance(option: RouteTransportOption) {
   return "Final price and ticket rules are confirmed by the partner.";
 }
 
-export function getFullGuideChecklist(route: RoutePageData) {
-  const modes = route.options.map((option) => option.name).join(", ");
-
+export function getFullGuideChecklist() {
   return [
     "Decision hero",
-    `Options: ${modes}`,
+    "Options compared",
     "Risk hours",
-    "Pickup / drop-off maps",
-    "Baggage + safety notes",
-    "Sources, last checked, partner CTA",
+    "Pickup map",
+    "Drop-off guide",
+    "Baggage notes",
+    "Safety notes",
+    "Sources",
+    "Partner CTA",
   ];
 }
 

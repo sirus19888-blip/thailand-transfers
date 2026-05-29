@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Is hotel pickup on Koh Samui included?",
     answer:
-      "Sometimes, but not always. Check the live ticket for hotel pickup areas, departure pier and reporting time.",
+      "Sometimes, but not always. Check the partner ticket for hotel pickup areas, departure pier and reporting time.",
   },
   {
     question: "How long does the transfer take?",
@@ -126,7 +126,7 @@ export default function KohSamuiToSuratThaniAirportDetailsPage() {
       practicalTitle="Small things that make Samui airport transfers easier"
       practicalIntro="These notes are specific to travelling from Koh Samui to Surat Thani Airport by ferry and mainland transfer."
       faqTitle="Questions about Koh Samui to Surat Thani Airport"
-      readyTitle="Check live Surat Thani Airport transfer prices before you leave Samui"
+      readyTitle="Check final Surat Thani Airport transfer prices before you leave Samui"
       readyText="Compare ferry plus bus, ferry plus van and combined transfer options from Koh Samui to Surat Thani Airport."
       stickyLabel="Best value"
       primaryOptionId="ferry-bus"

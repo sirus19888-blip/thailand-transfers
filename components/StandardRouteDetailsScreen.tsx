@@ -41,7 +41,7 @@ function buildSteps(route: RoutePageData) {
         ? "Confirm the airport pickup or drop-off point."
         : "Confirm your pickup point before travel.",
       description:
-        "Check the live ticket for the exact meeting point, station, pier or hotel pickup area before you leave.",
+        "Check the partner ticket for the exact meeting point, station, pier or hotel pickup area before you leave.",
       image: "/assets/steps/immigration.png",
     },
     {
@@ -72,12 +72,12 @@ function buildTips(route: RoutePageData) {
   const mainOption = getPrimaryOption(route);
 
   return [
-    `Best-value option: ${mainOption.name}. Check live availability before booking.`,
+    `Best-value option: ${mainOption.name}. Check partner availability before booking.`,
     `Typical time shown by partners: ${mainOption.duration}. Traffic and local transfers can change this.`,
     `Pickup note: ${mainOption.pickup}. Always follow the exact ticket instructions.`,
     "Private taxi is usually easier with large luggage, children or a tight flight connection.",
     "Shared vans and buses can be cheaper, but pickup points and baggage rules vary.",
-    "Use live partner details for the latest departure time, price and operator rules.",
+    "Use partner details for the latest departure time, price and operator rules.",
   ];
 }
 
@@ -93,7 +93,7 @@ function buildFaqs(route: RoutePageData) {
     {
       question: "Do prices and schedules change?",
       answer:
-        "Yes. Treat page times as planning guidance and check the live partner ticket before booking.",
+        "Yes. Treat page times as planning guidance and check the partner ticket before booking.",
     },
     {
       question: "Should I book before travel day?",
@@ -131,23 +131,23 @@ export function StandardRouteDetailsScreen({
       overviewImage={overview}
       overviewAlt={`${route.from} to ${route.to} route overview map`}
       heroTitle={`${route.from} to ${route.to}: transfer guide`}
-      heroDescription={`Before booking, compare live options from ${route.from} to ${route.to}. Check pickup point, drop-off point, luggage rules, travel time and partner booking notes.`}
+      heroDescription={`Before booking, compare partner options from ${route.from} to ${route.to}. Check pickup point, drop-off point, luggage rules, travel time and partner booking notes.`}
       heroImage={heroImage}
       heroAlt={`${route.from} to ${route.to} transfer`}
       stepsHeading="Route details - step by step"
       stepsIntro={`Use these notes to plan the transfer from ${route.from} to ${route.to} without pickup or drop-off surprises.`}
-      warningMobileTitle="Check live ticket details"
-      warningMobileText="Pickup points, baggage rules and final drop-off can vary by operator. Always check the live ticket before booking."
+      warningMobileTitle="Check partner ticket details"
+      warningMobileText="Pickup points, baggage rules and final drop-off can vary by operator. Always check the partner ticket before booking."
       warningTitle="Check pickup and drop-off before you book"
       warningParagraphs={[
         "Routes in Thailand can use different stations, counters, piers, hotel pickup areas or roadside stops depending on the operator.",
-        "Live partner details are the best source for current schedule, price, baggage allowance and cancellation rules.",
+        "Partner details are the best source for current schedule, price, baggage allowance and cancellation rules.",
       ]}
       simpleRule="If the pickup point or final stop is not clear, choose a more flexible option or confirm the operator details before booking."
       practicalTitle={`Small things that make ${route.to} transfers easier`}
-      practicalIntro={`These notes are specific to the ${route.from} to ${route.to} route and help compare live partner options.`}
+      practicalIntro={`These notes are specific to the ${route.from} to ${route.to} route and help compare partner options.`}
       faqTitle={`Questions about ${route.from} to ${route.to}`}
-      readyTitle={`Check live ${route.to} transfer prices before you travel`}
+      readyTitle={`Check final ${route.to} transfer prices before you travel`}
       readyText={`Compare ${route.options
         .map((option) => option.name.toLowerCase())
         .join(", ")} options from ${route.from} to ${route.to}.`}
@@ -160,7 +160,7 @@ export function StandardRouteDetailsScreen({
         {
           icon: Clock3,
           title: "Typical travel time",
-          text: `${selectedOption.name}: ${selectedOption.duration}. Compare live options for your date before booking.`,
+          text: `${selectedOption.name}: ${selectedOption.duration}. Compare partner options for your date before booking.`,
         },
         {
           icon: MapPin,
@@ -170,7 +170,7 @@ export function StandardRouteDetailsScreen({
         {
           icon: Luggage,
           title: "Luggage and tickets",
-          text: "Check baggage limits, included transfers and cancellation rules on the live ticket.",
+          text: "Check baggage limits, included transfers and cancellation rules on the partner ticket.",
         },
       ]}
       tips={tips}

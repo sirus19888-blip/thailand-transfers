@@ -151,43 +151,43 @@ const mobileRouteHrefs: Record<string, string> = {
 
 const mobilePopularRouteLinks = [
   {
-    label: "Suvarnabhumi → Pattaya",
+    label: "Suvarnabhumi to Pattaya",
     ariaLabel: "Bangkok Airport to Pattaya",
     href: "/routes/bangkok-airport-to-pattaya",
   },
   {
-    label: "Don Mueang → Pattaya",
-    ariaLabel: "Don Mueang Airport to Pattaya",
+    label: "Don Mueang to Pattaya",
+    arialabel: "Don Mueang to Pattaya",
     href: "/routes/don-mueang-airport-to-pattaya",
   },
   {
-    label: "Bangkok → Hua Hin",
-    ariaLabel: "Bangkok to Hua Hin",
+    label: "Bangkok to Hua Hin",
+    arialabel: "Bangkok to Hua Hin",
     href: "/routes/bangkok-to-hua-hin",
   },
   {
-    label: "Suvarnabhumi → Hua Hin",
-    ariaLabel: "Suvarnabhumi Airport to Hua Hin",
+    label: "Suvarnabhumi to Hua Hin",
+    arialabel: "Suvarnabhumi to Hua Hin",
     href: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
   {
-    label: "Suvarnabhumi → Koh Chang",
-    ariaLabel: "Suvarnabhumi Airport to Koh Chang",
+    label: "Suvarnabhumi to Koh Chang",
+    arialabel: "Suvarnabhumi to Koh Chang",
     href: "/routes/suvarnabhumi-airport-to-koh-chang",
   },
   {
-    label: "Phuket Airport → Patong",
-    ariaLabel: "Phuket Airport to Patong",
+    label: "Phuket Airport to Patong",
+    arialabel: "Phuket Airport to Patong",
     href: "/routes/phuket-airport-to-patong-beach",
   },
   {
-    label: "Krabi Airport → Ao Nang",
-    ariaLabel: "Krabi Airport to Ao Nang",
+    label: "Krabi Airport to Ao Nang",
+    arialabel: "Krabi Airport to Ao Nang",
     href: "/routes/krabi-airport-to-ao-nang",
   },
   {
-    label: "Surat Thani → Koh Samui",
-    ariaLabel: "Surat Thani Airport to Koh Samui",
+    label: "Surat Thani to Koh Samui",
+    arialabel: "Surat Thani to Koh Samui",
     href: "/routes/surat-thani-airport-to-koh-samui",
   },
 ];
@@ -352,7 +352,7 @@ function DesktopHero() {
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Check live offers
+                    Final partner offers
                   </p>
                 </div>
 
@@ -519,7 +519,7 @@ function DesktopHero() {
                   </Link>
 
                   <p className="text-center text-[11px] font-medium text-slate-500">
-                    Browse available route pages and check live partner offers before booking.
+                    Browse premium route guides and confirm final partner rules before booking.
                   </p>
                 </div>
               </div>
@@ -712,7 +712,7 @@ function MobileHero() {
               </h1>
 
               <p className="mt-2 text-[12px] font-medium leading-5 text-[#364152]">
-                Clear route guides. Live partner offers. Happy travels.
+                Clear route guides. Final partner rules. Calm arrivals.
               </p>
             </div>
           </div>
@@ -958,7 +958,7 @@ function MobileHero() {
                     Route information
                   </p>
                   <p className="mt-1 text-[11px] text-[#667085]">
-                    Check live offers
+                    Final partner offers
                   </p>
                 </div>
               </div>

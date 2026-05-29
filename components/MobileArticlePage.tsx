@@ -1,8 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, ShieldCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  BookOpen,
+  CheckCircle2,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+
+type ArticleSection = {
+  title: string;
+  body: string[];
+};
 
 type MobileArticlePageProps = {
   eyebrow: string;
@@ -11,11 +24,43 @@ type MobileArticlePageProps = {
   backHref: string;
   ctaHref?: string;
   ctaTrackingId?: string;
-  sections: {
-    title: string;
-    body: string[];
-  }[];
+  heroImageSrc?: string;
+  heroImageAlt?: string;
+  sections: ArticleSection[];
 };
+
+function ArticleSections({ sections }: { sections: ArticleSection[] }) {
+  return (
+    <div className="grid gap-4">
+      {sections.map((section) => (
+        <section
+          key={section.title}
+          className="overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
+        >
+          <div className="border-b border-[#e7e2d8] bg-[#fbfaf7] px-4 py-3">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0c5a4d] shadow-sm">
+                <ShieldCheck className="h-4 w-4" />
+              </div>
+              <h2 className="text-[17px] font-extrabold leading-snug text-[#10201d]">
+                {section.title}
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid gap-2 px-4 py-4">
+            {section.body.map((item) => (
+              <div key={item} className="flex gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <p className="text-xs leading-5 text-slate-600">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
+}
 
 export function MobileArticlePage({
   eyebrow,
@@ -24,79 +69,120 @@ export function MobileArticlePage({
   backHref,
   ctaHref,
   ctaTrackingId,
+  heroImageSrc = "/assets/hero/hero-mobile.png",
+  heroImageAlt = "Thailand transfer guide",
   sections,
 }: MobileArticlePageProps) {
   return (
-    <main className="min-h-screen bg-[#fbfaf7] pb-[5.5rem] text-[#10201d]">
-      <section className="mx-auto max-w-md px-5 py-6 lg:hidden">
+    <main className="min-h-screen bg-[#fbfaf7] pb-[5.5rem] text-[#10201d] lg:pb-0">
+      <div className="hidden lg:block">
+        <Header />
+      </div>
+
+      <section className="mx-auto max-w-md px-4 py-5 lg:max-w-5xl lg:px-8 lg:py-12">
+        <div className="flex items-center justify-between lg:hidden">
+          <Link
+            href={backHref}
+            aria-label="Back"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2">
+              <BookOpen className="h-4 w-4 text-[#0c5a4d]" />
+              <p className="text-[16px] font-extrabold text-[#10201d]">
+                Route guide
+              </p>
+            </div>
+            <p className="mt-1 text-xs font-medium text-slate-500">
+              Checked notes before booking
+            </p>
+          </div>
+
+          <div
+            aria-label="Guide status"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+          >
+            <ShieldCheck className="h-5 w-5" />
+          </div>
+        </div>
+
         <Link
           href={backHref}
-          className="mb-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-[#0c5a4d] bg-white px-4 py-2 text-sm font-extrabold text-[#0c5a4d]"
+          className="mb-6 hidden w-fit items-center gap-2 text-sm font-extrabold text-[#0c5a4d] lg:inline-flex"
         >
           <ArrowLeft className="h-4 w-4" />
           Back
         </Link>
 
-        <div className="rounded-[8px] border border-[#e6ddce] bg-white p-5 shadow-[0_18px_45px_rgba(21,37,31,0.12)]">
-          <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
-            {eyebrow}
-          </p>
-          <h1 className="mt-2 text-[30px] font-black leading-tight tracking-normal">
-            {title}
-          </h1>
-          <p className="mt-3 text-sm leading-6 text-[#4b5d58]">{intro}</p>
-        </div>
-
-        <div className="mt-4 grid gap-4">
-          {sections.map((section) => (
-            <section
-              key={section.title}
-              className="rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]"
-            >
-              <div className="flex gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
-                  <ShieldCheck className="h-4 w-4" />
-                </div>
-                <div>
-                  <h2 className="text-lg font-extrabold text-[#10201d]">
-                    {section.title}
-                  </h2>
-                  <div className="mt-2 grid gap-2">
-                    {section.body.map((item) => (
-                      <div key={item} className="flex gap-2">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
-                        <p className="text-xs leading-5 text-slate-600">
-                          {item}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </section>
-          ))}
-        </div>
-
-        {ctaHref ? (
-          <div className="mt-4 rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]">
-            <AffiliateButton
-              href={ctaHref}
-              trackingId={ctaTrackingId}
-              fullWidth
-            >
-              Check final price and ticket rules
-            </AffiliateButton>
-            <AffiliateDisclosure className="mt-3 text-center" />
+        <div className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5 lg:mt-0 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:p-5">
+          <div className="relative h-44 overflow-hidden rounded-[1.15rem] bg-[#10201d] lg:h-full lg:min-h-[360px]">
+            <Image
+              src={heroImageSrc}
+              alt={heroImageAlt}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 48vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/88 via-[#10201d]/22 to-transparent" />
+            <div className="absolute inset-x-4 bottom-4 lg:inset-x-6 lg:bottom-6">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#f0c96a]">
+                {eyebrow}
+              </p>
+              <h1 className="mt-1 text-[27px] font-extrabold leading-tight text-white lg:text-[44px]">
+                {title}
+              </h1>
+              <p className="mt-2 text-xs font-medium leading-5 text-white/82 lg:text-sm lg:leading-6">
+                {intro}
+              </p>
+            </div>
           </div>
-        ) : null}
-      </section>
 
-      <section className="hidden min-h-screen items-center justify-center bg-[#064e45] p-8 text-center text-white lg:flex">
-        <div className="max-w-xl">
-          <h1 className="text-4xl font-black">{title}</h1>
-          <p className="mt-4 text-white/75">
-            This guide is optimized for the mobile route experience.
-          </p>
+          <div className="mt-4 lg:mt-0 lg:flex lg:flex-col lg:justify-between">
+            <div>
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+                What this guide covers
+              </p>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                {sections.slice(0, 4).map((section) => (
+                  <div
+                    key={section.title}
+                    className="min-h-16 rounded-2xl bg-[#f8f4ec] px-3 py-2"
+                  >
+                    <MapPin className="h-4 w-4 text-[#0c5a4d]" />
+                    <p className="mt-1 text-[12px] font-extrabold leading-snug text-[#10201d]">
+                      {section.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {ctaHref ? (
+              <div className="mt-4 rounded-2xl bg-[#fbfaf7] p-3">
+                <AffiliateButton
+                  href={ctaHref}
+                  trackingId={ctaTrackingId}
+                  fullWidth
+                >
+                  Check final price and ticket rules
+                </AffiliateButton>
+                <AffiliateDisclosure className="mt-3 text-center" />
+              </div>
+            ) : (
+              <p className="mt-4 rounded-2xl bg-[#fbfaf7] px-3 py-3 text-xs leading-5 text-slate-500">
+                Save this guide before leaving arrivals, the pier or your hotel.
+                Final ticket rules are handled by the partner/operator.
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <ArticleSections sections={sections} />
         </div>
       </section>
 

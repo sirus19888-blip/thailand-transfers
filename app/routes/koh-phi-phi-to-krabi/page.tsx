@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Koh Phi Phi to Krabi Transfers | Ferry & Speedboat",
   description:
     route?.seoDescription ??
-    "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+    "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
   alternates: {
     canonical: "/routes/koh-phi-phi-to-krabi",
   },
@@ -22,7 +22,7 @@ const optionDetailsById = {
   ferry: {
     label: "Best value",
     operator: "Phi Phi ferry partners",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/ferry.png",
     pros: ["Good for luggage", "Best value for most travelers"],
@@ -40,7 +40,7 @@ const optionDetailsById = {
   "ferry-van": {
     label: "Onward link",
     operator: "Ferry and van partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["Useful for Krabi hotels or airport", "Can reduce pier planning"],
@@ -70,8 +70,8 @@ export default async function KohPhiPhiToKrabiPage({
     <RoutePageTemplate
       route={route}
       badge="Island ferry transfer comparison"
-      desktopDescription="Compare ferry, speedboat and onward transfer options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, Krabi drop-off area if included, luggage allowance and live partner prices before booking."
-      mobileDescription="Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check live schedules, departure pier and luggage rules before booking."
+      desktopDescription="Compare ferry, speedboat and onward transfer options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, Krabi drop-off area if included, luggage allowance and final partner prices before booking."
+      mobileDescription="Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check current schedules, departure pier and luggage rules before booking."
       optionsHeading="Compare Koh Phi Phi to Krabi transfer options"
       detailsNote="For island routes, check the departure pier, arrival pier, onward transfer if included, luggage allowance and weather-related schedule changes before booking."
       mobileContent={
@@ -84,7 +84,7 @@ export default async function KohPhiPhiToKrabiPage({
           summaryRightText="Weather can affect trips"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/koh-phi-phi-to-krabi/details"
-          footerNote="Live prices and schedules may change. Check departure pier, Krabi arrival pier, luggage rules and onward transfer details before booking."
+          footerNote="Final prices and schedules may change. Check departure pier, Krabi arrival pier, luggage rules and onward transfer details before booking."
           selectedDate={selectedDate}
           passengers={passengers}
         />

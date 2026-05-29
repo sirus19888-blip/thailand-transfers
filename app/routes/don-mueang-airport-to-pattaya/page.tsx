@@ -74,7 +74,7 @@ export default function DonMueangAirportToPattayaPage() {
               </h2>
 
               <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 lg:text-base lg:leading-7">
-                Prices and availability can change. Always check live offers
+                Prices and availability can change. Always check partner offers
                 before booking.
               </p>
             </div>

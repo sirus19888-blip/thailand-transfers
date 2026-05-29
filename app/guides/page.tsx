@@ -289,7 +289,7 @@ export default function GuidesPage() {
 
               <div className="grid gap-3 border-t border-[#e7e2d8] px-4 py-3">
                 <p className="text-xs font-bold leading-5 text-slate-500">
-                  Verified route notes, live ticket still required.
+                  Verified route notes, partner ticket still required.
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                   <Link
@@ -304,7 +304,7 @@ export default function GuidesPage() {
                     variant="table"
                     fullWidth
                   >
-                    Live price
+                    Check final price
                   </AffiliateButton>
                 </div>
               </div>
@@ -315,7 +315,7 @@ export default function GuidesPage() {
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
           Last checked May 2026. Route facts are planning notes. Final price,
           schedule, pickup point and luggage rules must still be checked on the
-          live ticket.
+          partner ticket.
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </section>

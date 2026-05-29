@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Koh Chang to Suvarnabhumi Airport Transfers | Ferry, Van, Taxi & Flight",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Koh Chang to Suvarnabhumi Airport. Check ferry, van, taxi and flight options, pickup details, travel times and live partner prices.",
+    "Compare transfer options from Koh Chang to Suvarnabhumi Airport. Check ferry, van, taxi and flight options, pickup details, travel times and final partner prices.",
   alternates: {
     canonical: "/routes/koh-chang-to-suvarnabhumi-airport",
   },
@@ -22,7 +22,7 @@ const optionDetailsById = {
   "ferry-van": {
     label: "Airport link",
     operator: "Ferry and van partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["Simple island-to-airport route", "Good value before flights"],
@@ -31,7 +31,7 @@ const optionDetailsById = {
   "bus-ferry": {
     label: "Best value",
     operator: "Bus and ferry partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/bus-ferry.png",
     pros: ["Budget-friendly airport route", "Ferry leg usually coordinated"],
@@ -80,7 +80,7 @@ export default async function KohChangToSuvarnabhumiAirportPage({
       route={route}
       badge="Airport transfer comparison"
       desktopDescription="Compare transfer options from Koh Chang to Suvarnabhumi Airport, including ferry plus van, bus plus ferry, private taxi and flight combinations. Check whether ferry crossing, hotel pickup, pier transfer, luggage allowance and airport drop-off are included before booking."
-      mobileDescription="Compare ferry, van, taxi and flight options from Koh Chang to Suvarnabhumi Airport. Check live schedules, pickup points, ferry details and luggage rules before booking."
+      mobileDescription="Compare ferry, van, taxi and flight options from Koh Chang to Suvarnabhumi Airport. Check current schedules, pickup points, ferry details and luggage rules before booking."
       optionsHeading="Compare Koh Chang to Suvarnabhumi Airport transfer options"
       detailsNote="For airport transfers from Koh Chang, allow extra time before your flight. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; check whether your ticket includes ferry crossing, hotel pickup, pier transfer, luggage allowance and Suvarnabhumi Airport drop-off."
       mobileContent={
@@ -93,7 +93,7 @@ export default async function KohChangToSuvarnabhumiAirportPage({
           summaryRightText="Pier timing matters"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/koh-chang-to-suvarnabhumi-airport/details"
-          footerNote="Live prices and schedules may change. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; leave extra time before flights and check ferry crossing rules."
+          footerNote="Final prices and schedules may change. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; leave extra time before flights and check ferry crossing rules."
           selectedDate={selectedDate}
           passengers={passengers}
         />

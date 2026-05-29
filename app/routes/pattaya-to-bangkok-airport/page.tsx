@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Pattaya to Bangkok Airport Transfers | Taxi, Van & Bus",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Pattaya to Bangkok Airport. Check taxi, van and bus options, pickup details, estimated travel times and live partner prices.",
+    "Compare transfer options from Pattaya to Bangkok Airport. Check taxi, van and bus options, pickup details, estimated travel times and final partner prices.",
   alternates: {
     canonical: "/routes/pattaya-to-bangkok-airport",
   },
@@ -26,10 +26,10 @@ export default function PattayaToBangkokAirportPage() {
     <RoutePageTemplate
       route={route}
       badge="Airport transfer comparison"
-      desktopDescription="Compare transfer options from Pattaya to Bangkok Airport, including private taxi, shared van and bus connections. Check pickup points, airport drop-off, luggage allowance and live partner prices before booking."
-      mobileDescription="Compare taxi, van and bus options from Pattaya to Bangkok Airport. Check live schedules, pickup points and luggage rules before booking."
+      desktopDescription="Compare transfer options from Pattaya to Bangkok Airport, including private taxi, shared van and bus connections. Check pickup points, airport drop-off, luggage allowance and final partner prices before booking."
+      mobileDescription="Compare taxi, van and bus options from Pattaya to Bangkok Airport. Check current schedules, pickup points and luggage rules before booking."
       optionsHeading="Compare Pattaya to Bangkok Airport transfer options"
-      detailsNote="For airport transfers, allow extra time before your flight. Check your Pattaya pickup point, airport drop-off terminal, luggage allowance and live operator schedule before booking."
+      detailsNote="For airport transfers, allow extra time before your flight. Check your Pattaya pickup point, airport drop-off terminal, luggage allowance and current operator schedule before booking."
     />
   );
 }

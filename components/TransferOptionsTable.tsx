@@ -383,7 +383,7 @@ export function TransferOptionsTable() {
 
           <p className="hidden max-w-[420px] text-sm leading-6 text-slate-600 lg:block">
             Start with a quick comparison. Prices are indicative and can change.
-            Always check the live price before booking.
+            Always check the final partner price before booking.
           </p>
         </div>
 

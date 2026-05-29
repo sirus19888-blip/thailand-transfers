@@ -27,7 +27,7 @@ const steps = [
     number: "2",
     title: "Find the airport operator desk or meeting point.",
     description:
-      "Combined tickets can use different counters at Surat Thani Airport. Follow the pickup details shown on your live ticket.",
+      "Combined tickets can use different counters at Surat Thani Airport. Follow the pickup details shown on your partner ticket.",
     image: "/assets/steps/baggage-claim.png",
   },
   {
@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Is hotel drop-off on Koh Phangan included?",
     answer:
-      "Often the ticket ends at the Koh Phangan pier. Check the live ticket details if you need hotel drop-off or an island-side transfer.",
+      "Often the ticket ends at the Koh Phangan pier. Check the partner ticket details if you need hotel drop-off or an island-side transfer.",
   },
   {
     question: "How long does the transfer take?",
@@ -92,7 +92,7 @@ const faqs = [
   {
     question: "What if my flight is delayed?",
     answer:
-      "Avoid tight ferry connections. If your flight arrives late, compare live departures and choose a ticket with realistic airport processing time.",
+      "Avoid tight ferry connections. If your flight arrives late, compare current departures and choose a ticket with realistic airport processing time.",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function SuratThaniAirportToKohPhanganDetailsPage() {
       practicalTitle="Small things that make Koh Phangan transfers easier"
       practicalIntro="These notes are specific to the airport-to-island route from Surat Thani Airport to Koh Phangan."
       faqTitle="Questions about Surat Thani Airport to Koh Phangan"
-      readyTitle="Check live Koh Phangan transfer prices after you land"
+      readyTitle="Check final Koh Phangan transfer prices after you land"
       readyText="Compare bus plus ferry, van plus ferry and taxi plus ferry options from Surat Thani Airport to Koh Phangan."
       stickyLabel="Best value"
       primaryOptionId="bus-ferry"

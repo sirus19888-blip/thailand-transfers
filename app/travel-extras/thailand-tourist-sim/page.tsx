@@ -97,8 +97,8 @@ export default function ThailandTouristSimPage() {
         <Header />
       </div>
 
-      <section className="lg:hidden">
-        <div className="relative overflow-hidden bg-[#10201d] px-5 pb-6 pt-6 text-white">
+      <section className="mx-auto max-w-md px-4 py-5 lg:hidden">
+        <div className="relative overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-[#10201d] px-5 pb-6 pt-6 text-white shadow-lg shadow-black/5">
           <Image
             src="/assets/promo/sim-card.png"
             alt=""
@@ -129,7 +129,7 @@ export default function ThailandTouristSimPage() {
               hotel messages and booking confirmations.
             </p>
 
-            <div className="mt-5 flex items-center gap-2 rounded-[8px] border border-white/18 bg-white/14 px-3 py-3 backdrop-blur">
+            <div className="mt-5 flex items-center gap-2 rounded-2xl border border-white/18 bg-white/14 px-3 py-3 backdrop-blur">
               <Sparkles className="h-5 w-5 shrink-0 text-[#f4c86a]" />
               <p className="text-[12px] font-semibold leading-5 text-white/86">
                 Provider prices and plan rules can change. Always check the
@@ -139,8 +139,8 @@ export default function ThailandTouristSimPage() {
           </div>
         </div>
 
-        <div className="-mt-5 px-5">
-          <div className="relative z-20 rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_18px_45px_rgba(21,37,31,0.14)]">
+        <div className="-mt-5 px-3">
+          <div className="relative z-20 rounded-[1.5rem] border border-[#e6ddce] bg-white p-4 shadow-[0_18px_45px_rgba(21,37,31,0.14)]">
             <div className="grid gap-3">
               {mobileBenefits.map((benefit) => {
                 const Icon = benefit.icon;
@@ -148,7 +148,7 @@ export default function ThailandTouristSimPage() {
                 return (
                   <article
                     key={benefit.title}
-                    className="flex gap-3 rounded-[8px] bg-[#f8f4ec] p-3"
+                    className="flex gap-3 rounded-2xl bg-[#f8f4ec] p-3"
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#0c5a4d] shadow-sm">
                       <Icon className="h-5 w-5" />
@@ -179,7 +179,7 @@ export default function ThailandTouristSimPage() {
           </div>
         </div>
 
-        <section className="px-5 pt-7">
+        <section className="pt-7">
           <div className="mb-4 flex items-end justify-between gap-4">
             <div>
               <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
@@ -199,7 +199,7 @@ export default function ThailandTouristSimPage() {
                 href={note.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]"
+                className="block rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5"
               >
                 <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
                   Official source
@@ -220,8 +220,8 @@ export default function ThailandTouristSimPage() {
           </p>
         </section>
 
-        <section className="px-5 pt-7">
-          <div className="rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]">
+        <section className="pt-7">
+          <div className="rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
               More extras
             </p>
@@ -236,7 +236,7 @@ export default function ThailandTouristSimPage() {
                 return (
                   <article
                     key={extra.title}
-                    className="flex items-center justify-between gap-3 rounded-[8px] border border-[#eee7dc] bg-[#fbfaf7] p-3"
+                    className="flex items-center justify-between gap-3 rounded-2xl border border-[#eee7dc] bg-[#fbfaf7] p-3"
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0c5a4d] text-white">
@@ -323,7 +323,7 @@ export default function ThailandTouristSimPage() {
                 </h2>
 
                 <p className="mt-2 text-sm leading-6 text-[#30465a]">
-                  A local SIM or eSIM is useful for live pickup instructions,
+                  A local SIM or eSIM is useful for current pickup instructions,
                   driver messages, maps and ride apps. Thailand mobile plans
                   change often, so use official provider pages for current
                   price, data allowance and activation rules.

@@ -22,6 +22,8 @@ export default function BkkPattayaLateArrivalPage() {
       backHref="/routes/bangkok-airport-to-pattaya"
       ctaHref={partnerUrl}
       ctaTrackingId="click_12go_bkk_pattaya_late_arrival"
+      heroImageSrc="/assets/guides/last-ferry-late-arrival.png"
+      heroImageAlt="Late arrival transfer planning in Thailand"
       sections={[
         {
           title: "Decision rule",

@@ -56,7 +56,7 @@ const routeCategories = [
   },
   {
     id: "live-searches",
-    label: "Live",
+    label: "Partner",
     icon: Search,
   },
 ];
@@ -94,7 +94,7 @@ function MobileRouteCard({
   return (
     <Link
       href={route.href}
-      className="group block overflow-hidden rounded-[8px] border border-[#e6ddce] bg-white shadow-[0_16px_38px_rgba(21,37,31,0.08)]"
+      className="group block overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
     >
       <div
         className={`relative overflow-hidden ${
@@ -155,7 +155,7 @@ function MobileRouteSection({
   routes: typeof popularRoutes;
 }) {
   return (
-    <section id={id} className="px-5 pt-7">
+    <section id={id} className="pt-7">
       <div className="mb-4 flex items-end justify-between gap-4">
         <div>
           <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
@@ -186,8 +186,8 @@ export default function RoutesPage() {
         <Header />
       </div>
 
-      <section className="lg:hidden">
-        <div className="relative min-h-[292px] overflow-hidden bg-[#10201d] px-5 pb-6 pt-7 text-white">
+      <section className="mx-auto max-w-md px-4 py-5 lg:hidden">
+        <div className="relative min-h-[292px] overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-[#10201d] px-5 pb-6 pt-7 text-white shadow-lg shadow-black/5">
           <Image
             src="/assets/routes/bangkok-airport-to-pattaya-overview.png"
             alt=""
@@ -213,13 +213,13 @@ export default function RoutesPage() {
 
             <div className="mt-5 grid grid-cols-3 gap-2">
               {[
-                ["Live", "prices"],
+                ["Final", "rules"],
                 ["Airport", "pickup"],
                 ["Island", "ferries"],
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="rounded-[8px] border border-white/18 bg-white/14 px-3 py-3 backdrop-blur"
+                  className="rounded-2xl border border-white/18 bg-white/14 px-3 py-3 backdrop-blur"
                 >
                   <p className="text-[16px] font-black leading-none">{label}</p>
                   <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/70">
@@ -231,8 +231,8 @@ export default function RoutesPage() {
           </div>
         </div>
 
-        <div className="-mt-5 px-5">
-          <div className="relative z-20 rounded-[8px] border border-[#e6ddce] bg-white p-3 shadow-[0_18px_45px_rgba(21,37,31,0.14)]">
+        <div className="-mt-5 px-3">
+          <div className="relative z-20 rounded-[1.5rem] border border-[#e6ddce] bg-white p-3 shadow-[0_18px_45px_rgba(21,37,31,0.14)]">
             <div className="grid grid-cols-4 gap-2">
               {routeCategories.map((category) => {
                 const Icon = category.icon;
@@ -241,7 +241,7 @@ export default function RoutesPage() {
                   <Link
                     key={category.id}
                     href={`#${category.id}`}
-                    className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-[8px] bg-[#f8f4ec] px-2 py-2 text-center text-[11px] font-extrabold text-[#10201d]"
+                    className="flex min-h-16 flex-col items-center justify-center gap-1 rounded-2xl bg-[#f8f4ec] px-2 py-2 text-center text-[11px] font-extrabold text-[#10201d]"
                   >
                     <Icon className="h-4 w-4 text-[#0c5a4d]" />
                     {category.label}
@@ -250,17 +250,17 @@ export default function RoutesPage() {
               })}
             </div>
 
-            <div className="mt-3 flex items-center gap-2 rounded-[8px] bg-[#0c5a4d] px-3 py-3 text-white">
+            <div className="mt-3 flex items-center gap-2 rounded-2xl bg-[#0c5a4d] px-3 py-3 text-white">
               <ShieldCheck className="h-5 w-5 shrink-0 text-[#f4c86a]" />
               <p className="text-[12px] font-semibold leading-5">
-                Partner prices and schedules stay live. Always confirm your
+                Partner prices and schedules stay current. Always confirm your
                 ticket before paying.
               </p>
             </div>
           </div>
         </div>
 
-        <section className="px-5 pt-7">
+        <section className="pt-7">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
@@ -281,7 +281,7 @@ export default function RoutesPage() {
               trackingId="click_12go_routes_mobile_bkk_pattaya"
               fullWidth
             >
-              Check live BKK to Pattaya prices
+              Compare final BKK to Pattaya prices
             </AffiliateButton>
             <AffiliateDisclosure className="mt-3 text-center" />
           </div>
@@ -308,16 +308,16 @@ export default function RoutesPage() {
           routes={beachRoutes}
         />
 
-        <section id="live-searches" className="px-5 pt-7">
-          <div className="rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]">
+        <section id="live-searches" className="pt-7">
+          <div className="rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
-              Live partner searches
+              Partner availability searches
             </p>
             <h2 className="mt-1 text-[23px] font-black tracking-normal text-[#10201d]">
               Travelers often check next
             </h2>
             <p className="mt-2 text-[13px] leading-6 text-[#4b5d58]">
-              These searches open live partner availability. Check exact pickup,
+              These searches open partner availability. Check exact pickup,
               luggage rules and operating days before booking.
             </p>
 
@@ -325,7 +325,7 @@ export default function RoutesPage() {
               {highDemandRouteSearches.slice(0, 6).map((route) => (
                 <article
                   key={route.id}
-                  className="rounded-[8px] border border-[#eee7dc] bg-[#fbfaf7] p-4"
+                  className="rounded-2xl border border-[#eee7dc] bg-[#fbfaf7] p-4"
                 >
                   <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
                     Partner search only
@@ -387,7 +387,7 @@ export default function RoutesPage() {
                 trackingId="click_12go_routes_mobile_bkk_pattaya"
                 fullWidth
               >
-                Check live BKK to Pattaya prices
+                Compare final BKK to Pattaya prices
               </AffiliateButton>
               <AffiliateDisclosure className="mt-3 text-center" />
             </div>
@@ -448,13 +448,13 @@ export default function RoutesPage() {
           <div className="rounded-[28px] border border-[#e7e2d8] bg-white p-5 shadow-xl shadow-black/5 lg:p-7">
             <div className="max-w-3xl">
               <p className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
-                Live searches
+                Partner searches
               </p>
               <h2 className="mt-2 text-[26px] font-extrabold tracking-[-0.03em] text-[#10201d] lg:text-[34px]">
                 Routes travelers often check next
               </h2>
               <p className="mt-3 text-sm leading-6 text-[#30465a] lg:text-base lg:leading-7">
-                These are live partner searches, not full Thailand Transfers
+                These are partner searches, not full Thailand Transfers
                 guides yet. Check exact pickup points, luggage rules,
                 operating days and current availability on the partner page.
               </p>
@@ -481,7 +481,7 @@ export default function RoutesPage() {
                     variant="table"
                     fullWidth
                   >
-                    Check live options
+                    See live schedule and pickup rules
                   </AffiliateButton>
                 </article>
               ))}

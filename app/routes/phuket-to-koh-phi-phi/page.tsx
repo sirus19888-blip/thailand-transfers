@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Phuket to Koh Phi Phi Transfers | Ferry & Speedboat",
   description:
     route?.seoDescription ??
-    "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+    "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
   alternates: {
     canonical: "/routes/phuket-to-koh-phi-phi",
   },
@@ -22,7 +22,7 @@ const optionDetailsById = {
   ferry: {
     label: "Best value",
     operator: "Phuket ferry partners",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/ferry.png",
     pros: ["Good for luggage", "Best value for most travelers"],
@@ -40,7 +40,7 @@ const optionDetailsById = {
   "ferry-van": {
     label: "Door to pier",
     operator: "Hotel transfer and ferry partners",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["Can include hotel pickup", "Simpler pier connection"],
@@ -70,8 +70,8 @@ export default async function PhuketToKohPhiPhiPage({
     <RoutePageTemplate
       route={route}
       badge="Island ferry transfer comparison"
-      desktopDescription="Compare ferry, speedboat and combined hotel transfer options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, hotel pickup if included, luggage allowance and live partner prices before booking."
-      mobileDescription="Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check live schedules, departure pier and luggage rules before booking."
+      desktopDescription="Compare ferry, speedboat and combined hotel transfer options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, hotel pickup if included, luggage allowance and final partner prices before booking."
+      mobileDescription="Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check current schedules, departure pier and luggage rules before booking."
       optionsHeading="Compare Phuket to Koh Phi Phi transfer options"
       detailsNote="For island routes, check the departure pier, arrival pier, hotel pickup if included, luggage allowance and weather-related schedule changes before booking."
       mobileContent={
@@ -84,7 +84,7 @@ export default async function PhuketToKohPhiPhiPage({
           summaryRightText="Weather can affect trips"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/phuket-to-koh-phi-phi/details"
-          footerNote="Live prices and schedules may change. Check departure pier, arrival pier, luggage rules and weather conditions before booking."
+          footerNote="Final prices and schedules may change. Check departure pier, arrival pier, luggage rules and weather conditions before booking."
           selectedDate={selectedDate}
           passengers={passengers}
         />

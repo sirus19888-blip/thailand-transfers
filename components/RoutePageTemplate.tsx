@@ -84,7 +84,7 @@ export default function RoutePageTemplate({
 
               <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 lg:text-base lg:leading-7">
                 {detailsNote ??
-                  "Prices, pickup points and availability can change. Always check live offers and booking conditions on the partner website before booking."}
+                  "Prices, pickup points and availability can change. Always check partner offers and booking conditions on the partner website before booking."}
               </p>
             </div>
 

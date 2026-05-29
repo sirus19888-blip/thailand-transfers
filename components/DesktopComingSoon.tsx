@@ -41,8 +41,8 @@ export function DesktopComingSoon() {
             booking links.
           </p>
 
-          <div className="mt-10 flex max-w-xl items-center gap-5 rounded-[8px] border border-[#e2d6bf] bg-white/86 p-4 shadow-[0_18px_55px_rgba(21,37,31,0.12)] backdrop-blur">
-            <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-[8px] border border-[#e7ddc9] bg-white p-3">
+          <div className="mt-10 flex max-w-xl items-center gap-5 rounded-[24px] border border-[#e2d6bf] bg-white/86 p-4 shadow-[0_18px_55px_rgba(21,37,31,0.12)] backdrop-blur">
+            <div className="flex h-32 w-32 shrink-0 items-center justify-center rounded-[20px] border border-[#e7ddc9] bg-white p-3">
               <Image
                 src="/assets/branding/mobile-qr.svg"
                 alt={`QR code for ${siteName} mobile site`}

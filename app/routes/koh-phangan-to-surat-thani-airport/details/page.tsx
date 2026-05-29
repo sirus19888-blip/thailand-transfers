@@ -20,7 +20,7 @@ const steps = [
     number: "1",
     title: "Confirm your Koh Phangan departure pier.",
     description:
-      "Check the pier, operator and reporting time on your live ticket. Leave time to reach the pier before boarding closes.",
+      "Check the pier, operator and reporting time on your partner ticket. Leave time to reach the pier before boarding closes.",
     image: "/assets/routes/koh-phangan-to-surat-thani-airport.png",
   },
   {
@@ -82,12 +82,12 @@ const faqs = [
   {
     question: "Where do I start on Koh Phangan?",
     answer:
-      "Most tickets start at a listed pier or operator meeting point. Check the live ticket for the exact pier and reporting time.",
+      "Most tickets start at a listed pier or operator meeting point. Check the partner ticket for the exact pier and reporting time.",
   },
   {
     question: "Is the airport transfer included after the ferry?",
     answer:
-      "It depends on the ticket. Combined ferry plus bus or ferry plus van tickets usually include the mainland airport transfer, but always check the live details.",
+      "It depends on the ticket. Combined ferry plus bus or ferry plus van tickets usually include the mainland airport transfer, but always check the partner details.",
   },
   {
     question: "What if the ferry is delayed?",
@@ -126,7 +126,7 @@ export default function KohPhanganToSuratThaniAirportDetailsPage() {
       practicalTitle="Small things that make airport transfers easier"
       practicalIntro="These notes are specific to travelling from Koh Phangan to Surat Thani Airport by ferry and mainland transfer."
       faqTitle="Questions about Koh Phangan to Surat Thani Airport"
-      readyTitle="Check live airport transfer prices before you leave Koh Phangan"
+      readyTitle="Check final airport transfer prices before you leave Koh Phangan"
       readyText="Compare ferry plus bus, ferry plus van and ferry plus taxi options from Koh Phangan to Surat Thani Airport."
       stickyLabel="Flight buffer"
       primaryOptionId="ferry-bus"

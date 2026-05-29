@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Koh Chang to Bangkok Transfers | Ferry, Van, Bus & Taxi",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Koh Chang to Bangkok. Check ferry, van, bus and private taxi options, pickup details, estimated travel times and live partner prices.",
+    "Compare transfer options from Koh Chang to Bangkok. Check ferry, van, bus and private taxi options, pickup details, estimated travel times and final partner prices.",
   alternates: {
     canonical: "/routes/koh-chang-to-bangkok",
   },
@@ -22,7 +22,7 @@ const optionDetailsById = {
   "ferry-van": {
     label: "Island link",
     operator: "Ferry and van partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["Simple island-to-city route", "Good balance of value and ease"],
@@ -31,7 +31,7 @@ const optionDetailsById = {
   "ferry-bus": {
     label: "Best value",
     operator: "Ferry and bus partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/bus-ferry.png",
     pros: ["Budget-friendly route", "Good for Bangkok city drop-off"],
@@ -40,7 +40,7 @@ const optionDetailsById = {
   van: {
     label: "Shared",
     operator: "Shared van partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/van.png",
     pros: ["Often direct after ferry", "Useful for solo travelers"],
@@ -80,7 +80,7 @@ export default async function KohChangToBangkokPage({
       route={route}
       badge="Island transfer comparison"
       desktopDescription="Compare transfer options from Koh Chang to Bangkok, including ferry plus van, ferry plus bus, shared van and private taxi. Check whether ferry crossing, hotel pickup, pier transfer and Bangkok drop-off are included before booking."
-      mobileDescription="Compare ferry, van, bus and taxi options from Koh Chang to Bangkok. Check live schedules, ferry details, pickup points and luggage rules before booking."
+      mobileDescription="Compare ferry, van, bus and taxi options from Koh Chang to Bangkok. Check current schedules, ferry details, pickup points and luggage rules before booking."
       optionsHeading="Compare Koh Chang to Bangkok transfer options"
       detailsNote="For island routes, check whether your ticket includes the ferry crossing, hotel pickup, pier transfer, luggage allowance and Bangkok drop-off point. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30."
       mobileContent={
@@ -93,7 +93,7 @@ export default async function KohChangToBangkokPage({
           summaryRightText="Check final area"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/koh-chang-to-bangkok/details"
-          footerNote="Live prices and schedules may change. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; check hotel pickup, ferry crossing and Bangkok drop-off before booking."
+          footerNote="Final prices and schedules may change. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; check hotel pickup, ferry crossing and Bangkok drop-off before booking."
           selectedDate={selectedDate}
           passengers={passengers}
         />

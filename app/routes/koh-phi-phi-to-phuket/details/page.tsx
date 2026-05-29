@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Where do I leave from on Koh Phi Phi?",
     answer:
-      "Most services leave from Tonsai Pier or a listed operator pier. Check the live ticket for the exact pier and reporting time.",
+      "Most services leave from Tonsai Pier or a listed operator pier. Check the partner ticket for the exact pier and reporting time.",
   },
   {
     question: "Is ferry or speedboat better to Phuket?",
@@ -87,7 +87,7 @@ const faqs = [
   {
     question: "Where do I arrive in Phuket?",
     answer:
-      "Arrival pier depends on the operator. Check the live ticket before arranging onward taxi, van or airport transfer.",
+      "Arrival pier depends on the operator. Check the partner ticket before arranging onward taxi, van or airport transfer.",
   },
   {
     question: "Can I connect to a Phuket flight the same day?",
@@ -126,7 +126,7 @@ export default function KohPhiPhiToPhuketDetailsPage() {
       practicalTitle="Small things that make Phuket transfers easier"
       practicalIntro="These notes are specific to travelling from Koh Phi Phi to Phuket by ferry or speedboat."
       faqTitle="Questions about Koh Phi Phi to Phuket"
-      readyTitle="Check live Phuket transfer prices before you leave Phi Phi"
+      readyTitle="Check final Phuket transfer prices before you leave Phi Phi"
       readyText="Compare ferry and speedboat options from Koh Phi Phi to Phuket."
       stickyLabel="Best value"
       primaryOptionId="ferry"

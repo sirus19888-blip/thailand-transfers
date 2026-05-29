@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Where do I leave from on Koh Phi Phi?",
     answer:
-      "Most services leave from Tonsai Pier or a listed operator pier. Check the live ticket for the exact pier and reporting time.",
+      "Most services leave from Tonsai Pier or a listed operator pier. Check the partner ticket for the exact pier and reporting time.",
   },
   {
     question: "Is ferry or speedboat better to Krabi?",
@@ -87,12 +87,12 @@ const faqs = [
   {
     question: "Can I book onward transfer in Krabi?",
     answer:
-      "Some ferry plus van tickets include onward transfer to Krabi areas or the airport. Check the live ticket details before booking.",
+      "Some ferry plus van tickets include onward transfer to Krabi areas or the airport. Check the partner ticket details before booking.",
   },
   {
     question: "Can bad weather affect the trip?",
     answer:
-      "Yes. Sea conditions can affect both ferry and speedboat schedules, especially speedboats. Check live operator information before booking.",
+      "Yes. Sea conditions can affect both ferry and speedboat schedules, especially speedboats. Check current operator information before booking.",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function KohPhiPhiToKrabiDetailsPage() {
       practicalTitle="Small things that make Krabi transfers easier"
       practicalIntro="These notes are specific to travelling from Koh Phi Phi to Krabi by ferry or speedboat."
       faqTitle="Questions about Koh Phi Phi to Krabi"
-      readyTitle="Check live Krabi transfer prices before you leave Phi Phi"
+      readyTitle="Check final Krabi transfer prices before you leave Phi Phi"
       readyText="Compare ferry, speedboat and ferry plus van options from Koh Phi Phi to Krabi."
       stickyLabel="Best value"
       primaryOptionId="ferry"

@@ -1,4 +1,4 @@
-﻿export const mainRoute = {
+export const mainRoute = {
   slug: "bangkok-airport-to-pattaya",
   routeKey: "bkk_pattaya",
   title: "Bangkok Suvarnabhumi Airport (BKK) to Pattaya",
@@ -21,7 +21,7 @@ export const transferOptions = [
     price: "Typical budget option",
     priceNote: "final on partner",
     duration: "2h - 2h 30m",
-    departures: "Live schedule",
+    departures: "Current schedule",
     pickup: "Level 1, Gate 8 or voucher point",
     baggage: "1 large + 1 small",
     bestFor: "Budget travelers",
@@ -59,7 +59,7 @@ export const transferOptions = [
     price: "Typical shared option",
     priceNote: "final on partner",
     duration: "2h",
-    departures: "Live schedule",
+    departures: "Current schedule",
     pickup: "Airport or partner meeting point",
     baggage: "1 large + 1 small",
     bestFor: "Small groups and hotel areas",
@@ -353,7 +353,7 @@ export const highDemandRouteSearches = [
     title: "Suvarnabhumi Airport to Bangkok",
     type: "Airport city transfer",
     description:
-      "Live search for taxis, vans, buses and city transfer options after landing at BKK.",
+      "Partner search for taxis, vans, buses and city transfer options after landing at BKK.",
     affiliateUrl:
       "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-live-search",
     trackingId: "click_12go_live_suvarnabhumi_bangkok",
@@ -363,7 +363,7 @@ export const highDemandRouteSearches = [
     title: "Suvarnabhumi Airport to Don Mueang Airport",
     type: "Airport-to-airport",
     description:
-      "Live search for BKK to DMK transfers when you need a same-day airport connection.",
+      "Partner search for BKK to DMK transfers when you need a same-day airport connection.",
     affiliateUrl:
       "https://12go.asia/en/travel/suvarnabhumi-airport/don-mueang-airport/?z=15791301&sub_id=suvarnabhumi-dmk-live-search",
     trackingId: "click_12go_live_suvarnabhumi_dmk",
@@ -373,7 +373,7 @@ export const highDemandRouteSearches = [
     title: "Bangkok to Koh Tao",
     type: "Island connection",
     description:
-      "Live search for combined bus, ferry, train, flight and transfer options to Koh Tao.",
+      "Partner search for combined bus, ferry, train, flight and transfer options to Koh Tao.",
     affiliateUrl:
       "https://12go.asia/en/travel/bangkok/koh-tao/?z=15791301&sub_id=bangkok-koh-tao-live-search",
     trackingId: "click_12go_live_bangkok_koh_tao",
@@ -383,7 +383,7 @@ export const highDemandRouteSearches = [
     title: "Bangkok to Koh Samui",
     type: "Island connection",
     description:
-      "Live search for ferry, bus, train, flight and private transfer combinations to Koh Samui.",
+      "Partner search for ferry, bus, train, flight and private transfer combinations to Koh Samui.",
     affiliateUrl:
       "https://12go.asia/en/travel/bangkok-transfer/koh-samui/?z=15791301&sub_id=bangkok-koh-samui-live-search",
     trackingId: "click_12go_live_bangkok_koh_samui",
@@ -393,7 +393,7 @@ export const highDemandRouteSearches = [
     title: "Bangkok to Koh Phangan",
     type: "Island connection",
     description:
-      "Live search for ferry, bus, train, flight and transfer options to Koh Phangan.",
+      "Partner search for ferry, bus, train, flight and transfer options to Koh Phangan.",
     affiliateUrl:
       "https://12go.asia/en/travel/bangkok/koh-phangan/?z=15791301&sub_id=bangkok-koh-phangan-live-search",
     trackingId: "click_12go_live_bangkok_koh_phangan",
@@ -403,7 +403,7 @@ export const highDemandRouteSearches = [
     title: "Phuket to Krabi",
     type: "South Thailand route",
     description:
-      "Live search for vans, buses, ferries, flights and taxis between Phuket and Krabi.",
+      "Partner search for vans, buses, ferries, flights and taxis between Phuket and Krabi.",
     affiliateUrl:
       "https://12go.asia/en/travel/phuket/krabi/?z=15791301&sub_id=phuket-krabi-live-search",
     trackingId: "click_12go_live_phuket_krabi",
@@ -413,7 +413,7 @@ export const highDemandRouteSearches = [
     title: "Chiang Mai to Pai",
     type: "Northern route",
     description:
-      "Live search for van, bus and taxi options between Chiang Mai and Pai.",
+      "Partner search for van, bus and taxi options between Chiang Mai and Pai.",
     affiliateUrl:
       "https://12go.asia/en/travel/chiang-mai/pai/?z=15791301&sub_id=chiang-mai-pai-live-search",
     trackingId: "click_12go_live_chiang_mai_pai",
@@ -423,7 +423,7 @@ export const highDemandRouteSearches = [
     title: "Bangkok to Ayutthaya",
     type: "Day-trip route",
     description:
-      "Live search for trains, vans, buses and taxis between Bangkok and Ayutthaya.",
+      "Partner search for trains, vans, buses and taxis between Bangkok and Ayutthaya.",
     affiliateUrl:
       "https://12go.asia/en/travel/bangkok/ayutthaya/?z=15791301&sub_id=bangkok-ayutthaya-live-search",
     trackingId: "click_12go_live_bangkok_ayutthaya",
@@ -433,7 +433,7 @@ export const highDemandRouteSearches = [
     title: "Krabi Airport to Koh Lanta",
     type: "Airport to island",
     description:
-      "Live search for van, bus, ferry and taxi options from Krabi Airport to Koh Lanta.",
+      "Partner search for van, bus, ferry and taxi options from Krabi Airport to Koh Lanta.",
     affiliateUrl:
       "https://12go.asia/en/travel/krabi-airport/koh-lanta/?z=15791301&sub_id=krabi-airport-koh-lanta-live-search",
     trackingId: "click_12go_live_krabi_airport_koh_lanta",

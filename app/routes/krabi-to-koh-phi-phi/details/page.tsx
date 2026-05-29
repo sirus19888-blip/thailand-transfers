@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Can I start from Ao Nang?",
     answer:
-      "Some tickets include Ao Nang or Krabi area pickup before the boat. Check the live ticket for pickup zones and departure pier.",
+      "Some tickets include Ao Nang or Krabi area pickup before the boat. Check the partner ticket for pickup zones and departure pier.",
   },
   {
     question: "Where do boats arrive on Koh Phi Phi?",
@@ -126,7 +126,7 @@ export default function KrabiToKohPhiPhiDetailsPage() {
       practicalTitle="Small things that make Phi Phi transfers easier"
       practicalIntro="These notes are specific to travelling from Krabi to Koh Phi Phi by ferry or speedboat."
       faqTitle="Questions about Krabi to Koh Phi Phi"
-      readyTitle="Check live Phi Phi transfer prices before you leave Krabi"
+      readyTitle="Check final Phi Phi transfer prices before you leave Krabi"
       readyText="Compare ferry, speedboat and van plus ferry options from Krabi to Koh Phi Phi."
       stickyLabel="Best value"
       primaryOptionId="ferry"

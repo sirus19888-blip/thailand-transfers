@@ -22,10 +22,10 @@ function buildOptionDetails(route: RoutePageData) {
       {
         label: getOptionLabel(option),
         operator: `${option.name} partner operators`,
-        departures: option.id.includes("taxi") ? "On demand" : "Live schedule",
+        departures: option.id.includes("taxi") ? "On demand" : "Current schedule",
         baggage: option.id.includes("taxi") ? "Private car" : "Check rules",
         image: getMobileVehicleImage(option.id),
-        pros: [option.bestFor, "Live partner availability"],
+        pros: [option.bestFor, "Partner availability"],
         cons: ["Details can change", "Check ticket rules before booking"],
       },
     ]),
@@ -118,12 +118,12 @@ function StandardMobileRouteOptionsView({
       route={route}
       title={compactRouteTitle(route)}
       summaryLeftTitle="Route data"
-      summaryLeftText="Check live offers"
+      summaryLeftText="Final partner rules"
       summaryRightTitle="Pickup details"
       summaryRightText="Confirm before booking"
       optionDetailsById={buildOptionDetails(route)}
       detailsHref={`/routes/${route.slug}/details`}
-      footerNote="Live prices and schedules may change. Check pickup point, luggage rules and operator notes before booking."
+      footerNote="Final prices and schedules are confirmed by the partner. Check pickup point, luggage rules and operator notes before booking."
       selectedDate={selectedDate}
       passengers={passengers}
     />

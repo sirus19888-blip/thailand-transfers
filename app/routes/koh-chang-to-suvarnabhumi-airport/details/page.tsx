@@ -88,12 +88,12 @@ const faqs = [
   {
     question: "Is the ferry included?",
     answer:
-      "It depends on the ticket. Combined airport transfers often include the ferry, but always check the live details for ferry crossing and pier transfer.",
+      "It depends on the ticket. Combined airport transfers often include the ferry, but always check the partner details for ferry crossing and pier transfer.",
   },
   {
     question: "Can I fly from Trat instead?",
     answer:
-      "Some travelers compare flight combinations from the Trat area, but connection details vary. Check live schedules and baggage rules carefully.",
+      "Some travelers compare flight combinations from the Trat area, but connection details vary. Check current schedules and baggage rules carefully.",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function KohChangToSuvarnabhumiAirportDetailsPage() {
       practicalTitle="Small things that make airport transfers easier"
       practicalIntro="These notes are specific to travelling from Koh Chang to Suvarnabhumi Airport by ferry and road transfer."
       faqTitle="Questions about Koh Chang to Suvarnabhumi Airport"
-      readyTitle="Check live BKK transfer prices before leaving Koh Chang"
+      readyTitle="Check final BKK transfer prices before leaving Koh Chang"
       readyText="Compare ferry plus van, bus plus ferry, private taxi and flight combinations from Koh Chang to Suvarnabhumi Airport."
       stickyLabel="Flight buffer"
       primaryOptionId="ferry-van"

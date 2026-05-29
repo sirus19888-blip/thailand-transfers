@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Surat Thani Airport to Koh Samui Transfers | Bus, Ferry & Van",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and live partner prices.",
+    "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and final partner prices.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-samui",
   },
@@ -22,7 +22,7 @@ const optionDetailsById = {
   "bus-ferry": {
     label: "Best value",
     operator: "Airport bus and ferry partners",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/bus-ferry.png",
     pros: ["Simple airport-to-island ticket", "Good value for most travelers"],
@@ -31,7 +31,7 @@ const optionDetailsById = {
   "van-ferry": {
     label: "Smaller ride",
     operator: "Van and ferry partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["Smaller shared transfer", "Useful when bus seats are limited"],
@@ -40,7 +40,7 @@ const optionDetailsById = {
   "bus-ferry-van": {
     label: "Hotel link",
     operator: "Combined transfer partners",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/bus-ferry.png",
     pros: ["Can include more of the island connection", "Good for bundled travel"],
@@ -49,7 +49,7 @@ const optionDetailsById = {
   "ferry-van": {
     label: "Compare all",
     operator: "Ferry and van partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["More partner choices", "Useful for alternative departure times"],
@@ -79,10 +79,10 @@ export default async function SuratThaniAirportToKohSamuiPage({
     <RoutePageTemplate
       route={route}
       badge="Airport to island transfer comparison"
-      desktopDescription="Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, luggage allowance and live partner prices before booking."
-      mobileDescription="Compare bus, ferry and van transfer options from Surat Thani Airport to Koh Samui. Check live schedules, airport pickup points, ferry crossing and luggage rules before booking."
+      desktopDescription="Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, luggage allowance and final partner prices before booking."
+      mobileDescription="Compare bus, ferry and van transfer options from Surat Thani Airport to Koh Samui. Check current schedules, airport pickup points, ferry crossing and luggage rules before booking."
       optionsHeading="Compare Surat Thani Airport to Koh Samui transfer options"
-      detailsNote="For airport-to-island transfers, allow extra time for baggage claim and possible flight delays. Check your airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance and live operator schedule before booking."
+      detailsNote="For airport-to-island transfers, allow extra time for baggage claim and possible flight delays. Check your airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance and current operator schedule before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen
           route={route}
@@ -93,7 +93,7 @@ export default async function SuratThaniAirportToKohSamuiPage({
           summaryRightText="Check operator desk"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/surat-thani-airport-to-koh-samui/details"
-          footerNote="Live prices and schedules may change. Allow extra time after landing and check ferry, pier and hotel drop-off rules."
+          footerNote="Final prices and schedules may change. Allow extra time after landing and check ferry, pier and hotel drop-off rules."
           selectedDate={selectedDate}
           passengers={passengers}
         />

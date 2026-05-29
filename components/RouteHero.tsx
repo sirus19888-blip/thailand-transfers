@@ -28,7 +28,7 @@ export function RouteHero() {
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
               Compare the easiest ways to travel from Suvarnabhumi Airport to
               Pattaya. Choose between airport bus, private taxi and shared van,
-              then continue to live prices through a trusted booking partner.
+              then continue to final rules through a trusted booking partner.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">

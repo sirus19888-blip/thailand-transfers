@@ -22,6 +22,8 @@ export default function BkkPattayaBusGuidePage() {
       backHref="/routes/bangkok-airport-to-pattaya"
       ctaHref={busUrl}
       ctaTrackingId="click_12go_bkk_pattaya_bus_guide"
+      heroImageSrc="/assets/routes/bangkok-airport-to-pattaya.png"
+      heroImageAlt="Bangkok airport to Pattaya bus transfer guide"
       sections={[
         {
           title: "Use it when",

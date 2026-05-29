@@ -37,7 +37,7 @@ function getFerryAdvice(route: RoutePageData) {
   }
 
   return {
-    lastFerry: "Check the live ferry window before booking",
+    lastFerry: "Check the ferry window before booking",
     warning: "Sea conditions, pier changes and reporting time can affect the full transfer.",
   };
 }

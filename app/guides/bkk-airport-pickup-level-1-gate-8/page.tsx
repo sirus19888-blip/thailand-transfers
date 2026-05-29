@@ -17,13 +17,15 @@ export default function BkkPickupGate8GuidePage() {
       title="BKK Level 1 Gate 8"
       intro="A compact pickup guide for travelers whose ticket tells them to meet at Suvarnabhumi Airport Level 1, Gate 8."
       backHref="/routes/bangkok-airport-to-pattaya/details"
+      heroImageSrc="/assets/steps/immigration.png"
+      heroImageAlt="Suvarnabhumi Airport arrival area before pickup"
       sections={[
         {
           title: "Where to go",
           body: [
             "After immigration and baggage claim, follow signs toward the lower transport level.",
             "Look for Level 1 / Floor 1 and then Gate 8.",
-            "Use your live voucher if it names a different counter, bus terminal or partner meeting point.",
+            "Use your partner voucher if it names a different counter, bus terminal or partner meeting point.",
           ],
         },
         {

@@ -22,6 +22,8 @@ export default function BkkPattayaTaxiGuidePage() {
       backHref="/routes/bangkok-airport-to-pattaya"
       ctaHref={taxiUrl}
       ctaTrackingId="click_12go_bkk_pattaya_taxi_guide"
+      heroImageSrc="/assets/vehicles/mobile/taxi.png"
+      heroImageAlt="Private taxi transfer from BKK Airport to Pattaya"
       sections={[
         {
           title: "Why it wins late",

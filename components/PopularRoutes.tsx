@@ -19,7 +19,7 @@ export function PopularRoutes() {
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-6 text-[#30465a]">
-              Choose a route, compare transport options and continue to live
+              Choose a route, compare transport options and continue to partner
               booking prices through trusted partners.
             </p>
           </div>

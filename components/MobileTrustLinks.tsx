@@ -5,7 +5,7 @@ import { legalLinks } from "@/data/legalPages";
 export function MobileTrustLinks() {
   return (
     <section className="bg-[#fbfaf7] px-5 pt-3 lg:hidden">
-      <div className="mx-auto max-w-md rounded-[8px] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]">
+      <div className="mx-auto max-w-md rounded-[1.5rem] border border-[#e6ddce] bg-white p-4 shadow-[0_16px_38px_rgba(21,37,31,0.08)]">
         <div className="flex gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
             <ShieldCheck className="h-5 w-5" />

@@ -44,7 +44,7 @@ const steps = [
     number: "2",
     title: "Find the airport operator desk or meeting point.",
     description:
-      "Airport-to-island tickets can use different counters or partner desks. Follow the pickup point shown on your live ticket.",
+      "Airport-to-island tickets can use different counters or partner desks. Follow the pickup point shown on your partner ticket.",
     image: "/assets/steps/baggage-claim.png",
   },
   {
@@ -99,7 +99,7 @@ const faqs = [
   {
     question: "Is hotel drop-off on Koh Samui included?",
     answer:
-      "Sometimes, but not always. Check the live ticket details for the Koh Samui arrival pier and whether a hotel transfer or van connection is included.",
+      "Sometimes, but not always. Check the partner ticket details for the Koh Samui arrival pier and whether a hotel transfer or van connection is included.",
   },
   {
     question: "How long does the trip take?",
@@ -109,7 +109,7 @@ const faqs = [
   {
     question: "What if my flight is delayed?",
     answer:
-      "Avoid tight ferry connections. If your flight arrives late, check live departures and choose a ticket with realistic airport processing time.",
+      "Avoid tight ferry connections. If your flight arrives late, check current departures and choose a ticket with realistic airport processing time.",
   },
 ];
 
@@ -280,7 +280,7 @@ function MobileDetails() {
                   If the schedule changes
                 </p>
                 <p className="mt-1 text-xs leading-5 text-slate-600">
-                  Check the next live ferry or combined ticket before switching
+                  Check the next available ferry or combined ticket before switching
                   operators. A private road vehicle still needs a valid ferry
                   connection to Koh Samui.
                 </p>
@@ -363,7 +363,7 @@ function MobileDetails() {
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must
-          still be checked on the live ticket.
+          still be checked on the partner ticket.
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
@@ -373,7 +373,7 @@ function MobileDetails() {
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">Best value</p>
             <p className="text-base font-extrabold text-[#10201d]">
-              Live price
+              Final price
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go
               </span>
@@ -636,7 +636,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                 </p>
 
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                  Check live Koh Samui transfer prices after you land
+                  Check final Koh Samui transfer prices after you land
                 </h2>
 
                 <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">

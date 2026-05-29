@@ -72,7 +72,7 @@ const optionDetailsById = {
   bus: {
     label: "Cheapest typical option",
     operator: "Roong Reuang Coach and partner buses",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/bus.png",
     pros: ["Lowest typical price", "Direct airport-to-Pattaya route"],
@@ -90,7 +90,7 @@ const optionDetailsById = {
   van: {
     label: "Best with luggage",
     operator: "Van and minibus partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/van.png",
     pros: ["Smaller vehicle", "Useful for hotel-area transfers"],
@@ -119,12 +119,12 @@ export default async function BangkokAirportToPattayaPage({
           route={mobileRoute}
           title="BKK - Pattaya"
           summaryLeftTitle="Airport route data"
-          summaryLeftText="Check live offers"
+          summaryLeftText="Final partner rules"
           summaryRightTitle="Pattaya drop-off"
           summaryRightText="Choose by hotel area"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/bangkok-airport-to-pattaya/details"
-          footerNote="Live prices and schedules may change. Allow extra time after landing and check the pickup point before booking."
+          footerNote="Final prices and schedules are confirmed by the partner. Allow extra time after landing and check the pickup point before booking."
           selectedDate={selectedDate}
           passengers={passengers}
         />

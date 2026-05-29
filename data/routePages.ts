@@ -1,4 +1,4 @@
-﻿export type RouteTransportOption = {
+export type RouteTransportOption = {
   id: string;
   name: string;
   price: string;
@@ -219,7 +219,7 @@ export const routePages: RoutePageData[] = [
     title: "Koh Chang to Bangkok Transfers",
     seoTitle: "Koh Chang to Bangkok Transfers | Ferry, Van, Bus & Taxi",
     seoDescription:
-      "Compare transfer options from Koh Chang to Bangkok. Check ferry, van, bus and private taxi options, pickup details, estimated travel times and live partner prices.",
+      "Compare transfer options from Koh Chang to Bangkok. Check ferry, van, bus and private taxi options, pickup details, estimated travel times and final partner prices.",
     from: "Koh Chang",
     to: "Bangkok",
     intro:
@@ -282,7 +282,7 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Koh Chang to Suvarnabhumi Airport Transfers | Ferry, Van, Taxi & Flight",
     seoDescription:
-      "Compare transfer options from Koh Chang to Suvarnabhumi Airport. Check ferry, van, taxi and flight options, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Koh Chang to Suvarnabhumi Airport. Check ferry, van, taxi and flight options, pickup details, travel times and final partner prices.",
     from: "Koh Chang",
     to: "Suvarnabhumi Airport",
     intro:
@@ -330,7 +330,7 @@ export const routePages: RoutePageData[] = [
         id: "flight",
         name: "Flight + Transfer",
         price: "Final price on partner",
-        duration: "Check live schedule",
+        duration: "Check current schedule",
         pickup: "Koh Chang, Trat area or airport connection depending on ticket",
         bestFor:
           "Travelers who prefer flying part of the journey and will check all connection details",
@@ -346,11 +346,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Suvarnabhumi Airport to Koh Chang Transfers | Ferry, Van, Bus & Taxi",
     seoDescription:
-      "Compare transfer options from Suvarnabhumi Airport to Koh Chang. Check ferry, van, bus, taxi and flight options, airport pickup details, travel times and live partner prices.",
+      "Compare transfer options from Suvarnabhumi Airport to Koh Chang. Check ferry, van, bus, taxi and flight options, airport pickup details, travel times and final partner prices.",
     from: "Suvarnabhumi Airport",
     to: "Koh Chang",
     intro:
-      "Compare transfer options from Suvarnabhumi Airport to Koh Chang, including ferry plus van, bus plus ferry, private taxi and flight combinations. This route starts at Bangkok Suvarnabhumi Airport and usually involves travel to the mainland pier plus a ferry crossing to Koh Chang, so always check airport pickup point, arrival timing, ferry crossing, pier transfer, luggage allowance and hotel drop-off before booking. Ferry Koh Chang guidance currently shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays, and check live schedules before choosing a ticket. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Suvarnabhumi Airport to Koh Chang, including ferry plus van, bus plus ferry, private taxi and flight combinations. This route starts at Bangkok Suvarnabhumi Airport and usually involves travel to the mainland pier plus a ferry crossing to Koh Chang, so always check airport pickup point, arrival timing, ferry crossing, pier transfer, luggage allowance and hotel drop-off before booking. Ferry Koh Chang guidance currently shows daily service from 06:30 to 18:30, cash-only pier tickets for standalone ferry crossings, and Trat / Centrepoint Ferry suspended since July 2024. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays, and check current schedules before choosing a ticket. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/suvarnabhumi-airport/koh-chang/?z=15791301&sub_id=suvarnabhumi-airport-koh-chang-general",
     options: [
@@ -394,7 +394,7 @@ export const routePages: RoutePageData[] = [
         id: "flight",
         name: "Flight + Transfer",
         price: "Final price on partner",
-        duration: "Check live schedule",
+        duration: "Check current schedule",
         pickup:
           "Suvarnabhumi Airport, Trat area or pier connection depending on ticket",
         bestFor:
@@ -410,11 +410,11 @@ export const routePages: RoutePageData[] = [
     title: "Bangkok to Hua Hin Transfers",
     seoTitle: "Bangkok to Hua Hin Transfers | Van, Bus, Train & Taxi",
     seoDescription:
-      "Compare transfer options from Bangkok to Hua Hin. Check van, bus, train and private taxi options, pickup details, estimated travel times and live partner prices.",
+      "Compare transfer options from Bangkok to Hua Hin. Check van, bus, train and private taxi options, pickup details, estimated travel times and final partner prices.",
     from: "Bangkok",
     to: "Hua Hin",
     intro:
-      "Compare transfer options from Bangkok to Hua Hin, including shared van, bus, train and private taxi. This is one of the most popular city-to-beach routes from Bangkok, especially for travelers going to Hua Hin after spending time in the capital. Check pickup location, Hua Hin drop-off point, luggage allowance, travel time and live partner prices before booking. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Bangkok to Hua Hin, including shared van, bus, train and private taxi. This is one of the most popular city-to-beach routes from Bangkok, especially for travelers going to Hua Hin after spending time in the capital. Check pickup location, Hua Hin drop-off point, luggage allowance, travel time and final partner prices before booking. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/bangkok/hua-hin/?z=15791301&sub_id=bangkok-hua-hin-general",
     options: [
@@ -474,11 +474,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Suvarnabhumi Airport to Hua Hin Transfers | Bus, Taxi & Van",
     seoDescription:
-      "Compare transfer options from Suvarnabhumi Airport to Hua Hin. Check bus, private taxi, bus plus van and flight transfer options, airport pickup details, travel times and live partner prices.",
+      "Compare transfer options from Suvarnabhumi Airport to Hua Hin. Check bus, private taxi, bus plus van and flight transfer options, airport pickup details, travel times and final partner prices.",
     from: "Suvarnabhumi Airport",
     to: "Hua Hin",
     intro:
-      "Compare transfer options from Suvarnabhumi Airport to Hua Hin, including airport bus, private taxi, bus plus van and flight transfer combinations. This is a popular airport-to-beach route for travelers landing in Bangkok and going directly to Hua Hin. Check airport pickup point, arrival timing, luggage allowance, Hua Hin drop-off location, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Suvarnabhumi Airport to Hua Hin, including airport bus, private taxi, bus plus van and flight transfer combinations. This is a popular airport-to-beach route for travelers landing in Bangkok and going directly to Hua Hin. Check airport pickup point, arrival timing, luggage allowance, Hua Hin drop-off location, travel time and final partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/suvarnabhumi-airport/hua-hin/?z=15791301&sub_id=suvarnabhumi-airport-hua-hin-general",
     options: [
@@ -522,7 +522,7 @@ export const routePages: RoutePageData[] = [
         id: "flight",
         name: "Flight + Transfer",
         price: "Final price on partner",
-        duration: "Check live schedule",
+        duration: "Check current schedule",
         pickup:
           "Suvarnabhumi Airport or connecting airport transfer depending on ticket",
         bestFor:
@@ -539,11 +539,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Don Mueang Airport to Hua Hin Transfers | Train, Bus, Van & Taxi",
     seoDescription:
-      "Compare transfer options from Don Mueang Airport to Hua Hin. Check train, bus, bus plus van and private taxi options, airport pickup details, travel times and live partner prices.",
+      "Compare transfer options from Don Mueang Airport to Hua Hin. Check train, bus, bus plus van and private taxi options, airport pickup details, travel times and final partner prices.",
     from: "Don Mueang Airport",
     to: "Hua Hin",
     intro:
-      "Compare transfer options from Don Mueang Airport to Hua Hin, including train, bus, bus plus van and private taxi. This route is useful for travelers landing at Bangkok Don Mueang Airport and going directly to Hua Hin. Check airport pickup point, station or terminal details, luggage allowance, Hua Hin drop-off location, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Don Mueang Airport to Hua Hin, including train, bus, bus plus van and private taxi. This route is useful for travelers landing at Bangkok Don Mueang Airport and going directly to Hua Hin. Check airport pickup point, station or terminal details, luggage allowance, Hua Hin drop-off location, travel time and final partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/don-mueang-airport/hua-hin/?z=15791301&sub_id=don-mueang-airport-hua-hin-general",
     options: [
@@ -603,11 +603,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Surat Thani Airport to Koh Samui Transfers | Bus, Ferry & Van",
     seoDescription:
-      "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and live partner prices.",
+      "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and final partner prices.",
     from: "Surat Thani Airport",
     to: "Koh Samui",
     intro:
-      "Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. This route is useful for travelers landing at Surat Thani Airport and continuing to Koh Samui without booking each leg separately. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. This route is useful for travelers landing at Surat Thani Airport and continuing to Koh Samui without booking each leg separately. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance, travel time and final partner prices before booking. If you arrive by plane, allow extra time for baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-general",
     options: [
@@ -667,11 +667,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Koh Samui to Surat Thani Airport Transfers | Ferry, Bus & Van",
     seoDescription:
-      "Compare transfer options from Koh Samui to Surat Thani Airport. Check ferry plus bus, ferry plus van and combined transfer options, island pickup details, ferry crossing, travel times and live partner prices.",
+      "Compare transfer options from Koh Samui to Surat Thani Airport. Check ferry plus bus, ferry plus van and combined transfer options, island pickup details, ferry crossing, travel times and final partner prices.",
     from: "Koh Samui",
     to: "Surat Thani Airport",
     intro:
-      "Compare transfer options from Koh Samui to Surat Thani Airport, including ferry plus bus, ferry plus van, bus plus ferry and combined island-to-airport tickets. This route is useful for travelers leaving Koh Samui and connecting to a flight from Surat Thani Airport. Check hotel pickup if included, Koh Samui departure pier, ferry crossing, mainland transfer, airport drop-off, luggage allowance, travel time and live partner prices before booking. Allow extra time before your flight, especially during bad weather, ferry delays or busy travel periods. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Koh Samui to Surat Thani Airport, including ferry plus bus, ferry plus van, bus plus ferry and combined island-to-airport tickets. This route is useful for travelers leaving Koh Samui and connecting to a flight from Surat Thani Airport. Check hotel pickup if included, Koh Samui departure pier, ferry crossing, mainland transfer, airport drop-off, luggage allowance, travel time and final partner prices before booking. Allow extra time before your flight, especially during bad weather, ferry delays or busy travel periods. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/koh-samui/surat-thani-airport/?z=15791301&sub_id=koh-samui-surat-thani-airport-general",
     options: [
@@ -731,11 +731,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Phuket Airport to Patong Beach Transfers | Bus, Van & Taxi",
     seoDescription:
-      "Compare transfer options from Phuket Airport to Patong Beach. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Phuket Airport to Patong Beach. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
     from: "Phuket Airport",
     to: "Patong Beach",
     intro:
-      "Compare transfer options from Phuket Airport to Patong Beach, including airport bus, shared van, private taxi and taxi plus van combinations. This is one of the most popular Phuket arrival routes for travelers going from the airport to hotels near Patong Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Phuket Airport to Patong Beach, including airport bus, shared van, private taxi and taxi plus van combinations. This is one of the most popular Phuket arrival routes for travelers going from the airport to hotels near Patong Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and final partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-general",
     options: [
@@ -795,11 +795,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Patong Beach to Phuket Airport Transfers | Bus, Van & Taxi",
     seoDescription:
-      "Compare transfer options from Patong Beach to Phuket Airport. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Patong Beach to Phuket Airport. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
     from: "Patong Beach",
     to: "Phuket Airport",
     intro:
-      "Compare transfer options from Patong Beach to Phuket Airport, including airport bus, shared van, private taxi and taxi plus van combinations. This route is useful for travelers leaving Patong and connecting to a flight from Phuket Airport. Check hotel pickup area, airport drop-off point, luggage allowance, travel time and live partner prices before booking. Allow extra time before your flight, especially during busy traffic periods or bad weather. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Patong Beach to Phuket Airport, including airport bus, shared van, private taxi and taxi plus van combinations. This route is useful for travelers leaving Patong and connecting to a flight from Phuket Airport. Check hotel pickup area, airport drop-off point, luggage allowance, travel time and final partner prices before booking. Allow extra time before your flight, especially during busy traffic periods or bad weather. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/patong-beach/phuket-airport/?z=15791301&sub_id=patong-beach-phuket-airport-general",
     options: [
@@ -859,11 +859,11 @@ export const routePages: RoutePageData[] = [
     seoTitle:
       "Phuket Airport to Kata and Karon Transfers | Bus, Van & Taxi",
     seoDescription:
-      "Compare transfer options from Phuket Airport to Kata and Karon. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Phuket Airport to Kata and Karon. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
     from: "Phuket Airport",
     to: "Kata and Karon",
     intro:
-      "Compare transfer options from Phuket Airport to Kata and Karon, including airport bus, shared van, private taxi and taxi plus van combinations. This route is useful for travelers landing in Phuket and going directly to hotels around Kata Beach or Karon Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare transfer options from Phuket Airport to Kata and Karon, including airport bus, shared van, private taxi and taxi plus van combinations. This route is useful for travelers landing in Phuket and going directly to hotels around Kata Beach or Karon Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and final partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfers is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/phuket-airport/kata-karon/?z=15791301&sub_id=phuket-airport-kata-karon-general",
     options: [
@@ -922,7 +922,7 @@ export const routePages: RoutePageData[] = [
     title: "Krabi Airport to Ao Nang transfers",
     seoTitle: "Krabi Airport to Ao Nang Transfers | Bus, Van & Taxi",
     seoDescription:
-      "Compare transfer options from Krabi Airport to Ao Nang. Check airport bus, shared van, private taxi, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Krabi Airport to Ao Nang. Check airport bus, shared van, private taxi, pickup details, travel times and final partner prices.",
     from: "Krabi Airport",
     to: "Ao Nang",
     intro:
@@ -981,7 +981,7 @@ export const routePages: RoutePageData[] = [
     title: "Ao Nang to Krabi Airport transfers",
     seoTitle: "Ao Nang to Krabi Airport Transfers | Bus, Van & Taxi",
     seoDescription:
-      "Compare transfer options from Ao Nang to Krabi Airport. Check airport bus, shared van, private taxi, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Ao Nang to Krabi Airport. Check airport bus, shared van, private taxi, pickup details, travel times and final partner prices.",
     from: "Ao Nang",
     to: "Krabi Airport",
     intro:
@@ -1040,7 +1040,7 @@ export const routePages: RoutePageData[] = [
     title: "Phuket to Koh Phi Phi transfers",
     seoTitle: "Phuket to Koh Phi Phi Transfers | Ferry & Speedboat",
     seoDescription:
-      "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+      "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
     from: "Phuket",
     to: "Koh Phi Phi",
     intro:
@@ -1088,7 +1088,7 @@ export const routePages: RoutePageData[] = [
     title: "Krabi to Koh Phi Phi transfers",
     seoTitle: "Krabi to Koh Phi Phi Transfers | Ferry & Speedboat",
     seoDescription:
-      "Compare ferry and speedboat options from Krabi to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+      "Compare ferry and speedboat options from Krabi to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
     from: "Krabi",
     to: "Koh Phi Phi",
     intro:
@@ -1136,7 +1136,7 @@ export const routePages: RoutePageData[] = [
     title: "Koh Phi Phi to Krabi transfers",
     seoTitle: "Koh Phi Phi to Krabi Transfers | Ferry & Speedboat",
     seoDescription:
-      "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and live partner prices.",
+      "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
     from: "Koh Phi Phi",
     to: "Krabi",
     intro:
@@ -1184,7 +1184,7 @@ export const routePages: RoutePageData[] = [
     title: "Surat Thani Airport to Koh Phangan transfers",
     seoTitle: "Surat Thani Airport to Koh Phangan Transfers | Bus, Van & Ferry",
     seoDescription:
-      "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and final partner prices.",
     from: "Surat Thani Airport",
     to: "Koh Phangan",
     intro:
@@ -1232,7 +1232,7 @@ export const routePages: RoutePageData[] = [
     title: "Koh Phangan to Surat Thani Airport transfers",
     seoTitle: "Koh Phangan to Surat Thani Airport Transfers | Ferry, Bus & Van",
     seoDescription:
-      "Compare transfer options from Koh Phangan to Surat Thani Airport. Check ferry, bus, van and combined transfer options, pickup details, travel times and live partner prices.",
+      "Compare transfer options from Koh Phangan to Surat Thani Airport. Check ferry, bus, van and combined transfer options, pickup details, travel times and final partner prices.",
     from: "Koh Phangan",
     to: "Surat Thani Airport",
     intro:
@@ -1280,7 +1280,7 @@ export const routePages: RoutePageData[] = [
     title: "Bangkok to Chiang Mai transfers",
     seoTitle: "Bangkok to Chiang Mai Transfers | Train, Bus & Flight",
     seoDescription:
-      "Compare transfer options from Bangkok to Chiang Mai. Check train, bus and flight options, departure points, travel times and live partner prices.",
+      "Compare transfer options from Bangkok to Chiang Mai. Check train, bus and flight options, departure points, travel times and final partner prices.",
     from: "Bangkok",
     to: "Chiang Mai",
     intro:
@@ -1328,7 +1328,7 @@ export const routePages: RoutePageData[] = [
     title: "Chiang Mai to Bangkok transfers",
     seoTitle: "Chiang Mai to Bangkok Transfers | Train, Bus & Flight",
     seoDescription:
-      "Compare transfer options from Chiang Mai to Bangkok. Check train, bus and flight options, departure points, travel times and live partner prices.",
+      "Compare transfer options from Chiang Mai to Bangkok. Check train, bus and flight options, departure points, travel times and final partner prices.",
     from: "Chiang Mai",
     to: "Bangkok",
     intro:

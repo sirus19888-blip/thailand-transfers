@@ -68,7 +68,7 @@ const quickFacts = [
   {
     icon: Luggage,
     title: "Luggage",
-    text: "Check the live ticket rules before booking, especially for vans, large suitcases, golf bags or surf gear.",
+    text: "Check the partner ticket rules before booking, especially for vans, large suitcases, golf bags or surf gear.",
   },
 ];
 
@@ -78,7 +78,7 @@ const tips = [
   "For evening arrivals, compare private taxi options because direct bus departures may be limited.",
   "Keep your booking confirmation ready before leaving the arrivals area.",
   "If you travel with children, heavy luggage or a late flight, door-to-door taxi is usually the simplest option.",
-  "Live prices and schedules can change by date, operator and availability.",
+  "Final prices and schedules can change by date, operator and availability.",
 ];
 
 const faqs = [
@@ -90,7 +90,7 @@ const faqs = [
   {
     question: "What is the cheapest option?",
     answer:
-      "The airport bus is usually the best value option when seats are available. Check the live schedule and baggage rules before booking.",
+      "The airport bus is usually the best value option when seats are available. Check the current schedule and baggage rules before booking.",
   },
   {
     question: "Where is the bus pickup at BKK?",
@@ -270,7 +270,7 @@ function MobileDetails() {
                   If you miss a fixed departure
                 </p>
                 <p className="mt-1 text-xs leading-5 text-slate-600">
-                  Check the next live bus or van departure first. If timing is
+                  Check the next available bus or van departure first. If timing is
                   tight, compare private taxi because it is not tied to a fixed
                   public timetable.
                 </p>
@@ -353,7 +353,7 @@ function MobileDetails() {
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must
-          still be checked on the live ticket.
+          still be checked on the partner ticket.
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
@@ -363,7 +363,7 @@ function MobileDetails() {
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">Best value</p>
             <p className="text-base font-extrabold text-[#10201d]">
-              Live price
+              Final price
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go
               </span>
@@ -535,7 +535,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                 <p>
                   Use official counters, pre-booked services or trusted booking
                   partners. Always confirm pickup point, Hua Hin drop-off,
-                  luggage allowance and live price before boarding.
+                  luggage allowance and final partner price before boarding.
                 </p>
 
                 <div className="flex gap-3 rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] p-4">
@@ -628,7 +628,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                 </p>
 
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                  Check live Hua Hin transfer prices before you land
+                  Check final Hua Hin transfer prices before you land
                 </h2>
 
                 <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">

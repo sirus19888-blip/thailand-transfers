@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Surat Thani Airport to Koh Phangan Transfers | Bus, Van & Ferry",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and live partner prices.",
+    "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and final partner prices.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-phangan",
   },
@@ -22,7 +22,7 @@ const optionDetailsById = {
   "bus-ferry": {
     label: "Best value",
     operator: "Airport bus and ferry partners",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: "/assets/vehicles/mobile/bus-ferry.png",
     pros: ["Simple airport-to-island ticket", "Good for budget travelers"],
@@ -31,7 +31,7 @@ const optionDetailsById = {
   "van-ferry": {
     label: "Island link",
     operator: "Van and ferry partner operators",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check ticket",
     image: "/assets/vehicles/mobile/van-ferry.png",
     pros: ["Smaller shared transfer", "Good bundled route option"],
@@ -70,10 +70,10 @@ export default async function SuratThaniAirportToKohPhanganPage({
     <RoutePageTemplate
       route={route}
       badge="Airport to island transfer comparison"
-      desktopDescription="Compare combined transfer options from Surat Thani Airport to Koh Phangan, including bus plus ferry, van plus ferry and taxi plus ferry routes. Check airport pickup point, departure pier, arrival pier, luggage allowance and live partner prices before booking."
-      mobileDescription="Compare bus, van, taxi and ferry combinations from Surat Thani Airport to Koh Phangan. Check live schedules, pickup points and luggage rules before booking."
+      desktopDescription="Compare combined transfer options from Surat Thani Airport to Koh Phangan, including bus plus ferry, van plus ferry and taxi plus ferry routes. Check airport pickup point, departure pier, arrival pier, luggage allowance and final partner prices before booking."
+      mobileDescription="Compare bus, van, taxi and ferry combinations from Surat Thani Airport to Koh Phangan. Check current schedules, pickup points and luggage rules before booking."
       optionsHeading="Compare Surat Thani Airport to Koh Phangan transfer options"
-      detailsNote="For airport-to-island routes, allow extra time for baggage claim, pier transfer and ferry boarding. Check your airport pickup point, departure pier, arrival pier, luggage allowance and live operator schedule before booking."
+      detailsNote="For airport-to-island routes, allow extra time for baggage claim, pier transfer and ferry boarding. Check your airport pickup point, departure pier, arrival pier, luggage allowance and current operator schedule before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen
           route={route}
@@ -84,7 +84,7 @@ export default async function SuratThaniAirportToKohPhanganPage({
           summaryRightText="Check meeting point"
           optionDetailsById={optionDetailsById}
           detailsHref="/routes/surat-thani-airport-to-koh-phangan/details"
-          footerNote="Live prices and schedules may change. Allow extra time after landing and check pier, ferry and hotel transfer rules."
+          footerNote="Final prices and schedules may change. Allow extra time after landing and check pier, ferry and hotel transfer rules."
           selectedDate={selectedDate}
           passengers={passengers}
         />

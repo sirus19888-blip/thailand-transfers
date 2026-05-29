@@ -14,7 +14,7 @@ export default function TermsOfUsePage() {
     <PolicyPage
       eyebrow="Terms"
       title="Terms of Use"
-      intro="Use Thailand Transfers as planning guidance. Always confirm live prices, schedules, pickup points and ticket rules with the booking partner before paying."
+      intro="Use Thailand Transfers as planning guidance. Always confirm final prices, schedules, pickup points and ticket rules with the booking partner before paying."
       sections={[
         {
           title: "Independent guide",

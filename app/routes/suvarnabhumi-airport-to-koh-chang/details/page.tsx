@@ -72,7 +72,7 @@ const quickFacts = [
   {
     icon: MapPin,
     title: "Airport pickup",
-    text: "Pickup can be an airport counter, operator meeting point or private driver area. Follow the location shown on the live ticket.",
+    text: "Pickup can be an airport counter, operator meeting point or private driver area. Follow the location shown on the partner ticket.",
   },
   {
     icon: Luggage,
@@ -100,12 +100,12 @@ const faqs = [
   {
     question: "What is the cheapest option?",
     answer:
-      "Bus plus ferry or ferry plus van tickets are usually better value than a private taxi. Check live availability and what each ticket includes before booking.",
+      "Bus plus ferry or ferry plus van tickets are usually better value than a private taxi. Check partner availability and what each ticket includes before booking.",
   },
   {
     question: "Is the ferry included?",
     answer:
-      "It depends on the operator and ticket type. Always check the live ticket details for mainland transfer, ferry crossing and any island-side transfer.",
+      "It depends on the operator and ticket type. Always check the partner ticket details for mainland transfer, ferry crossing and any island-side transfer.",
   },
   {
     question: "What if my flight arrives late?",
@@ -364,7 +364,7 @@ function MobileDetails() {
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must
-          still be checked on the live ticket.
+          still be checked on the partner ticket.
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
@@ -374,7 +374,7 @@ function MobileDetails() {
           <div className="min-w-0 flex-1">
             <p className="text-xs font-medium text-slate-500">Island link</p>
             <p className="text-base font-extrabold text-[#10201d]">
-              Live price
+              Final price
               <span className="ml-1 text-xs font-medium text-slate-500">
                 on 12Go
               </span>
@@ -638,7 +638,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                 </p>
 
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                  Check live Koh Chang transfer prices before you land
+                  Check final Koh Chang transfer prices before you land
                 </h2>
 
                 <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">

@@ -70,7 +70,7 @@ function buildMobilePlanningNotes(route: RoutePageData) {
       },
       {
         title: "Centrepoint status",
-        text: "Trat / Centrepoint Ferry has been suspended since July 2024. Check live ticket details for the actual ferry, pier and transfer coverage.",
+        text: "Trat / Centrepoint Ferry has been suspended since July 2024. Check partner ticket details for the actual ferry, pier and transfer coverage.",
       },
     ];
   }
@@ -98,7 +98,7 @@ function buildMobilePlanningNotes(route: RoutePageData) {
       },
       {
         title: "If you miss a fixed departure",
-        text: "For scheduled buses, vans, ferries or combined tickets, check the next live departure. If timing is tight, compare private taxi or private transfer options.",
+        text: "For scheduled buses, vans, ferries or combined tickets, check the next available departure. If timing is tight, compare private taxi or private transfer options.",
       },
     ];
   }
@@ -110,7 +110,7 @@ function buildMobilePlanningNotes(route: RoutePageData) {
     },
     {
       title: "If you miss it",
-      text: "Check the next live departure before changing station or operator. Private taxi is usually the fallback when schedule flexibility matters.",
+      text: "Check the next available departure before changing station or operator. Private taxi is usually the fallback when schedule flexibility matters.",
     },
   ];
 }
@@ -138,7 +138,7 @@ function buildMobileBookingChecks(
   selectedOptionName: string,
 ) {
   const checks = [
-    "Check the exact pickup point, reporting time and final drop-off on the live ticket.",
+    "Check the exact pickup point, reporting time and final drop-off on the partner ticket.",
     "Check baggage allowance, extra-bag rules and whether large items need a bigger vehicle.",
   ];
 
@@ -605,7 +605,7 @@ export function IslandRouteDetailsTemplate({
             comparison guide, not the transport operator. Booking, payment,
             ticket changes and support are handled by the booking partner or
             operator. Final price, schedule, pickup point and luggage rules must
-            still be checked on the live ticket.
+            still be checked on the partner ticket.
           </p>
           <AffiliateDisclosure className="mt-2 text-center" />
         </div>

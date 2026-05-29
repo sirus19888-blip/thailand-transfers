@@ -22,6 +22,8 @@ export default function BkkPattayaWithLuggagePage() {
       backHref="/routes/bangkok-airport-to-pattaya"
       ctaHref={partnerUrl}
       ctaTrackingId="click_12go_bkk_pattaya_with_luggage"
+      heroImageSrc="/assets/steps/baggage-claim.png"
+      heroImageAlt="Baggage claim before a Thailand airport transfer"
       sections={[
         {
           title: "Normal luggage",

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     "Suvarnabhumi Airport to Hua Hin Transfers | Bus, Taxi & Van",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Suvarnabhumi Airport to Hua Hin. Check bus, private taxi, bus plus van and flight transfer options, airport pickup details, travel times and live partner prices.",
+    "Compare transfer options from Suvarnabhumi Airport to Hua Hin. Check bus, private taxi, bus plus van and flight transfer options, airport pickup details, travel times and final partner prices.",
   alternates: {
     canonical: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
@@ -40,10 +40,10 @@ export default async function SuvarnabhumiAirportToHuaHinPage({
     <RoutePageTemplate
       route={route}
       badge="Airport to beach transfer comparison"
-      desktopDescription="Compare transfer options from Suvarnabhumi Airport to Hua Hin, including airport bus, private taxi, bus plus van and flight transfer combinations. Check airport pickup point, Hua Hin drop-off location, luggage allowance and live partner prices before booking."
-      mobileDescription="Compare bus, taxi, bus plus van and flight transfer options from Suvarnabhumi Airport to Hua Hin. Check live schedules, airport pickup points and luggage rules before booking."
+      desktopDescription="Compare transfer options from Suvarnabhumi Airport to Hua Hin, including airport bus, private taxi, bus plus van and flight transfer combinations. Check airport pickup point, Hua Hin drop-off location, luggage allowance and final partner prices before booking."
+      mobileDescription="Compare bus, taxi, bus plus van and flight transfer options from Suvarnabhumi Airport to Hua Hin. Check current schedules, airport pickup points and luggage rules before booking."
       optionsHeading="Compare Suvarnabhumi Airport to Hua Hin transfer options"
-      detailsNote="For airport arrivals, allow extra time for immigration, baggage claim and possible flight delays. Check your airport pickup point, Hua Hin drop-off location, luggage allowance and live operator schedule before booking."
+      detailsNote="For airport arrivals, allow extra time for immigration, baggage claim and possible flight delays. Check your airport pickup point, Hua Hin drop-off location, luggage allowance and current operator schedule before booking."
       mobileContent={
         <MobileHuaHinTransferOptionsScreen
           route={route}

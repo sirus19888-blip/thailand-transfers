@@ -12,7 +12,7 @@ const optionDetailsById = {
   bus: {
     label: "Cheapest typical option",
     operator: "Airport bus and partner coaches",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "1 large + 1 small",
     image: mobileVehicleAssets.bus,
     pros: ["Simple airport pickup", "Good value for solo travelers"],
@@ -30,7 +30,7 @@ const optionDetailsById = {
   "bus-van": {
     label: "Best with luggage",
     operator: "Bus plus van connection",
-    departures: "Live schedule",
+    departures: "Current schedule",
     baggage: "Check rules",
     image: mobileVehicleAssets.bus,
     pros: ["More partner choices", "Useful when direct seats are limited"],

@@ -26,7 +26,7 @@ export default function PattayaToDonMueangAirportPage() {
     <RoutePageTemplate
       route={route}
       desktopDescription="Compare return transfer options from Pattaya to Don Mueang Airport (DMK). This route is useful for travelers flying with low-cost airlines or taking domestic flights from Bangkok."
-      mobileDescription="Compare taxi, van and bus options from Pattaya to Don Mueang Airport. Always check live availability and pickup details before booking."
+      mobileDescription="Compare taxi, van and bus options from Pattaya to Don Mueang Airport. Always check partner availability and pickup details before booking."
       optionsHeading="Compare Pattaya to Don Mueang Airport transfer options"
     />
   );

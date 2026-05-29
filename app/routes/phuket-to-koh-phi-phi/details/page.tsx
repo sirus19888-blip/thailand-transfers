@@ -82,7 +82,7 @@ const faqs = [
   {
     question: "Which Phuket pier do boats leave from?",
     answer:
-      "Many services use Rassada Pier, but some tickets use other piers or include hotel pickup. Always check the live ticket details.",
+      "Many services use Rassada Pier, but some tickets use other piers or include hotel pickup. Always check the partner ticket details.",
   },
   {
     question: "Where do I arrive on Koh Phi Phi?",
@@ -92,7 +92,7 @@ const faqs = [
   {
     question: "Can bad weather affect the route?",
     answer:
-      "Yes. Sea conditions can affect both ferry and speedboat schedules, especially speedboats. Check live operator information before booking.",
+      "Yes. Sea conditions can affect both ferry and speedboat schedules, especially speedboats. Check current operator information before booking.",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function PhuketToKohPhiPhiDetailsPage() {
       practicalTitle="Small things that make Phi Phi transfers easier"
       practicalIntro="These notes are specific to travelling from Phuket to Koh Phi Phi by ferry or speedboat."
       faqTitle="Questions about Phuket to Koh Phi Phi"
-      readyTitle="Check live Phi Phi transfer prices before you go to the pier"
+      readyTitle="Check final Phi Phi transfer prices before you go to the pier"
       readyText="Compare ferry, speedboat and hotel transfer plus ferry options from Phuket to Koh Phi Phi."
       stickyLabel="Best value"
       primaryOptionId="ferry"

@@ -67,12 +67,12 @@ function getOptionDetails(
 ) {
   return (
     optionDetailsById?.[option.id] ?? {
-      label: "Live option",
+      label: "Partner option",
       operator: "Partner operator",
-      departures: "Live schedule",
+      departures: "Current schedule",
       baggage: "Check rules",
       image: mobileVehicleAssets.van,
-      pros: [option.bestFor, "Live partner availability"],
+      pros: [option.bestFor, "Partner availability"],
       cons: ["Details can change", "Check ticket rules before booking"],
     }
   );
@@ -82,6 +82,10 @@ function getDetailsHref(detailsHref: string, optionId: string) {
   const separator = detailsHref.includes("?") ? "&" : "?";
 
   return `${detailsHref}${separator}option=${encodeURIComponent(optionId)}`;
+}
+
+function getRouteImage(route: RoutePageData) {
+  return `/assets/routes/${route.slug}.png`;
 }
 
 const bkkPattayaDeepGuides = [
@@ -153,49 +157,47 @@ export function MobilePriorityRouteOptionsScreen({
           </div>
         </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 rounded-[22px] border border-[#e7e2d8] bg-white p-3 shadow-sm">
-          <div className="flex gap-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
-              <ShieldCheck className="h-4 w-4" />
-            </div>
-
-            <div>
-              <p className="text-[12px] font-bold leading-snug text-[#10201d]">
-                {summaryLeftTitle}
-              </p>
-              <p className="mt-1 text-[11px] text-slate-500">
-                {summaryLeftText}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-3 border-l border-[#e7e2d8] pl-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
-              <ShieldCheck className="h-4 w-4" />
-            </div>
-
-            <div>
-              <p className="text-[12px] font-bold leading-snug text-[#10201d]">
-                {summaryRightTitle}
-              </p>
-              <p className="mt-1 text-[11px] text-slate-500">
-                {summaryRightText}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-3 rounded-[18px] border border-[#e7e2d8] bg-white px-3 py-3 shadow-sm">
-          <div className="flex gap-2">
-            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
-            <div>
-              <p className="text-[12px] font-extrabold text-[#10201d]">
+        <div className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-3 shadow-lg shadow-black/5">
+          <div className="relative h-44 overflow-hidden rounded-[1.15rem] bg-[#10201d]">
+            <Image
+              src={getRouteImage(route)}
+              alt={`${route.from} to ${route.to} transfer route`}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 390px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/88 via-[#10201d]/20 to-transparent" />
+            <div className="absolute inset-x-4 bottom-4">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#f0c96a]">
                 Best option for your situation
               </p>
-              <p className="mt-1 text-[11px] leading-4 text-slate-600">
+              <h2 className="mt-1 text-[25px] font-extrabold leading-tight text-white">
+                {route.to}
+              </h2>
+              <p className="mt-2 text-xs font-medium leading-5 text-white/82">
                 {getRouteDecision(route)}
               </p>
             </div>
+          </div>
+
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            {[
+              [summaryLeftTitle, summaryLeftText],
+              [summaryRightTitle, summaryRightText],
+            ].map(([label, value]) => (
+              <div key={label} className="flex gap-2 rounded-2xl bg-[#f8f4ec] px-3 py-2">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <div>
+                  <p className="text-[12px] font-bold leading-snug text-[#10201d]">
+                    {label}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-4 text-slate-500">
+                    {value}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -219,11 +221,11 @@ export function MobilePriorityRouteOptionsScreen({
           <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#c99a2e]">
             Full guide checklist
           </p>
-          <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
-            {getFullGuideChecklist(route).map((item) => (
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            {getFullGuideChecklist().map((item) => (
               <span
                 key={item}
-                className="shrink-0 rounded-full bg-[#f8f4ec] px-3 py-1.5 text-[10.5px] font-extrabold text-[#51615c]"
+                className="rounded-full bg-[#f8f4ec] px-3 py-1.5 text-center text-[10.5px] font-extrabold text-[#51615c]"
               >
                 {item}
               </span>

@@ -83,7 +83,7 @@ const faqs = [
   {
     question: "Is the ferry included?",
     answer:
-      "It depends on the ticket. Combined island-to-Bangkok tickets often include the ferry, but always check live details for ferry crossing and pier transfer.",
+      "It depends on the ticket. Combined island-to-Bangkok tickets often include the ferry, but always check partner details for ferry crossing and pier transfer.",
   },
   {
     question: "Where will I be dropped in Bangkok?",
@@ -128,7 +128,7 @@ export default function KohChangToBangkokDetailsPage() {
       practicalTitle="Small things that make Koh Chang transfers easier"
       practicalIntro="These notes are specific to travelling from Koh Chang to Bangkok by ferry and road transfer."
       faqTitle="Questions about Koh Chang to Bangkok"
-      readyTitle="Check live Bangkok transfer prices before leaving Koh Chang"
+      readyTitle="Check final Bangkok transfer prices before leaving Koh Chang"
       readyText="Compare ferry plus van, ferry plus bus, shared van and private taxi options from Koh Chang to Bangkok."
       stickyLabel="Island link"
       primaryOptionId="ferry-van"

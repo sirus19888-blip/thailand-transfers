@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "Are prices fixed?",
     answer:
-      "Prices can change depending on operator, time, route and availability. Always check the live price before booking.",
+      "Prices can change depending on operator, time, route and availability. Always check the final partner price before booking.",
   },
 ];
 

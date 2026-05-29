@@ -1,4 +1,4 @@
-﻿import type { RoutePageData } from "@/data/routePages";
+import type { RoutePageData } from "@/data/routePages";
 
 export const donMueangPattayaRoute: RoutePageData = {
   slug: "don-mueang-airport-to-pattaya",

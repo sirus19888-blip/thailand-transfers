@@ -4,7 +4,7 @@ const badges = [
     description: "Clear transfer options",
   },
   {
-    title: "Live booking",
+    title: "Partner booking",
     description: "Compare trusted partner links",
   },
   {

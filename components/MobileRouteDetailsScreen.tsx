@@ -38,7 +38,7 @@ const optionContentById = {
         number: "2",
         title: "Go to Level 1, Gate 8.",
         description:
-          "RRC lists the Suvarnabhumi Airport Pattaya counter at the passenger terminal on Level 1, Gate 8. Some partner tickets can still use a bus-terminal instruction, so follow the live voucher.",
+          "RRC lists the Suvarnabhumi Airport Pattaya counter at the passenger terminal on Level 1, Gate 8. Some partner tickets can still use a bus-terminal instruction, so follow the partner voucher.",
       },
       {
         number: "3",
@@ -93,7 +93,7 @@ const optionContentById = {
     tips: [
       "RRC currently publishes fixed airport-to-Pattaya departures rather than an on-demand service, so choose a time that leaves room after landing.",
       "The published airport pickup point for the Pattaya bus is Level 1, Gate 8.",
-      "The published fare on the RRC page is 139 THB per seat, but always check the live ticket before paying.",
+      "The published fare on the RRC page is 139 THB per seat, but always check the partner ticket before paying.",
       "Pattaya Transport Station is not a hotel drop-off. Plan a local taxi or songthaew if your hotel is not nearby.",
       "If your hotel is in Jomtien, confirm whether you booked the Jomtien route or a Pattaya station route.",
       "For late evening arrivals, a private taxi is usually the simplest option.",
@@ -106,7 +106,7 @@ const optionContentById = {
         number: "1",
         title: "Confirm the exact arrivals meeting point.",
         description:
-          "Pre-booked private taxis use the meeting point shown on the live voucher. Airport public taxis are a separate service on Level 1.",
+          "Pre-booked private taxis use the meeting point shown on the partner voucher. Airport public taxis are a separate service on Level 1.",
       },
       {
         number: "2",
@@ -146,7 +146,7 @@ const optionContentById = {
     ],
     warningTitle: "Confirm the meeting point",
     warningText:
-      "Do not go to the bus counter for a taxi booking. Use the arrivals meeting point and operator contact details from the live ticket.",
+      "Do not go to the bus counter for a taxi booking. Use the arrivals meeting point and operator contact details from the partner ticket.",
     planningNotes: [
       {
         title: "Late arrival rule",
@@ -168,7 +168,7 @@ const optionContentById = {
       "Private taxi is usually the simplest option after late evening flights.",
       "Check whether tolls, airport pickup, waiting time and hotel drop-off are included before paying.",
       "Choose a larger vehicle if you travel with more than two large suitcases.",
-      "Do not use the bus counter for a taxi booking; follow the driver meeting instructions from the live voucher.",
+      "Do not use the bus counter for a taxi booking; follow the driver meeting instructions from the partner voucher.",
       "Traffic can be heavier on Friday evenings, holidays and long weekends.",
     ],
   },
@@ -274,7 +274,7 @@ const faqs = [
   {
     question: "Where do buses leave from at Suvarnabhumi Airport?",
     answer:
-      "RRC lists the Suvarnabhumi Airport pickup at Level 1, Gate 8. Some partner tickets can use a different counter or bus-terminal instruction, so always follow the exact live ticket.",
+      "RRC lists the Suvarnabhumi Airport pickup at Level 1, Gate 8. Some partner tickets can use a different counter or bus-terminal instruction, so always follow the exact partner ticket.",
   },
   {
     question: "How long does BKK Airport to Pattaya take?",
@@ -284,7 +284,7 @@ const faqs = [
   {
     question: "Should I book before landing?",
     answer:
-      "It is safer to compare live options before arrival, especially in high season or if your flight lands close to the final bus departures.",
+      "It is safer to compare partner options before arrival, especially in high season or if your flight lands close to the final bus departures.",
   },
 ];
 
@@ -657,7 +657,7 @@ export function MobileRouteDetailsScreen({
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must
-          still be checked on the live ticket.
+          still be checked on the partner ticket.
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
