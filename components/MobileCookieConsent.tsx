@@ -17,7 +17,7 @@ export function MobileCookieConsent() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-x-3 bottom-[calc(4.15rem+env(safe-area-inset-bottom))] z-[60] grid grid-cols-[1fr_auto] items-center gap-2 rounded-[18px] border border-[#e7e2d8] bg-white p-2.5 shadow-2xl shadow-black/20 lg:hidden">
+    <div className="fixed inset-x-3 bottom-[calc(7.75rem+env(safe-area-inset-bottom))] z-[60] grid grid-cols-[1fr_auto] items-center gap-2 rounded-[18px] border border-[#e7e2d8] bg-white p-2.5 shadow-2xl shadow-black/20 lg:hidden">
       <div>
         <p className="text-[12px] font-extrabold text-[#10201d]">
           Privacy-friendly analytics
