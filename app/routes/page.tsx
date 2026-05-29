@@ -67,6 +67,7 @@ export default function RoutesPage() {
                     src={route.image}
                     alt={route.title}
                     fill
+                    sizes="(min-width: 1024px) 33vw, 0px"
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
                 </div>

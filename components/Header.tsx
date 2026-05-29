@@ -18,7 +18,7 @@ const navigation = [
   },
   {
     name: "Guides",
-    href: "/#travel-tips",
+    href: "/guides",
   },
   {
     name: "About Us",

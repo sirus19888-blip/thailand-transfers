@@ -18,46 +18,42 @@ const highValueSeoPaths = [
 
 function sitemapEntry(
   path: string,
-  lastModified: Date,
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
   priority: number,
 ): MetadataRoute.Sitemap[number] {
   return {
     url: path === "/" ? siteUrl : `${siteUrl}${path}`,
-    lastModified,
     changeFrequency,
     priority,
   };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   const routeSlugs = [
     ...specialRouteSlugs,
     ...routePages.map((route) => route.slug),
   ];
 
   return [
-    sitemapEntry("/", lastModified, "weekly", 1),
-    sitemapEntry("/routes", lastModified, "weekly", 0.9),
-    sitemapEntry("/guides", lastModified, "weekly", 0.75),
+    sitemapEntry("/", "weekly", 1),
+    sitemapEntry("/routes", "weekly", 0.9),
+    sitemapEntry("/guides", "weekly", 0.75),
     ...highValueSeoPaths.map((path) =>
-      sitemapEntry(path, lastModified, "monthly", 0.65),
+      sitemapEntry(path, "monthly", 0.65),
     ),
     ...legalLinks.map((link) =>
-      sitemapEntry(link.href, lastModified, "monthly", 0.4),
+      sitemapEntry(link.href, "monthly", 0.4),
     ),
     sitemapEntry(
       "/travel-extras/thailand-tourist-sim",
-      lastModified,
       "monthly",
       0.5,
     ),
     ...routeSlugs.map((slug) =>
-      sitemapEntry(`/routes/${slug}`, lastModified, "weekly", 0.85),
+      sitemapEntry(`/routes/${slug}`, "weekly", 0.85),
     ),
     ...routeSlugs.map((slug) =>
-      sitemapEntry(`/routes/${slug}/details`, lastModified, "monthly", 0.7),
+      sitemapEntry(`/routes/${slug}/details`, "monthly", 0.7),
     ),
   ];
 }

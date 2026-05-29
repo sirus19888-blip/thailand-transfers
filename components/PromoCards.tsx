@@ -37,7 +37,7 @@ export function PromoCards() {
                   src={card.image}
                   alt={card.title}
                   fill
-                  loading="eager"
+                  sizes="(min-width: 1024px) 132px, (min-width: 768px) 132px, 0px"
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>

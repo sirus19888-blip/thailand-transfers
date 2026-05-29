@@ -4,9 +4,9 @@ import { Container } from "./Container";
 import { legalLinks } from "@/data/legalPages";
 
 const helpfulLinks = [
-  { name: "Travel Guides", href: "#travel-tips" },
-  { name: "Airport Guides", href: "#travel-tips" },
-  { name: "Thailand Tips", href: "#travel-tips" },
+  { name: "Travel Guides", href: "/guides" },
+  { name: "Airport Guides", href: "/guides/bkk-airport-pickup-level-1-gate-8" },
+  { name: "Thailand Tips", href: "/trust-center" },
   { name: "FAQ", href: "/routes/bangkok-airport-to-pattaya/details" },
 ];
 

@@ -9,6 +9,7 @@ import {
   MobilePersonalizedTripCard,
 } from "@/components/MobilePersonalizedTrip";
 import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
+import { RouteDetailsStructuredData } from "@/components/StructuredData";
 import {
   getDropoffMapUrl,
   getPickupMapUrl,
@@ -335,6 +336,7 @@ export function MobileRouteDetailsScreen({
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
+      <RouteDetailsStructuredData route={routeData} faqs={faqs} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -395,6 +397,7 @@ export function MobileRouteDetailsScreen({
               alt="Suvarnabhumi Airport to Pattaya route map"
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 390px"
               className="object-cover"
             />
           </div>

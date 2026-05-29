@@ -1,6 +1,12 @@
 "use client";
 
-import { type FormEvent, type MouseEvent, useRef, useState } from "react";
+import {
+  type FormEvent,
+  type MouseEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -197,6 +203,22 @@ const mobileArrivalTimeOptions = [
   { value: "late", label: "After 20:00" },
 ];
 
+function useDesktopMediaQuery() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const updateIsDesktop = () => setIsDesktop(mediaQuery.matches);
+
+    updateIsDesktop();
+    mediaQuery.addEventListener("change", updateIsDesktop);
+
+    return () => mediaQuery.removeEventListener("change", updateIsDesktop);
+  }, []);
+
+  return isDesktop;
+}
+
 function getMobileDestinationOptions(fromValue: string) {
   const destinationValues = mobileRouteDestinationsByFrom[fromValue] ?? [];
   const destinationValueSet = new Set(destinationValues);
@@ -278,6 +300,7 @@ function DesktopHero() {
   const [transferType, setTransferType] = useState<"airport" | "city">(
     "airport",
   );
+  const isDesktop = useDesktopMediaQuery();
 
   const isAirportTransfer = transferType === "airport";
 
@@ -286,13 +309,15 @@ function DesktopHero() {
   return (
     <section className="hidden overflow-hidden bg-[#fbfaf7] lg:block">
       <div className="relative min-h-[560px] border-b border-[#e7e2d8]">
-        <Image
-          src="/assets/hero/hero-desktop.png"
-          alt="Thailand airport transfer"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+        {isDesktop ? (
+          <Image
+            src="/assets/hero/hero-desktop.png"
+            alt="Thailand airport transfer"
+            fill
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        ) : null}
 
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/30" />
@@ -568,6 +593,7 @@ function MobileHero() {
             alt="Thailand transfer hero"
             fill
             priority
+            sizes="(max-width: 1023px) 100vw, 0px"
             className="object-cover object-center"
           />
 

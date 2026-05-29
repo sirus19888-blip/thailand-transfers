@@ -329,6 +329,7 @@ export function MobilePriorityRouteOptionsScreen({
                         src={details.image}
                         alt={option.name}
                         fill
+                        sizes="108px"
                         className="object-cover"
                       />
                     </div>

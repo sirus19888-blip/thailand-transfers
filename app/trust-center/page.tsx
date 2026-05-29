@@ -54,6 +54,13 @@ export default function TrustCenterPage() {
             "Sources include official airport/operator/ferry information and partner availability pages. If a price, pickup point or schedule changes, the partner ticket is the final source before payment.",
           ],
         },
+        {
+          title: "Corrections contact",
+          body: [
+            "Email: hello@thailandtransferguide.com",
+            "Use this address for outdated pickup points, schedule changes, ferry updates, price range corrections or source notes we should review.",
+          ],
+        },
       ]}
     />
   );

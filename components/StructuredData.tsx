@@ -93,3 +93,64 @@ export function RouteStructuredData({ route }: { route: RoutePageData }) {
     </>
   );
 }
+
+type FaqEntry = {
+  question: string;
+  answer: string;
+};
+
+export function RouteDetailsStructuredData({
+  route,
+  faqs,
+}: {
+  route: RoutePageData;
+  faqs: FaqEntry[];
+}) {
+  const routeUrl = `${siteUrl}/routes/${route.slug}`;
+  const detailsUrl = `${routeUrl}/details`;
+
+  return (
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Routes",
+              item: `${siteUrl}/routes`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: route.title,
+              item: routeUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Details",
+              item: detailsUrl,
+            },
+          ],
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }}
+      />
+    </>
+  );
+}

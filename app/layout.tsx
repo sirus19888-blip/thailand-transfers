@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     capable: true,
     title: siteName,
   },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+  },
   title: {
     default: siteName,
     template: `%s | ${siteName}`,

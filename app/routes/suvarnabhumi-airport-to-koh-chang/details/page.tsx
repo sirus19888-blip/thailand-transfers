@@ -17,6 +17,7 @@ import {
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { RouteDetailsStructuredData } from "@/components/StructuredData";
 import {
   MobilePersonalizedDetailsSticky,
   MobilePersonalizedTripCard,
@@ -127,6 +128,7 @@ function MobileDetails() {
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
+      <RouteDetailsStructuredData route={route} faqs={faqs} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -184,6 +186,7 @@ function MobileDetails() {
               alt="Suvarnabhumi Airport to Koh Chang route"
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 390px"
               className="object-cover"
             />
           </div>
@@ -459,6 +462,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                     alt="Suvarnabhumi Airport to Koh Chang transfer"
                     fill
                     priority
+                    sizes="(min-width: 1024px) 33vw, 0px"
                     className="object-cover"
                   />
                 </div>
@@ -491,7 +495,13 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                   className="overflow-hidden rounded-[24px] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <Image src={step.image} alt={step.title} fill className="object-cover" />
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, 0px"
+                      className="object-cover"
+                    />
                   </div>
 
                   <div className="p-4">

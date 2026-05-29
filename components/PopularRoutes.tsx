@@ -57,7 +57,7 @@ export function PopularRoutes() {
                   src={route.image}
                   alt={route.title}
                   fill
-                  loading="eager"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 132px, 0px"
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>

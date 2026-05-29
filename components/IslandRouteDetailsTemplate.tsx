@@ -12,6 +12,7 @@ import {
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { RouteDetailsStructuredData } from "@/components/StructuredData";
 import {
   MobilePersonalizedDetailsSticky,
   MobilePersonalizedTripCard,
@@ -277,6 +278,7 @@ export function IslandRouteDetailsTemplate({
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
+      <RouteDetailsStructuredData route={route} faqs={faqs} />
       <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
         <div className="mx-auto max-w-md px-4 py-5">
           <div className="flex items-start justify-between gap-3">
@@ -339,6 +341,7 @@ export function IslandRouteDetailsTemplate({
                   alt={overviewAlt}
                   fill
                   priority
+                  sizes="(max-width: 1024px) 100vw, 390px"
                   className="object-cover"
                 />
               )}

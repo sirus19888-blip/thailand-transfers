@@ -19,6 +19,26 @@ type PolicyPageProps = {
   showCorrectionForm?: boolean;
 };
 
+const contactEmail = "hello@thailandtransferguide.com";
+
+function PolicyParagraph({ text }: { text: string }) {
+  if (text === `Email: ${contactEmail}`) {
+    return (
+      <p>
+        Email:{" "}
+        <a
+          href={`mailto:${contactEmail}`}
+          className="font-extrabold text-[#0c5a4d] underline-offset-4 hover:underline"
+        >
+          {contactEmail}
+        </a>
+      </p>
+    );
+  }
+
+  return <p>{text}</p>;
+}
+
 function SectionCards({ sections }: { sections: PolicySection[] }) {
   return (
     <div className="grid gap-4">
@@ -40,7 +60,7 @@ function SectionCards({ sections }: { sections: PolicySection[] }) {
 
           <div className="grid gap-3 px-4 py-4 text-sm leading-6 text-[#4b5d58]">
             {section.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+              <PolicyParagraph key={paragraph} text={paragraph} />
             ))}
           </div>
         </section>
