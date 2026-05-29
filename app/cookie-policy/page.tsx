@@ -3,7 +3,8 @@ import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Thailand Transfers",
-  description: "Cookie and tracking policy for Thailand Transfers.",
+  description:
+    "Read how Thailand Transfer Guide uses privacy-friendly analytics, cookies and partner link tracking, plus how travelers can manage consent.",
   alternates: {
     canonical: "/cookie-policy",
   },

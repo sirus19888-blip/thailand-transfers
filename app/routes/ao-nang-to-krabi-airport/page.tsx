@@ -52,6 +52,7 @@ export default async function AoNangToKrabiAirportPage({
           selectedDate={selectedDate}
           passengers={passengers}
           arrivalTime={arrivalTime}
+          useProvidedParamsOnly
         />
       }
     />

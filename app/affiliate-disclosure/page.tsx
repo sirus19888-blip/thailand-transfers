@@ -3,7 +3,8 @@ import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
   title: "Affiliate Disclosure | Thailand Transfers",
-  description: "Affiliate disclosure for Thailand Transfers partner links.",
+  description:
+    "Learn how Thailand Transfer Guide uses paid partner links, how commissions may work and how recommendations stay focused on traveler suitability.",
   alternates: {
     canonical: "/affiliate-disclosure",
   },

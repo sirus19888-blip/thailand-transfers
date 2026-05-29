@@ -14,6 +14,7 @@ type StandardMobileRouteOptionsProps = {
   selectedDate?: string;
   passengers?: string;
   arrivalTime?: string;
+  useProvidedParamsOnly?: boolean;
 };
 
 function buildOptionDetails(route: RoutePageData) {
@@ -51,7 +52,19 @@ export function StandardMobileRouteOptions({
   selectedDate,
   passengers,
   arrivalTime,
+  useProvidedParamsOnly,
 }: StandardMobileRouteOptionsProps) {
+  if (useProvidedParamsOnly) {
+    return (
+      <StandardMobileRouteOptionsView
+        route={route}
+        selectedDate={selectedDate}
+        passengers={passengers}
+        arrivalTime={arrivalTime}
+      />
+    );
+  }
+
   return (
     <Suspense
       fallback={<StandardMobileRouteOptionsFallback route={route} />}
@@ -74,9 +87,9 @@ function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData })
           <div className="h-10 w-10 rounded-full bg-white shadow-sm" />
 
           <div className="text-center">
-            <p className="text-[16px] font-extrabold text-[#10201d]">
+            <h1 className="text-[16px] font-extrabold text-[#10201d]">
               {compactRouteTitle(route)}
-            </p>
+            </h1>
             <p className="mt-1 text-[11px] font-medium text-slate-500">
               Quick guide
             </p>
@@ -108,7 +121,7 @@ function StandardMobileRouteOptionsContent({
   selectedDate,
   passengers,
   arrivalTime,
-}: StandardMobileRouteOptionsProps) {
+}: Omit<StandardMobileRouteOptionsProps, "useProvidedParamsOnly">) {
   const searchParams = useSearchParams();
   const queryDate = searchParams.get("date") ?? undefined;
   const queryPassengers = searchParams.get("passengers") ?? undefined;
@@ -129,7 +142,7 @@ function StandardMobileRouteOptionsView({
   selectedDate,
   passengers,
   arrivalTime,
-}: StandardMobileRouteOptionsProps) {
+}: Omit<StandardMobileRouteOptionsProps, "useProvidedParamsOnly">) {
   return (
     <MobilePriorityRouteOptionsScreen
       route={route}

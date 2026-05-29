@@ -3,7 +3,8 @@ import { PolicyPage } from "@/components/PolicyPage";
 
 export const metadata: Metadata = {
   title: "Terms of Use | Thailand Transfers",
-  description: "Terms of use for Thailand Transfers route guides and partner links.",
+  description:
+    "Read the terms for using Thailand Transfer Guide, including route guidance limits, partner booking responsibility, travel risk and content accuracy.",
   alternates: {
     canonical: "/terms-of-use",
   },

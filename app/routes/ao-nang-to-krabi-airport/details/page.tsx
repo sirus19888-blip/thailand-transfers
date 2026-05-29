@@ -6,9 +6,7 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("ao-nang-to-krabi-airport");
 
 export const metadata: Metadata = {
-  title:
-    route?.seoTitle ??
-    "Ao Nang to Krabi Airport Guide | Pickup Tips & FAQ",
+  title: "Ao Nang to Krabi Airport Pickup Guide | Timing, Luggage & FAQ",
   description:
     "Read practical tips for travelling from Ao Nang to Krabi Airport. Check pickup points, timing, luggage rules and booking advice.",
   alternates: {
