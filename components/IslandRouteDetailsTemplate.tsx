@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   AlertTriangle,
@@ -12,12 +12,15 @@ import {
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import {
+  MobilePersonalizedDetailsSticky,
+  MobilePersonalizedTripCard,
+} from "@/components/MobilePersonalizedTrip";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
 import type { RoutePageData } from "@/data/routePages";
 import {
-  getCompactCtaLabel,
   getDropoffMapUrl,
   getPickupMapUrl,
   getSourceFreshness,
@@ -342,6 +345,15 @@ export function IslandRouteDetailsTemplate({
             </div>
           </div>
 
+          <Suspense fallback={null}>
+            <MobilePersonalizedTripCard
+              route={route}
+              selectedOptionId={mobileSelectedOptionId}
+              backHref={backHref}
+              className="mt-4"
+            />
+          </Suspense>
+
           <div className="mt-4 grid gap-3">
             {mobileQuickFacts.map((fact) => {
               const Icon = fact.icon;
@@ -609,26 +621,13 @@ export function IslandRouteDetailsTemplate({
           <AffiliateDisclosure className="mt-2 text-center" />
         </div>
 
-        <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur">
-          <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-[11px] font-extrabold text-[#10201d]">
-                {mobileSelectedOptionId ? mobileSelectedOption.name : stickyLabel}
-              </p>
-              <p className="text-[10px] font-semibold leading-4 text-slate-500">
-                Final price on partner
-              </p>
-            </div>
-
-            <AffiliateButton
-              href={mobileSelectedOption?.affiliateUrl ?? route.mainAffiliateUrl}
-              trackingId={mobileSelectedOption?.trackingId}
-              variant="detailsSticky"
-            >
-              {getCompactCtaLabel(mobileSelectedOption)}
-            </AffiliateButton>
-          </div>
-        </div>
+        <Suspense fallback={null}>
+          <MobilePersonalizedDetailsSticky
+            route={route}
+            selectedOptionId={mobileSelectedOptionId}
+            stickyLabel={stickyLabel}
+          />
+        </Suspense>
 
         <MobileBottomNav activeLabel="Routes" />
       </section>

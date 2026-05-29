@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
   AlertTriangle,
@@ -15,10 +16,13 @@ import {
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import {
+  MobilePersonalizedDetailsSticky,
+  MobilePersonalizedTripCard,
+} from "@/components/MobilePersonalizedTrip";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { getRoutePageBySlug } from "@/data/routePages";
-import { getCompactCtaLabel } from "@/data/routeIntelligence";
 
 const route = getRoutePageBySlug("surat-thani-airport-to-koh-samui");
 const busFerryOption = route?.options.find((option) => option.id === "bus-ferry");
@@ -182,6 +186,14 @@ function MobileDetails() {
             />
           </div>
         </div>
+
+        <Suspense fallback={null}>
+          <MobilePersonalizedTripCard
+            route={route}
+            backHref="/routes/surat-thani-airport-to-koh-samui"
+            className="mt-4"
+          />
+        </Suspense>
 
         <div className="mt-4 grid gap-3">
           {quickFacts.map((fact) => {
@@ -369,26 +381,13 @@ function MobileDetails() {
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
-      <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur">
-        <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
-          <div className="min-w-0 flex-1">
-            <p className="truncate text-[11px] font-extrabold text-[#10201d]">
-              {busFerryOption?.name ?? "Best value"}
-            </p>
-            <p className="text-[10px] font-semibold leading-4 text-slate-500">
-              Final price on 12Go
-            </p>
-          </div>
-
-          <AffiliateButton
-            href={busFerryOption?.affiliateUrl ?? route.mainAffiliateUrl}
-            trackingId={busFerryOption?.trackingId}
-            variant="detailsSticky"
-          >
-            {getCompactCtaLabel(busFerryOption)}
-          </AffiliateButton>
-        </div>
-      </div>
+      <Suspense fallback={null}>
+        <MobilePersonalizedDetailsSticky
+          route={route}
+          selectedOptionId={busFerryOption?.id}
+          stickyLabel={busFerryOption?.name ?? "Best value"}
+        />
+      </Suspense>
 
       <MobileBottomNav activeLabel="Routes" />
     </section>

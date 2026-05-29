@@ -442,6 +442,168 @@ export function getPersonalizedDecisionLabels(
   ];
 }
 
+export function getPersonalizedOptionNote(
+  route: RoutePageData,
+  option: RouteTransportOption,
+  arrivalTime?: string,
+  passengers?: string,
+) {
+  const arrival = normalizeArrivalTime(arrivalTime);
+  const arrivalLabel = getArrivalTimeLabel(arrivalTime) ?? "Your timing";
+  const passengerLabel = getPassengerLabel(passengers);
+  const passengerCount = getPassengerCount(passengers);
+  const profile = getTransportProfile(option);
+  const recommendedOption = getPersonalizedOption(route, arrivalTime, passengers);
+  const isRecommended = recommendedOption?.id === option.id;
+  const routeIsIsland = isIslandRoute(route);
+  const routeIsAirport = isAirportRoute(route);
+
+  let label = isRecommended ? "Best match for your trip" : "Backup for your trip";
+  let timingTag = "Check timing";
+  let groupTag = "Check fit";
+  let checkTag = "Ticket rules";
+  let timeReason = `${arrivalLabel}: confirm the partner schedule before booking.`;
+
+  if (arrival === "late") {
+    if (profile.isTaxi) {
+      label = isRecommended ? "Best after 20:00" : label;
+      timingTag = "Late-safe";
+      checkTag = "Meeting point";
+      timeReason = `${arrivalLabel}: this is flexible after immigration, baggage delays and evening traffic.`;
+    } else if (profile.isFerry || profile.isSpeedboat) {
+      label = "Only if last boat fits";
+      timingTag = "Last boat risk";
+      checkTag = "Last departure";
+      timeReason = `${arrivalLabel}: use only if the partner still has a same-day boat and enough pier buffer.`;
+    } else if (profile.isBus) {
+      label = "Backup only after 20:00";
+      timingTag = "Fixed schedule";
+      checkTag = "Last bus";
+      timeReason = `${arrivalLabel}: fixed departures can be missed after immigration, baggage or flight delay.`;
+    } else {
+      timingTag = "Confirm late slot";
+      checkTag = "Departure time";
+      timeReason = `${arrivalLabel}: use only with a confirmed late departure and clear pickup point.`;
+    }
+  } else if (arrival === "morning") {
+    if (profile.isBus || profile.isVan || profile.isFerry || profile.isSpeedboat || profile.isTrain) {
+      label = isRecommended ? "Good daytime value" : label;
+      timingTag = "Day schedule";
+      checkTag = routeIsIsland ? "Pier time" : "Departure time";
+      timeReason = `${arrivalLabel}: scheduled options can work well when pickup and departure time match.`;
+    } else {
+      timingTag = "Flexible pickup";
+      checkTag = "Vehicle size";
+      timeReason = `${arrivalLabel}: choose this for comfort, direct pickup or luggage rather than lowest price.`;
+    }
+  } else if (arrival === "afternoon") {
+    if (routeIsIsland || profile.isFerry || profile.isSpeedboat) {
+      timingTag = "Last boat buffer";
+      checkTag = "Pier cutoff";
+      timeReason = `${arrivalLabel}: keep buffer for the last ferry or speedboat and do not book a tight pier run.`;
+    } else if (routeIsAirport) {
+      timingTag = "Traffic buffer";
+      checkTag = "Pickup time";
+      timeReason = `${arrivalLabel}: allow time for bags, airport walking and traffic before paying.`;
+    } else {
+      timingTag = "Schedule buffer";
+      checkTag = "Next departure";
+      timeReason = `${arrivalLabel}: compare the next confirmed departure with a flexible backup.`;
+    }
+  } else if (arrival === "now") {
+    if (profile.isTaxi) {
+      label = isRecommended ? "Best for immediate pickup" : label;
+      timingTag = "Ready now";
+      checkTag = "Driver point";
+      timeReason = `${arrivalLabel}: this keeps pickup flexible if bags, queues or traffic slow you down.`;
+    } else {
+      timingTag = "Next slot";
+      checkTag = "Live schedule";
+      timeReason = `${arrivalLabel}: check live availability before moving to the counter, pier or station.`;
+    }
+  }
+
+  if (passengerCount === 1) {
+    groupTag = profile.isTaxi ? "Comfort upgrade" : "Solo value";
+  } else if (passengerCount === 2) {
+    groupTag = profile.isTaxi ? "Comfort backup" : "Good for 2";
+  } else if (passengerCount === 3 || passengerCount === 4) {
+    groupTag = profile.isTaxi || profile.isVan ? "Good group fit" : "Seat-by-seat";
+  } else {
+    groupTag = profile.isTaxi || profile.isVan ? "Check vehicle size" : "Check seat count";
+  }
+
+  const groupReason =
+    passengerCount === 1
+      ? profile.isTaxi
+        ? `${passengerLabel}: this is mainly a comfort upgrade, not the cheapest choice.`
+        : `${passengerLabel}: seat-based options usually make better budget sense.`
+      : passengerCount >= 5
+        ? profile.isTaxi || profile.isVan
+          ? `${passengerLabel}: confirm vehicle size and luggage space before paying.`
+          : `${passengerLabel}: check seat count and luggage rules before buying separate tickets.`
+        : profile.isTaxi || profile.isVan
+          ? `${passengerLabel}: this can reduce luggage and pickup friction for a small group.`
+          : `${passengerLabel}: compare total seat cost against a private transfer backup.`;
+
+  return {
+    label,
+    text: `${timeReason} ${groupReason}`,
+    timingTag,
+    groupTag,
+    checkTag,
+    isRecommended,
+  };
+}
+
+export function getPersonalizedDetailsChecks(
+  route: RoutePageData,
+  option: RouteTransportOption,
+  arrivalTime?: string,
+  passengers?: string,
+) {
+  const arrival = normalizeArrivalTime(arrivalTime);
+  const passengerCount = getPassengerCount(passengers);
+  const profile = getTransportProfile(option);
+  const checks = [
+    `Selected option: ${option.name}. Confirm pickup point for ${route.from} to ${route.to}.`,
+  ];
+
+  if (arrival === "late") {
+    checks.push(
+      profile.isTaxi
+        ? "After 20:00: confirm driver meeting point, waiting time and hotel drop-off."
+        : "After 20:00: confirm the last usable departure before paying.",
+    );
+  } else if (arrival === "afternoon") {
+    checks.push(
+      isIslandRoute(route)
+        ? "14:00-20:00: confirm last ferry, pier reporting time and onward transfer."
+        : "14:00-20:00: leave buffer for traffic, baggage and pickup instructions.",
+    );
+  } else if (arrival === "morning") {
+    checks.push(
+      "Before 14:00: scheduled options can work, but still match the ticket time to your actual arrival.",
+    );
+  } else if (arrival === "now") {
+    checks.push(
+      "Arriving now: check live partner availability before moving to the pickup point.",
+    );
+  }
+
+  if (passengerCount >= 5) {
+    checks.push("5+ Adults: confirm seat count, vehicle capacity and luggage space.");
+  } else if (passengerCount >= 3) {
+    checks.push(`${passengerCount} Adults: compare total seat price with a private vehicle backup.`);
+  } else if (passengerCount === 1) {
+    checks.push("1 Adult: scheduled seats are usually best value when timing fits.");
+  } else {
+    checks.push("2 Adults: compare shared seats against a private transfer backup.");
+  }
+
+  return checks;
+}
+
 export function getDecisionLabels(route: RoutePageData) {
   const taxi =
     route.options.find((option) => option.id.includes("taxi")) ??

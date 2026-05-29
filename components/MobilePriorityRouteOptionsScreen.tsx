@@ -18,6 +18,7 @@ import {
   getPriceGuidance,
   getPassengerLabel,
   getPersonalizedDecisionLabels,
+  getPersonalizedOptionNote,
   getPersonalizedOptionOrder,
   getPersonalizedPassengerAdvice,
   getPersonalizedRouteDecision,
@@ -291,6 +292,12 @@ export function MobilePriorityRouteOptionsScreen({
         <div className="mt-4 space-y-4">
           {orderedOptions.map((option) => {
             const details = getOptionDetails(option, optionDetailsById);
+            const personalizedNote = getPersonalizedOptionNote(
+              route,
+              option,
+              arrivalTime,
+              passengers,
+            );
 
             return (
               <article
@@ -329,17 +336,24 @@ export function MobilePriorityRouteOptionsScreen({
 
                         <div className="text-right">
                           <p className="text-sm font-extrabold text-[#064e45]">
-                            Final price
+                            Partner rules
                           </p>
                           <p className="text-[10px] font-medium text-slate-500">
-                            final on partner
+                            price + ticket
                           </p>
                         </div>
                       </div>
 
-                      <p className="mt-2 text-[11px] leading-4 text-slate-500">
-                        {getPriceGuidance(option)}
-                      </p>
+                      <div className="mt-2 rounded-2xl bg-[#eef6f2] px-3 py-2">
+                        <p className="text-[9.5px] font-extrabold uppercase tracking-[0.12em] text-[#0c5a4d]">
+                          {personalizedNote.label}
+                        </p>
+                        <p className="mt-1 text-[11px] leading-4 text-[#41524d]">
+                          {hasPersonalizedInput
+                            ? personalizedNote.text
+                            : getPriceGuidance(option)}
+                        </p>
+                      </div>
 
                       <div className="mt-4 grid grid-cols-3 gap-2 text-center">
                         <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
@@ -355,20 +369,24 @@ export function MobilePriorityRouteOptionsScreen({
                         <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
                           <Users className="mx-auto h-3.5 w-3.5 text-[#0c5a4d]" />
                           <p className="mt-1 text-[11px] font-bold text-[#10201d]">
-                            {details.departures}
+                            {hasPersonalizedInput
+                              ? personalizedNote.timingTag
+                              : details.departures}
                           </p>
                           <p className="mt-0.5 text-[9.5px] text-slate-500">
-                            Departures
+                            {hasPersonalizedInput ? "Timing" : "Departures"}
                           </p>
                         </div>
 
                         <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
                           <Luggage className="mx-auto h-3.5 w-3.5 text-[#0c5a4d]" />
                           <p className="mt-1 text-[11px] font-bold text-[#10201d]">
-                            {details.baggage}
+                            {hasPersonalizedInput
+                              ? personalizedNote.groupTag
+                              : details.baggage}
                           </p>
                           <p className="mt-0.5 text-[9.5px] text-slate-500">
-                            Luggage
+                            {hasPersonalizedInput ? "Travelers" : "Luggage"}
                           </p>
                         </div>
                       </div>
