@@ -58,6 +58,7 @@ const mobileToOptions = [
   { value: "bkk", label: "Suvarnabhumi Airport (BKK)" },
   { value: "dmk", label: "Don Mueang Airport (DMK)" },
   { value: "krabi-airport", label: "Krabi Airport" },
+  { value: "phuket-airport", label: "Phuket Airport" },
   { value: "surat-thani-airport", label: "Surat Thani Airport" },
   { value: "chiang-mai", label: "Chiang Mai" },
 ];
@@ -90,7 +91,11 @@ const mobileFromOptionGroups = [
 const mobileToOptionGroups = [
   {
     label: "Cities",
-    options: mobileToOptions.slice(0, 2),
+    options: [
+      mobileToOptions.find((option) => option.value === "pattaya"),
+      mobileToOptions.find((option) => option.value === "hua-hin"),
+      mobileToOptions.find((option) => option.value === "bangkok"),
+    ].filter(Boolean) as typeof mobileToOptions,
   },
   {
     label: "Islands",
@@ -111,11 +116,19 @@ const mobileToOptionGroups = [
   },
   {
     label: "Airports",
-    options: mobileToOptions.slice(11, 15),
+    options: [
+      mobileToOptions.find((option) => option.value === "bkk"),
+      mobileToOptions.find((option) => option.value === "dmk"),
+      mobileToOptions.find((option) => option.value === "krabi-airport"),
+      mobileToOptions.find((option) => option.value === "phuket-airport"),
+      mobileToOptions.find((option) => option.value === "surat-thani-airport"),
+    ].filter(Boolean) as typeof mobileToOptions,
   },
   {
     label: "Northern Thailand",
-    options: mobileToOptions.slice(15),
+    options: [
+      mobileToOptions.find((option) => option.value === "chiang-mai"),
+    ].filter(Boolean) as typeof mobileToOptions,
   },
 ];
 
