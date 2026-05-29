@@ -578,16 +578,16 @@ function MobileHero() {
                 </div>
 
                 <div className="leading-tight">
-                  <p className="text-[15px] font-extrabold uppercase tracking-[0.08em] text-[#10201d]">
-                    THAILAND TRANSFERS
+                  <p className="text-[13px] font-extrabold uppercase tracking-[0.06em] text-[#10201d]">
+                    THAILAND TRANSFER GUIDE
                   </p>
 
                   <div className="mt-1 flex items-center gap-2">
-                    <div className="h-[1.5px] w-8 rounded-full bg-[#d5ab47]" />
-                    <p className="text-[10px] font-semibold text-[#364152]">
-                      Airport & City Transfers
+                    <div className="h-[1.5px] w-6 rounded-full bg-[#d5ab47]" />
+                    <p className="text-[9.5px] font-semibold text-[#364152]">
+                      Independent transfer advice
                     </p>
-                    <div className="h-[1.5px] w-8 rounded-full bg-[#d5ab47]" />
+                    <div className="h-[1.5px] w-6 rounded-full bg-[#d5ab47]" />
                   </div>
                 </div>
               </div>

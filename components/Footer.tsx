@@ -28,7 +28,7 @@ export function Footer() {
             </p>
 
             <p className="mt-4 text-sm leading-6 text-white/75">
-              Thailand Transfers is an independent travel comparison guide for
+              Thailand Transfer Guide is an independent travel comparison guide for
               travelers who want clear route information, pickup tips and
               booking options before they travel.
             </p>
@@ -109,7 +109,7 @@ export function Footer() {
 
         <div className="flex items-center justify-between border-t border-white/10 py-5 text-xs text-white/60">
           <p>
-            © 2026 Thailand Transfers. Independent travel comparison website.
+            © 2026 Thailand Transfer Guide. Independent travel comparison website.
           </p>
 
           <div className="flex flex-wrap justify-end gap-x-4 gap-y-2">

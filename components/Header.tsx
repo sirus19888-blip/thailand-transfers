@@ -37,13 +37,13 @@ export function Header() {
             </div>
 
             <div className="leading-tight">
-              <p className="text-[17px] font-extrabold uppercase tracking-[0.08em] text-[#10201d]">
-                Thailand
+              <p className="text-[13px] font-extrabold uppercase tracking-[0.07em] text-[#10201d]">
+                Thailand Transfer Guide
               </p>
               <div className="flex items-center gap-2">
-                <div className="h-px w-7 bg-[#c99a2e]" />
-                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#10201d]">
-                  Transfers
+                <div className="h-px w-6 bg-[#c99a2e]" />
+                <p className="text-[9px] font-bold uppercase tracking-[0.11em] text-[#10201d]">
+                  Independent transfer advice
                 </p>
               </div>
             </div>

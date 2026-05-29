@@ -36,7 +36,7 @@ export function DesktopComingSoon() {
           </div>
 
           <p className="mt-6 max-w-lg text-[18px] leading-8 text-[#31433f]">
-            Thailand Transfers is currently optimized for mobile travelers.
+            Thailand Transfer Guide is currently optimized for mobile travelers.
             Open this page on your phone for the full route search, guides and
             booking links.
           </p>

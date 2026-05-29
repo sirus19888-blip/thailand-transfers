@@ -12,7 +12,7 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 
 export const metadata: Metadata = {
-  title: "Thailand Transfers | Compare Thailand Transfer Options",
+  title: "Thailand Transfer Guide | Compare Thailand Transfer Options",
   description:
     "Compare popular transfer routes in Thailand by bus, taxi, van and ferry. Find practical travel tips and check booking options with trusted partners.",
   alternates: {
