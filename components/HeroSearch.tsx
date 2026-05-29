@@ -18,6 +18,8 @@ import { Container } from "./Container";
 import { JustLandedMode } from "./JustLandedMode";
 import { supportedLanguages } from "@/data/i18n";
 
+const hasMultipleLanguages = supportedLanguages.length > 1;
+
 type DataLayerWindow = Window & {
   dataLayer?: object[];
 };
@@ -596,18 +598,30 @@ function MobileHero() {
               <div className="relative mt-1">
                 <button
                   type="button"
-                  aria-controls="mobile-language-menu"
-                  aria-expanded={isMobileLanguageOpen}
-                  aria-label="Choose language"
-                  onClick={() =>
-                    setIsMobileLanguageOpen((isOpen) => !isOpen)
+                  aria-controls={
+                    hasMultipleLanguages ? "mobile-language-menu" : undefined
                   }
-                  className="flex h-9 items-center rounded-full bg-white/85 px-3.5 text-[11px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm"
+                  aria-expanded={
+                    hasMultipleLanguages ? isMobileLanguageOpen : undefined
+                  }
+                  aria-label={
+                    hasMultipleLanguages
+                      ? "Choose language"
+                      : "Current language: English"
+                  }
+                  onClick={() =>
+                    hasMultipleLanguages
+                      ? setIsMobileLanguageOpen((isOpen) => !isOpen)
+                      : undefined
+                  }
+                  className={`flex h-9 items-center rounded-full bg-white/85 px-3.5 text-[11px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm ${
+                    hasMultipleLanguages ? "" : "cursor-default"
+                  }`}
                 >
                   EN
                 </button>
 
-                {isMobileLanguageOpen ? (
+                {hasMultipleLanguages && isMobileLanguageOpen ? (
                   <div
                     id="mobile-language-menu"
                     className="absolute right-0 top-12 z-30 w-52 rounded-[20px] border border-[#e7e2d8] bg-white/95 p-2 shadow-xl shadow-black/10 backdrop-blur"
@@ -632,10 +646,12 @@ function MobileHero() {
                       </div>
                     ))}
 
-                    <p className="border-t border-[#e7e2d8] px-3 pt-2 text-[10px] leading-4 text-slate-500">
-                      Safety warnings and affiliate disclosures are reviewed
-                      before a language goes live.
-                    </p>
+                    {hasMultipleLanguages ? (
+                      <p className="border-t border-[#e7e2d8] px-3 pt-2 text-[10px] leading-4 text-slate-500">
+                        Safety warnings and affiliate disclosures are reviewed
+                        before a language goes live.
+                      </p>
+                    ) : null}
                   </div>
                 ) : null}
               </div>
