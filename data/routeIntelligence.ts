@@ -2,6 +2,11 @@ import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 
 export type GuideStatus = "Full guide" | "Quick guide" | "Partner search only";
 
+export type QuickGuideNote = {
+  title: string;
+  body: string;
+};
+
 const fullGuideSlugs = new Set([
   "bangkok-airport-to-pattaya",
   "pattaya-to-bangkok-airport",
@@ -143,6 +148,50 @@ function getRouteText(route: RoutePageData) {
   return `${route.from} ${route.to} ${route.intro}`.toLowerCase();
 }
 
+function formatList(items: string[]) {
+  const cleanItems = items.filter(Boolean);
+
+  if (cleanItems.length <= 1) return cleanItems[0] ?? "";
+  if (cleanItems.length === 2) return cleanItems.join(" and ");
+
+  return `${cleanItems.slice(0, -1).join(", ")} and ${cleanItems.at(-1)}`;
+}
+
+function cleanRouteIntro(intro: string) {
+  return intro
+    .replace(
+      /\s*Thailand Transfer Guide is an independent travel comparison website\.\s*/g,
+      " ",
+    )
+    .replace(
+      /\s*Booking and support are handled by travel partners and operators\.\s*/g,
+      " ",
+    )
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getIntroSummary(route: RoutePageData) {
+  const cleanIntro = cleanRouteIntro(route.intro);
+  const sentences = cleanIntro.match(/[^.!?]+[.!?]/g);
+
+  if (!sentences?.length) return cleanIntro;
+
+  return sentences.slice(0, 2).join(" ").trim();
+}
+
+function getOptionDurationSummary(route: RoutePageData) {
+  return route.options
+    .map((option) => `${option.name}: ${option.duration}`)
+    .join("; ");
+}
+
+function getOptionPickupSummary(route: RoutePageData) {
+  return route.options
+    .map((option) => `${option.name}: ${option.pickup}`)
+    .join("; ");
+}
+
 function isAirportRoute(route: RoutePageData) {
   return getRouteText(route).includes("airport");
 }
@@ -175,6 +224,35 @@ function hasScheduledSeatOption(route: RoutePageData) {
       profile.isTrain
     );
   });
+}
+
+export function getQuickGuideNotes(route: RoutePageData): QuickGuideNote[] {
+  const optionNames = formatList(route.options.map((option) => option.name));
+  const routeIsAirport = isAirportRoute(route);
+  const routeIsIsland = isIslandRoute(route);
+  const airportDirection = route.to.toLowerCase().includes("airport")
+    ? "For airport drop-off, leave a buffer before your flight."
+    : "For airport pickup, leave a buffer for immigration, baggage and terminal walking.";
+  const connectionCheck = routeIsIsland
+    ? "For island or ferry routes, confirm the pier, boat leg, last usable departure and onward transfer before payment."
+    : routeIsAirport
+      ? airportDirection
+      : "For city or beach transfers, confirm the exact meeting point and final drop-off area before payment.";
+
+  return [
+    {
+      title: "Route shape",
+      body: `${getIntroSummary(route)} Current guide options are ${optionNames}.`,
+    },
+    {
+      title: "Pickup reality",
+      body: `Pickup wording differs by option: ${getOptionPickupSummary(route)}. Check the partner ticket for the exact meeting point and whether hotel pickup or hotel drop-off is included.`,
+    },
+    {
+      title: "Timing check",
+      body: `Planning durations in this guide: ${getOptionDurationSummary(route)}. ${connectionCheck} Final schedule, luggage rules and price are confirmed on the partner page.`,
+    },
+  ];
 }
 
 function getPersonalizedOptionScore(

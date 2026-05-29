@@ -7,7 +7,11 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { getMobileVehicleImage } from "@/components/mobileVehicleAssets";
 import type { RoutePageData } from "@/data/routePages";
-import { getOptionLabel } from "@/data/routeIntelligence";
+import {
+  getGuideStatus,
+  getOptionLabel,
+  getQuickGuideNotes,
+} from "@/data/routeIntelligence";
 
 type StandardMobileRouteOptionsProps = {
   route: RoutePageData;
@@ -80,6 +84,9 @@ export function StandardMobileRouteOptions({
 }
 
 function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData }) {
+  const isQuickGuide = getGuideStatus(route.slug) === "Quick guide";
+  const quickGuideNotes = isQuickGuide ? getQuickGuideNotes(route) : [];
+
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-20">
       <div className="mx-auto max-w-md px-4 py-5">
@@ -98,14 +105,30 @@ function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData })
           <div className="h-10 w-10 rounded-full bg-white shadow-sm" />
         </div>
 
-        <div className="mt-5 rounded-[18px] border border-[#e7e2d8] bg-white p-4 text-center shadow-sm">
-          <p className="text-sm font-extrabold text-[#10201d]">
-            Full pickup guide coming later.
+        <div className="mt-5 rounded-[18px] border border-[#e7e2d8] bg-white p-4 shadow-sm">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+            {isQuickGuide ? "Quick route notes" : "Route options"}
           </p>
-          <p className="mt-2 text-xs leading-5 text-slate-500">
-            Check final schedule, luggage rules and pickup details on the
-            partner page.
-          </p>
+
+          {quickGuideNotes.length ? (
+            <div className="mt-3 divide-y divide-[#eee8dd]">
+              {quickGuideNotes.map((note) => (
+                <div key={note.title} className="py-3 first:pt-0 last:pb-0">
+                  <h2 className="text-sm font-extrabold text-[#10201d]">
+                    {note.title}
+                  </h2>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    {note.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-2 text-xs leading-5 text-slate-500">
+              Check final schedule, luggage rules and pickup details on the
+              partner page.
+            </p>
+          )}
         </div>
 
         <AffiliateDisclosure className="mt-4 text-center" />
@@ -143,6 +166,11 @@ function StandardMobileRouteOptionsView({
   passengers,
   arrivalTime,
 }: Omit<StandardMobileRouteOptionsProps, "useProvidedParamsOnly">) {
+  const quickGuideNotes =
+    getGuideStatus(route.slug) === "Quick guide"
+      ? getQuickGuideNotes(route)
+      : undefined;
+
   return (
     <MobilePriorityRouteOptionsScreen
       route={route}
@@ -157,6 +185,7 @@ function StandardMobileRouteOptionsView({
       selectedDate={selectedDate}
       passengers={passengers}
       arrivalTime={arrivalTime}
+      quickGuideNotes={quickGuideNotes}
     />
   );
 }

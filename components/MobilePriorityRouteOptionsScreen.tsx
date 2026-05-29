@@ -14,6 +14,7 @@ import {
   affiliateMicroDisclosure,
   getArrivalTimeLabel,
   getCompactCtaLabel,
+  getGuideStatus,
   getPickupMapUrl,
   getPriceGuidance,
   getPassengerLabel,
@@ -25,6 +26,8 @@ import {
   getPersonalizedTimingAdvice,
   getRiskBadges,
   getSourceFreshness,
+  getQuickGuideNotes,
+  type QuickGuideNote,
 } from "@/data/routeIntelligence";
 import {
   ArrowLeft,
@@ -58,6 +61,7 @@ type MobilePriorityRouteOptionsScreenProps = {
   selectedDate?: string;
   passengers?: string;
   arrivalTime?: string;
+  quickGuideNotes?: QuickGuideNote[];
 };
 
 function getBadgeColor(id: string) {
@@ -130,6 +134,7 @@ export function MobilePriorityRouteOptionsScreen({
   selectedDate,
   passengers,
   arrivalTime,
+  quickGuideNotes,
 }: MobilePriorityRouteOptionsScreenProps) {
   const footerWithFreshness = footerNote.startsWith("Last checked")
     ? footerNote
@@ -167,6 +172,11 @@ export function MobilePriorityRouteOptionsScreen({
     ? `${orderedOptions.length} options for ${optionsContextLabel}`
     : `${orderedOptions.length} best options found`;
   const freshness = getSourceFreshness(route);
+  const resolvedQuickGuideNotes =
+    quickGuideNotes ??
+    (getGuideStatus(route.slug) === "Quick guide"
+      ? getQuickGuideNotes(route)
+      : undefined);
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-20">
@@ -497,6 +507,27 @@ export function MobilePriorityRouteOptionsScreen({
             );
           })}
         </div>
+
+        {resolvedQuickGuideNotes?.length ? (
+          <section className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+              Quick route notes
+            </p>
+
+            <div className="mt-3 divide-y divide-[#eee8dd]">
+              {resolvedQuickGuideNotes.map((note) => (
+                <div key={note.title} className="py-3 first:pt-0 last:pb-0">
+                  <h2 className="text-sm font-extrabold text-[#10201d]">
+                    {note.title}
+                  </h2>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    {note.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
           Sources & freshness: last checked {freshness.lastChecked}. Official source:
