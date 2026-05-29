@@ -389,7 +389,7 @@ function MobileDetails() {
             trackingId={ferryVanOption?.trackingId}
             variant="detailsSticky"
           >
-            Check live price
+            Check final price and ticket rules
           </AffiliateButton>
         </div>
       </div>
@@ -398,7 +398,6 @@ function MobileDetails() {
     </section>
   );
 }
-
 export default function SuvarnabhumiAirportToKohChangDetailsPage() {
   if (!route) {
     notFound();
@@ -443,7 +442,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                     href={ferryVanOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={ferryVanOption?.trackingId}
                   >
-                    Check live prices on 12Go
+                    Check final price and ticket rules
                   </AffiliateButton>
 
                   <Link
@@ -652,7 +651,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                 href={taxiOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={taxiOption?.trackingId}
               >
-                Check live prices on 12Go
+                Check final price and ticket rules
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

@@ -2,6 +2,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { DesktopComingSoon } from "@/components/DesktopComingSoon";
+import { GlobalStructuredData } from "@/components/StructuredData";
+import { MobileCookieConsent } from "@/components/MobileCookieConsent";
 import { siteName, siteUrl } from "./site";
 import "./globals.css";
 
@@ -68,7 +70,9 @@ export default function RootLayout({
     >
       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="min-h-full flex flex-col">
+        <GlobalStructuredData />
         <div className="contents lg:hidden">{children}</div>
+        <MobileCookieConsent />
         <div className="hidden lg:flex">
           <DesktopComingSoon />
         </div>

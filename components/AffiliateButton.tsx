@@ -20,19 +20,25 @@ export function AffiliateButton({
   variant = "default",
 }: AffiliateButtonProps) {
   function handleClick() {
-    if (!trackingId) return;
-
-    console.log("Affiliate click:", trackingId);
-
     if (typeof window !== "undefined") {
       const trackingWindow = window as DataLayerWindow;
+      const url = new URL(href);
+      const subId = url.searchParams.get("sub_id") ?? trackingId;
+      const [route = "unknown", option = "general"] = (subId ?? "")
+        .replace(/^click_12go_/, "")
+        .split(/-(?=[^-]+$)/);
 
       trackingWindow.dataLayer = trackingWindow.dataLayer || [];
       trackingWindow.dataLayer.push({
-        event: "affiliate_click",
+        event: "partner_click",
         click_id: trackingId,
+        partner: "12go",
         affiliate_partner: "12go",
         affiliate_url: href,
+        sub_id: subId,
+        route,
+        option,
+        cta: typeof children === "string" ? children : "affiliate_button",
       });
     }
   }

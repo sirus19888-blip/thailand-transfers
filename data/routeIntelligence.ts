@@ -66,6 +66,45 @@ export function getOptionLabel(option: RouteTransportOption) {
   return "Best for most tourists";
 }
 
+export function getDecisionLabels(route: RoutePageData) {
+  const taxi =
+    route.options.find((option) => option.id.includes("taxi")) ??
+    route.options.find((option) => option.name.toLowerCase().includes("taxi"));
+  const bus =
+    route.options.find((option) => option.id.includes("bus")) ??
+    route.options.find((option) => option.name.toLowerCase().includes("bus"));
+  const fastest =
+    route.options.find((option) => option.id.includes("flight")) ??
+    route.options.find((option) => option.id.includes("speedboat")) ??
+    taxi ??
+    route.options[0];
+  const mostTourists =
+    route.options.find((option) => option.id.includes("ferry-van")) ??
+    route.options.find((option) => option.id.includes("van")) ??
+    taxi ??
+    bus ??
+    route.options[0];
+
+  return [
+    {
+      label: "Best for most tourists",
+      value: mostTourists?.name ?? "Compare options",
+    },
+    {
+      label: "Cheapest",
+      value: bus?.name ?? "Budget option",
+    },
+    {
+      label: "Fastest",
+      value: fastest?.name ?? "Fastest option",
+    },
+    {
+      label: "Best after late arrival",
+      value: taxi?.name ?? "Private transfer",
+    },
+  ];
+}
+
 export function getCtaLabel(option?: RouteTransportOption) {
   const id = option?.id.toLowerCase() ?? "";
   const name = option?.name.toLowerCase() ?? "";
@@ -100,15 +139,15 @@ export function getRiskBadges(route: RoutePageData, option: RouteTransportOption
   }
 
   if (id.includes("bus")) {
-    badges.push("Budget only", "Needs local taxi after drop-off");
+    badges.push("Budget only", "Needs local taxi after drop-off", "Good for solo travelers");
   }
 
   if (id.includes("van")) {
-    badges.push("Luggage rules vary", "Shared wait possible");
+    badges.push("Luggage rules vary", "Shared wait possible", "Avoid with large luggage");
   }
 
   if (id.includes("ferry") || id.includes("speedboat") || routeText.includes("ferry")) {
-    badges.push("Last ferry risk");
+    badges.push("Last ferry risk", "Best before 18:00");
   }
 
   if (routeText.includes("airport") && !id.includes("taxi")) {
@@ -125,14 +164,27 @@ export function getRiskBadges(route: RoutePageData, option: RouteTransportOption
 export function getPriceGuidance(option: RouteTransportOption) {
   const id = option.id.toLowerCase();
 
-  if (id.includes("taxi")) return "Typical mid-range option, usually per car.";
-  if (id.includes("bus")) return "Typical budget option, usually per person.";
-  if (id.includes("van")) return "Typical shared option; luggage rules vary.";
+  if (id.includes("taxi")) return "Typical mid-range option, usually per car. Final fare on partner.";
+  if (id.includes("bus")) return "Typical budget option, usually per person. Final fare on partner.";
+  if (id.includes("van")) return "Typical shared option; luggage rules vary. Final fare on partner.";
   if (id.includes("ferry") || id.includes("speedboat")) {
     return "Final fare depends on operator, pier and included pickup.";
   }
 
   return "Final price and ticket rules are confirmed by the partner.";
+}
+
+export function getFullGuideChecklist(route: RoutePageData) {
+  const modes = route.options.map((option) => option.name).join(", ");
+
+  return [
+    "Decision hero",
+    `Options: ${modes}`,
+    "Risk hours",
+    "Pickup / drop-off maps",
+    "Baggage + safety notes",
+    "Sources, last checked, partner CTA",
+  ];
 }
 
 export function getRouteDecision(route: RoutePageData) {

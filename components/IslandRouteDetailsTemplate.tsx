@@ -14,6 +14,7 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
+import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
 import type { RoutePageData } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
@@ -464,23 +465,38 @@ export function IslandRouteDetailsTemplate({
             </p>
 
             <div className="mt-3 grid grid-cols-2 gap-2">
-              <a
+              <TrackedAnchor
                 href={getPickupMapUrl(route, mobileSelectedOption)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
+                event="map_opened"
+                payload={{
+                  route: route.slug,
+                  option: mobileSelectedOption.id,
+                  map_type: "pickup",
+                }}
               >
                 Open pickup in Google Maps
-              </a>
+              </TrackedAnchor>
 
-              <a
+              <TrackedAnchor
                 href={getDropoffMapUrl(route)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
+                event="map_opened"
+                payload={{
+                  route: route.slug,
+                  option: mobileSelectedOption.id,
+                  map_type: "dropoff",
+                }}
               >
                 Open drop-off in Google Maps
-              </a>
+              </TrackedAnchor>
+            </div>
+            <div className="mt-2">
+              <SaveScreenshotButton route={route.slug} />
             </div>
           </div>
 

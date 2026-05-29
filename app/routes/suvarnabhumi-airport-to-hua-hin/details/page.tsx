@@ -378,7 +378,7 @@ function MobileDetails() {
             trackingId={busOption?.trackingId}
             variant="detailsSticky"
           >
-            Check live price
+            Check final price and ticket rules
           </AffiliateButton>
         </div>
       </div>
@@ -387,7 +387,6 @@ function MobileDetails() {
     </section>
   );
 }
-
 export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
   if (!route) {
     notFound();
@@ -432,7 +431,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                     href={busOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={busOption?.trackingId}
                   >
-                    Check live prices on 12Go
+                    Check final price and ticket rules
                   </AffiliateButton>
 
                   <Link
@@ -642,7 +641,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                 href={taxiOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={taxiOption?.trackingId}
               >
-                Check live prices on 12Go
+                Check final price and ticket rules
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

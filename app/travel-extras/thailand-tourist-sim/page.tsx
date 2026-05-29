@@ -57,17 +57,17 @@ const mobileBenefits = [
 const upcomingExtras = [
   {
     title: "Airport fast track",
-    text: "Coming soon",
+    text: "Planned",
     icon: TicketCheck,
   },
   {
     title: "Luggage storage",
-    text: "Coming soon",
+    text: "Planned",
     icon: Luggage,
   },
   {
     title: "Travel protection",
-    text: "Coming soon",
+    text: "Planned",
     icon: ShieldCheck,
   },
 ];
@@ -172,7 +172,7 @@ export default function ThailandTouristSimPage() {
                 trackingId="click_12go_sim_mobile_transfer"
                 fullWidth
               >
-                Check live transfer prices
+                Compare final transfer prices
               </AffiliateButton>
               <AffiliateDisclosure className="mt-3 text-center" />
             </div>
@@ -226,7 +226,7 @@ export default function ThailandTouristSimPage() {
               More extras
             </p>
             <h2 className="mt-1 text-[23px] font-black tracking-normal text-[#10201d]">
-              Coming soon
+              Planned travel extras
             </h2>
 
             <div className="mt-4 grid gap-3">
@@ -335,7 +335,7 @@ export default function ThailandTouristSimPage() {
                     trackingId="click_12go_sim_mobile_transfer"
                     fullWidth
                   >
-                    Check live transfer prices
+                    Compare final transfer prices
                   </AffiliateButton>
                   <AffiliateDisclosure className="mt-3 text-center" />
                 </div>

@@ -4,10 +4,17 @@ import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
+import { ReturnTransferIntelligence } from "@/components/ReturnTransferIntelligence";
+import { FerryIntelligence } from "@/components/FerryIntelligence";
+import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
+import { RouteAnalytics } from "@/components/RouteAnalytics";
+import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
   getCtaLabel,
+  getDecisionLabels,
+  getFullGuideChecklist,
   getPickupMapUrl,
   getPriceGuidance,
   getRiskBadges,
@@ -77,6 +84,14 @@ function getDetailsHref(detailsHref: string, optionId: string) {
   return `${detailsHref}${separator}option=${encodeURIComponent(optionId)}`;
 }
 
+const bkkPattayaDeepGuides = [
+  { label: "Bus", href: "/routes/bangkok-airport-to-pattaya/bus" },
+  { label: "Taxi", href: "/routes/bangkok-airport-to-pattaya/taxi" },
+  { label: "Late arrival", href: "/routes/bangkok-airport-to-pattaya/late-arrival" },
+  { label: "With luggage", href: "/routes/bangkok-airport-to-pattaya/with-luggage" },
+  { label: "Gate 8", href: "/guides/bkk-airport-pickup-level-1-gate-8" },
+];
+
 export function MobilePriorityRouteOptionsScreen({
   route,
   title,
@@ -106,6 +121,8 @@ export function MobilePriorityRouteOptionsScreen({
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-20">
+      <RouteStructuredData route={route} />
+      <RouteAnalytics route={route.slug} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">
           <Link
@@ -181,6 +198,58 @@ export function MobilePriorityRouteOptionsScreen({
             </div>
           </div>
         </div>
+
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {getDecisionLabels(route).map((item) => (
+            <div
+              key={item.label}
+              className="rounded-[16px] border border-[#e7e2d8] bg-white px-3 py-2 shadow-sm"
+            >
+              <p className="text-[9.5px] font-extrabold uppercase tracking-[0.12em] text-[#c99a2e]">
+                {item.label}
+              </p>
+              <p className="mt-1 truncate text-[12px] font-extrabold text-[#10201d]">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-3 rounded-[18px] border border-[#e7e2d8] bg-white p-3 shadow-sm">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#c99a2e]">
+            Full guide checklist
+          </p>
+          <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+            {getFullGuideChecklist(route).map((item) => (
+              <span
+                key={item}
+                className="shrink-0 rounded-full bg-[#f8f4ec] px-3 py-1.5 text-[10.5px] font-extrabold text-[#51615c]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className="mt-2">
+            <SaveScreenshotButton route={route.slug} label="Save guide screenshot" />
+          </div>
+        </div>
+
+        {route.slug === "bangkok-airport-to-pattaya" ? (
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+            {bkkPattayaDeepGuides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="shrink-0 rounded-full bg-[#10201d] px-3 py-2 text-[11px] font-extrabold text-white"
+              >
+                {guide.label}
+              </Link>
+            ))}
+          </div>
+        ) : null}
+
+        <ReturnTransferIntelligence route={route} />
+        <FerryIntelligence route={route} />
 
         <div className="mt-5 flex items-center justify-between gap-3">
           <p className="text-sm font-extrabold text-[#10201d]">
@@ -294,14 +363,20 @@ export function MobilePriorityRouteOptionsScreen({
                       </div>
                       </div>
 
-                      <a
+                      <TrackedAnchor
                         href={getPickupMapUrl(route, option)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="shrink-0 rounded-full border border-[#0c5a4d] px-3 py-2 text-[11px] font-extrabold text-[#0c5a4d]"
+                        event="map_opened"
+                        payload={{
+                          route: route.slug,
+                          option: option.id,
+                          map_type: "pickup",
+                        }}
                       >
                         Map
-                      </a>
+                      </TrackedAnchor>
                     </div>
                   </div>
 

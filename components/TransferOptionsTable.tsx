@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Bus, Car, ShieldCheck, Train, Users } from "lucide-react";
 import { transferOptions } from "@/data/routes";
 import { AffiliateButton } from "./AffiliateButton";
+import { affiliateMicroDisclosure, getCtaLabel } from "@/data/routeIntelligence";
 
 const desktopRows = [
   ...transferOptions,
@@ -23,8 +24,6 @@ const desktopRows = [
     image: "/assets/vehicles/van.png",
     pros: ["Local experience", "Low cost"],
     cons: ["Transfer needed", "Less convenient"],
-    rating: "4.3",
-    reviews: "Partner details",
   },
 ];
 
@@ -342,12 +341,16 @@ function MobileTransferCards() {
           </div>
 
           <div className="mt-4 grid gap-3">
+            <p className="rounded-2xl bg-[#fbfaf7] px-3 py-2 text-[11px] leading-4 text-slate-500">
+              {affiliateMicroDisclosure}
+            </p>
+
             <AffiliateButton
               href={option.affiliateUrl}
               trackingId={option.trackingId}
               fullWidth
             >
-              Check live price
+              {getCtaLabel(option)}
             </AffiliateButton>
 
             <Link

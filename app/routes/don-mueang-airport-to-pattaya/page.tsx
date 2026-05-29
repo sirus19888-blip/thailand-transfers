@@ -47,7 +47,7 @@ export default function DonMueangAirportToPattayaPage() {
                   href={dmkPattayaAffiliateUrl}
                   trackingId="click_12go_general_dmk_pattaya"
                 >
-                  Check live prices on 12Go
+                  Check final price and ticket rules
                 </AffiliateButton>
 
                 <Link

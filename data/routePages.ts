@@ -38,7 +38,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 45m – 2h 30m",
         pickup: "Hotel pickup in Pattaya",
         bestFor: "Comfort and early flights",
@@ -49,7 +49,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h 30m – 3h 30m",
         pickup: "Operator pickup point or hotel area",
         bestFor: "Budget travelers",
@@ -60,7 +60,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus / Coach",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h 30m – 3h 30m",
         pickup: "Pattaya bus station or operator point",
         bestFor: "Cheapest return option",
@@ -86,7 +86,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 4h",
         pickup: "Hotel pickup in Hua Hin",
         bestFor: "Comfort and door-to-door travel",
@@ -97,7 +97,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 5h",
         pickup: "Operator pickup point or city area",
         bestFor: "Budget travelers",
@@ -108,7 +108,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus / Coach",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 5h",
         pickup: "Hua Hin bus station or operator point",
         bestFor: "Low-cost return travel",
@@ -119,7 +119,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "train",
         name: "Train",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 5h 30m",
         pickup: "Hua Hin Railway Station",
         bestFor: "Scenic and flexible travel",
@@ -145,7 +145,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry",
         name: "Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 30m – 3h",
         pickup: "Tonsai Pier or operator pier",
         bestFor: "Most travelers and luggage",
@@ -156,7 +156,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "speedboat",
         name: "Speedboat",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 1h 30m",
         pickup: "Tonsai Pier or operator pier",
         bestFor: "Fastest sea transfer",
@@ -182,7 +182,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h – 3h",
         pickup: "Hotel pickup in Pattaya",
         bestFor: "Comfort and direct airport transfer",
@@ -193,7 +193,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 4h",
         pickup: "Operator pickup point or hotel area",
         bestFor: "Budget travelers",
@@ -204,7 +204,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus / Coach",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 4h 30m",
         pickup: "Pattaya bus station or operator point",
         bestFor: "Low-cost airport connection",
@@ -230,7 +230,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "7h – 10h",
         pickup: "Koh Chang hotel, pier or operator pickup point",
         bestFor:
@@ -242,7 +242,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-bus",
         name: "Ferry + Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "8h – 10h 30m",
         pickup: "Koh Chang or mainland pier connection",
         bestFor: "Budget travelers returning from Koh Chang to Bangkok city",
@@ -253,7 +253,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "7h – 9h 30m",
         pickup: "Selected Koh Chang pickup points or operator meeting point",
         bestFor:
@@ -265,7 +265,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "6h – 8h",
         pickup: "Hotel or selected private pickup point",
         bestFor:
@@ -293,7 +293,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "6h 30m – 9h",
         pickup: "Koh Chang hotel, pier or operator pickup point",
         bestFor:
@@ -305,7 +305,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-ferry",
         name: "Bus + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "7h – 10h",
         pickup: "Koh Chang or mainland pier connection",
         bestFor:
@@ -317,7 +317,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "5h 30m – 7h 30m",
         pickup: "Hotel or selected private pickup point",
         bestFor:
@@ -329,7 +329,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "flight",
         name: "Flight + Transfer",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "Check live schedule",
         pickup: "Koh Chang, Trat area or airport connection depending on ticket",
         bestFor:
@@ -357,7 +357,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "6h – 9h",
         pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
         bestFor:
@@ -369,7 +369,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-ferry",
         name: "Bus + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "7h – 10h",
         pickup: "Suvarnabhumi Airport or operator meeting point",
         bestFor:
@@ -381,7 +381,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "5h 30m – 8h",
         pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
         bestFor:
@@ -393,7 +393,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "flight",
         name: "Flight + Transfer",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "Check live schedule",
         pickup:
           "Suvarnabhumi Airport, Trat area or pier connection depending on ticket",
@@ -421,7 +421,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 5h",
         pickup: "Bangkok van station or operator meeting point",
         bestFor:
@@ -433,7 +433,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Bangkok bus terminal or selected operator pickup point",
         bestFor:
@@ -445,7 +445,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "train",
         name: "Train",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Bangkok railway station",
         bestFor:
@@ -457,7 +457,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h 45m – 4h",
         pickup: "Bangkok hotel, airport or selected private pickup point",
         bestFor:
@@ -485,7 +485,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Airport Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 5h",
         pickup: "Suvarnabhumi Airport bus pickup point or operator meeting point",
         bestFor:
@@ -497,7 +497,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h 45m – 4h",
         pickup: "Suvarnabhumi Airport arrival area or selected private pickup point",
         bestFor:
@@ -509,7 +509,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-van",
         name: "Bus + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Suvarnabhumi Airport pickup point or operator meeting point",
         bestFor:
@@ -521,7 +521,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "flight",
         name: "Flight + Transfer",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "Check live schedule",
         pickup:
           "Suvarnabhumi Airport or connecting airport transfer depending on ticket",
@@ -550,7 +550,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "train",
         name: "Train",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Don Mueang railway station or selected rail connection",
         bestFor:
@@ -562,7 +562,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Don Mueang Airport, Bangkok bus terminal or operator meeting point",
         bestFor:
@@ -574,7 +574,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-van",
         name: "Bus + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h 30m – 6h 30m",
         pickup: "Don Mueang Airport or operator connection point depending on ticket",
         bestFor:
@@ -586,7 +586,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 4h 30m",
         pickup: "Don Mueang Airport arrival area or selected private pickup point",
         bestFor:
@@ -614,7 +614,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-ferry",
         name: "Bus + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 5h",
         pickup: "Surat Thani Airport or operator airport meeting point",
         bestFor:
@@ -626,7 +626,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van-ferry",
         name: "Van + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 5h 30m",
         pickup: "Surat Thani Airport or selected operator pickup point",
         bestFor:
@@ -638,7 +638,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-ferry-van",
         name: "Bus + Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Surat Thani Airport or operator connection point depending on ticket",
         bestFor:
@@ -650,7 +650,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 5h 30m",
         pickup: "Surat Thani Airport, Surat Thani office or pier connection depending on ticket",
         bestFor:
@@ -678,7 +678,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-bus",
         name: "Ferry + Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 5h",
         pickup: "Koh Samui pier, hotel pickup or operator meeting point",
         bestFor:
@@ -690,7 +690,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h – 5h 30m",
         pickup: "Koh Samui pier, hotel pickup or selected operator pickup point",
         bestFor:
@@ -702,7 +702,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van-ferry-bus",
         name: "Van + Ferry + Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Koh Samui hotel transfer or operator connection point depending on ticket",
         bestFor:
@@ -714,7 +714,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-ferry-van",
         name: "Bus + Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h",
         pickup: "Koh Samui hotel, town transfer point or departure pier depending on ticket",
         bestFor:
@@ -742,7 +742,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Airport Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 2h",
         pickup: "Phuket Airport bus pickup point or operator meeting point",
         bestFor:
@@ -754,7 +754,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 2h",
         pickup: "Phuket Airport or selected operator pickup point",
         bestFor:
@@ -766,7 +766,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "45m – 1h 30m",
         pickup: "Phuket Airport arrival area or selected private pickup point",
         bestFor:
@@ -778,7 +778,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi-van",
         name: "Taxi + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 2h",
         pickup: "Phuket Airport or partner meeting point depending on ticket",
         bestFor:
@@ -806,7 +806,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Airport Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 2h",
         pickup: "Patong Beach bus stop or operator meeting point",
         bestFor:
@@ -818,7 +818,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 2h",
         pickup: "Patong Beach hotel area or selected operator pickup point",
         bestFor:
@@ -830,7 +830,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "45m – 1h 30m",
         pickup: "Patong Beach hotel or selected private pickup point",
         bestFor:
@@ -842,7 +842,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi-van",
         name: "Taxi + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 2h",
         pickup: "Patong Beach hotel area or partner meeting point depending on ticket",
         bestFor:
@@ -870,7 +870,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Airport Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 15m – 2h 30m",
         pickup: "Phuket Airport bus pickup point or operator meeting point",
         bestFor:
@@ -882,7 +882,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 15m – 2h 30m",
         pickup: "Phuket Airport or selected operator pickup point",
         bestFor:
@@ -894,7 +894,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 1h 45m",
         pickup: "Phuket Airport arrival area or selected private pickup point",
         bestFor:
@@ -906,7 +906,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi-van",
         name: "Taxi + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 15m – 2h 30m",
         pickup: "Phuket Airport or partner meeting point depending on ticket",
         bestFor:
@@ -933,7 +933,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "airport-bus",
         name: "Airport Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "45m – 1h 30m",
         pickup: "Krabi Airport bus point",
         bestFor: "Budget travelers",
@@ -944,7 +944,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "shared-van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "30m – 1h 15m",
         pickup: "Krabi Airport operator point",
         bestFor: "Solo travelers and couples",
@@ -955,7 +955,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "private-taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "30m – 1h",
         pickup: "Krabi Airport arrivals area",
         bestFor: "Comfort and hotel drop-off",
@@ -966,7 +966,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi-van",
         name: "Taxi + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "30m – 1h 15m",
         pickup: "Krabi Airport pickup point",
         bestFor: "Small groups and luggage",
@@ -992,7 +992,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "airport-bus",
         name: "Airport Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "45m – 1h 30m",
         pickup: "Ao Nang bus or operator point",
         bestFor: "Budget airport transfer",
@@ -1003,7 +1003,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "shared-van",
         name: "Shared Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "30m – 1h 15m",
         pickup: "Ao Nang hotel area or operator point",
         bestFor: "Solo travelers and couples",
@@ -1014,7 +1014,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "private-taxi",
         name: "Private Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "30m – 1h",
         pickup: "Ao Nang hotel pickup",
         bestFor: "Comfort and early flights",
@@ -1025,7 +1025,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi-van",
         name: "Taxi + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "30m – 1h 15m",
         pickup: "Ao Nang hotel or pickup area",
         bestFor: "Small groups and luggage",
@@ -1051,7 +1051,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry",
         name: "Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 30m – 3h",
         pickup: "Phuket pier or included hotel pickup",
         bestFor: "Most travelers and luggage",
@@ -1062,7 +1062,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "speedboat",
         name: "Speedboat",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h – 1h 30m",
         pickup: "Phuket pier or operator meeting point",
         bestFor: "Fastest sea transfer",
@@ -1073,7 +1073,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Hotel Transfer + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h – 4h",
         pickup: "Phuket hotel area if included",
         bestFor: "Door-to-pier convenience",
@@ -1099,7 +1099,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry",
         name: "Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 30m – 3h",
         pickup: "Krabi pier or operator point",
         bestFor: "Most travelers and luggage",
@@ -1110,7 +1110,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "speedboat",
         name: "Speedboat",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "45m – 1h 30m",
         pickup: "Krabi pier or operator point",
         bestFor: "Fastest island transfer",
@@ -1121,7 +1121,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van-ferry",
         name: "Van + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h – 4h",
         pickup: "Krabi hotel area if included",
         bestFor: "Hotel pickup and pier transfer",
@@ -1147,7 +1147,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry",
         name: "Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 30m – 3h",
         pickup: "Tonsai Pier or operator pier",
         bestFor: "Most travelers and luggage",
@@ -1158,7 +1158,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "speedboat",
         name: "Speedboat",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "45m – 1h 30m",
         pickup: "Tonsai Pier or operator pier",
         bestFor: "Fastest return transfer",
@@ -1169,7 +1169,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "2h – 4h",
         pickup: "Tonsai Pier with onward transfer if included",
         bestFor: "Krabi hotel or airport connections",
@@ -1195,7 +1195,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus-ferry",
         name: "Bus + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 7h",
         pickup: "Surat Thani Airport operator point",
         bestFor: "Budget island transfer",
@@ -1206,7 +1206,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "van-ferry",
         name: "Van + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h 30m",
         pickup: "Surat Thani Airport meeting point",
         bestFor: "Simple airport-to-island connection",
@@ -1217,7 +1217,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "taxi-ferry",
         name: "Taxi + Ferry",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 6h",
         pickup: "Surat Thani Airport arrivals area",
         bestFor: "Comfort and fewer transfers",
@@ -1243,7 +1243,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-bus",
         name: "Ferry + Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 7h",
         pickup: "Koh Phangan pier",
         bestFor: "Budget airport connection",
@@ -1254,7 +1254,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-van",
         name: "Ferry + Van",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "4h – 6h 30m",
         pickup: "Koh Phangan pier or operator point",
         bestFor: "Airport transfer after island stay",
@@ -1265,7 +1265,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "ferry-taxi",
         name: "Ferry + Taxi",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "3h 30m – 6h",
         pickup: "Koh Phangan pier",
         bestFor: "Comfort and early flights",
@@ -1291,7 +1291,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "train",
         name: "Train",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "10h – 14h",
         pickup: "Bangkok railway station",
         bestFor: "Overnight travel and scenery",
@@ -1302,7 +1302,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "9h – 12h",
         pickup: "Bangkok bus terminal or operator point",
         bestFor: "Budget long-distance travel",
@@ -1313,7 +1313,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "flight",
         name: "Flight",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 15m – 1h 30m",
         pickup: "Bangkok airport",
         bestFor: "Fastest option",
@@ -1339,7 +1339,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "train",
         name: "Train",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "10h – 14h",
         pickup: "Chiang Mai railway station",
         bestFor: "Overnight travel and scenery",
@@ -1350,7 +1350,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "bus",
         name: "Bus",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "9h – 12h",
         pickup: "Chiang Mai bus terminal or operator point",
         bestFor: "Budget long-distance travel",
@@ -1361,7 +1361,7 @@ export const routePages: RoutePageData[] = [
       {
         id: "flight",
         name: "Flight",
-        price: "Check live price",
+        price: "Final price on partner",
         duration: "1h 15m – 1h 30m",
         pickup: "Chiang Mai Airport",
         bestFor: "Fastest option",

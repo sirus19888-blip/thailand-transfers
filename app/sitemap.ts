@@ -8,6 +8,14 @@ const specialRouteSlugs = [
   "don-mueang-airport-to-pattaya",
 ];
 
+const highValueSeoPaths = [
+  "/routes/bangkok-airport-to-pattaya/bus",
+  "/routes/bangkok-airport-to-pattaya/taxi",
+  "/routes/bangkok-airport-to-pattaya/late-arrival",
+  "/routes/bangkok-airport-to-pattaya/with-luggage",
+  "/guides/bkk-airport-pickup-level-1-gate-8",
+];
+
 function sitemapEntry(
   path: string,
   lastModified: Date,
@@ -33,6 +41,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntry("/", lastModified, "weekly", 1),
     sitemapEntry("/routes", lastModified, "weekly", 0.9),
     sitemapEntry("/guides", lastModified, "weekly", 0.75),
+    ...highValueSeoPaths.map((path) =>
+      sitemapEntry(path, lastModified, "monthly", 0.65),
+    ),
     ...legalLinks.map((link) =>
       sitemapEntry(link.href, lastModified, "monthly", 0.4),
     ),

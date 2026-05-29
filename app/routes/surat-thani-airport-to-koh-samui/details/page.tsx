@@ -388,7 +388,7 @@ function MobileDetails() {
             trackingId={busFerryOption?.trackingId}
             variant="detailsSticky"
           >
-            Check live price
+            Check final price and ticket rules
           </AffiliateButton>
         </div>
       </div>
@@ -397,7 +397,6 @@ function MobileDetails() {
     </section>
   );
 }
-
 export default function SuratThaniAirportToKohSamuiDetailsPage() {
   if (!route) {
     notFound();
@@ -442,7 +441,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                     href={busFerryOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={busFerryOption?.trackingId}
                   >
-                    Check live prices on 12Go
+                    Check final price and ticket rules
                   </AffiliateButton>
 
                   <Link
@@ -650,7 +649,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                 href={vanFerryOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={vanFerryOption?.trackingId}
               >
-                Check live prices on 12Go
+                Check final price and ticket rules
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

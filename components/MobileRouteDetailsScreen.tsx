@@ -4,6 +4,15 @@ import { mainRoute, transferOptions } from "@/data/routes";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { AffiliateButton } from "./AffiliateButton";
 import { MobileBottomNav } from "./MobileBottomNav";
+import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
+import {
+  affiliateMicroDisclosure,
+  getCtaLabel,
+  getDropoffMapUrl,
+  getPickupMapUrl,
+  getSourceFreshness,
+} from "@/data/routeIntelligence";
+import type { RoutePageData } from "@/data/routePages";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -282,6 +291,27 @@ const faqs = [
 const busOption = transferOptions.find((option) => option.id === "bus");
 const taxiOption = transferOptions.find((option) => option.id === "taxi");
 
+const routeData: RoutePageData = {
+  slug: mainRoute.slug,
+  title: mainRoute.title,
+  seoTitle: mainRoute.title,
+  seoDescription: mainRoute.description,
+  from: mainRoute.from,
+  to: mainRoute.to,
+  intro: mainRoute.description,
+  mainAffiliateUrl: mainRoute.affiliateUrl,
+  options: transferOptions.map((option) => ({
+    id: option.id,
+    name: option.name,
+    price: "Final price on partner",
+    duration: option.duration,
+    pickup: option.pickup,
+    bestFor: option.bestFor,
+    trackingId: option.trackingId,
+    affiliateUrl: option.affiliateUrl,
+  })),
+};
+
 type MobileRouteDetailsScreenProps = {
   selectedOptionId?: string;
 };
@@ -297,6 +327,10 @@ export function MobileRouteDetailsScreen({
   const selectedContent =
     optionContentById[selectedOption?.id as keyof typeof optionContentById] ??
     optionContentById.bus;
+  const selectedRouteOption =
+    routeData.options.find((option) => option.id === selectedOption?.id) ??
+    routeData.options[0];
+  const freshness = getSourceFreshness(routeData);
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-40 lg:hidden">
@@ -485,6 +519,49 @@ export function MobileRouteDetailsScreen({
 
         <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
           <h2 className="text-lg font-extrabold text-[#10201d]">
+            Pickup and drop-off maps
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            Save a screenshot of the partner pickup instructions before you
+            leave arrivals. Map links open Google Maps without an API key.
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <TrackedAnchor
+              href={getPickupMapUrl(routeData, selectedRouteOption)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
+              event="map_opened"
+              payload={{
+                route: routeData.slug,
+                option: selectedRouteOption.id,
+                map_type: "pickup",
+              }}
+            >
+              Open pickup in Google Maps
+            </TrackedAnchor>
+            <TrackedAnchor
+              href={getDropoffMapUrl(routeData)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
+              event="map_opened"
+              payload={{
+                route: routeData.slug,
+                option: selectedRouteOption.id,
+                map_type: "dropoff",
+              }}
+            >
+              Open drop-off in Google Maps
+            </TrackedAnchor>
+          </div>
+          <div className="mt-2">
+            <SaveScreenshotButton route={routeData.slug} />
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
             What to check before booking
           </h2>
 
@@ -518,6 +595,38 @@ export function MobileRouteDetailsScreen({
           >
             Back to transfer options
           </Link>
+        </div>
+
+        <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
+            Sources & freshness
+          </h2>
+          <div className="mt-3 grid gap-2 text-xs leading-5 text-slate-600">
+            <p>
+              <span className="font-extrabold text-[#10201d]">
+                Last checked:
+              </span>{" "}
+              {freshness.lastChecked}
+            </p>
+            <p>
+              <span className="font-extrabold text-[#10201d]">
+                Official source:
+              </span>{" "}
+              {freshness.officialSource}
+            </p>
+            <p>
+              <span className="font-extrabold text-[#10201d]">
+                Partner source:
+              </span>{" "}
+              {freshness.partnerSource}
+            </p>
+            <p>
+              <span className="font-extrabold text-[#10201d]">
+                Confidence:
+              </span>{" "}
+              {freshness.confidence}
+            </p>
+          </div>
         </div>
 
         <div
@@ -561,13 +670,13 @@ export function MobileRouteDetailsScreen({
               {selectedOption?.name ?? "Selected option"}
             </p>
             <p className="text-base font-extrabold text-[#10201d]">
-              Live price
+              Final price
               <span className="ml-1 text-xs font-medium text-slate-500">
-                on 12Go
+                on partner
               </span>
             </p>
             <p className="text-[10px] font-medium leading-4 text-slate-500">
-              Affiliate link - we may earn a commission.
+              {affiliateMicroDisclosure}
             </p>
           </div>
 
@@ -580,7 +689,7 @@ export function MobileRouteDetailsScreen({
             trackingId={selectedOption?.trackingId ?? taxiOption?.trackingId}
             variant="detailsSticky"
           >
-            Check live price
+            {getCtaLabel(selectedRouteOption)}
           </AffiliateButton>
         </div>
       </div>

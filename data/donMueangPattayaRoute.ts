@@ -1,4 +1,4 @@
-import type { RoutePageData } from "@/data/routePages";
+﻿import type { RoutePageData } from "@/data/routePages";
 
 export const donMueangPattayaRoute: RoutePageData = {
   slug: "don-mueang-airport-to-pattaya",
@@ -16,7 +16,7 @@ export const donMueangPattayaRoute: RoutePageData = {
     {
       id: "taxi",
       name: "Private Taxi",
-      price: "Check live price",
+      price: "Final price on partner",
       duration: "2h - 2h 30m",
       pickup: "DMK arrivals area",
       bestFor: "Comfort and late arrivals",
@@ -27,7 +27,7 @@ export const donMueangPattayaRoute: RoutePageData = {
     {
       id: "van",
       name: "Shared Van",
-      price: "Check live price",
+      price: "Final price on partner",
       duration: "2h 30m - 3h 30m",
       pickup: "Operator meeting point",
       bestFor: "Budget travelers",
@@ -38,7 +38,7 @@ export const donMueangPattayaRoute: RoutePageData = {
     {
       id: "bus",
       name: "Bus / Combined Transfer",
-      price: "Check live price",
+      price: "Final price on partner",
       duration: "3h+",
       pickup: "Depends on operator",
       bestFor: "Flexible travelers",

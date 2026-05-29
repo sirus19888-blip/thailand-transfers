@@ -74,7 +74,7 @@ export default async function BangkokAirportToPattayaDetailsPage({
                 href={busOption?.affiliateUrl ?? "#"}
                 trackingId={busOption?.trackingId}
               >
-                Check live prices on 12Go
+                Check final price and ticket rules
               </AffiliateButton>
 
                 <Link
