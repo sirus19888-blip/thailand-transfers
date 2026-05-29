@@ -307,8 +307,8 @@ function DesktopHero() {
               </h1>
 
               <p className="mt-4 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
-                Tell us where you land. We show the safest option, a cheap
-                backup and what to avoid.
+                Tell us where you land. We show the safest option, a smart
+                budget backup and what to avoid.
               </p>
             </div>
 
@@ -646,8 +646,8 @@ function MobileHero() {
               </h1>
 
               <p className="mt-2 text-[12px] font-medium leading-[18px] text-[#364152]">
-                Tell us where you land. We show the safest option, a cheap
-                backup and what to avoid.
+                Tell us where you land. We show the safest option, a smart
+                budget backup and what to avoid.
               </p>
             </div>
           </div>
