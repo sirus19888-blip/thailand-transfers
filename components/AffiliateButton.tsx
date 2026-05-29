@@ -14,7 +14,7 @@ type AffiliateButtonProps = {
 
 export function AffiliateButton({
   href,
-  children = "Check live prices on 12Go",
+  children = "Check final price on partner site",
   fullWidth = false,
   trackingId,
   variant = "default",
@@ -38,7 +38,7 @@ export function AffiliateButton({
   }
 
   const baseClass =
-    "inline-flex items-center justify-center font-bold text-white shadow-sm transition";
+    "inline-flex min-h-12 items-center justify-center text-center font-bold leading-tight text-white shadow-sm transition";
 
   const variantClass =
     variant === "table"
@@ -51,7 +51,7 @@ export function AffiliateButton({
     <a
       href={href}
       target="_blank"
-      rel="nofollow sponsored noopener noreferrer"
+      rel="sponsored nofollow noopener noreferrer"
       onClick={handleClick}
       className={`${baseClass} ${variantClass} ${fullWidth ? "w-full" : ""}`}
     >

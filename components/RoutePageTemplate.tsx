@@ -55,7 +55,7 @@ export default function RoutePageTemplate({
                   href={route.mainAffiliateUrl}
                   trackingId={generalTrackingId}
                 >
-                  Check live prices on 12Go
+                  Check final price and ticket rules
                 </AffiliateButton>
 
                 <Link

@@ -6,10 +6,10 @@ export function MobileStickyCta() {
       <a
         href={mainRoute.affiliateUrl}
         target="_blank"
-        rel="nofollow sponsored noopener noreferrer"
+        rel="sponsored nofollow noopener noreferrer"
         className="flex w-full items-center justify-center rounded-full bg-[#064e45] px-6 py-4 text-sm font-bold text-white shadow-sm"
       >
-        Check live prices on 12Go
+        Check final price on partner site
       </a>
     </div>
   );

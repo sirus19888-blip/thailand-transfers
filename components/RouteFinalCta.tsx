@@ -13,7 +13,7 @@ export function RouteFinalCta() {
             </p>
 
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Check live transfer prices before you land
+              Check final partner prices before you land
             </h2>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/75">
@@ -25,10 +25,10 @@ export function RouteFinalCta() {
           <a
             href={mainRoute.affiliateUrl}
             target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
+            rel="sponsored nofollow noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-bold text-[#064e45] shadow-sm transition hover:bg-[#f8f4ec]"
           >
-            Check live prices on 12Go
+            Check final price and ticket rules
           </a>
         </div>
         <AffiliateDisclosure className="mt-4 text-white/70" />

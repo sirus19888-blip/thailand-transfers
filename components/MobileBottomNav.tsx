@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, CalendarDays, House, User } from "lucide-react";
+import { BookOpen, CalendarDays, House, Plane } from "lucide-react";
 
 const navItems = [
   {
@@ -7,6 +7,12 @@ const navItems = [
     href: "/",
     active: true,
     icon: House,
+  },
+  {
+    label: "Landed",
+    href: "/#just-landed",
+    active: false,
+    icon: Plane,
   },
   {
     label: "Routes",
@@ -19,12 +25,6 @@ const navItems = [
     href: "/guides",
     active: false,
     icon: BookOpen,
-  },
-  {
-    label: "Extras",
-    href: "/travel-extras/thailand-tourist-sim",
-    active: false,
-    icon: User,
   },
 ];
 

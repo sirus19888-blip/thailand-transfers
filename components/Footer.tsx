@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { Container } from "./Container";
+import { legalLinks } from "@/data/legalPages";
 
 const helpfulLinks = [
   { name: "Travel Guides", href: "#travel-tips" },
@@ -111,10 +112,17 @@ export function Footer() {
             © 2026 Thailand Transfers. Independent travel comparison website.
           </p>
 
-          <p>
-            Some links may be affiliate links. We may earn a commission at no
-            extra cost to you.
-          </p>
+          <div className="flex flex-wrap justify-end gap-x-4 gap-y-2">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="transition hover:text-white"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
     </footer>

@@ -16,6 +16,7 @@ import {
   Users,
 } from "lucide-react";
 import { Container } from "./Container";
+import { JustLandedMode } from "./JustLandedMode";
 
 const mobileFromOptions = [
   { value: "bkk", label: "Suvarnabhumi Airport (BKK)" },
@@ -908,6 +909,8 @@ function MobileHero() {
               <ArrowRight className="h-4 w-4" />
             </button>
           </form>
+
+          <JustLandedMode />
 
           <div className="mt-3 flex items-center justify-center gap-2 text-[9.5px] text-[#2f6b5d]">
             <div className="flex items-center gap-1.5">

@@ -10,6 +10,7 @@ import { PracticalTips } from "@/components/PracticalTips";
 import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { MobileTrustLinks } from "@/components/MobileTrustLinks";
 
 export const metadata: Metadata = {
   title: "Thailand Transfers | Compare Thailand Transfer Options",
@@ -28,6 +29,7 @@ export default function HomePage() {
       </div>
 
       <HeroSearch />
+      <MobileTrustLinks />
 
       <div className="hidden lg:block">
         <TransferOptionsTable />

@@ -23,6 +23,11 @@ import {
   mainRoute,
   popularRoutes,
 } from "@/data/routes";
+import {
+  affiliateMicroDisclosure,
+  getGuideStatus,
+  getStatusDescription,
+} from "@/data/routeIntelligence";
 
 export const metadata: Metadata = {
   title: "All Thailand Transfer Routes | Thailand Transfers",
@@ -83,6 +88,9 @@ function MobileRouteCard({
   route: (typeof popularRoutes)[number];
   compact?: boolean;
 }) {
+  const slug = route.href.split("/").filter(Boolean).at(-1);
+  const status = getGuideStatus(slug);
+
   return (
     <Link
       href={route.href}
@@ -103,7 +111,7 @@ function MobileRouteCard({
         <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/72 via-[#10201d]/12 to-transparent" />
         <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
           <span className="rounded-full bg-white/92 px-3 py-1 text-[11px] font-extrabold text-[#0c5a4d]">
-            {route.price}
+            {status}
           </span>
           <span className="inline-flex items-center gap-1 rounded-full bg-[#10201d]/74 px-3 py-1 text-[11px] font-bold text-white backdrop-blur">
             <Clock3 className="h-3 w-3" />
@@ -118,6 +126,9 @@ function MobileRouteCard({
         </h3>
         <p className="mt-2 text-[13px] leading-5 text-[#4b5d58]">
           {route.description}
+        </p>
+        <p className="mt-2 text-[11px] font-semibold leading-4 text-[#667085]">
+          {getStatusDescription(status)}
         </p>
         <div className="mt-4 flex items-center justify-between gap-3 border-t border-[#eee7dc] pt-3">
           <span className="inline-flex items-center gap-1 text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#8b6b20]">
@@ -317,11 +328,14 @@ export default function RoutesPage() {
                   className="rounded-[8px] border border-[#eee7dc] bg-[#fbfaf7] p-4"
                 >
                   <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
-                    {route.type}
+                    Partner search only
                   </p>
                   <h3 className="mt-2 text-[16px] font-extrabold leading-snug text-[#10201d]">
                     {route.title}
                   </h3>
+                  <p className="mt-1 text-[11px] font-semibold leading-4 text-[#667085]">
+                    {getStatusDescription("Partner search only")}
+                  </p>
                   <p className="mt-2 text-[13px] leading-5 text-[#4b5d58]">
                     {route.description}
                   </p>
@@ -332,8 +346,11 @@ export default function RoutesPage() {
                       variant="table"
                       fullWidth
                     >
-                      Check live options
+                      See live schedule and pickup rules
                     </AffiliateButton>
+                    <p className="mt-2 text-[10.5px] leading-4 text-slate-500">
+                      {affiliateMicroDisclosure}
+                    </p>
                   </div>
                 </article>
               ))}

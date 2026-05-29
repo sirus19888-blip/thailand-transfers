@@ -64,10 +64,10 @@ export function RouteHero() {
               <a
                 href={mainRoute.affiliateUrl}
                 target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
+                rel="sponsored nofollow noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-[#064e45] px-7 py-4 text-sm font-bold text-white shadow-sm transition hover:bg-[#033b35]"
               >
-                Check live prices on 12Go
+                Check final price and ticket rules
               </a>
 
               <a

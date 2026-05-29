@@ -7,6 +7,7 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { getMobileVehicleImage } from "@/components/mobileVehicleAssets";
 import type { RoutePageData } from "@/data/routePages";
+import { getOptionLabel } from "@/data/routeIntelligence";
 
 type StandardMobileRouteOptionsProps = {
   route: RoutePageData;
@@ -14,28 +15,16 @@ type StandardMobileRouteOptionsProps = {
   passengers?: string;
 };
 
-function getOptionLabel(optionId: string) {
-  if (optionId.includes("taxi")) return "Most flexible";
-  if (optionId.includes("train")) return "Scenic option";
-  if (optionId.includes("bus")) return "Best value";
-  if (optionId.includes("van")) return "Shared ride";
-  if (optionId.includes("flight")) return "Compare all";
-
-  return "Live option";
-}
-
 function buildOptionDetails(route: RoutePageData) {
   return Object.fromEntries(
     route.options.map((option) => [
       option.id,
       {
-        label: getOptionLabel(option.id),
+        label: getOptionLabel(option),
         operator: `${option.name} partner operators`,
         departures: option.id.includes("taxi") ? "On demand" : "Live schedule",
         baggage: option.id.includes("taxi") ? "Private car" : "Check rules",
         image: getMobileVehicleImage(option.id),
-        rating: option.id.includes("taxi") ? "4.8" : "4.5",
-        reviews: "Partner details",
         pros: [option.bestFor, "Live partner availability"],
         cons: ["Details can change", "Check ticket rules before booking"],
       },

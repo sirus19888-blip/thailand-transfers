@@ -15,6 +15,13 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import type { RoutePageData } from "@/data/routePages";
+import {
+  affiliateMicroDisclosure,
+  getCtaLabel,
+  getDropoffMapUrl,
+  getPickupMapUrl,
+  getSourceFreshness,
+} from "@/data/routeIntelligence";
 
 type Step = {
   number: string;
@@ -263,6 +270,7 @@ export function IslandRouteDetailsTemplate({
     route,
     mobileSelectedOption.name,
   );
+  const freshness = getSourceFreshness(route);
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
@@ -446,6 +454,38 @@ export function IslandRouteDetailsTemplate({
 
           <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
             <h2 className="text-lg font-extrabold text-[#10201d]">
+              Pickup and drop-off maps
+            </h2>
+
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Save a screenshot before you leave the airport, pier or hotel.
+              Google Maps links open as a search, so confirm the exact partner
+              meeting point on your ticket.
+            </p>
+
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <a
+                href={getPickupMapUrl(route, mobileSelectedOption)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
+              >
+                Open pickup in Google Maps
+              </a>
+
+              <a
+                href={getDropoffMapUrl(route)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
+              >
+                Open drop-off in Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+            <h2 className="text-lg font-extrabold text-[#10201d]">
               What to check before booking
             </h2>
 
@@ -457,6 +497,46 @@ export function IslandRouteDetailsTemplate({
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+            <h2 className="text-lg font-extrabold text-[#10201d]">
+              Sources & freshness
+            </h2>
+
+            <div className="mt-3 grid gap-2 text-xs leading-5 text-slate-600">
+              <p>
+                <span className="font-extrabold text-[#10201d]">
+                  Last checked:
+                </span>{" "}
+                {freshness.lastChecked}
+              </p>
+              <p>
+                <span className="font-extrabold text-[#10201d]">
+                  Official source:
+                </span>{" "}
+                {freshness.officialSource}
+              </p>
+              <p>
+                <span className="font-extrabold text-[#10201d]">
+                  Partner source:
+                </span>{" "}
+                {freshness.partnerSource}
+              </p>
+              <p>
+                <span className="font-extrabold text-[#10201d]">
+                  Confidence:
+                </span>{" "}
+                {freshness.confidence}
+              </p>
+            </div>
+
+            <Link
+              href="/corrections-policy"
+              className="mt-3 flex min-h-12 items-center justify-center rounded-2xl bg-[#f8f4ec] px-4 py-3 text-sm font-extrabold text-[#0c5a4d]"
+            >
+              Report outdated info
+            </Link>
           </div>
 
           <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
@@ -521,13 +601,13 @@ export function IslandRouteDetailsTemplate({
                 {mobileSelectedOptionId ? mobileSelectedOption.name : stickyLabel}
               </p>
               <p className="text-base font-extrabold text-[#10201d]">
-                Live price
+                Final price
                 <span className="ml-1 text-xs font-medium text-slate-500">
-                  on 12Go
+                  on partner
                 </span>
               </p>
               <p className="text-[10px] font-medium leading-4 text-slate-500">
-                Affiliate link - we may earn a commission.
+                {affiliateMicroDisclosure}
               </p>
             </div>
 
@@ -536,7 +616,7 @@ export function IslandRouteDetailsTemplate({
               trackingId={mobileSelectedOption?.trackingId}
               variant="detailsSticky"
             >
-              Check live price
+              {getCtaLabel(mobileSelectedOption)}
             </AffiliateButton>
           </div>
         </div>
@@ -575,7 +655,7 @@ export function IslandRouteDetailsTemplate({
                     href={primaryOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={primaryOption?.trackingId}
                   >
-                    Check live prices on 12Go
+                    Check final price and ticket rules
                   </AffiliateButton>
 
                   <Link
@@ -782,7 +862,7 @@ export function IslandRouteDetailsTemplate({
                 href={finalOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={finalOption?.trackingId}
               >
-                Check live prices on 12Go
+                Check final price and ticket rules
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

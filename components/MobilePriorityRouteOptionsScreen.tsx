@@ -6,12 +6,20 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
+  affiliateMicroDisclosure,
+  getCtaLabel,
+  getPickupMapUrl,
+  getPriceGuidance,
+  getRiskBadges,
+  getRouteDecision,
+  getSourceFreshness,
+} from "@/data/routeIntelligence";
+import {
   ArrowLeft,
   Clock3,
   Luggage,
   MapPin,
   ShieldCheck,
-  Star,
   Users,
 } from "lucide-react";
 
@@ -21,8 +29,6 @@ type OptionDetails = {
   departures: string;
   baggage: string;
   image: string;
-  rating: string;
-  reviews: string;
   pros: string[];
   cons: string[];
 };
@@ -59,8 +65,6 @@ function getOptionDetails(
       departures: "Live schedule",
       baggage: "Check rules",
       image: mobileVehicleAssets.van,
-      rating: "4.4",
-      reviews: "Partner details",
       pros: [option.bestFor, "Live partner availability"],
       cons: ["Details can change", "Check ticket rules before booking"],
     }
@@ -98,6 +102,7 @@ export function MobilePriorityRouteOptionsScreen({
   const optionsLabel = selectedDate
     ? `${route.options.length} options for ${selectedDate}`
     : `${route.options.length} best options found`;
+  const freshness = getSourceFreshness(route);
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-20">
@@ -163,6 +168,20 @@ export function MobilePriorityRouteOptionsScreen({
           </div>
         </div>
 
+        <div className="mt-3 rounded-[18px] border border-[#e7e2d8] bg-white px-3 py-3 shadow-sm">
+          <div className="flex gap-2">
+            <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
+            <div>
+              <p className="text-[12px] font-extrabold text-[#10201d]">
+                Best option for your situation
+              </p>
+              <p className="mt-1 text-[11px] leading-4 text-slate-600">
+                {getRouteDecision(route)}
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-5 flex items-center justify-between gap-3">
           <p className="text-sm font-extrabold text-[#10201d]">
             {optionsLabel}
@@ -214,13 +233,17 @@ export function MobilePriorityRouteOptionsScreen({
 
                         <div className="text-right">
                           <p className="text-sm font-extrabold text-[#064e45]">
-                            {option.price}
+                            Final price
                           </p>
                           <p className="text-[10px] font-medium text-slate-500">
-                            on 12Go
+                            final on partner
                           </p>
                         </div>
                       </div>
+
+                      <p className="mt-2 text-[11px] leading-4 text-slate-500">
+                        {getPriceGuidance(option)}
+                      </p>
 
                       <div className="mt-4 grid grid-cols-3 gap-2 text-center">
                         <div className="rounded-2xl bg-[#f8f4ec] px-2 py-2">
@@ -257,7 +280,8 @@ export function MobilePriorityRouteOptionsScreen({
                   </div>
 
                   <div className="border-t border-[#e7e2d8] px-4 py-3">
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex min-w-0 gap-2">
                       <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
 
                       <div>
@@ -268,7 +292,28 @@ export function MobilePriorityRouteOptionsScreen({
                           {option.pickup}
                         </p>
                       </div>
+                      </div>
+
+                      <a
+                        href={getPickupMapUrl(route, option)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 rounded-full border border-[#0c5a4d] px-3 py-2 text-[11px] font-extrabold text-[#0c5a4d]"
+                      >
+                        Map
+                      </a>
                     </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 border-t border-[#e7e2d8] px-4 py-3">
+                    {getRiskBadges(route, option).map((badge) => (
+                      <span
+                        key={badge}
+                        className="rounded-full bg-[#f0eadf] px-2.5 py-1 text-[10.5px] font-extrabold text-[#51615c]"
+                      >
+                        {badge}
+                      </span>
+                    ))}
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 border-t border-[#e7e2d8] px-4 py-3">
@@ -295,19 +340,20 @@ export function MobilePriorityRouteOptionsScreen({
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between gap-3 border-t border-[#e7e2d8] px-4 py-3">
-                    <div className="flex items-center gap-1 text-sm font-bold text-[#10201d]">
-                      <Star className="h-4 w-4 fill-[#d5ab47] text-[#d5ab47]" />
-                      <span>{details.rating}</span>
-                      <span className="text-xs font-medium text-slate-500">
-                        {details.reviews}
-                      </span>
+                  <div className="border-t border-[#e7e2d8] px-4 py-3">
+                    <div className="mb-3 rounded-2xl bg-[#fbfaf7] px-3 py-2">
+                      <p className="text-[11px] font-extrabold text-[#10201d]">
+                        {details.label}
+                      </p>
+                      <p className="mt-0.5 text-[10.5px] leading-4 text-slate-500">
+                        {affiliateMicroDisclosure}
+                      </p>
                     </div>
 
-                    <div className="flex shrink-0 gap-2">
+                    <div className="flex gap-2">
                       <Link
                         href={getDetailsHref(detailsHref, option.id)}
-                        className="rounded-full border border-[#0c5a4d] px-5 py-3 text-sm font-extrabold text-[#0c5a4d]"
+                        className="flex min-h-12 flex-1 items-center justify-center rounded-full border border-[#0c5a4d] px-4 py-3 text-sm font-extrabold text-[#0c5a4d]"
                       >
                         Details
                       </Link>
@@ -315,8 +361,9 @@ export function MobilePriorityRouteOptionsScreen({
                       <AffiliateButton
                         href={option.affiliateUrl}
                         trackingId={option.trackingId}
+                        fullWidth
                       >
-                        Check live price
+                        {getCtaLabel(option)}
                       </AffiliateButton>
                     </div>
                   </div>
@@ -327,7 +374,10 @@ export function MobilePriorityRouteOptionsScreen({
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          {footerWithFreshness}
+          Sources & freshness: last checked {freshness.lastChecked}. Official source:
+          {" "}
+          {freshness.officialSource}. Partner source: {freshness.partnerSource}.
+          Confidence: {freshness.confidence}. {footerWithFreshness}
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>

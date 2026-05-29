@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routePages } from "@/data/routePages";
+import { legalLinks } from "@/data/legalPages";
 import { siteUrl } from "./site";
 
 const specialRouteSlugs = [
@@ -32,6 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntry("/", lastModified, "weekly", 1),
     sitemapEntry("/routes", lastModified, "weekly", 0.9),
     sitemapEntry("/guides", lastModified, "weekly", 0.75),
+    ...legalLinks.map((link) =>
+      sitemapEntry(link.href, lastModified, "monthly", 0.4),
+    ),
     sitemapEntry(
       "/travel-extras/thailand-tourist-sim",
       lastModified,
