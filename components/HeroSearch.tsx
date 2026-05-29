@@ -426,7 +426,7 @@ function DesktopHero() {
 
                     <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
                       <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
-                        Passengers
+                        Travelers
                       </span>
 
                       <div className="mt-2 flex items-center gap-2">
@@ -795,7 +795,7 @@ function MobileHero() {
 
               <label className="relative block min-h-[52px] w-[122px] rounded-[18px] border border-[#e7e2d8] bg-[#fbfaf7] px-3 py-2">
                 <select
-                  aria-label="Passengers"
+                  aria-label="Travelers"
                   name="passengers"
                   ref={mobilePassengersSelectRef}
                   value={mobilePassengers}
@@ -815,7 +815,7 @@ function MobileHero() {
                 </select>
 
                 <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-[#98a2b3]">
-                  Passengers
+                  Travelers
                 </span>
 
                 <div className="mt-1 flex items-center gap-1.5">
