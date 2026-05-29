@@ -9,7 +9,7 @@ type AffiliateButtonProps = {
   children?: React.ReactNode;
   fullWidth?: boolean;
   trackingId?: string;
-  variant?: "default" | "table" | "detailsSticky";
+  variant?: "default" | "table" | "detailsSticky" | "mobileCompact";
 };
 
 export function AffiliateButton({
@@ -44,14 +44,16 @@ export function AffiliateButton({
   }
 
   const baseClass =
-    "inline-flex min-h-12 items-center justify-center text-center font-bold leading-tight text-white shadow-sm transition";
+    "inline-flex items-center justify-center text-center font-bold leading-tight text-white shadow-sm transition";
 
   const variantClass =
     variant === "table"
-      ? "rounded-xl bg-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold"
+      ? "min-h-10 rounded-xl bg-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold"
       : variant === "detailsSticky"
-        ? "shrink-0 rounded-2xl bg-[#0c5a4d] px-5 py-3 text-sm font-extrabold shadow-lg shadow-black/10"
-        : "rounded-full bg-[#064e45] px-5 py-3 text-sm hover:bg-[#033b35]";
+        ? "min-h-12 shrink-0 rounded-2xl bg-[#0c5a4d] px-5 py-3 text-sm font-extrabold shadow-lg shadow-black/10"
+        : variant === "mobileCompact"
+          ? "min-h-10 rounded-full bg-[#064e45] px-3.5 py-2 text-[12px] font-extrabold hover:bg-[#033b35]"
+          : "min-h-12 rounded-full bg-[#064e45] px-5 py-3 text-sm hover:bg-[#033b35]";
 
   return (
     <a

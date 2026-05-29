@@ -12,7 +12,6 @@ import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
-  getCtaLabel,
   getDecisionLabels,
   getFullGuideChecklist,
   getPickupMapUrl,
@@ -86,6 +85,30 @@ function getDetailsHref(detailsHref: string, optionId: string) {
 
 function getRouteImage(route: RoutePageData) {
   return `/assets/routes/${route.slug}.png`;
+}
+
+function getCompactCtaLabel(option: RouteTransportOption) {
+  const id = option.id.toLowerCase();
+  const name = option.name.toLowerCase();
+
+  if (id.includes("bus") || name.includes("bus")) {
+    return "Check bus price";
+  }
+
+  if (id.includes("taxi") || name.includes("taxi")) {
+    return "Check taxi";
+  }
+
+  if (
+    id.includes("ferry") ||
+    id.includes("speedboat") ||
+    name.includes("ferry") ||
+    name.includes("speedboat")
+  ) {
+    return "Live schedule";
+  }
+
+  return "Ticket rules";
 }
 
 const bkkPattayaDeepGuides = [
@@ -427,10 +450,10 @@ export function MobilePriorityRouteOptionsScreen({
                       </p>
                     </div>
 
-                    <div className="flex gap-2">
+                    <div className="grid grid-cols-[0.78fr_1.22fr] gap-2">
                       <Link
                         href={getDetailsHref(detailsHref, option.id)}
-                        className="flex min-h-12 flex-1 items-center justify-center rounded-full border border-[#0c5a4d] px-4 py-3 text-sm font-extrabold text-[#0c5a4d]"
+                        className="flex min-h-10 items-center justify-center rounded-full border border-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold text-[#0c5a4d]"
                       >
                         Details
                       </Link>
@@ -438,9 +461,10 @@ export function MobilePriorityRouteOptionsScreen({
                       <AffiliateButton
                         href={option.affiliateUrl}
                         trackingId={option.trackingId}
+                        variant="mobileCompact"
                         fullWidth
                       >
-                        {getCtaLabel(option)}
+                        {getCompactCtaLabel(option)}
                       </AffiliateButton>
                     </div>
                   </div>
