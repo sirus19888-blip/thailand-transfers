@@ -174,20 +174,6 @@ export function getPriceGuidance(option: RouteTransportOption) {
   return "Final price and ticket rules are confirmed by the partner.";
 }
 
-export function getFullGuideChecklist() {
-  return [
-    "Decision hero",
-    "Options compared",
-    "Risk hours",
-    "Pickup map",
-    "Drop-off guide",
-    "Baggage notes",
-    "Safety notes",
-    "Sources",
-    "Partner CTA",
-  ];
-}
-
 export function getRouteDecision(route: RoutePageData) {
   const routeText = `${route.from} ${route.to} ${route.intro}`.toLowerCase();
 

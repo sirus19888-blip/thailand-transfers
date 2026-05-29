@@ -6,14 +6,13 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import { ReturnTransferIntelligence } from "@/components/ReturnTransferIntelligence";
 import { FerryIntelligence } from "@/components/FerryIntelligence";
-import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
+import { TrackedAnchor } from "@/components/TrackedActions";
 import { RouteAnalytics } from "@/components/RouteAnalytics";
 import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
   getDecisionLabels,
-  getFullGuideChecklist,
   getPickupMapUrl,
   getPriceGuidance,
   getRiskBadges,
@@ -241,25 +240,6 @@ export function MobilePriorityRouteOptionsScreen({
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-3 rounded-[18px] border border-[#e7e2d8] bg-white p-3 shadow-sm">
-          <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#c99a2e]">
-            Full guide checklist
-          </p>
-          <div className="mt-2 grid grid-cols-2 gap-2">
-            {getFullGuideChecklist().map((item) => (
-              <span
-                key={item}
-                className="rounded-full bg-[#f8f4ec] px-3 py-1.5 text-center text-[10.5px] font-extrabold text-[#51615c]"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-          <div className="mt-2">
-            <SaveScreenshotButton route={route.slug} label="Save guide screenshot" />
-          </div>
         </div>
 
         {route.slug === "bangkok-airport-to-pattaya" ? (
