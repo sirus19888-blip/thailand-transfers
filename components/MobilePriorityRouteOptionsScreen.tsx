@@ -191,11 +191,14 @@ export function MobilePriorityRouteOptionsScreen({
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/88 via-[#10201d]/20 to-transparent" />
-            <div className="absolute inset-x-4 bottom-4">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#f0c96a]">
+            <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#10201d]/55 via-[#10201d]/18 to-transparent" />
+            <div className="absolute inset-x-4 top-4">
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#f0c96a] drop-shadow-sm">
                 Best option for your situation
               </p>
-              <h2 className="mt-1 text-[25px] font-extrabold leading-tight text-white">
+            </div>
+            <div className="absolute inset-x-4 bottom-4">
+              <h2 className="text-[25px] font-extrabold leading-tight text-white">
                 {route.to}
               </h2>
               <p className="mt-2 text-xs font-medium leading-5 text-white/82">
