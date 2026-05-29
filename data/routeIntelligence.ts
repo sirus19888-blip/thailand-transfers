@@ -129,6 +129,34 @@ export function getCtaLabel(option?: RouteTransportOption) {
   return "Continue to 12Go for ticket rules";
 }
 
+export function getCompactCtaLabel(option?: RouteTransportOption) {
+  const id = option?.id.toLowerCase() ?? "";
+  const name = option?.name.toLowerCase() ?? "";
+
+  if (
+    id.includes("ferry") ||
+    id.includes("speedboat") ||
+    name.includes("ferry") ||
+    name.includes("speedboat")
+  ) {
+    return "Live schedule";
+  }
+
+  if (id.includes("bus") || name.includes("bus")) {
+    return "Check bus price";
+  }
+
+  if (id.includes("taxi") || name.includes("taxi")) {
+    return "Check taxi";
+  }
+
+  if (id.includes("van") || name.includes("van")) {
+    return "Check van";
+  }
+
+  return "Ticket rules";
+}
+
 export function getRiskBadges(route: RoutePageData, option: RouteTransportOption) {
   const id = option.id.toLowerCase();
   const routeText = `${route.from} ${route.to} ${route.intro}`.toLowerCase();

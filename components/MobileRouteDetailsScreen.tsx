@@ -6,8 +6,7 @@ import { AffiliateButton } from "./AffiliateButton";
 import { MobileBottomNav } from "./MobileBottomNav";
 import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
 import {
-  affiliateMicroDisclosure,
-  getCtaLabel,
+  getCompactCtaLabel,
   getDropoffMapUrl,
   getPickupMapUrl,
   getSourceFreshness,
@@ -333,7 +332,7 @@ export function MobileRouteDetailsScreen({
   const freshness = getSourceFreshness(routeData);
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-40 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -662,21 +661,14 @@ export function MobileRouteDetailsScreen({
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
-      <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 pb-2 pt-2 shadow-2xl backdrop-blur">
-        <div className="mx-auto flex max-w-md items-center gap-3">
+      <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur">
+        <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-medium text-slate-500">
-              {selectedOption?.label ?? "Selected option"} /{" "}
+            <p className="truncate text-[11px] font-extrabold text-[#10201d]">
               {selectedOption?.name ?? "Selected option"}
             </p>
-            <p className="text-base font-extrabold text-[#10201d]">
-              Final price
-              <span className="ml-1 text-xs font-medium text-slate-500">
-                on partner
-              </span>
-            </p>
-            <p className="text-[10px] font-medium leading-4 text-slate-500">
-              {affiliateMicroDisclosure}
+            <p className="text-[10px] font-semibold leading-4 text-slate-500">
+              Final price on partner
             </p>
           </div>
 
@@ -689,7 +681,7 @@ export function MobileRouteDetailsScreen({
             trackingId={selectedOption?.trackingId ?? taxiOption?.trackingId}
             variant="detailsSticky"
           >
-            {getCtaLabel(selectedRouteOption)}
+            {getCompactCtaLabel(selectedRouteOption)}
           </AffiliateButton>
         </div>
       </div>

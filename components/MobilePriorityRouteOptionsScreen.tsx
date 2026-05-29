@@ -12,6 +12,7 @@ import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
+  getCompactCtaLabel,
   getDecisionLabels,
   getPickupMapUrl,
   getPriceGuidance,
@@ -84,30 +85,6 @@ function getDetailsHref(detailsHref: string, optionId: string) {
 
 function getRouteImage(route: RoutePageData) {
   return `/assets/routes/${route.slug}.png`;
-}
-
-function getCompactCtaLabel(option: RouteTransportOption) {
-  const id = option.id.toLowerCase();
-  const name = option.name.toLowerCase();
-
-  if (id.includes("bus") || name.includes("bus")) {
-    return "Check bus price";
-  }
-
-  if (id.includes("taxi") || name.includes("taxi")) {
-    return "Check taxi";
-  }
-
-  if (
-    id.includes("ferry") ||
-    id.includes("speedboat") ||
-    name.includes("ferry") ||
-    name.includes("speedboat")
-  ) {
-    return "Live schedule";
-  }
-
-  return "Ticket rules";
 }
 
 const bkkPattayaDeepGuides = [

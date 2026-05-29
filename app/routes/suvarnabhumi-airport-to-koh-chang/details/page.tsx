@@ -18,6 +18,7 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { getRoutePageBySlug } from "@/data/routePages";
+import { getCompactCtaLabel } from "@/data/routeIntelligence";
 
 const route = getRoutePageBySlug("suvarnabhumi-airport-to-koh-chang");
 const ferryVanOption = route?.options.find((option) => option.id === "ferry-van");
@@ -120,7 +121,7 @@ function MobileDetails() {
   }
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-40 lg:hidden">
+    <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -369,18 +370,14 @@ function MobileDetails() {
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
 
-      <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 pb-2 pt-2 shadow-2xl backdrop-blur">
-        <div className="mx-auto flex max-w-md items-center gap-3">
+      <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur">
+        <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-medium text-slate-500">Island link</p>
-            <p className="text-base font-extrabold text-[#10201d]">
-              Final price
-              <span className="ml-1 text-xs font-medium text-slate-500">
-                on 12Go
-              </span>
+            <p className="truncate text-[11px] font-extrabold text-[#10201d]">
+              {ferryVanOption?.name ?? "Island link"}
             </p>
-            <p className="text-[10px] font-medium leading-4 text-slate-500">
-              Affiliate link - we may earn a commission.
+            <p className="text-[10px] font-semibold leading-4 text-slate-500">
+              Final price on 12Go
             </p>
           </div>
 
@@ -389,7 +386,7 @@ function MobileDetails() {
             trackingId={ferryVanOption?.trackingId}
             variant="detailsSticky"
           >
-            Check final price and ticket rules
+            {getCompactCtaLabel(ferryVanOption)}
           </AffiliateButton>
         </div>
       </div>
