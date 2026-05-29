@@ -95,7 +95,7 @@ export function MobileHomeCompact() {
                 Popular airport transfers
               </p>
               <h2 className="text-[17px] font-extrabold leading-tight text-[#10201d]">
-                Six quick route checks
+                Popular airport routes
               </h2>
             </div>
             <Plane className="h-5 w-5 shrink-0 text-[#0c5a4d]" />

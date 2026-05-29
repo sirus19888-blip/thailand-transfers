@@ -447,7 +447,8 @@ function DesktopHero() {
                   </Link>
 
                   <p className="text-center text-[11px] font-medium text-slate-500">
-                    Independent guide. Final booking is handled by partner sites.
+                    Independent guide. We may earn a commission from partner
+                    links. Final booking is handled by partner sites.
                   </p>
                 </div>
               </div>
@@ -601,7 +602,7 @@ function MobileHero() {
                   onClick={() =>
                     setIsMobileLanguageOpen((isOpen) => !isOpen)
                   }
-                  className="flex h-10 items-center rounded-full bg-white/85 px-4 text-[12px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm"
+                  className="flex h-9 items-center rounded-full bg-white/85 px-3.5 text-[11px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm"
                 >
                   EN
                 </button>
@@ -658,11 +659,11 @@ function MobileHero() {
             action={mobileRouteHref}
             method="get"
             onSubmit={handleMobileSubmit}
-            className="rounded-[22px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10"
+            className="rounded-[22px] border border-[#e7e2d8] bg-white p-1.5 shadow-lg shadow-black/10"
           >
             <div className="grid grid-cols-[1fr_42px] gap-2">
               <div className="space-y-2">
-                <label className="relative block min-h-[58px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
+                <label className="relative block min-h-[52px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
                   <select
                     aria-label="From"
                     ref={mobileFromSelectRef}
@@ -696,7 +697,7 @@ function MobileHero() {
                   </div>
                 </label>
 
-                <label className="relative block min-h-[58px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
+                <label className="relative block min-h-[52px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
                   <select
                     aria-label="To"
                     ref={mobileToSelectRef}
@@ -814,7 +815,7 @@ function MobileHero() {
                   ))}
                 </select>
 
-                <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-[#98a2b3]">
+                <span className="text-[10px] font-bold tracking-normal text-[#98a2b3]">
                   Travelers
                 </span>
 
@@ -840,7 +841,8 @@ function MobileHero() {
             </button>
 
             <p className="mt-2 text-center text-[10.5px] font-medium leading-4 text-slate-500">
-              Independent guide. Final booking is handled by partner sites.
+              Independent guide. We may earn a commission from partner links.
+              Final booking is handled by partner sites.
             </p>
 
           </form>
