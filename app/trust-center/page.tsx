@@ -22,7 +22,7 @@ export default function TrustCenterPage() {
         {
           title: "About us",
           body: [
-            "We build tourist-friendly route guides for Thailand transfers because airport arrivals, ferry connections and return airport trips are often confusing after a long flight.",
+            "We build tourist-friendly route guides for transfer planning in Thailand because airport arrivals, ferry connections and return airport trips are often confusing after a long flight.",
             "We check route pages against public airport, operator, ferry and partner information, then write guidance around traveler suitability: arrival time, luggage, comfort, safety and price.",
           ],
         },

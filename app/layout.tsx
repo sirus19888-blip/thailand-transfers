@@ -20,6 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
+  appleWebApp: {
+    capable: true,
+    title: siteName,
+  },
   title: {
     default: siteName,
     template: `%s | ${siteName}`,

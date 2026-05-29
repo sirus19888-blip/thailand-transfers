@@ -16,9 +16,9 @@ import { mainRoute } from "@/data/routes";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Thailand Transfer Guides | Mobile Route Tips",
+  title: "Mobile Transfer Guides | Thailand Route Tips",
   description:
-    "Mobile route guides for Thailand transfers, including airport pickup, ferry timing, luggage and route-specific booking checks.",
+    "Mobile route guides for transfer planning in Thailand, including airport pickup, ferry timing, luggage and route-specific booking checks.",
   alternates: {
     canonical: "/guides",
   },
@@ -163,7 +163,7 @@ export default function GuidesPage() {
             <div className="flex items-center justify-center gap-2">
               <BookOpen className="h-4 w-4 text-[#0c5a4d]" />
               <h1 className="text-[16px] font-extrabold text-[#10201d]">
-                Transfer Guides
+                Mobile Guides
               </h1>
             </div>
             <p className="mt-1 text-xs font-medium text-slate-500">
