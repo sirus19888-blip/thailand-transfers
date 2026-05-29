@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 import {
   ArrowDownUp,
   ArrowRight,
-  CalendarDays,
   ChevronDown,
+  Clock3,
   Landmark,
   MapPin,
   Plane,
@@ -157,37 +157,37 @@ const mobilePopularRouteLinks = [
   },
   {
     label: "Don Mueang to Pattaya",
-    arialabel: "Don Mueang to Pattaya",
+    ariaLabel: "Don Mueang to Pattaya",
     href: "/routes/don-mueang-airport-to-pattaya",
   },
   {
     label: "Bangkok to Hua Hin",
-    arialabel: "Bangkok to Hua Hin",
+    ariaLabel: "Bangkok to Hua Hin",
     href: "/routes/bangkok-to-hua-hin",
   },
   {
     label: "Suvarnabhumi to Hua Hin",
-    arialabel: "Suvarnabhumi to Hua Hin",
+    ariaLabel: "Suvarnabhumi to Hua Hin",
     href: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
   {
     label: "Suvarnabhumi to Koh Chang",
-    arialabel: "Suvarnabhumi to Koh Chang",
+    ariaLabel: "Suvarnabhumi to Koh Chang",
     href: "/routes/suvarnabhumi-airport-to-koh-chang",
   },
   {
     label: "Phuket Airport to Patong",
-    arialabel: "Phuket Airport to Patong",
+    ariaLabel: "Phuket Airport to Patong",
     href: "/routes/phuket-airport-to-patong-beach",
   },
   {
     label: "Krabi Airport to Ao Nang",
-    arialabel: "Krabi Airport to Ao Nang",
+    ariaLabel: "Krabi Airport to Ao Nang",
     href: "/routes/krabi-airport-to-ao-nang",
   },
   {
     label: "Surat Thani to Koh Samui",
-    arialabel: "Surat Thani to Koh Samui",
+    ariaLabel: "Surat Thani to Koh Samui",
     href: "/routes/surat-thani-airport-to-koh-samui",
   },
 ];
@@ -217,6 +217,13 @@ const mobilePassengerOptions = [
   { value: "3", label: "3 Adults" },
   { value: "4", label: "4 Adults" },
   { value: "5", label: "5+ Adults" },
+];
+
+const mobileArrivalTimeOptions = [
+  { value: "now", label: "Arriving now" },
+  { value: "morning", label: "Before 14:00" },
+  { value: "afternoon", label: "14:00-20:00" },
+  { value: "late", label: "After 20:00" },
 ];
 
 function getMobileDestinationOptions(fromValue: string) {
@@ -331,13 +338,12 @@ function DesktopHero() {
               </h2>
 
               <p className="mt-6 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
-                We compare reliable transfer options — bus, taxi, van and more —
-                so you can choose what is best for your trip, budget and arrival
-                time.
+                Tell us where you land and where you are going. We show the
+                safest option, the cheapest sensible alternative and what to
+                avoid when you arrive tired.
                 <span className="font-bold text-[#0c5a4d]">
                   {" "}
-                  Check final prices, schedules and availability with our
-                  booking partners.
+                  Final prices and ticket rules are checked on the route page.
                 </span>
               </p>
 
@@ -345,14 +351,14 @@ function DesktopHero() {
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Practical route details
+                    Safest first
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Final partner offers
+                    Cheapest backup
                   </p>
                 </div>
 
@@ -366,7 +372,7 @@ function DesktopHero() {
                 <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
                   <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
                   <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Clear route info
+                    What to avoid
                   </p>
                 </div>
               </div>
@@ -470,41 +476,29 @@ function DesktopHero() {
                     </div>
                   </label>
 
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-[1fr_auto] gap-3">
                     <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
                       <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
-                        Date
+                        Arrival time
                       </span>
 
                       <div className="mt-2 flex items-center gap-2">
-                        <CalendarDays className="h-4 w-4 text-[#0c5a4d]" />
+                        <Clock3 className="h-4 w-4 text-[#0c5a4d]" />
                         <span className="text-sm font-extrabold text-[#10201d]">
-                          Choose travel date
+                          After 20:00
                         </span>
                       </div>
                     </label>
 
                     <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
                       <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
-                        Time
-                      </span>
-
-                      <div className="mt-2 flex items-center gap-2">
-                        <span className="text-sm font-extrabold text-[#10201d]">
-                          19:30
-                        </span>
-                      </div>
-                    </label>
-
-                    <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
-                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
-                        Pax
+                        Passengers
                       </span>
 
                       <div className="mt-2 flex items-center gap-2">
                         <Users className="h-4 w-4 text-[#0c5a4d]" />
                         <span className="text-sm font-extrabold text-[#10201d]">
-                          2
+                          2 adults
                         </span>
                       </div>
                     </label>
@@ -514,12 +508,12 @@ function DesktopHero() {
                     href={searchHref}
                     className="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0c5a4d] px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-black/10 transition hover:bg-[#064e45]"
                   >
-                    <span>Find Best Options</span>
+                    <span>Show safest options</span>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
 
                   <p className="text-center text-[11px] font-medium text-slate-500">
-                    Browse premium route guides and confirm final partner rules before booking.
+                    Get the safest choice first, then compare cheaper backups.
                   </p>
                 </div>
               </div>
@@ -535,11 +529,11 @@ function MobileHero() {
   const router = useRouter();
   const mobileFromSelectRef = useRef<HTMLSelectElement>(null);
   const mobileToSelectRef = useRef<HTMLSelectElement>(null);
-  const mobileDateInputRef = useRef<HTMLInputElement>(null);
+  const mobileArrivalTimeSelectRef = useRef<HTMLSelectElement>(null);
   const mobilePassengersSelectRef = useRef<HTMLSelectElement>(null);
   const [mobileFrom, setMobileFrom] = useState("bkk");
   const [mobileTo, setMobileTo] = useState("pattaya");
-  const [mobileDate, setMobileDate] = useState("");
+  const [mobileArrivalTime, setMobileArrivalTime] = useState("late");
   const [mobilePassengers, setMobilePassengers] = useState("2");
   const [isMobileLanguageOpen, setIsMobileLanguageOpen] = useState(false);
   const updateMobileFrom = (nextFrom: string) => {
@@ -574,12 +568,17 @@ function MobileHero() {
   const selectedMobilePassengers =
     mobilePassengerOptions.find((option) => option.value === mobilePassengers) ??
     mobilePassengerOptions[1];
+  const selectedMobileArrivalTime =
+    mobileArrivalTimeOptions.find(
+      (option) => option.value === mobileArrivalTime,
+    ) ?? mobileArrivalTimeOptions[3];
   const mobileRouteHref =
     mobileRouteHrefs[`${mobileFrom}-${mobileTo}`] ?? "/routes";
   const getMobileRouteHrefWithParams = () => {
     const submittedFrom = mobileFromSelectRef.current?.value ?? mobileFrom;
     const submittedTo = mobileToSelectRef.current?.value ?? mobileTo;
-    const submittedDate = mobileDateInputRef.current?.value ?? mobileDate;
+    const submittedArrivalTime =
+      mobileArrivalTimeSelectRef.current?.value ?? mobileArrivalTime;
     const submittedPassengers =
       mobilePassengersSelectRef.current?.value ?? mobilePassengers;
     const routeHref =
@@ -588,8 +587,8 @@ function MobileHero() {
       "/routes";
     const searchParams = new URLSearchParams();
 
-    if (submittedDate) {
-      searchParams.set("date", submittedDate);
+    if (submittedArrivalTime) {
+      searchParams.set("arrival_time", submittedArrivalTime);
     }
 
     if (submittedPassengers) {
@@ -609,6 +608,7 @@ function MobileHero() {
       from: mobileFrom,
       to: mobileTo,
       pax: mobilePassengers,
+      arrival_time: mobileArrivalTime,
       language: "en",
     });
     router.push(getMobileRouteHrefWithParams());
@@ -708,11 +708,12 @@ function MobileHero() {
 
             <div className="mt-5 max-w-[215px]">
               <h1 className="text-[28px] font-bold leading-[1.02] tracking-[-0.03em] text-[#143f3a]">
-                Plan your transfer in Thailand
+                Land calmly in Thailand
               </h1>
 
               <p className="mt-2 text-[12px] font-medium leading-5 text-[#364152]">
-                Clear route guides. Final partner rules. Calm arrivals.
+                Tell us where you land. We show the safest option, a cheap
+                backup and what to avoid.
               </p>
             </div>
           </div>
@@ -821,37 +822,44 @@ function MobileHero() {
               </div>
             </div>
 
-            <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-              <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
-                <input
-                  aria-label="Date"
-                  name="date"
-                  ref={mobileDateInputRef}
-                  type="date"
-                  value={mobileDate}
+            <div className="mt-2.5 grid grid-cols-[1fr_auto] gap-2.5">
+              <label className="relative block min-h-[64px] rounded-[22px] border border-[#e7e2d8] px-4 py-2.5">
+                <select
+                  aria-label="Arrival time"
+                  name="arrival_time"
+                  ref={mobileArrivalTimeSelectRef}
+                  value={mobileArrivalTime}
                   onInput={(event) =>
-                    setMobileDate(event.currentTarget.value)
+                    setMobileArrivalTime(event.currentTarget.value)
                   }
                   onChange={(event) =>
-                    setMobileDate(event.currentTarget.value)
+                    setMobileArrivalTime(event.currentTarget.value)
                   }
                   className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
-                />
+                >
+                  {mobileArrivalTimeOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
 
                 <span className="text-[12px] font-semibold text-[#98a2b3]">
-                  Date
+                  Arrival time
                 </span>
 
                 <div className="mt-1.5 flex items-center gap-2">
+                  <Clock3 className="h-4 w-4 text-[#0c5a4d]" />
+
                   <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
-                    {mobileDate || "Choose date"}
+                    {selectedMobileArrivalTime.label}
                   </span>
 
-                  <CalendarDays className="h-4 w-4 text-[#667085]" />
+                  <ChevronDown className="h-4 w-4 text-[#667085]" />
                 </div>
               </label>
 
-              <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+              <label className="relative block min-h-[64px] w-[124px] rounded-full border border-[#e7e2d8] bg-[#fbfaf7] px-3 py-2.5">
                 <select
                   aria-label="Passengers"
                   name="passengers"
@@ -872,21 +880,30 @@ function MobileHero() {
                   ))}
                 </select>
 
-                <span className="text-[12px] font-semibold text-[#98a2b3]">
+                <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-[#98a2b3]">
                   Passengers
                 </span>
 
-                <div className="mt-1.5 flex items-center gap-2">
-                  <Users className="h-4 w-4 text-[#667085]" />
+                <div className="mt-1 flex items-center gap-1.5">
+                  <Users className="h-3.5 w-3.5 text-[#0c5a4d]" />
 
-                  <span className="flex-1 text-[14px] font-semibold text-[#10201d]">
-                    {selectedMobilePassengers.label}
+                  <span className="flex-1 whitespace-nowrap text-[12px] font-extrabold text-[#10201d]">
+                    {selectedMobilePassengers.label.toLowerCase()}
                   </span>
 
-                  <ChevronDown className="h-4 w-4 text-[#667085]" />
+                  <ChevronDown className="h-3.5 w-3.5 text-[#667085]" />
                 </div>
               </label>
             </div>
+
+            <button
+              type="submit"
+              onClick={handleMobileSubmitClick}
+              className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-3 text-[14px] font-extrabold text-white shadow-lg shadow-black/10"
+            >
+              <span>Show safest options</span>
+              <ArrowRight className="h-4 w-4" />
+            </button>
 
             <div className="mt-3">
               <p className="mb-2 text-[12px] font-semibold text-[#143f3a]">
@@ -894,7 +911,7 @@ function MobileHero() {
               </p>
 
               <div className="grid grid-cols-2 gap-2">
-                {mobilePopularRouteLinks.map((route, index) => (
+                {mobilePopularRouteLinks.slice(0, 4).map((route, index) => (
                   <Link
                     key={route.href}
                     href={route.href}
@@ -911,14 +928,6 @@ function MobileHero() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              onClick={handleMobileSubmitClick}
-              className="mt-3 flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-semibold text-white"
-            >
-              <span>Compare transport options</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
           </form>
 
           <JustLandedMode />
@@ -945,38 +954,26 @@ function MobileHero() {
           </div>
 
           <div className="mt-3 rounded-[20px] border border-[#e7e2d8] bg-white p-3 shadow-sm">
-            <div className="grid grid-cols-[1fr_1fr] gap-4">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  <div className="h-8 w-8 rounded-full border-2 border-white bg-[#d9d9d9]" />
-                  <div className="h-8 w-8 rounded-full border-2 border-white bg-[#c7c7c7]" />
-                  <div className="h-8 w-8 rounded-full border-2 border-white bg-[#b5b5b5]" />
-                </div>
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#c99a2e]">
+              Transfer decision
+            </p>
 
-                <div>
-                  <p className="text-[12px] font-semibold text-[#10201d]">
-                    Route information
-                  </p>
-                  <p className="mt-1 text-[11px] text-[#667085]">
-                    Final partner offers
-                  </p>
-                </div>
-              </div>
+            <p className="mt-1 text-[13px] font-extrabold leading-5 text-[#10201d]">
+              We show the calm choice first, then the cheaper backup and the
+              arrival traps to avoid.
+            </p>
 
-              <div className="flex items-center gap-3 border-l border-[#e7e2d8] pl-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef6f2]">
-                  <ShieldCheck className="h-4 w-4 text-[#0c5a4d]" />
-                </div>
-
-                <div>
-                  <p className="text-[12px] font-semibold text-[#10201d]">
-                    Partner booking links
-                  </p>
-                  <p className="mt-1 text-[11px] text-[#667085]">
-                    by local experts
-                  </p>
-                </div>
-              </div>
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {["Safest option", "Cheap backup", "What to avoid"].map(
+                (label) => (
+                  <div
+                    key={label}
+                    className="rounded-[16px] bg-[#f8f4ec] px-2 py-2 text-center text-[10px] font-extrabold leading-tight text-[#143f3a]"
+                  >
+                    {label}
+                  </div>
+                ),
+              )}
             </div>
           </div>
         </div>
