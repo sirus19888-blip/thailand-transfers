@@ -815,7 +815,7 @@ function MobileHero() {
                   ))}
                 </select>
 
-                <span className="text-[10px] font-bold tracking-normal text-[#98a2b3]">
+                <span className="text-[12px] font-semibold text-[#98a2b3]">
                   Travelers
                 </span>
 
