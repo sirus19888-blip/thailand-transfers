@@ -14,32 +14,32 @@ import { AffiliateDisclosure } from "./AffiliateDisclosure";
 
 const routeShortcuts = [
   {
-    label: "BKK -> Pattaya",
+    label: "BKK → Pattaya",
     href: "/routes/bangkok-airport-to-pattaya",
     meta: "Beach transfer",
   },
   {
-    label: "DMK -> Pattaya",
+    label: "DMK → Pattaya",
     href: "/routes/don-mueang-airport-to-pattaya",
     meta: "Taxi or van",
   },
   {
-    label: "BKK -> Hua Hin",
+    label: "BKK → Hua Hin",
     href: "/routes/suvarnabhumi-airport-to-hua-hin",
     meta: "Coast route",
   },
   {
-    label: "BKK -> Koh Chang",
+    label: "BKK → Koh Chang",
     href: "/routes/suvarnabhumi-airport-to-koh-chang",
     meta: "Ferry link",
   },
   {
-    label: "Phuket -> Patong",
+    label: "Phuket → Patong",
     href: "/routes/phuket-airport-to-patong-beach",
     meta: "Beach route",
   },
   {
-    label: "Krabi -> Ao Nang",
+    label: "Krabi → Ao Nang",
     href: "/routes/krabi-airport-to-ao-nang",
     meta: "Short hop",
   },
@@ -58,7 +58,7 @@ const infoTabs = [
     label: "Landing",
     icon: ClipboardCheck,
     title: "After landing",
-    body: "Immigration -> baggage -> pickup point -> ticket rules.",
+    body: "Immigration → baggage → pickup point → ticket rules.",
     href: "/guides/bkk-airport-pickup-level-1-gate-8",
     cta: "Arrival steps",
   },
