@@ -12,7 +12,6 @@ import {
   Landmark,
   MapPin,
   Plane,
-  ShieldCheck,
   Users,
 } from "lucide-react";
 import { Container } from "./Container";
@@ -149,49 +148,6 @@ const mobileRouteHrefs: Record<string, string> = {
   "surat-thani-airport-koh-samui": "/routes/surat-thani-airport-to-koh-samui",
 };
 
-const mobilePopularRouteLinks = [
-  {
-    label: "Suvarnabhumi to Pattaya",
-    ariaLabel: "Bangkok Airport to Pattaya",
-    href: "/routes/bangkok-airport-to-pattaya",
-  },
-  {
-    label: "Don Mueang to Pattaya",
-    ariaLabel: "Don Mueang to Pattaya",
-    href: "/routes/don-mueang-airport-to-pattaya",
-  },
-  {
-    label: "Bangkok to Hua Hin",
-    ariaLabel: "Bangkok to Hua Hin",
-    href: "/routes/bangkok-to-hua-hin",
-  },
-  {
-    label: "Suvarnabhumi to Hua Hin",
-    ariaLabel: "Suvarnabhumi to Hua Hin",
-    href: "/routes/suvarnabhumi-airport-to-hua-hin",
-  },
-  {
-    label: "Suvarnabhumi to Koh Chang",
-    ariaLabel: "Suvarnabhumi to Koh Chang",
-    href: "/routes/suvarnabhumi-airport-to-koh-chang",
-  },
-  {
-    label: "Phuket Airport to Patong",
-    ariaLabel: "Phuket Airport to Patong",
-    href: "/routes/phuket-airport-to-patong-beach",
-  },
-  {
-    label: "Krabi Airport to Ao Nang",
-    ariaLabel: "Krabi Airport to Ao Nang",
-    href: "/routes/krabi-airport-to-ao-nang",
-  },
-  {
-    label: "Surat Thani to Koh Samui",
-    ariaLabel: "Surat Thani to Koh Samui",
-    href: "/routes/surat-thani-airport-to-koh-samui",
-  },
-];
-
 const mobileRouteDestinationsByFrom = Object.keys(mobileRouteHrefs).reduce<
   Record<string, string[]>
 >((routesByFrom, routeKey) => {
@@ -314,7 +270,7 @@ function DesktopHero() {
 
   return (
     <section className="hidden overflow-hidden bg-[#fbfaf7] lg:block">
-      <div className="relative min-h-[660px] border-b border-[#e7e2d8]">
+      <div className="relative min-h-[560px] border-b border-[#e7e2d8]">
         <Image
           src="/assets/hero/hero-desktop.png"
           alt="Thailand airport transfer"
@@ -327,55 +283,20 @@ function DesktopHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/30" />
 
         <Container className="relative z-10">
-          <div className="grid min-h-[660px] grid-cols-[0.9fr_1.1fr] items-center gap-10 py-14">
+          <div className="grid min-h-[560px] grid-cols-[0.9fr_1.1fr] items-center gap-10 py-7">
             <div className="max-w-[520px]">
               <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
-                Tourist-friendly transfer guide.
+                Tourist-friendly transfer guide
               </p>
 
-              <h2 className="mt-5 text-[58px] font-extrabold leading-[0.98] tracking-[-0.045em] text-[#10201d]">
-                Find the safest way from the airport to your destination
-              </h2>
+              <h1 className="mt-2 text-[58px] font-extrabold leading-[0.98] tracking-normal text-[#10201d]">
+                Land calmly in Thailand
+              </h1>
 
-              <p className="mt-6 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
-                Tell us where you land and where you are going. We show the
-                safest option, the cheapest sensible alternative and what to
-                avoid when you arrive tired.
-                <span className="font-bold text-[#0c5a4d]">
-                  {" "}
-                  Final prices and ticket rules are checked on the route page.
-                </span>
+              <p className="mt-4 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
+                Tell us where you land. We show the safest option, a cheap
+                backup and what to avoid.
               </p>
-
-              <div className="mt-8 grid max-w-[560px] grid-cols-4 gap-3">
-                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
-                  <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
-                  <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Safest first
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
-                  <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
-                  <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Cheapest backup
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
-                  <Users className="h-5 w-5 text-[#0c5a4d]" />
-                  <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    Built for tourists
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#e7e2d8] bg-white/85 p-3 shadow-sm backdrop-blur">
-                  <ShieldCheck className="h-5 w-5 text-[#0c5a4d]" />
-                  <p className="mt-2 text-xs font-bold text-[#10201d]">
-                    What to avoid
-                  </p>
-                </div>
-              </div>
             </div>
 
             <div className="flex justify-center">
@@ -513,7 +434,7 @@ function DesktopHero() {
                   </Link>
 
                   <p className="text-center text-[11px] font-medium text-slate-500">
-                    Get the safest choice first, then compare cheaper backups.
+                    Independent guide. Final booking is handled by partner sites.
                   </p>
                 </div>
               </div>
@@ -623,9 +544,9 @@ function MobileHero() {
   };
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden bg-[#f6f1e8] pb-[calc(7rem+env(safe-area-inset-bottom))] lg:hidden">
+    <section className="relative overflow-hidden bg-[#f6f1e8] pb-3 lg:hidden">
       <div className="relative mx-auto max-w-md overflow-hidden bg-[#f6f1e8]">
-        <div className="relative h-[370px] overflow-hidden">
+        <div className="relative h-[330px] overflow-hidden">
           <Image
             src="/assets/hero/hero-mobile.png"
             alt="Thailand transfer hero"
@@ -706,12 +627,12 @@ function MobileHero() {
               </div>
             </div>
 
-            <div className="mt-5 max-w-[215px]">
-              <h1 className="text-[28px] font-bold leading-[1.02] tracking-[-0.03em] text-[#143f3a]">
+            <div className="mt-4 max-w-[215px]">
+              <h1 className="text-[26px] font-bold leading-[1.02] tracking-normal text-[#143f3a]">
                 Land calmly in Thailand
               </h1>
 
-              <p className="mt-2 text-[12px] font-medium leading-5 text-[#364152]">
+              <p className="mt-2 text-[12px] font-medium leading-[18px] text-[#364152]">
                 Tell us where you land. We show the safest option, a cheap
                 backup and what to avoid.
               </p>
@@ -719,16 +640,16 @@ function MobileHero() {
           </div>
         </div>
 
-        <div className="relative z-20 -mt-32 px-5">
+        <div className="relative z-20 -mt-20 px-5">
           <form
             action={mobileRouteHref}
             method="get"
             onSubmit={handleMobileSubmit}
-            className="rounded-[24px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10"
+            className="rounded-[22px] border border-[#e7e2d8] bg-white p-2.5 shadow-lg shadow-black/10"
           >
-            <div className="grid grid-cols-[1fr_44px] gap-2.5">
-              <div className="space-y-3">
-                <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+            <div className="grid grid-cols-[1fr_42px] gap-2">
+              <div className="space-y-2">
+                <label className="relative block min-h-[58px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
                   <select
                     aria-label="From"
                     ref={mobileFromSelectRef}
@@ -751,7 +672,7 @@ function MobileHero() {
                     From
                   </span>
 
-                  <div className="mt-1.5 flex items-center gap-3">
+                  <div className="mt-1 flex items-center gap-3">
                     <Plane className="h-4 w-4 text-[#0c5a4d]" />
 
                     <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
@@ -762,7 +683,7 @@ function MobileHero() {
                   </div>
                 </label>
 
-                <label className="relative block min-h-[72px] rounded-[22px] border border-[#e7e2d8] px-4 py-3">
+                <label className="relative block min-h-[58px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
                   <select
                     aria-label="To"
                     ref={mobileToSelectRef}
@@ -785,7 +706,7 @@ function MobileHero() {
                     To
                   </span>
 
-                  <div className="mt-1.5 flex items-center gap-3">
+                  <div className="mt-1 flex items-center gap-3">
                     <MapPin className="h-4 w-4 text-[#0c5a4d]" />
 
                     <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
@@ -797,7 +718,7 @@ function MobileHero() {
                 </label>
               </div>
 
-              <div className="flex items-start justify-center pt-[37px]">
+              <div className="flex items-start justify-center pt-[28px]">
                 <button
                   type="button"
                   aria-label="Swap route"
@@ -822,8 +743,8 @@ function MobileHero() {
               </div>
             </div>
 
-            <div className="mt-2.5 grid grid-cols-[1fr_auto] gap-2.5">
-              <label className="relative block min-h-[64px] rounded-[22px] border border-[#e7e2d8] px-4 py-2.5">
+            <div className="mt-2 grid grid-cols-[1fr_auto] gap-2">
+              <label className="relative block min-h-[52px] rounded-[18px] border border-[#e7e2d8] px-4 py-2">
                 <select
                   aria-label="Arrival time"
                   name="arrival_time"
@@ -848,7 +769,7 @@ function MobileHero() {
                   Arrival time
                 </span>
 
-                <div className="mt-1.5 flex items-center gap-2">
+                <div className="mt-1 flex items-center gap-2">
                   <Clock3 className="h-4 w-4 text-[#0c5a4d]" />
 
                   <span className="flex-1 text-[14px] font-semibold leading-snug text-[#10201d]">
@@ -859,7 +780,7 @@ function MobileHero() {
                 </div>
               </label>
 
-              <label className="relative block min-h-[64px] w-[124px] rounded-full border border-[#e7e2d8] bg-[#fbfaf7] px-3 py-2.5">
+              <label className="relative block min-h-[52px] w-[122px] rounded-[18px] border border-[#e7e2d8] bg-[#fbfaf7] px-3 py-2">
                 <select
                   aria-label="Passengers"
                   name="passengers"
@@ -899,83 +820,19 @@ function MobileHero() {
             <button
               type="submit"
               onClick={handleMobileSubmitClick}
-              className="mt-3 flex min-h-12 w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-3 text-[14px] font-extrabold text-white shadow-lg shadow-black/10"
+              className="mt-2 flex min-h-11 w-full items-center justify-center gap-2 rounded-[16px] bg-[#0c5a4d] px-5 py-2.5 text-[14px] font-extrabold text-white shadow-lg shadow-black/10"
             >
               <span>Show safest options</span>
               <ArrowRight className="h-4 w-4" />
             </button>
 
-            <div className="mt-3">
-              <p className="mb-2 text-[12px] font-semibold text-[#143f3a]">
-                Popular routes
-              </p>
-
-              <div className="grid grid-cols-2 gap-2">
-                {mobilePopularRouteLinks.slice(0, 4).map((route, index) => (
-                  <Link
-                    key={route.href}
-                    href={route.href}
-                    aria-label={route.ariaLabel}
-                    className={`rounded-full px-2.5 py-1.5 text-center text-[10.5px] font-medium leading-tight ${
-                      index === 0
-                        ? "bg-[#0c5a4d] text-white"
-                        : "bg-[#f3f4f6] text-[#10201d]"
-                    }`}
-                  >
-                    {route.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <p className="mt-2 text-center text-[10.5px] font-medium leading-4 text-slate-500">
+              Independent guide. Final booking is handled by partner sites.
+            </p>
 
           </form>
 
           <JustLandedMode />
-
-          <div className="mt-3 flex items-center justify-center gap-2 text-[9.5px] text-[#2f6b5d]">
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              <span>Practical travel info</span>
-            </div>
-
-            <div className="h-3.5 w-px bg-[#d0d5dd]" />
-
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              <span>No hidden steps</span>
-            </div>
-
-            <div className="h-3.5 w-px bg-[#d0d5dd]" />
-
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              <span>Tourist-friendly</span>
-            </div>
-          </div>
-
-          <div className="mt-3 rounded-[20px] border border-[#e7e2d8] bg-white p-3 shadow-sm">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#c99a2e]">
-              Transfer decision
-            </p>
-
-            <p className="mt-1 text-[13px] font-extrabold leading-5 text-[#10201d]">
-              We show the calm choice first, then the cheaper backup and the
-              arrival traps to avoid.
-            </p>
-
-            <div className="mt-3 grid grid-cols-3 gap-2">
-              {["Safest option", "Cheap backup", "What to avoid"].map(
-                (label) => (
-                  <div
-                    key={label}
-                    className="rounded-[16px] bg-[#f8f4ec] px-2 py-2 text-center text-[10px] font-extrabold leading-tight text-[#143f3a]"
-                  >
-                    {label}
-                  </div>
-                ),
-              )}
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,11 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  CheckCircle2,
-  FileText,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowLeft, FileText, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -182,23 +177,6 @@ export function PolicyPage({
                 {intro}
               </p>
             </div>
-          </div>
-
-          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
-            Key checks
-          </p>
-          <div className="mt-3 grid grid-cols-2 gap-2">
-            {sections.slice(0, 4).map((section) => (
-              <div
-                key={section.title}
-                className="flex min-h-14 items-center gap-2 rounded-2xl bg-[#f8f4ec] px-3 py-2"
-              >
-                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#0c5a4d]" />
-                <span className="text-xs font-bold leading-snug text-[#10201d]">
-                  {section.title}
-                </span>
-              </div>
-            ))}
           </div>
         </div>
 

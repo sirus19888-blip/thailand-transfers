@@ -75,14 +75,24 @@ function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData })
               {compactRouteTitle(route)}
             </p>
             <p className="mt-1 text-[11px] font-medium text-slate-500">
-              Loading route options
+              Quick guide
             </p>
           </div>
 
           <div className="h-10 w-10 rounded-full bg-white shadow-sm" />
         </div>
 
-        <AffiliateDisclosure className="mt-5 text-center" />
+        <div className="mt-5 rounded-[18px] border border-[#e7e2d8] bg-white p-4 text-center shadow-sm">
+          <p className="text-sm font-extrabold text-[#10201d]">
+            Full pickup guide coming later.
+          </p>
+          <p className="mt-2 text-xs leading-5 text-slate-500">
+            Check final schedule, luggage rules and pickup details on the
+            partner page.
+          </p>
+        </div>
+
+        <AffiliateDisclosure className="mt-4 text-center" />
       </div>
 
       <MobileBottomNav activeLabel="Routes" />

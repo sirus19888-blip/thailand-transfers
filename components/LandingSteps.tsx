@@ -1,56 +1,53 @@
-import Image from "next/image";
-import { landingSteps } from "@/data/routes";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Container } from "./Container";
+
+const checklistItems = [
+  "Clear immigration",
+  "Collect baggage",
+  "Find pickup point",
+  "Check ticket rules",
+];
 
 export function LandingSteps() {
   return (
-    <section id="travel-tips" className="bg-white py-10 lg:py-12">
+    <section id="travel-tips" className="bg-[#fbfaf7] py-8 lg:py-10">
       <Container>
-        <div className="mb-5 max-w-3xl">
-          <p className="mb-2 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
-            After landing
-          </p>
+        <div className="rounded-[18px] border border-[#e7e2d8] bg-white p-4 shadow-sm lg:grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-8 lg:p-5">
+          <div>
+            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+              After landing
+            </p>
 
-          <h2 className="text-[28px] font-extrabold tracking-[-0.03em] text-[#10201d]">
-            What happens after you land in Thailand?
-          </h2>
+            <h2 className="text-[26px] font-extrabold tracking-normal text-[#10201d] lg:text-[30px]">
+              After landing checklist
+            </h2>
 
-          <p className="mt-3 text-sm leading-6 text-[#30465a]">
-            A simple step-by-step guide helps travelers understand what to do
-            before they click a transfer booking link.
-          </p>
-        </div>
+            <p className="mt-2 text-sm leading-6 text-[#30465a]">
+              Follow the airport flow first, then check the exact pickup point
+              and ticket rules before leaving the terminal.
+            </p>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {landingSteps.map((step) => (
-            <article
-              key={step.id}
-              className="overflow-hidden rounded-[24px] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
+            <Link
+              href="/guides/bkk-airport-pickup-level-1-gate-8"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#0c5a4d] bg-white px-4 py-2.5 text-sm font-extrabold text-[#0c5a4d]"
             >
-              <div className="relative aspect-[16/8.5] overflow-hidden">
-                <Image
-                  src={step.image}
-                  alt={step.title}
-                  fill
-                  className="object-cover"
-                />
+              See airport arrival steps
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="mt-4 grid gap-2 lg:mt-0">
+            {checklistItems.map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 rounded-2xl bg-[#f8f4ec] px-3 py-3"
+              >
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                <p className="text-sm font-extrabold text-[#10201d]">{item}</p>
               </div>
-
-              <div className="p-4">
-                <p className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#0c5a4d] text-[12px] font-extrabold text-white">
-                  {step.number}
-                </p>
-
-                <h3 className="text-[18px] font-extrabold leading-snug text-[#10201d]">
-                  {step.title}
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-[#30465a]">
-                  {step.description}
-                </p>
-              </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </section>

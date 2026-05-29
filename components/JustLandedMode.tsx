@@ -140,19 +140,19 @@ export function JustLandedMode() {
   return (
     <div
       id="just-landed"
-      className="mt-3 rounded-[20px] border border-[#e7e2d8] bg-white p-3 shadow-sm"
+      className="mt-2 rounded-[18px] border border-[#e7e2d8] bg-white p-2 shadow-sm"
     >
       <button
         type="button"
         onClick={() => setIsOpen((open) => !open)}
-        className="flex min-h-12 w-full items-center justify-between gap-3 rounded-2xl bg-[#10201d] px-4 py-3 text-left text-white"
+        className="flex min-h-10 w-full items-center justify-between gap-3 rounded-2xl bg-[#10201d] px-3 py-2 text-left text-white"
       >
         <span className="flex items-center gap-2 text-sm font-extrabold">
           <Plane className="h-4 w-4 text-[#f4c86a]" />
           I just landed
         </span>
         <span className="text-[11px] font-semibold text-white/70">
-          {selectedDestination.routeName}
+          Open quick advice
         </span>
       </button>
 

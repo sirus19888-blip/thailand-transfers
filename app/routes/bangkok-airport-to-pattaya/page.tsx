@@ -3,9 +3,11 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { RouteHero } from "@/components/RouteHero";
 import { RouteSummary } from "@/components/RouteSummary";
-import { TransferOptionsTable } from "@/components/TransferOptionsTable";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import { Container } from "@/components/Container";
+import { AffiliateButton } from "@/components/AffiliateButton";
+import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
 
 export const metadata: Metadata = {
@@ -98,6 +100,106 @@ const optionDetailsById = {
   },
 };
 
+function DesktopRouteOptions() {
+  const freshness = getSourceFreshness(mobileRoute);
+
+  return (
+    <section id="route-options" className="bg-white py-10 lg:py-12">
+      <Container>
+        <div className="mb-5 flex flex-col justify-between gap-3 lg:flex-row lg:items-end">
+          <div>
+            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+              3 options found
+            </p>
+            <h2 className="text-[30px] font-extrabold tracking-normal text-[#10201d]">
+              Choose the best BKK to Pattaya transfer
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#30465a]">
+              One route, three practical choices. Check final price, schedule,
+              luggage and pickup details before booking.
+            </p>
+          </div>
+
+          <Link
+            href="/routes/bangkok-airport-to-pattaya/details"
+            className="inline-flex items-center justify-center rounded-full border border-[#0c5a4d] bg-white px-5 py-2.5 text-sm font-extrabold text-[#0c5a4d] transition hover:bg-[#f8f4ec]"
+          >
+            Pickup details
+          </Link>
+        </div>
+
+        <div className="grid gap-4 lg:grid-cols-3">
+          {mobileRoute.options.map((option) => {
+            const details =
+              optionDetailsById[option.id as keyof typeof optionDetailsById];
+
+            return (
+              <article
+                key={option.id}
+                className="rounded-[18px] border border-[#e7e2d8] bg-white p-4 shadow-sm"
+              >
+                <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+                  {details.label}
+                </p>
+                <h3 className="mt-2 text-xl font-extrabold text-[#10201d]">
+                  {option.name}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-[#30465a]">
+                  {option.bestFor}
+                </p>
+
+                <div className="mt-4 grid gap-2 text-sm">
+                  <div className="rounded-2xl bg-[#fbfaf7] px-3 py-3">
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-slate-400">
+                      Time
+                    </p>
+                    <p className="mt-1 font-extrabold text-[#10201d]">
+                      {option.duration}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl bg-[#fbfaf7] px-3 py-3">
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-slate-400">
+                      Pickup
+                    </p>
+                    <p className="mt-1 font-extrabold text-[#10201d]">
+                      {option.pickup}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4 grid gap-2">
+                  <AffiliateButton
+                    href={option.affiliateUrl}
+                    trackingId={option.trackingId}
+                    fullWidth
+                  >
+                    Check final price and ticket rules
+                  </AffiliateButton>
+
+                  <Link
+                    href={`/routes/bangkok-airport-to-pattaya/details?option=${option.id}`}
+                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#0c5a4d] bg-white px-5 py-3 text-sm font-extrabold text-[#0c5a4d]"
+                  >
+                    View route details
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <p className="mt-5 text-center text-xs leading-5 text-slate-500">
+          Sources & freshness: last checked {freshness.lastChecked}. Official
+          source: {freshness.officialSource}. Partner source:{" "}
+          {freshness.partnerSource}. Confidence: {freshness.confidence}.
+        </p>
+        <AffiliateDisclosure className="mt-2 text-center" />
+      </Container>
+    </section>
+  );
+}
+
 type BangkokAirportToPattayaPageProps = {
   searchParams?: Promise<{
     date?: string;
@@ -137,46 +239,7 @@ export default async function BangkokAirportToPattayaPage({
 
         <RouteSummary />
 
-        <div id="route-options">
-          <TransferOptionsTable />
-        </div>
-
-        <section className="bg-[#f8f4ec] py-12 lg:py-16">
-          <Container>
-            <div className="rounded-[2rem] border border-[#e7e2d8] bg-white p-6 shadow-xl shadow-black/5 lg:flex lg:items-center lg:justify-between lg:gap-8">
-              <div>
-                <p className="mb-2 text-sm font-bold uppercase tracking-[0.25em] text-[#c99a2e]">
-                  Need more details?
-                </p>
-
-                <h2 className="text-2xl font-bold text-[#10201d] lg:text-3xl">
-                  See pickup instructions, airport steps and FAQ
-                </h2>
-
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 lg:text-base lg:leading-7">
-                  Open the route details page before booking if you want to know
-                  what happens after landing.
-                </p>
-              </div>
-
-              <div className="mt-5 flex w-full flex-col gap-3 lg:mt-0 lg:w-auto">
-                <Link
-                  href="/routes/bangkok-airport-to-pattaya/details"
-                  className="inline-flex w-full items-center justify-center rounded-full bg-[#064e45] px-6 py-4 text-sm font-bold text-white shadow-sm transition hover:bg-[#033b35] lg:w-auto"
-                >
-                  View route details
-                </Link>
-
-                <Link
-                  href="/routes/pattaya-to-bangkok-airport"
-                  className="inline-flex w-full items-center justify-center rounded-full border border-[#064e45] bg-white px-6 py-4 text-sm font-bold text-[#064e45] transition hover:bg-[#f8f4ec] lg:w-auto"
-                >
-                  Need the return route?
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </section>
+        <DesktopRouteOptions />
       </div>
 
     </main>
