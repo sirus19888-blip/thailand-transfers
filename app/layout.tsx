@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { Geist } from "next/font/google";
 import { DesktopComingSoon } from "@/components/DesktopComingSoon";
 import { GlobalStructuredData } from "@/components/StructuredData";
+import { LazyGoogleTagManager } from "@/components/LazyGoogleTagManager";
 import { MobileCookieConsent } from "@/components/MobileCookieConsent";
 import { siteName, siteUrl } from "./site";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -73,12 +68,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} h-full antialiased`}
     >
-      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="min-h-full flex flex-col">
         <GlobalStructuredData />
         <div className="contents lg:hidden">{children}</div>
+        <LazyGoogleTagManager gtmId={gtmId} />
         <MobileCookieConsent />
         <div className="hidden lg:flex">
           <DesktopComingSoon />

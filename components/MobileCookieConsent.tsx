@@ -3,14 +3,18 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const storageKey = "thailand-transfers-cookie-consent";
+export const cookieConsentStorageKey = "thailand-transfers-cookie-consent";
+export const cookieConsentAcceptedEvent =
+  "thailand-transfers-cookie-consent-accepted";
 
 export function MobileCookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     window.setTimeout(() => {
-      setIsVisible(window.localStorage.getItem(storageKey) !== "accepted");
+      setIsVisible(
+        window.localStorage.getItem(cookieConsentStorageKey) !== "accepted",
+      );
     }, 0);
   }, []);
 
@@ -32,7 +36,8 @@ export function MobileCookieConsent() {
       <button
         type="button"
         onClick={() => {
-          window.localStorage.setItem(storageKey, "accepted");
+          window.localStorage.setItem(cookieConsentStorageKey, "accepted");
+          window.dispatchEvent(new Event(cookieConsentAcceptedEvent));
           setIsVisible(false);
         }}
         className="min-h-10 rounded-2xl bg-[#0c5a4d] px-4 py-2 text-xs font-extrabold text-white"

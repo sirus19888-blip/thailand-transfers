@@ -592,8 +592,9 @@ function MobileHero() {
             src="/assets/hero/hero-mobile.png"
             alt="Thailand transfer hero"
             fill
-            priority
-            sizes="(max-width: 1023px) 100vw, 0px"
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
             className="object-cover object-center"
           />
 
@@ -724,7 +725,7 @@ function MobileHero() {
                     )}
                   </select>
 
-                  <span className="text-[12px] font-semibold text-[#98a2b3]">
+                  <span className="text-[12px] font-semibold text-[#667085]">
                     From
                   </span>
 
@@ -758,7 +759,7 @@ function MobileHero() {
                     )}
                   </select>
 
-                  <span className="text-[12px] font-semibold text-[#98a2b3]">
+                  <span className="text-[12px] font-semibold text-[#667085]">
                     To
                   </span>
 
@@ -821,7 +822,7 @@ function MobileHero() {
                   ))}
                 </select>
 
-                <span className="text-[12px] font-semibold text-[#98a2b3]">
+                <span className="text-[12px] font-semibold text-[#667085]">
                   Arrival time
                 </span>
 
@@ -857,7 +858,7 @@ function MobileHero() {
                   ))}
                 </select>
 
-                <span className="text-[12px] font-semibold text-[#98a2b3]">
+                <span className="text-[12px] font-semibold text-[#667085]">
                   Travelers
                 </span>
 

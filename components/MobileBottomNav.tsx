@@ -44,7 +44,7 @@ export function MobileBottomNav({ activeLabel = "Home" }: MobileBottomNavProps) 
               key={item.label}
               href={item.href}
               className={`flex flex-col items-center justify-center gap-0.5 py-0.5 text-[10.5px] font-medium ${
-                item.label === activeLabel ? "text-[#0c5a4d]" : "text-[#7b8597]"
+                item.label === activeLabel ? "text-[#0c5a4d]" : "text-[#667085]"
               }`}
             >
               <Icon

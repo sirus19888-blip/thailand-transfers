@@ -91,7 +91,7 @@ export function MobileHomeCompact() {
         <div className="rounded-[18px] border border-[#e7e2d8] bg-white p-2.5 shadow-sm">
           <div className="mb-2 flex items-center justify-between gap-3">
             <div>
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#8b6b20]">
                 Popular airport transfers
               </p>
               <h2 className="text-[17px] font-extrabold leading-tight text-[#10201d]">
