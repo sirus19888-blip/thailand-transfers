@@ -1,49 +1,15 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MonitorSmartphone, Smartphone } from "lucide-react";
 import { siteName, siteUrl } from "@/app/site";
 
-function useDesktopMediaQuery() {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 1024px)");
-    const updateIsDesktop = () => setIsDesktop(mediaQuery.matches);
-
-    updateIsDesktop();
-    mediaQuery.addEventListener("change", updateIsDesktop);
-
-    return () => mediaQuery.removeEventListener("change", updateIsDesktop);
-  }, []);
-
-  return isDesktop;
-}
-
 export function DesktopComingSoon() {
-  const isDesktop = useDesktopMediaQuery();
   const displayUrl = siteUrl.replace(/^https?:\/\//, "");
-
-  if (!isDesktop) {
-    return null;
-  }
 
   return (
     <section
       aria-label="Desktop version coming soon"
       className="relative flex min-h-screen w-full overflow-hidden bg-[#f8f4ec] text-[#10201d]"
     >
-      <Image
-        src="/assets/hero/hero-desktop.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover opacity-30"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(248,244,236,0.98)_0%,rgba(248,244,236,0.92)_44%,rgba(248,244,236,0.62)_100%)]" />
-
       <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center px-10 py-12">
         <div className="max-w-xl">
           <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[#dac9a5] bg-white/70 px-4 py-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#0c5a4d] shadow-sm">

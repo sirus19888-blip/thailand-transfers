@@ -4,6 +4,9 @@ const canonicalHost = "thailandtransferguide.com";
 const wwwHost = `www.${canonicalHost}`;
 
 const nextConfig: NextConfig = {
+  images: {
+    qualities: [60, 75],
+  },
   async redirects() {
     return [
       {

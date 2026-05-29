@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -81,10 +78,6 @@ const infoTabs = [
 ];
 
 export function MobileHomeCompact() {
-  const [activeInfoId, setActiveInfoId] = useState(infoTabs[0].id);
-  const activeInfo =
-    infoTabs.find((item) => item.id === activeInfoId) ?? infoTabs[0];
-
   return (
     <section className="bg-[#fbfaf7] px-4 pb-[calc(4.35rem+env(safe-area-inset-bottom))] pt-2 lg:hidden">
       <div className="mx-auto grid max-w-md gap-2.5">
@@ -128,50 +121,42 @@ export function MobileHomeCompact() {
         </div>
 
         <div className="rounded-[18px] border border-[#e7e2d8] bg-white p-2.5 shadow-sm">
-          <div className="grid grid-cols-4 gap-2">
-            {infoTabs.map((item) => {
+          <div className="grid grid-cols-2 gap-2">
+            {infoTabs.map((item, index) => {
               const Icon = item.icon;
-              const isActive = item.id === activeInfo.id;
 
               return (
-                <button
+                <details
                   key={item.id}
-                  type="button"
-                  onClick={() => setActiveInfoId(item.id)}
-                  className={`flex min-h-[50px] flex-col items-center justify-center gap-1 rounded-2xl px-2 text-[10px] font-extrabold transition ${
-                    isActive
-                      ? "bg-[#0c5a4d] text-white"
-                      : "bg-[#f8f4ec] text-[#10201d]"
-                  }`}
+                  open={index === 0}
+                  className="group rounded-2xl bg-[#f8f4ec]"
                 >
-                  <Icon
-                    className={`h-4 w-4 ${
-                      isActive ? "text-[#f4c86a]" : "text-[#0c5a4d]"
-                    }`}
-                  />
-                  {item.label}
-                </button>
+                  <summary className="flex min-h-[48px] cursor-pointer list-none items-center gap-2 px-2.5 py-2 text-[10px] font-extrabold text-[#10201d] [&::-webkit-details-marker]:hidden">
+                    <Icon className="h-4 w-4 shrink-0 text-[#0c5a4d]" />
+                    <span>{item.label}</span>
+                  </summary>
+
+                  <div className="border-t border-white/80 px-2.5 pb-2.5 pt-1">
+                    <h3 className="text-[13px] font-extrabold text-[#10201d]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-[11px] leading-4 text-[#4b5d58]">
+                      {item.body}
+                    </p>
+
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="mt-2 inline-flex items-center gap-1 text-[11px] font-extrabold text-[#0c5a4d]"
+                      >
+                        {item.cta}
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    ) : null}
+                  </div>
+                </details>
               );
             })}
-          </div>
-
-          <div className="mt-2 min-h-[82px] rounded-2xl bg-[#fbfaf7] p-2.5">
-            <h3 className="text-[15px] font-extrabold text-[#10201d]">
-              {activeInfo.title}
-            </h3>
-            <p className="mt-1 text-[12px] leading-[18px] text-[#4b5d58]">
-              {activeInfo.body}
-            </p>
-
-            {activeInfo.href ? (
-              <Link
-                href={activeInfo.href}
-                className="mt-2 inline-flex items-center gap-1 text-[12px] font-extrabold text-[#0c5a4d]"
-              >
-                {activeInfo.cta}
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
-            ) : null}
           </div>
         </div>
 
