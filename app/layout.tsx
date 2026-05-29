@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { DesktopComingSoon } from "@/components/DesktopComingSoon";
 import { GlobalStructuredData } from "@/components/StructuredData";
 import { LazyGoogleTagManager } from "@/components/LazyGoogleTagManager";
@@ -78,6 +79,7 @@ export default function RootLayout({
         <div className="hidden lg:flex">
           <DesktopComingSoon />
         </div>
+        <Analytics />
       </body>
     </html>
   );
