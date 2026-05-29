@@ -52,6 +52,7 @@ type KohPhiPhiToKrabiPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -65,6 +66,7 @@ export default async function KohPhiPhiToKrabiPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -87,6 +89,7 @@ export default async function KohPhiPhiToKrabiPage({
           footerNote="Final prices and schedules may change. Check departure pier, Krabi arrival pier, luggage rules and onward transfer details before booking."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

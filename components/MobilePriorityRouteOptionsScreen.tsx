@@ -12,12 +12,17 @@ import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
+  getArrivalTimeLabel,
   getCompactCtaLabel,
-  getDecisionLabels,
   getPickupMapUrl,
   getPriceGuidance,
+  getPassengerLabel,
+  getPersonalizedDecisionLabels,
+  getPersonalizedOptionOrder,
+  getPersonalizedPassengerAdvice,
+  getPersonalizedRouteDecision,
+  getPersonalizedTimingAdvice,
   getRiskBadges,
-  getRouteDecision,
   getSourceFreshness,
 } from "@/data/routeIntelligence";
 import {
@@ -51,6 +56,7 @@ type MobilePriorityRouteOptionsScreenProps = {
   footerNote: string;
   selectedDate?: string;
   passengers?: string;
+  arrivalTime?: string;
 };
 
 function getBadgeColor(id: string) {
@@ -77,10 +83,25 @@ function getOptionDetails(
   );
 }
 
-function getDetailsHref(detailsHref: string, optionId: string) {
+function getDetailsHref(
+  detailsHref: string,
+  optionId: string,
+  context?: {
+    selectedDate?: string;
+    passengers?: string;
+    arrivalTime?: string;
+  },
+) {
+  const params = new URLSearchParams();
+  params.set("option", optionId);
+
+  if (context?.selectedDate) params.set("date", context.selectedDate);
+  if (context?.passengers) params.set("passengers", context.passengers);
+  if (context?.arrivalTime) params.set("arrival_time", context.arrivalTime);
+
   const separator = detailsHref.includes("?") ? "&" : "?";
 
-  return `${detailsHref}${separator}option=${encodeURIComponent(optionId)}`;
+  return `${detailsHref}${separator}${params.toString()}`;
 }
 
 function getRouteImage(route: RoutePageData) {
@@ -106,20 +127,44 @@ export function MobilePriorityRouteOptionsScreen({
   detailsHref,
   footerNote,
   selectedDate,
-  passengers = "2",
+  passengers,
+  arrivalTime,
 }: MobilePriorityRouteOptionsScreenProps) {
   const footerWithFreshness = footerNote.startsWith("Last checked")
     ? footerNote
     : `Last checked May 2026. ${footerNote}`;
-  const passengerLabel =
-    passengers === "1"
-      ? "1 Adult"
-      : passengers === "5"
-        ? "5+ Adults"
-        : `${passengers} Adults`;
-  const optionsLabel = selectedDate
-    ? `${route.options.length} options for ${selectedDate}`
-    : `${route.options.length} best options found`;
+  const passengerLabel = getPassengerLabel(passengers);
+  const arrivalLabel = getArrivalTimeLabel(arrivalTime);
+  const headerTimingLabel = arrivalLabel ?? selectedDate ?? "Choose date";
+  const routeDecision = getPersonalizedRouteDecision(
+    route,
+    arrivalTime,
+    passengers,
+  );
+  const decisionLabels = getPersonalizedDecisionLabels(
+    route,
+    arrivalTime,
+    passengers,
+  );
+  const orderedOptions = getPersonalizedOptionOrder(
+    route,
+    arrivalTime,
+    passengers,
+  );
+  const hasPersonalizedInput = Boolean(arrivalLabel || passengers);
+  const summaryCards = hasPersonalizedInput
+    ? [
+        ["Timing match", getPersonalizedTimingAdvice(route, arrivalTime)],
+        ["Group fit", getPersonalizedPassengerAdvice(route, passengers)],
+      ]
+    : [
+        [summaryLeftTitle, summaryLeftText],
+        [summaryRightTitle, summaryRightText],
+      ];
+  const optionsContextLabel = arrivalLabel ?? selectedDate;
+  const optionsLabel = optionsContextLabel
+    ? `${orderedOptions.length} options for ${optionsContextLabel}`
+    : `${orderedOptions.length} best options found`;
   const freshness = getSourceFreshness(route);
 
   return (
@@ -142,7 +187,7 @@ export function MobilePriorityRouteOptionsScreen({
             </h1>
 
             <div className="mt-1 flex items-center justify-center gap-1.5 text-[11px] font-medium text-slate-500">
-              <span>{selectedDate || "Choose date"}</span>
+              <span>{headerTimingLabel}</span>
               <span>-</span>
               <span>{passengerLabel}</span>
             </div>
@@ -178,16 +223,13 @@ export function MobilePriorityRouteOptionsScreen({
                 {route.to}
               </h2>
               <p className="mt-2 text-xs font-medium leading-5 text-white/82">
-                {getRouteDecision(route)}
+                {routeDecision}
               </p>
             </div>
           </div>
 
           <div className="mt-3 grid grid-cols-2 gap-2">
-            {[
-              [summaryLeftTitle, summaryLeftText],
-              [summaryRightTitle, summaryRightText],
-            ].map(([label, value]) => (
+            {summaryCards.map(([label, value]) => (
               <div key={label} className="flex gap-2 rounded-2xl bg-[#f8f4ec] px-3 py-2">
                 <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
                 <div>
@@ -204,7 +246,7 @@ export function MobilePriorityRouteOptionsScreen({
         </div>
 
         <div className="mt-3 grid grid-cols-2 gap-2">
-          {getDecisionLabels(route).map((item) => (
+          {decisionLabels.map((item) => (
             <div
               key={item.label}
               className="rounded-[16px] border border-[#e7e2d8] bg-white px-3 py-2 shadow-sm"
@@ -247,7 +289,7 @@ export function MobilePriorityRouteOptionsScreen({
         </div>
 
         <div className="mt-4 space-y-4">
-          {route.options.map((option) => {
+          {orderedOptions.map((option) => {
             const details = getOptionDetails(option, optionDetailsById);
 
             return (
@@ -412,7 +454,11 @@ export function MobilePriorityRouteOptionsScreen({
 
                     <div className="grid grid-cols-[0.78fr_1.22fr] gap-2">
                       <Link
-                        href={getDetailsHref(detailsHref, option.id)}
+                        href={getDetailsHref(detailsHref, option.id, {
+                          selectedDate,
+                          passengers,
+                          arrivalTime,
+                        })}
                         className="flex min-h-10 items-center justify-center rounded-full border border-[#0c5a4d] px-3 py-2 text-[12px] font-extrabold text-[#0c5a4d]"
                       >
                         Details

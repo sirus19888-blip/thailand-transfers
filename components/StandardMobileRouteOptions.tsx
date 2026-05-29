@@ -13,6 +13,7 @@ type StandardMobileRouteOptionsProps = {
   route: RoutePageData;
   selectedDate?: string;
   passengers?: string;
+  arrivalTime?: string;
 };
 
 function buildOptionDetails(route: RoutePageData) {
@@ -49,6 +50,7 @@ export function StandardMobileRouteOptions({
   route,
   selectedDate,
   passengers,
+  arrivalTime,
 }: StandardMobileRouteOptionsProps) {
   return (
     <Suspense
@@ -58,6 +60,7 @@ export function StandardMobileRouteOptions({
         route={route}
         selectedDate={selectedDate}
         passengers={passengers}
+        arrivalTime={arrivalTime}
       />
     </Suspense>
   );
@@ -104,16 +107,19 @@ function StandardMobileRouteOptionsContent({
   route,
   selectedDate,
   passengers,
+  arrivalTime,
 }: StandardMobileRouteOptionsProps) {
   const searchParams = useSearchParams();
   const queryDate = searchParams.get("date") ?? undefined;
   const queryPassengers = searchParams.get("passengers") ?? undefined;
+  const queryArrivalTime = searchParams.get("arrival_time") ?? undefined;
 
   return (
     <StandardMobileRouteOptionsView
       route={route}
       selectedDate={selectedDate ?? queryDate}
       passengers={passengers ?? queryPassengers}
+      arrivalTime={arrivalTime ?? queryArrivalTime}
     />
   );
 }
@@ -122,6 +128,7 @@ function StandardMobileRouteOptionsView({
   route,
   selectedDate,
   passengers,
+  arrivalTime,
 }: StandardMobileRouteOptionsProps) {
   return (
     <MobilePriorityRouteOptionsScreen
@@ -136,6 +143,7 @@ function StandardMobileRouteOptionsView({
       footerNote="Final prices and schedules are confirmed by the partner. Check pickup point, luggage rules and operator notes before booking."
       selectedDate={selectedDate}
       passengers={passengers}
+      arrivalTime={arrivalTime}
     />
   );
 }

@@ -6,6 +6,7 @@ type MobileHuaHinTransferOptionsScreenProps = {
   route: RoutePageData;
   selectedDate?: string;
   passengers?: string;
+  arrivalTime?: string;
 };
 
 const optionDetailsById = {
@@ -51,6 +52,7 @@ export function MobileHuaHinTransferOptionsScreen({
   route,
   selectedDate,
   passengers,
+  arrivalTime,
 }: MobileHuaHinTransferOptionsScreenProps) {
   return (
     <MobilePriorityRouteOptionsScreen
@@ -65,6 +67,7 @@ export function MobileHuaHinTransferOptionsScreen({
       footerNote="If you land after 20:00, choose taxi or a flexible private transfer. Do not book the last possible bus if missing it would be expensive."
       selectedDate={selectedDate}
       passengers={passengers}
+      arrivalTime={arrivalTime}
     />
   );
 }

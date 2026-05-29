@@ -22,6 +22,7 @@ type SuvarnabhumiAirportToHuaHinPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -35,6 +36,7 @@ export default async function SuvarnabhumiAirportToHuaHinPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -49,6 +51,7 @@ export default async function SuvarnabhumiAirportToHuaHinPage({
           route={route}
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

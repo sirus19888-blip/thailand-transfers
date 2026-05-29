@@ -52,6 +52,7 @@ type SuratThaniAirportToKohPhanganPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -65,6 +66,7 @@ export default async function SuratThaniAirportToKohPhanganPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -87,6 +89,7 @@ export default async function SuratThaniAirportToKohPhanganPage({
           footerNote="Final prices and schedules may change. Allow extra time after landing and check pier, ferry and hotel transfer rules."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

@@ -61,6 +61,7 @@ type SuratThaniAirportToKohSamuiPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -74,6 +75,7 @@ export default async function SuratThaniAirportToKohSamuiPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -96,6 +98,7 @@ export default async function SuratThaniAirportToKohSamuiPage({
           footerNote="Final prices and schedules may change. Allow extra time after landing and check ferry, pier and hotel drop-off rules."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

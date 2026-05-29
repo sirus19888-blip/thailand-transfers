@@ -61,6 +61,7 @@ type KohChangToBangkokPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -74,6 +75,7 @@ export default async function KohChangToBangkokPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -96,6 +98,7 @@ export default async function KohChangToBangkokPage({
           footerNote="Final prices and schedules may change. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; check hotel pickup, ferry crossing and Bangkok drop-off before booking."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

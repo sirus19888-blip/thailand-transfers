@@ -52,6 +52,7 @@ type KohPhanganToSuratThaniAirportPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -65,6 +66,7 @@ export default async function KohPhanganToSuratThaniAirportPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -87,6 +89,7 @@ export default async function KohPhanganToSuratThaniAirportPage({
           footerNote="Final prices and schedules may change. Leave a realistic flight buffer and check ferry, pier and airport drop-off rules."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

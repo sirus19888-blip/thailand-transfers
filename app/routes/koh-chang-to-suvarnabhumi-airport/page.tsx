@@ -61,6 +61,7 @@ type KohChangToSuvarnabhumiAirportPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -74,6 +75,7 @@ export default async function KohChangToSuvarnabhumiAirportPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <RoutePageTemplate
@@ -96,6 +98,7 @@ export default async function KohChangToSuvarnabhumiAirportPage({
           footerNote="Final prices and schedules may change. Current Ferry Koh Chang guidance shows service from 06:30 to 18:30; leave extra time before flights and check ferry crossing rules."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       }
     />

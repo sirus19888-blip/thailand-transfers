@@ -204,6 +204,7 @@ type BangkokAirportToPattayaPageProps = {
   searchParams?: Promise<{
     date?: string;
     passengers?: string;
+    arrival_time?: string;
   }>;
 };
 
@@ -213,6 +214,7 @@ export default async function BangkokAirportToPattayaPage({
   const params = await searchParams;
   const selectedDate = params?.date;
   const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
@@ -229,6 +231,7 @@ export default async function BangkokAirportToPattayaPage({
           footerNote="Final prices and schedules are confirmed by the partner. Allow extra time after landing and check the pickup point before booking."
           selectedDate={selectedDate}
           passengers={passengers}
+          arrivalTime={arrivalTime}
         />
       </div>
 
