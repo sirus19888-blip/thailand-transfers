@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
 
 const taxiUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-taxi-guide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "BKK Airport to Pattaya by Taxi | Late Arrival Guide",
   description:
     "Mobile guide for private taxi from Suvarnabhumi Airport to Pattaya, including late arrival advice, luggage, pickup safety and partner booking checks.",
   alternates: {
     canonical: "/routes/bangkok-airport-to-pattaya/taxi",
   },
-};
+});
 
 export default function BkkPattayaTaxiGuidePage() {
   return (

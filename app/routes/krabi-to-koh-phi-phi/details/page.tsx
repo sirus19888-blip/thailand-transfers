@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { Clock3, Luggage, MapPin } from "lucide-react";
 import { IslandRouteDetailsTemplate } from "@/components/IslandRouteDetailsTemplate";
@@ -6,14 +7,14 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("krabi-to-koh-phi-phi");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Krabi to Koh Phi Phi Guide | Ferry, Speedboat & Pier Tips",
   description:
     "Read practical tips for travelling from Krabi to Koh Phi Phi. Check departure pier, ferry and speedboat timing, luggage notes, weather warnings and FAQ.",
   alternates: {
     canonical: "/routes/krabi-to-koh-phi-phi/details",
   },
-};
+});
 
 const steps = [
   {

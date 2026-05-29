@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
@@ -28,14 +29,14 @@ const route = getRoutePageBySlug("suvarnabhumi-airport-to-koh-chang");
 const ferryVanOption = route?.options.find((option) => option.id === "ferry-van");
 const taxiOption = route?.options.find((option) => option.id === "taxi");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Suvarnabhumi Airport to Koh Chang Guide | Ferry Tips & FAQ",
   description:
     "Read practical tips for travelling from Bangkok Suvarnabhumi Airport to Koh Chang. Check airport pickup, pier transfer, ferry timing, luggage notes and booking advice.",
   alternates: {
     canonical: "/routes/suvarnabhumi-airport-to-koh-chang/details",
   },
-};
+});
 
 const steps = [
   {

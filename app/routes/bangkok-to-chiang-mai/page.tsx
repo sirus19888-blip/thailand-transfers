@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("bangkok-to-chiang-mai");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Bangkok to Chiang Mai Transfers | Train, Bus & Flight",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/bangkok-to-chiang-mai",
   },
-};
+});
 
 export default function BangkokToChiangMaiPage() {
   if (!route) {

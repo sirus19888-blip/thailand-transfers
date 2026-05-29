@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { Header } from "@/components/Header";
 import { RouteHero } from "@/components/RouteHero";
 import { RouteSummary } from "@/components/RouteSummary";
@@ -10,14 +11,14 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Bangkok Airport to Pattaya Transfers | Bus, Taxi & Van",
   description:
     "Compare transfer options from Bangkok Suvarnabhumi Airport to Pattaya. Check bus, taxi and van travel times, prices and booking options with 12Go.",
   alternates: {
     canonical: "/routes/bangkok-airport-to-pattaya",
   },
-};
+});
 
 const mobileRoute: RoutePageData = {
   slug: "bangkok-airport-to-pattaya",

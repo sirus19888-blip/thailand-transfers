@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { Clock3, Luggage, MapPin } from "lucide-react";
 import { IslandRouteDetailsTemplate } from "@/components/IslandRouteDetailsTemplate";
@@ -6,14 +7,14 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("surat-thani-airport-to-koh-phangan");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Surat Thani Airport to Koh Phangan Guide | Ferry Tips & FAQ",
   description:
     "Read practical tips for travelling from Surat Thani Airport to Koh Phangan. Check airport pickup, pier transfer, ferry crossing, luggage notes and booking advice.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-phangan/details",
   },
-};
+});
 
 const steps = [
   {

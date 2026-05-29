@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
@@ -6,7 +7,7 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("surat-thani-airport-to-koh-phangan");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Surat Thani Airport to Koh Phangan Transfers | Bus, Van & Ferry",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-phangan",
   },
-};
+});
 
 const optionDetailsById = {
   "bus-ferry": {

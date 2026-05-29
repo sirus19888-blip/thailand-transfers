@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("phuket-airport-to-patong-beach");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Phuket Airport to Patong Beach Transfers | Bus, Van & Taxi",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/phuket-airport-to-patong-beach",
   },
-};
+});
 
 export default function PhuketAirportToPatongBeachPage() {
   if (!route) {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { StandardRouteDetailsScreen } from "@/components/StandardRouteDetailsScreen";
 import { getRoutePageBySlug } from "@/data/routePages";
@@ -42,13 +43,13 @@ export async function generateMetadata({
     };
   }
 
-  return {
+  return createPageMetadata({
     title: `${route.from} to ${route.to} Guide | Pickup Tips & FAQ`,
     description: `Read practical tips for travelling from ${route.from} to ${route.to}. Check pickup points, timing, luggage rules and booking advice.`,
     alternates: {
       canonical: `/routes/${route.slug}/details`,
     },
-  };
+  });
 }
 
 export default async function RouteDetailsPage({

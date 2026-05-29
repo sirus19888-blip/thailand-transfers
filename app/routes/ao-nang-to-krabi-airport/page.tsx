@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
@@ -6,7 +7,7 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("ao-nang-to-krabi-airport");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Ao Nang to Krabi Airport Transfers | Bus, Van & Taxi",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/ao-nang-to-krabi-airport",
   },
-};
+});
 
 type AoNangToKrabiAirportPageProps = {
   searchParams?: Promise<{

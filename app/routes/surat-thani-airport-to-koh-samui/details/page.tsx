@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import {
@@ -28,14 +29,14 @@ const route = getRoutePageBySlug("surat-thani-airport-to-koh-samui");
 const busFerryOption = route?.options.find((option) => option.id === "bus-ferry");
 const vanFerryOption = route?.options.find((option) => option.id === "van-ferry");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Surat Thani Airport to Koh Samui Guide | Ferry Tips & FAQ",
   description:
     "Read practical tips for travelling from Surat Thani Airport to Koh Samui. Check airport pickup, pier transfer, ferry crossing, luggage notes and booking advice.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-samui/details",
   },
-};
+});
 
 const steps = [
   {

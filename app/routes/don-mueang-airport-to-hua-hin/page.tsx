@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("don-mueang-airport-to-hua-hin");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Don Mueang Airport to Hua Hin Transfers | Train, Bus, Van & Taxi",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/don-mueang-airport-to-hua-hin",
   },
-};
+});
 
 export default function DonMueangAirportToHuaHinPage() {
   if (!route) {

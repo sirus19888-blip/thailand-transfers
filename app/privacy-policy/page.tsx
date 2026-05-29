@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { PolicyPage } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
     "Privacy information for Thailand Transfer Guide users, analytics and affiliate tracking.",
   alternates: {
     canonical: "/privacy-policy",
   },
-};
+});
 
 export default function PrivacyPolicyPage() {
   return (

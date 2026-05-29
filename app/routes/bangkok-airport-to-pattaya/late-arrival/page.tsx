@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
 
 const partnerUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-late-arrival";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "BKK to Pattaya Late Arrival Transfer Guide",
   description:
     "What to do if your flight lands late at Bangkok Suvarnabhumi Airport and you need to get to Pattaya safely.",
   alternates: {
     canonical: "/routes/bangkok-airport-to-pattaya/late-arrival",
   },
-};
+});
 
 export default function BkkPattayaLateArrivalPage() {
   return (

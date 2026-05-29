@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { Clock3, Luggage, MapPin } from "lucide-react";
 import { IslandRouteDetailsTemplate } from "@/components/IslandRouteDetailsTemplate";
@@ -6,14 +7,14 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("koh-chang-to-bangkok");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Koh Chang to Bangkok Guide | Ferry, Van, Bus & Taxi Tips",
   description:
     "Read practical tips for travelling from Koh Chang to Bangkok. Check hotel pickup, ferry crossing, mainland transfer, Bangkok drop-off, luggage notes and FAQ.",
   alternates: {
     canonical: "/routes/koh-chang-to-bangkok/details",
   },
-};
+});
 
 const steps = [
   {

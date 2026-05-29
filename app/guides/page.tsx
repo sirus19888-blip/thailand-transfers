@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -14,14 +15,14 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mainRoute } from "@/data/routes";
 import { getRoutePageBySlug } from "@/data/routePages";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Thailand Transfer Guides | Mobile Route Tips",
   description:
     "Mobile route guides for Thailand transfers, including airport pickup, ferry timing, luggage and route-specific booking checks.",
   alternates: {
     canonical: "/guides",
   },
-};
+});
 
 const guideRoutes = [
   {

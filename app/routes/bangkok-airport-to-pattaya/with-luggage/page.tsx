@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
 
 const partnerUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-with-luggage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "BKK to Pattaya With Luggage | Transfer Guide",
   description:
     "How to choose a BKK Airport to Pattaya transfer when travelling with suitcases, family luggage, stroller or bulky items.",
   alternates: {
     canonical: "/routes/bangkok-airport-to-pattaya/with-luggage",
   },
-};
+});
 
 export default function BkkPattayaWithLuggagePage() {
   return (

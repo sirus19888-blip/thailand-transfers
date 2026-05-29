@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { PolicyPage } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contact",
   description:
     "Contact Thailand Transfer Guide about route information, corrections or partnership questions.",
   alternates: {
     canonical: "/contact",
   },
-};
+});
 
 export default function ContactPage() {
   return (

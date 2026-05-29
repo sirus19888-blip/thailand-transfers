@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { Header } from "@/components/Header";
 import { HeroSearch } from "@/components/HeroSearch";
 import { PopularRoutes } from "@/components/PopularRoutes";
@@ -11,14 +12,14 @@ import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Thailand Transfer Guide | Compare Thailand Transfer Options",
   description:
     "Compare popular transfer routes in Thailand by bus, taxi, van and ferry. Find practical travel tips and check booking options with trusted partners.",
   alternates: {
     canonical: "/",
   },
-};
+});
 
 export default function HomePage() {
   return (

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { PolicyPage } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Trust Center",
   description:
     "How Thailand Transfer Guide checks route information, ranks transfer options, handles affiliate links and accepts corrections.",
   alternates: {
     canonical: "/trust-center",
   },
-};
+});
 
 export default function TrustCenterPage() {
   return (

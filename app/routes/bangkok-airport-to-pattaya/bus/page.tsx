@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
 
 const busUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-bus-guide";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "BKK Airport to Pattaya by Bus | Pickup and Luggage Guide",
   description:
     "Mobile guide for taking the airport bus from Suvarnabhumi Airport to Pattaya, including pickup, luggage, late arrival risk and partner ticket checks.",
   alternates: {
     canonical: "/routes/bangkok-airport-to-pattaya/bus",
   },
-};
+});
 
 export default function BkkPattayaBusGuidePage() {
   return (

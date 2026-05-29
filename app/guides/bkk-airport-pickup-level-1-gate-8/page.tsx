@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "BKK Airport Pickup Level 1 Gate 8 Guide",
   description:
     "Mobile pickup guide for Suvarnabhumi Airport Level 1 Gate 8, used by many Pattaya bus and shared transfer instructions.",
   alternates: {
     canonical: "/guides/bkk-airport-pickup-level-1-gate-8",
   },
-};
+});
 
 export default function BkkPickupGate8GuidePage() {
   return (

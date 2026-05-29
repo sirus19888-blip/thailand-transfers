@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { Header } from "@/components/Header";
 import { LandingSteps } from "@/components/LandingSteps";
 import { ScamAlert } from "@/components/ScamAlert";
@@ -12,14 +13,14 @@ import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { transferOptions } from "@/data/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Bangkok Airport to Pattaya Guide | Pickup Tips & FAQ",
   description:
     "Read practical tips for travelling from Bangkok Suvarnabhumi Airport to Pattaya. Learn about pickup points, airport steps, scams to avoid and booking advice.",
   alternates: {
     canonical: "/routes/bangkok-airport-to-pattaya/details",
   },
-};
+});
 
 type BangkokAirportToPattayaDetailsPageProps = {
   searchParams?: Promise<{

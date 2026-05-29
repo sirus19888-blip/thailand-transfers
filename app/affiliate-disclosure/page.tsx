@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { PolicyPage } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Affiliate Disclosure",
   description:
     "Learn how Thailand Transfer Guide uses paid partner links, how commissions may work and how recommendations stay focused on traveler suitability.",
   alternates: {
     canonical: "/affiliate-disclosure",
   },
-};
+});
 
 export default function AffiliateDisclosurePage() {
   return (

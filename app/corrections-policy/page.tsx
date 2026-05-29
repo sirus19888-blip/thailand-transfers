@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { PolicyPage } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Corrections Policy",
   description: "Report outdated pickup points, schedules, ferry information or price ranges.",
   alternates: {
     canonical: "/corrections-policy",
   },
-};
+});
 
 export default function CorrectionsPolicyPage() {
   return (

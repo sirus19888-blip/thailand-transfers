@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
@@ -6,7 +7,7 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("koh-phi-phi-to-krabi");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Koh Phi Phi to Krabi Transfers | Ferry & Speedboat",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/koh-phi-phi-to-krabi",
   },
-};
+});
 
 const optionDetailsById = {
   ferry: {

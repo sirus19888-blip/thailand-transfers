@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -21,14 +22,14 @@ import { Container } from "@/components/Container";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mainRoute } from "@/data/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Thailand Tourist SIM & eSIM",
   description:
     "Compare practical options for staying connected in Thailand with a tourist SIM or eSIM.",
   alternates: {
     canonical: "/travel-extras/thailand-tourist-sim",
   },
-};
+});
 
 const benefits = [
   "Use maps, Grab, hotel messages and booking confirmations after landing.",

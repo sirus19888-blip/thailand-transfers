@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Landmark } from "lucide-react";
@@ -11,14 +12,14 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { RoutesMobileHub } from "@/components/RoutesMobileHub";
 import { highDemandRouteSearches, popularRoutes } from "@/data/routes";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "All Thailand Transfer Routes",
   description:
     "Browse popular Thailand transfer routes by airport, city, island and beach destination.",
   alternates: {
     canonical: "/routes",
   },
-};
+});
 
 export default function RoutesPage() {
   return (

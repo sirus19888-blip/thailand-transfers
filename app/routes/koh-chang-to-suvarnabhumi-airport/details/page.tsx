@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { Clock3, Luggage, MapPin } from "lucide-react";
 import { IslandRouteDetailsTemplate } from "@/components/IslandRouteDetailsTemplate";
@@ -6,14 +7,14 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("koh-chang-to-suvarnabhumi-airport");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Koh Chang to Suvarnabhumi Airport Guide | Ferry Transfer Tips",
   description:
     "Read practical tips for travelling from Koh Chang to Suvarnabhumi Airport. Check hotel pickup, ferry crossing, airport drop-off, flight buffer, luggage notes and FAQ.",
   alternates: {
     canonical: "/routes/koh-chang-to-suvarnabhumi-airport/details",
   },
-};
+});
 
 const steps = [
   {

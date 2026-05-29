@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
@@ -7,14 +8,14 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
 import { donMueangPattayaRoute } from "@/data/donMueangPattayaRoute";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Don Mueang Airport to Pattaya Transfers | Taxi, Bus & Van",
   description:
     "Compare transfer options from Don Mueang Airport (DMK) to Pattaya. Check taxi, bus and van choices, estimated travel times and booking options.",
   alternates: {
     canonical: "/routes/don-mueang-airport-to-pattaya",
   },
-};
+});
 
 const dmkPattayaAffiliateUrl = donMueangPattayaRoute.mainAffiliateUrl;
 const dmkOptions = donMueangPattayaRoute.options;

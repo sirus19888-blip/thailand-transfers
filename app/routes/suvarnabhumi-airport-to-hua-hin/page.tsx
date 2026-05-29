@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { notFound } from "next/navigation";
 import { MobileHuaHinTransferOptionsScreen } from "@/components/MobileHuaHinTransferOptionsScreen";
 import RoutePageTemplate from "@/components/RoutePageTemplate";
@@ -6,7 +7,7 @@ import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("suvarnabhumi-airport-to-hua-hin");
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
     "Suvarnabhumi Airport to Hua Hin Transfers | Bus, Taxi & Van",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
-};
+});
 
 type SuvarnabhumiAirportToHuaHinPageProps = {
   searchParams?: Promise<{

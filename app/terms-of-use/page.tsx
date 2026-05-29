@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/app/seo";
 import { PolicyPage } from "@/components/PolicyPage";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Terms of Use",
   description:
     "Read the terms for using Thailand Transfer Guide, including route guidance limits, partner booking responsibility, travel risk and content accuracy.",
   alternates: {
     canonical: "/terms-of-use",
   },
-};
+});
 
 export default function TermsOfUsePage() {
   return (
