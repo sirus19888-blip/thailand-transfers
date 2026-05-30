@@ -87,6 +87,7 @@ export function RouteHero() {
                 alt="Bangkok Airport to Pattaya transfer"
                 fill
                 priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
               />
             </div>

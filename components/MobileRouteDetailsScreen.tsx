@@ -354,7 +354,7 @@ export function MobileRouteDetailsScreen({
               alt="Suvarnabhumi Airport to Pattaya route map"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 390px"
+              sizes="(max-width: 448px) calc(100vw - 32px), 416px"
               className="object-cover"
             />
           </div>

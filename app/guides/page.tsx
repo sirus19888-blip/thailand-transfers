@@ -186,7 +186,7 @@ export default function GuidesPage() {
               alt="Thailand transfer planning on mobile"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 390px"
+              sizes="(max-width: 448px) calc(100vw - 32px), 416px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/85 via-[#10201d]/25 to-transparent" />
@@ -244,7 +244,7 @@ export default function GuidesPage() {
                   src={guide.imageSrc}
                   alt={guide.imageAlt}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 390px"
+                  sizes="(max-width: 448px) calc(100vw - 32px), 416px"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/80 via-[#10201d]/10 to-transparent" />

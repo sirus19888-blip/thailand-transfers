@@ -311,6 +311,7 @@ export default function ThailandTouristSimPage() {
                   fill
                   className="object-cover"
                   priority
+                  sizes="(min-width: 1024px) 50vw, 0px"
                 />
               </div>
 

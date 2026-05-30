@@ -185,7 +185,7 @@ function MobileDetails() {
               alt="Surat Thani Airport to Koh Samui route"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 390px"
+              sizes="(max-width: 448px) calc(100vw - 32px), 416px"
               className="object-cover"
             />
           </div>

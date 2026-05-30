@@ -341,7 +341,7 @@ export function IslandRouteDetailsTemplate({
                   alt={overviewAlt}
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 390px"
+                  sizes="(max-width: 448px) calc(100vw - 32px), 416px"
                   className="object-cover"
                 />
               )}
@@ -686,6 +686,7 @@ export function IslandRouteDetailsTemplate({
                     alt={heroAlt}
                     fill
                     priority
+                    sizes="420px"
                     className="object-cover"
                   />
                 </div>
@@ -721,6 +722,7 @@ export function IslandRouteDetailsTemplate({
                       src={step.image}
                       alt={step.title}
                       fill
+                      sizes="(min-width: 1024px) 25vw, 50vw"
                       className="object-cover"
                     />
                   </div>

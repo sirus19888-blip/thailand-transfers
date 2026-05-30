@@ -182,7 +182,7 @@ export function PolicyPage({
               alt="Thailand Transfer Guide trust and policy guide"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 390px"
+              sizes="(max-width: 448px) calc(100vw - 32px), 416px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#10201d]/88 via-[#10201d]/24 to-transparent" />
