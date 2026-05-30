@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
+import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData } from "@/data/routePages";
 
 type RoutePageTemplateProps = {
@@ -32,6 +33,7 @@ export default function RoutePageTemplate({
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
+      <RouteStructuredData route={route} />
       <div className="hidden lg:block">
         <Header />
 

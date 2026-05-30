@@ -11,6 +11,11 @@ import { MobileRouteDetailsScreen } from "@/components/MobileRouteDetailsScreen"
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { RouteDetailsStructuredData } from "@/components/StructuredData";
+import {
+  bangkokAirportToPattayaDetailsFaqs,
+  bangkokAirportToPattayaDetailsRoute,
+} from "@/data/bangkokAirportToPattayaDetails";
 import { transferOptions } from "@/data/routes";
 
 export const metadata: Metadata = createPageMetadata({
@@ -38,13 +43,18 @@ export default async function BangkokAirportToPattayaDetailsPage({
   const busOption = transferOptions.find((option) => option.id === "bus");
 
   return (
-    <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
-      <div className="lg:hidden">
-        <MobileRouteDetailsScreen selectedOptionId={selectedOptionId} />
-      </div>
+    <>
+      <RouteDetailsStructuredData
+        route={bangkokAirportToPattayaDetailsRoute}
+        faqs={bangkokAirportToPattayaDetailsFaqs}
+      />
+      <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
+        <div className="lg:hidden">
+          <MobileRouteDetailsScreen selectedOptionId={selectedOptionId} />
+        </div>
 
-      <div className="hidden lg:block">
-        <Header />
+        <div className="hidden lg:block">
+          <Header />
 
         <section className="bg-[#f8f4ec] py-8 lg:py-16">
           <Container>
@@ -99,7 +109,8 @@ export default async function BangkokAirportToPattayaDetailsPage({
         <RouteFaq />
 
         <RouteFinalCta />
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }

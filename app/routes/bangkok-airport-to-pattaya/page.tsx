@@ -8,6 +8,7 @@ import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRou
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { RouteStructuredData } from "@/components/StructuredData";
 import { getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
 
@@ -219,6 +220,7 @@ export default async function BangkokAirportToPattayaPage({
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
+      <RouteStructuredData route={mobileRoute} />
       <div className="lg:hidden">
         <MobilePriorityRouteOptionsScreen
           route={mobileRoute}

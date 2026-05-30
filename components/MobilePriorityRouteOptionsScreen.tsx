@@ -8,7 +8,6 @@ import { ReturnTransferIntelligence } from "@/components/ReturnTransferIntellige
 import { FerryIntelligence } from "@/components/FerryIntelligence";
 import { TrackedAnchor } from "@/components/TrackedActions";
 import { RouteAnalytics } from "@/components/RouteAnalytics";
-import { RouteStructuredData } from "@/components/StructuredData";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
@@ -180,7 +179,6 @@ export function MobilePriorityRouteOptionsScreen({
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-20">
-      <RouteStructuredData route={route} />
       <RouteAnalytics route={route.slug} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">

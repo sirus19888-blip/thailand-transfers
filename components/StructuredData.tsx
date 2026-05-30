@@ -5,9 +5,36 @@ function JsonLd({ data }: { data: object }) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
     />
   );
+}
+
+function routeBreadcrumbList(route: RoutePageData) {
+  const routeUrl = `${siteUrl}/routes/${route.slug}`;
+
+  return [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Routes",
+      item: `${siteUrl}/routes`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: route.title,
+      item: routeUrl,
+    },
+  ];
 }
 
 export function GlobalStructuredData() {
@@ -45,20 +72,7 @@ export function RouteStructuredData({ route }: { route: RoutePageData }) {
         data={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Routes",
-              item: `${siteUrl}/routes`,
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: route.title,
-              item: routeUrl,
-            },
-          ],
+          itemListElement: routeBreadcrumbList(route),
         }}
       />
       <JsonLd
@@ -106,35 +120,13 @@ export function RouteDetailsStructuredData({
   route: RoutePageData;
   faqs: FaqEntry[];
 }) {
-  const routeUrl = `${siteUrl}/routes/${route.slug}`;
-  const detailsUrl = `${routeUrl}/details`;
-
   return (
     <>
       <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Routes",
-              item: `${siteUrl}/routes`,
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: route.title,
-              item: routeUrl,
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: "Details",
-              item: detailsUrl,
-            },
-          ],
+          itemListElement: routeBreadcrumbList(route),
         }}
       />
       <JsonLd

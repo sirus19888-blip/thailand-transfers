@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
-import { mainRoute, transferOptions } from "@/data/routes";
+import { transferOptions } from "@/data/routes";
+import {
+  bangkokAirportToPattayaDetailsFaqs as faqs,
+  bangkokAirportToPattayaDetailsRoute as routeData,
+} from "@/data/bangkokAirportToPattayaDetails";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { MobileBottomNav } from "./MobileBottomNav";
 import {
@@ -9,13 +13,11 @@ import {
   MobilePersonalizedTripCard,
 } from "@/components/MobilePersonalizedTrip";
 import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
-import { RouteDetailsStructuredData } from "@/components/StructuredData";
 import {
   getDropoffMapUrl,
   getPickupMapUrl,
   getSourceFreshness,
 } from "@/data/routeIntelligence";
-import type { RoutePageData } from "@/data/routePages";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -268,51 +270,7 @@ function normalizeOptionId(optionId: string | undefined) {
   return optionIdAliases[optionId.trim().toLowerCase()];
 }
 
-const faqs = [
-  {
-    question: "What is the best option from BKK Airport to Pattaya?",
-    answer:
-      "Bus is usually best value if the schedule matches your flight. Private taxi is best for late arrivals, hotel drop-off, luggage or groups.",
-  },
-  {
-    question: "Where do buses leave from at Suvarnabhumi Airport?",
-    answer:
-      "RRC lists the Suvarnabhumi Airport pickup at Level 1, Gate 8. Some partner tickets can use a different counter or bus-terminal instruction, so always follow the exact partner ticket.",
-  },
-  {
-    question: "How long does BKK Airport to Pattaya take?",
-    answer:
-      "Plan around 2h - 2h 30m by bus and 1h 30m - 2h 30m by taxi. Friday evening, holiday and Bangkok traffic can make the journey longer.",
-  },
-  {
-    question: "Should I book before landing?",
-    answer:
-      "It is safer to compare partner options before arrival, especially in high season or if your flight lands close to the final bus departures.",
-  },
-];
-
 const busOption = transferOptions.find((option) => option.id === "bus");
-
-const routeData: RoutePageData = {
-  slug: mainRoute.slug,
-  title: mainRoute.title,
-  seoTitle: mainRoute.title,
-  seoDescription: mainRoute.description,
-  from: mainRoute.from,
-  to: mainRoute.to,
-  intro: mainRoute.description,
-  mainAffiliateUrl: mainRoute.affiliateUrl,
-  options: transferOptions.map((option) => ({
-    id: option.id,
-    name: option.name,
-    price: "Final price on partner",
-    duration: option.duration,
-    pickup: option.pickup,
-    bestFor: option.bestFor,
-    trackingId: option.trackingId,
-    affiliateUrl: option.affiliateUrl,
-  })),
-};
 
 type MobileRouteDetailsScreenProps = {
   selectedOptionId?: string;
@@ -336,7 +294,6 @@ export function MobileRouteDetailsScreen({
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
-      <RouteDetailsStructuredData route={routeData} faqs={faqs} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link

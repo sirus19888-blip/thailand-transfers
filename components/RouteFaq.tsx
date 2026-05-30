@@ -1,27 +1,5 @@
 import { Container } from "./Container";
-
-const faqs = [
-  {
-    question: "What is the cheapest way from Bangkok Airport to Pattaya?",
-    answer:
-      "The airport bus is usually the cheapest option. It is best for daytime arrivals and travelers with simple luggage.",
-  },
-  {
-    question: "What is the easiest option after a long flight?",
-    answer:
-      "A private taxi is usually the easiest option because it can take you directly to your hotel or apartment in Pattaya.",
-  },
-  {
-    question: "Should I book before landing?",
-    answer:
-      "It is usually better to compare and book before landing, especially if you arrive late, travel with family or carry large luggage.",
-  },
-  {
-    question: "Are prices fixed?",
-    answer:
-      "Prices can change depending on operator, time, route and availability. Always check the final partner price before booking.",
-  },
-];
+import { bangkokAirportToPattayaDetailsFaqs } from "@/data/bangkokAirportToPattayaDetails";
 
 export function RouteFaq() {
   return (
@@ -38,7 +16,7 @@ export function RouteFaq() {
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
-          {faqs.map((faq) => (
+          {bangkokAirportToPattayaDetailsFaqs.map((faq) => (
             <div
               key={faq.question}
               className="rounded-[2rem] border border-[#e7e2d8] bg-[#fbfaf7] p-5"
