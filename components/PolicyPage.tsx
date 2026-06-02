@@ -174,13 +174,9 @@ export function PolicyPage({
               <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#f0c96a]">
                 {eyebrow}
               </p>
-              <div
-                role="heading"
-                aria-level={1}
-                className="mt-1 text-[27px] font-extrabold leading-tight text-white"
-              >
+              <h1 className="mt-1 text-[27px] font-extrabold leading-tight text-white">
                 {title}
-              </div>
+              </h1>
               <p className="mt-2 text-xs font-medium leading-5 text-white/82">
                 {intro}
               </p>

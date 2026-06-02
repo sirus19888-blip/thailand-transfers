@@ -184,13 +184,9 @@ export function RoutesMobileHub() {
         <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
           Route hub
         </p>
-        <div
-          role="heading"
-          aria-level={1}
-          className="mt-1 text-[28px] font-black leading-tight tracking-normal text-[#10201d]"
-        >
+        <h1 className="mt-1 text-[28px] font-black leading-tight tracking-normal text-[#10201d]">
           Browse transfer routes
-        </div>
+        </h1>
 
         <label className="mt-4 flex min-h-12 items-center gap-2 rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] px-3">
           <Search className="h-4 w-4 text-[#0c5a4d]" />

@@ -1,17 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/app/seo";
-import { Header } from "@/components/Header";
-import { RouteHero } from "@/components/RouteHero";
-import { RouteSummary } from "@/components/RouteSummary";
+import RoutePageTemplate from "@/components/RoutePageTemplate";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import { Container } from "@/components/Container";
-import { AffiliateButton } from "@/components/AffiliateButton";
-import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
-import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { DesktopPersonalizedTripSummary } from "@/components/DesktopPersonalizedTripSummary";
-import { RouteStructuredData } from "@/components/StructuredData";
-import { getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
 
 export const metadata: Metadata = createPageMetadata({
@@ -104,102 +97,71 @@ const optionDetailsById = {
   },
 };
 
-function DesktopRouteOptions() {
-  const freshness = getSourceFreshness(mobileRoute);
+const bkkDeepGuides = [
+  {
+    label: "Airport bus",
+    href: "/routes/bangkok-airport-to-pattaya/bus",
+    text: "Gate 8, schedule risk and when the bus makes sense.",
+  },
+  {
+    label: "Private taxi",
+    href: "/routes/bangkok-airport-to-pattaya/taxi",
+    text: "Door-to-door choice for late arrivals, luggage and families.",
+  },
+  {
+    label: "Late arrival",
+    href: "/routes/bangkok-airport-to-pattaya/late-arrival",
+    text: "What to avoid if your flight lands close to the last departures.",
+  },
+  {
+    label: "With luggage",
+    href: "/routes/bangkok-airport-to-pattaya/with-luggage",
+    text: "How bags change the bus, van and taxi decision.",
+  },
+  {
+    label: "Gate 8 guide",
+    href: "/guides/bkk-airport-pickup-level-1-gate-8",
+    text: "Level 1 pickup guide for tickets that mention Gate 8.",
+  },
+];
 
+function DesktopBkkDeepGuides() {
   return (
-    <section id="route-options" className="bg-white py-10 lg:py-12">
+    <section className="border-b border-[#e7e2d8] bg-white py-8">
       <Container>
-        <div className="mb-5 flex flex-col justify-between gap-3 lg:flex-row lg:items-end">
+        <div className="mb-4 flex items-end justify-between gap-4">
           <div>
-            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
-              3 options found
+            <p className="text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+              Route-specific checks
             </p>
-            <h2 className="text-[30px] font-extrabold tracking-normal text-[#10201d]">
-              Choose the best BKK to Pattaya transfer
+            <h2 className="mt-1 text-2xl font-extrabold text-[#10201d]">
+              BKK to Pattaya details tourists actually need
             </h2>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[#30465a]">
-              One route, three practical choices. Check final price, schedule,
-              luggage and pickup details before booking.
-            </p>
           </div>
-
           <Link
             href="/routes/bangkok-airport-to-pattaya/details"
-            className="inline-flex items-center justify-center rounded-full border border-[#0c5a4d] bg-white px-5 py-2.5 text-sm font-extrabold text-[#0c5a4d] transition hover:bg-[#f8f4ec]"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#0c5a4d] px-5 py-2 text-sm font-extrabold text-[#0c5a4d] transition hover:bg-[#eef6f2]"
           >
-            Pickup details
+            Full route details
           </Link>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-3">
-          {mobileRoute.options.map((option) => {
-            const details =
-              optionDetailsById[option.id as keyof typeof optionDetailsById];
-
-            return (
-              <article
-                key={option.id}
-                className="rounded-[18px] border border-[#e7e2d8] bg-white p-4 shadow-sm"
-              >
-                <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
-                  {details.label}
-                </p>
-                <h3 className="mt-2 text-xl font-extrabold text-[#10201d]">
-                  {option.name}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-[#30465a]">
-                  {option.bestFor}
-                </p>
-
-                <div className="mt-4 grid gap-2 text-sm">
-                  <div className="rounded-2xl bg-[#fbfaf7] px-3 py-3">
-                    <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-slate-400">
-                      Time
-                    </p>
-                    <p className="mt-1 font-extrabold text-[#10201d]">
-                      {option.duration}
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-[#fbfaf7] px-3 py-3">
-                    <p className="text-[11px] font-extrabold uppercase tracking-[0.14em] text-slate-400">
-                      Pickup
-                    </p>
-                    <p className="mt-1 font-extrabold text-[#10201d]">
-                      {option.pickup}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-4 grid gap-2">
-                  <AffiliateButton
-                    href={option.affiliateUrl}
-                    trackingId={option.trackingId}
-                    fullWidth
-                  >
-                    Check final price and ticket rules
-                  </AffiliateButton>
-
-                  <Link
-                    href={`/routes/bangkok-airport-to-pattaya/details?option=${option.id}`}
-                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#0c5a4d] bg-white px-5 py-3 text-sm font-extrabold text-[#0c5a4d]"
-                  >
-                    View route details
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
+        <div className="grid gap-3 lg:grid-cols-5">
+          {bkkDeepGuides.map((guide) => (
+            <Link
+              key={guide.href}
+              href={guide.href}
+              className="rounded-[20px] border border-[#e7e2d8] bg-[#fbfaf7] p-4 shadow-sm transition hover:-translate-y-0.5 hover:bg-white hover:shadow-md"
+            >
+              <p className="text-sm font-extrabold text-[#10201d]">
+                {guide.label}
+              </p>
+              <p className="mt-2 text-xs leading-5 text-slate-600">
+                {guide.text}
+              </p>
+            </Link>
+          ))}
         </div>
-
-        <div className="mt-5 rounded-[24px] border border-[#e7e2d8] bg-[#fbfaf7] p-5">
-          <h2 className="text-lg font-extrabold text-[#10201d]">
-            Sources & freshness
-          </h2>
-          <SourceFreshnessPanel freshness={freshness} className="mt-3" />
-        </div>
-        <AffiliateDisclosure className="mt-2 text-center" />
       </Container>
     </section>
   );
@@ -222,9 +184,24 @@ export default async function BangkokAirportToPattayaPage({
   const arrivalTime = params?.arrival_time;
 
   return (
-    <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
-      <RouteStructuredData route={mobileRoute} />
-      <div className="lg:hidden">
+    <RoutePageTemplate
+      route={mobileRoute}
+      badge="Airport transfer comparison"
+      desktopDescription="Compare bus, private taxi and van transfer options from Bangkok Suvarnabhumi Airport to Pattaya before you land. Check pickup point, luggage fit, late-arrival risk and final partner ticket rules."
+      optionsHeading="Choose the best BKK to Pattaya transfer"
+      detailsNote="One airport route, three practical choices. Final price, live schedule, luggage and pickup details are confirmed by the partner before booking."
+      detailsHref="/routes/bangkok-airport-to-pattaya/details"
+      desktopAfterHero={
+        <>
+          <DesktopPersonalizedTripSummary
+            route={mobileRoute}
+            arrivalTime={arrivalTime}
+            passengers={passengers}
+          />
+          <DesktopBkkDeepGuides />
+        </>
+      }
+      mobileContent={
         <MobilePriorityRouteOptionsScreen
           route={mobileRoute}
           title="BKK - Pattaya"
@@ -239,24 +216,7 @@ export default async function BangkokAirportToPattayaPage({
           passengers={passengers}
           arrivalTime={arrivalTime}
         />
-      </div>
-
-      <div className="hidden lg:block">
-        <Header />
-
-        <RouteHero />
-
-        <RouteSummary />
-
-        <DesktopPersonalizedTripSummary
-          route={mobileRoute}
-          arrivalTime={arrivalTime}
-          passengers={passengers}
-        />
-
-        <DesktopRouteOptions />
-      </div>
-
-    </main>
+      }
+    />
   );
 }

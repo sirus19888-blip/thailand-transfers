@@ -40,12 +40,12 @@ export function MobileCookieConsent() {
   if (!isVisible) return null;
 
   const bottomOffset = hasMobileStickyCta
-    ? "bottom-[calc(8.6rem+env(safe-area-inset-bottom))]"
-    : "bottom-[calc(4.25rem+env(safe-area-inset-bottom))]";
+    ? "bottom-[calc(7.25rem+env(safe-area-inset-bottom))]"
+    : "bottom-[calc(4.55rem+env(safe-area-inset-bottom))]";
 
   return (
     <div
-      className={`fixed inset-x-3 ${bottomOffset} z-[60] mx-auto grid max-w-md grid-cols-[1fr_auto] items-center gap-2 rounded-[16px] border border-[#d7eadf] bg-white/96 p-2 shadow-xl shadow-black/12 backdrop-blur lg:hidden`}
+      className={`fixed inset-x-3 ${bottomOffset} z-[60] mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2 rounded-[14px] border border-[#d7eadf] bg-white/96 p-2 shadow-xl shadow-black/12 backdrop-blur lg:hidden`}
     >
       <div>
         <p className="text-[11px] font-extrabold leading-4 text-[#10201d]">
@@ -65,7 +65,7 @@ export function MobileCookieConsent() {
           window.dispatchEvent(new Event(cookieConsentAcceptedEvent));
           setIsVisible(false);
         }}
-        className="min-h-9 rounded-[14px] bg-[#0c5a4d] px-4 py-2 text-[11px] font-extrabold text-white"
+        className="min-h-8 rounded-[12px] bg-[#0c5a4d] px-3 py-1.5 text-[11px] font-extrabold text-white"
       >
         Accept
       </button>

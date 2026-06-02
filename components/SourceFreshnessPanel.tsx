@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { RouteSourceFreshness } from "@/data/routeIntelligence";
 
 type SourceFreshnessPanelProps = {
@@ -42,6 +43,29 @@ export function SourceFreshnessPanel({
           ))}
         </div>
       ) : null}
+
+      <div className="border-t border-[#e7e2d8] pt-3">
+        <p className="text-[11px] font-semibold leading-5 text-slate-600">
+          Route pages are planning guidance, not live timetables. Final price,
+          schedule, pickup point and support rules are confirmed by the booking
+          partner or operator before payment.
+        </p>
+
+        <div className="mt-2 flex flex-wrap gap-2">
+          <Link
+            href="/corrections-policy"
+            className="rounded-full border border-[#d7eadf] bg-white px-3 py-1.5 text-[10.5px] font-extrabold text-[#0c5a4d]"
+          >
+            Corrections policy
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-full border border-[#d7eadf] bg-white px-3 py-1.5 text-[10.5px] font-extrabold text-[#0c5a4d]"
+          >
+            Report outdated info
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

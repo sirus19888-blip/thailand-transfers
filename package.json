@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "qa:routes": "node scripts/route-qa.mjs --start-server --scroll",
+    "qa:routes:ci": "npm run build && npm run qa:routes"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.6",

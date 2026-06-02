@@ -188,13 +188,9 @@ export function MobilePriorityRouteOptionsScreen({
           </Link>
 
           <div className="text-center">
-            <div
-              role="heading"
-              aria-level={1}
-              className="text-[16px] font-extrabold text-[#10201d]"
-            >
+            <h1 className="text-[16px] font-extrabold leading-tight text-[#10201d]">
               {title}
-            </div>
+            </h1>
 
             <div className="mt-1 flex items-center justify-center gap-1.5 text-[11px] font-medium text-slate-500">
               <span>{headerTimingLabel}</span>
@@ -264,7 +260,7 @@ export function MobilePriorityRouteOptionsScreen({
               <p className="text-[9.5px] font-extrabold uppercase tracking-[0.12em] text-[#c99a2e]">
                 {item.label}
               </p>
-              <p className="mt-1 truncate text-[12px] font-extrabold text-[#10201d]">
+              <p className="mt-1 text-[12px] font-extrabold leading-4 text-[#10201d]">
                 {item.value}
               </p>
             </div>
@@ -272,19 +268,16 @@ export function MobilePriorityRouteOptionsScreen({
         </div>
 
         {route.slug === "bangkok-airport-to-pattaya" ? (
-          <div className="relative -mx-4 mt-3 overflow-hidden">
-            <div className="no-scrollbar flex snap-x gap-2 overflow-x-auto px-4 pb-1 pr-10 scroll-px-4">
-              {bkkPattayaDeepGuides.map((guide) => (
-                <Link
-                  key={guide.href}
-                  href={guide.href}
-                  className="snap-start shrink-0 rounded-full bg-[#10201d] px-3.5 py-2 text-[11px] font-extrabold text-white shadow-sm"
-                >
-                  {guide.label}
-                </Link>
-              ))}
-            </div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-9 bg-gradient-to-l from-[#fbfaf7] to-transparent" />
+          <div className="mt-3 flex flex-wrap gap-2">
+            {bkkPattayaDeepGuides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="rounded-full bg-[#10201d] px-3.5 py-2 text-[11px] font-extrabold text-white shadow-sm"
+              >
+                {guide.label}
+              </Link>
+            ))}
           </div>
         ) : null}
 

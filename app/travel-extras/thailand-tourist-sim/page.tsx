@@ -120,13 +120,9 @@ export default function ThailandTouristSimPage() {
             <p className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#f4c86a]">
               Travel extras
             </p>
-            <div
-              role="heading"
-              aria-level={1}
-              className="max-w-[320px] text-[32px] font-black leading-[1.03] tracking-normal"
-            >
+            <h1 className="max-w-[320px] text-[32px] font-black leading-[1.03] tracking-normal">
               Thailand Tourist SIM & eSIM
-            </div>
+            </h1>
             <p className="mt-3 max-w-[320px] text-[14px] leading-6 text-white/86">
               Practical mobile data options for maps, pickup instructions,
               hotel messages and booking confirmations.

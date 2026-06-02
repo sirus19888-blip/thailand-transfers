@@ -94,13 +94,9 @@ function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData })
           <div className="h-10 w-10 rounded-full bg-white shadow-sm" />
 
           <div className="text-center">
-            <div
-              role="heading"
-              aria-level={1}
-              className="text-[16px] font-extrabold text-[#10201d]"
-            >
+            <h1 className="text-[16px] font-extrabold leading-tight text-[#10201d]">
               {compactRouteTitle(route)}
-            </div>
+            </h1>
             <p className="mt-1 text-[11px] font-medium text-slate-500">
               Quick guide
             </p>

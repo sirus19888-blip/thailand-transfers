@@ -194,10 +194,10 @@ export function MobilePersonalizedDetailsSticky({
     >
       <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
         <div className="min-w-0 flex-1">
-          <p className="truncate text-[11px] font-extrabold text-[#10201d]">
+          <p className="text-[11px] font-extrabold leading-4 text-[#10201d]">
             {selectedOption?.name ?? stickyLabel ?? "Selected option"}
           </p>
-          <p className="truncate text-[10px] font-semibold leading-4 text-slate-500">
+          <p className="text-[10px] font-semibold leading-4 text-slate-500">
             {subline}
           </p>
         </div>
