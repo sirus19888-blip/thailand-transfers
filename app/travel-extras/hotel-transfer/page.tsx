@@ -192,9 +192,13 @@ export default function HotelTransferPage() {
             <p className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#f4c86a]">
               Travel extra
             </p>
-            <h1 className="max-w-[330px] text-[32px] font-black leading-[1.03] tracking-normal">
+            <div
+              role="heading"
+              aria-level={1}
+              className="max-w-[330px] text-[32px] font-black leading-[1.03] tracking-normal"
+            >
               Thailand hotel transfer guide
-            </h1>
+            </div>
             <p className="mt-3 max-w-[330px] text-[14px] leading-6 text-white/86">
               Know when hotel pickup is included, when private taxi is safer,
               and what to check before paying.

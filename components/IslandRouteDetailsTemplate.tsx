@@ -294,9 +294,13 @@ export function IslandRouteDetailsTemplate({
             <div className="min-w-0 flex-1 text-center">
               <div className="mx-auto flex items-center justify-center gap-2">
                 <Bus className="h-4 w-4 text-[#0c5a4d]" />
-                <h1 className="truncate text-[16px] font-extrabold text-[#10201d]">
+                <div
+                  role="heading"
+                  aria-level={1}
+                  className="truncate text-[16px] font-extrabold text-[#10201d]"
+                >
                   {mobileTitle}
-                </h1>
+                </div>
               </div>
 
               <p className="mt-1 text-xs font-medium text-slate-500">

@@ -2,7 +2,10 @@ import { mainRoute } from "@/data/routes";
 
 export function MobileStickyCta() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur lg:hidden">
+    <div
+      data-mobile-sticky-cta="true"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e7e2d8] bg-white/95 p-3 shadow-2xl backdrop-blur lg:hidden"
+    >
       <a
         href={mainRoute.affiliateUrl}
         target="_blank"

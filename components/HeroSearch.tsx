@@ -745,9 +745,13 @@ function MobileHero() {
             </div>
 
             <div className="mt-4 max-w-[215px]">
-              <h1 className="text-[26px] font-bold leading-[1.02] tracking-normal text-[#143f3a]">
+              <div
+                role="heading"
+                aria-level={1}
+                className="text-[26px] font-bold leading-[1.02] tracking-normal text-[#143f3a]"
+              >
                 Land calmly in Thailand
-              </h1>
+              </div>
 
               <p className="mt-2 text-[12px] font-medium leading-[18px] text-[#364152]">
                 Tell us where you land. We show the safest option, a smart

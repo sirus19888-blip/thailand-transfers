@@ -188,7 +188,10 @@ export function MobilePersonalizedDetailsSticky({
     : "Price and ticket rules on partner";
 
   return (
-    <div className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur">
+    <div
+      data-mobile-sticky-cta="true"
+      className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur"
+    >
       <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
         <div className="min-w-0 flex-1">
           <p className="truncate text-[11px] font-extrabold text-[#10201d]">

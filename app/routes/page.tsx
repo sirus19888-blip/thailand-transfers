@@ -75,6 +75,14 @@ const detailedRouteLinks: DirectoryLink[] = popularRoutes.map((route) => ({
   href: `${route.href}/details`,
 }));
 
+const airportTransferRoutes = popularRoutes.filter((route) =>
+  route.title.toLowerCase().includes("airport"),
+);
+
+const cityIslandRoutes = popularRoutes.filter(
+  (route) => !route.title.toLowerCase().includes("airport"),
+);
+
 function FeaturedGuideCard({ link }: { link: DirectoryLink }) {
   const Icon = link.icon ?? RouteIcon;
 
@@ -99,6 +107,86 @@ function FeaturedGuideCard({ link }: { link: DirectoryLink }) {
         <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
       </p>
     </Link>
+  );
+}
+
+function DesktopRouteCard({ route }: { route: (typeof popularRoutes)[number] }) {
+  return (
+    <Link
+      href={route.href}
+      className="group overflow-hidden rounded-[24px] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5 transition hover:-translate-y-1 hover:shadow-xl"
+    >
+      <div className="relative aspect-[16/8.5] overflow-hidden">
+        <Image
+          src={route.image}
+          alt={route.title}
+          fill
+          sizes="(min-width: 1024px) 33vw, 0px"
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      <div className="p-4">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <p className="rounded-full bg-[#f8f4ec] px-3 py-1 text-[12px] font-bold text-[#c99a2e]">
+            {route.price}
+          </p>
+
+          <p className="text-[12px] font-semibold text-slate-500">
+            {route.duration}
+          </p>
+        </div>
+
+        <h2 className="text-[18px] font-extrabold leading-snug text-[#10201d]">
+          {route.title}
+        </h2>
+
+        <p className="mt-2 text-sm leading-6 text-[#30465a]">
+          {route.description}
+        </p>
+
+        <p className="mt-3 inline-flex items-center gap-1 text-sm font-extrabold text-[#0c5a4d]">
+          Compare options
+          <ArrowRight className="h-4 w-4" />
+        </p>
+      </div>
+    </Link>
+  );
+}
+
+function DesktopRouteCategorySection({
+  id,
+  eyebrow,
+  title,
+  description,
+  routes,
+}: {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  routes: typeof popularRoutes;
+}) {
+  return (
+    <section id={id} className="scroll-mt-24">
+      <div className="mb-5 max-w-3xl">
+        <p className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
+          {eyebrow}
+        </p>
+        <h2 className="mt-2 text-[28px] font-black tracking-normal text-[#10201d]">
+          {title}
+        </h2>
+        <p className="mt-2 text-sm leading-6 text-[#30465a]">
+          {description}
+        </p>
+      </div>
+
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {routes.map((route) => (
+          <DesktopRouteCard key={route.id} route={route} />
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -222,49 +310,22 @@ export default function RoutesPage() {
 
       <section className="hidden py-8 lg:block lg:py-12">
         <Container>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {popularRoutes.map((route) => (
-              <Link
-                key={route.id}
-                href={route.href}
-                className="group overflow-hidden rounded-[24px] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5 transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="relative aspect-[16/8.5] overflow-hidden">
-                  <Image
-                    src={route.image}
-                    alt={route.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, 0px"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
+          <div className="grid gap-10">
+            <DesktopRouteCategorySection
+              id="airport-transfers"
+              eyebrow="Airport transfers"
+              title="Airport routes travelers check most"
+              description="Direct airport transfer pages for arrivals, departures and beach-area connections."
+              routes={airportTransferRoutes}
+            />
 
-                <div className="p-4">
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <p className="rounded-full bg-[#f8f4ec] px-3 py-1 text-[12px] font-bold text-[#c99a2e]">
-                      {route.price}
-                    </p>
-
-                    <p className="text-[12px] font-semibold text-slate-500">
-                      {route.duration}
-                    </p>
-                  </div>
-
-                  <h2 className="text-[18px] font-extrabold leading-snug text-[#10201d]">
-                    {route.title}
-                  </h2>
-
-                  <p className="mt-2 text-sm leading-6 text-[#30465a]">
-                    {route.description}
-                  </p>
-
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-extrabold text-[#0c5a4d]">
-                    Compare options
-                    <ArrowRight className="h-4 w-4" />
-                  </p>
-                </div>
-              </Link>
-            ))}
+            <DesktopRouteCategorySection
+              id="city-island-routes"
+              eyebrow="City and island transfers"
+              title="City, beach and island routes"
+              description="Long-distance, ferry-connected and return routes where timing, luggage and final drop-off matter."
+              routes={cityIslandRoutes}
+            />
           </div>
         </Container>
       </section>

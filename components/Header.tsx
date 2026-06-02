@@ -5,11 +5,11 @@ import { Container } from "./Container";
 const navigation = [
   {
     name: "Airport Transfers",
-    href: "/routes",
+    href: "/routes#airport-transfers",
   },
   {
-    name: "City Transfers",
-    href: "/routes",
+    name: "City & Island",
+    href: "/routes#city-island-routes",
   },
   {
     name: "Popular Routes",

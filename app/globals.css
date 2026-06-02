@@ -38,3 +38,11 @@ body {
 img {
   max-width: 100%;
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

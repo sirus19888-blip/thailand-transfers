@@ -102,12 +102,12 @@ function CorrectionForm() {
 
 function LegalNav() {
   return (
-    <nav className="mt-5 flex gap-2 overflow-x-auto pb-1">
+    <nav className="mt-5 flex flex-wrap gap-2 pb-1">
       {legalLinks.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className="shrink-0 rounded-full bg-white px-3 py-2 text-xs font-extrabold text-[#0c5a4d] shadow-sm"
+          className="max-w-full rounded-full bg-white px-3 py-2 text-center text-xs font-extrabold leading-4 text-[#0c5a4d] shadow-sm"
         >
           {link.name}
         </Link>
@@ -174,9 +174,13 @@ export function PolicyPage({
               <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#f0c96a]">
                 {eyebrow}
               </p>
-              <h1 className="mt-1 text-[27px] font-extrabold leading-tight text-white">
+              <div
+                role="heading"
+                aria-level={1}
+                className="mt-1 text-[27px] font-extrabold leading-tight text-white"
+              >
                 {title}
-              </h1>
+              </div>
               <p className="mt-2 text-xs font-medium leading-5 text-white/82">
                 {intro}
               </p>

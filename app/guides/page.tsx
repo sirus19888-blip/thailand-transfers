@@ -165,9 +165,13 @@ export default function GuidesPage() {
           <div className="text-center">
             <div className="flex items-center justify-center gap-2">
               <BookOpen className="h-4 w-4 text-[#0c5a4d]" />
-              <h1 className="text-[16px] font-extrabold text-[#10201d]">
+              <div
+                role="heading"
+                aria-level={1}
+                className="text-[16px] font-extrabold text-[#10201d]"
+              >
                 Mobile Guides
-              </h1>
+              </div>
             </div>
             <p className="mt-1 text-xs font-medium text-slate-500">
               Checked route notes before booking
