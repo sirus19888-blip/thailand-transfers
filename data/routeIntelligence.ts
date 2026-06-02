@@ -7,6 +7,19 @@ export type QuickGuideNote = {
   body: string;
 };
 
+export type RouteSourceNote = {
+  label: string;
+  sourceType: "operator" | "public" | "partner";
+};
+
+export type RouteSourceFreshness = {
+  lastChecked: string;
+  confidence: "High" | "Medium";
+  officialSource: string;
+  partnerSource: string;
+  sourceNotes: RouteSourceNote[];
+};
+
 const fullGuideSlugs = new Set([
   "bangkok-airport-to-pattaya",
   "pattaya-to-bangkok-airport",
@@ -832,30 +845,119 @@ export function getRouteDecision(route: RoutePageData) {
   return "Do not book the last possible departure if missing it would be expensive.";
 }
 
-export function getPickupMapUrl(route: RoutePageData, option?: RouteTransportOption) {
-  const query = option
-    ? `${option.pickup}, ${route.from}, Thailand`
-    : `${route.from}, Thailand`;
+function isSpecificPickupPoint(pickup: string) {
+  const text = pickup.toLowerCase();
+  const specificMarkers = [
+    "gate 8",
+    "level 1",
+    "floor 1",
+    "bus station",
+    "transport station",
+    "railway station",
+    "train station",
+    "ton sai pier",
+    "tonsai pier",
+    "pier",
+    "terminal",
+  ];
+  const genericMarkers = [
+    "hotel pickup",
+    "hotel area",
+    "city area",
+    "operator point",
+    "operator pickup",
+    "operator pier",
+    "partner pickup",
+    "selected pickup",
+    "voucher point",
+    "meeting point",
+    "arrivals hall",
+    "depends on operator",
+  ];
 
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  if (specificMarkers.some((marker) => text.includes(marker))) {
+    return true;
+  }
+
+  return !genericMarkers.some((marker) => text.includes(marker));
 }
 
-export function getDropoffMapUrl(route: RoutePageData) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    `${route.to}, Thailand`,
-  )}`;
+export function getPickupMapInfo(
+  route: RoutePageData,
+  option?: RouteTransportOption,
+) {
+  const pickup = option?.pickup ?? route.from;
+  const isSpecific = isSpecificPickupPoint(pickup);
+
+  if (!isSpecific) {
+    return {
+      label: "Ticket point",
+      note: "Exact pickup is shown on the partner ticket or voucher.",
+      isSpecific,
+    };
+  }
+
+  return {
+    label: "Specific point",
+    note: "Use this as a planning point. Still follow the exact partner ticket.",
+    isSpecific,
+  };
 }
 
-export function getSourceFreshness(route: RoutePageData) {
+function getRouteSourceNotes(route: RoutePageData): RouteSourceNote[] {
+  const notes: RouteSourceNote[] = [];
+  const routeText = `${route.slug} ${route.from} ${route.to}`.toLowerCase();
+
+  if (
+    route.slug === "bangkok-airport-to-pattaya" ||
+    route.slug === "pattaya-to-bangkok-airport"
+  ) {
+    notes.push({
+      label: "Airport Pattaya Bus / Roong Reuang Coach",
+      sourceType: "operator",
+    });
+  }
+
+  if (route.slug === "suvarnabhumi-airport-to-hua-hin") {
+    notes.push({
+      label: "RRC Suvarnabhumi Airport - Hua Hin",
+      sourceType: "operator",
+    });
+  }
+
+  if (routeText.includes("koh-chang")) {
+    notes.push({
+      label: "Koh Chang ferry timetable reference",
+      sourceType: "public",
+    });
+  }
+
+  notes.push({
+    label: "12Go partner availability",
+    sourceType: "partner",
+  });
+
+  return notes;
+}
+
+export function getSourceFreshness(route: RoutePageData): RouteSourceFreshness {
   const routeText = `${route.from} ${route.to} ${route.intro}`.toLowerCase();
   const isIsland = routeText.includes("koh") || routeText.includes("ferry");
+  const sourceNotes = getRouteSourceNotes(route);
+  const hasOperatorSource = sourceNotes.some(
+    (link) => link.sourceType === "operator",
+  );
+  const hasPublicSource = sourceNotes.some((link) => link.sourceType === "public");
 
   return {
     lastChecked: "May 2026",
-    confidence: isIsland ? "Medium" : "High",
-    officialSource: isIsland
-      ? "airport, ferry or operator public information"
-      : "airport, station or operator public information",
+    confidence: isIsland && !hasOperatorSource ? "Medium" : "High",
+    officialSource: hasOperatorSource
+      ? "operator public information plus partner availability"
+      : hasPublicSource
+        ? "public ferry or route reference plus partner availability"
+        : "partner availability plus public route context",
     partnerSource: "12Go partner availability",
+    sourceNotes,
   };
 }

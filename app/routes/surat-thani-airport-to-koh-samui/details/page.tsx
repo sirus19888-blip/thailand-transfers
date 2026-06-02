@@ -415,8 +415,9 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
           <Container>
             <Link
               href="/routes/surat-thani-airport-to-koh-samui"
-              className="mb-6 inline-flex text-sm font-bold text-[#064e45] hover:underline"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-[#064e45] hover:underline"
             >
+              <ArrowLeft className="h-4 w-4" />
               Back to transfer options
             </Link>
 
@@ -426,9 +427,9 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                   Route details
                 </p>
 
-                <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+                <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                   Surat Thani Airport to Koh Samui: ferry transfer guide
-                </h2>
+                </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                   Before booking, check the airport pickup point, pier transfer,

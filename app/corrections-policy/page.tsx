@@ -15,7 +15,7 @@ export default function CorrectionsPolicyPage() {
     <PolicyPage
       eyebrow="Corrections"
       title="Corrections Policy"
-      intro="Route details change. Help us keep pickup points, ferry notes, schedules and price guidance useful for travelers."
+      intro="Route details change. Help us keep pickup points, ferry notes, schedules and price guidance useful for travelers by sending correction details."
       showCorrectionForm
       sections={[
         {

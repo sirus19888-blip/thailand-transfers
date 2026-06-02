@@ -19,19 +19,18 @@ type PolicyPageProps = {
   showCorrectionForm?: boolean;
 };
 
-const contactEmail = "hello@thailandtransferguide.com";
+const contactEmail = "bangkokpattayabus@gmail.com";
 
 function PolicyParagraph({ text }: { text: string }) {
   if (text === `Email: ${contactEmail}`) {
     return (
       <p>
         Email:{" "}
-        <a
-          href={`mailto:${contactEmail}`}
+        <span
           className="font-extrabold text-[#0c5a4d] underline-offset-4 hover:underline"
         >
           {contactEmail}
-        </a>
+        </span>
       </p>
     );
   }
@@ -71,10 +70,7 @@ function SectionCards({ sections }: { sections: PolicySection[] }) {
 
 function CorrectionForm() {
   return (
-    <form
-      action="mailto:hello@thailandtransferguide.com"
-      method="post"
-      encType="text/plain"
+    <section
       className="mt-5 overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-white shadow-lg shadow-black/5"
     >
       <div className="border-b border-[#e7e2d8] bg-[#fbfaf7] px-4 py-3">
@@ -84,35 +80,23 @@ function CorrectionForm() {
       </div>
 
       <div className="grid gap-3 p-4">
-        <input
-          name="route"
-          placeholder="Route or page URL"
-          className="min-h-12 rounded-2xl border border-[#e7e2d8] bg-white px-4 text-sm outline-none"
-        />
-        <select
-          name="issue"
-          className="min-h-12 rounded-2xl border border-[#e7e2d8] bg-white px-4 text-sm outline-none"
-          defaultValue="pickup point"
-        >
-          <option value="pickup point">Pickup point</option>
-          <option value="schedule">Schedule</option>
-          <option value="ferry info">Ferry info</option>
-          <option value="price range">Price range</option>
-          <option value="other">Other</option>
-        </select>
-        <textarea
-          name="details"
-          placeholder="What should we check?"
-          className="min-h-28 rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3 text-sm outline-none"
-        />
-        <button
-          type="submit"
-          className="min-h-12 rounded-2xl bg-[#0c5a4d] px-5 py-3 text-sm font-extrabold text-white shadow-sm"
-        >
-          Send correction
-        </button>
+        <div className="rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] px-4 py-3">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
+            Contact
+          </p>
+          <p className="mt-1 text-sm font-extrabold text-[#10201d]">
+            {contactEmail}
+          </p>
+        </div>
+        <div className="grid gap-2 text-sm leading-6 text-[#4b5d58]">
+          <p>Include the route URL, issue type and what changed.</p>
+          <p>
+            Useful issue types: pickup point, schedule, ferry info, price range,
+            luggage rule or operator note.
+          </p>
+        </div>
       </div>
-    </form>
+    </section>
   );
 }
 
@@ -215,9 +199,9 @@ export function PolicyPage({
             <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
               {eyebrow}
             </p>
-            <h2 className="mt-3 max-w-3xl text-5xl font-black leading-tight tracking-normal">
+            <h1 className="mt-3 max-w-3xl text-5xl font-black leading-tight tracking-normal">
               {title}
-            </h2>
+            </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-[#4b5d58]">
               {intro}
             </p>

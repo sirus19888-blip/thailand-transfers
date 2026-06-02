@@ -6,7 +6,7 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import { ReturnTransferIntelligence } from "@/components/ReturnTransferIntelligence";
 import { FerryIntelligence } from "@/components/FerryIntelligence";
-import { TrackedAnchor } from "@/components/TrackedActions";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { RouteAnalytics } from "@/components/RouteAnalytics";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
@@ -14,7 +14,7 @@ import {
   getArrivalTimeLabel,
   getCompactCtaLabel,
   getGuideStatus,
-  getPickupMapUrl,
+  getPickupMapInfo,
   getPriceGuidance,
   getPassengerLabel,
   getPersonalizedDecisionLabels,
@@ -135,9 +135,6 @@ export function MobilePriorityRouteOptionsScreen({
   arrivalTime,
   quickGuideNotes,
 }: MobilePriorityRouteOptionsScreenProps) {
-  const footerWithFreshness = footerNote.startsWith("Last checked")
-    ? footerNote
-    : `Last checked May 2026. ${footerNote}`;
   const passengerLabel = getPassengerLabel(passengers);
   const arrivalLabel = getArrivalTimeLabel(arrivalTime);
   const headerTimingLabel = arrivalLabel ?? selectedDate ?? "Choose date";
@@ -300,6 +297,7 @@ export function MobilePriorityRouteOptionsScreen({
         <div className="mt-4 space-y-4">
           {orderedOptions.map((option) => {
             const details = getOptionDetails(option, optionDetailsById);
+            const pickupMap = getPickupMapInfo(route, option);
             const personalizedNote = getPersonalizedOptionNote(
               route,
               option,
@@ -414,23 +412,15 @@ export function MobilePriorityRouteOptionsScreen({
                         <p className="mt-1 text-sm font-extrabold text-[#10201d]">
                           {option.pickup}
                         </p>
+                        <p className="mt-1 text-[11px] leading-4 text-slate-500">
+                          {pickupMap.note}
+                        </p>
                       </div>
                       </div>
 
-                      <TrackedAnchor
-                        href={getPickupMapUrl(route, option)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="shrink-0 rounded-full border border-[#0c5a4d] px-3 py-2 text-[11px] font-extrabold text-[#0c5a4d]"
-                        event="map_opened"
-                        payload={{
-                          route: route.slug,
-                          option: option.id,
-                          map_type: "pickup",
-                        }}
-                      >
-                        Map
-                      </TrackedAnchor>
+                      <div className="shrink-0 rounded-full border border-[#d9d1c5] bg-[#fbfaf7] px-3 py-2 text-[11px] font-extrabold text-slate-500">
+                        {pickupMap.label}
+                      </div>
                     </div>
                   </div>
 
@@ -528,12 +518,20 @@ export function MobilePriorityRouteOptionsScreen({
           </section>
         ) : null}
 
-        <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Sources & freshness: last checked {freshness.lastChecked}. Official source:
-          {" "}
-          {freshness.officialSource}. Partner source: {freshness.partnerSource}.
-          Confidence: {freshness.confidence}. {footerWithFreshness}
-        </p>
+        <section className="mt-5 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
+            Sources & freshness
+          </h2>
+
+          <SourceFreshnessPanel
+            freshness={freshness}
+            className="mt-3"
+          />
+
+          <p className="mt-3 text-center text-xs leading-5 text-slate-500">
+            {footerNote}
+          </p>
+        </section>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
       <MobileBottomNav activeLabel="Routes" />

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { DesktopComingSoon } from "@/components/DesktopComingSoon";
 import { GlobalStructuredData } from "@/components/StructuredData";
 import { LazyGoogleTagManager } from "@/components/LazyGoogleTagManager";
 import { MobileCookieConsent } from "@/components/MobileCookieConsent";
@@ -73,13 +72,10 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <GlobalStructuredData />
-        <div className="contents lg:hidden">{children}</div>
+        <div className="contents">{children}</div>
         <LazyGoogleTagManager gtmId={gtmId} />
         <MobileCookieConsent />
         <Analytics />
-        <div className="hidden lg:flex">
-          <DesktopComingSoon />
-        </div>
       </body>
     </html>
   );

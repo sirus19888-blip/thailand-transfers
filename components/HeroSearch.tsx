@@ -203,6 +203,9 @@ const mobileArrivalTimeOptions = [
   { value: "late", label: "After 20:00" },
 ];
 
+const desktopAirportFromOptions = mobileFromOptions.slice(0, 5);
+const desktopCityFromOptions = mobileFromOptions.slice(5);
+
 function useDesktopMediaQuery() {
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -241,6 +244,28 @@ function getMobileOptionsWithSelected(
   }
 
   return [...options, selectedOption];
+}
+
+function buildRouteHrefWithParams(
+  fromValue: string,
+  toValue: string,
+  arrivalTime: string,
+  passengers: string,
+) {
+  const routeHref = mobileRouteHrefs[`${fromValue}-${toValue}`] ?? "/routes";
+  const searchParams = new URLSearchParams();
+
+  if (arrivalTime) {
+    searchParams.set("arrival_time", arrivalTime);
+  }
+
+  if (passengers) {
+    searchParams.set("passengers", passengers);
+  }
+
+  const routeSearch = searchParams.toString();
+
+  return routeSearch ? `${routeHref}?${routeSearch}` : routeHref;
 }
 
 function renderMobileOptionGroups(
@@ -300,11 +325,49 @@ function DesktopHero() {
   const [transferType, setTransferType] = useState<"airport" | "city">(
     "airport",
   );
+  const [desktopFrom, setDesktopFrom] = useState("bkk");
+  const [desktopTo, setDesktopTo] = useState("pattaya");
+  const [desktopArrivalTime, setDesktopArrivalTime] = useState("late");
+  const [desktopPassengers, setDesktopPassengers] = useState("2");
   const isDesktop = useDesktopMediaQuery();
 
   const isAirportTransfer = transferType === "airport";
+  const desktopFromOptions = isAirportTransfer
+    ? desktopAirportFromOptions
+    : desktopCityFromOptions;
+  const matchingDesktopToOptions = getMobileDestinationOptions(desktopFrom);
+  const desktopToOptions = getMobileOptionsWithSelected(
+    matchingDesktopToOptions.length > 0
+      ? matchingDesktopToOptions
+      : mobileToOptions,
+    desktopTo,
+  );
+  const searchHref = buildRouteHrefWithParams(
+    desktopFrom,
+    desktopTo,
+    desktopArrivalTime,
+    desktopPassengers,
+  );
+  const updateDesktopFrom = (nextFrom: string) => {
+    const nextDestinationOptions = getMobileDestinationOptions(nextFrom);
 
-  const searchHref = "/routes";
+    setDesktopFrom(nextFrom);
+
+    if (
+      nextDestinationOptions.length > 0 &&
+      !nextDestinationOptions.some((option) => option.value === desktopTo)
+    ) {
+      setDesktopTo(nextDestinationOptions[0].value);
+    }
+  };
+  const updateDesktopTransferType = (nextTransferType: "airport" | "city") => {
+    const nextFrom = nextTransferType === "airport" ? "bkk" : "bangkok";
+    const nextDestinationOptions = getMobileDestinationOptions(nextFrom);
+
+    setTransferType(nextTransferType);
+    setDesktopFrom(nextFrom);
+    setDesktopTo(nextDestinationOptions[0]?.value ?? "pattaya");
+  };
 
   return (
     <section className="hidden overflow-hidden bg-[#fbfaf7] lg:block">
@@ -314,6 +377,8 @@ function DesktopHero() {
             src="/assets/hero/hero-desktop.png"
             alt="Thailand airport transfer"
             fill
+            loading="eager"
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover object-center"
           />
@@ -329,9 +394,9 @@ function DesktopHero() {
                 Tourist-friendly transfer guide
               </p>
 
-              <h2 className="mt-2 text-[58px] font-extrabold leading-[0.98] tracking-normal text-[#10201d]">
+              <h1 className="mt-2 text-[58px] font-extrabold leading-[0.98] tracking-normal text-[#10201d]">
                 Land calmly in Thailand
-              </h2>
+              </h1>
 
               <p className="mt-4 max-w-[470px] text-[17px] leading-8 text-[#30465a]">
                 Tell us where you land. We show the safest option, a smart
@@ -344,7 +409,7 @@ function DesktopHero() {
                 <div className="mb-4 grid grid-cols-2 rounded-2xl bg-[#f8f4ec] p-1">
                   <button
                     type="button"
-                    onClick={() => setTransferType("airport")}
+                    onClick={() => updateDesktopTransferType("airport")}
                     className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
                       isAirportTransfer
                         ? "bg-white font-extrabold text-[#0c5a4d] shadow-sm"
@@ -357,7 +422,7 @@ function DesktopHero() {
 
                   <button
                     type="button"
-                    onClick={() => setTransferType("city")}
+                    onClick={() => updateDesktopTransferType("city")}
                     className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
                       !isAirportTransfer
                         ? "bg-white font-extrabold text-[#0c5a4d] shadow-sm"
@@ -376,31 +441,24 @@ function DesktopHero() {
                     </span>
 
                     <div className="mt-2 flex items-center gap-3">
-                      <Plane className="h-4 w-4 text-[#0c5a4d]" />
+                      {isAirportTransfer ? (
+                        <Plane className="h-4 w-4 text-[#0c5a4d]" />
+                      ) : (
+                        <Landmark className="h-4 w-4 text-[#0c5a4d]" />
+                      )}
 
                       <select
-                        key={`from-${transferType}`}
                         className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
-                        defaultValue={isAirportTransfer ? "bkk" : "bangkok-city"}
+                        value={desktopFrom}
+                        onChange={(event) =>
+                          updateDesktopFrom(event.currentTarget.value)
+                        }
                       >
-                        {isAirportTransfer ? (
-                          <>
-                            <option value="bkk">
-                              Suvarnabhumi Airport (BKK)
-                            </option>
-                            <option value="dmk">Don Mueang Airport (DMK)</option>
-                            <option value="bangkok">Bangkok City</option>
-                          </>
-                        ) : (
-                          <>
-                            <option value="bangkok-city">Bangkok City</option>
-                            <option value="pattaya-city">Pattaya City</option>
-                            <option value="phuket-town">Phuket Town</option>
-                            <option value="chiang-mai-city">
-                              Chiang Mai City
-                            </option>
-                          </>
-                        )}
+                        {desktopFromOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </label>
@@ -414,25 +472,17 @@ function DesktopHero() {
                       <MapPin className="h-4 w-4 text-[#0c5a4d]" />
 
                       <select
-                        key={`to-${transferType}`}
                         className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
-                        defaultValue={isAirportTransfer ? "pattaya" : "hua-hin"}
+                        value={desktopTo}
+                        onChange={(event) =>
+                          setDesktopTo(event.currentTarget.value)
+                        }
                       >
-                        {isAirportTransfer ? (
-                          <>
-                            <option value="pattaya">Pattaya (All Areas)</option>
-                            <option value="hua-hin">Hua Hin</option>
-                            <option value="koh-chang">Koh Chang</option>
-                            <option value="patong">Patong</option>
-                          </>
-                        ) : (
-                          <>
-                            <option value="hua-hin">Hua Hin</option>
-                            <option value="pattaya">Pattaya</option>
-                            <option value="koh-chang">Koh Chang</option>
-                            <option value="chiang-mai">Chiang Mai</option>
-                          </>
-                        )}
+                        {desktopToOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </label>
@@ -445,9 +495,19 @@ function DesktopHero() {
 
                       <div className="mt-2 flex items-center gap-2">
                         <Clock3 className="h-4 w-4 text-[#0c5a4d]" />
-                        <span className="text-sm font-extrabold text-[#10201d]">
-                          After 20:00
-                        </span>
+                        <select
+                          className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
+                          value={desktopArrivalTime}
+                          onChange={(event) =>
+                            setDesktopArrivalTime(event.currentTarget.value)
+                          }
+                        >
+                          {mobileArrivalTimeOptions.map((option) => (
+                            <option key={option.value} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     </label>
 
@@ -458,9 +518,19 @@ function DesktopHero() {
 
                       <div className="mt-2 flex items-center gap-2">
                         <Users className="h-4 w-4 text-[#0c5a4d]" />
-                        <span className="text-sm font-extrabold text-[#10201d]">
-                          2 adults
-                        </span>
+                        <select
+                          className="w-full bg-transparent text-sm font-extrabold text-[#10201d] outline-none"
+                          value={desktopPassengers}
+                          onChange={(event) =>
+                            setDesktopPassengers(event.currentTarget.value)
+                          }
+                        >
+                          {mobilePassengerOptions.map((option) => (
+                            <option key={option.value} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                     </label>
                   </div>
@@ -543,23 +613,13 @@ function MobileHero() {
       mobileArrivalTimeSelectRef.current?.value ?? mobileArrivalTime;
     const submittedPassengers =
       mobilePassengersSelectRef.current?.value ?? mobilePassengers;
-    const routeHref =
-      mobileRouteHrefs[`${submittedFrom}-${submittedTo}`] ??
-      mobileRouteHrefs[`${mobileFrom}-${mobileTo}`] ??
-      "/routes";
-    const searchParams = new URLSearchParams();
 
-    if (submittedArrivalTime) {
-      searchParams.set("arrival_time", submittedArrivalTime);
-    }
-
-    if (submittedPassengers) {
-      searchParams.set("passengers", submittedPassengers);
-    }
-
-    const routeSearch = searchParams.toString();
-
-    return routeSearch ? `${routeHref}?${routeSearch}` : routeHref;
+    return buildRouteHrefWithParams(
+      submittedFrom,
+      submittedTo,
+      submittedArrivalTime,
+      submittedPassengers,
+    );
   };
   const navigateMobileRoute = () => {
     const trackingWindow = window as DataLayerWindow;
@@ -594,7 +654,7 @@ function MobileHero() {
             fill
             loading="eager"
             fetchPriority="high"
-            sizes="100vw"
+            sizes="(max-width: 448px) 100vw, 448px"
             className="object-cover object-center"
           />
 

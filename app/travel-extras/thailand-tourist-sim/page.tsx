@@ -77,17 +77,14 @@ const verifiedNotes = [
   {
     title: "AIS tourist eSIM and SIM plans",
     text: "AIS currently lists Lucky Tourist SIM options with eSIM purchase links, including 1, 5, 8, 15, 30 and 60 day packages. Terms say VAT is extra and plan terms can change.",
-    href: "https://www.ais.th/consumers/package/international/tourist-plan",
   },
   {
     title: "dtac tourist eSIM plans",
     text: "dtac currently lists Happy Tourist 299 eSIM for 8 days with 15 GB at max speed and Happy Tourist 599 eSIM for 15 days with 30 GB at max speed.",
-    href: "https://dtac.co.th/en/prepaid/touristsim.html",
   },
   {
     title: "SIM registration",
     text: "dtac's registration page says prepaid tourist SIM users need registration and should bring passport, SIM card and SIM package. It lists airport service points including BKK, DMK, Phuket, Samui, Chiang Mai and Krabi.",
-    href: "https://www.dtac.co.th/en/prepaid/touristsim-register.html",
   },
 ];
 
@@ -104,8 +101,9 @@ export default function ThailandTouristSimPage() {
             src="/assets/promo/sim-card.png"
             alt=""
             fill
-            priority
-            sizes="100vw"
+            loading="eager"
+            fetchPriority="high"
+            sizes="(max-width: 448px) calc(100vw - 32px), 416px"
             className="object-cover opacity-25 blur-[1px]"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,32,29,0.58)_0%,rgba(16,32,29,0.96)_82%)]" />
@@ -195,15 +193,12 @@ export default function ThailandTouristSimPage() {
 
           <div className="grid gap-4">
             {verifiedNotes.map((note) => (
-              <a
+              <article
                 key={note.title}
-                href={note.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="block rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5"
               >
                 <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
-                  Official source
+                  Verified note
                 </p>
                 <h3 className="mt-2 text-[17px] font-extrabold leading-snug text-[#10201d]">
                   {note.title}
@@ -211,7 +206,7 @@ export default function ThailandTouristSimPage() {
                 <p className="mt-2 text-[13px] leading-6 text-[#4b5d58]">
                   {note.text}
                 </p>
-              </a>
+              </article>
             ))}
           </div>
 
@@ -278,9 +273,9 @@ export default function ThailandTouristSimPage() {
                 Travel extra
               </p>
 
-              <h2 className="text-[36px] font-extrabold tracking-[-0.04em] text-[#10201d] lg:text-[52px]">
+              <h1 className="text-[36px] font-extrabold tracking-normal text-[#10201d] lg:text-[52px]">
                 Thailand Tourist SIM & eSIM
-              </h2>
+              </h1>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-[#30465a]">
                 Stay connected after landing in Thailand. Use mobile data for
@@ -310,7 +305,8 @@ export default function ThailandTouristSimPage() {
                   alt="Thailand Tourist SIM and eSIM"
                   fill
                   className="object-cover"
-                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   sizes="(min-width: 1024px) 50vw, 0px"
                 />
               </div>
@@ -351,15 +347,12 @@ export default function ThailandTouristSimPage() {
         <Container>
           <div className="grid gap-4 lg:grid-cols-3">
             {verifiedNotes.map((note) => (
-              <a
+              <article
                 key={note.title}
-                href={note.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-[24px] border border-[#e7e2d8] bg-white p-5 shadow-lg shadow-black/5 transition hover:-translate-y-0.5 hover:shadow-xl"
+                className="block rounded-[24px] border border-[#e7e2d8] bg-white p-5 shadow-lg shadow-black/5"
               >
                 <p className="text-[12px] font-extrabold uppercase tracking-[0.16em] text-[#c99a2e]">
-                  Official source
+                  Verified note
                 </p>
                 <h2 className="mt-2 text-lg font-extrabold text-[#10201d]">
                   {note.title}
@@ -367,7 +360,7 @@ export default function ThailandTouristSimPage() {
                 <p className="mt-2 text-sm leading-6 text-[#30465a]">
                   {note.text}
                 </p>
-              </a>
+              </article>
             ))}
           </div>
 

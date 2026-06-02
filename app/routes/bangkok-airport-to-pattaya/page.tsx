@@ -8,6 +8,8 @@ import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRou
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
+import { DesktopPersonalizedTripSummary } from "@/components/DesktopPersonalizedTripSummary";
 import { RouteStructuredData } from "@/components/StructuredData";
 import { getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
@@ -191,11 +193,12 @@ function DesktopRouteOptions() {
           })}
         </div>
 
-        <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Sources & freshness: last checked {freshness.lastChecked}. Official
-          source: {freshness.officialSource}. Partner source:{" "}
-          {freshness.partnerSource}. Confidence: {freshness.confidence}.
-        </p>
+        <div className="mt-5 rounded-[24px] border border-[#e7e2d8] bg-[#fbfaf7] p-5">
+          <h2 className="text-lg font-extrabold text-[#10201d]">
+            Sources & freshness
+          </h2>
+          <SourceFreshnessPanel freshness={freshness} className="mt-3" />
+        </div>
         <AffiliateDisclosure className="mt-2 text-center" />
       </Container>
     </section>
@@ -244,6 +247,12 @@ export default async function BangkokAirportToPattayaPage({
         <RouteHero />
 
         <RouteSummary />
+
+        <DesktopPersonalizedTripSummary
+          route={mobileRoute}
+          arrivalTime={arrivalTime}
+          passengers={passengers}
+        />
 
         <DesktopRouteOptions />
       </div>

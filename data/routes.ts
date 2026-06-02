@@ -452,9 +452,10 @@ export const promoCards = [
   {
     id: "hotel-transfer",
     title: "Hotel transfer",
-    description: "Compare private pickup options for hotels and resorts.",
+    description:
+      "Know when hotel pickup is included and when private taxi is safer.",
     image: "/assets/promo/hotel-transfer.png",
-    href: "/routes/bangkok-airport-to-pattaya",
+    href: "/travel-extras/hotel-transfer",
     label: "Comfort option",
   },
 ];

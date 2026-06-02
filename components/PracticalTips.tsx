@@ -4,7 +4,7 @@ import { Container } from "./Container";
 
 export function PracticalTips() {
   return (
-    <section id="travel-tips" className="bg-white py-10 lg:py-12">
+    <section id="practical-tips" className="bg-white py-10 lg:py-12">
       <Container>
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>

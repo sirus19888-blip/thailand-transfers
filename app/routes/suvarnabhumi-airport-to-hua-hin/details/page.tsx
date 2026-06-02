@@ -405,8 +405,9 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
           <Container>
             <Link
               href="/routes/suvarnabhumi-airport-to-hua-hin"
-              className="mb-6 inline-flex text-sm font-bold text-[#064e45] hover:underline"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-[#064e45] hover:underline"
             >
+              <ArrowLeft className="h-4 w-4" />
               Back to transfer options
             </Link>
 
@@ -416,9 +417,9 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                   Route details
                 </p>
 
-                <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+                <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                   Suvarnabhumi Airport to Hua Hin: pickup guide and travel tips
-                </h2>
+                </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                   Before booking your transfer, check where to go after landing,

@@ -19,11 +19,11 @@ import {
 } from "@/components/MobilePersonalizedTrip";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
-import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
+import { SaveScreenshotButton } from "@/components/TrackedActions";
 import type { RoutePageData } from "@/data/routePages";
 import {
-  getDropoffMapUrl,
-  getPickupMapUrl,
+  getPickupMapInfo,
   getSourceFreshness,
 } from "@/data/routeIntelligence";
 
@@ -275,6 +275,7 @@ export function IslandRouteDetailsTemplate({
     mobileSelectedOption.name,
   );
   const freshness = getSourceFreshness(route);
+  const pickupMap = getPickupMapInfo(route, mobileSelectedOption);
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
@@ -469,45 +470,31 @@ export function IslandRouteDetailsTemplate({
 
           <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
             <h2 className="text-lg font-extrabold text-[#10201d]">
-              Pickup and drop-off maps
+              Pickup and drop-off check
             </h2>
 
             <p className="mt-2 text-sm leading-6 text-slate-600">
               Save a screenshot before you leave the airport, pier or hotel.
-              Google Maps links open as a search, so confirm the exact partner
-              meeting point on your ticket.
+              {pickupMap.note}
             </p>
 
             <div className="mt-3 grid grid-cols-2 gap-2">
-              <TrackedAnchor
-                href={getPickupMapUrl(route, mobileSelectedOption)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
-                event="map_opened"
-                payload={{
-                  route: route.slug,
-                  option: mobileSelectedOption.id,
-                  map_type: "pickup",
-                }}
-              >
-                Open pickup in Google Maps
-              </TrackedAnchor>
-
-              <TrackedAnchor
-                href={getDropoffMapUrl(route)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
-                event="map_opened"
-                payload={{
-                  route: route.slug,
-                  option: mobileSelectedOption.id,
-                  map_type: "dropoff",
-                }}
-              >
-                Open drop-off in Google Maps
-              </TrackedAnchor>
+              <div className="rounded-2xl border border-[#d9d1c5] bg-[#fbfaf7] px-3 py-3 text-center">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#c99a2e]">
+                  Pickup
+                </p>
+                <p className="mt-1 text-xs font-extrabold leading-4 text-[#10201d]">
+                  {mobileSelectedOption.pickup}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-[#d9d1c5] bg-[#fbfaf7] px-3 py-3 text-center">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#c99a2e]">
+                  Drop-off
+                </p>
+                <p className="mt-1 text-xs font-extrabold leading-4 text-[#10201d]">
+                  {route.to}
+                </p>
+              </div>
             </div>
             <div className="mt-2">
               <SaveScreenshotButton route={route.slug} />
@@ -534,39 +521,7 @@ export function IslandRouteDetailsTemplate({
               Sources & freshness
             </h2>
 
-            <div className="mt-3 grid gap-2 text-xs leading-5 text-slate-600">
-              <p>
-                <span className="font-extrabold text-[#10201d]">
-                  Last checked:
-                </span>{" "}
-                {freshness.lastChecked}
-              </p>
-              <p>
-                <span className="font-extrabold text-[#10201d]">
-                  Official source:
-                </span>{" "}
-                {freshness.officialSource}
-              </p>
-              <p>
-                <span className="font-extrabold text-[#10201d]">
-                  Partner source:
-                </span>{" "}
-                {freshness.partnerSource}
-              </p>
-              <p>
-                <span className="font-extrabold text-[#10201d]">
-                  Confidence:
-                </span>{" "}
-                {freshness.confidence}
-              </p>
-            </div>
-
-            <Link
-              href="/corrections-policy"
-              className="mt-3 flex min-h-12 items-center justify-center rounded-2xl bg-[#f8f4ec] px-4 py-3 text-sm font-extrabold text-[#0c5a4d]"
-            >
-              Report outdated info
-            </Link>
+            <SourceFreshnessPanel freshness={freshness} className="mt-3" />
           </div>
 
           <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
@@ -642,8 +597,9 @@ export function IslandRouteDetailsTemplate({
           <Container>
             <Link
               href={backHref}
-              className="mb-6 inline-flex text-sm font-bold text-[#064e45] hover:underline"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-[#064e45] hover:underline"
             >
+              <ArrowLeft className="h-4 w-4" />
               Back to transfer options
             </Link>
 
@@ -653,9 +609,9 @@ export function IslandRouteDetailsTemplate({
                   Route details
                 </p>
 
-                <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+                <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                   {heroTitle}
-                </h2>
+                </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                   {heroDescription}
@@ -850,6 +806,20 @@ export function IslandRouteDetailsTemplate({
                   </p>
                 </div>
               ))}
+            </div>
+          </Container>
+        </section>
+
+        <section className="bg-[#fbfaf7] py-10 lg:py-12">
+          <Container>
+            <div className="max-w-3xl">
+              <p className="mb-2 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
+                Editorial check
+              </p>
+              <h2 className="text-[28px] font-extrabold text-[#10201d]">
+                Sources & freshness
+              </h2>
+              <SourceFreshnessPanel freshness={freshness} className="mt-4" />
             </div>
           </Container>
         </section>

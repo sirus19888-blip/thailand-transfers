@@ -16,6 +16,8 @@ const highValueSeoPaths = [
   "/guides/bkk-airport-pickup-level-1-gate-8",
 ];
 
+const contentLastModified = "2026-05-29";
+
 function sitemapEntry(
   path: string,
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
@@ -23,6 +25,7 @@ function sitemapEntry(
 ): MetadataRoute.Sitemap[number] {
   return {
     url: path === "/" ? siteUrl : `${siteUrl}${path}`,
+    lastModified: contentLastModified,
     changeFrequency,
     priority,
   };
@@ -48,6 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "/travel-extras/thailand-tourist-sim",
       "monthly",
       0.5,
+    ),
+    sitemapEntry(
+      "/travel-extras/hotel-transfer",
+      "monthly",
+      0.55,
     ),
     ...routeSlugs.map((slug) =>
       sitemapEntry(`/routes/${slug}`, "weekly", 0.85),

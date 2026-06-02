@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { ChevronDown, Heart, Landmark } from "lucide-react";
+import { Heart, Landmark } from "lucide-react";
 import { Container } from "./Container";
 
 const navigation = [
   {
     name: "Airport Transfers",
     href: "/routes",
-    hasDropdown: true,
   },
   {
     name: "City Transfers",
@@ -57,9 +56,6 @@ export function Header() {
                 className="flex items-center gap-1 transition hover:text-[#0c5a4d]"
               >
                 <span>{item.name}</span>
-                {item.hasDropdown ? (
-                  <ChevronDown className="h-3.5 w-3.5" />
-                ) : null}
               </Link>
             ))}
           </nav>
@@ -72,20 +68,6 @@ export function Header() {
               <Heart className="h-4 w-4" />
               <span>Routes</span>
             </Link>
-
-            <div
-              aria-label="Currency: THB"
-              className="flex items-center gap-1"
-            >
-              <span>THB</span>
-            </div>
-
-            <div
-              aria-label="Language: English"
-              className="text-xl leading-none"
-            >
-              🇬🇧
-            </div>
           </div>
         </div>
       </Container>

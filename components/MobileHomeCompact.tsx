@@ -10,7 +10,20 @@ import {
   ShieldCheck,
   TriangleAlert,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
+
+type InfoTab = {
+  id: string;
+  label: string;
+  icon: LucideIcon;
+  title: string;
+  body: string;
+  href?: string;
+  cta?: string;
+  secondaryHref?: string;
+  secondaryCta?: string;
+};
 
 const routeShortcuts = [
   {
@@ -45,7 +58,7 @@ const routeShortcuts = [
   },
 ];
 
-const infoTabs = [
+const infoTabs: InfoTab[] = [
   {
     id: "help",
     label: "Help",
@@ -74,9 +87,11 @@ const infoTabs = [
     label: "Extras",
     icon: BadgeDollarSign,
     title: "Travel extras",
-    body: "SIM and hotel-transfer helpers stay one tap away.",
-    href: "/travel-extras/thailand-tourist-sim",
-    cta: "SIM options",
+    body: "Hotel pickup rules and SIM planning stay one tap away.",
+    href: "/travel-extras/hotel-transfer",
+    cta: "Hotel pickup",
+    secondaryHref: "/travel-extras/thailand-tourist-sim",
+    secondaryCta: "SIM options",
   },
 ];
 
@@ -164,13 +179,24 @@ export function MobileHomeCompact() {
             </p>
 
             {activeInfo.href ? (
-              <Link
-                href={activeInfo.href}
-                className="mt-2 inline-flex items-center gap-1 text-[12px] font-extrabold text-[#0c5a4d]"
-              >
-                {activeInfo.cta}
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
+              <div className="mt-2 flex flex-wrap gap-3">
+                <Link
+                  href={activeInfo.href}
+                  className="inline-flex items-center gap-1 text-[12px] font-extrabold text-[#0c5a4d]"
+                >
+                  {activeInfo.cta}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                {activeInfo.secondaryHref ? (
+                  <Link
+                    href={activeInfo.secondaryHref}
+                    className="inline-flex items-center gap-1 text-[12px] font-extrabold text-[#0c5a4d]"
+                  >
+                    {activeInfo.secondaryCta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                ) : null}
+              </div>
             ) : null}
           </div>
         </div>

@@ -4,8 +4,10 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
 import { RouteStructuredData } from "@/components/StructuredData";
+import { getCtaLabel, getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
 
 type RoutePageTemplateProps = {
@@ -30,6 +32,7 @@ export default function RoutePageTemplate({
   void mobileDescription;
 
   const generalTrackingId = `click_12go_general_${route.slug.replaceAll("-", "_")}`;
+  const freshness = getSourceFreshness(route);
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
@@ -44,9 +47,9 @@ export default function RoutePageTemplate({
                 {badge}
               </p>
 
-              <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                 {route.title}
-              </h2>
+              </h1>
 
               <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                 {desktopDescription ?? route.intro}
@@ -110,7 +113,7 @@ export default function RoutePageTemplate({
                       Best for
                     </th>
                     <th className="px-5 py-4 text-sm font-bold text-[#10201d]">
-                      Partner link
+                      Ticket check
                     </th>
                   </tr>
                 </thead>
@@ -143,13 +146,20 @@ export default function RoutePageTemplate({
                           variant="table"
                           fullWidth
                         >
-                          Check options
+                          {getCtaLabel(option)}
                         </AffiliateButton>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            <div className="mt-5 rounded-[24px] border border-[#e7e2d8] bg-[#fbfaf7] p-5">
+              <h2 className="text-lg font-extrabold text-[#10201d]">
+                Sources & freshness
+              </h2>
+              <SourceFreshnessPanel freshness={freshness} className="mt-3" />
             </div>
             <AffiliateDisclosure className="mt-4 text-center" />
           </Container>

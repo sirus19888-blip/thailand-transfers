@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { mainRoute } from "@/data/routes";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { Container } from "./Container";
@@ -12,18 +13,19 @@ export function RouteHero() {
           <div>
             <Link
               href="/"
-              className="mb-6 inline-flex text-sm font-bold text-[#064e45] hover:underline"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-[#064e45] hover:underline"
             >
-              ← Back to home
+              <ArrowLeft className="h-4 w-4" />
+              Back to home
             </Link>
 
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#c99a2e]">
               Route guide
             </p>
 
-            <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl sm:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl sm:text-5xl lg:text-6xl">
               {mainRoute.title}
-            </h2>
+            </h1>
 
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
               Compare the easiest ways to travel from Suvarnabhumi Airport to

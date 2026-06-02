@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Image from "next/image";
+import { ArrowLeft } from "lucide-react";
 import { createPageMetadata } from "@/app/seo";
 import { Header } from "@/components/Header";
 import { LandingSteps } from "@/components/LandingSteps";
@@ -60,42 +62,58 @@ export default async function BangkokAirportToPattayaDetailsPage({
           <Container>
             <Link
               href="/routes/bangkok-airport-to-pattaya"
-              className="mb-6 inline-flex text-sm font-bold text-[#064e45] hover:underline"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-bold text-[#064e45] hover:underline"
             >
-              ← Back to transfer options
+              <ArrowLeft className="h-4 w-4" />
+              Back to transfer options
             </Link>
 
-            <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#c99a2e]">
-                Route details
-              </p>
+            <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
+              <div className="max-w-3xl">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-[#c99a2e]">
+                  Route details
+                </p>
 
-              <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
-                Bangkok Airport to Pattaya: pickup guide and travel tips
-              </h2>
+                <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+                  Bangkok Airport to Pattaya: pickup guide and travel tips
+                </h1>
 
-              <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
-                Before booking your transfer, check what happens after landing,
-                where to go, what to avoid and which option is easiest for your
-                trip.
-              </p>
+                <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
+                  Before booking your transfer, check what happens after landing,
+                  where to go, what to avoid and which option is easiest for your
+                  trip.
+                </p>
 
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <AffiliateButton
-                href={busOption?.affiliateUrl ?? "#"}
-                trackingId={busOption?.trackingId}
-              >
-                Check final price and ticket rules
-              </AffiliateButton>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                  <AffiliateButton
+                    href={busOption?.affiliateUrl ?? "#"}
+                    trackingId={busOption?.trackingId}
+                  >
+                    Check final price and ticket rules
+                  </AffiliateButton>
 
-                <Link
-                  href="/routes/bangkok-airport-to-pattaya"
-                  className="inline-flex items-center justify-center rounded-full border border-[#064e45] bg-white px-7 py-4 text-sm font-bold text-[#064e45] transition hover:bg-[#f8f4ec]"
-                >
-                  Compare options
-                </Link>
+                  <Link
+                    href="/routes/bangkok-airport-to-pattaya"
+                    className="inline-flex items-center justify-center rounded-full border border-[#064e45] bg-white px-7 py-4 text-sm font-bold text-[#064e45] transition hover:bg-[#f8f4ec]"
+                  >
+                    Compare options
+                  </Link>
+                </div>
+                <AffiliateDisclosure className="mt-3" />
               </div>
-              <AffiliateDisclosure className="mt-3" />
+
+              <div className="overflow-hidden rounded-[2rem] border border-[#e7e2d8] bg-white shadow-xl shadow-black/5">
+                <div className="relative aspect-[16/11]">
+                  <Image
+                    src="/assets/routes/bangkok-airport-to-pattaya.png"
+                    alt="Bangkok Airport to Pattaya transfer route"
+                    fill
+                    priority
+                    sizes="420px"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </Container>
         </section>

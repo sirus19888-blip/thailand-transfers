@@ -44,3 +44,6 @@ next-env.d.ts
 home-*.png
 mobile-*.png
 route-mobile-*.png
+.codex-screenshots/
+reports/
+debug.log

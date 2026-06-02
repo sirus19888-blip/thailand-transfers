@@ -5,7 +5,10 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
+import { DesktopPersonalizedTripSummary } from "@/components/DesktopPersonalizedTripSummary";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
+import { getCtaLabel, getSourceFreshness } from "@/data/routeIntelligence";
 import { donMueangPattayaRoute } from "@/data/donMueangPattayaRoute";
 
 export const metadata: Metadata = createPageMetadata({
@@ -19,8 +22,22 @@ export const metadata: Metadata = createPageMetadata({
 
 const dmkPattayaAffiliateUrl = donMueangPattayaRoute.mainAffiliateUrl;
 const dmkOptions = donMueangPattayaRoute.options;
+const freshness = getSourceFreshness(donMueangPattayaRoute);
 
-export default function DonMueangAirportToPattayaPage() {
+type DonMueangAirportToPattayaPageProps = {
+  searchParams?: Promise<{
+    passengers?: string;
+    arrival_time?: string;
+  }>;
+};
+
+export default async function DonMueangAirportToPattayaPage({
+  searchParams,
+}: DonMueangAirportToPattayaPageProps) {
+  const params = await searchParams;
+  const passengers = params?.passengers;
+  const arrivalTime = params?.arrival_time;
+
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
       <div className="hidden lg:block">
@@ -33,9 +50,9 @@ export default function DonMueangAirportToPattayaPage() {
                 Transfer comparison
               </p>
 
-              <h2 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
                 Don Mueang Airport to Pattaya transfers
-              </h2>
+              </h1>
 
               <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
                 Compare basic transfer options from Don Mueang Airport (DMK) to
@@ -52,7 +69,7 @@ export default function DonMueangAirportToPattayaPage() {
                 </AffiliateButton>
 
                 <Link
-                  href="/"
+                  href="/routes"
                   className="inline-flex items-center justify-center rounded-full border border-[#064e45] bg-white px-7 py-4 text-sm font-bold text-[#064e45] transition hover:bg-[#f8f4ec]"
                 >
                   Back to all routes
@@ -62,6 +79,12 @@ export default function DonMueangAirportToPattayaPage() {
             </div>
           </Container>
         </section>
+
+        <DesktopPersonalizedTripSummary
+          route={donMueangPattayaRoute}
+          arrivalTime={arrivalTime}
+          passengers={passengers}
+        />
 
         <section className="bg-white py-10 lg:py-14">
           <Container>
@@ -100,7 +123,7 @@ export default function DonMueangAirportToPattayaPage() {
                       Best for
                     </th>
                     <th className="px-5 py-4 text-sm font-bold text-[#10201d]">
-                      Partner link
+                      Ticket check
                     </th>
                   </tr>
                 </thead>
@@ -133,13 +156,19 @@ export default function DonMueangAirportToPattayaPage() {
                           variant="table"
                           fullWidth
                         >
-                          Check options
+                          {getCtaLabel(option)}
                         </AffiliateButton>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+            <div className="mt-5 rounded-[24px] border border-[#e7e2d8] bg-[#fbfaf7] p-5">
+              <h2 className="text-lg font-extrabold text-[#10201d]">
+                Sources & freshness
+              </h2>
+              <SourceFreshnessPanel freshness={freshness} className="mt-3" />
             </div>
             <AffiliateDisclosure className="mt-4 text-center" />
           </Container>

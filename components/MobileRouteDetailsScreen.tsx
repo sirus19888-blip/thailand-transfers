@@ -12,10 +12,10 @@ import {
   MobilePersonalizedDetailsSticky,
   MobilePersonalizedTripCard,
 } from "@/components/MobilePersonalizedTrip";
-import { SaveScreenshotButton, TrackedAnchor } from "@/components/TrackedActions";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
+import { SaveScreenshotButton } from "@/components/TrackedActions";
 import {
-  getDropoffMapUrl,
-  getPickupMapUrl,
+  getPickupMapInfo,
   getSourceFreshness,
 } from "@/data/routeIntelligence";
 import {
@@ -291,6 +291,7 @@ export function MobileRouteDetailsScreen({
     routeData.options.find((option) => option.id === selectedOption?.id) ??
     routeData.options[0];
   const freshness = getSourceFreshness(routeData);
+  const pickupMap = getPickupMapInfo(routeData, selectedRouteOption);
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
@@ -489,41 +490,29 @@ export function MobileRouteDetailsScreen({
 
         <div className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
           <h2 className="text-lg font-extrabold text-[#10201d]">
-            Pickup and drop-off maps
+            Pickup and drop-off check
           </h2>
           <p className="mt-2 text-sm leading-6 text-slate-600">
             Save a screenshot of the partner pickup instructions before you
-            leave arrivals. Map links open Google Maps without an API key.
+            leave arrivals. {pickupMap.note}
           </p>
           <div className="mt-3 grid grid-cols-2 gap-2">
-            <TrackedAnchor
-              href={getPickupMapUrl(routeData, selectedRouteOption)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
-              event="map_opened"
-              payload={{
-                route: routeData.slug,
-                option: selectedRouteOption.id,
-                map_type: "pickup",
-              }}
-            >
-              Open pickup in Google Maps
-            </TrackedAnchor>
-            <TrackedAnchor
-              href={getDropoffMapUrl(routeData)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-12 items-center justify-center rounded-2xl border border-[#0c5a4d] px-3 py-3 text-center text-xs font-extrabold text-[#0c5a4d]"
-              event="map_opened"
-              payload={{
-                route: routeData.slug,
-                option: selectedRouteOption.id,
-                map_type: "dropoff",
-              }}
-            >
-              Open drop-off in Google Maps
-            </TrackedAnchor>
+            <div className="rounded-2xl border border-[#d9d1c5] bg-[#fbfaf7] px-3 py-3 text-center">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#c99a2e]">
+                Pickup
+              </p>
+              <p className="mt-1 text-xs font-extrabold leading-4 text-[#10201d]">
+                {selectedRouteOption.pickup}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#d9d1c5] bg-[#fbfaf7] px-3 py-3 text-center">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-[#c99a2e]">
+                Drop-off
+              </p>
+              <p className="mt-1 text-xs font-extrabold leading-4 text-[#10201d]">
+                {routeData.to}
+              </p>
+            </div>
           </div>
           <div className="mt-2">
             <SaveScreenshotButton route={routeData.slug} />
@@ -571,32 +560,10 @@ export function MobileRouteDetailsScreen({
           <h2 className="text-lg font-extrabold text-[#10201d]">
             Sources & freshness
           </h2>
-          <div className="mt-3 grid gap-2 text-xs leading-5 text-slate-600">
-            <p>
-              <span className="font-extrabold text-[#10201d]">
-                Last checked:
-              </span>{" "}
-              {freshness.lastChecked}
-            </p>
-            <p>
-              <span className="font-extrabold text-[#10201d]">
-                Official source:
-              </span>{" "}
-              {freshness.officialSource}
-            </p>
-            <p>
-              <span className="font-extrabold text-[#10201d]">
-                Partner source:
-              </span>{" "}
-              {freshness.partnerSource}
-            </p>
-            <p>
-              <span className="font-extrabold text-[#10201d]">
-                Confidence:
-              </span>{" "}
-              {freshness.confidence}
-            </p>
-          </div>
+          <SourceFreshnessPanel
+            freshness={freshness}
+            className="mt-3"
+          />
         </div>
 
         <div

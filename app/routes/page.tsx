@@ -2,7 +2,17 @@ import type { Metadata } from "next";
 import { createPageMetadata } from "@/app/seo";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Landmark } from "lucide-react";
+import {
+  ArrowRight,
+  BaggageClaim,
+  Bus,
+  Car,
+  Clock3,
+  Landmark,
+  MapPinned,
+  Route as RouteIcon,
+  type LucideIcon,
+} from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Header } from "@/components/Header";
@@ -20,6 +30,163 @@ export const metadata: Metadata = createPageMetadata({
     canonical: "/routes",
   },
 });
+
+type DirectoryLink = {
+  title: string;
+  href: string;
+  description?: string;
+  icon?: LucideIcon;
+};
+
+const featuredGuideLinks: DirectoryLink[] = [
+  {
+    title: "Bus guide",
+    href: "/routes/bangkok-airport-to-pattaya/bus",
+    description: "Airport bus timing, pickup and luggage notes.",
+    icon: Bus,
+  },
+  {
+    title: "Taxi guide",
+    href: "/routes/bangkok-airport-to-pattaya/taxi",
+    description: "Private transfer comfort, pickup and pricing checks.",
+    icon: Car,
+  },
+  {
+    title: "Late arrival",
+    href: "/routes/bangkok-airport-to-pattaya/late-arrival",
+    description: "Safer choices after evening or delayed flights.",
+    icon: Clock3,
+  },
+  {
+    title: "With luggage",
+    href: "/routes/bangkok-airport-to-pattaya/with-luggage",
+    description: "Baggage-friendly route and vehicle guidance.",
+    icon: BaggageClaim,
+  },
+];
+
+const mainRouteLinks: DirectoryLink[] = popularRoutes.map((route) => ({
+  title: route.title,
+  href: route.href,
+}));
+
+const detailedRouteLinks: DirectoryLink[] = popularRoutes.map((route) => ({
+  title: `${route.title} details`,
+  href: `${route.href}/details`,
+}));
+
+function FeaturedGuideCard({ link }: { link: DirectoryLink }) {
+  const Icon = link.icon ?? RouteIcon;
+
+  return (
+    <Link
+      href={link.href}
+      className="group flex min-h-[132px] flex-col justify-between rounded-[18px] border border-[#e7e2d8] bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+    >
+      <div>
+        <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#f7f0df] text-[#0c5a4d]">
+          <Icon className="h-4 w-4" />
+        </div>
+        <h3 className="text-[15px] font-extrabold leading-snug text-[#10201d]">
+          {link.title}
+        </h3>
+        <p className="mt-2 text-[12px] leading-5 text-[#4b5d58]">
+          {link.description}
+        </p>
+      </div>
+      <p className="mt-3 inline-flex items-center gap-1 text-[12px] font-extrabold uppercase tracking-[0.12em] text-[#0c5a4d]">
+        Open guide
+        <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+      </p>
+    </Link>
+  );
+}
+
+function DirectoryLinkGroup({
+  title,
+  description,
+  links,
+}: {
+  title: string;
+  description: string;
+  links: DirectoryLink[];
+}) {
+  return (
+    <section className="overflow-hidden rounded-[20px] border border-[#e7e2d8] bg-white shadow-sm">
+      <div className="border-b border-[#e7e2d8] bg-[#fbfaf7] px-4 py-4 lg:px-5">
+        <h3 className="text-[18px] font-extrabold leading-snug text-[#10201d]">
+          {title}
+        </h3>
+        <p className="mt-1 text-sm leading-6 text-[#4b5d58]">
+          {description}
+        </p>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="group flex min-h-12 items-center justify-between gap-3 border-b border-[#eee7dc] px-4 py-3 text-sm transition hover:bg-[#fbfaf7] sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+2)]:border-b xl:[&:nth-last-child(-n+2)]:border-b-0"
+          >
+            <span className="min-w-0 font-semibold leading-5 text-[#10201d]">
+              {link.title}
+            </span>
+            <ArrowRight className="h-4 w-4 shrink-0 text-[#0c5a4d] transition group-hover:translate-x-0.5" />
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function RouteDirectorySection() {
+  return (
+    <section className="border-y border-[#e7e2d8] bg-[#fffdf8] py-8 lg:py-12">
+      <Container>
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f0df] text-[#0c5a4d]">
+              <MapPinned className="h-5 w-5" />
+            </div>
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e] lg:text-[12px]">
+              Complete directory
+            </p>
+            <h2 className="mt-2 text-[26px] font-black leading-tight tracking-normal text-[#10201d] lg:text-[36px]">
+              All route guides
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#30465a] lg:text-base lg:leading-7">
+              Browse every published Thailand transfer guide from one clear,
+              crawlable route directory.
+            </p>
+          </div>
+
+          <div className="rounded-full border border-[#d7eadf] bg-white px-4 py-2 text-[12px] font-extrabold uppercase tracking-[0.14em] text-[#0c5a4d] shadow-sm">
+            {mainRouteLinks.length} routes
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {featuredGuideLinks.map((link) => (
+            <FeaturedGuideCard key={link.href} link={link} />
+          ))}
+        </div>
+
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
+          <DirectoryLinkGroup
+            title="Main transfer routes"
+            description="Primary route pages for airport, city, beach and island transfers."
+            links={mainRouteLinks}
+          />
+          <DirectoryLinkGroup
+            title="Detailed route guides"
+            description="Pickup notes, timing, luggage guidance and route-specific FAQ pages."
+            links={detailedRouteLinks}
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}
 
 export default function RoutesPage() {
   return (
@@ -41,9 +208,9 @@ export default function RoutesPage() {
               All routes
             </p>
 
-            <h2 className="text-[36px] font-extrabold tracking-normal text-[#10201d] lg:text-[52px]">
+            <h1 className="text-[36px] font-extrabold tracking-normal text-[#10201d] lg:text-[52px]">
               Browse Thailand transfer routes
-            </h2>
+            </h1>
 
             <p className="mt-4 max-w-2xl text-base leading-7 text-[#30465a]">
               Compare airport transfers, city transfers, ferry connections and
@@ -101,6 +268,8 @@ export default function RoutesPage() {
           </div>
         </Container>
       </section>
+
+      <RouteDirectorySection />
 
       <section className="hidden pb-8 lg:block lg:pb-14">
         <Container>

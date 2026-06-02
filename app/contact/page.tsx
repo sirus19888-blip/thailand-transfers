@@ -16,13 +16,13 @@ export default function ContactPage() {
     <PolicyPage
       eyebrow="Contact"
       title="Contact Thailand Transfer Guide"
-      intro="For booking changes, refunds or ticket confirmation, contact the partner or operator listed on your ticket. For website corrections, use the form below."
+      intro="For booking changes, refunds or ticket confirmation, contact the partner or operator listed on your ticket. For website corrections, use the contact details below."
       showCorrectionForm
       sections={[
         {
           title: "Website contact",
           body: [
-            "Email: hello@thailandtransferguide.com",
+            "Email: bangkokpattayabus@gmail.com",
             "Use this for outdated route information, pickup point changes, correction requests, editorial questions or partnership inquiries.",
           ],
         },
