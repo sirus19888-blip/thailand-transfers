@@ -303,7 +303,7 @@ export default function HotelTransferPage() {
             ))}
           </div>
           <p className="mt-4 text-center text-[11px] leading-5 text-slate-500">
-            Last checked May 2026. Final pickup, waiting time, vehicle size and
+            Last checked June 2026. Final pickup, waiting time, vehicle size and
             hotel coverage are confirmed by the partner ticket.
           </p>
         </section>
@@ -501,7 +501,7 @@ export default function HotelTransferPage() {
           </div>
 
           <p className="mt-6 text-center text-xs leading-5 text-slate-500">
-            Last checked May 2026. Final pickup, waiting time, vehicle size and
+            Last checked June 2026. Final pickup, waiting time, vehicle size and
             hotel coverage are confirmed by the partner ticket.
           </p>
           <AffiliateDisclosure className="mt-3 text-center" />

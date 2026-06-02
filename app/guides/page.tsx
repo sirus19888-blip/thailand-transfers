@@ -317,7 +317,7 @@ export default function GuidesPage() {
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Last checked May 2026. Route facts are planning notes. Final price,
+          Last checked June 2026. Route facts are planning notes. Final price,
           schedule, pickup point and luggage rules must still be checked on the
           partner ticket.
         </p>
@@ -517,7 +517,7 @@ export default function GuidesPage() {
             </div>
 
             <p className="mt-6 text-center text-xs leading-5 text-slate-500">
-              Last checked May 2026. Route facts are planning notes. Final
+              Last checked June 2026. Route facts are planning notes. Final
               price, schedule, pickup point and luggage rules must still be
               checked on the partner ticket.
             </p>

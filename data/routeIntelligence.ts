@@ -950,7 +950,7 @@ export function getSourceFreshness(route: RoutePageData): RouteSourceFreshness {
   const hasPublicSource = sourceNotes.some((link) => link.sourceType === "public");
 
   return {
-    lastChecked: "May 2026",
+    lastChecked: "June 2026",
     confidence: isIsland && !hasOperatorSource ? "Medium" : "High",
     officialSource: hasOperatorSource
       ? "operator public information plus partner availability"

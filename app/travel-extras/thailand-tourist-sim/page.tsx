@@ -211,7 +211,7 @@ export default function ThailandTouristSimPage() {
           </div>
 
           <p className="mt-4 text-center text-[11px] leading-5 text-slate-500">
-            Last checked May 2026. Mobile plan prices, fair-use rules,
+            Last checked June 2026. Mobile plan prices, fair-use rules,
             registration steps and airport shop availability can change.
           </p>
         </section>
@@ -365,7 +365,7 @@ export default function ThailandTouristSimPage() {
           </div>
 
           <p className="mt-6 text-center text-xs leading-5 text-slate-500">
-            Last checked May 2026. Mobile plan prices, fair-use rules,
+            Last checked June 2026. Mobile plan prices, fair-use rules,
             registration steps and airport shop availability can change. Check
             the provider page before buying.
           </p>
