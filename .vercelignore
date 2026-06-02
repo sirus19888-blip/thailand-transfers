@@ -8,6 +8,9 @@ build
 .env*
 *.log
 *.tsbuildinfo
+.codex-screenshots/
+reports/
+debug.log
 
 home-*.png
 mobile-*.png
