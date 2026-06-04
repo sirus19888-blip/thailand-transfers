@@ -9,7 +9,6 @@ export const cookieConsentAcceptedEvent =
 
 export function MobileCookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasMobileStickyCta, setHasMobileStickyCta] = useState(false);
 
   useEffect(() => {
     window.setTimeout(() => {
@@ -19,33 +18,12 @@ export function MobileCookieConsent() {
     }, 0);
   }, []);
 
-  useEffect(() => {
-    if (!isVisible) {
-      return;
-    }
-
-    const updateStickyPresence = () => {
-      setHasMobileStickyCta(
-        Boolean(document.querySelector("[data-mobile-sticky-cta='true']")),
-      );
-    };
-    const observer = new MutationObserver(updateStickyPresence);
-
-    updateStickyPresence();
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    return () => observer.disconnect();
-  }, [isVisible]);
-
   if (!isVisible) return null;
-
-  const bottomOffset = hasMobileStickyCta
-    ? "bottom-[calc(7.25rem+env(safe-area-inset-bottom))]"
-    : "bottom-[calc(4.55rem+env(safe-area-inset-bottom))]";
 
   return (
     <div
-      className={`fixed inset-x-3 ${bottomOffset} z-[60] mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2 rounded-[14px] border border-[#d7eadf] bg-white/96 p-2 shadow-xl shadow-black/12 backdrop-blur lg:hidden`}
+      aria-live="polite"
+      className="fixed inset-x-3 top-[calc(0.75rem+env(safe-area-inset-top))] z-[70] mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2 rounded-[14px] border border-[#d7eadf] bg-white/96 p-2.5 shadow-[0_18px_50px_rgba(16,32,29,0.18)] backdrop-blur lg:hidden"
     >
       <div>
         <p className="text-[11px] font-extrabold leading-4 text-[#10201d]">

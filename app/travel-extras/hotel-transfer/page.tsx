@@ -171,7 +171,7 @@ export default function HotelTransferPage() {
         <div className="relative overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-[#10201d] px-5 pb-6 pt-6 text-white shadow-lg shadow-black/5">
           <Image
             src="/assets/promo/hotel-transfer.png"
-            alt=""
+            alt="Private hotel transfer pickup in Thailand"
             fill
             loading="eager"
             fetchPriority="high"

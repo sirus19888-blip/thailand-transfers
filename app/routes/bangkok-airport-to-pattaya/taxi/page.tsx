@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
+import { bangkokAirportToPattayaSourceFreshness } from "@/data/bangkokAirportToPattayaDetails";
 
 const taxiUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-taxi-guide";
@@ -25,6 +26,7 @@ export default function BkkPattayaTaxiGuidePage() {
       ctaTrackingId="click_12go_bkk_pattaya_taxi_guide"
       heroImageSrc="/assets/vehicles/mobile/taxi.png"
       heroImageAlt="Private taxi transfer from BKK Airport to Pattaya"
+      sourceFreshness={bangkokAirportToPattayaSourceFreshness}
       sections={[
         {
           title: "Why it wins late",

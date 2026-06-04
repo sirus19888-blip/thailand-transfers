@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
+import { bangkokAirportToPattayaSourceFreshness } from "@/data/bangkokAirportToPattayaDetails";
 
 const partnerUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-late-arrival";
@@ -25,6 +26,7 @@ export default function BkkPattayaLateArrivalPage() {
       ctaTrackingId="click_12go_bkk_pattaya_late_arrival"
       heroImageSrc="/assets/guides/last-ferry-late-arrival.png"
       heroImageAlt="Late arrival transfer planning in Thailand"
+      sourceFreshness={bangkokAirportToPattayaSourceFreshness}
       sections={[
         {
           title: "Decision rule",

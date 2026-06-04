@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
+import { bangkokAirportToPattayaSourceFreshness } from "@/data/bangkokAirportToPattayaDetails";
 
 const busUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-bus-guide";
@@ -25,6 +26,7 @@ export default function BkkPattayaBusGuidePage() {
       ctaTrackingId="click_12go_bkk_pattaya_bus_guide"
       heroImageSrc="/assets/routes/bangkok-airport-to-pattaya.png"
       heroImageAlt="Bangkok airport to Pattaya bus transfer guide"
+      sourceFreshness={bangkokAirportToPattayaSourceFreshness}
       sections={[
         {
           title: "Use it when",
