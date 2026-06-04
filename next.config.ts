@@ -1,9 +1,14 @@
 ﻿import type { NextConfig } from "next";
 
+import path from "node:path";
+
 const canonicalHost = "thailandtransferguide.com";
 const wwwHost = `www.${canonicalHost}`;
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   async redirects() {
     return [
       {

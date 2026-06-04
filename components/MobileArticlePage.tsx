@@ -11,6 +11,8 @@ import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
+import type { RouteSourceFreshness } from "@/data/routeIntelligence";
 
 type ArticleSection = {
   title: string;
@@ -26,6 +28,7 @@ type MobileArticlePageProps = {
   ctaTrackingId?: string;
   heroImageSrc?: string;
   heroImageAlt?: string;
+  sourceFreshness?: RouteSourceFreshness;
   sections: ArticleSection[];
 };
 
@@ -71,6 +74,7 @@ export function MobileArticlePage({
   ctaTrackingId,
   heroImageSrc = "/assets/hero/hero-mobile.png",
   heroImageAlt = "Thailand transfer guide",
+  sourceFreshness,
   sections,
 }: MobileArticlePageProps) {
   return (
@@ -184,6 +188,18 @@ export function MobileArticlePage({
         <div className="mt-4">
           <ArticleSections sections={sections} />
         </div>
+
+        {sourceFreshness ? (
+          <section className="mt-4 rounded-[1.5rem] border border-[#e7e2d8] bg-white p-4 shadow-lg shadow-black/5">
+            <h2 className="text-[17px] font-extrabold leading-snug text-[#10201d]">
+              Sources & freshness
+            </h2>
+            <SourceFreshnessPanel
+              freshness={sourceFreshness}
+              className="mt-3"
+            />
+          </section>
+        ) : null}
       </section>
 
       <MobileBottomNav activeLabel="Guides" />

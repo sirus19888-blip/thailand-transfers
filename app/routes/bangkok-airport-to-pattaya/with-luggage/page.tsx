@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/app/seo";
 import { MobileArticlePage } from "@/components/MobileArticlePage";
+import { bangkokAirportToPattayaSourceFreshness } from "@/data/bangkokAirportToPattayaDetails";
 
 const partnerUrl =
   "https://12go.asia/en/travel/Suvarnabhumi-Airport/Pattaya/?z=15791301&sub_id=bkk-pattaya-with-luggage";
@@ -25,6 +26,7 @@ export default function BkkPattayaWithLuggagePage() {
       ctaTrackingId="click_12go_bkk_pattaya_with_luggage"
       heroImageSrc="/assets/steps/baggage-claim.png"
       heroImageAlt="Baggage claim before a Thailand airport transfer"
+      sourceFreshness={bangkokAirportToPattayaSourceFreshness}
       sections={[
         {
           title: "Normal luggage",

@@ -99,7 +99,7 @@ export default function ThailandTouristSimPage() {
         <div className="relative overflow-hidden rounded-[1.5rem] border border-[#e7e2d8] bg-[#10201d] px-5 pb-6 pt-6 text-white shadow-lg shadow-black/5">
           <Image
             src="/assets/promo/sim-card.png"
-            alt=""
+            alt="Thailand tourist SIM and eSIM data cards"
             fill
             loading="eager"
             fetchPriority="high"

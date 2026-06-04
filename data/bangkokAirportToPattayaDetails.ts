@@ -1,4 +1,5 @@
 import { mainRoute, transferOptions } from "@/data/routes";
+import { getSourceFreshness } from "@/data/routeIntelligence";
 import type { RoutePageData } from "@/data/routePages";
 
 export const bangkokAirportToPattayaDetailsFaqs = [
@@ -44,3 +45,7 @@ export const bangkokAirportToPattayaDetailsRoute: RoutePageData = {
     affiliateUrl: option.affiliateUrl,
   })),
 };
+
+export const bangkokAirportToPattayaSourceFreshness = getSourceFreshness(
+  bangkokAirportToPattayaDetailsRoute,
+);
