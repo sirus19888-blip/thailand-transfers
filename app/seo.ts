@@ -103,6 +103,8 @@ export function createPageMetadata(metadata: Metadata): Metadata {
       images: [
         {
           url: imageUrl,
+          width: 1200,
+          height: 630,
           alt: imageAlt,
         },
       ],

@@ -727,7 +727,7 @@ function MobileHero() {
                           </p>
                         </div>
 
-                        <span className="rounded-full bg-[#f8f4ec] px-2 py-1 text-[9px] font-extrabold text-[#c99a2e]">
+                        <span className="rounded-full bg-[#f8f4ec] px-2 py-1 text-[9px] font-extrabold text-[#8b6a20]">
                           {language.status}
                         </span>
                       </div>

@@ -23,7 +23,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-10 py-10 lg:grid-cols-[1.15fr_0.85fr_0.85fr_1fr_1.1fr]">
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#e3bb55]">
               About us
             </p>
 
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#e3bb55]">
               Helpful links
             </p>
 
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#e3bb55]">
               Top destinations
             </p>
 
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#e3bb55]">
               Important note
             </p>
 
@@ -88,7 +88,7 @@ export function Footer() {
           <div>
             <div className="rounded-[24px] border border-white/10 bg-white/10 p-5">
               <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#d5ab47]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-[#e3bb55]">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
 
