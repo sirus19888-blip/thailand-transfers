@@ -15,7 +15,7 @@ export function LandingSteps() {
       <Container>
         <div className="rounded-[18px] border border-[#e7e2d8] bg-white p-4 shadow-sm lg:grid lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-8 lg:p-5">
           <div>
-            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#8b6a20]">
               After landing
             </p>
 

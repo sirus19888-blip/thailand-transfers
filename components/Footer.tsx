@@ -23,7 +23,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-10 py-10 lg:grid-cols-[1.15fr_0.85fr_0.85fr_1fr_1.1fr]">
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d5ab47]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
               About us
             </p>
 
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d5ab47]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
               Helpful links
             </p>
 
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d5ab47]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
               Top destinations
             </p>
 
@@ -71,7 +71,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d5ab47]">
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.2em] text-[#d6ad4a]">
               Important note
             </p>
 

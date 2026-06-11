@@ -390,7 +390,7 @@ function DesktopHero() {
         <Container className="relative z-10">
           <div className="grid min-h-[560px] grid-cols-[0.9fr_1.1fr] items-center gap-10 py-7">
             <div className="max-w-[520px]">
-              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+              <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-[#8b6a20]">
                 Tourist-friendly transfer guide
               </p>
 
@@ -413,7 +413,7 @@ function DesktopHero() {
                     className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
                       isAirportTransfer
                         ? "bg-white font-extrabold text-[#0c5a4d] shadow-sm"
-                        : "font-bold text-slate-500 hover:text-[#0c5a4d]"
+                        : "font-bold text-[#5f6f85] hover:text-[#0c5a4d]"
                     }`}
                   >
                     <Plane className="h-4 w-4" />
@@ -426,7 +426,7 @@ function DesktopHero() {
                     className={`flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm transition ${
                       !isAirportTransfer
                         ? "bg-white font-extrabold text-[#0c5a4d] shadow-sm"
-                        : "font-bold text-slate-500 hover:text-[#0c5a4d]"
+                        : "font-bold text-[#5f6f85] hover:text-[#0c5a4d]"
                     }`}
                   >
                     <Landmark className="h-4 w-4" />
@@ -436,7 +436,7 @@ function DesktopHero() {
 
                 <div className="space-y-3">
                   <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
-                    <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-500">
                       From
                     </span>
 
@@ -464,7 +464,7 @@ function DesktopHero() {
                   </label>
 
                   <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
-                    <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                    <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-500">
                       To
                     </span>
 
@@ -489,7 +489,7 @@ function DesktopHero() {
 
                   <div className="grid grid-cols-[1fr_auto] gap-3">
                     <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
-                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-500">
                         Arrival time
                       </span>
 
@@ -512,7 +512,7 @@ function DesktopHero() {
                     </label>
 
                     <label className="block rounded-2xl border border-[#e7e2d8] bg-white px-4 py-3">
-                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                      <span className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-slate-500">
                         Travelers
                       </span>
 

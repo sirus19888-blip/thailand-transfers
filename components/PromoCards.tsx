@@ -10,7 +10,7 @@ export function PromoCards() {
       <Container>
         <div className="mb-5 flex flex-col justify-between gap-3 lg:flex-row lg:items-end">
           <div>
-            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+            <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#8b6a20]">
               Travel extras
             </p>
 
@@ -43,7 +43,7 @@ export function PromoCards() {
               </div>
 
               <div className="flex flex-col justify-center p-4">
-                <p className="mb-2 w-fit rounded-full bg-[#f8f4ec] px-3 py-1 text-[11px] font-bold text-[#c99a2e]">
+                <p className="mb-2 w-fit rounded-full bg-[#f8f4ec] px-3 py-1 text-[11px] font-bold text-[#8b6a20]">
                   {card.label}
                 </p>
 

@@ -24,7 +24,7 @@ export function HomeHelp() {
     <section className="bg-white py-8 lg:py-10">
       <Container>
         <div className="mb-5">
-          <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+          <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#8b6a20]">
             How we help
           </p>
           <h2 className="text-[26px] font-extrabold tracking-normal text-[#10201d] lg:text-[30px]">

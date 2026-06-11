@@ -12,7 +12,7 @@ export function ScamAlert() {
             </div>
 
             <div>
-              <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#c99a2e]">
+              <p className="mb-1.5 text-[12px] font-extrabold uppercase tracking-[0.18em] text-[#8b6a20]">
                 Travel warning
               </p>
 
