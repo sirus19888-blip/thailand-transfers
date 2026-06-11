@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteName, siteUrl } from "./site";
 
-const defaultSocialImage = "/assets/hero/hero-desktop.png";
+const defaultSocialImage = "/assets/hero/hero-og.jpg";
 
 function titleToString(title: Metadata["title"]) {
   if (typeof title === "string") {
