@@ -49,6 +49,10 @@ function absoluteUrl(path: string) {
   return path === "/" ? `${siteUrl}/` : `${siteUrl}${path}`;
 }
 
+function absoluteSocialImageUrl(path: string) {
+  return `${siteUrl}${path}`;
+}
+
 function formatSocialTitle(title: string) {
   if (
     title === siteName ||
@@ -84,7 +88,7 @@ export function createPageMetadata(metadata: Metadata): Metadata {
   const title = titleToString(metadata.title);
   const description = descriptionToString(metadata.description);
   const socialTitle = formatSocialTitle(title);
-  const imageUrl = socialImageForPath(path);
+  const imageUrl = absoluteSocialImageUrl(socialImageForPath(path));
   const imageAlt = `${socialTitle} preview`;
 
   return {

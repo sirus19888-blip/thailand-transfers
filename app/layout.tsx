@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName,
-    url: "/",
+    url: `${siteUrl}/`,
     title: siteName,
     description:
       "Compare airport transfers in Thailand, including buses, taxis, shared vans, and private airport pickup options.",
