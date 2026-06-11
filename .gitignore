@@ -47,3 +47,5 @@ route-mobile-*.png
 .codex-screenshots/
 reports/
 debug.log
+
+jarvis/current-task.md
