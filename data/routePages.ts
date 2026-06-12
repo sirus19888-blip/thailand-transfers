@@ -406,6 +406,58 @@ export const routePages: RoutePageData[] = [
     ],
   },
   {
+    slug: "suvarnabhumi-airport-to-bangkok",
+    title: "Suvarnabhumi Airport to Bangkok Transfers",
+    seoTitle:
+      "Suvarnabhumi Airport to Bangkok Transfers | Taxi, Van & Bus",
+    seoDescription:
+      "Compare transfer options from Suvarnabhumi Airport to Bangkok. Check taxi, van, bus and city transfer options, pickup details and final partner prices.",
+    from: "Suvarnabhumi Airport",
+    to: "Bangkok",
+    intro:
+      "Compare transfer options from Suvarnabhumi Airport to Bangkok, including taxis, vans, buses and city transfer options after landing at BKK. Check airport pickup point, Bangkok drop-off, luggage allowance, travel time and final partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+    mainAffiliateUrl:
+      "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-general",
+    options: [
+      {
+        id: "taxi",
+        name: "Private Taxi",
+        price: "[DO WERYFIKACJI: cena taxi]",
+        duration: "[DO WERYFIKACJI: czas taxi]",
+        pickup: "[DO WERYFIKACJI: pickup taxi]",
+        bestFor:
+          "Travelers who want the most direct city transfer after landing at BKK",
+        trackingId: "click_12go_suvarnabhumi_airport_bangkok_taxi",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-taxi",
+      },
+      {
+        id: "van",
+        name: "Shared Van",
+        price: "[DO WERYFIKACJI: cena van]",
+        duration: "[DO WERYFIKACJI: czas van]",
+        pickup: "[DO WERYFIKACJI: pickup van]",
+        bestFor:
+          "Travelers comparing shared city transfer options after landing at BKK",
+        trackingId: "click_12go_suvarnabhumi_airport_bangkok_van",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-van",
+      },
+      {
+        id: "bus",
+        name: "Bus / Coach",
+        price: "[DO WERYFIKACJI: cena bus]",
+        duration: "[DO WERYFIKACJI: czas bus]",
+        pickup: "[DO WERYFIKACJI: pickup bus]",
+        bestFor:
+          "Travelers checking scheduled city transfer options after landing at BKK",
+        trackingId: "click_12go_suvarnabhumi_airport_bangkok_bus",
+        affiliateUrl:
+          "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-bus",
+      },
+    ],
+  },
+  {
     slug: "bangkok-to-hua-hin",
     title: "Bangkok to Hua Hin Transfers",
     seoTitle: "Bangkok to Hua Hin Transfers | Van, Bus, Train & Taxi",

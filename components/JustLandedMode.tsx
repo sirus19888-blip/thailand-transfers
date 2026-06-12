@@ -15,6 +15,11 @@ const airportDestinations: Record<
       routeName: "BKK to Pattaya",
     },
     {
+      label: "Bangkok",
+      route: "/routes/suvarnabhumi-airport-to-bangkok",
+      routeName: "BKK to Bangkok",
+    },
+    {
       label: "Hua Hin",
       route: "/routes/suvarnabhumi-airport-to-hua-hin",
       routeName: "BKK to Hua Hin",

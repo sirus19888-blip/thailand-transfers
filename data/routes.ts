@@ -109,6 +109,15 @@ export const popularRoutes = [
     href: "/routes/suvarnabhumi-airport-to-hua-hin",
   },
   {
+    id: "suvarnabhumi-airport-bangkok",
+    title: "Suvarnabhumi Airport to Bangkok",
+    description: "Airport city transfer options after landing at BKK.",
+    price: "[DO WERYFIKACJI: cena]",
+    duration: "[DO WERYFIKACJI: czas]",
+    image: "/assets/routes/suvarnabhumi-airport-to-bangkok.png",
+    href: "/routes/suvarnabhumi-airport-to-bangkok",
+  },
+  {
     id: "don-mueang-airport-hua-hin",
     title: "Don Mueang Airport to Hua Hin",
     description: "Airport to beach transfer from Bangkok Don Mueang Airport to Hua Hin.",
@@ -348,16 +357,6 @@ export const returnRouteSeoPlan = [
 ];
 
 export const highDemandRouteSearches = [
-  {
-    id: "suvarnabhumi-bangkok-city",
-    title: "Suvarnabhumi Airport to Bangkok",
-    type: "Airport city transfer",
-    description:
-      "Partner search for taxis, vans, buses and city transfer options after landing at BKK.",
-    affiliateUrl:
-      "https://12go.asia/en/travel/suvarnabhumi-airport/bangkok/?z=15791301&sub_id=suvarnabhumi-bangkok-live-search",
-    trackingId: "click_12go_live_suvarnabhumi_bangkok",
-  },
   {
     id: "suvarnabhumi-don-mueang",
     title: "Suvarnabhumi Airport to Don Mueang Airport",

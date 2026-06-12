@@ -25,6 +25,7 @@ const fullGuideSlugs = new Set([
   "pattaya-to-bangkok-airport",
   "hua-hin-to-bangkok",
   "pattaya-to-don-mueang-airport",
+  "suvarnabhumi-airport-to-bangkok",
   "bangkok-to-hua-hin",
   "don-mueang-airport-to-hua-hin",
   "phuket-airport-to-patong-beach",

@@ -143,6 +143,7 @@ const mobileToOptionGroups = [
 const mobileRouteHrefs: Record<string, string> = {
   "bangkok-hua-hin": "/routes/bangkok-to-hua-hin",
   "bangkok-chiang-mai": "/routes/bangkok-to-chiang-mai",
+  "bkk-bangkok": "/routes/suvarnabhumi-airport-to-bangkok",
   "bkk-hua-hin": "/routes/suvarnabhumi-airport-to-hua-hin",
   "bkk-koh-chang": "/routes/suvarnabhumi-airport-to-koh-chang",
   "bkk-pattaya": "/routes/bangkok-airport-to-pattaya",
