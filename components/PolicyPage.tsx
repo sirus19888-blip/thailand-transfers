@@ -19,7 +19,7 @@ type PolicyPageProps = {
   showCorrectionForm?: boolean;
 };
 
-const contactEmail = "bangkokpattayabus@gmail.com";
+const contactEmail = "thailandtransferguide@gmail.com";
 
 function PolicyParagraph({ text }: { text: string }) {
   if (text === `Email: ${contactEmail}`) {

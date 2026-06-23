@@ -57,7 +57,7 @@ export default function TrustCenterPage() {
         {
           title: "Corrections contact",
           body: [
-            "Email: bangkokpattayabus@gmail.com",
+            "Email: thailandtransferguide@gmail.com",
             "Use this address for outdated pickup points, schedule changes, ferry updates, price range corrections or source notes we should review.",
           ],
         },

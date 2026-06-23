@@ -22,7 +22,7 @@ export default function ContactPage() {
         {
           title: "Website contact",
           body: [
-            "Email: bangkokpattayabus@gmail.com",
+            "Email: thailandtransferguide@gmail.com",
             "Use this for outdated route information, pickup point changes, correction requests, editorial questions or partnership inquiries.",
           ],
         },
