@@ -735,30 +735,6 @@ export function getDecisionLabels(route: RoutePageData) {
   ];
 }
 
-export function getCtaLabel(option?: RouteTransportOption) {
-  const id = option?.id.toLowerCase() ?? "";
-  const name = option?.name.toLowerCase() ?? "";
-
-  if (id.includes("taxi") || name.includes("taxi")) {
-    return "Check taxi availability with partner";
-  }
-
-  if (id.includes("bus") || name.includes("bus")) {
-    return "Check final bus price on partner site";
-  }
-
-  if (
-    id.includes("ferry") ||
-    id.includes("speedboat") ||
-    name.includes("ferry") ||
-    name.includes("speedboat")
-  ) {
-    return "See live schedule and pickup rules";
-  }
-
-  return "Continue to 12Go for ticket rules";
-}
-
 export function getCompactCtaLabel(option?: RouteTransportOption) {
   const id = option?.id.toLowerCase() ?? "";
   const name = option?.name.toLowerCase() ?? "";
