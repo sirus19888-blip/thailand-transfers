@@ -20,7 +20,9 @@ import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { RoutesMobileHub } from "@/components/RoutesMobileHub";
+import { affiliatePartnerSearchCta } from "@/data/ctaCopy";
 import { highDemandRouteSearches, popularRoutes } from "@/data/routes";
+import { getRouteFromPriceLabel } from "@/data/routeIntelligence";
 
 export const metadata: Metadata = createPageMetadata({
   title: "All Thailand Transfer Routes",
@@ -111,6 +113,9 @@ function FeaturedGuideCard({ link }: { link: DirectoryLink }) {
 }
 
 function DesktopRouteCard({ route }: { route: (typeof popularRoutes)[number] }) {
+  const slug = route.href.split("/").filter(Boolean).at(-1);
+  const priceLabel = slug ? getRouteFromPriceLabel(slug) : route.price;
+
   return (
     <Link
       href={route.href}
@@ -129,7 +134,7 @@ function DesktopRouteCard({ route }: { route: (typeof popularRoutes)[number] }) 
       <div className="p-4">
         <div className="mb-3 flex items-center justify-between gap-3">
           <p className="rounded-full bg-[#f8f4ec] px-3 py-1 text-[12px] font-bold text-[#c99a2e]">
-            {route.price}
+            {priceLabel}
           </p>
 
           <p className="text-[12px] font-semibold text-slate-500">
@@ -370,7 +375,7 @@ export default function RoutesPage() {
                     variant="table"
                     fullWidth
                   >
-                    See live schedule and pickup rules
+                    {affiliatePartnerSearchCta}
                   </AffiliateButton>
                 </article>
               ))}

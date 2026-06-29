@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { affiliatePartnerSearchCta } from "@/data/ctaCopy";
 import {
   highDemandRouteSearches,
   mainRoute,
@@ -144,7 +145,7 @@ function PartnerCard({ route }: { route: PartnerSearchData }) {
           variant="table"
           fullWidth
         >
-          See live schedule and pickup rules
+          {affiliatePartnerSearchCta}
         </AffiliateButton>
         <p className="mt-2 text-[10.5px] leading-4 text-slate-500">
           {affiliateMicroDisclosure}

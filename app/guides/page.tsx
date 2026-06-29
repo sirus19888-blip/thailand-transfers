@@ -15,6 +15,7 @@ import { Container } from "@/components/Container";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import { mainRoute } from "@/data/routes";
 import { getRoutePageBySlug } from "@/data/routePages";
 
@@ -308,7 +309,7 @@ export default function GuidesPage() {
                     variant="table"
                     fullWidth
                   >
-                    Check final price
+                    {affiliateMainCta}
                   </AffiliateButton>
                 </div>
               </div>

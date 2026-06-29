@@ -21,7 +21,7 @@ const navigation = [
   },
   {
     name: "About Us",
-    href: "/#about-us",
+    href: "/trust-center",
   },
 ];
 

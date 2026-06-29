@@ -8,12 +8,15 @@ import { ReturnTransferIntelligence } from "@/components/ReturnTransferIntellige
 import { FerryIntelligence } from "@/components/FerryIntelligence";
 import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { RouteAnalytics } from "@/components/RouteAnalytics";
+import { TrustBadges } from "@/components/TrustBadges";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
 import {
   affiliateMicroDisclosure,
   getArrivalTimeLabel,
   getCompactCtaLabel,
   getGuideStatus,
+  getOptionPriceLabel,
   getPickupMapInfo,
   getPriceGuidance,
   getPassengerLabel,
@@ -173,9 +176,13 @@ export function MobilePriorityRouteOptionsScreen({
     (getGuideStatus(route.slug) === "Quick guide"
       ? getQuickGuideNotes(route)
       : undefined);
+  const stickyOption = orderedOptions[0] ?? route.options[0];
+  const stickySubline = optionsContextLabel
+    ? `${optionsContextLabel} - ${passengerLabel}`
+    : "Live prices and ticket rules on 12Go";
 
   return (
-    <section className="min-h-screen bg-[#fbfaf7] pb-20">
+    <section className="min-h-screen bg-[#fbfaf7] pb-[calc(8.75rem+env(safe-area-inset-bottom))]">
       <RouteAnalytics route={route.slug} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-center justify-between">
@@ -267,6 +274,10 @@ export function MobilePriorityRouteOptionsScreen({
           ))}
         </div>
 
+        <div className="mt-3">
+          <TrustBadges />
+        </div>
+
         {route.slug === "bangkok-airport-to-pattaya" ? (
           <div className="mt-3 flex flex-wrap gap-2">
             {bkkPattayaDeepGuides.map((guide) => (
@@ -304,6 +315,7 @@ export function MobilePriorityRouteOptionsScreen({
               arrivalTime,
               passengers,
             );
+            const priceLabel = getOptionPriceLabel(route.slug, option.id);
 
             return (
               <article
@@ -344,10 +356,10 @@ export function MobilePriorityRouteOptionsScreen({
 
                         <div className="text-right">
                           <p className="text-sm font-extrabold text-[#064e45]">
-                            Partner rules
+                            {priceLabel.primary}
                           </p>
                           <p className="text-[10px] font-medium text-slate-500">
-                            price + ticket
+                            {priceLabel.secondary}
                           </p>
                         </div>
                       </div>
@@ -534,6 +546,29 @@ export function MobilePriorityRouteOptionsScreen({
           </p>
         </section>
         <AffiliateDisclosure className="mt-2 text-center" />
+      </div>
+      <div
+        data-mobile-sticky-cta="true"
+        className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur"
+      >
+        <div className="mx-auto grid max-w-md grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[11px] font-extrabold leading-4 text-[#10201d]">
+              {stickyOption?.name ?? `${route.from} to ${route.to}`}
+            </p>
+            <p className="truncate text-[10px] font-semibold leading-4 text-slate-500">
+              {stickySubline}
+            </p>
+          </div>
+
+          <AffiliateButton
+            href={stickyOption?.affiliateUrl ?? route.mainAffiliateUrl}
+            trackingId={stickyOption?.trackingId}
+            variant="detailsSticky"
+          >
+            {affiliateMainCta}
+          </AffiliateButton>
+        </div>
       </div>
       <MobileBottomNav activeLabel="Routes" />
     </section>

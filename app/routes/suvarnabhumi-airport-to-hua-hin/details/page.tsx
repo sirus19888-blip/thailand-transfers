@@ -15,6 +15,7 @@ import {
 } from "@/components/MobilePersonalizedTrip";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("suvarnabhumi-airport-to-hua-hin");
@@ -432,7 +433,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                     href={busOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={busOption?.trackingId}
                   >
-                    Check final price and ticket rules
+                    {affiliateMainCta}
                   </AffiliateButton>
 
                   <Link
@@ -649,7 +650,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                 href={taxiOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={taxiOption?.trackingId}
               >
-                Check final price and ticket rules
+                {affiliateMainCta}
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

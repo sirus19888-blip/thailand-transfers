@@ -1,4 +1,5 @@
 import type { RoutePageData, RouteTransportOption } from "@/data/routePages";
+import { routePrices, type RouteOptionPrice } from "@/data/routePrices";
 
 export type GuideStatus = "Full guide" | "Quick guide" | "Partner search only";
 
@@ -768,22 +769,70 @@ export function getCompactCtaLabel(option?: RouteTransportOption) {
     name.includes("ferry") ||
     name.includes("speedboat")
   ) {
-    return "Live schedule";
+    return "See ferry times";
   }
 
   if (id.includes("bus") || name.includes("bus")) {
-    return "Check bus price";
+    return "See bus times";
   }
 
   if (id.includes("taxi") || name.includes("taxi")) {
-    return "Check taxi";
+    return "See taxi prices";
   }
 
   if (id.includes("van") || name.includes("van")) {
-    return "Check van";
+    return "See van times";
   }
 
-  return "Ticket rules";
+  return "See live options";
+}
+
+const fallbackPriceLabel = {
+  primary: "Final price on partner",
+  secondary: "price + ticket",
+};
+
+function formatThaiBaht(amount: number) {
+  return `฿${amount.toLocaleString("en-US")}`;
+}
+
+function formatPricePrimary(price: RouteOptionPrice) {
+  if (!price.to) {
+    return `from ${formatThaiBaht(price.from)}`;
+  }
+
+  return `${formatThaiBaht(price.from)}–${price.to.toLocaleString("en-US")}`;
+}
+
+function formatPriceUnit(unit: RouteOptionPrice["unit"]) {
+  return unit === "vehicle" ? "per car" : "per person";
+}
+
+export function getOptionPriceLabel(slug: string, optionId: string) {
+  const price = routePrices[slug]?.[optionId];
+
+  if (!price) {
+    return fallbackPriceLabel;
+  }
+
+  return {
+    primary: formatPricePrimary(price),
+    secondary: formatPriceUnit(price.unit),
+  };
+}
+
+export function getRouteFromPriceLabel(slug: string) {
+  const routeOptionPrices = Object.values(routePrices[slug] ?? {});
+
+  if (!routeOptionPrices.length) {
+    return fallbackPriceLabel.primary;
+  }
+
+  const lowestFrom = Math.min(
+    ...routeOptionPrices.map((price) => price.from),
+  );
+
+  return `from ${formatThaiBaht(lowestFrom)}`;
 }
 
 export function getRiskBadges(route: RoutePageData, option: RouteTransportOption) {

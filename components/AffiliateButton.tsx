@@ -1,5 +1,7 @@
 "use client";
 
+import { affiliateMainCta } from "@/data/ctaCopy";
+
 type DataLayerWindow = Window & {
   dataLayer?: object[];
 };
@@ -14,7 +16,7 @@ type AffiliateButtonProps = {
 
 export function AffiliateButton({
   href,
-  children = "Check final price on partner site",
+  children = affiliateMainCta,
   fullWidth = false,
   trackingId,
   variant = "default",

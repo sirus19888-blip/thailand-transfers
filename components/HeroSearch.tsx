@@ -268,6 +268,30 @@ function buildRouteHrefWithParams(
   return routeSearch ? `${routeHref}?${routeSearch}` : routeHref;
 }
 
+function pushRouteSearchStarted({
+  from,
+  to,
+  passengers,
+  arrivalTime,
+}: {
+  from: string;
+  to: string;
+  passengers: string;
+  arrivalTime: string;
+}) {
+  const trackingWindow = window as DataLayerWindow;
+
+  trackingWindow.dataLayer = trackingWindow.dataLayer || [];
+  trackingWindow.dataLayer.push({
+    event: "route_search_started",
+    from,
+    to,
+    pax: passengers,
+    arrival_time: arrivalTime,
+    language: "en",
+  });
+}
+
 function renderMobileOptionGroups(
   groups: typeof mobileFromOptionGroups,
   selectOptions: typeof mobileRouteOptions,
@@ -537,6 +561,14 @@ function DesktopHero() {
 
                   <Link
                     href={searchHref}
+                    onClick={() =>
+                      pushRouteSearchStarted({
+                        from: desktopFrom,
+                        to: desktopTo,
+                        passengers: desktopPassengers,
+                        arrivalTime: desktopArrivalTime,
+                      })
+                    }
                     className="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0c5a4d] px-6 py-4 text-sm font-extrabold text-white shadow-lg shadow-black/10 transition hover:bg-[#064e45]"
                   >
                     <span>Show safest options</span>
@@ -622,16 +654,11 @@ function MobileHero() {
     );
   };
   const navigateMobileRoute = () => {
-    const trackingWindow = window as DataLayerWindow;
-
-    trackingWindow.dataLayer = trackingWindow.dataLayer || [];
-    trackingWindow.dataLayer.push({
-      event: "route_search_started",
+    pushRouteSearchStarted({
       from: mobileFrom,
       to: mobileTo,
-      pax: mobilePassengers,
-      arrival_time: mobileArrivalTime,
-      language: "en",
+      passengers: mobilePassengers,
+      arrivalTime: mobileArrivalTime,
     });
     router.push(getMobileRouteHrefWithParams());
   };

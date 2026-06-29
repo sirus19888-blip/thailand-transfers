@@ -18,6 +18,7 @@ import {
   bangkokAirportToPattayaDetailsFaqs,
   bangkokAirportToPattayaDetailsRoute,
 } from "@/data/bangkokAirportToPattayaDetails";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import { transferOptions } from "@/data/routes";
 
 export const metadata: Metadata = createPageMetadata({
@@ -89,7 +90,7 @@ export default async function BangkokAirportToPattayaDetailsPage({
                     href={busOption?.affiliateUrl ?? "#"}
                     trackingId={busOption?.trackingId}
                   >
-                    Check final price and ticket rules
+                    {affiliateMainCta}
                   </AffiliateButton>
 
                   <Link

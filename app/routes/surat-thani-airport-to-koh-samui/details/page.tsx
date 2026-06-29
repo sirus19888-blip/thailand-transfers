@@ -24,6 +24,7 @@ import {
 } from "@/components/MobilePersonalizedTrip";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("surat-thani-airport-to-koh-samui");
@@ -442,7 +443,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                     href={busFerryOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={busFerryOption?.trackingId}
                   >
-                    Check final price and ticket rules
+                    {affiliateMainCta}
                   </AffiliateButton>
 
                   <Link
@@ -657,7 +658,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                 href={vanFerryOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={vanFerryOption?.trackingId}
               >
-                Check final price and ticket rules
+                {affiliateMainCta}
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

@@ -21,6 +21,7 @@ import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { SaveScreenshotButton } from "@/components/TrackedActions";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import type { RoutePageData } from "@/data/routePages";
 import {
   getPickupMapInfo,
@@ -622,7 +623,7 @@ export function IslandRouteDetailsTemplate({
                     href={primaryOption?.affiliateUrl ?? route.mainAffiliateUrl}
                     trackingId={primaryOption?.trackingId}
                   >
-                    Check final price and ticket rules
+                    {affiliateMainCta}
                   </AffiliateButton>
 
                   <Link
@@ -845,7 +846,7 @@ export function IslandRouteDetailsTemplate({
                 href={finalOption?.affiliateUrl ?? route.mainAffiliateUrl}
                 trackingId={finalOption?.trackingId}
               >
-                Check final price and ticket rules
+                {affiliateMainCta}
               </AffiliateButton>
             </div>
             <AffiliateDisclosure className="mt-4 text-white/70" />

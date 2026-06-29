@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { RouteSourceFreshness } from "@/data/routeIntelligence";
+import { routePricesCheckedOn } from "@/data/routePrices";
 
 type SourceFreshnessPanelProps = {
   freshness: RouteSourceFreshness;
@@ -24,6 +25,10 @@ export function SourceFreshnessPanel({
         <p>
           <span className="font-extrabold text-[#10201d]">Partner source:</span>{" "}
           {freshness.partnerSource}
+        </p>
+        <p>
+          <span className="font-extrabold text-[#10201d]">Price ranges:</span>{" "}
+          indicative THB ranges, where shown, checked {routePricesCheckedOn}
         </p>
         <p>
           <span className="font-extrabold text-[#10201d]">Confidence:</span>{" "}

@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { popularRoutes } from "@/data/routes";
+import { getRouteFromPriceLabel } from "@/data/routeIntelligence";
 import { Container } from "./Container";
+import { TrustBadges } from "./TrustBadges";
 
 const homepageRouteIds = [
   "bangkok-pattaya",
@@ -45,6 +47,10 @@ export function PopularRoutes() {
           </Link>
         </div>
 
+        <div className="mb-5">
+          <TrustBadges />
+        </div>
+
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {homepageRoutes.map((route) => (
             <Link
@@ -65,7 +71,7 @@ export function PopularRoutes() {
               <div className="p-4">
                 <div className="mb-2 flex items-center justify-between gap-2">
                   <p className="rounded-full bg-[#f8f4ec] px-3 py-1 text-[11px] font-bold text-[#8b6a20]">
-                    {route.price}
+                    {getRouteFromPriceLabel(route.href.replace("/routes/", ""))}
                   </p>
 
                   <p className="text-[11px] font-semibold text-slate-500">

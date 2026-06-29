@@ -16,9 +16,12 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { StandardMobileRouteOptions } from "@/components/StandardMobileRouteOptions";
 import { RouteStructuredData } from "@/components/StructuredData";
+import { TrustBadges } from "@/components/TrustBadges";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import {
   getCompactCtaLabel,
   getDecisionLabels,
+  getOptionPriceLabel,
   getPickupMapInfo,
   getPriceGuidance,
   getRiskBadges,
@@ -168,7 +171,7 @@ export default function RoutePageTemplate({
                   href={route.mainAffiliateUrl}
                   trackingId={generalTrackingId}
                 >
-                  Check final price and ticket rules
+                  {affiliateMainCta}
                 </AffiliateButton>
 
                 <Link
@@ -231,6 +234,10 @@ export default function RoutePageTemplate({
                   </p>
                 </div>
 
+                <div className="mb-5">
+                  <TrustBadges />
+                </div>
+
                 <div className="mb-5 grid gap-3 lg:grid-cols-4">
                   {decisionLabels.map((item) => (
                     <div
@@ -275,6 +282,10 @@ export default function RoutePageTemplate({
                     <tbody>
                       {route.options.map((option, index) => {
                         const pickupMap = getPickupMapInfo(route, option);
+                        const priceLabel = getOptionPriceLabel(
+                          route.slug,
+                          option.id,
+                        );
                         const riskBadges = getRiskBadges(route, option);
 
                         return (
@@ -316,7 +327,10 @@ export default function RoutePageTemplate({
                               </div>
                             </td>
                             <td className="px-5 py-5 text-sm font-semibold leading-6 text-slate-600">
-                              {option.price}
+                              <p>{priceLabel.primary}</p>
+                              <p className="mt-1 text-[11px] font-medium leading-4 text-slate-500">
+                                {priceLabel.secondary}
+                              </p>
                             </td>
                             <td className="px-5 py-5">
                               <p className="text-sm font-extrabold text-[#10201d]">

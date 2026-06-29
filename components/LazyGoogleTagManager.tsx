@@ -1,36 +1,13 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
-import {
-  cookieConsentAcceptedEvent,
-  cookieConsentStorageKey,
-} from "@/components/MobileCookieConsent";
 
 type LazyGoogleTagManagerProps = {
   gtmId?: string;
 };
 
 export function LazyGoogleTagManager({ gtmId }: LazyGoogleTagManagerProps) {
-  const [canLoad, setCanLoad] = useState(false);
-
-  useEffect(() => {
-    if (!gtmId) return;
-
-    const updateConsent = () => {
-      setCanLoad(
-        window.localStorage.getItem(cookieConsentStorageKey) === "accepted",
-      );
-    };
-
-    updateConsent();
-    window.addEventListener(cookieConsentAcceptedEvent, updateConsent);
-
-    return () =>
-      window.removeEventListener(cookieConsentAcceptedEvent, updateConsent);
-  }, [gtmId]);
-
-  if (!gtmId || !canLoad) {
+  if (!gtmId) {
     return null;
   }
 
@@ -38,7 +15,7 @@ export function LazyGoogleTagManager({ gtmId }: LazyGoogleTagManagerProps) {
 
   return (
     <>
-      <Script id="gtm-data-layer" strategy="lazyOnload">
+      <Script id="gtm-data-layer" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({
@@ -50,7 +27,7 @@ export function LazyGoogleTagManager({ gtmId }: LazyGoogleTagManagerProps) {
       <Script
         id="gtm-script"
         src={`https://www.googletagmanager.com/gtm.js?id=${encodedGtmId}`}
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
     </>
   );

@@ -1,4 +1,5 @@
 import { mainRoute } from "@/data/routes";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
 import { Container } from "./Container";
 
@@ -28,7 +29,7 @@ export function RouteFinalCta() {
             rel="sponsored nofollow noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-bold text-[#064e45] shadow-sm transition hover:bg-[#f8f4ec]"
           >
-            Check final price and ticket rules
+            {affiliateMainCta}
           </a>
         </div>
         <AffiliateDisclosure className="mt-4 text-white/70" />

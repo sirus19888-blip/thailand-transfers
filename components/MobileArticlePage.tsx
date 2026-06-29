@@ -12,6 +12,7 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
+import { affiliateMainCta } from "@/data/ctaCopy";
 import type { RouteSourceFreshness } from "@/data/routeIntelligence";
 
 type ArticleSection = {
@@ -172,7 +173,7 @@ export function MobileArticlePage({
                   trackingId={ctaTrackingId}
                   fullWidth
                 >
-                  Check final price and ticket rules
+                  {affiliateMainCta}
                 </AffiliateButton>
                 <AffiliateDisclosure className="mt-3 text-center" />
               </div>
