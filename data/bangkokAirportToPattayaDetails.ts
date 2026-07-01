@@ -1,8 +1,31 @@
 import { mainRoute, transferOptions } from "@/data/routes";
 import { getSourceFreshness } from "@/data/routeIntelligence";
+import { routeFacts } from "@/data/routeFacts";
 import type { RoutePageData } from "@/data/routePages";
 
-export const bangkokAirportToPattayaDetailsFaqs = [
+const bangkokAirportToPattayaFactSet = routeFacts[mainRoute.slug];
+
+export const bangkokAirportToPattayaDetailsIntro =
+  bangkokAirportToPattayaFactSet?.intro ??
+  "Before booking your transfer, check what happens after landing, where to go, what to avoid and which option is easiest for your trip.";
+
+export const bangkokAirportToPattayaDetailsTips =
+  bangkokAirportToPattayaFactSet?.tips ?? [
+    "Do not accept random taxi offers inside the terminal.",
+    "Check the pickup point before your flight lands.",
+    "If you arrive late, a private taxi is usually easier than a bus.",
+    "Keep screenshots of your booking and pickup instructions.",
+    "Allow extra time during holidays, rain or evening traffic.",
+  ];
+
+export const bangkokAirportToPattayaDetailsWarnings =
+  bangkokAirportToPattayaFactSet?.warnings ?? [
+    "Avoid random drivers inside the terminal. Use official counters, pre-booked services or trusted booking partners.",
+    "If someone approaches you randomly and pressures you to decide quickly, slow down and check your options first.",
+  ];
+
+export const bangkokAirportToPattayaDetailsFaqs =
+  bangkokAirportToPattayaFactSet?.faqs ?? [
   {
     question: "What is the best option from BKK Airport to Pattaya?",
     answer:
@@ -23,7 +46,7 @@ export const bangkokAirportToPattayaDetailsFaqs = [
     answer:
       "It is safer to compare partner options before arrival, especially in high season or if your flight lands close to the final bus departures.",
   },
-];
+  ];
 
 export const bangkokAirportToPattayaDetailsRoute: RoutePageData = {
   slug: mainRoute.slug,

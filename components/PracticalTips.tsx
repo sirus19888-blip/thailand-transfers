@@ -2,7 +2,11 @@ import { CheckCircle2 } from "lucide-react";
 import { practicalTips } from "@/data/routes";
 import { Container } from "./Container";
 
-export function PracticalTips() {
+type PracticalTipsProps = {
+  tips?: string[];
+};
+
+export function PracticalTips({ tips = practicalTips }: PracticalTipsProps) {
   return (
     <section id="practical-tips" className="bg-white py-10 lg:py-12">
       <Container>
@@ -23,7 +27,7 @@ export function PracticalTips() {
           </div>
 
           <div className="grid gap-3 md:grid-cols-2">
-            {practicalTips.map((tip) => (
+            {tips.map((tip) => (
               <div
                 key={tip}
                 className="flex gap-3 rounded-[20px] border border-[#e7e2d8] bg-[#fbfaf7] p-4"

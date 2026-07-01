@@ -16,9 +16,11 @@ import {
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { affiliateMainCta } from "@/data/ctaCopy";
+import { routeFacts } from "@/data/routeFacts";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("suvarnabhumi-airport-to-hua-hin");
+const routeFactSet = route ? routeFacts[route.slug] : undefined;
 const busOption = route?.options.find((option) => option.id === "bus");
 const taxiOption = route?.options.find((option) => option.id === "taxi");
 
@@ -80,6 +82,22 @@ const quickFacts = [
   },
 ];
 
+function mergeQuickFacts() {
+  if (!routeFactSet?.quickFacts?.length) {
+    return quickFacts;
+  }
+
+  return routeFactSet.quickFacts.map((fact, index) => {
+    const fallback = quickFacts[index] ?? quickFacts[quickFacts.length - 1];
+
+    return {
+      icon: fallback.icon,
+      title: fact.title,
+      text: fact.text,
+    };
+  });
+}
+
 const tips = [
   "Allow extra time after landing before choosing a bus departure.",
   "Check whether your Hua Hin ticket ends at Hua Hin Bus Station, Bluport area, an operator stop or your hotel.",
@@ -87,6 +105,11 @@ const tips = [
   "Keep your booking confirmation ready before leaving the arrivals area.",
   "If you travel with children, heavy luggage or a late flight, door-to-door taxi is usually the simplest option.",
   "Final prices and schedules can change by date, operator and availability.",
+];
+
+const warningParagraphs = routeFactSet?.warnings ?? [
+  "After landing, travelers can be approached by unofficial drivers or people offering quick transfers. For Hua Hin, a long-distance ride, this can lead to unclear prices or pickup confusion.",
+  "Use official counters, pre-booked services or trusted booking partners. Always confirm pickup point, Hua Hin drop-off, luggage allowance and final partner price before boarding.",
 ];
 
 const faqs = [
@@ -112,6 +135,16 @@ const faqs = [
   },
 ];
 
+const resolvedHeroDescription =
+  routeFactSet?.intro ??
+  "Before booking your transfer, check where to go after landing, how airport bus pickup works, when a taxi is easier and what to confirm before leaving Bangkok Airport.";
+const resolvedQuickFacts = mergeQuickFacts();
+const resolvedTips = routeFactSet?.tips ?? tips;
+const resolvedFaqs = routeFactSet?.faqs ?? faqs;
+const warningTitle = routeFactSet?.warnings
+  ? "Check coach timing before you book"
+  : "Avoid airport transfer pressure";
+
 function MobileDetails() {
   if (!route) {
     notFound();
@@ -119,7 +152,7 @@ function MobileDetails() {
 
   return (
     <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
-      <RouteDetailsStructuredData route={route} faqs={faqs} />
+      <RouteDetailsStructuredData route={route} faqs={resolvedFaqs} />
       <div className="mx-auto max-w-md px-4 py-5">
         <div className="flex items-start justify-between gap-3">
           <Link
@@ -192,7 +225,7 @@ function MobileDetails() {
         </Suspense>
 
         <div className="mt-4 grid gap-3">
-          {quickFacts.map((fact) => {
+          {resolvedQuickFacts.map((fact) => {
             const Icon = fact.icon;
 
             return (
@@ -246,12 +279,11 @@ function MobileDetails() {
 
             <div>
               <h2 className="text-base font-extrabold text-red-700">
-                Avoid unofficial offers
+                {warningTitle}
               </h2>
 
               <p className="mt-1 text-sm leading-6 text-red-700/80">
-                Use your confirmed booking, official airport counters or a named
-                driver pickup. Do not accept pressured offers inside arrivals.
+                {warningParagraphs[0]}
               </p>
             </div>
           </div>
@@ -334,7 +366,7 @@ function MobileDetails() {
           </h2>
 
           <div className="mt-3 space-y-2">
-            {tips.slice(0, 4).map((tip) => (
+            {resolvedTips.slice(0, 4).map((tip) => (
               <div key={tip} className="flex gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
                 <p className="text-xs leading-5 text-slate-600">{tip}</p>
@@ -357,7 +389,7 @@ function MobileDetails() {
           <h2 className="text-lg font-extrabold text-[#10201d]">FAQs</h2>
 
           <div className="mt-3 space-y-3">
-            {faqs.map((faq) => (
+            {resolvedFaqs.map((faq) => (
               <div key={faq.question} className="rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] p-3">
                 <p className="text-sm font-bold text-[#10201d]">{faq.question}</p>
                 <p className="mt-1 text-xs leading-5 text-slate-600">{faq.answer}</p>
@@ -423,9 +455,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                 </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
-                  Before booking your transfer, check where to go after landing,
-                  how airport bus pickup works, when a taxi is easier and what
-                  to confirm before leaving Bangkok Airport.
+                  {resolvedHeroDescription}
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -528,24 +558,15 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
                   </p>
 
                   <h2 className="text-[28px] font-extrabold text-[#10201d]">
-                    Avoid airport transfer pressure
+                    {warningTitle}
                   </h2>
                 </div>
               </div>
 
               <div className="space-y-3 text-sm leading-6 text-[#30465a]">
-                <p>
-                  After landing, travelers can be approached by unofficial
-                  drivers or people offering quick transfers. For Hua Hin, a
-                  long-distance ride, this can lead to unclear prices or pickup
-                  confusion.
-                </p>
-
-                <p>
-                  Use official counters, pre-booked services or trusted booking
-                  partners. Always confirm pickup point, Hua Hin drop-off,
-                  luggage allowance and final partner price before boarding.
-                </p>
+                {warningParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
 
                 <div className="flex gap-3 rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] p-4">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#0c5a4d]" />
@@ -586,7 +607,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
               </div>
 
               <div className="grid gap-3 md:grid-cols-2">
-                {tips.map((tip) => (
+                {resolvedTips.map((tip) => (
                   <div key={tip} className="flex gap-3 rounded-[20px] border border-[#e7e2d8] bg-[#fbfaf7] p-4">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#eef6f2] text-[#0c5a4d]">
                       <CheckCircle2 className="h-4.5 w-4.5" />
@@ -613,7 +634,7 @@ export default function SuvarnabhumiAirportToHuaHinDetailsPage() {
             </div>
 
             <div className="grid gap-4 lg:grid-cols-2">
-              {faqs.map((faq) => (
+              {resolvedFaqs.map((faq) => (
                 <div key={faq.question} className="rounded-[2rem] border border-[#e7e2d8] bg-[#fbfaf7] p-5">
                   <h3 className="text-lg font-bold text-[#10201d]">
                     {faq.question}

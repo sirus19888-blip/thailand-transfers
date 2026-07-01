@@ -25,11 +25,18 @@ import {
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { affiliateMainCta } from "@/data/ctaCopy";
+import { routeFacts } from "@/data/routeFacts";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("surat-thani-airport-to-koh-samui");
+const routeFactSet = route ? routeFacts[route.slug] : undefined;
 const busFerryOption = route?.options.find((option) => option.id === "bus-ferry");
 const vanFerryOption = route?.options.find((option) => option.id === "van-ferry");
+const heroDescription =
+  routeFactSet?.intro ??
+  "Before booking, check the airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, luggage rules and whether hotel drop-off is included.";
+const lastCheckedLabel =
+  routeFactSet?.checkedOn === "2026-07" ? "July 2026" : "June 2026";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Surat Thani Airport to Koh Samui Guide | Ferry Tips & FAQ",
@@ -71,7 +78,7 @@ const steps = [
   },
 ];
 
-const quickFacts = [
+const defaultQuickFacts = [
   {
     icon: Clock3,
     title: "Typical travel time",
@@ -89,7 +96,20 @@ const quickFacts = [
   },
 ];
 
-const tips = [
+const quickFacts = routeFactSet?.quickFacts?.length
+  ? routeFactSet.quickFacts.map((fact, index) => {
+      const fallback =
+        defaultQuickFacts[index] ?? defaultQuickFacts[defaultQuickFacts.length - 1];
+
+      return {
+        icon: fallback.icon,
+        title: fact.title,
+        text: fact.text,
+      };
+    })
+  : defaultQuickFacts;
+
+const defaultTips = [
   "Allow extra time after landing before choosing a ferry connection.",
   "Check whether your ticket ends at the Koh Samui pier or includes hotel drop-off.",
   "Confirm the listed pier, operator and ferry departure before booking.",
@@ -98,7 +118,18 @@ const tips = [
   "Weather and ferry queues can affect the total airport-to-island travel time.",
 ];
 
-const faqs = [
+const tips = routeFactSet?.tips ?? defaultTips;
+
+const defaultWarningParagraphs = [
+  "The airport-to-Samui trip includes multiple pieces: airport pickup, road transfer, ferry crossing and sometimes island drop-off. A delayed flight can affect the full chain.",
+  "Use confirmed booking details and check the pier, ferry operator, luggage rules and whether Koh Samui hotel drop-off is part of the ticket.",
+];
+const warningParagraphs = routeFactSet?.warnings ?? defaultWarningParagraphs;
+const warningMobileText =
+  routeFactSet?.warnings?.[0] ??
+  "Airport delays, baggage claim, road transfer and ferry timing all affect this route. Choose a realistic departure after landing.";
+
+const defaultFaqs = [
   {
     question: "What is the easiest way from Surat Thani Airport to Koh Samui?",
     answer:
@@ -120,6 +151,7 @@ const faqs = [
       "Avoid tight ferry connections. If your flight arrives late, check current departures and choose a ticket with realistic airport processing time.",
   },
 ];
+const faqs = routeFactSet?.faqs ?? defaultFaqs;
 
 function MobileDetails() {
   if (!route) {
@@ -259,9 +291,7 @@ function MobileDetails() {
               </h2>
 
               <p className="mt-1 text-sm leading-6 text-red-700/80">
-                Airport delays, baggage claim, road transfer and ferry timing
-                all affect this route. Choose a realistic departure after
-                landing.
+                {warningMobileText}
               </p>
             </div>
           </div>
@@ -377,7 +407,7 @@ function MobileDetails() {
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Last checked June 2026. Thailand Transfer Guide is an independent travel
+          Last checked {lastCheckedLabel}. Thailand Transfer Guide is an independent travel
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must
@@ -433,9 +463,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                 </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
-                  Before booking, check the airport pickup point, pier transfer,
-                  ferry crossing, Koh Samui arrival pier, luggage rules and
-                  whether hotel drop-off is included.
+                  {heroDescription}
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -544,17 +572,9 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
               </div>
 
               <div className="space-y-3 text-sm leading-6 text-[#30465a]">
-                <p>
-                  The airport-to-Samui trip includes multiple pieces: airport
-                  pickup, road transfer, ferry crossing and sometimes island
-                  drop-off. A delayed flight can affect the full chain.
-                </p>
-
-                <p>
-                  Use confirmed booking details and check the pier, ferry
-                  operator, luggage rules and whether Koh Samui hotel drop-off
-                  is part of the ticket.
-                </p>
+                {warningParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
 
                 <div className="flex gap-3 rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] p-4">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#0c5a4d]" />

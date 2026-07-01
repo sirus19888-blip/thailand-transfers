@@ -16,7 +16,10 @@ import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
 import { RouteDetailsStructuredData } from "@/components/StructuredData";
 import {
   bangkokAirportToPattayaDetailsFaqs,
+  bangkokAirportToPattayaDetailsIntro,
   bangkokAirportToPattayaDetailsRoute,
+  bangkokAirportToPattayaDetailsTips,
+  bangkokAirportToPattayaDetailsWarnings,
 } from "@/data/bangkokAirportToPattayaDetails";
 import { affiliateMainCta } from "@/data/ctaCopy";
 import { transferOptions } from "@/data/routes";
@@ -80,9 +83,7 @@ export default async function BangkokAirportToPattayaDetailsPage({
                 </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
-                  Before booking your transfer, check what happens after landing,
-                  where to go, what to avoid and which option is easiest for your
-                  trip.
+                  {bangkokAirportToPattayaDetailsIntro}
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -121,9 +122,12 @@ export default async function BangkokAirportToPattayaDetailsPage({
 
         <LandingSteps />
 
-        <ScamAlert />
+        <ScamAlert
+          title="Check Pattaya drop-off and late arrivals"
+          warnings={bangkokAirportToPattayaDetailsWarnings}
+        />
 
-        <PracticalTips />
+        <PracticalTips tips={bangkokAirportToPattayaDetailsTips} />
 
         <RouteFaq />
 

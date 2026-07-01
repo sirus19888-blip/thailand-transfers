@@ -16,6 +16,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { affiliateMainCta } from "@/data/ctaCopy";
+import { routeFacts } from "@/data/routeFacts";
 import { mainRoute } from "@/data/routes";
 import { getRoutePageBySlug } from "@/data/routePages";
 
@@ -28,6 +29,10 @@ export const metadata: Metadata = createPageMetadata({
   },
 });
 
+function getGuideFacts(slug: string) {
+  return routeFacts[slug]?.guideFacts ?? [];
+}
+
 const guideRoutes = [
   {
     title: "BKK to Pattaya",
@@ -38,11 +43,7 @@ const guideRoutes = [
     trackingId: "click_12go_guide_bkk_pattaya",
     type: "Airport to city",
     bestFor: "Best when you need a simple airport exit to Pattaya, Jomtien or a direct hotel ride.",
-    facts: [
-      "Airport bus counters are checked against the Suvarnabhumi Level 1 transport area near Gate 8.",
-      "RRC lists about 2 hours to Pattaya and airport departures at 7:30, 9:30, 11:30, 13:30, 15:30, 17:30 and 18:30, with a 22:00 North Pattaya note.",
-      "Taxi is the better pick for late arrivals, heavy luggage, children or direct hotel drop-off.",
-    ],
+    facts: getGuideFacts("bangkok-airport-to-pattaya"),
   },
   {
     title: "BKK to Koh Chang",
@@ -54,12 +55,7 @@ const guideRoutes = [
     trackingId: "click_12go_guide_bkk_koh_chang",
     type: "Airport to island",
     bestFor: "Best planned as a road transfer plus ferry, not as a pure car ride.",
-    facts: [
-      "The checked main ferry crossing uses Ao Thammachat on the mainland for Koh Chang.",
-      "Current ferry guidance shows daily Ferry Koh Chang service from 06:30 to 18:30, with cash-only tickets at the pier.",
-      "Trat / Centrepoint Ferry has been suspended since July 2024 and has not resumed.",
-      "Confirm whether the ticket continues after the ferry to your west-coast hotel area.",
-    ],
+    facts: getGuideFacts("suvarnabhumi-airport-to-koh-chang"),
   },
   {
     title: "BKK to Hua Hin",
@@ -71,11 +67,7 @@ const guideRoutes = [
     trackingId: "click_12go_guide_bkk_hua_hin",
     type: "Airport to beach city",
     bestFor: "Best for fixed coach departures or private transfer after an international flight.",
-    facts: [
-      "Dedicated airport coach service is checked from Suvarnabhumi Level 1 / Gate 8 to Hua Hin Bus Station.",
-      "RRC lists about 5 hours for the airport coach, depending on traffic.",
-      "Private taxi is usually easier with children, large luggage, a delayed flight or a late arrival.",
-    ],
+    facts: getGuideFacts("suvarnabhumi-airport-to-hua-hin"),
   },
   {
     title: "Phuket Airport to Patong",
@@ -87,11 +79,7 @@ const guideRoutes = [
     trackingId: "click_12go_guide_phuket_airport_patong",
     type: "Airport to beach",
     bestFor: "Best for choosing between low-cost Smart Bus and direct taxi/private transfer.",
-    facts: [
-      "Phuket Smart Bus confirms the airport route through Thalang, Laguna, Kamala, Patong, Karon, Kata and Rawai.",
-      "The checked Smart Bus fare is fixed per person per trip and payment is made on the bus.",
-      "Use live bus tracking or current timetable checks because Phuket traffic can shift travel time.",
-    ],
+    facts: getGuideFacts("phuket-airport-to-patong-beach"),
   },
   {
     title: "Surat Thani Airport to Koh Samui",
@@ -103,11 +91,7 @@ const guideRoutes = [
     trackingId: "click_12go_guide_surat_thani_koh_samui",
     type: "Airport plus ferry",
     bestFor: "Best handled as one connected bus or van plus ferry ticket.",
-    facts: [
-      "The checked route uses ground transfer from Surat Thani Airport toward Don Sak ferry piers.",
-      "Seatran confirms the Don Sak to Koh Samui ferry route; ticketed packages can use different operators.",
-      "Flight delays can break tight ferry connections, so avoid the last practical boat of the day.",
-    ],
+    facts: getGuideFacts("surat-thani-airport-to-koh-samui"),
   },
   {
     title: "Phuket to Koh Phi Phi",
@@ -119,11 +103,7 @@ const guideRoutes = [
     trackingId: "click_12go_guide_phuket_phi_phi",
     type: "Island ferry",
     bestFor: "Best for comparing larger ferry comfort with faster speedboat timing.",
-    facts: [
-      "Checked ferry and speedboat listings use Phuket Rassada Pier to Phi Phi Tonsai Pier.",
-      "Some services continue to Laemtong Bay, so confirm the exact Phi Phi arrival point before booking.",
-      "Ferry is more luggage-friendly; speedboat is faster but more sensitive to sea and weather conditions.",
-    ],
+    facts: getGuideFacts("phuket-to-koh-phi-phi"),
   },
 ];
 

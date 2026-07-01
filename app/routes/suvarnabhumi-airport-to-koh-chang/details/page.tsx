@@ -25,11 +25,18 @@ import {
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
 import { affiliateMainCta } from "@/data/ctaCopy";
+import { routeFacts } from "@/data/routeFacts";
 import { getRoutePageBySlug } from "@/data/routePages";
 
 const route = getRoutePageBySlug("suvarnabhumi-airport-to-koh-chang");
+const routeFactSet = route ? routeFacts[route.slug] : undefined;
 const ferryVanOption = route?.options.find((option) => option.id === "ferry-van");
 const taxiOption = route?.options.find((option) => option.id === "taxi");
+const heroDescription =
+  routeFactSet?.intro ??
+  "Before booking, check airport pickup, mainland pier transfer, ferry crossing, luggage rules and whether the ticket continues to your Koh Chang hotel area.";
+const lastCheckedLabel =
+  routeFactSet?.checkedOn === "2026-07" ? "July 2026" : "June 2026";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Suvarnabhumi Airport to Koh Chang Guide | Ferry Tips & FAQ",
@@ -71,7 +78,7 @@ const steps = [
   },
 ];
 
-const quickFacts = [
+const defaultQuickFacts = [
   {
     icon: Clock3,
     title: "Typical travel time",
@@ -89,7 +96,20 @@ const quickFacts = [
   },
 ];
 
-const tips = [
+const quickFacts = routeFactSet?.quickFacts?.length
+  ? routeFactSet.quickFacts.map((fact, index) => {
+      const fallback =
+        defaultQuickFacts[index] ?? defaultQuickFacts[defaultQuickFacts.length - 1];
+
+      return {
+        icon: fallback.icon,
+        title: fact.title,
+        text: fact.text,
+      };
+    })
+  : defaultQuickFacts;
+
+const defaultTips = [
   "Allow extra time after landing before choosing an island transfer.",
   "Current Ferry Koh Chang guidance shows daily service from 06:30 to 18:30.",
   "Standalone Ferry Koh Chang tickets are bought with cash at the pier on the day of travel.",
@@ -99,7 +119,18 @@ const tips = [
   "Weather, traffic and ferry queues can change the total travel time.",
 ];
 
-const faqs = [
+const tips = routeFactSet?.tips ?? defaultTips;
+
+const defaultWarningParagraphs = [
+  "Koh Chang is an island route, so road time is only part of the journey. Ferry schedules, queues, weather and late flight arrivals can affect the total travel time.",
+  "Use confirmed booking details and check whether your ticket includes the airport pickup, mainland transfer, ferry crossing and island-side drop-off.",
+];
+const warningParagraphs = routeFactSet?.warnings ?? defaultWarningParagraphs;
+const warningMobileText =
+  routeFactSet?.warnings?.[0] ??
+  "Ferry Koh Chang currently runs from 06:30 to 18:30. Late arrivals, weather and ferry queues can change the route, so do not book a tight connection.";
+
+const defaultFaqs = [
   {
     question: "What is the easiest way from Suvarnabhumi Airport to Koh Chang?",
     answer:
@@ -121,6 +152,7 @@ const faqs = [
       "Avoid tight connections. If you arrive late in the day, compare private transfer options and check ferry timing before booking.",
   },
 ];
+const faqs = routeFactSet?.faqs ?? defaultFaqs;
 
 function MobileDetails() {
   if (!route) {
@@ -260,9 +292,7 @@ function MobileDetails() {
               </h2>
 
               <p className="mt-1 text-sm leading-6 text-red-700/80">
-                Ferry Koh Chang currently runs from 06:30 to 18:30. Late
-                arrivals, weather and ferry queues can change the route, so do
-                not book a tight connection.
+                {warningMobileText}
               </p>
             </div>
           </div>
@@ -378,7 +408,7 @@ function MobileDetails() {
         </div>
 
         <p className="mt-5 text-center text-xs leading-5 text-slate-500">
-          Last checked June 2026. Thailand Transfer Guide is an independent travel
+          Last checked {lastCheckedLabel}. Thailand Transfer Guide is an independent travel
           comparison guide, not the transport operator. Booking, payment,
           ticket changes and support are handled by the booking partner or
           operator. Final price, schedule, pickup point and luggage rules must
@@ -434,9 +464,7 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
                 </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
-                  Before booking, check airport pickup, mainland pier transfer,
-                  ferry crossing, luggage rules and whether the ticket continues
-                  to your Koh Chang hotel area.
+                  {heroDescription}
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -545,17 +573,9 @@ export default function SuvarnabhumiAirportToKohChangDetailsPage() {
               </div>
 
               <div className="space-y-3 text-sm leading-6 text-[#30465a]">
-                <p>
-                  Koh Chang is an island route, so road time is only part of the
-                  journey. Ferry schedules, queues, weather and late flight
-                  arrivals can affect the total travel time.
-                </p>
-
-                <p>
-                  Use confirmed booking details and check whether your ticket
-                  includes the airport pickup, mainland transfer, ferry crossing
-                  and island-side drop-off.
-                </p>
+                {warningParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
 
                 <div className="flex gap-3 rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] p-4">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#0c5a4d]" />

@@ -22,6 +22,7 @@ import { Header } from "@/components/Header";
 import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
 import { SaveScreenshotButton } from "@/components/TrackedActions";
 import { affiliateMainCta } from "@/data/ctaCopy";
+import { routeFacts } from "@/data/routeFacts";
 import type { RoutePageData } from "@/data/routePages";
 import {
   getPickupMapInfo,
@@ -171,6 +172,25 @@ function buildMobileBookingChecks(
   return checks;
 }
 
+function mergeQuickFacts(
+  fallbackFacts: QuickFact[],
+  routeQuickFacts?: { title: string; text: string }[],
+) {
+  if (!routeQuickFacts?.length) {
+    return fallbackFacts;
+  }
+
+  return routeQuickFacts.map((fact, index) => {
+    const fallback = fallbackFacts[index] ?? fallbackFacts[fallbackFacts.length - 1];
+
+    return {
+      icon: fallback.icon,
+      title: fact.title,
+      text: fact.text,
+    };
+  });
+}
+
 type IslandRouteDetailsTemplateProps = {
   route: RoutePageData;
   backHref: string;
@@ -238,6 +258,13 @@ export function IslandRouteDetailsTemplate({
   tips,
   faqs,
 }: IslandRouteDetailsTemplateProps) {
+  const factSet = routeFacts[route.slug];
+  const resolvedHeroDescription = factSet?.intro ?? heroDescription;
+  const resolvedWarningParagraphs = factSet?.warnings ?? warningParagraphs;
+  const resolvedWarningMobileText = factSet?.warnings?.[0] ?? warningMobileText;
+  const resolvedTips = factSet?.tips ?? tips;
+  const resolvedFaqs = factSet?.faqs ?? faqs;
+  const resolvedQuickFacts = mergeQuickFacts(quickFacts, factSet?.quickFacts);
   const primaryOption =
     route.options.find((option) => option.id === primaryOptionId) ??
     route.options[0];
@@ -249,7 +276,7 @@ export function IslandRouteDetailsTemplate({
     primaryOption;
   const mobileQuickFacts =
     mobileSelectedOptionId && mobileSelectedOption
-      ? quickFacts.map((fact, index) => {
+      ? resolvedQuickFacts.map((fact, index) => {
           if (index === 0) {
             return {
               ...fact,
@@ -268,7 +295,7 @@ export function IslandRouteDetailsTemplate({
 
           return fact;
         })
-      : quickFacts;
+      : resolvedQuickFacts;
   const mobilePlanningNotes = buildMobilePlanningNotes(route);
   const mobileLastMile = buildMobileLastMile(route, mobileSelectedOption.name);
   const mobileBookingChecks = buildMobileBookingChecks(
@@ -280,7 +307,7 @@ export function IslandRouteDetailsTemplate({
 
   return (
     <main className="min-h-screen bg-white pb-28 text-[#10201d] lg:pb-0">
-      <RouteDetailsStructuredData route={route} faqs={faqs} />
+      <RouteDetailsStructuredData route={route} faqs={resolvedFaqs} />
       <section className="min-h-screen bg-[#fbfaf7] pb-28 lg:hidden">
         <div className="mx-auto max-w-md px-4 py-5">
           <div className="flex items-start justify-between gap-3">
@@ -453,7 +480,7 @@ export function IslandRouteDetailsTemplate({
                 </h2>
 
                 <p className="mt-1 text-sm leading-6 text-red-700/80">
-                  {warningMobileText}
+                  {resolvedWarningMobileText}
                 </p>
               </div>
             </div>
@@ -531,7 +558,7 @@ export function IslandRouteDetailsTemplate({
             </h2>
 
             <div className="mt-3 space-y-2">
-              {tips.slice(0, 4).map((tip) => (
+              {resolvedTips.slice(0, 4).map((tip) => (
                 <div key={tip} className="flex gap-2">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0c5a4d]" />
                   <p className="text-xs leading-5 text-slate-600">{tip}</p>
@@ -554,7 +581,7 @@ export function IslandRouteDetailsTemplate({
             <h2 className="text-lg font-extrabold text-[#10201d]">FAQs</h2>
 
             <div className="mt-3 space-y-3">
-              {faqs.map((faq) => (
+              {resolvedFaqs.map((faq) => (
                 <div
                   key={faq.question}
                   className="rounded-2xl border border-[#e7e2d8] bg-[#fbfaf7] p-3"
@@ -615,7 +642,7 @@ export function IslandRouteDetailsTemplate({
                 </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">
-                  {heroDescription}
+                  {resolvedHeroDescription}
                 </p>
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -723,7 +750,7 @@ export function IslandRouteDetailsTemplate({
               </div>
 
               <div className="space-y-3 text-sm leading-6 text-[#30465a]">
-                {warningParagraphs.map((paragraph) => (
+                {resolvedWarningParagraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
 
@@ -763,7 +790,7 @@ export function IslandRouteDetailsTemplate({
               </div>
 
               <div className="grid gap-3 md:grid-cols-2">
-                {tips.map((tip) => (
+                {resolvedTips.map((tip) => (
                   <div
                     key={tip}
                     className="flex gap-3 rounded-[20px] border border-[#e7e2d8] bg-[#fbfaf7] p-4"
@@ -793,7 +820,7 @@ export function IslandRouteDetailsTemplate({
             </div>
 
             <div className="grid gap-4 lg:grid-cols-2">
-              {faqs.map((faq) => (
+              {resolvedFaqs.map((faq) => (
                 <div
                   key={faq.question}
                   className="rounded-[2rem] border border-[#e7e2d8] bg-[#fbfaf7] p-5"

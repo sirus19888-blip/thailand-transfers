@@ -1,5 +1,6 @@
 import { Clock3, Luggage, MapPin } from "lucide-react";
 import { IslandRouteDetailsTemplate } from "@/components/IslandRouteDetailsTemplate";
+import { routeFacts, type RouteFactSet } from "@/data/routeFacts";
 import type { RoutePageData } from "@/data/routePages";
 
 type StandardRouteDetailsScreenProps = {
@@ -204,6 +205,43 @@ function buildFaqs(route: RoutePageData) {
   ];
 }
 
+function buildQuickFacts(
+  selectedOption: RoutePageData["options"][number],
+  factSet?: RouteFactSet,
+) {
+  const fallbackFacts = [
+    {
+      icon: Clock3,
+      title: "Typical travel time",
+      text: `${selectedOption.name}: ${selectedOption.duration}. Compare partner options for your date before booking.`,
+    },
+    {
+      icon: MapPin,
+      title: "Pickup point",
+      text: selectedOption.pickup,
+    },
+    {
+      icon: Luggage,
+      title: "Luggage and tickets",
+      text: "Check baggage limits, included transfers and cancellation rules on the partner ticket.",
+    },
+  ];
+
+  if (!factSet?.quickFacts?.length) {
+    return fallbackFacts;
+  }
+
+  return factSet.quickFacts.map((fact, index) => {
+    const fallback = fallbackFacts[index] ?? fallbackFacts[fallbackFacts.length - 1];
+
+    return {
+      icon: fallback.icon,
+      title: fact.title,
+      text: fact.text,
+    };
+  });
+}
+
 export function StandardRouteDetailsScreen({
   route,
   overviewImage,
@@ -216,7 +254,10 @@ export function StandardRouteDetailsScreen({
     primaryOption;
   const overview = getOverviewImage(route, overviewImage);
   const heroImage = getRouteImage(route);
-  const tips = buildTips(route);
+  const factSet = routeFacts[route.slug];
+  const tips = factSet?.tips ?? buildTips(route);
+  const faqs = factSet?.faqs ?? buildFaqs(route);
+  const warningParagraphs = factSet?.warnings ?? buildWarningParagraphs(route);
 
   return (
     <IslandRouteDetailsTemplate
@@ -227,7 +268,10 @@ export function StandardRouteDetailsScreen({
       overviewImage={overview}
       overviewAlt={`${route.from} to ${route.to} route overview map`}
       heroTitle={`${route.from} to ${route.to}: transfer guide`}
-      heroDescription={`Before booking, compare partner options from ${route.from} to ${route.to}. Check pickup point, drop-off point, luggage rules, travel time and partner booking notes.`}
+      heroDescription={
+        factSet?.intro ??
+        `Before booking, compare partner options from ${route.from} to ${route.to}. Check pickup point, drop-off point, luggage rules, travel time and partner booking notes.`
+      }
       heroImage={heroImage}
       heroAlt={`${route.from} to ${route.to} transfer`}
       stepsHeading={`${route.from} to ${route.to} details - step by step`}
@@ -235,7 +279,7 @@ export function StandardRouteDetailsScreen({
       warningMobileTitle="Check partner ticket details"
       warningMobileText="Pickup points, baggage rules and final drop-off can vary by operator. Always check the partner ticket before booking."
       warningTitle={`Check ${route.from} to ${route.to} pickup and drop-off before you book`}
-      warningParagraphs={buildWarningParagraphs(route)}
+      warningParagraphs={warningParagraphs}
       simpleRule={buildSimpleRule(route)}
       practicalTitle={`Small things that make ${route.to} transfers easier`}
       practicalIntro={`These notes are specific to the ${route.from} to ${route.to} route and help compare partner options.`}
@@ -249,25 +293,9 @@ export function StandardRouteDetailsScreen({
       primaryOptionId={primaryOption.id}
       finalOptionId={finalOption.id}
       steps={buildSteps(route)}
-      quickFacts={[
-        {
-          icon: Clock3,
-          title: "Typical travel time",
-          text: `${selectedOption.name}: ${selectedOption.duration}. Compare partner options for your date before booking.`,
-        },
-        {
-          icon: MapPin,
-          title: "Pickup point",
-          text: selectedOption.pickup,
-        },
-        {
-          icon: Luggage,
-          title: "Luggage and tickets",
-          text: "Check baggage limits, included transfers and cancellation rules on the partner ticket.",
-        },
-      ]}
+      quickFacts={buildQuickFacts(selectedOption, factSet)}
       tips={tips}
-      faqs={buildFaqs(route)}
+      faqs={faqs}
     />
   );
 }

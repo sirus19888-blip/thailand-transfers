@@ -29,6 +29,9 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
+// Hard facts in this mobile BKK-Pattaya block come from RRC Airport-Pattaya
+// route/FAQ pages and routePrices.ts, checked 2026-07 unless the ticket text
+// deliberately stays generic.
 const optionContentById = {
   bus: {
     subtitle: "Airport pickup, bus stops and hotel transfer tips",
@@ -49,7 +52,7 @@ const optionContentById = {
         number: "3",
         title: "Check your Pattaya drop-off point.",
         description:
-          "The airport-to-Pattaya RRC route goes to Pattaya Transport Station in North Pattaya. The 22:00 note says North Pattaya Bus Station, not Jomtien, so match the ticket to your hotel area.",
+          "The airport-to-Pattaya RRC route goes to Pattaya Transport Station in North Pattaya, so match the ticket to your hotel area before you count the trip as finished.",
       },
       {
         number: "4",
@@ -81,11 +84,11 @@ const optionContentById = {
     planningNotes: [
       {
         title: "Late arrival rule",
-        text: "RRC currently lists airport-to-Pattaya buses at 7:30, 9:30, 11:30, 13:30, 15:30, 17:30 and 18:30, with a 22:00 note for North Pattaya Bus Station. If your flight lands late, compare taxi or private transfer.",
+        text: "RRC currently lists airport-to-Pattaya buses at 7:30, 9:30, 11:30, 13:30, 15:30, 17:30 and 18:30. If your flight lands late, compare taxi or private transfer.",
       },
       {
         title: "First and last bus",
-        text: "The first listed airport-to-Pattaya bus is 7:30. RRC notes the 22:00 service goes to North Pattaya Bus Station and does not stop at Jomtien Bus Station.",
+        text: "The first listed airport-to-Pattaya bus is 7:30 and the last listed Pattaya departure is 18:30. Plan taxi backup for evening arrivals.",
       },
     ],
     lastMile:
@@ -141,7 +144,7 @@ const optionContentById = {
       {
         icon: MapPin,
         title: "Airport pickup",
-        text: "Use the meeting point on your pre-booked voucher. If using airport public taxi instead, AOT lists taxis on Level 1 between Gates 4 and 7.",
+        text: "Use the meeting point on your pre-booked voucher. If using an airport public taxi instead, go to the official taxi queue rather than accepting a random offer in arrivals.",
       },
       {
         icon: Luggage,
@@ -155,7 +158,7 @@ const optionContentById = {
     planningNotes: [
       {
         title: "Late arrival rule",
-        text: "AOT lists Suvarnabhumi public taxis as a 24-hour service at Floor 1, between Gates 4 and 7. Pre-booked taxis use the meeting point on your voucher.",
+        text: "Pre-booked taxis use the meeting point on your voucher and are the easiest late-arrival fallback when the RRC coach timetable no longer fits.",
       },
       {
         title: "No fixed last departure",
@@ -165,8 +168,8 @@ const optionContentById = {
     lastMile:
       "Private taxi is the clearest door-to-door option. Confirm whether your drop-off is Pattaya City, Jomtien, Naklua, Pratumnak or a full hotel/condo address.",
     bookingChecks: [
-      "AOT public taxi adds a 50 Baht airport surcharge.",
-      "Toll fees are paid by passengers unless your pre-booked ticket says otherwise.",
+      "Check whether airport pickup, tolls and waiting time are included in the pre-booked fare.",
+      "If using a public airport taxi, check the official queue and fare rules before leaving the airport.",
       "Large or multiple bags can trigger baggage rules or require a larger vehicle.",
     ],
     tips: [
@@ -184,7 +187,7 @@ const optionContentById = {
         number: "1",
         title: "Check the shared transfer meeting point.",
         description:
-          "Bell/RRC shared airport transfers list check-in on Level 1, Gate 8. Other partner vouchers may name a different airport counter or meeting point.",
+          "Shared airport transfers can use an airport counter, partner desk or driver meeting point. Follow the exact voucher, not the bus-counter habit.",
       },
       {
         number: "2",
@@ -196,7 +199,7 @@ const optionContentById = {
         number: "3",
         title: "Confirm hotel drop-off coverage.",
         description:
-          "Bell/RRC describes shared Suvarnabhumi-Pattaya transfer as direct to the listed hotel. Check that your hotel is covered before booking.",
+          "Some shared Pattaya transfers include hotel drop-off and some end at an operator point. Check that your hotel area is covered before booking.",
       },
       {
         number: "4",
@@ -214,7 +217,7 @@ const optionContentById = {
       {
         icon: MapPin,
         title: "Airport pickup",
-        text: "Bell/RRC shared transfer check-in is listed at Level 1, Gate 8. Always use the exact counter or pickup point shown on your ticket.",
+        text: "Shared-transfer pickup depends on the partner. Always use the exact counter or pickup point shown on your ticket.",
       },
       {
         icon: Luggage,
@@ -232,7 +235,7 @@ const optionContentById = {
       },
       {
         title: "Check the final meeting point",
-        text: "Bell/RRC lists Suvarnabhumi shared-transfer check-in at the passenger terminal on Level 1, Gate 8. Other vouchers can still name a different partner point.",
+        text: "Some vouchers start at Suvarnabhumi, while others can name a partner point. If the pickup is not clearly inside the airport, choose a clearer option.",
       },
     ],
     lastMile:
@@ -244,7 +247,7 @@ const optionContentById = {
     ],
     tips: [
       "Shared transfer can be a useful middle option when the schedule fits and your hotel is in the covered Pattaya area.",
-      "Bell/RRC publishes fixed shared departures from Suvarnabhumi to Pattaya, so it is not as flexible as a private taxi.",
+      "Shared transfer runs on partner schedules, so it is not as flexible as a private taxi.",
       "Confirm whether the ticket goes directly to your hotel or only to an operator point in Pattaya.",
       "Check luggage allowance before booking if you have more than one large bag.",
       "For late arrivals, private taxi is usually more predictable than a shared transfer.",
