@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, CalendarDays, House, Plane } from "lucide-react";
+import { BookOpen, CalendarDays, House, Plane, Sparkles } from "lucide-react";
 
 const navItems = [
   {
@@ -26,6 +26,12 @@ const navItems = [
     active: false,
     icon: BookOpen,
   },
+  {
+    label: "Extras",
+    href: "/travel-extras",
+    active: false,
+    icon: Sparkles,
+  },
 ];
 
 type MobileBottomNavProps = {
@@ -35,7 +41,7 @@ type MobileBottomNavProps = {
 export function MobileBottomNav({ activeLabel = "Home" }: MobileBottomNavProps) {
   return (
     <nav className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e8e3d9] bg-white px-4 pb-[calc(0.4rem+env(safe-area-inset-bottom))] pt-1.5 lg:hidden">
-      <div className="mx-auto grid max-w-md grid-cols-4">
+      <div className="mx-auto grid max-w-md grid-cols-5">
         {navItems.map((item) => {
           const Icon = item.icon;
 
