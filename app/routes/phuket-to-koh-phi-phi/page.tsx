@@ -10,10 +10,10 @@ const route = getRoutePageBySlug("phuket-to-koh-phi-phi");
 export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
-    "Phuket to Koh Phi Phi Transfers | Ferry & Speedboat",
+    "Phuket to Phi Phi Ferry & Speedboat",
   description:
     route?.seoDescription ??
-    "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
+    "Compare Phuket to Phi Phi ferry and speedboat tickets from Rassada Pier. Checked local bands start from THB400; confirm Tonsai or Laemtong.",
   alternates: {
     canonical: "/routes/phuket-to-koh-phi-phi",
   },
@@ -73,9 +73,9 @@ export default async function PhuketToKohPhiPhiPage({
     <RoutePageTemplate
       route={route}
       badge="Island ferry transfer comparison"
-      desktopDescription="Compare ferry, speedboat and combined hotel transfer options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, hotel pickup if included, luggage allowance and final partner prices before booking."
-      mobileDescription="Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check current schedules, departure pier and luggage rules before booking."
-      optionsHeading="Compare Phuket to Koh Phi Phi transfer options"
+      desktopDescription="Compare Phuket to Phi Phi ferry, speedboat and combined hotel transfer options from Rassada Pier or listed pickup points. Check Tonsai or Laemtong arrival, luggage allowance and live partner prices before booking."
+      mobileDescription="Compare ferry and speedboat options from Phuket to Phi Phi. Check current schedules, departure pier and luggage rules before booking."
+      optionsHeading="Compare Phuket to Phi Phi ferry and speedboat options"
       detailsNote="For island routes, check the departure pier, arrival pier, hotel pickup if included, luggage allowance and weather-related schedule changes before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen

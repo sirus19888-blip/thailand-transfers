@@ -18,6 +18,24 @@ const standardDetailsSlugs = [
   "chiang-mai-to-bangkok",
 ];
 
+const seoBySlug: Record<string, { title: string; description: string }> = {
+  "phuket-airport-to-patong-beach": {
+    title: "Phuket to Patong Airport Transfer Guide",
+    description:
+      "Use the Phuket to Patong airport transfer guide for Smart Bus stop notes, taxi timing, luggage, late arrivals and hotel drop-off.",
+  },
+  "patong-beach-to-phuket-airport": {
+    title: "Patong to Phuket Airport Transfer Guide",
+    description:
+      "Plan Patong to Phuket Airport transfer by taxi, bus or van. Check pickup point, traffic risk, luggage and buffer before check-in.",
+  },
+  "phuket-airport-to-kata-karon": {
+    title: "Phuket Airport to Kata & Karon Transfer Guide",
+    description:
+      "Use the Phuket Airport to Kata and Karon guide for bus stop context, van/taxi bands, hotel drop-off and late-arrival choices.",
+  },
+};
+
 type RouteDetailsPageProps = {
   params: Promise<{
     slug: string;
@@ -43,9 +61,14 @@ export async function generateMetadata({
     };
   }
 
-  return createPageMetadata({
+  const seo = seoBySlug[route.slug] ?? {
     title: `${route.from} to ${route.to} Guide | Pickup Tips & FAQ`,
     description: `Read practical tips for travelling from ${route.from} to ${route.to}. Check pickup points, timing, luggage rules and booking advice.`,
+  };
+
+  return createPageMetadata({
+    title: seo.title,
+    description: seo.description,
     alternates: {
       canonical: `/routes/${route.slug}/details`,
     },

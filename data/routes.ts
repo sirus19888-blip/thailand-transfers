@@ -137,8 +137,8 @@ export const popularRoutes = [
 },
   {
     id: "surat-thani-airport-koh-samui-featured",
-    title: "Surat Thani Airport to Koh Samui",
-    description: "Airport to island transfer from Surat Thani Airport to Koh Samui.",
+    title: "Surat Thani to Koh Samui ferry",
+    description: "Airport bus, van and ferry transfer to Koh Samui.",
     price: "Final price on partner",
     duration: "3h 30m – 5h",
     image: "/assets/routes/surat-thani-airport-to-koh-samui.png",
@@ -146,8 +146,8 @@ export const popularRoutes = [
   },
   {
     id: "phuket-airport-patong-beach",
-    title: "Phuket Airport to Patong Beach",
-    description: "Airport to beach transfer from Phuket Airport to Patong Beach.",
+    title: "Phuket to Patong Beach",
+    description: "Airport bus, van and taxi transfer to Patong Beach.",
     price: "Final price on partner",
     duration: "1h – 2h",
     image: "/assets/routes/phuket-airport-to-patong-beach.png",
@@ -156,7 +156,7 @@ export const popularRoutes = [
   {
     id: "patong-beach-phuket-airport",
     title: "Patong Beach to Phuket Airport",
-    description: "Beach to airport transfer from Patong Beach to Phuket Airport.",
+    description: "Taxi, bus and van transfer back to Phuket Airport.",
     price: "Final price on partner",
     duration: "1h – 2h",
     image: "/assets/routes/patong-beach-to-phuket-airport.png",
@@ -164,8 +164,8 @@ export const popularRoutes = [
   },
   {
     id: "phuket-airport-kata-karon",
-    title: "Phuket Airport to Kata and Karon",
-    description: "Airport transfer from Phuket Airport to Kata and Karon beach areas.",
+    title: "Phuket Airport to Kata & Karon",
+    description: "Bus, van and taxi transfer to Kata or Karon beach areas.",
     price: "Final price on partner",
     duration: "1h 15m – 2h 30m",
     image: "/assets/routes/phuket-airport-to-kata-karon.png",
@@ -198,10 +198,10 @@ export const popularRoutes = [
     image: "/assets/routes/koh-samui-to-surat-thani-airport.png",
     href: "/routes/koh-samui-to-surat-thani-airport",
   },
-  {
+{
   id: "phuket-koh-phi-phi",
-  title: "Phuket to Koh Phi Phi",
-  description: "Compare ferry and speedboat options to Phi Phi Islands.",
+  title: "Phuket to Phi Phi ferry",
+  description: "Compare ferry and speedboat tickets from Rassada Pier.",
   price: "Final price on partner",
   duration: "1h – 3h",
   image: "/assets/routes/phuket-to-koh-phi-phi.png",
@@ -263,8 +263,8 @@ export const popularRoutes = [
   },
 {
   id: "krabi-koh-phi-phi",
-  title: "Krabi to Koh Phi Phi",
-  description: "Compare ferry and speedboat options from Krabi to Phi Phi.",
+  title: "Krabi to Phi Phi ferry",
+  description: "Compare ferry and speedboat tickets from Klong Jilad.",
   price: "Final price on partner",
   duration: "1h – 3h",
   image: "/assets/routes/krabi-to-koh-phi-phi.png",
@@ -272,8 +272,8 @@ export const popularRoutes = [
 },
 {
   id: "koh-phi-phi-krabi",
-  title: "Koh Phi Phi to Krabi",
-  description: "Return ferry and speedboat options from Phi Phi to Krabi.",
+  title: "Phi Phi to Krabi ferry",
+  description: "Return ferry, speedboat and onward van options to Krabi.",
   price: "Final price on partner",
   duration: "1h – 3h",
   image: "/assets/routes/koh-phi-phi-to-krabi.png",
@@ -281,8 +281,8 @@ export const popularRoutes = [
 },
 {
   id: "surat-thani-airport-koh-phangan",
-  title: "Surat Thani Airport to Koh Phangan",
-  description: "Airport to island transfer with bus, van and ferry options.",
+  title: "Surat Thani to Koh Phangan ferry",
+  description: "Airport bus, van and ferry transfer to Thong Sala.",
   price: "Final price on partner",
   duration: "4h – 7h",
   image: "/assets/routes/surat-thani-airport-to-koh-phangan.png",
@@ -291,7 +291,7 @@ export const popularRoutes = [
 {
   id: "koh-phangan-surat-thani-airport",
   title: "Koh Phangan to Surat Thani Airport",
-  description: "Island to airport transfer with ferry, bus and van options.",
+  description: "Ferry, bus and van transfer with flight-buffer planning.",
   price: "Final price on partner",
   duration: "4h – 7h",
   image: "/assets/routes/koh-phangan-to-surat-thani-airport.png",

@@ -10,10 +10,10 @@ const route = getRoutePageBySlug("surat-thani-airport-to-koh-phangan");
 export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
-    "Surat Thani Airport to Koh Phangan Transfers | Bus, Van & Ferry",
+    "Surat Thani to Koh Phangan Ferry & Bus",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and final partner prices.",
+    "Compare Surat Thani to Koh Phangan ferry plus bus, van or taxi tickets from the airport. Check Don Sak to Thong Sala timing and live prices.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-phangan",
   },
@@ -73,9 +73,9 @@ export default async function SuratThaniAirportToKohPhanganPage({
     <RoutePageTemplate
       route={route}
       badge="Airport to island transfer comparison"
-      desktopDescription="Compare combined transfer options from Surat Thani Airport to Koh Phangan, including bus plus ferry, van plus ferry and taxi plus ferry routes. Check airport pickup point, departure pier, arrival pier, luggage allowance and final partner prices before booking."
-      mobileDescription="Compare bus, van, taxi and ferry combinations from Surat Thani Airport to Koh Phangan. Check current schedules, pickup points and luggage rules before booking."
-      optionsHeading="Compare Surat Thani Airport to Koh Phangan transfer options"
+      desktopDescription="Compare Surat Thani to Koh Phangan ferry transfer options from the airport, including bus plus ferry, van plus ferry and taxi plus ferry routes. Check airport pickup point, Don Sak transfer, Thong Sala arrival, luggage allowance and live partner prices before booking."
+      mobileDescription="Compare ferry, bus, van and taxi combinations from Surat Thani to Koh Phangan. Check current schedules, pickup points and luggage rules before booking."
+      optionsHeading="Compare Surat Thani to Koh Phangan ferry options"
       detailsNote="For airport-to-island routes, allow extra time for baggage claim, pier transfer and ferry boarding. Check your airport pickup point, departure pier, arrival pier, luggage allowance and current operator schedule before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen

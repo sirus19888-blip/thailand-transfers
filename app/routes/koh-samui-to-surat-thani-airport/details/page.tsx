@@ -8,9 +8,9 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("koh-samui-to-surat-thani-airport");
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Koh Samui to Surat Thani Airport Guide | Ferry Tips & FAQ",
+  title: "Koh Samui to Surat Thani Airport Ferry Guide",
   description:
-    "Read practical tips for travelling from Koh Samui to Surat Thani Airport. Check hotel pickup, departure pier, ferry crossing, mainland transfer, airport buffer and luggage notes.",
+    "Plan Koh Samui to Surat Thani Airport by ferry: pier pickup, Don Sak crossing, mainland transfer and realistic buffer before your flight.",
   alternates: {
     canonical: "/routes/koh-samui-to-surat-thani-airport/details",
   },

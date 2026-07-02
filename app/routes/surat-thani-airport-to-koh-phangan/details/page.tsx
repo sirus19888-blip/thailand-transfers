@@ -8,9 +8,9 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("surat-thani-airport-to-koh-phangan");
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Surat Thani Airport to Koh Phangan Guide | Ferry Tips & FAQ",
+  title: "Surat Thani to Koh Phangan Ferry Guide",
   description:
-    "Read practical tips for travelling from Surat Thani Airport to Koh Phangan. Check airport pickup, pier transfer, ferry crossing, luggage notes and booking advice.",
+    "Step through Surat Thani to Koh Phangan ferry planning: airport meeting point, Don Sak transfer, Thong Sala arrival, luggage and late-flight fallback.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-phangan/details",
   },
@@ -110,7 +110,7 @@ export default function SuratThaniAirportToKohPhanganDetailsPage() {
       mobileSubtitle="Airport pickup, pier transfer and ferry crossing"
       overviewImage="/assets/routes/surat-thani-airport-to-koh-phangan-overview.png"
       overviewAlt="Surat Thani Airport to Koh Phangan route"
-      heroTitle="Surat Thani Airport to Koh Phangan: ferry transfer guide"
+      heroTitle="Surat Thani to Koh Phangan: ferry transfer guide"
       heroDescription="Before booking, check the airport pickup point, mainland pier transfer, ferry crossing, Koh Phangan arrival pier, luggage rules and whether island-side drop-off is included."
       heroImage="/assets/routes/surat-thani-airport-to-koh-phangan.png"
       heroAlt="Surat Thani Airport to Koh Phangan transfer"

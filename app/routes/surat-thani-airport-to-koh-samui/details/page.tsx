@@ -40,9 +40,9 @@ const lastCheckedLabel =
   routeFactSet?.checkedOn === "2026-07" ? "July 2026" : "June 2026";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Surat Thani Airport to Koh Samui Guide | Ferry Tips & FAQ",
+  title: "Surat Thani to Koh Samui Ferry Guide",
   description:
-    "Read practical tips for travelling from Surat Thani Airport to Koh Samui. Check airport pickup, pier transfer, ferry crossing, luggage notes and booking advice.",
+    "Read the Surat Thani to Koh Samui ferry guide for airport pickup, Don Sak transfer, Samui arrival pier, hotel drop-off and luggage notes.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-samui/details",
   },
@@ -462,7 +462,7 @@ export default function SuratThaniAirportToKohSamuiDetailsPage() {
                 </p>
 
                 <h1 className="text-3xl font-bold tracking-tight text-[#10201d] min-[390px]:text-4xl lg:text-6xl">
-                  Surat Thani Airport to Koh Samui: ferry transfer guide
+                  Surat Thani to Koh Samui: ferry transfer guide
                 </h1>
 
                 <p className="mt-5 text-base leading-7 text-slate-600 lg:text-lg lg:leading-8">

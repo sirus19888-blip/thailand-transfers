@@ -9,10 +9,10 @@ const route = getRoutePageBySlug("patong-beach-to-phuket-airport");
 export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
-    "Patong Beach to Phuket Airport Transfers | Bus, Van & Taxi",
+    "Patong Beach to Phuket Airport Taxi & Bus",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Patong Beach to Phuket Airport. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
+    "Compare Patong Beach to Phuket Airport taxi, bus and van options. Check pickup points, road timing, luggage and flight buffer before booking.",
   alternates: {
     canonical: "/routes/patong-beach-to-phuket-airport",
   },
@@ -27,9 +27,9 @@ export default function PatongBeachToPhuketAirportPage() {
     <RoutePageTemplate
       route={route}
       badge="Beach to airport transfer comparison"
-      desktopDescription="Compare transfer options from Patong Beach to Phuket Airport, including airport bus, shared van, private taxi and taxi plus van combinations. Check hotel pickup area, airport drop-off point, luggage allowance and final partner prices before booking."
+      desktopDescription="Compare Patong Beach to Phuket Airport transfer options, including bus, shared van, private taxi and taxi plus van combinations. Check hotel pickup area, airport drop-off point, luggage allowance and live partner prices before booking."
       mobileDescription="Compare bus, van and taxi options from Patong Beach to Phuket Airport. Check current schedules, pickup points and luggage rules before booking."
-      optionsHeading="Compare Patong Beach to Phuket Airport transfer options"
+      optionsHeading="Compare Patong Beach to Phuket Airport taxi and bus options"
       detailsNote="For airport transfers, allow extra time before your flight. Check your Patong pickup point, Phuket Airport drop-off area, luggage allowance and current operator schedule before booking."
     />
   );

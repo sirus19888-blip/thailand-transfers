@@ -10,10 +10,10 @@ const route = getRoutePageBySlug("koh-phangan-to-surat-thani-airport");
 export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
-    "Koh Phangan to Surat Thani Airport Transfers | Ferry, Bus & Van",
+    "Koh Phangan to Surat Thani Airport Ferry & Bus",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Koh Phangan to Surat Thani Airport. Check ferry, bus, van and combined transfer options, pickup details, travel times and final partner prices.",
+    "Compare Koh Phangan to Surat Thani Airport ferry plus bus, van or taxi tickets. Check Thong Sala departure, mainland transfer and flight buffer.",
   alternates: {
     canonical: "/routes/koh-phangan-to-surat-thani-airport",
   },
@@ -73,9 +73,9 @@ export default async function KohPhanganToSuratThaniAirportPage({
     <RoutePageTemplate
       route={route}
       badge="Island to airport transfer comparison"
-      desktopDescription="Compare combined transfer options from Koh Phangan to Surat Thani Airport, including ferry plus bus, ferry plus van and ferry plus taxi routes. Check departure pier, airport arrival time, luggage allowance and final partner prices before booking."
+      desktopDescription="Compare Koh Phangan to Surat Thani Airport ferry transfer options, including ferry plus bus, ferry plus van and ferry plus taxi routes. Check Thong Sala departure, airport arrival time, luggage allowance and live partner prices before booking."
       mobileDescription="Compare ferry, bus, van and taxi combinations from Koh Phangan to Surat Thani Airport. Check current schedules, pier details and luggage rules before booking."
-      optionsHeading="Compare Koh Phangan to Surat Thani Airport transfer options"
+      optionsHeading="Compare Koh Phangan to Surat Thani Airport ferry options"
       detailsNote="For island-to-airport routes, allow extra time before your flight. Check your departure pier, ferry schedule, airport arrival time, luggage allowance and current operator schedule before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen

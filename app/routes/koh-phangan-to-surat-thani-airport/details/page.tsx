@@ -8,9 +8,9 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("koh-phangan-to-surat-thani-airport");
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Koh Phangan to Surat Thani Airport Guide | Ferry Tips & FAQ",
+  title: "Koh Phangan to Surat Thani Airport Ferry Guide",
   description:
-    "Read practical tips for travelling from Koh Phangan to Surat Thani Airport. Check departure pier, ferry timing, mainland transfer, airport arrival buffer and luggage notes.",
+    "Plan Koh Phangan to Surat Thani Airport by ferry: Thong Sala check-in, Don Sak handoff, bus or van transfer and safe flight buffer.",
   alternates: {
     canonical: "/routes/koh-phangan-to-surat-thani-airport/details",
   },

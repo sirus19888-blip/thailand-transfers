@@ -10,10 +10,10 @@ const route = getRoutePageBySlug("koh-phi-phi-to-krabi");
 export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
-    "Koh Phi Phi to Krabi Transfers | Ferry & Speedboat",
+    "Phi Phi to Krabi Ferry & Speedboat",
   description:
     route?.seoDescription ??
-    "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
+    "Compare Phi Phi to Krabi ferry, speedboat and ferry-plus-van tickets. Check Tonsai to Klong Jilad, onward transfer and flight buffer.",
   alternates: {
     canonical: "/routes/koh-phi-phi-to-krabi",
   },
@@ -73,9 +73,9 @@ export default async function KohPhiPhiToKrabiPage({
     <RoutePageTemplate
       route={route}
       badge="Island ferry transfer comparison"
-      desktopDescription="Compare ferry, speedboat and onward transfer options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, Krabi drop-off area if included, luggage allowance and final partner prices before booking."
-      mobileDescription="Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check current schedules, departure pier and luggage rules before booking."
-      optionsHeading="Compare Koh Phi Phi to Krabi transfer options"
+      desktopDescription="Compare Phi Phi to Krabi ferry, speedboat and onward transfer options. Check Tonsai departure, Klong Jilad arrival, Krabi drop-off area if included, luggage allowance and live partner prices before booking."
+      mobileDescription="Compare ferry and speedboat options from Phi Phi to Krabi. Check current schedules, departure pier and luggage rules before booking."
+      optionsHeading="Compare Phi Phi to Krabi ferry and speedboat options"
       detailsNote="For island routes, check the departure pier, arrival pier, onward transfer if included, luggage allowance and weather-related schedule changes before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen

@@ -8,9 +8,9 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("krabi-to-koh-phi-phi");
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Krabi to Koh Phi Phi Guide | Ferry, Speedboat & Pier Tips",
+  title: "Krabi to Phi Phi Ferry Guide",
   description:
-    "Read practical tips for travelling from Krabi to Koh Phi Phi. Check departure pier, ferry and speedboat timing, luggage notes, weather warnings and FAQ.",
+    "Plan the Krabi to Phi Phi ferry from Klong Jilad to Tonsai. Check ticket-only fares, hotel pickup, luggage and speedboat trade-offs.",
   alternates: {
     canonical: "/routes/krabi-to-koh-phi-phi/details",
   },
@@ -110,7 +110,7 @@ export default function KrabiToKohPhiPhiDetailsPage() {
       mobileSubtitle="Departure pier, sea crossing and arrival pier"
       overviewImage="/assets/routes/krabi-to-koh-phi-phi-overview.png"
       overviewAlt="Krabi to Koh Phi Phi route"
-      heroTitle="Krabi to Koh Phi Phi: ferry and speedboat guide"
+      heroTitle="Krabi to Phi Phi: ferry and speedboat guide"
       heroDescription="Before booking, check your Krabi departure pier, hotel pickup if included, ferry or speedboat timing, luggage rules, sea conditions and Koh Phi Phi arrival pier."
       heroImage="/assets/routes/krabi-to-koh-phi-phi.png"
       heroAlt="Krabi to Koh Phi Phi transfer"

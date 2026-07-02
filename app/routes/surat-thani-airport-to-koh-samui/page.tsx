@@ -10,10 +10,10 @@ const route = getRoutePageBySlug("surat-thani-airport-to-koh-samui");
 export const metadata: Metadata = createPageMetadata({
   title:
     route?.seoTitle ??
-    "Surat Thani Airport to Koh Samui Transfers | Bus, Ferry & Van",
+    "Surat Thani to Koh Samui Ferry & Bus Transfer",
   description:
     route?.seoDescription ??
-    "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and final partner prices.",
+    "Compare Surat Thani to Koh Samui ferry plus bus or van tickets from the airport. Check Don Sak transfer, Samui pier details, travel time and live prices.",
   alternates: {
     canonical: "/routes/surat-thani-airport-to-koh-samui",
   },
@@ -82,9 +82,9 @@ export default async function SuratThaniAirportToKohSamuiPage({
     <RoutePageTemplate
       route={route}
       badge="Airport to island transfer comparison"
-      desktopDescription="Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, luggage allowance and final partner prices before booking."
+      desktopDescription="Compare Surat Thani to Koh Samui ferry transfer options from the airport, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. Check airport pickup point, Don Sak transfer, ferry crossing, Koh Samui arrival pier, luggage allowance and live partner prices before booking."
       mobileDescription="Compare bus, ferry and van transfer options from Surat Thani Airport to Koh Samui. Check current schedules, airport pickup points, ferry crossing and luggage rules before booking."
-      optionsHeading="Compare Surat Thani Airport to Koh Samui transfer options"
+      optionsHeading="Compare Surat Thani to Koh Samui ferry options"
       detailsNote="For airport-to-island transfers, allow extra time for baggage claim and possible flight delays. Check your airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance and current operator schedule before booking."
       mobileContent={
         <MobilePriorityRouteOptionsScreen

@@ -599,15 +599,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "surat-thani-airport-to-koh-samui",
-    title: "Surat Thani Airport to Koh Samui Transfers",
-    seoTitle:
-      "Surat Thani Airport to Koh Samui Transfers | Bus, Ferry & Van",
+    title: "Surat Thani to Koh Samui Ferry Transfer",
+    seoTitle: "Surat Thani to Koh Samui Ferry & Bus Transfer",
     seoDescription:
-      "Compare transfer options from Surat Thani Airport to Koh Samui. Check bus plus ferry, van plus ferry and combined transfer options, airport pickup details, ferry crossing, travel times and final partner prices.",
+      "Compare Surat Thani to Koh Samui ferry plus bus or van tickets from the airport. Check Don Sak transfer, Samui pier details, travel time and live prices.",
     from: "Surat Thani Airport",
     to: "Koh Samui",
     intro:
-      "Compare transfer options from Surat Thani Airport to Koh Samui, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. This route is useful for travelers landing at Surat Thani Airport and continuing to Koh Samui without booking each leg separately. Check airport pickup point, pier transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance, travel time and final partner prices before booking. If you arrive by plane, allow extra time for baggage claim and possible flight delays. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare Surat Thani to Koh Samui ferry transfer options from the airport, including bus plus ferry, van plus ferry, ferry plus van and combined airport-to-island tickets. This route is useful for travelers landing at Surat Thani Airport and continuing to Koh Samui without booking each leg separately. Check airport pickup point, Don Sak transfer, ferry crossing, Koh Samui arrival pier, hotel drop-off if included, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for baggage claim and possible flight delays. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/surat-thani-airport/koh-samui/?z=15791301&sub_id=surat-thani-airport-koh-samui-general",
     options: [
@@ -663,15 +662,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "koh-samui-to-surat-thani-airport",
-    title: "Koh Samui to Surat Thani Airport Transfers",
-    seoTitle:
-      "Koh Samui to Surat Thani Airport Transfers | Ferry, Bus & Van",
+    title: "Koh Samui to Surat Thani Airport Ferry",
+    seoTitle: "Koh Samui to Surat Thani Airport Ferry & Bus",
     seoDescription:
-      "Compare transfer options from Koh Samui to Surat Thani Airport. Check ferry plus bus, ferry plus van and combined transfer options, island pickup details, ferry crossing, travel times and final partner prices.",
+      "Compare Koh Samui to Surat Thani Airport ferry plus bus or van tickets. Check island pickup, mainland transfer, weather risk and flight buffer.",
     from: "Koh Samui",
     to: "Surat Thani Airport",
     intro:
-      "Compare transfer options from Koh Samui to Surat Thani Airport, including ferry plus bus, ferry plus van, bus plus ferry and combined island-to-airport tickets. This route is useful for travelers leaving Koh Samui and connecting to a flight from Surat Thani Airport. Check hotel pickup if included, Koh Samui departure pier, ferry crossing, mainland transfer, airport drop-off, luggage allowance, travel time and final partner prices before booking. Allow extra time before your flight, especially during bad weather, ferry delays or busy travel periods. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare Koh Samui to Surat Thani Airport ferry transfer options, including ferry plus bus, ferry plus van, bus plus ferry and combined island-to-airport tickets. This route is useful for travelers leaving Koh Samui and connecting to a flight from Surat Thani Airport. Check hotel pickup if included, Koh Samui departure pier, ferry crossing, mainland transfer, airport drop-off, luggage allowance, travel time and live partner prices before booking. Allow extra time before your flight, especially during bad weather, ferry delays or busy travel periods. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/koh-samui/surat-thani-airport/?z=15791301&sub_id=koh-samui-surat-thani-airport-general",
     options: [
@@ -727,15 +725,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "phuket-airport-to-patong-beach",
-    title: "Phuket Airport to Patong Beach Transfers",
-    seoTitle:
-      "Phuket Airport to Patong Beach Transfers | Bus, Van & Taxi",
+    title: "Phuket to Patong Beach Airport Transfer",
+    seoTitle: "Phuket to Patong Beach: Airport Bus & Taxi",
     seoDescription:
-      "Compare transfer options from Phuket Airport to Patong Beach. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
+      "Compare Phuket to Patong Beach airport bus, van and taxi options. Checked local bands start from THB125; review pickup points and live prices.",
     from: "Phuket Airport",
     to: "Patong Beach",
     intro:
-      "Compare transfer options from Phuket Airport to Patong Beach, including airport bus, shared van, private taxi and taxi plus van combinations. This is one of the most popular Phuket arrival routes for travelers going from the airport to hotels near Patong Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and final partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
+      "Compare Phuket to Patong Beach airport transfer options, including airport bus, shared van, private taxi and taxi plus van combinations. This is one of the most popular Phuket arrival routes for travelers going from the airport to hotels near Patong Beach. Check airport pickup point, hotel drop-off area, luggage allowance, travel time and live partner prices before booking. If you arrive by plane, allow extra time for immigration, baggage claim and possible flight delays. Thailand Transfer Guide is an independent travel comparison website. Booking and support are handled by travel partners and operators.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/phuket-airport/patong-beach/?z=15791301&sub_id=phuket-airport-patong-beach-general",
     options: [
@@ -791,11 +788,10 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "patong-beach-to-phuket-airport",
-    title: "Patong Beach to Phuket Airport Transfers",
-    seoTitle:
-      "Patong Beach to Phuket Airport Transfers | Bus, Van & Taxi",
+    title: "Patong Beach to Phuket Airport Transfer",
+    seoTitle: "Patong Beach to Phuket Airport Taxi & Bus",
     seoDescription:
-      "Compare transfer options from Patong Beach to Phuket Airport. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
+      "Compare Patong Beach to Phuket Airport taxi, bus and van options. Check pickup points, road timing, luggage and flight buffer before booking.",
     from: "Patong Beach",
     to: "Phuket Airport",
     intro:
@@ -855,11 +851,10 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "phuket-airport-to-kata-karon",
-    title: "Phuket Airport to Kata and Karon Transfers",
-    seoTitle:
-      "Phuket Airport to Kata and Karon Transfers | Bus, Van & Taxi",
+    title: "Phuket Airport to Kata and Karon Transfer",
+    seoTitle: "Phuket Airport to Kata & Karon Bus & Taxi",
     seoDescription:
-      "Compare transfer options from Phuket Airport to Kata and Karon. Check airport bus, shared van, private taxi and taxi plus van options, pickup details, travel times and final partner prices.",
+      "Compare Phuket Airport to Kata and Karon bus, van and taxi options. Check Smart Bus context, hotel drop-off, luggage rules and live fares.",
     from: "Phuket Airport",
     to: "Kata and Karon",
     intro:
@@ -1037,14 +1032,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "phuket-to-koh-phi-phi",
-    title: "Phuket to Koh Phi Phi transfers",
-    seoTitle: "Phuket to Koh Phi Phi Transfers | Ferry & Speedboat",
+    title: "Phuket to Phi Phi Ferry Transfer",
+    seoTitle: "Phuket to Phi Phi Ferry & Speedboat",
     seoDescription:
-      "Compare ferry and speedboat options from Phuket to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
+      "Compare Phuket to Phi Phi ferry and speedboat tickets from Rassada Pier. Checked local bands start from THB400; confirm Tonsai or Laemtong.",
     from: "Phuket",
     to: "Koh Phi Phi",
     intro:
-      "Compare sea transfer options from Phuket to Koh Phi Phi, including ferry, speedboat and combined hotel transfer options.",
+      "Compare Phuket to Phi Phi ferry transfer options, including ferry, speedboat and combined hotel transfer tickets from Rassada Pier or listed partner pickup points.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/phuket/koh-phi-phi/?z=15791301&sub_id=phuket-koh-phi-phi-general",
     options: [
@@ -1085,14 +1080,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "krabi-to-koh-phi-phi",
-    title: "Krabi to Koh Phi Phi transfers",
-    seoTitle: "Krabi to Koh Phi Phi Transfers | Ferry & Speedboat",
+    title: "Krabi to Phi Phi Ferry Transfer",
+    seoTitle: "Krabi to Phi Phi Ferry & Speedboat",
     seoDescription:
-      "Compare ferry and speedboat options from Krabi to Koh Phi Phi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
+      "Compare Krabi to Phi Phi ferry and speedboat tickets. Checked ferry band starts from THB300; confirm Klong Jilad, Tonsai and pickup rules.",
     from: "Krabi",
     to: "Koh Phi Phi",
     intro:
-      "Compare ferry, speedboat and combined transfer options from Krabi to Koh Phi Phi.",
+      "Compare Krabi to Phi Phi ferry transfer options, including ferry, speedboat and combined pickup tickets from Klong Jilad or listed partner pickup points.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/krabi/koh-phi-phi/?z=15791301&sub_id=krabi-koh-phi-phi-general",
     options: [
@@ -1133,14 +1128,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "koh-phi-phi-to-krabi",
-    title: "Koh Phi Phi to Krabi transfers",
-    seoTitle: "Koh Phi Phi to Krabi Transfers | Ferry & Speedboat",
+    title: "Phi Phi to Krabi Ferry Transfer",
+    seoTitle: "Phi Phi to Krabi Ferry & Speedboat",
     seoDescription:
-      "Compare ferry and speedboat options from Koh Phi Phi to Krabi. Check departure pier, arrival pier, luggage rules, travel times and final partner prices.",
+      "Compare Phi Phi to Krabi ferry, speedboat and ferry-plus-van tickets. Check Tonsai to Klong Jilad, onward transfer and flight buffer.",
     from: "Koh Phi Phi",
     to: "Krabi",
     intro:
-      "Compare ferry, speedboat and onward transfer options from Koh Phi Phi to Krabi.",
+      "Compare Phi Phi to Krabi ferry transfer options, including ferry, speedboat and onward van tickets from Tonsai Pier to Krabi.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/koh-phi-phi/krabi/?z=15791301&sub_id=koh-phi-phi-krabi-general",
     options: [
@@ -1181,14 +1176,14 @@ export const routePages: RoutePageData[] = [
   },
 {
     slug: "surat-thani-airport-to-koh-phangan",
-    title: "Surat Thani Airport to Koh Phangan transfers",
-    seoTitle: "Surat Thani Airport to Koh Phangan Transfers | Bus, Van & Ferry",
+    title: "Surat Thani to Koh Phangan Ferry Transfer",
+    seoTitle: "Surat Thani to Koh Phangan Ferry & Bus",
     seoDescription:
-      "Compare transfer options from Surat Thani Airport to Koh Phangan. Check bus, van, ferry and combined transfer options, pickup details, travel times and final partner prices.",
+      "Compare Surat Thani to Koh Phangan ferry plus bus, van or taxi tickets from the airport. Check Don Sak to Thong Sala timing and live prices.",
     from: "Surat Thani Airport",
     to: "Koh Phangan",
     intro:
-      "Compare combined airport transfer options from Surat Thani Airport to Koh Phangan, including bus, van and ferry combinations.",
+      "Compare Surat Thani to Koh Phangan ferry transfer options from the airport, including bus, van and taxi combinations toward Don Sak and Thong Sala.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/surat-thani-airport/koh-phangan/?z=15791301&sub_id=surat-thani-airport-koh-phangan-general",
     options: [
@@ -1229,14 +1224,14 @@ export const routePages: RoutePageData[] = [
   },
   {
     slug: "koh-phangan-to-surat-thani-airport",
-    title: "Koh Phangan to Surat Thani Airport transfers",
-    seoTitle: "Koh Phangan to Surat Thani Airport Transfers | Ferry, Bus & Van",
+    title: "Koh Phangan to Surat Thani Airport Ferry",
+    seoTitle: "Koh Phangan to Surat Thani Airport Ferry & Bus",
     seoDescription:
-      "Compare transfer options from Koh Phangan to Surat Thani Airport. Check ferry, bus, van and combined transfer options, pickup details, travel times and final partner prices.",
+      "Compare Koh Phangan to Surat Thani Airport ferry plus bus, van or taxi tickets. Check Thong Sala departure, mainland transfer and flight buffer.",
     from: "Koh Phangan",
     to: "Surat Thani Airport",
     intro:
-      "Compare return transfer options from Koh Phangan to Surat Thani Airport, including ferry, bus and van combinations.",
+      "Compare Koh Phangan to Surat Thani Airport ferry transfer options, including ferry plus bus, van and taxi combinations with a realistic flight buffer.",
     mainAffiliateUrl:
       "https://12go.asia/en/travel/koh-phangan/surat-thani-airport/?z=15791301&sub_id=koh-phangan-surat-thani-airport-general",
     options: [

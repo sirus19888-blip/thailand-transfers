@@ -8,9 +8,9 @@ import { getRoutePageBySlug } from "@/data/routePages";
 const route = getRoutePageBySlug("phuket-to-koh-phi-phi");
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Phuket to Koh Phi Phi Guide | Ferry, Speedboat & Pier Tips",
+  title: "Phuket to Phi Phi Ferry Guide",
   description:
-    "Read practical tips for travelling from Phuket to Koh Phi Phi. Check departure pier, ferry and speedboat timing, luggage notes, weather warnings and FAQ.",
+    "Plan Phuket to Phi Phi ferry from Rassada to Tonsai. Check speedboat trade-offs, hotel pickup, luggage and last practical boat.",
   alternates: {
     canonical: "/routes/phuket-to-koh-phi-phi/details",
   },
@@ -110,7 +110,7 @@ export default function PhuketToKohPhiPhiDetailsPage() {
       mobileSubtitle="Departure pier, sea crossing and arrival pier"
       overviewImage="/assets/routes/phuket-to-koh-phi-phi-overview.png"
       overviewAlt="Phuket to Koh Phi Phi route"
-      heroTitle="Phuket to Koh Phi Phi: ferry and speedboat guide"
+      heroTitle="Phuket to Phi Phi: ferry and speedboat guide"
       heroDescription="Before booking, check your Phuket departure pier, hotel pickup if included, ferry or speedboat timing, luggage rules, sea conditions and Koh Phi Phi arrival pier."
       heroImage="/assets/routes/phuket-to-koh-phi-phi.png"
       heroAlt="Phuket to Koh Phi Phi transfer"
