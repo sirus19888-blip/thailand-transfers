@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, FileText, ShieldCheck } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
+import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { legalLinks } from "@/data/legalPages";
 
@@ -217,6 +218,9 @@ export function PolicyPage({
         </Container>
       </section>
 
+      <div className="lg:hidden">
+        <Footer />
+      </div>
       <MobileBottomNav activeLabel="Guides" />
     </main>
   );

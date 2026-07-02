@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { AlertTriangle, ArrowLeft, Bus, CheckCircle2, Clock3, Luggage, MapPin, ShieldCheck } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { RouteDetailsStructuredData } from "@/components/StructuredData";
 import {
@@ -407,6 +408,8 @@ function MobileDetails() {
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
+
+      <Footer />
 
       <Suspense fallback={null}>
         <MobilePersonalizedDetailsSticky

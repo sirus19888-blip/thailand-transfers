@@ -709,66 +709,68 @@ function MobileHero() {
                 </div>
               </div>
 
-              <div className="relative mt-1">
-                <button
-                  type="button"
-                  aria-controls={
-                    hasMultipleLanguages ? "mobile-language-menu" : undefined
-                  }
-                  aria-expanded={
-                    hasMultipleLanguages ? isMobileLanguageOpen : undefined
-                  }
-                  aria-label={
-                    hasMultipleLanguages
-                      ? "Choose language"
-                      : "Current language: English"
-                  }
-                  onClick={() =>
-                    hasMultipleLanguages
-                      ? setIsMobileLanguageOpen((isOpen) => !isOpen)
-                      : undefined
-                  }
-                  className={`flex h-9 items-center rounded-full bg-white/85 px-3.5 text-[11px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm ${
-                    hasMultipleLanguages ? "" : "cursor-default"
-                  }`}
-                >
-                  EN
-                </button>
-
-                {hasMultipleLanguages && isMobileLanguageOpen ? (
-                  <div
-                    id="mobile-language-menu"
-                    className="absolute right-0 top-12 z-30 w-52 rounded-[20px] border border-[#e7e2d8] bg-white/95 p-2 shadow-xl shadow-black/10 backdrop-blur"
+              {hasMultipleLanguages ? (
+                <div className="relative mt-1">
+                  <button
+                    type="button"
+                    aria-controls={
+                      hasMultipleLanguages ? "mobile-language-menu" : undefined
+                    }
+                    aria-expanded={
+                      hasMultipleLanguages ? isMobileLanguageOpen : undefined
+                    }
+                    aria-label={
+                      hasMultipleLanguages
+                        ? "Choose language"
+                        : "Current language: English"
+                    }
+                    onClick={() =>
+                      hasMultipleLanguages
+                        ? setIsMobileLanguageOpen((isOpen) => !isOpen)
+                        : undefined
+                    }
+                    className={`flex h-9 items-center rounded-full bg-white/85 px-3.5 text-[11px] font-extrabold text-[#10201d] shadow-md backdrop-blur-sm ${
+                      hasMultipleLanguages ? "" : "cursor-default"
+                    }`}
                   >
-                    {supportedLanguages.map((language) => (
-                      <div
-                        key={language.code}
-                        className="flex items-center justify-between gap-3 rounded-2xl px-3 py-2"
-                      >
-                        <div>
-                          <p className="text-[12px] font-extrabold text-[#10201d]">
-                            {language.code}
-                          </p>
-                          <p className="mt-0.5 text-[10px] font-semibold text-slate-500">
-                            {language.label}
-                          </p>
+                    EN
+                  </button>
+
+                  {hasMultipleLanguages && isMobileLanguageOpen ? (
+                    <div
+                      id="mobile-language-menu"
+                      className="absolute right-0 top-12 z-30 w-52 rounded-[20px] border border-[#e7e2d8] bg-white/95 p-2 shadow-xl shadow-black/10 backdrop-blur"
+                    >
+                      {supportedLanguages.map((language) => (
+                        <div
+                          key={language.code}
+                          className="flex items-center justify-between gap-3 rounded-2xl px-3 py-2"
+                        >
+                          <div>
+                            <p className="text-[12px] font-extrabold text-[#10201d]">
+                              {language.code}
+                            </p>
+                            <p className="mt-0.5 text-[10px] font-semibold text-slate-500">
+                              {language.label}
+                            </p>
+                          </div>
+
+                          <span className="rounded-full bg-[#f8f4ec] px-2 py-1 text-[9px] font-extrabold text-[#8b6a20]">
+                            {language.status}
+                          </span>
                         </div>
+                      ))}
 
-                        <span className="rounded-full bg-[#f8f4ec] px-2 py-1 text-[9px] font-extrabold text-[#8b6a20]">
-                          {language.status}
-                        </span>
-                      </div>
-                    ))}
-
-                    {hasMultipleLanguages ? (
-                      <p className="border-t border-[#e7e2d8] px-3 pt-2 text-[10px] leading-4 text-slate-500">
-                        Safety warnings and affiliate disclosures are reviewed
-                        before a language goes live.
-                      </p>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div>
+                      {hasMultipleLanguages ? (
+                        <p className="border-t border-[#e7e2d8] px-3 pt-2 text-[10px] leading-4 text-slate-500">
+                          Safety warnings and affiliate disclosures are reviewed
+                          before a language goes live.
+                        </p>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
 
             <div className="mt-4 max-w-[215px]">

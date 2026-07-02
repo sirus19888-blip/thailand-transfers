@@ -32,7 +32,6 @@ const mobileRoute: RoutePageData = {
     {
       id: "bus",
       name: "Airport Bus",
-      price: "Check final price and ticket rules",
       duration: "2h - 2h 30m",
       pickup: "Level 1, Gate 8 or voucher point",
       bestFor:
@@ -44,7 +43,6 @@ const mobileRoute: RoutePageData = {
     {
       id: "taxi",
       name: "Private Taxi",
-      price: "Check final price and ticket rules",
       duration: "1h 30m - 2h 30m",
       pickup: "Arrivals hall or private driver meeting point",
       bestFor: "Late arrivals, families, luggage and door-to-door travel",
@@ -55,7 +53,6 @@ const mobileRoute: RoutePageData = {
     {
       id: "van",
       name: "Shared Van",
-      price: "Check final price and ticket rules",
       duration: "2h - 3h",
       pickup: "Airport meeting point or partner pickup area",
       bestFor:

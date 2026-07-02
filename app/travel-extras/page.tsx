@@ -26,7 +26,7 @@ export default function TravelExtrasPage() {
         <Container>
           <div className="max-w-3xl">
             <p className="mb-3 text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#c99a2e]">
-              Travel extras
+              Before you land
             </p>
 
             <h1 className="text-[34px] font-extrabold tracking-normal text-[#10201d] lg:text-[52px]">

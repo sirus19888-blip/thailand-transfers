@@ -7,6 +7,7 @@ import {
   bangkokAirportToPattayaDetailsRoute as routeData,
 } from "@/data/bangkokAirportToPattayaDetails";
 import { AffiliateDisclosure } from "./AffiliateDisclosure";
+import { Footer } from "./Footer";
 import { MobileBottomNav } from "./MobileBottomNav";
 import {
   MobilePersonalizedDetailsSticky,
@@ -601,6 +602,8 @@ export function MobileRouteDetailsScreen({
         </p>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
+
+      <Footer />
 
       <Suspense fallback={null}>
         <MobilePersonalizedDetailsSticky

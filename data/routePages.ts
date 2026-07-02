@@ -1,7 +1,7 @@
 export type RouteTransportOption = {
   id: string;
   name: string;
-  price: string;
+  price?: string;
   duration: string;
   pickup: string;
   bestFor: string;

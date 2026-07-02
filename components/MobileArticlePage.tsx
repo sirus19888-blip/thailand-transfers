@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { SourceFreshnessPanel } from "@/components/SourceFreshnessPanel";
@@ -203,6 +204,9 @@ export function MobileArticlePage({
         ) : null}
       </section>
 
+      <div className="lg:hidden">
+        <Footer />
+      </div>
       <MobileBottomNav activeLabel="Guides" />
     </main>
   );

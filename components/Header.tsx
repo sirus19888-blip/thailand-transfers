@@ -20,6 +20,10 @@ const navigation = [
     href: "/guides",
   },
   {
+    name: "Travel Extras",
+    href: "/travel-extras",
+  },
+  {
     name: "About Us",
     href: "/trust-center",
   },
@@ -29,8 +33,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 hidden border-b border-[#e7e2d8] bg-white/95 backdrop-blur lg:block">
       <Container>
-        <div className="flex h-[72px] items-center justify-between gap-8">
-          <Link href="/" className="flex items-center gap-3">
+        <div className="flex h-[72px] items-center justify-between gap-5 xl:gap-8">
+          <Link href="/" className="flex shrink-0 items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f0df] text-[#c99a2e]">
               <Landmark className="h-6 w-6" />
             </div>
@@ -48,7 +52,7 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="flex items-center gap-8 text-[14px] font-semibold text-[#263b4a]">
+          <nav className="flex items-center gap-5 whitespace-nowrap text-[13px] font-semibold text-[#263b4a] xl:gap-8 xl:text-[14px]">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -60,7 +64,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-5 text-[14px] font-semibold text-[#263b4a]">
+          <div className="flex shrink-0 items-center gap-5 text-[14px] font-semibold text-[#263b4a]">
             <Link
               href="/routes"
               className="flex items-center gap-2 transition hover:text-[#0c5a4d]"

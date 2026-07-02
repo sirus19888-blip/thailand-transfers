@@ -38,9 +38,9 @@ export default function HomePage() {
         <LandingSteps />
         <ScamAlert />
         <PromoCards />
-        <Footer />
       </div>
 
+      <Footer />
       <MobileBottomNav />
 
       <section className="hidden bg-white px-5 pt-4 pb-[calc(4rem+env(safe-area-inset-bottom))] text-center text-xs leading-5 text-slate-500 lg:block lg:px-8 lg:py-6">

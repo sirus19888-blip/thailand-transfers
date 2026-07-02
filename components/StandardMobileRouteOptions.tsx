@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { MobilePriorityRouteOptionsScreen } from "@/components/MobilePriorityRouteOptionsScreen";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { Footer } from "@/components/Footer";
 import { getMobileVehicleImage } from "@/components/mobileVehicleAssets";
 import type { RoutePageData } from "@/data/routePages";
 import {
@@ -134,6 +135,7 @@ function StandardMobileRouteOptionsFallback({ route }: { route: RoutePageData })
         <AffiliateDisclosure className="mt-4 text-center" />
       </div>
 
+      <Footer />
       <MobileBottomNav activeLabel="Routes" />
     </section>
   );

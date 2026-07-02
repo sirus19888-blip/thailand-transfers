@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
+import { Footer } from "@/components/Footer";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { mobileVehicleAssets } from "@/components/mobileVehicleAssets";
 import { ReturnTransferIntelligence } from "@/components/ReturnTransferIntelligence";
@@ -208,7 +209,7 @@ export function MobilePriorityRouteOptionsScreen({
 
           <div
             aria-label="Route preview"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#10201d] shadow-sm"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400"
           >
             <MapPin className="h-5 w-5" />
           </div>
@@ -547,6 +548,7 @@ export function MobilePriorityRouteOptionsScreen({
         </section>
         <AffiliateDisclosure className="mt-2 text-center" />
       </div>
+      <Footer />
       <div
         data-mobile-sticky-cta="true"
         className="fixed inset-x-0 bottom-[calc(3.55rem+env(safe-area-inset-bottom))] z-40 border-t border-[#e7e2d8] bg-white/95 px-3 py-2 shadow-lg shadow-black/10 backdrop-blur"

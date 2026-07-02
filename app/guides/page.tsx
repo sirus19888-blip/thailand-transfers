@@ -504,10 +504,9 @@ export default function GuidesPage() {
             </p>
           </Container>
         </section>
-
-        <Footer />
       </div>
 
+      <Footer />
       <MobileBottomNav activeLabel="Guides" />
     </main>
   );
