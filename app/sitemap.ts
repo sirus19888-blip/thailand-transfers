@@ -16,7 +16,7 @@ const highValueSeoPaths = [
   "/guides/bkk-airport-pickup-level-1-gate-8",
 ];
 
-const contentLastModified = "2026-05-29";
+const contentLastModified = new Date();
 
 function sitemapEntry(
   path: string,
