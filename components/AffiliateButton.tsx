@@ -11,31 +11,50 @@ type AffiliateButtonProps = {
   children?: React.ReactNode;
   fullWidth?: boolean;
   trackingId?: string;
+  partner?: string;
   variant?: "default" | "table" | "detailsSticky" | "mobileCompact";
 };
+
+function getTwelveGoTrackingDetails(href: string, trackingId?: string) {
+  let subId = trackingId;
+
+  try {
+    const url = new URL(href);
+    subId = url.searchParams.get("sub_id") ?? trackingId;
+  } catch {
+    subId = trackingId;
+  }
+
+  const [route = "unknown", option = "general"] = (subId ?? "")
+    .replace(/^click_12go_/, "")
+    .split(/-(?=[^-]+$)/);
+
+  return { subId, route, option };
+}
 
 export function AffiliateButton({
   href,
   children = affiliateMainCta,
   fullWidth = false,
   trackingId,
+  partner = "12go",
   variant = "default",
 }: AffiliateButtonProps) {
   function handleClick() {
     if (typeof window !== "undefined") {
       const trackingWindow = window as DataLayerWindow;
-      const url = new URL(href);
-      const subId = url.searchParams.get("sub_id") ?? trackingId;
-      const [route = "unknown", option = "general"] = (subId ?? "")
-        .replace(/^click_12go_/, "")
-        .split(/-(?=[^-]+$)/);
+      const affiliatePartner = partner.trim() || "12go";
+      const isTwelveGo = affiliatePartner.toLowerCase() === "12go";
+      const { subId, route, option } = isTwelveGo
+        ? getTwelveGoTrackingDetails(href, trackingId)
+        : { subId: undefined, route: "", option: "" };
 
       trackingWindow.dataLayer = trackingWindow.dataLayer || [];
       trackingWindow.dataLayer.push({
         event: "partner_click",
         click_id: trackingId,
-        partner: "12go",
-        affiliate_partner: "12go",
+        partner: affiliatePartner,
+        affiliate_partner: affiliatePartner,
         affiliate_url: href,
         sub_id: subId,
         route,

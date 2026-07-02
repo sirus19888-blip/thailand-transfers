@@ -488,7 +488,7 @@ export default function GuidesPage() {
                           variant="table"
                           fullWidth
                         >
-                          Check price
+                          {affiliateMainCta}
                         </AffiliateButton>
                       </div>
                     </div>

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { AffiliateButton } from "@/components/AffiliateButton";
 import { AffiliateDisclosure } from "@/components/AffiliateDisclosure";
-import { affiliatePartnerSearchCta } from "@/data/ctaCopy";
+import { affiliateMainCta, affiliatePartnerSearchCta } from "@/data/ctaCopy";
 import {
   highDemandRouteSearches,
   mainRoute,
@@ -222,7 +222,7 @@ export function RoutesMobileHub() {
             trackingId="click_12go_routes_mobile_bkk_pattaya"
             fullWidth
           >
-            Compare final BKK to Pattaya prices
+            {affiliateMainCta}
           </AffiliateButton>
           <AffiliateDisclosure className="mt-3 text-center" />
         </div>

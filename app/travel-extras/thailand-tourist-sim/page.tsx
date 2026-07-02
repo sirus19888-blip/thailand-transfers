@@ -20,7 +20,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { mainRoute } from "@/data/routes";
+import {
+  sailyAffiliateUrl,
+  sailyEsimTrackingId,
+} from "@/data/affiliatePartners";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Thailand Tourist SIM & eSIM",
@@ -167,13 +170,18 @@ export default function ThailandTouristSimPage() {
 
             <div className="mt-4">
               <AffiliateButton
-                href={mainRoute.affiliateUrl}
-                trackingId="click_12go_sim_mobile_transfer"
+                href={sailyAffiliateUrl}
+                partner="saily"
+                trackingId={sailyEsimTrackingId}
                 fullWidth
               >
-                Compare final transfer prices
+                See Saily eSIM plans
               </AffiliateButton>
               <AffiliateDisclosure className="mt-3 text-center" />
+              <p className="mt-2 text-center text-[11px] leading-5 text-slate-500">
+                Prices and data allowances are shown on Saily; plans change, so
+                check the provider page.
+              </p>
             </div>
           </div>
         </div>
@@ -327,15 +335,20 @@ export default function ThailandTouristSimPage() {
                   price, data allowance and activation rules.
                 </p>
 
-                <div className="mt-4 lg:hidden">
+                <div className="mt-4">
                   <AffiliateButton
-                    href={mainRoute.affiliateUrl}
-                    trackingId="click_12go_sim_mobile_transfer"
+                    href={sailyAffiliateUrl}
+                    partner="saily"
+                    trackingId={sailyEsimTrackingId}
                     fullWidth
                   >
-                    Compare final transfer prices
+                    See Saily eSIM plans
                   </AffiliateButton>
                   <AffiliateDisclosure className="mt-3 text-center" />
+                  <p className="mt-2 text-center text-[11px] leading-5 text-slate-500">
+                    Prices and data allowances are shown on Saily; plans change,
+                    so check the provider page.
+                  </p>
                 </div>
               </div>
             </div>
